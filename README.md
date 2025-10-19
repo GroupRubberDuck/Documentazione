@@ -4,6 +4,8 @@ Repository del gruppo RubberDuck, gruppo 14 di Ingegneria del software anno 2025
 Questa repository è dedicata :
 - alle attività del diario di bordo e affini.
 - alla documentazione del progetto
+
+
 Qui si possono trovare materiali quali: diari di bordo, verbali, ecc..
 
 
