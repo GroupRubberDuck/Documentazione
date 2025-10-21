@@ -10,9 +10,9 @@ NC='\033[0m'
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SRC_DIR="$BASE_DIR/src"
 OUTPUT_DIR="$BASE_DIR/output"
-# echo $BASE_DIR
-# echo $SRC_DIR
-# echo $OUTPUT_DIR
+echo $BASE_DIR
+echo $SRC_DIR
+echo $OUTPUT_DIR
 
 compile_typst() {
     local input_file="$1"
@@ -50,13 +50,23 @@ main() {
         exit 1
     fi
     
-    # Compila tutti i file typst ricorsivamente
-    find "$SRC_DIR" -type f -name "*.typ" | while read -r file; do
-        local relative_path=$(dirname "${file#$SRC_DIR/}")
-        local output_subdir="$OUTPUT_DIR/$relative_path"
-        compile_typst "$file" "$output_subdir"
-    done
+    # # Compila tutti i file typst ricorsivamente
+    # find "$SRC_DIR" -type f -name "*.typ" | while read -r file; do
+    #     local relative_path=$(dirname "${file#$SRC_DIR/}")
+    #     local output_subdir="$OUTPUT_DIR/$relative_path"
+    #     compile_typst "$file" "$output_subdir"
+    # done
     
+    find "$SRC_DIR" -type f -name "*.typ" \
+    ! -name "config.typ" \
+    ! -name "root.typ" \
+    ! -path "*/TypstTemplate/*" | while read -r file; do
+    local relative_path=$(dirname "${file#$SRC_DIR/}")
+    local output_subdir="$OUTPUT_DIR/$relative_path"
+    compile_typst "$file" "$output_subdir"
+done
+
+
     echo -e "\n${GREEN}=== Compilazione completata ===${NC}"
 }
 
