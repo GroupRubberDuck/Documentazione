@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up Typst
         uses: typst-community/setup-typst@v4
@@ -23,15 +26,16 @@ jobs:
           chmod +x scripts/updateTypstFiles.sh
           ./scripts/updateTypstFiles.sh
 
+      - name: Commit and push PDFs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/**/*.pdf
+          git diff --staged --quiet || git commit -m "Auto-generate PDFs from Typst [skip ci]"
+          git push
+
       - name: Upload PDFs as artifact
         uses: actions/upload-artifact@v4
         with:
           name: typst-pdf-output
           path: output/**/*.pdf
-      - name: Commit and push PDFs
-        run: |
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add output/**/*.pdf
-            git commit -m "Auto-generate PDFs from Typst [skip ci]" || exit 0
-            git push
