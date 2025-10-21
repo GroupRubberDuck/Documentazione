@@ -14,7 +14,7 @@ Qui si possono trovare materiali quali: diari di bordo, verbali, ecc..
 | Cognome      | Nome             | Matricola |
 | :----------- | :--------------  | :-------- |
 | Lorenzon    | Davide         | 2101075   |
-|     |           |    |
+| Bettega     | Aldo           | 2101087   |
 |          |           |    |
 |      |           |    |
 |       |          |    |
