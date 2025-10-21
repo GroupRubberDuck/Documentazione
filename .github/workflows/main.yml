@@ -1,0 +1,30 @@
+name: Compile and Update typst
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Typst
+        uses: typst/typst-action@v1
+
+      - name: Verify Typst installation
+        run: typst --version
+
+      - name: Run Typst build script
+        run: |
+          chmod +x scripts/build.sh
+          ./scripts/build.sh
+
+      - name: Upload PDFs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: typst-pdf-output
+          path: output/**/*.pdf
