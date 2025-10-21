@@ -31,7 +31,7 @@ set page(
 
 #let insertArabicNumberedPages(PageTitle, documentType, date,doc)={
   set page(
-  paper: "us-letter",
+  paper: "a4",
   header: place(
     horizon
   )[
