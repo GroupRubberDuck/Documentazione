@@ -1,7 +1,7 @@
-#import "/src/config.typ": fontDaUsare
-#import "/src/TypstTemplate/frontPage.typ": frontPage
-#import "/src/TypstTemplate/setUpPageLayout.typ": insertRomanNumberedPages, insertArabicNumberedPages
-#set text(font: fontDaUsare , size: 13pt)
+#import "/src/config.typ": *
+#import template_dir+"/frontPage.typ": frontPage
+#import template_dir+"/setUpPageLayout.typ": insertRomanNumberedPages, insertArabicNumberedPages
+#set text(font: font_da_usare , size: 13pt)
 #let giornoRiunione = datetime(year: 2025,
                                 month: 10,
                                 day:18)
@@ -10,6 +10,7 @@
 #frontPage([Verbale riunione],giornoRiunione)
 
 
+//typst compile --root . ./src/DocumentazioneInterna/Candidatura/VerbaliRiunioni/Verbale_Interno_2025_10_18.typ
 
 // #set page(
 //   paper: "us-letter",

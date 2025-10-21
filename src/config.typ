@@ -1,15 +1,18 @@
 // src/config.typ
 
-// Base paths (relative to project root)
-#let src-dir = "src/"
-#let template-dir = "src/TypstTemplate/"
-#let images-dir = "src/Images/"
+#let src_dir ="/src"
+#let template_dir = src_dir+"/TypstTemplate"
+#let images_dir = src_dir +"/Images"
 
 // Specific files
-#let front-page-file = "src/TypstTemplate/frontPage.typ"
-#let setup-layout-file = "src/TypstTemplate/setUpPageLayout.typ"
+#let front_page_file = template_dir +"/frontPage.typ"
+#let setup_layout_file = template_dir +"/setUpPageLayout.typ"
 
 // Images
-#let logo-rd = "/src/Images/logoRD.jpg"
-#let logo-unipd = "/src/Images/logo_Unipd.png"
-#let fontDaUsare= "Linux Libertine"
+#let logo_rd = images_dir +"/logoRD.jpg"
+#let logo_unipd =  images_dir +"/logo_Unipd.png"
+
+
+//font 
+#let font_da_usare= "Linux Libertine"
+
