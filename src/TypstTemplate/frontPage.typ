@@ -1,15 +1,17 @@
 // Import using absolute paths from root
-#import "/src/config.typ": logo-rd, logo-unipd, fontDaUsare
-
+// #import "/src/config.typ": logo_rd, logo_unipd, font_da_usare
+// Documentazione/src/config.typ
+// typst compile --root . ./src/TypstTemplate/frontPage.typ
+#import "/src/config.typ":*
 #set page(
   paper: "a4",
   margin: (top: 1.5in, bottom: 1in, left: 1in, right: 1in)
 )
 
-#set text(font: fontDaUsare, size: 13pt)
+#set text(font: font_da_usare, size: 13pt)
 
-#let logoUnipd = image(logo-unipd)
-#let logoRD = image(logo-rd,width: 30%)
+#let logoUnipd = image("../Images/logo_Unipd.png" )
+#let logoRD = image("../Images/logoRD.jpg",width: 30%)
 #let giornoRiunione = datetime( year: 2025,
                                 month: 10,
                                 day:18
@@ -64,7 +66,4 @@
   pagebreak()
   context counter(page).update(1)
 }
-
-
-
 
