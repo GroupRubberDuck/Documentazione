@@ -33,7 +33,7 @@
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
 - Davide Lorenzon
-- Ana Maria 
+- Ana Maria Draghici
 - Felician Mario Necsulescu
 - Davide Testolin
 - Filippo Guerra
