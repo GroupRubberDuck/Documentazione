@@ -9,8 +9,8 @@
 #let setup_layout_file = template_dir +"/setUpPageLayout.typ"
 
 // Images
-#let logo_rd = images_dir +"/logoRD.jpg"
 #let logo_unipd =  images_dir +"/logo_Unipd.png"
+#let logo_rd = images_dir +"/logoRD.jpg"
 
 
 //font 

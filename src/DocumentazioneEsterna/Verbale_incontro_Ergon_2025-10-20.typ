@@ -54,7 +54,7 @@
 = Riassunto della riunione 
 Le domande poste sono state le seguenti:
 
-== Domanda 1
+== Domanda #context counter("domande").display()
 Nel capitolato viene suggerito di iniziare concentrandosi su una o due modalità di input per poi estendere gradualmente il sistema. In base alla vostra esperienza da quale fonte dati consigliate di partire prioritariamente tra testo, immagini e audio?\
 
 #enfasi[Risposta 1]
@@ -77,13 +77,13 @@ La priorità è l'accuratezza che di conseguenza da un grande vantaggio nella Us
 == Domanda 4
 Come si deve comportare il sistema con input troppo ambigui o incompleti? Ci sono procedure di fallback specifiche? Si può avere anche validazione manuale in questi casi? O sempre esclusivamente automatizzata?
 
-#enfasi[Rispota 4]
+#enfasi[Risposta 4]
 Più avanti potremo definire i vari requisiti In caso di troppa ambiguità il sistema può dire che non ha capito e chiedere all'utente di ripetere meglio l'ordine. L'utente può confermare o variare la proposta che il sistema ha fatto o anche richiedere l'intervento di un operatore.
 
 == Domanda 5
 Cosa si intende per interfaccia utente? come si gestiscono gli input provenienti da diverse piattaforme in un'unica interfaccia?
 
-#enfasi[Rispota 5]
+#enfasi[Risposta 5]
 Sicuramente un'interfaccia web su cui l'utente può caricare foto o video, poi, perchè no, si può implementare un audio via whatsapp e il sistema risponde con il link dell'ordine che l'utente dovrà confermare o modificare. \ \
 
 == Domanda 6

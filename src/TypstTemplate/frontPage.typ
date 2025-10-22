@@ -10,8 +10,8 @@
 
 #set text(font: font_da_usare, size: 13pt)
 
-#let logoUnipd = image("../Images/logo_Unipd.png" )
-#let logoRD = image("../Images/logoRD.jpg",width: 30%)
+#let logoUnipd = image(logo_unipd )
+#let logoRD = image(logo_rd, width: 30%)
 #let giornoRiunione = datetime( year: 2025,
                                 month: 10,
                                 day:18
