@@ -14,8 +14,9 @@
 }
 #frontPage("Verbale Riunione con Ergon",giornoRiunione)
 
-#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione)[
-  #let color=rgb("#646869")
+
+#insertRomanNumberedPages("Registro modifiche","Verbale esterno",giornoRiunione)[
+    #let color=rgb("#646869")
   #registroModifiche(colore:color,
   (  ("0.1", giornoRiunione.display(), "Prima stesura", "Aldo Bettega", "Davide Lorenzon"),
   ("1.0", giornoRiunione.display(), "Correzione typo", "Davide lorenzon  Aldo Bettega ", "???????"),
@@ -23,7 +24,10 @@
   ("0.1", "12/12/2025", "prima stesura", "davide lorenzon", "???????"),
   )
   )
+]
 
+
+#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione)[
   #outline(depth: 2, title: "Indice")
 ]
 #context counter(page).update(1)
