@@ -1,6 +1,7 @@
 #import "/src/config.typ":*
 #import template_dir+"/frontPage.typ": frontPage
 #import template_dir+"/setUpPageLayout.typ": insertRomanNumberedPages, insertArabicNumberedPages
+#import template_dir +"/registroModifiche.typ":registroModifiche
 
 
 #let giornoRiunione=datetime(year:2025, month:10 , day:20)
@@ -14,6 +15,15 @@
 #frontPage("Verbale Riunione con Ergon",giornoRiunione)
 
 #insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione)[
+  #let color=rgb("#646869")
+  #registroModifiche(colore:color,
+  (  ("0.1", giornoRiunione.display(), "Prima stesura", "Aldo Bettega", "Davide Lorenzon"),
+  ("1.0", giornoRiunione.display(), "Correzione typo", "Davide lorenzon  Aldo Bettega ", "???????"),
+  ("2.0", "2025-10-22" , "Aggiunto registro delle modifiche", "Davide Lorenzon", "???????"),
+  ("0.1", "12/12/2025", "prima stesura", "davide lorenzon", "???????"),
+  )
+  )
+
   #outline(depth: 2, title: "Indice")
 ]
 #context counter(page).update(1)
