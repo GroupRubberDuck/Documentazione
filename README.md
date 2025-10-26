@@ -16,7 +16,7 @@ Qui si possono trovare materiali quali: diari di bordo, verbali, ecc..
 | Bettega    | Aldo           | 2101087   |
 | Testolin   | Davide         | 2079242   |
 | Guerra     | Filippo        | 2077681   |
-| Ana Maria  | Draghici       | 2101044   |
+| Draghici   | Ana Maria      | 2101044   |
 | Necsulescu | Felician Mario | 2111935   |
 | Lorenzon   | Davide         | 2101075   |
 
