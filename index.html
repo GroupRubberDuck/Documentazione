@@ -1,99 +1,204 @@
-<html>
+<html class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta lang="it">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Gruppo RubberDuck, progetto di Ingegneria del Software, Università di Padova, A.A. 2025-2026 ">
   <title>RubberDuck</title>
-  <!-- <link rel="icon" href="./website/images/logo.png" type="image/x-icon"> -->
-  <!-- <link rel="stylesheet" href="./website/styles.css" media="screen"> -->
-  <!-- <script src="./website/script.js" defer></script>-->
+  <link rel="icon" href="website/images/logo.png" type="image/x-icon">
+  <link href="website/style.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <nav aria-label="Sezioni principali">
-            <section id="header-logo">
-                <img src=".website/images/logo.png" alt="Logo del gruppo Rubber Duck">
-                <h1 lang="en">RubberDuck</h1>
-            </section>
-                  <ul id="nav-navigation"><!-- <li><a href="#rtb">RTB</a></li> -->
-                    <!-- <li><a href="#pb">PB</a></li> -->
-                    <li><a href="#candidatura">Candidatura</a></li>
-                    <!-- <li><a href="#diario di bordo">Diario Di Bordo</a></li> -->
-                    <li><a href="#contatti">Contatti</a></li>
-                    </ul>
-        </nav>
-    </header>
-
-<section id="candidatura">
-<h2>Candidatura</h2>
-    <h3>Verbali Esterni</h3>
-        
-    <h3>Verbali Interni</h3>
-    
-</section>
-    <main>
-        <section id="contatti">
-            <h2 id=""contatti-title>Contatti</h2>
-            <p>
-                Il gruppo <strong>RubberDuck</strong>, uno dei vari gruppi del corso di "<strong>Ingegneria del software</strong>" presso l'Universit&aacute; degli studi di Padova, anno accademico 2025/2026
-            </p>
-            <p>
-                <h3>Link utili</h3>
-                <ul title="Link utili">
-                    <li> Repository Github contenete la documentazione: <a href="https://github.com/GroupRubberDuck/Documentazione">link</a></li>
-                    <li>Mail di contatto: <a href="mailto:grouprubberduck@gmail.com">grouprubberduck@gmail.com</a> </li>
-                </ul>
-            </p>
-            <p>
-                <h3>Membri del gruppo</h3>
-                <ul>
-                    <li class="github-member">
-                      <a href="https://github.com/genos36" class="github-link">
-                        <img src="https://github.com/genos36.png" alt="Davide Lorenzon" class="github-avatar">
-                        <span class="github-name">Davide Lorenzon</span>
-                      </a>
-                    </li>
-                    <li class="github-member">
-                      <a href="https://github.com/aldobettega-unipd" class="github-link">
-                        <img src="https://github.com/aldobettega-unipd.png" alt="Aldo Bettega" class="github-avatar">
-                        <span class="github-name">Aldo Bettega</span>
-                      </a>
-                    </li>
-                    <li class="github-member">
-                      <a href="https://github.com/DraghiciAnaMaria" class="github-link">
-                        <img src="https://github.com/DraghiciAnaMaria.png" alt="Ana Maria Draghici" class="github-avatar">
-                        <span class="github-name">Ana Maria Draghici</span>
-                      </a>
-                    </li>
-                    <li class="github-member">
-                      <a href="https://github.com/FelicianNek" class="github-link">
-                        <img src="https://github.com/FelicianNek.png" alt="Felician Mario Necsulescu" class="github-avatar">
-                        <span class="github-name">Felician Mario Necsulescu</span>
-                      </a>
-                    </li>
-                    <li class="github-member">
-                      <a href="https://github.com/davbios" class="github-link">
-                        <img src="https://github.com/davbios.png" alt="Davide Testolin" class="github-avatar">
-                        <span class="github-name">Davide Testolin</span>
-                      </a>
-                    </li>
-                    <li class="github-member">
-                      <a href="https://github.com/unluckypippo" class="github-link">
-                        <img src="https://github.com/unluckypippo.png" alt="Filippo Guerra" class="github-avatar">
-                        <span class="github-name">Filippo Guerra</span>
-                      </a>
-                    </li>
-                    <ul>
-            </p>
+<body class="bg-container text-white">
+  <header>
+    <nav aria-label="Sezioni principali" class="bg-primary">
+      <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="website/images/logo.png" class="h-8" alt="RubberDuck" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap">RubberDuck</span>
+        </a>
+        <button data-collapse-toggle="navbar-dropdown" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none"
+          aria-controls="navbar-dropdown" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <section class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+            <li>
+              <a href="#home" class="block py-2 px-3 md:p-0" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#rtb" class="block py-2 px-3 md:p-0">RTB</a>
+            </li>
+            <li>
+              <a href="#pb" class="block py-2 px-3 md:p-0">PB</a>
+            </li>
+            <li>
+              <a href="#candidatura" class="block py-2 px-3 md:p-0">Candidatura</a>
+            </li>
+            <li>
+              <a href="#diariodibordo" class="block py-2 px-3 md:p-0">Diario
+                di bordo</a>
+            </li>
+            <li>
+              <a href="#team" class="block py-2 px-3 md:p-0">Team</a>
+            </li>
+          </ul>
         </section>
+      </div>
+    </nav>
+  </header>
 
+  <main class="max-w-7xl mx-auto p-4">
+    <section id="home" class="grid grid-cols-6 gap-8 px-4 lg:px-16">
+      <div class="col-span-full lg:col-span-2">
+        <img src="website/images/logo.png" alt="RubberDuck" />
+      </div>
+      <div class="col-span-full lg:col-span-4 py-4 lg:py-20">
+        <h1 class="mb-4">RubberDuck</h1>
+        <p class="text-secondary text-justify lg:text-left">
+          <strong>RubberDuck</strong> è un gruppo di studenti del corso di <strong>Ingegneria del Software</strong>
+          presso l'<strong>Università di Padova</strong>, anno accademico 2025-2026. Il team nasce con l'obiettivo di
+          applicare metodologie e strumenti di sviluppo software collaborativo, seguendo i principi dell'ingegneria del
+          software moderna. Il nome “RubberDuck” richiama la pratica del rubber duck debugging, simbolo del ragionamento
+          critico e del problem solving condiviso che guida il nostro approccio al progetto.
+        </p>
+      </div>
+    </section>
+    <section id="rtb">
+      <h2>RTB</h2>
+    </section>
+    <section id="pb">
+      <h2>PB</h2>
+    </section>
+    <section id="candidatura">
+      <h2>Candidatura</h2>
+      <ul class="docs-list"></ul>
+      <h2>Verbali Esterni</h2>
+      <ul class="docs-list">
+        <li><a
+            href="https://grouprubberduck.github.io/Documentazione/output/DocumentazioneInterna/Candidatura/VerbaliRiunioni/Verbale_Interno_2025_10_18.pdf">2025-10-18</a>
+        </li>
+      </ul>
+      <h2>Verbali Interni</h2>
+      <ul class="docs-list"></ul>
+    </section>
+    <section id="diariodibordo">
+      <h2>Diario di bordo</h2>
+    </section>
+    <section id="team">
+      <h2>Membri del gruppo</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
 
-    </main>
-    <footer><p id="copyright">Copyright© 2025 by RubberDuck- All rights reserved</p></footer>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/aldobettega-unipd" class="col-span-1">
+            <img src="https://github.com/aldobettega-unipd.png" alt="Aldo Bettega">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/aldobettega-unipd" class="col-span-1">
+              <strong class="block mb-1">Aldo Bettega</strong>
+            </a>
+            <span class="text-secondary">2101087</span>
+          </div>
+        </li>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/davbios" class="col-span-1">
+            <img src="https://github.com/davbios.png" alt="Davide Testolin">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/davbios">
+              <strong class="block mb-1">Davide Testolin</strong>
+            </a>
+            <span class="text-secondary">2079242</span>
+          </div>
+        </li>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/unluckypippo" class="col-span-1">
+            <img src="https://github.com/unluckypippo.png" alt="Filippo Guerra">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/unluckypippo">
+              <strong class="block mb-1">Filippo Guerra</strong>
+            </a>
+            <span class="text-secondary">2077681</span>
+          </div>
+        </li>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/DraghiciAnaMaria" class="col-span-1">
+            <img src="https://github.com/DraghiciAnaMaria.png" alt="Ana Maria Draghici">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/DraghiciAnaMaria">
+              <strong class="block mb-1">Ana Maria Draghici</strong>
+            </a>
+            <span class="text-secondary">2101044</span>
+          </div>
+        </li>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/FelicianNek" class="col-span-1">
+            <img src="https://github.com/FelicianNek.png" alt="Felician Mario Necsulescu">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/FelicianNek">
+              <strong class="block mb-1">Felician Mario Necsulescu</strong>
+            </a>
+            <span class="text-secondary">2111935</span>
+          </div>
+        </li>
+        <li class="col-span-1 grid grid-cols-4 gap-4">
+          <a href="https://github.com/genos36" class="col-span-1">
+            <img src="https://github.com/genos36.png" alt="Davide Lorenzon">
+          </a>
+          <div class="col-span-3">
+            <a href="https://github.com/genos36">
+              <strong class="block mb-1">Davide Lorenzon</strong>
+            </a>
+            <span class="text-secondary">2101075</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-
+  <footer class="bg-primary text-secondary">
+    <div class="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
+      <div class="md:flex md:justify-between mb-4">
+        <div class="mb-6 md:mb-0">
+          <a href="https://grouprubberduck.github.io/Documentazione/" class="flex items-center">
+            <img src="website/images/logo.png" class="h-8 me-3" alt="RubberDuck" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap">RubberDuck</span>
+          </a>
+        </div>
+        <section>
+          <h2 class="mb-6 text-sm font-semibold uppercase">Link Utili</h2>
+          <ul class="font-medium">
+            <li class="mb-4">
+              <a href="https://github.com/GroupRubberDuck" class="hover:underline">Github</a>
+            </li>
+            <li class="mb-4">
+              <a href="https://github.com/GroupRubberDuck/Documentazione" class="hover:underline">Documentazione</a>
+            </li>
+            <li>
+              <a href="mailto:grouprubberduck@gmail.com" class="hover:underline">grouprubberduck@gmail.com</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm sm:text-center text-secondary">
+          <a href="https://grouprubberduck.github.io/Dcoumentazione/" class="hover:underline">RubberDuck</a> &copy;
+          Copyright - All Rights Reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
 </body>
 
 

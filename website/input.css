@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #001c29;
+  --bg-secondary: #012638;
+  --text-primary: #ffffff;
+  --text-secondary: #a5c7d4;
+}
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-container {
+  background-color: var(--bg-secondary);
+}
+
+span,
+strong,
+em {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-2xl mb-2;
+}
+
+main > section:first-of-type {
+  border-top: none;
+}
+main > section {
+  border-top: 6px solid var(--bg-primary);
+  @apply py-4;
+}
+
+#team li img {
+  @apply rounded-lg;
+}
+
+ul.docs-list {
+  @apply list-disc ml-4 hover:underline mb-4;
+  color: var(--text-secondary);
+}
