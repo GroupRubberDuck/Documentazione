@@ -33,7 +33,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -f output/**/*.pdf  # -f per forzare nonostante .gitignore
           git add index.html
-          git diff --staged --quiet 
+          #git diff --staged --quiet  || git commit -m "Auto-generate PDFs from Typst & update website [skip ci]"
           git commit -m "Auto-generate PDFs from Typst & update website [skip ci]"
           git push
 
