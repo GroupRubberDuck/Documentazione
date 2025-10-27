@@ -23,15 +23,16 @@ jobs:
 
       - name: Run Typst build script
         run: |
-          chmod +x scripts/updateTypstFiles.sh
           ./scripts/updateTypstFiles.sh
+          ./scripts/genWebsite.sh
 
       - name: Commit and push PDFs
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -f output/**/*.pdf  # -f per forzare nonostante .gitignore
-          git diff --staged --quiet || git commit -m "Auto-generate PDFs from Typst [skip ci]"
+          git add index.html
+          git diff --staged --quiet || git commit -m "Auto-generate PDFs from Typst & update website [skip ci]"
           git push
 
       - name: Upload PDFs as artifact
