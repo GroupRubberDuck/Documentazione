@@ -1,4 +1,4 @@
-output/
+output/**/*.pdf
 
 package.json
 package-lock.json
