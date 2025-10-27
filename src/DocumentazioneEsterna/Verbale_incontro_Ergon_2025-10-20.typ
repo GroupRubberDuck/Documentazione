@@ -12,16 +12,17 @@
     #doc
   ]
 }
+
 #frontPage("Verbale Riunione con Ergon",giornoRiunione)
 
 
 #insertRomanNumberedPages("Registro modifiche","Verbale esterno",giornoRiunione)[
+  
     #let color=rgb("#646869")
   #registroModifiche(colore:color,
   (  ("0.1", giornoRiunione.display(), "Prima stesura", "Aldo Bettega", "Davide Lorenzon"),
   ("1.0", giornoRiunione.display(), "Correzione typo", "Davide lorenzon  Aldo Bettega ", "???????"),
-  ("2.0", "2025-10-22" , "Aggiunto registro delle modifiche", "Davide Lorenzon", "???????"),
-  ("0.1", "12/12/2025", "prima stesura", "davide lorenzon", "???????"),
+  ("2.0", "2025-10-22" , "Aggiunto registro delle modifiche", "Davide Lorenzon", " ???? "),
   )
   )
 ]
@@ -68,7 +69,7 @@
 = Riassunto della riunione 
 Le domande poste sono state le seguenti:
 
-== Domanda #context counter("domande").display()
+#enfasi[== Domanda 1]
 Nel capitolato viene suggerito di iniziare concentrandosi su una o due modalità di input per poi estendere gradualmente il sistema. In base alla vostra esperienza da quale fonte dati consigliate di partire prioritariamente tra testo, immagini e audio?\
 
 #enfasi[Risposta 1]

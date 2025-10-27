@@ -3,6 +3,7 @@
 
 
 #let registroModifiche(colore:rgb("#30b9db"), rows) = {
+  rows=rows.rev()
   set table(
   fill: (_, y) => if calc.odd(y) { colore } )
 
