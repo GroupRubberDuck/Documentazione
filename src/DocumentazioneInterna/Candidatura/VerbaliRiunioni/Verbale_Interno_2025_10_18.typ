@@ -42,7 +42,8 @@
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
-  ([0.1],[],[],[],[]),
+  ([0.1],[2025-10-18],[Prima stesura],[Davide Lorenzon],[]),
+  ([0.2],[2025-10-27],[Aggiunto registro modifiche, codice per TODO e decisioni],[Davide Lorenzon],[]),
 ))
 ]
 
