@@ -1,6 +1,8 @@
 #import "/src/config.typ": *
 #import template_dir+"/frontPage.typ": frontPage
 #import template_dir+"/setUpPageLayout.typ": insertRomanNumberedPages, insertArabicNumberedPages
+#import template_dir+"/registroModifiche.typ":registroModifiche
+#import template_dir+"/utilityTable.typ":utilityTable, getCode
 #set text(font: font_da_usare , size: 13pt)
 #let giornoRiunione = datetime(year: 2025,
                                 month: 10,
@@ -37,6 +39,12 @@
 //   numbering: "i",
 
 // )
+
+#insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
+#registroModifiche((
+  ([0.1],[],[],[],[]),
+))
+]
 
 #insertRomanNumberedPages("Indice","Verbale interno",giornoRiunione )[
 #outline( depth: 2,title: "Indice")
@@ -88,21 +96,33 @@ Gli argomenti di discussione sono stati:
 ]
 #insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
 = Decisioni
-- Scelta dei capitolati
+#let contatoreDecisioni= counter("decisioni")
+#contatoreDecisioni.update(1)
+
+#let decisioni=(
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[- Scelta dei capitolati
  + *C7*: Sistema di acquisizione dati da sensori, M31
  + *C1*: Automated EN18031 Compliance Verification, BlueWind
- + *C8*: Smart Order, Ergon
-- Scelta del way of working: *SCRUM*
-- Creazione della #link("https://github.com/GroupRubberDuck")[ #text(fill: blue )[#underline[Github Organization]] del gruppo]
-- Definizione della struttura base del verbale
+ + *C8*: Smart Order, Ergon]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Scelta del way of working: *SCRUM*]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Creazione della #link("https://github.com/GroupRubberDuck")[ #text(fill: blue )[#underline[Github Organization]] del gruppo]]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Definizione della struttura base del verbale]))
+
+#utilityTable(decisioni,col1:"Codice",col2:"Riferimenti",col3:"Descrizione")
+
 ]
 #insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
 
 = TODO
+#let contatoreTodo= counter("todo")
+#contatoreTodo.update(1)
 I punti da approfondire nelle prossime riunioni o in vista di esse individuati durante la riunione sono stati i seguenti:
-- Comprendere al meglio i capitolati, stilare la lista delle domande da porre alle aziende
-- Entrare in contatto con le imprese
-- lavorare sulla struttura dei documenti
+#let TODO=(
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Comprendere al meglio i capitolati, stilare la lista delle domande da porre alle aziende]),
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Entrare in contatto con le imprese]),
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[lavorare sulla struttura dei documenti]))
+#utilityTable(TODO,col1:"Codice",col2:"Assegnatari",col3:"Task")
+
 ]
 
 
