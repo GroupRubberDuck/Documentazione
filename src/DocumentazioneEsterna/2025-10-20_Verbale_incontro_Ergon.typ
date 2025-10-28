@@ -18,7 +18,7 @@
 
 #insertRomanNumberedPages("Registro modifiche","Verbale esterno",giornoRiunione)[
   
-    #let color=rgb("#646869")
+    #let color=rgb("#dddfe0")
   #registroModifiche(colore:color,
   (  ("0.1", giornoRiunione.display(), "Prima stesura", "Aldo Bettega", "Davide Lorenzon"),
   ("1.0", giornoRiunione.display(), "Correzione typo", "Davide lorenzon  Aldo Bettega ", "???????"),

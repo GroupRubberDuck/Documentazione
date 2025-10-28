@@ -1,5 +1,5 @@
 #let statusTab(versione:"", stato:"",autori:("",""), 
-verificatori:("",""),uso:"",destinatari:("",""),colore:rgb("#4e5b5e"))={
+verificatori:("",""),uso:"",destinatari:("",""),colore:rgb("#dddfe0"))={
 
   set table(
   fill: (_, y) => if calc.odd(y) { colore } )

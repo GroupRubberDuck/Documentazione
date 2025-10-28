@@ -4,7 +4,11 @@
 #import template_dir+"/registroModifiche.typ":registroModifiche
 #import template_dir+"/utilityTable.typ":utilityTable, getCode
 #import template_dir+"/statusTab.typ":statusTab
+
+
 #set text(font: font_da_usare , size: 13pt)
+
+
 #let giornoRiunione = datetime(year: 2025,
                                 month: 10,
                                 day:18)
@@ -22,6 +26,7 @@
 #registroModifiche((
   ([0.1],[2025-10-18],[Prima stesura],[Davide Lorenzon],[]),
   ([0.2],[2025-10-27],[Aggiunto registro modifiche, codice per TODO e decisioni],[Davide Lorenzon],[]),
+  ([1.0],[2025-10-28],[Verifica e approvazione],[],[Ana Maria Draghici])
 ))
 ]
 
@@ -39,11 +44,10 @@
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione* : Interno
-- *data*: #giornoRiunione.display()
-- *luogo*: Riunione siu Discord
+- *Data*: #giornoRiunione.display()
+- *Luogo*: Riunione siu Discord
 - *Ora inizio*: 20:00
 - *Ora fine*: 21:30
-- *Portavoce*: 
 - *Scriba*: Davide Lorenzon
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
@@ -67,8 +71,9 @@
 ]
 #insertArabicNumberedPages("Riassunto della riunione ","Verbale interno",giornoRiunione )[
 = Riassunto della riunione 
-Gli argomenti di discussione sono stati:
-- L'interesse dei vari membri del gruppo per i capitolati e della loro fattibilità
+Gli argomenti di discussione sono stati i seguenti:
+- L'interesse dei vari membri del gruppo per i capitolati
+- La valutazione della fattibilità dei capitolati
 - Le disponilità dei vari membri del gruppo
 - Aspetti organizzativi
 - I prossimi temi di discussione
@@ -79,15 +84,16 @@ Gli argomenti di discussione sono stati:
 #contatoreDecisioni.update(1)
 
 #let decisioni=(
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[- Scelta dei capitolati
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[ Scelta dei capitolati
  + *C7*: Sistema di acquisizione dati da sensori, M31
  + *C1*: Automated EN18031 Compliance Verification, BlueWind
  + *C8*: Smart Order, Ergon]),
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Scelta del way of working: *SCRUM*]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Scelta del way of working: *Agile*]),
   ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Creazione della #link("https://github.com/GroupRubberDuck")[ #text(fill: blue )[#underline[Github Organization]] del gruppo]]),
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Definizione della struttura base del verbale]))
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Definizione della struttura base del verbale]),
+  )
 
-#utilityTable(decisioni,header:("Codice","Descrizione"),columns:(1fr,3fr))
+#utilityTable(decisioni,header:("Codice","Descrizione",),columns:(1fr,3fr))
 
 ]
 #insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
@@ -95,12 +101,13 @@ Gli argomenti di discussione sono stati:
 = TODO
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
-I punti da approfondire nelle prossime riunioni o in vista di esse individuati durante la riunione sono stati i seguenti:
+I punti da approfondire nelle prossime riunioni o in vista di esse individuati sono stati i seguenti:
 #let TODO=(
-  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Comprendere al meglio i capitolati, stilare la lista delle domande da porre alle aziende]),
-  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Entrare in contatto con le imprese]),
-  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[lavorare sulla struttura dei documenti]))
-#utilityTable(TODO,header: ("Codice","Assegnatari","Task"),columns: (1fr,1fr,1fr))
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Comprendere al meglio i capitolati],[VI.1.1]),
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Stilare la lista delle domande da porre alle aziende],[VI.1.1]),
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Entrare in contatto con le imprese],[VI.1.1]),
+  ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Lavorare sulla struttura dei documenti],[VI.1.4]))
+#utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (1fr,1fr,1fr,1fr))
 
 ]
 

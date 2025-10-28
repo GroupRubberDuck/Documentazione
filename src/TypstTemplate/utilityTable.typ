@@ -2,7 +2,7 @@
 
 
 
-#let utilityTable(colore:rgb("#9ea8aa"),header:(),columns:(1fr), rows,) = {
+#let utilityTable(colore:rgb("#dddfe0"),header:(),columns:(1fr), rows,) = {
   set table(
   fill: (_, y) => if calc.odd(y) { colore } )
 
