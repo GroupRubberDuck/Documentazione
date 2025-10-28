@@ -7,7 +7,7 @@ verificatori:("",""),uso:"",destinatari:("",""),colore:rgb("#4e5b5e"))={
   show table.cell.where(x: 0): strong
 
   table(
-    columns: (1fr,2fr),
+    columns: (2fr,6fr),
     [Stato],[#stato],
     [Versione],[#versione],
     [Autori],[

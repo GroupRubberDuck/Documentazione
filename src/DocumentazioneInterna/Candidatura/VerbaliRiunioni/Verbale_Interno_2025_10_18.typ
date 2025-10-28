@@ -3,6 +3,7 @@
 #import template_dir+"/setUpPageLayout.typ": insertRomanNumberedPages, insertArabicNumberedPages
 #import template_dir+"/registroModifiche.typ":registroModifiche
 #import template_dir+"/utilityTable.typ":utilityTable, getCode
+#import template_dir+"/statusTab.typ":statusTab
 #set text(font: font_da_usare , size: 13pt)
 #let giornoRiunione = datetime(year: 2025,
                                 month: 10,
@@ -12,33 +13,10 @@
 #frontPage([Verbale riunione],giornoRiunione)
 
 
-//typst compile --root . ./src/DocumentazioneInterna/Candidatura/VerbaliRiunioni/Verbale_Interno_2025_10_18.typ
+#insertRomanNumberedPages("Stato del documento","Verbale interno",giornoRiunione )[
+#statusTab(stato:"In approvazione",versione: "0.2",autori: ("Davide Lorenzon",),verificatori: ("",),uso:"Interno",destinatari: ("Tutto il gruppo",))
+]
 
-// #set page(
-//   paper: "us-letter",
-//   header: place(
-//     horizon
-//   )[
-//     #box(width: 100%)[
-//           #place(left)[*Indice*]
-//     #place(right)[*RubberDuck*]
-//     ]
-//  #line( length: 100%)
-// ],
-//   footer:align(top,[
-//  #line( length: 100%)
-//     #box(width:100%)[
-//      #place(horizon + left)[Verbale interno]
-//     #place(horizon + right)[#giornoRiunione.display()]     
-//     ]
-
-    
-//     #align(center)[#context counter(page).display()]
-    
-//   ]),
-//   numbering: "i",
-
-// )
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
@@ -101,15 +79,15 @@ Gli argomenti di discussione sono stati:
 #contatoreDecisioni.update(1)
 
 #let decisioni=(
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[- Scelta dei capitolati
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[- Scelta dei capitolati
  + *C7*: Sistema di acquisizione dati da sensori, M31
  + *C1*: Automated EN18031 Compliance Verification, BlueWind
  + *C8*: Smart Order, Ergon]),
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Scelta del way of working: *SCRUM*]),
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Creazione della #link("https://github.com/GroupRubberDuck")[ #text(fill: blue )[#underline[Github Organization]] del gruppo]]),
-  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[],[Definizione della struttura base del verbale]))
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Scelta del way of working: *SCRUM*]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Creazione della #link("https://github.com/GroupRubberDuck")[ #text(fill: blue )[#underline[Github Organization]] del gruppo]]),
+  ([#getCode(prefisso:"VI.1.",contatore:contatoreDecisioni)],[Definizione della struttura base del verbale]))
 
-#utilityTable(decisioni,col1:"Codice",col2:"Riferimenti",col3:"Descrizione")
+#utilityTable(decisioni,header:("Codice","Descrizione"),columns:(1fr,3fr))
 
 ]
 #insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
@@ -122,7 +100,7 @@ I punti da approfondire nelle prossime riunioni o in vista di esse individuati d
   ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Comprendere al meglio i capitolati, stilare la lista delle domande da porre alle aziende]),
   ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[Entrare in contatto con le imprese]),
   ([#getCode(prefisso:"TD.1.",contatore:contatoreTodo)],[Tutti],[lavorare sulla struttura dei documenti]))
-#utilityTable(TODO,col1:"Codice",col2:"Assegnatari",col3:"Task")
+#utilityTable(TODO,header: ("Codice","Assegnatari","Task"),columns: (1fr,1fr,1fr))
 
 ]
 

@@ -2,7 +2,7 @@
 
 
 
-#let utilityTable(colore:rgb("#9ea8aa"),col1:"",col2:"",col3:"", rows,) = {
+#let utilityTable(colore:rgb("#9ea8aa"),header:(),columns:(1fr), rows,) = {
   set table(
   fill: (_, y) => if calc.odd(y) { colore } )
 
@@ -10,8 +10,8 @@
   show table.cell.where(y: 0): strong
 
   table(
-    columns: (1fr,1fr,3fr),
-    table.header[#col1][#col2][#col3],
+    columns: (columns),
+    table.header(..header),
     ..rows.map(m => m.slice(0)).flatten(),
     
   )
