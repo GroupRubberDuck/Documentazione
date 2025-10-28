@@ -67,7 +67,7 @@
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione ","Verbale interno",giornoRiunione )[
-= #enfasi[Riassunto della riunione]
+#enfasi[= Riassunto della riunione]
 Le domande poste sono state le seguenti:
 
 #enfasi[== Domanda 1]
