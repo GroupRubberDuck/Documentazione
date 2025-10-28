@@ -52,47 +52,45 @@
       *#date.display()* 
     ]
   )
-
-
-  // place(top+left,float:true )[
-    
-  //   #box(
-  //   width: 100%,
-  // )[
-  //   #place(top + left,float: true)[    
-  //     #logoUnipd
-  //           #place(horizon + center, dx:150%)[
-  //           #set text(size: 15pt)
-              
-
-  //           ]
-  //   ]
-  //       #place(top + left,float: true)[    
-  //           #logoRD
-  //           #place(horizon + center, dx:170%)[
-  //           #set text(size: 15pt)
-              
-  //           *Gruppo RubberDuck*
-
-  //           email: #link("mailto:grouprubberduck@gmail.com")[
-  //             GroupRubberDuck\@gmail.com
-              
-  //           ]
-              
-  //           ]
-  //   ]   
-  //   ]
-    
-  // ]
-  // align(center)[
-  //   #set text(size:20pt)
-  //   *#title*
-    
-  //   *#date.display()*
-  // ]
-  // lorem(90)
   pagebreak()
   context counter(page).update(1)
 }
 
+#let frontPage_v2(title:"",data:"") = {
+  set rect(
+  inset: 0pt,
+  fill: rgb("#ffffff"),
+  width: 100%,
+)
+  grid(
+    columns:(1fr, 2fr),
+    rows:(auto),
+    align:horizon + center,
+    column-gutter:3pt,
+    row-gutter: (2% ,15%),
+    stroke: none,
+    rect[#logoUnipd],
+    rect()[
+      #align(horizon + center)[
+                  *Università degli studi di Padova* \
+                  Laurea: Informatica \
+                  Corso: Ingegneria del software \
+                  Anno accademico: 2025/2026 \
+                  ]
+          ],
+    rect(width:400%)[#logoRD],
+    rect()[
+            *Gruppo RubberDuck* \
+            email: #link("mailto:grouprubberduck@gmail.com")[
+              GroupRubberDuck\@gmail.com  
+            ]
+            ],
+    grid.cell(colspan: 2)[
+    #set text(size:20pt)
+      *#title* 
+    ]
+  )
+  pagebreak()
+  context counter(page).update(1)
+}
 
