@@ -8,7 +8,7 @@ replaceInFile() {
     out="<!--%BEGIN_$2%-->"
     for f in $(ls -1tr "$1"*.pdf); do
         # Estrae la data dal verbale dal nome del PDFpdf. Il PDF deve essere nominato 'Nome_Completo_YYYY_MM_DD.pdf'.
-        name="$(echo $f | cut -d '_' -f 3-5 | cut -d '.' -f 1 | tr '_' '-')"
+        name="$(echo $f | cut -d '_' -f 1)"
         # Aggiunge un elemento alla lista nel buffer
         out="$out        <li><a href="$websiteUrl$f">$name</a></li>\n"
     done
@@ -17,6 +17,8 @@ replaceInFile() {
     sed -z -i "s#<!--%BEGIN_$2%-->.*<!--%END_$2%-->#$out#g" index.html
 }
 
-replaceInFile "output/DocumentazioneInterna/Candidatura/VerbaliRiunioni/" "VERBALI_CANDIDATURE"
+replaceInFile "output/Candidatura/" "VERBALI_CANDIDATURE"
+
+replaceInFile "output/DocumentazioneInterna/Candidatura/VerbaliRiunioni/" "VERBALI_INTERNI"
 
 replaceInFile "output/DocumentazioneEsterna/" "VERBALI_ESTERNI"
