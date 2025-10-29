@@ -16,7 +16,7 @@
 #frontPage("Verbale Riunione con Ergon",giornoRiunione)
 
 
-#insertRomanNumberedPages("Registro modifiche","Verbale esterno",giornoRiunione.display())[
+#insertRomanNumberedPages("Registro modifiche","Verbale esterno",giornoRiunione)[
   
     #let color=rgb("#dddfe0")
   #registroModifiche(colore:color,
