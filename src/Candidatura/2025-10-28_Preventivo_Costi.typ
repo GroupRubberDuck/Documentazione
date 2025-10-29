@@ -110,7 +110,7 @@ Ad esempio, nella prima fase del progetto si prevede che la gran parte delle ore
 
 I ruoli saranno assegnati/ricoperti a rotazione secondo le #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[
   #text(blue)[#underline()[regole del progetto]]
-  ] (esempio, ne più ne meno di un responsabile alla volta) e fino al consumo delle ore previste per quel ruolo in modo da ottenenere un'equa e corretta divisione dei compiti 
+  ] (esempio, né più né meno di un responsabile alla volta) e fino al consumo delle ore previste per quel ruolo in modo da ottenenere un'equa e corretta divisione dei compiti 
 
 
 = Grafico degli impegni
