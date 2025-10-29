@@ -172,7 +172,7 @@ Sì, è richiesto che nell'MVP l'applicazione salvi i dati su database a lungo t
 
 #insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
 = Approvazione esterna 
-Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di confronto e condivisione.
+Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di condivisione e collaborazione.
 
 Con la seguente firma, il proponente esterno conferma e valida il presente documento.
 ]

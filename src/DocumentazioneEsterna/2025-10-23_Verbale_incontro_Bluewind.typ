@@ -181,7 +181,7 @@
 
 #insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
 = Approvazione esterna 
-Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di confronto e condivisione.
+Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di condivisione e collaborazione.
 
 Con la seguente firma, il proponente esterno conferma e valida il presente documento.
 ]
