@@ -19,6 +19,8 @@ replaceInFile() {
 
 replaceInFile "output/Candidatura/" "VERBALI_CANDIDATURE"
 
+replaceInFile "output/DiariDiBordo/" "DIARIO_DI_BORDO"
+
 replaceInFile "output/DocumentazioneInterna/Candidatura/VerbaliRiunioni/" "VERBALI_INTERNI"
 
 replaceInFile "output/DocumentazioneEsterna/" "VERBALI_ESTERNI"
