@@ -6,8 +6,7 @@
 #import template_dir + "/statusTab.typ": statusTab
 
 
-#set text(font: font_da_usare, size: 13pt)
-
+#set text(size: 13pt)
 
 #let giornoRiunione = datetime(year: 2025, month: 10, day: 29)
 
