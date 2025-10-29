@@ -1,23 +1,23 @@
 #import "/src/config.typ": *
-#import template_dir+"/frontPage.typ": frontPage, frontPage_v2
+#import template_dir+"/frontPage.typ": frontPage, frontPageSenzaData
 #import template_dir+"/setUpPageLayout.typ":*
 #import template_dir+"/registroModifiche.typ":registroModifiche
 #import template_dir+"/utilityTable.typ":utilityTable, getCode
 #import template_dir+"/statusTab.typ":statusTab
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
-#set text(font: font_da_usare , size: 13pt)
+#set text( size: 13pt)
 // #set par(justify: true)
 #set heading(numbering: "1.a)")
 
-#frontPage_v2(title:[Preventivo dei costi e\ degli impegni orari])
+#frontPageSenzaData([Preventivo dei costi e\ degli impegni orari])
 
-#insertRomanNumberedPages_v2(PageTitle:"Stato del documento",documentType:"Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Preventivo dei costi")[
 #statusTab(stato:"Bozza",versione:"0.1.0", autori:("Davide Lorenzon",),
             verificatori:("",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
 ]
 
-#insertRomanNumberedPages_v2(PageTitle:"Registro modifiche",documentType:"Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Preventivo dei costi")[
 
 #registroModifiche((
   ("0.0.1","28-10-2025","Stesura di una bozza della struttura del documento",("Davide Lorenzon"),"-"),
@@ -25,19 +25,19 @@
 ))
 ]
 
-#insertRomanNumberedPages_v2(PageTitle:"Indice",documentType:"Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Indice",documentType:"Preventivo dei costi")[
 #outline(title: "Indice")
 ]
 
 #context counter(page).update(1)
 
-#insertArabicNumberedPages_v2(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
 = Termine del progetto
 Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
 Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario
 ]
 
-#insertArabicNumberedPages_v2(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
 = Analisi dell'impegno orario
 
 Dopo aver calcolato la disponibilità oraria media di impegno tra i componenti del gruppo,
