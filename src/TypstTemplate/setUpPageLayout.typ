@@ -14,7 +14,7 @@ set page(
  #line( length: 100%)
     #box(width:100%)[
      #place(horizon + left)[#documentType]
-    #place(horizon + right)[#date]     
+    #place(horizon + right)[#date.display()]     
     ]
 
     
@@ -45,7 +45,7 @@ set page(
  #line( length: 100%)
     #box(width:100%)[
      #place(horizon + left)[#documentType]
-    #place(horizon + right)[#date]     
+    #place(horizon + right)[#date.display()]     
     ]
 
     
