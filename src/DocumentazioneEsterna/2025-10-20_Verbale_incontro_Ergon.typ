@@ -29,7 +29,7 @@
 ]
 
 
-#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione.display())[
+#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione)[
   #outline(depth: 2, title: "Indice")
 ]
 #context counter(page).update(1)
