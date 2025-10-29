@@ -88,7 +88,7 @@
   #enfasi[Risposta 3]
   Sì, sarà necessario controllare che quello che è stato modificato graficamente abbia un senso. L'editor deve impedire il salvataggio se non viene rispettata la logica. 
   #line(length: 100%)
-
+  #pagebreak()
   #enfasi[== Domanda 4 Monitoraggio piattaforme]
   Nel caso della versione web-based, potrebbe essere incluso un sistema di monitoraggio attraverso piattaforme esterne come Grafana o Prometheus?
 
@@ -161,7 +161,7 @@
   - Documentazione a livello di codice;
   - Documentazione a livello di progetto che può includere anche analisi dei requisiti e su come si vuole fare la parte implementativa;
   - Alla fine del progetto, manualistica su come utilizzare l'applicazione.
-  
+  #pagebreak()
 #line(length: 100%)
   #enfasi[== Domanda 13 dettagli documenti caso d'uso]
   Per i documenti che fornirete che descrivono il caso d'uso del dispositivo da analizzare, oltre alle interfacce del dispositivo, ci sono altre informazioni specifiche?
