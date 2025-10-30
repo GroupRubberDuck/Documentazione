@@ -13,8 +13,7 @@
 #insertRomanNumberedPages("Registro Modifiche","Verbale Interno",giornoRiunione )[
 #registroModifiche((
   ([0.1],[2025-10-30],[Prima stesura],[Filippo Guerra],[]),
-  ([],[],[],[],[]),
-  ([],[],[],[],[])
+  ([1.0],[2025-10-30],[Verifica e approvazione],[],[Davide Testolin])
 ))
 ]
 #insertRomanNumberedPages("Indice","Verbale Esterno",giornoRiunione)[
@@ -26,7 +25,7 @@
 
 #insertArabicNumberedPages("Informazioni generali","Verbale Esterno",giornoRiunione)[
   
-  = Informazioni generali
+= Informazioni generali
 - *Tipo di riunione* : Esterno
 - *data*: #giornoRiunione.display()
 - *luogo*: Riunione su Meet
@@ -111,7 +110,7 @@ A livello pratico, l'AI lavora dietro le quinte e comunica con l’app dei dipen
 
 
 #enfasi[Risposta 5]
-Farà tutto parte di analisi successive. In questo momento abbiamo pensato di concentrare l'analisi sulle funzionalità di assistenza diretta al consulente del lavoro. Contenuti che verranno generati a seguito dell'inserimento di documenti, dello split per esempio delle buste paga, verranno veicolati attraverso il canale di comunicazione convenzionale di Netcom, che sono i messaggi che vengono mandati dal server alle app. Percui in questo momento nell'app non abbiamo previsto sezioni separate e nemmeno la possibilità gestione diversa da questa. Ci sono dei filtri di ricerca che permettono comunque all'utente di trovare per esempio messaggi che contengono allegati e in questo momento pensiamo di restare molto leggeri su questa parte ma di concentrarci di più sulla componente appunto di interazione con il consulente del lavoro.
+Farà tutto parte di analisi successive. In questo momento abbiamo pensato di concentrare l'analisi sulle funzionalità di assistenza diretta al consulente del lavoro. Contenuti che verranno generati a seguito dell'inserimento di documenti, dello split per esempio delle buste paga, verranno veicolati attraverso il canale di comunicazione convenzionale di Netcom, che sono i messaggi che vengono mandati dal server alle app. Per cui in questo momento nell'app non abbiamo previsto sezioni separate e nemmeno la possibilità gestione diversa da questa. Ci sono dei filtri di ricerca che permettono comunque all'utente di trovare per esempio messaggi che contengono allegati e in questo momento pensiamo di restare molto leggeri su questa parte ma di concentrarci di più sulla componente appunto di interazione con il consulente del lavoro.
 
 
 
@@ -121,7 +120,7 @@ Farà tutto parte di analisi successive. In questo momento abbiamo pensato di co
 In caso di rete non disponibile o connessione instabile, è previsto un meccanismo di coda o buffer locale per garantire la consegna e l’elaborazione successiva?
 
 #enfasi[Risposta 6]
-Al momento non è previsto in quanto il meccanismo è un'interfaccia web lato consulente del lavoro. Se il consulente non ha la connettività non raggiunge l'interfaccia web e quindi di conseguenza non può operare sulla piattaforma. Se cade la connessione durante l'atività la comunicazione si interrompe e non
+Al momento non è previsto in quanto il meccanismo è un'interfaccia web lato consulente del lavoro. Se il consulente non ha la connettività non raggiunge l'interfaccia web e quindi di conseguenza non può operare sulla piattaforma. Se cade la connessione durante l'attività la comunicazione si interrompe e non
 esiste un meccanismo offline sulla dashboard.
 
 #line(length: 100%)
@@ -140,7 +139,7 @@ La possibilità di apprendere nuovi formati è sicuramente qualcosa di utile ed 
 
 == Privacy e Sicurezza Dati
 In termini di governance e sicurezza, come gestite la privacy dei dati sensibili (soprattutto nel Co-Pilot, dove si elaborano cedolini e documenti personali)?
-#v(1.2cm)
+
 #enfasi[Risposta 8]
 La gestione della privacy e sicurezza dei dati personali sarà affidata alle funzionalità di AWS Bedrock e Textract, con attenzione a politiche di conservazione e accesso.
 AWS Bedrock sarà il fulcro per la gestione sicura dei dati personali, mentre Textract gestisce solo l’estrazione dati senza capacità AI avanzate.
