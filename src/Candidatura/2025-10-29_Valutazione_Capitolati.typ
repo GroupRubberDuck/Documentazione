@@ -93,11 +93,11 @@ Il progetto prevede un'applicazione web based o desktop e viene consigliato l'us
 - Disponibilità e supporto dell'azienda: sono stati proposti 1-2 incontri settimanali
 - Scope ridotto e realistico: è richiesto di coprire un gruppo ristretto di requisiti della norma (ACM e AUM)
 - Libertà tecnologica: viene lasciata ampia libertà in materia, consentendo al gruppo di scegliere tecnologie con cui ha più familiarità 
-
+- Settore in crescita: cybersecurity per IoT e dispositivi wireless è un'area in forte espansione
 === Aspetti negativi
 
 === Conclusioni
-Il gruppo ritiene il capitolato una valida proposta perchè ritiene che l'automazione di processi sia un tema di attualità, inoltre l'azienda si è dimostrata disponibile e professionale.
+Il gruppo non ha riscontrato criticità né relative al capitolato né riguardanti l'azienda proponente. Il capitolato è stato valutato positivamente in quanto affronta il tema dell'automazione dei processi, argomento di rilevante attualità nel contesto tecnologico contemporaneo. Si evidenzia inoltre la disponibilità e la professionalità dimostrate dall'azienda.
 
 == Capitolato 8: Smart Order
 
@@ -128,9 +128,12 @@ Dal punto di vista tecnologico sono state fornite molte indicazioni o suggerimen
 === Aspetti positivi
 - Ha suscitato l'interesse del gruppo
 - L'azienda si è mostrata molto disponibile
+- Problema concreto: automatizzare la gestione ordini è un'esigenza reale delle aziende
+- Flessibilità tecnologica: ampia scelta tra tecnologie suggerite 
 === Aspetti negativi
 
 === Conclusioni
+Non sono emersi aspetti critici o problematiche sostanziali che abbiano precluso la fattibilità del progetto. Tuttavia, dopo un'attenta valutazione comparativa dei capitolati disponibili, il gruppo ha ritenuto che il capitolato C7 - M31 rispondesse in misura maggiore agli interessi del team.
 
 ///////////////////////////////////////////////
 
@@ -179,10 +182,14 @@ L'impresa proponente è stata molto specifica sulle tecnologie da utilizzare, in
 
 
 === Aspetti positivi
-
+- Esperienza pratica reale: lavoro su un prodotto che andrà effettivamente sul mercato, non solo un progetto accademico
+- Stack tecnologico moderno: esperienza con Ruby on Rails, Angular, AWS, AI generativa - competenze molto richieste
+- Collaborazione aziendale: networking con una software house e possibili opportunità di stage/lavoro successive
 === Aspetti negativi
-
+- Carico di lavoro elevato: progetto ambizioso con molti use case complessi
+- Complessità dell'integrazione: dover lavorare con un'architettura esistente (NEXUM Core)
 === Conclusioni
+Benché il capitolato presenti aspetti tecnologici interessanti, l'ambiguità riscontrata nella definizione degli use case ha costituito un elemento di criticità, portando il gruppo a non sceglierlo come capitolato principale.
 
 --------------------------------------------
 = Valutazione degli altri capitolati
@@ -252,11 +259,12 @@ Le tecnologie consigliate sono state le seguenti
 === Aspetti positivi
 #set list(marker: [--])
 - Impatto
-
+- Requisiti funzionali estremamente chiari e misurabili: rappresentazione semplificata pacchetto DIP, ricerca per metadati, anteprima documenti
+- React o Angular per frontend, tecnologie web standard con ampia documentazione e community
 === Aspetti negativi
 - Tecnologie: rispetto ad altri capitolati sembra che vengano usate poche tecnologie
-- Contenuti
-
+- Conservazione digitale è un settore molto specifico, poco conosciuto agli studenti e con terminologia tecnica complessa
+- Progetto più tecnico-documentale, meno accattivante visivamente rispetto ad altri
 === Conclusioni
 Il progetto non ha destato l'interesse del gruppo se non per qualche componente.
 
@@ -281,10 +289,10 @@ Il progetto non ha destato l'interesse del gruppo se non per qualche componente.
 
 === Aspetti positivi
 #set list(marker: [--])
-- Tecnologie: le tecnologie usate sono
+- Tecnologie: le tecnologie usate sono molto richieste dal mercato e con ecosistemi ricchissimi
 - Impatto: uno strumento automatico che controlli la qualità del codice risulta utile e soddisfa un bisogno attuale
-- Contenuti: vengono affrontati in modo approfondito temi di sicurezza
-
+- Comprensione profonda delle vulnerabilità comuni (SQL Injection, XSS, CSRF) spendibile in qualsiasi progetto futuro
+- Nessuna necessità di apprendere domini complessi, focus su codice e best practices
 === Aspetti negativi
 - Interesse: non ha suscitato l'interesse di tutti i membri del gruppo
 
@@ -317,12 +325,15 @@ Il capitolato intende sviluppare un'applicazione web con le seguenti tecnologie:
 === Aspetti positivi
 #set list(marker: [--])
 - Azienda: si tratta di una grande azienda da cui ci si aspetta una grande professionalità, inoltre risulta esperta nel collaborare con studenti avendo anni di esperienza nella gestione di progetti di questo tipo
-
+- Focus su Large Language Models (LLM) e capacità di prompt engineering, competenze molto richieste al momento
+- Tutti conoscono e usano editor di testo quotidianamente, dunque interfaccia intuitiva
 === Aspetti negativi
 #set list(marker: [--])
 - Contenuti: non è di comune interesse trattare tematiche come gli LLM e lavorare con questo tipo di tecnologie
+-"Sei cappelli per pensare" applicati a LLM è esperimento, successo non assicurato
+- Meno opportunità di apprendere competenze architetturali complesse rispetto ad altri capitolati
 === Conclusioni
-
+Il progetto proposto da Zucchetti presenta indubbiamente aspetti interessanti e attuali, con un focus su tecnologie all'avanguardia come i Large Language Models e competenze emergenti nel campo del prompt engineering. Tuttavia, dopo un'attenta analisi e discussione interna, il capitolato non ha raccolto il consenso unanime necessario all'interno del gruppo.
 /////////////////////////////////////////////
 
 == Capitolato 4 L'app che Proteggie e Trasforma
@@ -346,12 +357,14 @@ Il progetto deve fornire un'applicaizone mobile per iOS e Android con un'interfa
 
 === Aspetti positivi
 #set list(marker: [--])
-- Tecnologie: Flutter è un framework moderno e ampiamente usato in ambito mobile
-
+- Progetto con forte valore etico e che permette la possibilità di contribuire concretamente a un problema sociale rilevante
+- Architettura serverless su AWS, che rappresenta lo standard moderno per applicazioni scalabili
+- Esperienza full-stack completa: mobile (Flutter), backend (AWS Lambda), AI/ML, sicurezza, database NoSQL e relazionali
+- Formazione iniziale specifica sul tema della violenza di genere per comprendere a fondo il contesto e le esigenze degli utenti
 === Aspetti negativi
 #set list(marker: [--])
-- Contenuti: il tema etico del capitolato potrebbe rallentare il lavoro essendo difficile da trattare
+- Necessità di apprendere simultaneamente Flutter, AWS serverless, Amazon Bedrock/SageMaker e tutta una serie di tecnologie avanzate e diverse tra loro
 - Scope: il documento non è chiarissimo e risulta quasi dispersivo, il numero di requisiti sembra molto alto rispetto ad altri capitolati 
-
+- Necessità di comprendere a fondo le dinamiche della violenza di genere per evitare funzionalità che potrebbero mettere a rischio le utenti
 === Conclusioni
 Il progetto, oltre ad avere una complessità elevata per quanto riguarda la sensibilità del tema, non è stato approvato in modo unanime dal gruppo perchè i requisiti non sembrano essere precisi e puntuali, essendo state elencate molte macrofunzionalità.
