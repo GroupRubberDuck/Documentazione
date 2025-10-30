@@ -17,9 +17,8 @@
 #insertRomanNumberedPages("Stato del documento", "Valutazione capitolati", giornoRiunione)[
   #statusTab(
     stato: "In approvazione",
-    versione: "0.1",
-    autori: ("Aldo Bettega
-Davide Lorenzon",),
+    versione: "0.2",
+    autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu"),
     verificatori: ("Filippo Guerra
 Davide Testolin",),
     uso: "Esterno",
@@ -31,6 +30,7 @@ Professor Riccardo Cardin",),
 #insertRomanNumberedPages("Registro Modifiche", "Valutazione capitolati", giornoRiunione)[
   #registroModifiche((
     ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], []),
+    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario Necsulescu], []),
   ))
 ]
 
@@ -258,7 +258,7 @@ Le tecnologie consigliate sono state le seguenti
 
 === Aspetti positivi
 #set list(marker: [--])
-- Impatto
+- Impatto a livello concreto
 - Requisiti funzionali estremamente chiari e misurabili: rappresentazione semplificata pacchetto DIP, ricerca per metadati, anteprima documenti
 - React o Angular per frontend, tecnologie web standard con ampia documentazione e community
 === Aspetti negativi
@@ -330,7 +330,7 @@ Il capitolato intende sviluppare un'applicazione web con le seguenti tecnologie:
 === Aspetti negativi
 #set list(marker: [--])
 - Contenuti: non è di comune interesse trattare tematiche come gli LLM e lavorare con questo tipo di tecnologie
--"Sei cappelli per pensare" applicati a LLM è esperimento, successo non assicurato
+- "Sei cappelli per pensare" applicati a LLM è esperimento, successo non assicurato
 - Meno opportunità di apprendere competenze architetturali complesse rispetto ad altri capitolati
 === Conclusioni
 Il progetto proposto da Zucchetti presenta indubbiamente aspetti interessanti e attuali, con un focus su tecnologie all'avanguardia come i Large Language Models e competenze emergenti nel campo del prompt engineering. Tuttavia, dopo un'attenta analisi e discussione interna, il capitolato non ha raccolto il consenso unanime necessario all'interno del gruppo.
