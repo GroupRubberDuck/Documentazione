@@ -13,7 +13,7 @@
   show table.cell.where(y: 0): strong
 
   table(
-    columns: (1fr,) * col_count,
+    columns: (auto, auto, 1fr, auto, auto),
     table.header[Versione][Data][Descrizione][Autore][Revisore],
     ..rows.map(m => m.slice(0)).flatten(),
     
