@@ -35,7 +35,22 @@
 = Termine del progetto
 Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
 Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario
+
+= Rischi attesi e loro mitigazione
+Principali rischi individuati:
+#enum(
+  [Uso di una discreta gamma di tecnologie con cui il team non ha esperienza],
+  [L'inesperienza del team in progetti di questa portata e nel design di questo genere di architettura]
+  )
+
+Mitigazioni:
+#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante un achiamata zoom richiesta per rispondere a delle domande #footnote()[#inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[Verbale di riferimento] ]])
+
+
+
 ]
+
+
 
 #insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
 = Analisi dell'impegno orario
