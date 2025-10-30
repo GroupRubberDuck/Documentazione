@@ -50,7 +50,7 @@ Principali rischi individuati:
   )
 
 Mitigazioni:
-#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante un achiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[(Verbale di riferimento)]])
+#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante un achiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[Verbale di riferimento]])
 
 
 
