@@ -7,7 +7,7 @@
 
 
 #set text(size: 13pt)
-
+#set heading(numbering: "1.1")
 #let giornoRiunione = datetime(year: 2025, month: 10, day: 29)
 
 // Call the function
