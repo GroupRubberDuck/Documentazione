@@ -177,4 +177,9 @@
   Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di condivisione e collaborazione.
 
   Con la seguente firma, il proponente esterno conferma e valida il presente documento.
+
+
+#place(right)[#image(images_dir+"\approvazione_Bluewind.png")]
+
+
 ]

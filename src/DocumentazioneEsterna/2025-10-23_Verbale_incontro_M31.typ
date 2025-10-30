@@ -170,4 +170,8 @@ Sì, è richiesto che nell'MVP l'applicazione salvi i dati in un database a lung
 Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di condivisione e collaborazione.
 
 Con la seguente firma, il proponente esterno conferma e valida il presente documento.
+
+#place(right)[#image(images_dir+"\approvazione_M31.png")]
+
+
 ]
