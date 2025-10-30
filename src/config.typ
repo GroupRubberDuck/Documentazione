@@ -15,9 +15,9 @@
   ]
 }
 
-#let inserisciLink(url:str,testo)={
+#let inserisciLink(url:str,testo:str)={
   underline()[
     #set text(fill:blue)
-    #testo
+    #link(url:url)[#testo]
   ]
 }
