@@ -132,6 +132,7 @@ Dal punto di vista tecnologico sono state fornite molte indicazioni o suggerimen
 - Problema concreto: automatizzare la gestione ordini è un'esigenza reale delle aziende.
 - Flessibilità tecnologica: ampia scelta tra tecnologie suggerite. 
 === Aspetti negativi
+- Complessità: richiede competenze in NLP, il tema non è chiaro a tutti i membri del gruppo.
 
 === Conclusioni
 Non sono emersi aspetti critici o problematiche sostanziali che abbiano precluso la fattibilità del progetto. Tuttavia, dopo un'attenta valutazione comparativa dei capitolati disponibili, il gruppo ha ritenuto che il capitolato C7 - M31 rispondesse in misura maggiore agli interessi del team.
@@ -192,7 +193,7 @@ L'impresa proponente è stata molto specifica sulle tecnologie da utilizzare, in
 === Conclusioni
 Benché il capitolato presenti aspetti tecnologici interessanti, l'ambiguità riscontrata nella definizione dei casi d'uso ha costituito un elemento di criticità, portando il gruppo a non sceglierlo come capitolato principale.
 
---------------------------------------------
+
 = Valutazione degli altri capitolati
 
 == Capitolato 9 View4Life
@@ -331,7 +332,7 @@ Il capitolato intende sviluppare un'applicazione web con le seguenti tecnologie:
 === Aspetti negativi
 #set list(marker: [--])
 - Contenuti: non è di comune interesse trattare tematiche come gli LLM e lavorare con questo tipo di tecnologie.
-- "Sei cappelli per pensare" applicati a LLM è esperimento, successo non assicurato.
+- "Sei cappelli per pensare" applicati a LLM è un esperimento, successo non assicurato.
 - Meno opportunità di apprendere competenze architetturali complesse rispetto ad altri capitolati.
 === Conclusioni
 Il progetto proposto da Zucchetti presenta indubbiamente aspetti interessanti e attuali, con un focus su tecnologie all'avanguardia come i Large Language Models e competenze emergenti nel campo del prompt engineering. Tuttavia, dopo un'attenta analisi e discussione interna, il capitolato non ha raccolto il consenso unanime necessario all'interno del gruppo.
