@@ -7,6 +7,8 @@
 
 #let logo_unipd = images_dir + "/logo_Unipd.png"
 #let logo_rd = images_dir + "/logoRD.jpg"
+#let clessidra_icon = images_dir + "/clessidra.png"
+#let check_icon = images_dir + "/check.png"
 
 #let enfasi(doc) = {
   align()[
