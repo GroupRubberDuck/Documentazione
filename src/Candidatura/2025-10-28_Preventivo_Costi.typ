@@ -27,7 +27,7 @@
 
   #registroModifiche((
     ("0.1", "28-10-2025", "Stesura di una bozza della struttura del documento", "Davide Lorenzon", "-"),
-    ("1.0", "30-10-2025", "Revisione e approvazione", "", "Davide Testolin"),
+    ("1.0", "30-10-2025", "Revisione e approvazione", "-", "Davide Testolin"),
   ))
 ]
 

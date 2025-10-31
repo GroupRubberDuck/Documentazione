@@ -11,15 +11,15 @@
 #frontPageSenzaData([Lettera di Presentazione])
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
-#statusTab(stato:"Bozza",versione:"0.1", autori:("Ana Maria Draghici",),
-            verificatori:("",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
+#statusTab(stato:"Approvato",versione:"1.0", autori:("Ana Maria Draghici",),
+            verificatori:("Davide Testolin",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione")[
 
 #registroModifiche((
-  ("0.1","28-10-2025","Stesura bozza della lettera di presentazione",("Ana Maria Draghici"),""),
-  ("1.0","29-10-2025","Revisione e approvazione",(""),"-")
+  ("0.1","28-10-2025","Stesura bozza della lettera di presentazione",("Ana Maria Draghici"),"-"),
+  ("1.0","29-10-2025","Revisione e approvazione",("-"),"Davide Testolin")
 ))
 ]
 
