@@ -17,10 +17,10 @@ replaceInFile() {
     sed -z -i "s#<!--%BEGIN_$2%-->.*<!--%END_$2%-->#$out#g" index.html
 }
 
-replaceInFile "output/Candidatura/" "VERBALI_CANDIDATURE"
+# Candidatura
+replaceInFile "output/Candidatura/" "CANDIDATURA_VERBALI"
+replaceInFile "output/Candidatura/DocumentazioneInterna/" "CANDIDATURA_VERBALI_INTERNI"
+replaceInFile "output/Candidatura/DocumentazioneEsterna/" "CANDIDATURA_VERBALI_ESTERNI"
 
+# Diario di bordo
 replaceInFile "output/DiariDiBordo/" "DIARIO_DI_BORDO"
-
-replaceInFile "output/DocumentazioneInterna/Candidatura/VerbaliRiunioni/" "VERBALI_INTERNI"
-
-replaceInFile "output/DocumentazioneEsterna/" "VERBALI_ESTERNI"
