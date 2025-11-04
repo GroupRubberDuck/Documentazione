@@ -535,15 +535,15 @@ main > section {
 ul.docs-list {
   margin-bottom: calc(var(--spacing) * 4);
   margin-left: calc(var(--spacing) * 4);
+  list-style-type: disc;
+  color: var(--text-secondary);
+}
+ul.docs-list a {
   &:hover {
     @media (hover: hover) {
       text-decoration-line: underline;
     }
   }
-  color: var(--text-secondary);
-}
-ul.docs-list a {
-  list-style-type: disc;
 }
 @property --tw-space-x-reverse {
   syntax: "*";
