@@ -1,6 +1,6 @@
 #import "/src/config.typ": *
-#import template_dir + "/frontPage.typ": frontPage
-#import template_dir + "/setUpPageLayout.typ": insertArabicNumberedPages, insertRomanNumberedPages
+#import template_dir + "/frontPage.typ": frontPage, frontPageSenzaData
+#import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/statusTab.typ": statusTab
@@ -11,13 +11,13 @@
 #let giornoRiunione = datetime(year: 2025, month: 10, day: 29)
 
 // Call the function
-#frontPage([Valutazione capitolati], giornoRiunione)
+#frontPageSenzaData([Valutazione capitolati])
 
 
-#insertRomanNumberedPages("Stato del documento", "Valutazione capitolati", giornoRiunione)[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento", documentType:"Valutazione capitolati")[
   #statusTab(
-    stato: "In approvazione",
-    versione: "0.3",
+    stato: "Approvato",
+    versione: "1.0",
     autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu"),
     verificatori: ("Filippo Guerra
 Davide Testolin",),
@@ -27,18 +27,20 @@ Professor Riccardo Cardin",),
   )
 ]
 
-#insertRomanNumberedPages("Registro Modifiche", "Valutazione capitolati", giornoRiunione)[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
-    ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], []),
-    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario Necsulescu], []),
-    ([0.3], [2025-10-30], [Correzione errori], [Davide Testolin \ Filippo Guerra], []),
+    ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], [-]),
+    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),
+    ([1.0], [2025-10-30], [Revisione e approvazione], [-], [Davide Testolin \ Filippo Guerra]),
   ))
 ]
 
-#insertRomanNumberedPages("Indice", "Valutazione capitolati", giornoRiunione)[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Indice", documentType:"Valutazione capitolati")[
   #outline(depth: 2, title: "Indice")
 ]
+#context counter(page).update(1)
 
+#insertArabicNumberedPagesSenzaData(PageTitle:"Valutazioni", documentType:"Valutazione capitolati")[
 = Introduzione
 In questo documento viene presentata la valutazione dei capitolati del gruppo RubberDuck al fine di esporre le nostre motivazioni di scelta e le considerazioni riguardo ai progetti proposti dai proponenti.
 Sarà presentata una valutazione dettagliata di "Sistema di acquisizione dati da sensori" di M31, seguita da una panoramica dei capitolati preferiti. Saranno inoltre discusse brevemente le ragioni per cui altri capitolati non sono stati scelti.
@@ -132,6 +134,7 @@ Dal punto di vista tecnologico sono state fornite molte indicazioni o suggerimen
 - Problema concreto: automatizzare la gestione ordini è un'esigenza reale delle aziende.
 - Flessibilità tecnologica: ampia scelta tra tecnologie suggerite. 
 === Aspetti negativi
+- Complessità: richiede competenze in NLP, il tema non è chiaro a tutti i membri del gruppo.
 
 === Conclusioni
 Non sono emersi aspetti critici o problematiche sostanziali che abbiano precluso la fattibilità del progetto. Tuttavia, dopo un'attenta valutazione comparativa dei capitolati disponibili, il gruppo ha ritenuto che il capitolato C7 - M31 rispondesse in misura maggiore agli interessi del team.
@@ -192,10 +195,10 @@ L'impresa proponente è stata molto specifica sulle tecnologie da utilizzare, in
 === Conclusioni
 Benché il capitolato presenti aspetti tecnologici interessanti, l'ambiguità riscontrata nella definizione dei casi d'uso ha costituito un elemento di criticità, portando il gruppo a non sceglierlo come capitolato principale.
 
---------------------------------------------
+
 = Valutazione degli altri capitolati
 
-== Capitolato 9 View4Life
+== Capitolato 9: View4Life
 
 === Descrizione
 Nel capitolato si propone di progettare una piattaforma per la gestione degli impianti Smart nelle residenze protette.
@@ -302,7 +305,7 @@ Il progetto nel complesso risulta buono, per tecnologie usate e temi che si andr
 
 ///////////////////////////////////////////////
 
-== Capitolato 6 Second Brain
+== Capitolato 6: Second Brain
 
 === Descrizione
 L'obiettivo del capitolato è testare le potenzialità dell'intelligenza artificiale tramite un editor di testo minimale, basato sul linguaggio
@@ -331,13 +334,13 @@ Il capitolato intende sviluppare un'applicazione web con le seguenti tecnologie:
 === Aspetti negativi
 #set list(marker: [--])
 - Contenuti: non è di comune interesse trattare tematiche come gli LLM e lavorare con questo tipo di tecnologie.
-- "Sei cappelli per pensare" applicati a LLM è esperimento, successo non assicurato.
+- "Sei cappelli per pensare" applicati a LLM è un esperimento, successo non assicurato.
 - Meno opportunità di apprendere competenze architetturali complesse rispetto ad altri capitolati.
 === Conclusioni
 Il progetto proposto da Zucchetti presenta indubbiamente aspetti interessanti e attuali, con un focus su tecnologie all'avanguardia come i Large Language Models e competenze emergenti nel campo del prompt engineering. Tuttavia, dopo un'attenta analisi e discussione interna, il capitolato non ha raccolto il consenso unanime necessario all'interno del gruppo.
 /////////////////////////////////////////////
 
-== Capitolato 4 L'app che Protegge e Trasforma
+== Capitolato 4: L'app che Protegge e Trasforma
 
 === Descrizione
 Il presente capitolato ha per oggetto l'affidamento dei servizi di progettazione, sviluppo e implementazione di un'applicazione mobile innovativa denominata "L'app che Protegge e Trasforma", finalizzata alla prevenzione e supporto delle vittime di violenza di genere.
@@ -369,3 +372,5 @@ Il progetto deve fornire un'applicazioni mobile per iOS e Android con un'interfa
 - Necessità di comprendere a fondo le dinamiche della violenza di genere per evitare funzionalità che potrebbero mettere a rischio le utenti.
 === Conclusioni
 Il progetto, oltre ad avere una complessità elevata per quanto riguarda la sensibilità del tema, non è stato approvato in modo unanime dal gruppo perché i requisiti non sembrano essere precisi e puntuali, essendo state elencate molte macrofunzionalità.
+
+]

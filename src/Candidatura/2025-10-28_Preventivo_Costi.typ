@@ -27,7 +27,7 @@
 
   #registroModifiche((
     ("0.1", "28-10-2025", "Stesura di una bozza della struttura del documento", "Davide Lorenzon", "-"),
-    ("1.0", "30-10-2025", "Revisione e approvazione", "", "Davide Testolin"),
+    ("1.0", "30-10-2025", "Revisione e approvazione", "-", "Davide Testolin"),
   ))
 ]
 
@@ -50,7 +50,7 @@ Principali rischi individuati:
   )
 
 Mitigazioni:
-#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante un achiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[Verbale di riferimento]])
+#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante una chiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[Verbale di riferimento]])
 
 
 
