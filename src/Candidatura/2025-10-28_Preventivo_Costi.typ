@@ -14,8 +14,8 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Preventivo dei costi")[
   #statusTab(
-    stato: "Approvato",
-    versione: "1.0",
+    stato: "In approvazione",
+    versione: "1.1",
     autori: ("Davide Lorenzon",),
     verificatori: ("Davide Testolin",),
     uso: "Esterno",
@@ -26,8 +26,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Preventivo dei costi")[
 
   #registroModifiche((
-    ("0.1", "28-10-2025", "Stesura di una bozza della struttura del documento", "Davide Lorenzon", "-"),
-    ("1.0", "30-10-2025", "Revisione e approvazione", "-", "Davide Testolin"),
+    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin"),
+    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", ""),
   ))
 ]
 
@@ -37,20 +37,18 @@
 
 #context counter(page).update(1)
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
-= Termine del progetto
-Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
-Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario
 
-= Rischi attesi e loro mitigazione
-Principali rischi individuati:
-#enum(
-  [Uso di una discreta gamma di tecnologie con cui il team non ha esperienza],
-  [L'inesperienza del team in progetti di questa portata e nel design di questo genere di architettura]
-  )
+#insertArabicNumberedPagesSenzaData(PageTitle:"Introduzione",documentType:"Preventivo dei costi")[
+= Introduzione
+In questo ducumento vengono ufficializzati gli impegnio che il gruppo si impegna a rispettare per la consegna del capitolato C1 \ *Automated EN18031 Compliance Verification* .\
+In particolare:
+- Il preventivo dei costi
+- La data prevista per il termine ultimo del progetto
+- La suddivisione dei ruoli sia in termini di ore individuali complessive previste e la loro ripartizione tra i ruoli
+- La suddivione dei ruoli sul totale complessivo delle ore
+- Le regole iniziali di rotazione
 
-Mitigazioni:
-#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi ai punti 1 e 2 dei rischi, cosa di cui si è parlato anche durante una chiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[Verbale di riferimento]])
+
 
 
 
@@ -58,24 +56,42 @@ Mitigazioni:
 
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
-= Analisi dell'impegno orario
-
-  Dopo aver calcolato la disponibilità oraria media di impegno tra i componenti del gruppo,
-  abbiamo definito le ore effettive che possiamo dedicare al progetto. Successivamente, abbiamo elaborato il preventivo, stabilendo la suddivisione delle ore. \
-
+#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
+= Termine del progetto
+Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
+Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario.
 
 
+== Rischi attesi e loro mitigazione
+Principali rischi individuati:
+#enum(
+  [L'inesperienza del team in progetti di questa portata e tipo],
+  [Necessaria la comprensione di una norma (EN18031)],
+  [Le tecnologie da utilizzare sono state percepite come stringenti da alcuni membri del gruppo]
+  )
+
+Mitigazioni:
+#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi al punti 1 rischi, cosa di cui si è parlato anche durante una chiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[Verbale di riferimento]])
+
+
+
+]
+
+  #let arrayPerPlot = ()
   #let ruoli = (
-    (nome: "Responsabile", costo: 30, oreIndividuali: 12),
+    (nome: "Responsabile", costo: 30, oreIndividuali: 11),
     (nome: "Amministratore", costo: 20, oreIndividuali: 9),
-    (nome: "Analista", costo: 25, oreIndividuali: 20),
-    (nome: "Progettista", costo: 25, oreIndividuali: 18),
-    (nome: "Programmatore", costo: 15, oreIndividuali: 16),
-    (nome: "Verificatore", costo: 15, oreIndividuali: 17),
+    (nome: "Analista", costo: 25, oreIndividuali: 19),
+    (nome: "Progettista", costo: 25, oreIndividuali: 17),
+    (nome: "Programmatore", costo: 15, oreIndividuali: 17),
+    (nome: "Verificatore", costo: 15, oreIndividuali: 18),
   )
   #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
-  #let arrayPerPlot = ()
+
+#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
+
+
+
   #let analisiImpegni = ()
 
   #for ruolo in ruoli {
@@ -104,6 +120,13 @@ Mitigazioni:
   ))
 
 
+= Analisi dell'impegno orario
+
+  Dopo aver calcolato la disponibilità oraria media di impegno tra i componenti del gruppo,
+  abbiamo definito le ore effettive che possiamo dedicare al progetto. Successivamente, abbiamo elaborato il preventivo, stabilendo la suddivisione delle ore. \
+
+
+
 
   #align(center)[
 
@@ -124,24 +147,82 @@ Mitigazioni:
         columns: (1fr,) * 5,
         analisiImpegni,
       )
-    ]
+    ]<tabella-ore>
 
   ]
+    L'esito di questa analisi ha evidenziato i seguenti punti:
+  - Impegno orario individuale complessivo previsto di * #acc.at("oreIndividualiTotali") ore *, come evidenziato nel tabella della ripartizione oraria (@tabella-ore)
+  - L'impegno orario calcolato è di *#acc.oreTotali ore*
+  - Gli impegno orari, ovvero le quantità di ore produttive, che ciascun membro del gruppo dovrà dedicare a uno specifico ruolo sono esposti nella colonna "ore individuali" della @tabella-ore presente qui sopra.
+  - Il costo complessivo è stato calcolato in accordo ai costi orari stabiliti nel regolamento del progetto.
+
+
+
   \ \ \ \
   *Vengono rispettati i vincoli del regolamento*:
   - Costo totale minimo rispettato($#acc.at("costoTot")>10285,71$)
   - Ore produttive a persona comprese nell'intervallo ammesso ($#acc.at("oreIndividualiTotali")in [80,95]$)
-  == Partizione oraria dei ruoli
-  Data la natura del progetto abbiamo ritenuto opportuno dare importanza ai ruoli di analista e progettista essendo l'architettura (con riferimento anche ai requisiti non funzionali#footnote()[Scalabilità, test automatizzati e code coverage, monitoraggio, versionamento e DevOps] del sistema) una delle parti più importanti del capitolato.
 
-  Le ore dedicate ai vari ruoli non saranno distribuite uniformemente nel tempo, ma rifletteranno le necessità del progetto e sono strettamente legate anche allo stato di avanzamento del progetto.
-  Ad esempio, nella prima fase del progetto si prevede che la gran parte delle ore sarà dedicata all'analisi.
+]
+
+#insertArabicNumberedPagesSenzaData(PageTitle:"Partizione dei ruoli",documentType:"Preventivo dei costi")[
+
+  = Partizione oraria dei ruoli
+== Descrizione dei ruoli
+#list([*Responsabile*: #list(
+  [Coordina l’elaborazione di piani e scadenze],
+  [Approva il rilascio di prodotti parziali o finali],
+  [Coordina le attività del gruppo])],
+  
+  [*Amministratore*: 
+  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working],
+
+  [*Analista*:
+  - Svolge le attività di analisi dei requisiti],
+
+  [*Progettista*:
+  - Svolge le attività di progettazione (design)],
+
+  [*Programmatore*:
+  - Svolge le attività di codifica],
+  [*Verificatore*:
+  - Svolge le attività di verifica]
+  
+  
+  )
+
+
 
   == Assegnazione dei ruoli
 
-  I ruoli saranno assegnati e ricoperti a rotazione secondo le #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[
-    #text(blue)[#underline()[regole del progetto]]
-  ] e fino al consumo delle ore previste per quel ruolo, in modo da ottenere un'equa e corretta divisione dei compiti.
+  I ruoli saranno ricoperti a rotazione cercando di garantire che il carico di lavoro venga distribuito equamente tra i membri del gruppo.
+  
+  Il ruolo di Responsabile è soggetto a vincoli speciali aggiuntivi rispetto agli altri ruoli:
+  - Non vi può essere più di un responsabile contemporaneamente
+  - Vi deve sempre essere almeno un responsabile
+
+  Regole generali per la rotazione dei ruoli:
+  - Nessuno può eccedere il monte ore previsto per individuo (stabilito nella @tabella-ore)
+  - Nessuno può ricoprire più ruoli contemporaneamente 
+  - Tutti devono avere un ruolo assegnato in ogni momento 
+  - Vi deve essere rotazione tra i ruoli, nessuno può ricoprire lo stesso ruolo all'interno di sprint troppo vicini temporalmente.
+  - Tutti devono ricoprire il numero di ore previsto per ogni ruolo
+  - All'inizio di ciascuno sprint si individuano le attività da svolgere e in accordo con esse si stimano le ore produttive di ciascun ruolo necessarie a realizzare, esse saranno divise secondo i criteri precedenti e rendicontate in modo da gestire meglio la pianificazione futura
+
+== Motivazioni della ripartizione
+In questa sezione viene reso pubblico il ragionamento dietro la ripartizione dei ruoli.
+
+- *Analisi della norma *\
+Si è data molta importanza al ruolo di analista.
+  Tra le attività che saranno da svolgere è molto importante la corretta comprensione e analisi dello standard tecnico *EN 18031* per poter modellare correttamnete i requisiti del prodotto software.
+- *Progettista*
+  Si è data una discreta importanza al ruolo di progettista.
+  All'interno del progetto un design solido e orientato al riutilizzo di determinati aspetti del progetto (in particolare per soddisfare i requisiti di estensibilità)
+
+- *Verificatore*
+  Si è data molta importanza al ruolo di verificatore,ciò è conseguenza della natura del progetto molto orientata all'interazione con l'utente.
+
+
 
 
   = Grafico degli impegni
@@ -170,6 +251,9 @@ Mitigazioni:
     })
   ]
 
+]
+
+#insertArabicNumberedPagesSenzaData(PageTitle:"Preventivo finale",documentType:"Preventivo dei costi")[
 
 
   = Preventivo finale

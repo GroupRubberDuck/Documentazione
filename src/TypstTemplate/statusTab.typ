@@ -2,7 +2,8 @@
   versione: "",
   stato: "",
   autori: ("", ""),
-  verificatori: ("", ""),
+  revisori:("-",),
+  verificatori: ("-",),
   uso: "",
   destinatari: ("", ""),
   colore: rgb("#dddfe0"),
@@ -24,7 +25,13 @@
         [\ ]
       }
     ],
-
+    [Revisori],
+    [
+      #for a in revisori {
+        a
+        [\ ]
+      }
+    ],
     [Verificatori],
     [
       #for a in verificatori {
