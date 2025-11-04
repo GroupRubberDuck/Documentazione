@@ -10,7 +10,7 @@ replaceInFile() {
         # Estrae la data dal verbale dal nome del PDFpdf. Il PDF deve essere nominato 'Nome_Completo_YYYY_MM_DD.pdf'.
         name="$(echo $f | rev | cut -d '/' -f 1 | rev)"
         # Aggiunge un elemento alla lista nel buffer
-        out="$out        <li><a href="$websiteUrl$f">${name::-4}</a></li>\n"
+        out="$out        <li><a href="$websiteUrl$f" target="_blank">${name::-4}</a></li>\n"
     done
     out="$out<!--%END_$2%-->"
     # Rimpiazza i due delimitatori e il loro contenuto con il buffer creato

@@ -55,6 +55,10 @@ main > section {
 }
 
 ul.docs-list {
-  @apply list-disc ml-4 hover:underline mb-4;
+  @apply ml-4 hover:underline mb-4;
   color: var(--text-secondary);
+}
+
+ul.docs-list a {
+  @apply list-disc;
 }
