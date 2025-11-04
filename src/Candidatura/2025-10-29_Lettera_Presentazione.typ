@@ -11,15 +11,26 @@
 #frontPageSenzaData([Lettera di Presentazione])
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
+<<<<<<< HEAD
+#statusTab(stato:"In revisione",versione:"0.2", autori:("Ana Maria Draghici",),
+            verificatori:("",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
+=======
 #statusTab(stato:"Approvato",versione:"1.0", autori:("Ana Maria Draghici",),
             verificatori:("Davide Testolin",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
+>>>>>>> a942f298a25f8fc995dd2ff558b15825d47e1029
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione")[
 
 #registroModifiche((
+<<<<<<< HEAD
+  ("0.1","28-10-2025","Stesura bozza della lettera di presentazione",("Ana Maria Draghici"),""),
+  ("0.2","04-11-2025","Ristesura lettera di presentazione in seguito di una discussione interna del gruppo ",("Ana Maria Draghici"),"-"),
+  ("1.0","04-11-2025","Revisione e approvazione",(""),"-")
+=======
   ("0.1","28-10-2025","Stesura bozza della lettera di presentazione",("Ana Maria Draghici"),"-"),
   ("1.0","29-10-2025","Revisione e approvazione",("-"),"Davide Testolin")
+>>>>>>> a942f298a25f8fc995dd2ff558b15825d47e1029
 ))
 ]
 
@@ -29,17 +40,17 @@
 #enfasi[Lettera di presentazione del gruppo RubberDuck]
 Egregio Prof. Vardanega,\  
 Egregio Prof. Cardin,  \
-Alla cortese attenzione dei referenti di *M31 S.r.l.*,
+Alla cortese attenzione dei referenti di *Bluewind S.r.l*,
 
 
-Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi e impegnarsi nella realizzazione del *capitolato C7, proposto dall’azienda **M31 S.r.l.* e denominato:
+Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi e impegnarsi nella realizzazione del *capitolato C1, proposto dall’azienda **Bluewind S.r.l.* e denominato:
 
 
 #align(center)[
-*"Sistema di acquisizione dati da sensori"*
+*"EN18031 Compliance Verification"*
 ]
 
-Dopo un'attenta discussione tra i membri del gruppo e un incontro formativo con l'azienda, che si è dimostrata disponibile e aperta nel chiarire i nostri dubbi, abbiamo ritenuto che il capitolato rappresenti un'importante opportunità di crescita, ricca di sfide stimolanti e di valore formativo.
+L’azienda si è dimostrata disponibile e professionale, favorendo un dialogo chiaro e costruttivo. Il capitolato è stato scelto poiché rappresenta un’opportunità concreta di crescita tecnica e formativa, offrendo la possibilità di sviluppare soluzioni reali nel campo della verifica di conformità dei dispositivi radio. Il progetto risulta coerente con le competenze attuali e con gli interessi del gruppo, garantendo un livello di sfida stimolante ma adeguato alle sue capacità.
 
 #enfasi[Piano di lavoro]
 Il gruppo *RubberDuck* dichiara una disponibilità media al progetto e comunica il proprio impegno a completarne la realizzazione entro il *30 Aprile 2026*, con un costo stimato pari a *11910 €* .
@@ -55,22 +66,20 @@ dove sono presenti:
  – la presente Lettera di presentazione; \ 
   – il Preventivo dei costi e la ripartizione delle ore;  \
   – lo studio dei singoli capitolati e la motivazione della scelta;  \
-  – i verbali esterni, inclusi l’ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31.pdf")[incontro formativo con M31 S.r.l.];  \
+  – i verbali esterni, inclusi l’ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[incontro formativo con Bluewind S.r.l. ];  \
   – i verbali interni di avanzamento e coordinamento del gruppo.
 
 
 
-Cordiali saluti,  
+Cordiali saluti,\  
 
-Il gruppo RubberDuck  \
-Università degli Studi di Padova  
-
-
+Il gruppo RubberDuck  
+\
 Componenti del gruppo: \ 
 - Aldo Bettega [2101087]
-- Davide Testolin, [2079242]
+- Davide Testolin [2079242]
 - Filippo Guerra [2077681]
-- Ana Maria Draghici, [2101044]
+- Ana Maria Draghici [2101044]
 - Felician Mario Necsulescu [2111935]
 - Davide Lorenzon [2101075]
   ]

@@ -30,7 +30,7 @@ Professor Riccardo Cardin",),
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
     ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], [-]),
-    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),
+    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),([0.3], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al T.D.4.1 ], [Ana Maria Draghici], [-]),
     ([1.0], [2025-10-30], [Revisione e approvazione], [-], [Davide Testolin \ Filippo Guerra]),
   ))
 ]
@@ -83,13 +83,18 @@ Il gruppo ritiene che il capitolato proposto da M31 rappresenti la scelta più c
 == Capitolato 1: Automated EN18031 Compliance Verification
 
 === Descrizione
-Il capitolato intende automatizzare la verifica di conformità allo standard EN18031, applicabile ai dispositivi radio sul mercato europeo.
+Il capitolato prevede lo sviluppo di un’applicazione per automatizzare la verifica di conformità allo standard EN18031, norma armonizzata alla Direttiva RED, applicabile ai dispositivi radio commercializzati nel mercato europeo. 
 
 === Dominio applicativo
-Il progetto si colloca nell'ambito della certificazione dei dispositivi radio, dove la verifica manuale risulta dispendiosa e noiosa. Si vuole automatizzare il processo tramite un tree decisionale che fornisce un chiaro report di conformità.
+Il progetto si colloca nell’ambito della certificazione dei dispositivi radio, un contesto in cui la verifica manuale dei requisiti risulta lenta e soggetta a errori. L’applicazione proposta intende automatizzare il processo attraverso l’utilizzo di Decision Tree, che guidano l’utente nella compilazione delle verifiche e producono un report di conformità chiaro e tracciabile.
 
 === Dominio tecnologico
-Il progetto prevede un'applicazione web based o desktop e viene consigliato l'uso di Python con metodologia Agile. Viene lasciato ampio spazio sulla scelta delle tecnologie, purché vengano rispettati i requisiti obbligatori.
+Il progetto si colloca nell’ambito dello sviluppo software per la verifica automatizzata della conformità alla norma EN18031. L’applicazione dovrà integrare funzionalità di importazione, esecuzione e visualizzazione dei Decision Tree, oltre alla gestione delle dipendenze gerarchiche tra requisiti.
+#set list(marker: [--])
+- L’azienda ha suggerito pertanto l’utilizzo di *Python 3.x* per la parte di *backend*, in quanto linguaggio versatile e adatto alla gestione della logica applicativa e dell’elaborazione dei dati.
+- Per quanto riguarda il *frontend*, l’azienda lascia libertà di scelta sulle tecnologie da adottare, potendo utilizzare Python stesso o soluzioni web più orientate all’interfaccia grafica, a discrezione del gruppo di sviluppo.
+
+Con supporto e consiglio, l’azienda si rende disponibile per fornire indicazioni e confronto tecnico durante le fasi di implementazione e scelta delle tecnologie più opportune.
 
 === Aspetti positivi
 #set list(marker: [--])
