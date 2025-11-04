@@ -14,7 +14,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Preventivo dei costi")[
   #statusTab(
-    stato: "In approvazione",
+    stato: "In review",
     versione: "1.1",
     autori: ("Davide Lorenzon",),
     verificatori: ("Davide Testolin",),

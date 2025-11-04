@@ -53,7 +53,7 @@ Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi e 
 L’azienda si è dimostrata disponibile e professionale, favorendo un dialogo chiaro e costruttivo. Il capitolato è stato scelto poiché rappresenta un’opportunità concreta di crescita tecnica e formativa, offrendo la possibilità di sviluppare soluzioni reali nel campo della verifica di conformità dei dispositivi radio. Il progetto risulta coerente con le competenze attuali e con gli interessi del gruppo, garantendo un livello di sfida stimolante ma adeguato alle sue capacità.
 
 #enfasi[Piano di lavoro]
-Il gruppo *RubberDuck* dichiara una disponibilità media al progetto e comunica il proprio impegno a completarne la realizzazione entro il *30 Aprile 2026*, con un costo stimato pari a *11910 €* .
+Il gruppo *RubberDuck* dichiara una disponibilità media al progetto e comunica il proprio impegno a completarne la realizzazione entro il *30 Aprile 2026*, con un costo stimato pari a *11610 €* .
 
 Per maggiori informazioni sul gruppo e sulla documentazione prodotta, è possibile consultare il nostro repository pubblico :  #align(center)[
 

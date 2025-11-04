@@ -15,7 +15,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", "Preventivo dei costi",giornoRiunione)[
   #statusTab(
-    stato: "Bozza",
+    stato: "In review",
     versione: "1.0",
     autori: ("Davide Lorenzon",),
     verificatori: ("",),
