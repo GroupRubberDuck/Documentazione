@@ -6,7 +6,7 @@ websiteUrl="https://grouprubberduck.github.io/Documentazione/"
 # Usage: replaceInFile "<pdf_path>" "<delimiter_name>""
 replaceInFile() {
     out="<!--%BEGIN_$2%-->"
-    for f in $(ls -1tr "$1"*.pdf); do
+    for f in $(ls -1 "$1"*.pdf); do
         # Estrae la data dal verbale dal nome del PDFpdf. Il PDF deve essere nominato 'Nome_Completo_YYYY_MM_DD.pdf'.
         name="$(echo $f | rev | cut -d '/' -f 1 | rev)"
         # Aggiunge un elemento alla lista nel buffer
