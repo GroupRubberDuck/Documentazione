@@ -33,6 +33,7 @@ Professor Riccardo Cardin",),
     ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),
     ([1.0], [2025-10-30], [Revisione e approvazione], [-], [Davide Testolin \ Filippo Guerra]),
     ([1.1], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al TD.4.1 ], [Ana Maria Draghici], [-]),
+    ([1.2], [2025-11-05], [Riscrittura parti riguardanti capitolato C1 : motivazioni della scelta e conclusioni in merito al TD.4.1 ], [Felician Mario Necsulescu], [-]),
     ("2.0","-","Revisione e approvazione ",("-"),"-"),
   ))
 ]
@@ -45,9 +46,39 @@ Professor Riccardo Cardin",),
 #insertArabicNumberedPagesSenzaData(PageTitle:"Valutazioni", documentType:"Valutazione capitolati")[
 = Introduzione
 In questo documento viene presentata la valutazione dei capitolati del gruppo RubberDuck al fine di esporre le nostre motivazioni di scelta e le considerazioni riguardo ai progetti proposti dai proponenti.
-Sarà presentata una valutazione dettagliata di "Sistema di acquisizione dati da sensori" di M31, seguita da una panoramica dei capitolati preferiti. Saranno inoltre discusse brevemente le ragioni per cui altri capitolati non sono stati scelti.
+Sarà presentata una valutazione dettagliata di "Automated EN18031 Compliance Verification" di Bluewind, seguita da una panoramica dei capitolati preferiti. Saranno inoltre discusse brevemente le ragioni per cui altri capitolati non sono stati scelti.
 
 = Valutazione del capitolato selezionato
+
+== Capitolato 1: Automated EN18031 Compliance Verification
+
+=== Descrizione
+Il capitolato prevede lo sviluppo di un’applicazione per automatizzare la verifica di conformità allo standard EN18031, norma armonizzata alla Direttiva RED, applicabile ai dispositivi radio commercializzati nel mercato europeo. 
+
+=== Dominio applicativo
+Il progetto si colloca nell’ambito della certificazione dei dispositivi radio, un contesto in cui la verifica manuale dei requisiti risulta lenta e soggetta a errori. L’applicazione proposta intende automatizzare il processo attraverso l’utilizzo di Decision Tree, che guidano l’utente nella compilazione delle verifiche e producono un report di conformità chiaro e tracciabile.
+
+=== Dominio tecnologico
+Il progetto si colloca nell’ambito dello sviluppo software per la verifica automatizzata della conformità alla norma EN18031. L’applicazione dovrà integrare funzionalità di importazione, esecuzione e visualizzazione dei Decision Tree, oltre alla gestione delle dipendenze gerarchiche tra requisiti.
+#set list(marker: [--])
+- L’azienda ha suggerito pertanto l’utilizzo di *Python 3.x* per la parte di *backend*, in quanto linguaggio versatile e adatto alla gestione della logica applicativa e dell’elaborazione dei dati.
+- Per quanto riguarda il *frontend*, l’azienda lascia libertà di scelta sulle tecnologie da adottare, potendo utilizzare Python stesso o soluzioni web più orientate all’interfaccia grafica, a discrezione del gruppo di sviluppo.
+
+Con supporto e consiglio, l’azienda si rende disponibile per fornire indicazioni e confronto tecnico durante le fasi di implementazione e scelta delle tecnologie più opportune.
+
+=== Motivazione della scelta
+La scelta del capitolato è stata ampiamente condivisa dal gruppo per diversi motivi:
+#set list(marker: [--])
+- *Disponibilità e supporto dell'azienda* : Bluewind si distingue per un approccio altamente collaborativo, offrendo 1-2 incontri settimanali con il team aziendale. Questa frequenza di interazione rappresenta un valore aggiunto significativo rispetto ad altri capitolati, garantendo un feedback immediato durante tutto il ciclo di sviluppo e riducendo drasticamente i rischi tipici dei progetti software.
+- *Fattibilità del progetto* : il capitolato dimostra una notevole maturità progettuale concentrandosi strategicamente su un gruppo ristretto di requisiti della norma EN 18031-1, piuttosto che sull'intero standard che comprende centinaia di requisiti complessi. Questa delimitazione razionale dello scope presenta vantaggi concreti per il successo del progetto.
+- *Settore in crescita* : la norma EN 18031 è diventata obbligatoria il 1° agosto 2025, solo pochi mesi fa, e l'intero ecosistema dei produttori di dispositivi wireless sta ancora adattandosi a questa nuova realtà normativa. Non si tratta dunque di lavorare su problemi consolidati, ma su una normativa appena entrata in vigore in un settore in rapidissima evoluzione.
+- *Libertà tecnologica* : viene lasciata ampia libertà in materia, consentendo al gruppo di scegliere tecnologie con cui ha più familiarità.
+- *Applicazione immediata* : L'azienda fornisce inoltre un caso studio concreto basato su una macchina del caffè IoT con connettività Wi-Fi e protocollo MQTT, permettendo di testare immediatamente la soluzione su uno scenario realistico e tangibile. 
+
+=== Conclusioni
+Il gruppo non ha riscontrato criticità né relative al capitolato né riguardanti l'azienda proponente. Il capitolato è stato valutato molto positivamente in quanto affronta il tema dell'automazione dei processi, argomento di grande rilevanza nel contesto tecnologico contemporaneo. Si evidenziano inoltre la disponibilità e la professionalità dimostrate dall'azienda, che hanno contribuito in modo significativo alla decisione finale. Per tali ragioni, dopo anche un'attenta valutazione della competizione sugli altri capitolati di interesse,  il gruppo ha scelto questo capitolato come prima opzione.
+
+= Valutazione dei capitolati preferiti
 
 == Capitolato 7: Sistema di acquisizione dati da sensori
 
@@ -68,47 +99,16 @@ Viene richiesto di sviluppare un simulatore di gateway-BLE in grado di inviare d
 - *Redis* per migliorare le prestazioni del sistema.
 - *Angular* per l'interfaccia web.
 
-=== Motivazione della scelta
-La scelta del capitolato è stata ampiamente condivisa dal gruppo per diversi motivi:
-#set list(marker: [--])
-- *Difficoltà*: riteniamo che il progetto presenti un giusto livello di difficoltà, motivo per cui il gruppo ritiene che affrontarlo possa rappresentare una sfida stimolante e occasione di crescita personale e professionale.
-- *Tecnologie*: il progetto offre l'occasione di affacciarsi ad un gran numero di tecnologie moderne e applicabili in progetti futuri.
-- *Contenuto del capitolato*: è di comune interesse la possibilità di approfondire tematiche avanzate legate ai sistemi distribuiti e alle architetture cloud.
-- *Disponibilità dell'azienda*: M31 ha lasciato un'ottima impressione in quanto disponibilità e flessibilità, in particolare durante l'incontro zoom si è dimostrata molto organizzata e puntuale nella risposta delle nostre domande.
-- *Impatto*: pensiamo che il progetto possa avere un impatto concreto nella vita delle persone, in particolare se applicato nel settore biomedico di monitoraggio dei parametri vitali di un paziente.
-
-=== Conclusioni
-Il gruppo ritiene che il capitolato proposto da M31 rappresenti la scelta più coerente con le proprie ambizioni. La condivisione interna nella decisione e l'interesse mostrato dall'azienda verso il progetto ci fanno sperare in una collaborazione proficua e stimolante.
-
-= Valutazione dei capitolati preferiti
-
-== Capitolato 1: Automated EN18031 Compliance Verification
-
-=== Descrizione
-Il capitolato prevede lo sviluppo di un’applicazione per automatizzare la verifica di conformità allo standard EN18031, norma armonizzata alla Direttiva RED, applicabile ai dispositivi radio commercializzati nel mercato europeo. 
-
-=== Dominio applicativo
-Il progetto si colloca nell’ambito della certificazione dei dispositivi radio, un contesto in cui la verifica manuale dei requisiti risulta lenta e soggetta a errori. L’applicazione proposta intende automatizzare il processo attraverso l’utilizzo di Decision Tree, che guidano l’utente nella compilazione delle verifiche e producono un report di conformità chiaro e tracciabile.
-
-=== Dominio tecnologico
-Il progetto si colloca nell’ambito dello sviluppo software per la verifica automatizzata della conformità alla norma EN18031. L’applicazione dovrà integrare funzionalità di importazione, esecuzione e visualizzazione dei Decision Tree, oltre alla gestione delle dipendenze gerarchiche tra requisiti.
-#set list(marker: [--])
-- L’azienda ha suggerito pertanto l’utilizzo di *Python 3.x* per la parte di *backend*, in quanto linguaggio versatile e adatto alla gestione della logica applicativa e dell’elaborazione dei dati.
-- Per quanto riguarda il *frontend*, l’azienda lascia libertà di scelta sulle tecnologie da adottare, potendo utilizzare Python stesso o soluzioni web più orientate all’interfaccia grafica, a discrezione del gruppo di sviluppo.
-
-Con supporto e consiglio, l’azienda si rende disponibile per fornire indicazioni e confronto tecnico durante le fasi di implementazione e scelta delle tecnologie più opportune.
-
 === Aspetti positivi
-#set list(marker: [--])
-- Disponibilità e supporto dell'azienda: sono stati proposti 1-2 incontri settimanali.
-- Scopo ridotto e realistico: è richiesto di coprire un gruppo ristretto di requisiti della norma (ACM e AUM).
-- Libertà tecnologica: viene lasciata ampia libertà in materia, consentendo al gruppo di scegliere tecnologie con cui ha più familiarità.
-- Settore in crescita: cybersecurity per IoT e dispositivi wireless è un'area in forte espansione.
+- Il progetto offre l'occasione di affacciarsi ad un gran numero di tecnologie moderne e applicabili in progetti futuri.
+- È di comune interesse la possibilità di approfondire tematiche avanzate legate ai sistemi distribuiti e alle architetture cloud.
+- M31 ha lasciato un'ottima impressione in quanto disponibilità e flessibilità, in particolare durante l'incontro zoom si è dimostrata molto organizzata e puntuale nella risposta delle nostre domande.
+- Pensiamo che il progetto possa avere un impatto concreto nella vita delle persone.
 === Aspetti negativi
-- Molto limitante, con spazio di sperimentazione.
+- Competizione e grande interesse da parte di altri gruppi.
 
 === Conclusioni
-Il gruppo non ha riscontrato criticità né relative al capitolato né riguardanti l'azienda proponente. Il capitolato è stato valutato positivamente in quanto affronta il tema dell'automazione dei processi, argomento rilevante nel contesto tecnologico contemporaneo. Si evidenzia inoltre la disponibilità e la professionalità dimostrate dall'azienda.
+Il progetto ha riscosso il consenso unanime del team. Tuttavia, a seguito dell'analisi della competitività per questo capitolato e della valutazione della disponibilità di posti per il capitolato C1 - Bluewind, il quale è risultato altrettanto soddisfacente per il gruppo, si è optato per quest'ultimo.
 
 == Capitolato 8: Smart Order
 
