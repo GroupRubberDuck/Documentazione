@@ -17,10 +17,10 @@
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento", documentType:"Valutazione capitolati")[
   #statusTab(
     stato: "In revisione",
-    versione: "1.1",
+    versione: "2.0",
     autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu, Draghici Ana Maria"),
-    verificatori: ("Filippo Guerra
-Davide Testolin",),
+    revisori: ("Filippo Guerra", "Davide Testolin", "Aldo Bettega",),
+    verificatori: ("Filippo Guerra", "Davide Testolin",),
     uso: "Esterno",
     destinatari: ("Professor Tullio Vardanega
 Professor Riccardo Cardin",),
@@ -29,12 +29,8 @@ Professor Riccardo Cardin",),
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
-    ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon],[], [-]),
-    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [],[-]),
-    ([1.0], [2025-10-30], [Revisione e approvazione], [-],[], [Davide Testolin \ Filippo Guerra]),
-    ([1.1], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al TD.4.1 ], [Ana Maria Draghici], [],[-]),
-    ([1.2], [2025-11-05], [Riscrittura parti riguardanti capitolato C1 : motivazioni della scelta e conclusioni in merito al TD.4.1 ], [Felician Mario Necsulescu],[], [-]),
-    ("2.0","-","Revisione e approvazione ",("-"),"-",""),
+    ([1.0], [2025-10-29], [Prima stesura], [Aldo Bettega, \ Davide Lorenzon, \ Felician Mario Necsulescu],[Davide Testolin], [Filippo Guerra]),
+    ([2.0], [2025-11-04], [Riscrittura per nuova candidatura], [Ana Maria Draghici, Felician Mario Necsulescu], [Aldo Bettega],[Davide Testolin]),
   ))
 ]
 
@@ -247,7 +243,7 @@ Vengono posti dei vincoli tecnologici:
 - Disponibilità: è stato riscontrato da diversi gruppi che l'azienda ha avuto difficoltà nel presentarsi agli incontri, cosa che non fa ben pensare in quanto a disponibilità.
 
 === Conclusioni
-Il capitolato per la sua complessità risulta essere una sfida stimolante che può generare dei risvolti positivi in ambito sociale, inoltre la forma del documento e la puntualità delle tecnologie utilizzate fa trasparire una grande professionalità da parte dell'azienda. Tuttavia rimane il dubbio che l'azienda, rispetto ad altre, sia meno disponibile nel seguire gli studenti.
+Il capitolato per la sua complessità risulta essere una sfida stimolante che può generare dei risvolti positivi in ambito sociale, inoltre la forma del documento e la puntualità delle tecnologie utilizzate fanno trasparire una grande professionalità da parte dell'azienda. Tuttavia rimane il dubbio che l'azienda, rispetto ad altre, sia meno disponibile nel seguire gli studenti.
 
 ///////////////////////////////////////////////
 
