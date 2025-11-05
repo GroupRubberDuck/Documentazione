@@ -23,3 +23,25 @@
     destinatari: ("Professor Tullio Vardranega", "Professor Riccardo Cardin"),
   )
 ]
+
+#insertRomanNumberedPagesSenzaData("Registro Modifiche","Verbale interno" )[
+
+
+#let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
+#let modifiche=(
+
+  ([1.0],[""],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
+  
+).rev()
+
+#utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
+
+
+
+
+// #registroModifiche((
+
+//   ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-]),
+  
+// ))
+]
