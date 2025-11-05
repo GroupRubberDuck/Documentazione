@@ -10,21 +10,21 @@
 // #set par(justify: true)
 #set heading(numbering: "1.a)")
 
-#frontPageSenzaData([Preventivo dei costi e\ degli impegni orari])
+#frontPageSenzaData([Dichiarazione degli impegni])
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Dichiarazione degli impegni")[
   #statusTab(
     stato: "In review",
-    versione: "1.1",
+    versione: "2.0",
     autori: ("Davide Lorenzon",),
     revisori: ("Aldo Bettega",),
     verificatori: ("Davide Testolin",),
     uso: "Esterno",
-    destinatari: ("Professor Tullio Vardranega", "Professor Riccardo Cardin"),
+    destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
   )
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Dichiarazione degli impegni")[
 
   #registroModifiche((
     ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "-"),
@@ -32,14 +32,14 @@
   ))
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: "Dichiarazione degli impegni")[
   #outline(title: "Indice")
 ]
 
 #context counter(page).update(1)
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Introduzione",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Introduzione",documentType:"Dichiarazione degli impegni")[
 = Introduzione
 In questo ducumento vengono ufficializzati gli impegni che il gruppo si impone di rispettare per la consegna del capitolato C1 \ *Automated EN18031 Compliance Verification* .\
 In particolare:
@@ -57,7 +57,7 @@ In particolare:
 
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Dichiarazione degli impegni")[
 = Termine del progetto
 Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
 Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario.
@@ -89,7 +89,7 @@ Mitigazioni:
   )
   #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Dichiarazione degli impegni")[
 
 
 
@@ -166,7 +166,7 @@ Mitigazioni:
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Partizione dei ruoli",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Partizione dei ruoli",documentType:"Dichiarazione degli impegni")[
 
   = Partizione oraria dei ruoli
 == Descrizione dei ruoli
@@ -269,7 +269,7 @@ Si è data molta importanza al ruolo di analista.
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Preventivo finale",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Preventivo finale",documentType:"Dichiarazione degli impegni")[
 
 
   = Preventivo finale
