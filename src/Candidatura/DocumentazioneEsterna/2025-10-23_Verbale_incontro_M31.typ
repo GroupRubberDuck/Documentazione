@@ -12,9 +12,7 @@
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
-  ([0.1],[2025-10-28],[Prima stesura],[Davide Testolin],[]),
-  ([0.2],[2025-10-28],[Aggiunta sezione firma per la validazione del verbale],[Ana Maria Draghici],[]),
-  ([1.0],[2025-10-29],[Verifica e approvazione],[],[Filippo Guerra])
+  ([1.0],[2025-10-28],[Prima stesura],[Davide Testolin],[Filippo Guerra], [Cristian Pirlog]),
 ))
 ]
 #insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione)[

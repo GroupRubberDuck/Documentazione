@@ -15,7 +15,7 @@
   versione:"2.0",
   autori:("Ana Maria Draghici",), 
   revisori: ("Aldo Bettega",),
-  verificatori:("Filippo Guerra",),
+  validatori:("Filippo Guerra",),
   uso:"Esterno",
   destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]

@@ -18,7 +18,8 @@
     stato: "In review",
     versione: "1.0",
     autori: ("Davide Lorenzon",),
-    verificatori: ("",),
+    revisori: ("-",),
+    validatori: ("-",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )

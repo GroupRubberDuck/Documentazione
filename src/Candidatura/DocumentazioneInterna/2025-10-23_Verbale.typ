@@ -13,10 +13,7 @@
 
 #insertRomanNumberedPages("Registro Modifiche", "Verbale Interno", giornoRiunione)[
   #registroModifiche((
-    ([0.1], [2025-10-23], [Prima stesura], [Ana Maria Draghici], []),
-    ([0.2], [2025-10-28], [Aggiunto registro modifiche, codice per TODO e decisioni], [Ana Maria Draghici], []),
-    ([0.3], [2025-10-28], [Sistemato stato del documento], [Davide Testolin], []),
-    ([1.0], [2025-10-28], [Verifica e approvazione], [], [Davide Testolin]),
+    ([0.1], [2025-10-23], [Prima stesura], [Ana Maria Draghici], [Davide Testolin], [Davide Testolin]),
   ))
 ]
 
