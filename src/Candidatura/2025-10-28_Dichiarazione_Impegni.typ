@@ -27,8 +27,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Preventivo dei costi")[
 
   #registroModifiche((
-    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin"),
-    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega"),
+    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "-"),
+    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "-"),
   ))
 ]
 

@@ -26,8 +26,7 @@
   rows=rows.rev()
 let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 
-utilityTable(rows,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
+utilityTable(rows,header:header,columns:(auto,auto,auto,auto,auto,auto))
 
 pagebreak()
 }
