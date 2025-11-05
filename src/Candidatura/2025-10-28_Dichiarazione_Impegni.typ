@@ -10,42 +10,43 @@
 // #set par(justify: true)
 #set heading(numbering: "1.a)")
 
-#frontPageSenzaData([Preventivo dei costi e\ degli impegni orari])
+#frontPageSenzaData([Dichiarazione degli impegni])
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Dichiarazione degli impegni")[
   #statusTab(
     stato: "In review",
-    versione: "1.1",
+    versione: "2.0",
     autori: ("Davide Lorenzon",),
-    verificatori: ("Davide Testolin",),
+    revisori: ("Aldo Bettega", "Davide Testolin"),
+    verificatori: ("Ana Maria Draghici",),
     uso: "Esterno",
-    destinatari: ("Professor Tullio Vardranega", "Professor Riccardo Cardin"),
+    destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
   )
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Dichiarazione degli impegni")[
 
   #registroModifiche((
-    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin"),
-    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", ""),
+    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "Ana Maria Draghici"),
+    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "Ana Maria Draghici"),
   ))
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: "Preventivo dei costi")[
+#insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: "Dichiarazione degli impegni")[
   #outline(title: "Indice")
 ]
 
 #context counter(page).update(1)
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Introduzione",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Introduzione",documentType:"Dichiarazione degli impegni")[
 = Introduzione
-In questo ducumento vengono ufficializzati gli impegnio che il gruppo si impegna a rispettare per la consegna del capitolato C1 \ *Automated EN18031 Compliance Verification* .\
+In questo ducumento vengono ufficializzati gli impegni che il gruppo si impone di rispettare per la consegna del capitolato C1 \ *Automated EN18031 Compliance Verification* .\
 In particolare:
 - Il preventivo dei costi
 - La data prevista per il termine ultimo del progetto
 - La suddivisione dei ruoli sia in termini di ore individuali complessive previste e la loro ripartizione tra i ruoli
-- La suddivione dei ruoli sul totale complessivo delle ore
+- La suddivisione dei ruoli sul totale complessivo delle ore
 - Le regole iniziali di rotazione
 
 
@@ -56,7 +57,7 @@ In particolare:
 
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Termine del progetto",documentType:"Dichiarazione degli impegni")[
 = Termine del progetto
 Con il presente documento, il gruppo RubberDuck (gruppo n.14) rende nota la data prevista per il termine del progetto, il *30 Aprile 2026*.
 Tale data è stata stabilità in accordo alle disponibilità dei membri del gruppo e basandosi sui risultati dell'analisi dell'impegno orario.
@@ -71,7 +72,7 @@ Principali rischi individuati:
   )
 
 Mitigazioni:
-#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi al punti 1 rischi, cosa di cui si è parlato anche durante una chiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[Verbale di riferimento]])
+#enum([L'azienda si è dimostrata disposta nell'assistere il gruppo in occasione di problemi relativi al punto 1, cosa di cui si è parlato anche durante una chiamata zoom richiesta per rispondere a delle domande #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[Verbale di riferimento]])
 
 
 
@@ -88,7 +89,7 @@ Mitigazioni:
   )
   #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Analisi dell'impegno orario",documentType:"Dichiarazione degli impegni")[
 
 
 
@@ -165,30 +166,45 @@ Mitigazioni:
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Partizione dei ruoli",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Partizione dei ruoli",documentType:"Dichiarazione degli impegni")[
 
   = Partizione oraria dei ruoli
 == Descrizione dei ruoli
-#list([*Responsabile*: #list(
-  [Coordina l’elaborazione di piani e scadenze],
-  [Approva il rilascio di prodotti parziali o finali],
-  [Coordina le attività del gruppo])],
+#list(
+  [*Responsabile*:
+  - Coordina l’elaborazione di piani e scadenze
+  - Approva il rilascio di prodotti parziali o finali
+  - Comunica con il committente
+  - Garantisce che le risorse disponibili siano usate con efficienza
+  - Presenza richiesta durante tutto l'arco del progetto
+  ],
   
   [*Amministratore*: 
-  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working],
+  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working
+  - Prensenza richiesta durante tutto l'arco del progetto
+  ],
 
   [*Analista*:
-  - Svolge le attività di analisi dei requisiti],
+  - Svolge le attività di analisi dei requisiti
+  - Figura essenziale nella fase iniziale del progetto
+  ],
 
   [*Progettista*:
-  - Svolge le attività di progettazione (design)],
+  - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
+  - Svolge le attività di design e modellazione
+  - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+  ],
 
   [*Programmatore*:
-  - Svolge le attività di codifica],
+  - Svolge le attività di codifica
+  - Implementa le scelte prese dal progettista
+  - Figura essenziale nella fase di implementazione
+  ],
   [*Verificatore*:
-  - Svolge le attività di verifica]
-  
-  
+  - Garantisce la qualità degli elementi sviluppati
+  - Svolge le attività di testing e validazione
+  - Figura essenziale nella fase di implementazione e successiva
+  ]
   )
 
 
@@ -253,7 +269,7 @@ Si è data molta importanza al ruolo di analista.
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Preventivo finale",documentType:"Preventivo dei costi")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Preventivo finale",documentType:"Dichiarazione degli impegni")[
 
 
   = Preventivo finale
