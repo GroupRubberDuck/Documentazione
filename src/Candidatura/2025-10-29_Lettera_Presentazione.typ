@@ -15,7 +15,7 @@
   versione:"2.0",
   autori:("Ana Maria Draghici",), 
   revisori: ("Aldo Bettega",),
-  verificatori:("-",),
+  verificatori:("Filippo Guerra",),
   uso:"Esterno",
   destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]
@@ -72,7 +72,7 @@ Il gruppo RubberDuck
 \
 Componenti del gruppo: \ 
 - Aldo Bettega [2101087]
-- Davide Testolin [2079242]
+- Davide Testolin [2079242]Sampled Values
 - Filippo Guerra [2077681]
 - Ana Maria Draghici [2101044]
 - Felician Mario Necsulescu [2111935]
