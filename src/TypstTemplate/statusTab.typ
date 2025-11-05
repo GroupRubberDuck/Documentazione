@@ -32,7 +32,7 @@
         [\ ]
       }
     ],
-    [Verificatori],
+    [Validatori],
     [
       #for a in verificatori {
         a
