@@ -29,12 +29,12 @@ Professor Riccardo Cardin",),
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
-    ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], [-]),
-    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),
-    ([1.0], [2025-10-30], [Revisione e approvazione], [-], [Davide Testolin \ Filippo Guerra]),
-    ([1.1], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al TD.4.1 ], [Ana Maria Draghici], [-]),
-    ([1.2], [2025-11-05], [Riscrittura parti riguardanti capitolato C1 : motivazioni della scelta e conclusioni in merito al TD.4.1 ], [Felician Mario Necsulescu], [-]),
-    ("2.0","-","Revisione e approvazione ",("-"),"-"),
+    ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon],[], [-]),
+    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [],[-]),
+    ([1.0], [2025-10-30], [Revisione e approvazione], [-],[], [Davide Testolin \ Filippo Guerra]),
+    ([1.1], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al TD.4.1 ], [Ana Maria Draghici], [],[-]),
+    ([1.2], [2025-11-05], [Riscrittura parti riguardanti capitolato C1 : motivazioni della scelta e conclusioni in merito al TD.4.1 ], [Felician Mario Necsulescu],[], [-]),
+    ("2.0","-","Revisione e approvazione ",("-"),"-",""),
   ))
 ]
 
