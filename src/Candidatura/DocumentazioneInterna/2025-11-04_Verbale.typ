@@ -26,23 +26,18 @@
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 
 
-#let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
-#let modifiche=(
+  #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
+  #let modifiche=(
 
-  ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
-  
-).rev()
+    ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
+      
+      ).rev()
 
-#utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
-
+      #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
 
 
-// #registroModifiche((
 
-//   ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-]),
-  
-// ))
+
 ]
 
 #insertRomanNumberedPages("Indice","Verbale interno",giornoRiunione )[

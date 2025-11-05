@@ -1,25 +1,37 @@
 #import "/src/config.typ":*
+#import template_dir + "/utilityTable.typ":  utilityTable
 
+
+// #let registroModifiche(colore:rgb("#dddfe0"), rows) = {
+//   rows=rows.rev()
+//   set table(
+//   fill: (_, y) => if calc.odd(y) { colore } )
+
+//   let col_count = 5
+//   let row_count =rows.len()/col_count
+
+//   show table.cell.where(y: 0): strong
+
+//   table(
+//     columns: (auto, auto, 1fr, auto, auto),
+//     table.header[Versione][Data][Descrizione][Autore][Revisore],
+//     ..rows.map(m => m.slice(0)).flatten(),
+    
+//   )
+// pagebreak()
+// }
 
 
 #let registroModifiche(colore:rgb("#dddfe0"), rows) = {
   rows=rows.rev()
-  set table(
-  fill: (_, y) => if calc.odd(y) { colore } )
+let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 
-  let col_count = 5
-  let row_count =rows.len()/col_count
+utilityTable(rows,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
 
-  show table.cell.where(y: 0): strong
 
-  table(
-    columns: (auto, auto, 1fr, auto, auto),
-    table.header[Versione][Data][Descrizione][Autore][Revisore],
-    ..rows.map(m => m.slice(0)).flatten(),
-    
-  )
 pagebreak()
 }
+
 
 // esempio d'uso
 // #let colore=rgb("#646869")
