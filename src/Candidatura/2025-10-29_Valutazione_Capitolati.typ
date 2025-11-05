@@ -16,7 +16,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento", documentType:"Valutazione capitolati")[
   #statusTab(
-    stato: "In revisione",
+    stato: "Validato",
     versione: "2.0",
     autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu, Draghici Ana Maria"),
     revisori: ("Filippo Guerra", "Davide Testolin", "Aldo Bettega",),

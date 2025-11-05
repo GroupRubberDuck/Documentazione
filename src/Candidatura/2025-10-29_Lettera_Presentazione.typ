@@ -11,7 +11,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
 #statusTab(
-  stato:"In revisione",
+  stato:"Validato",
   versione:"2.0",
   autori:("Ana Maria Draghici",), 
   revisori: ("Aldo Bettega",),

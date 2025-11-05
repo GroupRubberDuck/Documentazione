@@ -14,7 +14,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Dichiarazione degli impegni")[
   #statusTab(
-    stato: "In review",
+    stato: "Validato",
     versione: "2.0",
     autori: ("Davide Lorenzon",),
     revisori: ("Aldo Bettega", "Davide Testolin"),
