@@ -28,7 +28,7 @@
 
   #registroModifiche((
     ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "Ana Maria Draghici"),
-    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "Ana Maria Draghici"),
+    ("2.0", "05-11-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "Ana Maria Draghici"),
   ))
 ]
 
