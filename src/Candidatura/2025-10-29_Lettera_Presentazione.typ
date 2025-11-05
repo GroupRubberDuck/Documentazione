@@ -5,24 +5,26 @@
 #import template_dir+"/utilityTable.typ":utilityTable, getCode
 #import template_dir+"/statusTab.typ":statusTab
 #set text( size: 13pt)
-// #set par(justify: true)
 #set heading(numbering: "1.a)")
 
 #frontPageSenzaData([Lettera di Presentazione])
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
-#statusTab(stato:"In revisione",versione:"1.1", autori:("Ana Maria Draghici",),
-            verificatori:("",),uso:"Esterno",destinatari:("Professor Tullio Vardranega","Professor Riccardo Cardin"))
+#statusTab(
+  stato:"In revisione",
+  versione:"2.0",
+  autori:("Ana Maria Draghici",), 
+  revisori: ("Aldo Bettega",),
+  verificatori:("-",),
+  uso:"Esterno",
+  destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione")[
 
 #registroModifiche((
-  ("0.1","28-10-2025","Stesura bozza della lettera di presentazione",("Ana Maria Draghici"),"-"),
-  ("1.0","28-10-2025","Revisione e approvazione ",("Davide Testolin"),"-"),
-  ("1.1","04-11-2025","Ristesura lettera di presentazione in seguito a una discussione interna del gruppo TD.4.1",("Ana Maria Draghici"),"-"),
-  ("2.0","-","Revisione e approvazione ",("-"),"-"),
-
+  ("1.0","28-10-2025","Stesura lettera di presentazione", "Ana Maria Draghici", "Davide Testolin", "-"),
+  ("2.0","04-11-2025","Ristesura per nuova candidatura", "Ana Maria Draghici", "Aldo Bettega", "-")
 ))
 ]
 
@@ -30,8 +32,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle:"Lettera di presentazione",documentType:"Lettera di presentazione")[
 
 #enfasi[Lettera di presentazione del gruppo RubberDuck]
-Egregio Prof. Vardanega,\  
-Egregio Prof. Cardin,  \
+Egregi Professori Vardanega e Cardin,  \
 Alla cortese attenzione dei referenti di *Bluewind S.r.l*,
 
 
@@ -57,9 +58,9 @@ Per maggiori informazioni sul gruppo e sulla documentazione prodotta, è possibi
  
 dove sono presenti:
 
- – la presente Lettera di presentazione; \ 
-  – il Preventivo dei costi e la ripartizione delle ore;  \
-  – lo studio dei singoli capitolati e la motivazione della scelta;  \
+ – questa Lettera di presentazione; \ 
+  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-10-28_Dichiarazione_Impegni.pdf")[la Dichiarazione degli impegni];  \
+  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-10-29_Valutazione_Capitolati.pdf")[la Valutazione dei capitolati];  \
   – i verbali esterni, inclusi l’ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[incontro formativo con Bluewind S.r.l. ];  \
   – i verbali interni di avanzamento e coordinamento del gruppo.
 
