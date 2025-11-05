@@ -17,8 +17,8 @@
     stato: "In review",
     versione: "2.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("Aldo Bettega",),
-    verificatori: ("Davide Testolin",),
+    revisori: ("Aldo Bettega", "Davide Testolin"),
+    verificatori: ("Ana Maria Draghici",),
     uso: "Esterno",
     destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
   )
@@ -27,8 +27,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Dichiarazione degli impegni")[
 
   #registroModifiche((
-    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "-"),
-    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "-"),
+    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "Ana Maria Draghici"),
+    ("2.0", "30-10-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "Ana Maria Draghici"),
   ))
 ]
 
