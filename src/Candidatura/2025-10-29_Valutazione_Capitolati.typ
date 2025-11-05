@@ -16,9 +16,9 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento", documentType:"Valutazione capitolati")[
   #statusTab(
-    stato: "Approvato",
-    versione: "1.0",
-    autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu"),
+    stato: "In revisione",
+    versione: "1.1",
+    autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu, Draghici Ana Maria"),
     verificatori: ("Filippo Guerra
 Davide Testolin",),
     uso: "Esterno",
@@ -30,8 +30,10 @@ Professor Riccardo Cardin",),
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
     ([0.1], [2025-10-29], [Prima stesura], [Aldo Bettega \ Davide Lorenzon], [-]),
-    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),([0.3], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al T.D.4.1 ], [Ana Maria Draghici], [-]),
+    ([0.2], [2025-10-30], [Aggiunti alcuni aspetti positivi e negativi per ogni capitolato e qualche conclusione mancante], [Felician Mario    Necsulescu], [-]),
     ([1.0], [2025-10-30], [Revisione e approvazione], [-], [Davide Testolin \ Filippo Guerra]),
+    ([1.1], [2025-11-04], [Riscrittura parti riguardanti capitolato C1 : descrizione, dominio applicativo, dominio tecnologico in merito al TD.4.1 ], [Ana Maria Draghici], [-]),
+    ("2.0","-","Revisione e approvazione ",("-"),"-"),
   ))
 ]
 
