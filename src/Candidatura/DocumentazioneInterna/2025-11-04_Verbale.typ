@@ -26,7 +26,7 @@
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 
 
-#let header=("Versione","Data","Descrizione","Autore","Revisore","Verificatore")
+#let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
   ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
@@ -116,13 +116,13 @@ che da esse scaturiscono]
 
     === Ruoli:
   - *Autore*, scrive il documento.
-  - *Revisore*, prende la versione proposta dallo sviluppatore e ne migliora forma e contenuti.
-  - *Verificatore*, valuta il lavoro svolto sul documento ed eventualmente approva lo spostamento in done. \ Se non viene approvato, deve fornire una lista di correzioni da apportare.
+  - *Revisore*, prende la versione proposta dall'autore e ne migliora forma e contenuti.
+  - *Validatore*, valuta il lavoro svolto sul documento ed eventualmente approva lo spostamento in done. \ Se non viene approvato, deve fornire una lista di correzioni da apportare.
 
   N.B.) Non vi possono essere sovrapposizione nei ruoli, relativamente a un singolo documento.
   === Rotazione dei ruoli <Rotazione>
     *Rotazione su documenti semplici*:
-  - Ogni membro del team segue una sequenza ciclica: \ Verificatore → Autore → Revisore → Verificatore
+  - Ogni membro del team segue una sequenza ciclica: \ Validatore → Autore → Revisore → Validatore
   - Criterio di rotazione per documenti semplici (bassa complessità e ridotto numero di pagine): #list(
     [Ogni ruolo ha cardinalità 1],
     [Vengono definite delle code per ciascun ruolo],
@@ -130,13 +130,13 @@ che da esse scaturiscono]
     [La persona che costituisce la testa della coda viene assegnatata al ruolo associato alla coda],
     [Una volta completato il ciclo di vita del documento, i membri del gruppo vengono inseriti alla fine della coda del ruolo successivo]
   )
-  Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \<Autore, Revisore, Verificatore\> sia diversa rispetto a quella dei 2 documenti precedenti.
+  Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \<Autore, Revisore, Validatore\> sia diversa rispetto a quella dei 2 documenti precedenti.
  *Rotazione su documenti complessi*:
   Per documenti più complessi vi è maggiore flessibilità, al fine di distribuire meglio il carico di lavoro:
 
 - Gli autori possono essere assegnati come revisori/verificatori su sezioni non da loro prodotte
 
-- Il revisore/verificatore non può operare su contenuti di propria creazione
+- Il revisore o Validatore non può operare su contenuti di propria creazione
 
 - Ogni sezione deve essere verificata da almeno un soggetto che non ha partecipato alla sua stesura
 
