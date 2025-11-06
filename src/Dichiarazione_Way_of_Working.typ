@@ -146,7 +146,11 @@ All'interno dell'ambito documentale si è optato per il seguente modello per des
   - Da *in progress* a *In review*: l'autore consegna la bozza in stato di revisione, deve portare la issue in revisione, togliersi dagli assegnatari e assegnarla al revisore (deciso a priori) che verrà notificato.
   - Da *In review* a *in validazione*: il revisore ha correto la bozza e propone una revisione al validatore. Deve portare la issue in validazione, togliersi dagli assegnatari e assegnarla al validatore.
   - Da *in validazione* a *in review*: il validatore rifiuta la revisione proposta allegando una lista di errori motivati che il revisore dovrà correggere. Dovrà riassegnare la issue al revisore.
-  - Da *in validazione* a *done*: il validatore accetta la revisione proposta e chiude la issue.
+  - Da *in validazione* a *done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`]
 
 
   == Separazione tra area di rilascio e area di lavoro <separazione>
