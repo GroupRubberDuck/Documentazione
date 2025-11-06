@@ -142,7 +142,7 @@ All'interno dell'ambito documentale si è optato per il seguente modello per des
   - *Done*, il documento è stato approvato
 
 === Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da Backlog a In Progress: un autore si assegna una issue e comincia a scrivere la bozza del documento
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e comincia a scrivere la bozza del documento
   - Da *in progress* a *In review*: l'autore consegna la bozza in stato di revisione, deve portare la issue in revisione, togliersi dagli assegnatari e assegnarla al revisore (deciso a priori) che verrà notificato.
   - Da *In review* a *in validazione*: il revisore ha correto la bozza e propone una revisione al validatore. Deve portare la issue in validazione, togliersi dagli assegnatari e assegnarla al validatore.
   - Da *in validazione* a *in review*: il validatore rifiuta la revisione proposta allegando una lista di errori motivati che il revisore dovrà correggere. Dovrà riassegnare la issue al revisore.
