@@ -23,7 +23,7 @@ jobs:
       #    ATTENZIONE: Verifica che il tuo campo si chiami 'Stato'.
       #    Potrebbe essere 'Status' (in inglese) o altro.
       - name: Check if 'Stato' field was changed
-        if: github.event.changes.field_value.field_name != 'Stato'
+        if: github.event.changes.field_value.field_name != 'Status'
         run: |
           echo "Campo modificato: ${{ github.event.changes.field_value.field_name }}. Non è 'Stato'. Esco."
           exit 1 # Esce (non è un errore, salta solo l'esecuzione)
@@ -37,7 +37,7 @@ jobs:
         run: |
           # Estrae il NUOVO valore della colonna (es. "In review")
           # ATTENZIONE: Anche qui, cambia 'Stato' se il tuo campo ha un nome diverso
-          COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Stato") | .name')
+          COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Status") | .name')
           
           # Estrae l'URL e il numero dell'issue
           ISSUE_URL=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.content_url')
