@@ -1,0 +1,12 @@
+name: Debug Project Event
+
+on:
+  project_v2_item:
+    types: [edited] # Si attiva a ogni modifica
+
+jobs:
+  dump_payload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump event payload to log
+        run: echo "${{ toJSON(github.event) }}"
