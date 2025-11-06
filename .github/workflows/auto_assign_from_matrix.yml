@@ -1,16 +1,15 @@
 name: Auto-Assign from Matrix (Progetti V2)
 
-# 1. TRIGGER: Ascolta i "project_v2_item" (Nuovi Progetti)
-# Si attiva quando un campo (es. la colonna "Stato") viene modificato
+# 1. TRIGGER: Questo è quello CORRETTO per i nuovi progetti
 on:
-  project_card:
-    types: [edited]
+  project_v2_item:
+    types: [edited] # Si attiva quando un campo (es. Status) viene modificato
 
 jobs:
   assign_from_matrix:
     runs-on: ubuntu-latest
     
-    # 2. PERMESSI: Fondamentale. Senza questo, lo script fallisce.
+    # 2. PERMESSI: Fondamentale
     permissions:
       contents: read       # Per leggere il file matrix.json
       issues: write       # Per assegnare l'issue
@@ -19,13 +18,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 3. FILTRO: Controlla se il campo modificato è quello delle colonne
-      #    ATTENZIONE: Verifica che il tuo campo si chiami 'Stato'.
-      #    Potrebbe essere 'Status' (in inglese) o altro.
-      - name: Check if 'Stato' field was changed
+      # 3. FILTRO: Controlla che il campo modificato sia 'Status'
+      # Come abbiamo visto dalla tua immagine, il campo si chiama 'Status'
+      - name: Check if 'Status' field was changed
         if: github.event.changes.field_value.field_name != 'Status'
         run: |
-          echo "Campo modificato: ${{ github.event.changes.field_value.field_name }}. Non è 'Stato'. Esco."
+          echo "Campo modificato: ${{ github.event.changes.field_value.field_name }}. Non è 'Status'. Esco."
           exit 1 # Esce (non è un errore, salta solo l'esecuzione)
 
       # 4. RACCOLTA DATI
@@ -36,7 +34,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Estrae il NUOVO valore della colonna (es. "In review")
-          # ATTENZIONE: Anche qui, cambia 'Stato' se il tuo campo ha un nome diverso
+          # Usa 'Status' come abbiamo visto
           COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Status") | .name')
           
           # Estrae l'URL e il numero dell'issue
@@ -65,7 +63,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # --- Identifica il File ---
-          # ATTENZIONE: Controlla che le tue etichette inizino con 'file_'
+          # Cerca etichette che iniziano con 'file_' (con underscore)
           FILE_KEY=""
           for LABEL in $LABELS; do
             if [[ $LABEL == file_* ]]; then
@@ -84,6 +82,7 @@ jobs:
 
           # --- Mappa Colonna a Ruolo ---
           # ATTENZIONE: Controlla che i nomi delle colonne siano ESATTI
+          # (dalla tua foto 'image_cd3d25.png' i nomi sono 'In progress', 'In review', 'In validazione')
           ROLE_KEY=""
           if [[ "$COLUMN_NAME" == "In review" ]]; then
             ROLE_KEY="revisore"
@@ -99,7 +98,7 @@ jobs:
           echo "Ruolo richiesto: $ROLE_KEY"
 
           # --- Trova Utente e Assegna ---
-          # ATTENZIONE: Controlla che il percorso '.github/matrix.json' sia giusto
+          # Controlla che il percorso '.github/matrix.json' sia giusto
           ASSIGNEE=$(jq -r --arg filekey "$FILE_KEY" --arg rolekey "$ROLE_KEY" '.[$filekey][$rolekey]' .github/matrix.json)
           
           if [ -z "$ASSIGNEE" ] || [ "$ASSIGNEE" == "null" ]; then
