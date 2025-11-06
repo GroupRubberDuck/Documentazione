@@ -1,30 +1,23 @@
 name: Auto-Assign from Matrix (Progetti V2)
 
-# 1. TRIGGER: Questo è quello CORRETTO per i nuovi progetti
 on:
-  project_card:
+  project_v2_item:
     types: [edited] # Si attiva quando un campo (es. Status) viene modificato
 
 jobs:
   assign_from_matrix:
     runs-on: ubuntu-latest
     
-    # 2. PERMESSI: Fondamentale
     permissions:
-      contents: read       # Per leggere il file matrix.json
-      issues: write       # Per assegnare l'issue
+      contents: read
+      issues: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 3. FILTRO: Controlla che il campo modificato sia 'Status'
-      - name: Check if 'Status' field was changed
-        # (Abbiamo confermato che il tuo campo si chiama 'Status')
-        if: github.event.changes.field_value.field_name != 'Status'
-        run: |
-          echo "Campo modificato: ${{ github.event.changes.field_value.field_name }}. Non è 'Status'. Esco."
-          exit 1 # Esce (non è un errore, salta solo l'esecuzione)
+      # 3. FILTRO RIMOSSO PER TEST
+      # Il filtro 'if' è stato rimosso per vedere l'evento.
 
       # 4. RACCOLTA DATI
       - name: Get Issue Number and New Status
@@ -33,7 +26,13 @@ jobs:
           EVENT_PAYLOAD: ${{ toJSON(github.event) }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # STAMPIAMO L'EVENTO PER IL DEBUG
+          echo "--- INIZIO EVENTO COMPLETO ---"
+          echo "$EVENT_PAYLOAD" | jq .
+          echo "--- FINE EVENTO COMPLETO ---"
+          
           # Estrae il NUOVO valore della colonna (es. "In review")
+          # IPOTIZZIAMO ANCORA CHE SI CHIAMI 'Status'
           COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Status") | .name')
           
           # Estrae l'URL e il numero dell'issue
@@ -62,8 +61,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # --- Identifica il File ---
-          # Cerca etichette che iniziano con 'file_' (con underscore)
-          # Assicurati che la tua etichetta sia 'file_A'
           FILE_KEY=""
           for LABEL in $LABELS; do
             if [[ $LABEL == file_* ]]; then
@@ -81,7 +78,6 @@ jobs:
           echo "Spostata nella colonna: $COLUMN_NAME"
 
           # --- Mappa Colonna a Ruolo ---
-          # (Controlla che i nomi colonne "In review", "In validazione", "In progress" siano esatti)
           ROLE_KEY=""
           if [[ "$COLUMN_NAME" == "In review" ]]; then
             ROLE_KEY="revisore"
@@ -97,7 +93,6 @@ jobs:
           echo "Ruolo richiesto: $ROLE_KEY"
 
           # --- Trova Utente e Assegna ---
-          # (Assicurati che .github/matrix.json esista)
           ASSIGNEE=$(jq -r --arg filekey "$FILE_KEY" --arg rolekey "$ROLE_KEY" '.[$filekey][$rolekey]' .github/matrix.json)
           
           if [ -z "$ASSIGNEE" ] || [ "$ASSIGNEE" == "null" ]; then
