@@ -2,7 +2,7 @@ name: Auto-Assign from Matrix (Progetti V2)
 
 # 1. TRIGGER: Questo è quello CORRETTO per i nuovi progetti
 on:
-  project_v2_item:
+  project_card:
     types: [edited] # Si attiva quando un campo (es. Status) viene modificato
 
 jobs:
