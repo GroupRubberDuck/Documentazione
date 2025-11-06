@@ -59,8 +59,8 @@ Per maggiori informazioni sul gruppo e sulla documentazione prodotta, è possibi
 dove sono presenti:
 
  – questa Lettera di presentazione; \ 
-  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-10-28_Dichiarazione_Impegni.pdf")[la Dichiarazione degli impegni];  \
-  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-10-29_Valutazione_Capitolati.pdf")[la Valutazione dei capitolati];  \
+  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-11-05_Dichiarazione_Impegni.pdf")[la Dichiarazione degli impegni];  \
+  – #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/2025-11-04_Valutazione_Capitolati.pdf")[la Valutazione dei capitolati];  \
   – i verbali esterni, inclusi l’ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind.pdf")[incontro formativo con Bluewind S.r.l. ];  \
   – i verbali interni di avanzamento e coordinamento del gruppo.
 
