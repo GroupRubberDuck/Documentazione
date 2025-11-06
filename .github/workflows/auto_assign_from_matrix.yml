@@ -2,74 +2,98 @@ name: Auto-Assign from Matrix (Progetti V2)
 
 on:
   project_v2_item:
-    types: [edited] # Si attiva quando un campo (es. Status) viene modificato
+    types: [edited]
 
 jobs:
   assign_from_matrix:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       issues: write
+      pull-requests: write   # opzionale se vuoi gestire PRs
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 3. FILTRO RIMOSSO PER TEST
-      # Il filtro 'if' è stato rimosso per vedere l'evento.
-
-      # 4. RACCOLTA DATI
       - name: Get Issue Number and New Status
         id: get_info
         env:
-          EVENT_PAYLOAD: ${{ toJSON(github.event) }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # STAMPIAMO L'EVENTO PER IL DEBUG
-          echo "--- INIZIO EVENTO COMPLETO ---"
-          echo "$EVENT_PAYLOAD" | jq .
-          echo "--- FINE EVENTO COMPLETO ---"
-          
-          # Estrae il NUOVO valore della colonna (es. "In review")
-          # IPOTIZZIAMO ANCORA CHE SI CHIAMI 'Status'
-          COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Status") | .name')
-          
-          # Estrae l'URL e il numero dell'issue
-          ISSUE_URL=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.content_url')
-          ISSUE_NUMBER=$(echo $ISSUE_URL | grep -o '[^/]*$')
+          set -euo pipefail
 
-          if [ -z "$ISSUE_NUMBER" ] || [ "$ISSUE_NUMBER" == "null" ]; then
-            echo "La card non è un'issue. Esco."
+          # dump evento per debug (utile nei run)
+          echo "--- INIZIO EVENTO COMPLETO ---"
+          echo "${{ toJSON(github.event) }}" | jq .
+          echo "--- FINE EVENTO COMPLETO ---"
+
+          EVENT_PAYLOAD='${{ toJSON(github.event) }}'
+
+          # Trova il campo 'Status' nell'array field_values (match esatto sul nome del campo)
+          COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[]? | select(.field_name == "Status") | .name // empty' )
+          echo "COLUMN_NAME=$COLUMN_NAME"
+
+          # Prendi content_url (può essere null per note di progetto)
+          CONTENT_URL=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.content_url // empty')
+          if [ -z "$CONTENT_URL" ]; then
+            echo "La card non ha content_url (probabilmente è una note del project). Esco."
+            echo "issue_number=" >> "$GITHUB_OUTPUT"
+            echo "column_name=$COLUMN_NAME" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # Ottiene le etichette (labels) per quell'issue
-          LABELS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" $ISSUE_URL | jq -r '.labels[].name')
+          # estrai il numero: l'url di solito finisce con /issues/123 o /pulls/123
+          ISSUE_NUMBER=$(echo "$CONTENT_URL" | sed -E 's!.*/([0-9]+)$!\1!')
 
-          # Passa i dati allo step successivo
-          echo "::set-output name=issue_number::$ISSUE_NUMBER"
-          echo "::set-output name=column_name::$COLUMN_NAME"
-          echo "::set-output name=labels::$LABELS"
+          # identifica se è una issue o PR dal content_url
+          if echo "$CONTENT_URL" | grep -q '/pulls/'; then
+            CONTENT_TYPE="pull_request"
+          else
+            CONTENT_TYPE="issue"
+          fi
 
-      # 5. LOGICA DI ASSEGNAZIONE
+          if [ -z "$ISSUE_NUMBER" ]; then
+            echo "Non ho trovato un numero issue/PR valido. Esco."
+            echo "issue_number=" >> "$GITHUB_OUTPUT"
+            echo "column_name=$COLUMN_NAME" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Recupera i dettagli (labels) tramite API
+          echo "Chiedo $CONTENT_TYPE $ISSUE_NUMBER da $CONTENT_URL"
+          RESPONSE=$(curl -s -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" "$CONTENT_URL")
+          # estrai array labels come JSON serializzato
+          LABELS_JSON=$(echo "$RESPONSE" | jq -c '[.labels[]?.name]')
+
+          echo "::debug::LABELS_JSON=$LABELS_JSON"
+
+          # esporta output
+          echo "issue_number=$ISSUE_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "column_name=$COLUMN_NAME" >> "$GITHUB_OUTPUT"
+          echo "labels_json=$LABELS_JSON" >> "$GITHUB_OUTPUT"
+          echo "content_type=$CONTENT_TYPE" >> "$GITHUB_OUTPUT"
+
       - name: Parse JSON Matrix and Assign
         env:
           ISSUE_NUMBER: ${{ steps.get_info.outputs.issue_number }}
           COLUMN_NAME: ${{ steps.get_info.outputs.column_name }}
-          LABELS: ${{ steps.get_info.outputs.labels }}
+          LABELS_JSON: ${{ steps.get_info.outputs.labels_json }}
+          CONTENT_TYPE: ${{ steps.get_info.outputs.content_type }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # --- Identifica il File ---
-          FILE_KEY=""
-          for LABEL in $LABELS; do
-            if [[ $LABEL == file_* ]]; then
-              FILE_KEY=$LABEL
-              break
-            fi
-          done
+          set -euo pipefail
 
-          if [ -z "$FILE_KEY" ]; then
+          if [ -z "${ISSUE_NUMBER}" ]; then
+            echo "Nessun numero issue (es. card non è issue). Esco."
+            exit 0
+          fi
+
+          # --- Identifica il file cercando label che inizi con file_ ---
+          FILE_KEY=$(echo "$LABELS_JSON" | jq -r '.[]? | select(startswith("file_"))' | head -n1 || true)
+
+          if [ -z "$FILE_KEY" ] || [ "$FILE_KEY" == "null" ]; then
             echo "Nessuna etichetta 'file_...' trovata sull'issue. Esco."
             exit 0
           fi
@@ -79,33 +103,48 @@ jobs:
 
           # --- Mappa Colonna a Ruolo ---
           ROLE_KEY=""
-          if [[ "$COLUMN_NAME" == "In review" ]]; then
-            ROLE_KEY="revisore"
-          elif [[ "$COLUMN_NAME" == "In validazione" ]]; then
-            ROLE_KEY="validatore"
-          elif [[ "$COLUMN_NAME" == "In progress" ]]; then
-            ROLE_KEY="autore"
-          else
-            echo "Colonna $COLUMN_NAME non mappata. Esco."
-            exit 0
-          fi
-          
+          case "$COLUMN_NAME" in
+            "In review") ROLE_KEY="revisore" ;;
+            "In validazione") ROLE_KEY="validatore" ;;
+            "In progress") ROLE_KEY="autore" ;;
+            *) 
+              echo "Colonna '$COLUMN_NAME' non mappata. Esco."
+              exit 0
+              ;;
+          esac
+
           echo "Ruolo richiesto: $ROLE_KEY"
 
-          # --- Trova Utente e Assegna ---
-          ASSIGNEE=$(jq -r --arg filekey "$FILE_KEY" --arg rolekey "$ROLE_KEY" '.[$filekey][$rolekey]' .github/matrix.json)
-          
-          if [ -z "$ASSIGNEE" ] || [ "$ASSIGNEE" == "null" ]; then
+          # --- Leggi il file matrix.json (assicurati esista nel repo) ---
+          if [ ! -f .github/matrix.json ]; then
+            echo "ERRORE: .github/matrix.json non trovato nel repo."
+            exit 1
+          fi
+
+          ASSIGNEE=$(jq -r --arg filekey "$FILE_KEY" --arg rolekey "$ROLE_KEY" '.[$filekey][$rolekey] // empty' .github/matrix.json)
+
+          if [ -z "$ASSIGNEE" ]; then
             echo "ERRORE: Impossibile trovare l'utente per $FILE_KEY -> $ROLE_KEY nel JSON."
             exit 1
           fi
 
           echo "Utente da assegnare: $ASSIGNEE"
 
-          # Esegui l'assegnazione
-          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" \
-               -H "Accept: application/vnd.github.v3+json" \
-               -d "{\"assignees\":[\"$ASSIGNEE\"]}" \
-               "https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUMBER/assignees"
-          
-          echo "Assegnazione completata."
+          # --- Assegna via API e controlla il codice di ritorno ---
+          API_URL="https://api.github.com/repos/${{ github.repository }}/issues/${ISSUE_NUMBER}/assignees"
+          PAYLOAD=$(jq -n --arg a "$ASSIGNEE" '{"assignees': [$a]}')
+
+          HTTP_STATUS=$(curl -s -w "%{http_code}" -o /tmp/assign_resp -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -d "$PAYLOAD" \
+            "$API_URL")
+
+          if [ "$HTTP_STATUS" -eq 201 -o "$HTTP_STATUS" -eq 200 ]; then
+            echo "Assegnazione completata con successo."
+            cat /tmp/assign_resp | jq .
+          else
+            echo "ERRORE in assegnazione: HTTP $HTTP_STATUS"
+            cat /tmp/assign_resp | jq .
+            exit 1
+          fi
