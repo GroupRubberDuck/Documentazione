@@ -20,7 +20,7 @@
     versione: "1.1",
     autori: ("Davide Lorenzon",),
     revisori:("-",),
-    verificatori: ("-",),
+    validatori: ("-",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -131,7 +131,7 @@ In caso si pongano in essere condizioni straordinarie che rendano necessaria una
 
 == Workflow 
 All'interno dell'ambito documentale si è optatpo per il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
-#image(images_dir+"/Workflow_Documentale.webp" )
+#image(images_dir+"/workflow.drawio.png" )
 
 
 === Stati del documento <Workflow>
