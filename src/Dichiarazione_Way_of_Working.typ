@@ -18,7 +18,7 @@
   #statusTab(
     stato: "In review",
     versione: "1.1",
-    autori: ("Davide Lorenzon",),
+    autori: ("Davide Lorenzon, Aldo Bettega",),
     revisori:("-",),
     validatori: ("-",),
     uso: "Interno",
@@ -32,7 +32,7 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([1.0],[2025-11-05],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
+  ([1.0],[2025-11-05],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
   
 )
 #registroModifiche(modifiche)
@@ -179,3 +179,26 @@ All'interno dell'ambito documentale si è optato per il seguente modello per des
 
   Per realizzare la separazione tra area di rilascio e area di lavoro, come già detto si è deciso di sfruttare le funzionalità di braching offerte da GitHub e Git
 ]
+
+= Stato dell'arte
+== Scrittura dei commit
+#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ 
+Idea: i commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è il fine del commit, mentre la descrizione aiuta il lettore esterno a capire quali cambiamenti sono stati fatti. Le regole generali sono:
+- iniziare il commit con tipo seguito da ":"
+- lasciare uno spazio tra tipo e descrizione
+- iniziare la descrizione con una lettera maiuscola
+- limitare la descrizione a 50 caratteri
+
+Per modificare un commit ancora in locale risulta utile il comando #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit --amend`]
+
+== Scrittura delle issue
+Una issue deve essere composta da:
+- Un titolo descrittivo
+- Una descrizione dettagliata, con la consegna che lo sviluppatore deve rispettare
+- Label:
+    - contenuto: verbale interno, verbale esterno …
+    - priorità: alta/media/bassa
