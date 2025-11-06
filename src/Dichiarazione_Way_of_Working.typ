@@ -139,7 +139,14 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
   - *In progress*, il documento è stato preso in carico da un autore.
   - *In review* , il lavoro dell'autore è finito e il documento deve essere revisionato oppure il documento non è stato approvato nella fase "In validazione" e va corretto.
   - *In validazione*, il lavoro del revisore è finito e  il documento va valutato per l'approvazione o respinto fornendo le opportune motivazioni accompagnate da un elenco delle correzzioni da apportare.
-  - *Done*, il documento è stato approvato 
+  - *Done*, il documento è stato approvato
+
+=== Procedura di avanzamento tra stati <Procedura_Workflow>
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e comincia a scrivere la bozza del documento
+  - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, deve portare la issue in revisione, togliersi dagli assegnatari e assegnarla al revisore (deciso a priori) che verrà notificato.
+  - Da *In review* a *In validazione*: il revisore ha correto la bozza e propone una revisione al validatore. Deve portare la issue in validazione, togliersi dagli assegnatari e assegnarla al validatore.
+  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di errori motivati che il revisore dovrà correggere. Dovrà riassegnare la issue al revisore.
+  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue.
 
 
   == Separazione tra area di rilascio e area di lavoro <separazione>
