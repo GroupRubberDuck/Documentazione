@@ -1,39 +1,71 @@
-name: Auto-Assign from Matrix
+name: Auto-Assign from Matrix (Progetti V2)
 
-# 1. TRIGGER: Si attiva quando un'issue in un progetto cambia
+# 1. TRIGGER: Ascolta i "project_v2_item" (Nuovi Progetti)
+# Si attiva quando un campo (es. la colonna "Stato") viene modificato
 on:
   project_card:
-    types: [moved]
+    types: [edited]
 
 jobs:
   assign_from_matrix:
     runs-on: ubuntu-latest
+    
+    # 2. PERMESSI: Fondamentale. Senza questo, lo script fallisce.
+    permissions:
+      contents: read       # Per leggere il file matrix.json
+      issues: write       # Per assegnare l'issue
+
     steps:
       - name: Checkout repository
-        # Fa il checkout del codice per poter leggere il file JSON
         uses: actions/checkout@v4
 
-      - name: Parse JSON Matrix and Assign
-        # Questo script usa l'utility 'jq' per manipolare il JSON
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token per autenticarsi
-          CARD_ID: ${{ github.event.project_card.id }}
-          COLUMN_NAME: ${{ github.event.project_card.column_name }}
-          ISSUE_URL: ${{ github.event.project_card.content_url }}
+      # 3. FILTRO: Controlla se il campo modificato è quello delle colonne
+      #    ATTENZIONE: Verifica che il tuo campo si chiami 'Stato'.
+      #    Potrebbe essere 'Status' (in inglese) o altro.
+      - name: Check if 'Stato' field was changed
+        if: github.event.changes.field_value.field_name != 'Stato'
         run: |
-          # --- Setup ---
-          # Prende il numero dell'issue dall'URL (es. .../issues/123)
+          echo "Campo modificato: ${{ github.event.changes.field_value.field_name }}. Non è 'Stato'. Esco."
+          exit 1 # Esce (non è un errore, salta solo l'esecuzione)
+
+      # 4. RACCOLTA DATI
+      - name: Get Issue Number and New Status
+        id: get_info
+        env:
+          EVENT_PAYLOAD: ${{ toJSON(github.event) }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Estrae il NUOVO valore della colonna (es. "In review")
+          # ATTENZIONE: Anche qui, cambia 'Stato' se il tuo campo ha un nome diverso
+          COLUMN_NAME=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.field_values[] | select(.field_name == "Stato") | .name')
+          
+          # Estrae l'URL e il numero dell'issue
+          ISSUE_URL=$(echo "$EVENT_PAYLOAD" | jq -r '.project_v2_item.content_url')
           ISSUE_NUMBER=$(echo $ISSUE_URL | grep -o '[^/]*$')
-          if [ -z "$ISSUE_NUMBER" ]; then
+
+          if [ -z "$ISSUE_NUMBER" ] || [ "$ISSUE_NUMBER" == "null" ]; then
             echo "La card non è un'issue. Esco."
             exit 0
           fi
-          
-          # --- 2. Identifica il File ---
-          # Chiede a GitHub le etichette (labels) di quella issue
+
+          # Ottiene le etichette (labels) per quell'issue
           LABELS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" $ISSUE_URL | jq -r '.labels[].name')
-          
-          # Trova la prima etichetta che inizia con "file_"
+
+          # Passa i dati allo step successivo
+          echo "::set-output name=issue_number::$ISSUE_NUMBER"
+          echo "::set-output name=column_name::$COLUMN_NAME"
+          echo "::set-output name=labels::$LABELS"
+
+      # 5. LOGICA DI ASSEGNAZIONE
+      - name: Parse JSON Matrix and Assign
+        env:
+          ISSUE_NUMBER: ${{ steps.get_info.outputs.issue_number }}
+          COLUMN_NAME: ${{ steps.get_info.outputs.column_name }}
+          LABELS: ${{ steps.get_info.outputs.labels }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # --- Identifica il File ---
+          # ATTENZIONE: Controlla che le tue etichette inizino con 'file_'
           FILE_KEY=""
           for LABEL in $LABELS; do
             if [[ $LABEL == file_* ]]; then
@@ -50,9 +82,8 @@ jobs:
           echo "Issue $ISSUE_NUMBER si riferisce a: $FILE_KEY"
           echo "Spostata nella colonna: $COLUMN_NAME"
 
-          # --- 3 & 4. Leggi il JSON e Trova il Ruolo ---
-          # Mappiamo i nomi delle colonne ai ruoli del JSON
-          # NOTA: Adatta questa mappatura ai tuoi nomi esatti!
+          # --- Mappa Colonna a Ruolo ---
+          # ATTENZIONE: Controlla che i nomi delle colonne siano ESATTI
           ROLE_KEY=""
           if [[ "$COLUMN_NAME" == "In review" ]]; then
             ROLE_KEY="revisore"
@@ -67,19 +98,18 @@ jobs:
           
           echo "Ruolo richiesto: $ROLE_KEY"
 
-          # --- 5 & 6. Trova l'Utente ---
-          # Carica il JSON e pesca l'utente usando 'jq'
+          # --- Trova Utente e Assegna ---
+          # ATTENZIONE: Controlla che il percorso '.github/matrix.json' sia giusto
           ASSIGNEE=$(jq -r --arg filekey "$FILE_KEY" --arg rolekey "$ROLE_KEY" '.[$filekey][$rolekey]' .github/matrix.json)
           
           if [ -z "$ASSIGNEE" ] || [ "$ASSIGNEE" == "null" ]; then
-            echo "ERRORE: Impossibile trovare l'utente per $FILE_KEY -> $ROLE_KEY"
+            echo "ERRORE: Impossibile trovare l'utente per $FILE_KEY -> $ROLE_KEY nel JSON."
             exit 1
           fi
 
           echo "Utente da assegnare: $ASSIGNEE"
 
-          # --- 7. Assegna l'Utente ---
-          # Usa l'API di GitHub per SOSTITUIRE gli assegnatari
+          # Esegui l'assegnazione (sostituendo i precedenti)
           curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" \
                -H "Accept: application/vnd.github.v3+json" \
                -d "{\"assignees\":[\"$ASSIGNEE\"]}" \
