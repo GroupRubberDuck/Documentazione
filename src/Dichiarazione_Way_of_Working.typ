@@ -44,8 +44,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
 ]
-
-#insertRomanNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
+#context counter(page).update(1)
+#insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   In questo documento si tiene traccia e si definisce il way of working adottato dal gruppo. \
 
