@@ -53,11 +53,36 @@
 
   Questo way of working si applica alle attività che vanno dal #strong("23-10-2025") fino all'approvazione della successiva versione del Way of Working
 
+== Cosa è cambiato
+Qui vengono esposte le principali modifiche, aggiunte e rimozioni al documento. 
+Allo stato attuale tale sezione è vuota, in quanto il documento si trova alla prima versione.
+
+
+== Modalità di comunicazione
+  Le comincazioni tra i membri del gruppo avvengono principalmente tramite gli strumenti previsti e descritti nelle succesive sezioni di questo documento.
+
+  Ulteriori modalità di comunicazioni:
+  - Comunicazioni in presenza
+  - Riunioni tramite discord o altre piattaforme analoghe
+  - Messaggistica istantanea (WhatsApp)
+
+
+== Modalità di riunione
+Il gruppo si impegna a riunirsi almeno una volta per ogni periodo di avanzamento.
+Gli incontri hanno funzione di allineamento, pianificazione, 
+decision making e retrospective.
+
+
+  == Governance e decisioni
+  // TODO stabilire le maggioranze necessarie a prendere una decisione e come affrontare i disaccordi
+
+
+
   == Area per cui è stato stabilito un way of working:
 
   Attualmente il gruppo si è dato delle regole sulle attività relative ai seguenti ambiti:
   - *Area documentale*, quale documentazione produrre, come e chi la produce.
-  - *Area del prodotto software*, suddivisione dei ruoli.
+  - *Area ddelle attività primarie*, suddivisione dei ruoli.
   - *Regolamento delle riunioni*, come si svolgono le riunioni.
 ]
 
@@ -78,6 +103,29 @@
     [Controlla la qualità del lavoro svolto.],
     [Approva il documento o lo rimanda in revisione con una lista di correzioni]
     )
+    === Obblighi di controllo qualità
+    // TODO 
+    // 
+    // stilare gli obblighi di controllo qualità per i documenti
+    // Esempio:
+    // Level 1 (Author):
+    // - Self-review checklist completion
+    // - Peer preview requirements
+    // - Formatting compliance verification
+
+    // Level 2 (Reviewer):
+    // - Technical accuracy validation
+    // - Structural coherence assessment
+    // - Compliance with objectives
+
+    // Level 3 (Validator):
+    // - Stakeholder perspective evaluation
+    // - Release readiness assessment
+    // - Overall quality sign-off
+    === Statistiche di controllo qualità
+      // TODO
+
+      //valutare lil tracciamento dei risultati di controllo qualità
 
     == Rotazione e assegnazione dei ruoli
     Sono previsti 3 meccanismi di rotazione dei ruoli, ognuno di essi risponde a una specifica esigenza che il gruppo si è trovato ad affrontare durante lo svolgimento delle attività.
@@ -153,6 +201,9 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
 )[`git commit -m "commento. Close #numero_issue"`]
 
 
+
+
+
   == Separazione tra area di rilascio e area di lavoro <separazione>
     Il gruppo si è trovato bene a lavorare usando GitHub per condividere il proprio lavoro e si è scelto di sfruttare le funzionalità di branching per attuare tale separazione.
 
@@ -215,6 +266,8 @@ Una issue deve essere composta da:
 - Task 
     - contenuto: verbale interno, verbale esterno …
 
+==== GitHub issue template
+// TODO, abbozzare la struttura di un template per la creazione di issue
 
 == Elenco dei documenti
 === Documenti semplici
@@ -225,27 +278,40 @@ Una issue deve essere composta da:
   - Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 
 ==== Lettera\_#upper()[finalità]
-
+// TODO : stilare una descrizione come  quella dei verbali
 ==== Diario di bordo
+// TODO : stilare una descrizione come  quella dei verbali
 
 
 
 === Documenti gestionali esterni, complessi
 
 ==== Piano di Progetto
+// TODO : stilare una descrizione come  quella dei verbali
+
 ==== Piano di Qualifica
+// TODO : stilare una descrizione come  quella dei verbali
+
 
 === Documenti gestionali interni, complessi
 
 ==== Glossario
+// TODO : stilare una descrizione come  quella dei verbali
+
 ==== Norme di progetto
+// TODO : stilare una descrizione come  quella dei verbali
 
 
 === Documenti tecnici esterni
 
 ==== Analisi dei requisiti
+// TODO : stilare una descrizione come  quella dei verbali
+
 ==== Specifica tecnica
+// TODO : stilare una descrizione come  quella dei verbali
+
 ==== Manuale utente
+// TODO : stilare una descrizione come  quella dei verbali
 
 
 
@@ -267,7 +333,7 @@ Una issue deve essere composta da:
   
   [*Amministratore*: 
   - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working
-  - Prensenza richiesta durante tutto l'arco del progetto
+  - Presenza richiesta durante tutto l'arco del progetto
   ],
 
   [*Analista*:
@@ -292,6 +358,11 @@ Una issue deve essere composta da:
   - Figura essenziale nella fase di implementazione e successiva
   ]
   )
+
+== Procvedure di cedimento del ruolo
+Al fine di favorire il passaggio di conoscenze alla rotazione dei ruoli.
+// TODO
+
 
 == Ore previste
 
@@ -360,20 +431,9 @@ In esso sono rendicontate le ore dedicate ai ruoli di progetto, per ciascun memb
 == Distribuzione dei ruoli
 Nel seguente paragrafo si delinea la distribuzione dei ruoli lungo la durata del progetto.
 
-== Strumenti per il controllo di avanzamento
-
-Al momento non vi è separazione tra la rendicontazione delle ore e il controllo dell'avanzamento
-
-== Metodi per l'apprendimento di un nuovo ruolo
-TODO
 
 
-== Risoluzione dei conflitti
-- Disaccordi tecnici: discussione di 15 minuti + votazione a maggioranza
-- Disaccordi personali: mediazione del Responsabile
-
-
-== Fase di analisi
+=== Fase di analisi
   #upper("è") la fase che va dalla assegnazione della candidatura alla *RTB*.
   Le attività principali individuate durante questa fase sono:
   - *L'analisi dei requisiti*, fissa i requisiti da soddisfare, in accordo con il proponente
@@ -383,10 +443,66 @@ TODO
   Verranno anche investite ore di progettista, programmatore e verificatore per la realizzazione della proof of concept.
   Responsabile e amministratore sono ruoli che avranno rilevanza lungo tutta la durata del progetto.
 
-== Fase di realizzazione
+=== Fase di realizzazione
 Vaglia la maturità della baseline architetturale del prodotto software e la sua realizzazione (*PB*).
 In questa fase verrann consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore
 
+== Strumenti per il controllo di avanzamento
+// TODO, approfondire
+Al momento non vi è separazione tra la rendicontazione delle ore e il controllo dell'avanzamento
+
+== Metodi per l'apprendimento di un nuovo ruolo
+
+// TODO, approfondire
+// - Pair-working con membri esperti del ruolo
+// - Documentazione interna di best practices
+// - Sessioni di knowledge sharing settimanali
+// - Shadowing durante le attività complesse
 
 
+== Risoluzione dei conflitti
+// TODO, approfondire
+
+// - Disaccordi tecnici: discussione di 15 minuti + votazione a maggioranza
+// - Disaccordi personali: mediazione del Responsabile
+
+
+]
+
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
+= Appendice
+
+== Struttura dei documenti
+Qui viene descritta la struttura dei vari documenti:
+
+//TODO
+// == Document Classification Matrix
+
+// Classification criteria:
+// - Complexity (Simple/Medium/Complex)
+// - Audience (Internal/External/Stakeholder)
+// - Criticality (Low/Medium/High)
+// - Frequency (One-time/Periodic/Ongoing)
+
+// === Document Specifications
+
+// ==== Verbali
+// Template requirements:
+// - Decision log format
+// - Action item tracking
+// - Participant attendance
+// - Follow-up responsibility assignment
+
+// Quality standards:
+// - 24-hour delivery deadline
+// - Action item completion tracking
+// - Decision implementation verification
+
+// ==== Piano di Progetto
+// Content requirements:
+// - Risk management section
+// - Resource allocation details
+// - Milestone dependencies
+// - Contingency planning
 ]
