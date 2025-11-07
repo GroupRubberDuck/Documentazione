@@ -125,7 +125,7 @@ Il coordinatore del documento (o responsabile, per tradurre in ruoli del progett
 
 
 === Aggiornamenti di emergenza
-
+Non è collegato al tipo di documento, ma alla sua priorità. 
 In caso si pongano in essere condizioni straordinarie che rendano necessaria una quanto più tempestiva risposta si possono ignorare i criteri sulla rotazione dei ruoli adottando un criterio molto grezzo:"Chi può fare per primo fa),ma mantenendo il vincolo di indipendenza  (Autore $eq.not$ Revisore $eq.not$ Verificatore) 
 
 
@@ -159,19 +159,30 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
 
   == Tecnologie impiegate
   Per realizzare quanto appena dichiarato sono state adottate le seguenti tecnologie:
-  Un repository GitHub dedicato per condividere il lavoro sia internamente che esternamente (Sfruttando la funzionalità github pages)
 
-  tramite github action sono staste predisposte automazioni per la compilazione dei documenti .typ -> .pdf e per l'aggiornamneto del sito web
+  === Area di rilascio e lavoro
+  Vengono usate le funzionalità di GitHub, una prima separazione è realizzata usando il branching. \
+  L'area di rilascio corrisponde al branch main, i documenti presenti in quest'area sono in stato "Done". \
+  L'area di lavoro corrisponde al branch develop, qui vi sono tutti i documenti in lavorazione e completati. \
+  Gli allineamenti avvengono tramite merge dei branch.
 
+  Tramite la funzionalità GitHub pages viene resa disponibile una pagina web, al fine semplificare l'accesso ai documenti.
 
-  Come Strumento per scrivere la documnetazione è stato scelto typst
+  Tramite GitHub action sono state predisposte automazioni per la compilazione automatica dei documenti .typ -> .pdf una volta pubblicati nell'area di rilascio.
 
-  Tracciamento dei ruoli: si è deciso di tracciare i ruoli assegnati all'interno del documento stesso (nella tabella dello stato del documento e nel registro delle modifiche), in un foglio di calcolo dedicato per facilitare la rotazione dei ruoli e all'interno delle GitHub issue (dove non viene messo in evidenza il ruolo degli assegnatari ma solo il oro coinvolgimento)
+  === Strumenti per la scrittura
+  Come Strumento per scrivere la documnetazione è stato scelto typst.
 
+  === Tracciamento delle attività svolte e dei ruoli 
+  Si è deciso di tracciare i ruoli assegnati all'interno del documento stesso (nella tabella dello stato del documento e nel registro delle modifiche) e in un foglio di calcolo dedicato.
+  Tale foglio di calcolo ha anche lo scopo di facilitare la rotazione dei ruoli, in quanto all'interno delle GitHub issue non viene messo in evidenza il ruolo degli assegnatari ma solo il loro coinvolgimento.
+
+  === Tracciamento del workflow
   Per la modellazione del workflow sono stati usati i seguenti metodi.
+
   - A ogni documento viene fatto corrispondere un issue, tale issue viene inserito in una project board i cui stati rappresentano gli stati del workflow.
   - A ogni passaggio di stato, l'autore del cambiamento deve assicurarsi di spostare l'issue relativa al documento nella sezione appropriata
   - Per rappresentare il tipo di task, la priorità o altre informazioni rilevanti si sfruttano le funzionalità dell'issue tracking system offerto da GitHub
 
-  Per realizzare la separazione tra area di rilascio e area di lavoro, come già detto si è deciso di sfruttare le funzionalità di braching offerte da GitHub e Git
+
 ]
