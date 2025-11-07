@@ -18,7 +18,7 @@
   #statusTab(
     stato: "In review",
     versione: "1.1",
-    autori: ("Davide Lorenzon",),
+    autori: ("Davide Lorenzon, Aldo Bettega",),
     revisori:("-",),
     validatori: ("-",),
     uso: "Interno",
@@ -32,7 +32,7 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([1.0],[2025-11-05],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
+  ([1.0],[2025-11-05],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
   
 )
 #registroModifiche(modifiche)
@@ -61,8 +61,8 @@
   - *Regolamento delle riunioni*, come si svolgono le riunioni.
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Ambito documentale", documentType: doc)[
-  = Area documentale
+#insertArabicNumberedPagesSenzaData(PageTitle: "Ambito documentale", documentType: doc)[
+  = Attività documentale
   == Ruoli:
   Dall'analisi svolta dal gruppo basandosi sulla propria esperienza corrente e dall'osservazione di alcune best practices, sono stati delineati i ruoli necessari allo sviluppo adeguato della documentazione.
 
@@ -86,7 +86,7 @@
     - Situazioni di emergenza
 
     Di seguito essi vengono descritti nel dettaglio.
-    === Documenti semplici
+    === Documenti semplici <simpleDoc>
     Con il termine documento semplice si intendono documenti di limitata lunghezza e bassa complessità (ad esempio i verbali).
     Regole:#list(
     [Ogni ruolo ha cardinalità 1],
@@ -129,7 +129,7 @@ Non è collegato al tipo di documento, ma alla sua priorità.
 In caso si pongano in essere condizioni straordinarie che rendano necessaria una quanto più tempestiva risposta si possono ignorare i criteri sulla rotazione dei ruoli adottando un criterio molto grezzo:"Chi può fare per primo fa),ma mantenendo il vincolo di indipendenza  (Autore $eq.not$ Revisore $eq.not$ Verificatore) 
 
 
-== Workflow 
+== Workflow <workflow>
 All'interno dell'ambito documentale si è optatpo per il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
@@ -146,7 +146,11 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
   - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, deve portare la issue in revisione, togliersi dagli assegnatari e assegnarla al revisore (deciso a priori) che verrà notificato.
   - Da *In review* a *In validazione*: il revisore ha correto la bozza e propone una revisione al validatore. Deve portare la issue in validazione, togliersi dagli assegnatari e assegnarla al validatore.
   - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di errori motivati che il revisore dovrà correggere. Dovrà riassegnare la issue al revisore.
-  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue.
+  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`]
 
 
   == Separazione tra area di rilascio e area di lavoro <separazione>
@@ -183,6 +187,206 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
   - A ogni documento viene fatto corrispondere un issue, tale issue viene inserito in una project board i cui stati rappresentano gli stati del workflow.
   - A ogni passaggio di stato, l'autore del cambiamento deve assicurarsi di spostare l'issue relativa al documento nella sezione appropriata
   - Per rappresentare il tipo di task, la priorità o altre informazioni rilevanti si sfruttano le funzionalità dell'issue tracking system offerto da GitHub
+
+  Per realizzare la separazione tra area di rilascio e area di lavoro, come già detto si è deciso di sfruttare le funzionalità di braching offerte da GitHub e Git
+
+
+== Stato dell'arte
+=== Scrittura dei commit
+#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ 
+Idea: i commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è il fine del commit, mentre la descrizione aiuta il lettore esterno a capire quali cambiamenti sono stati fatti. Le regole generali sono:
+- iniziare il commit con tipo seguito da ":"
+- lasciare uno spazio tra tipo e descrizione
+- iniziare la descrizione con una lettera maiuscola
+- limitare la descrizione a 50 caratteri
+
+Per modificare un commit ancora in locale risulta utile il comando #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit --amend`]
+
+=== Scrittura delle issue
+Una issue deve essere composta da:
+- Un titolo descrittivo
+- Una descrizione dettagliata, con la consegna che lo sviluppatore deve rispettare
+- Label:
+    - priorità: alta/media/bassa
+- Task 
+    - contenuto: verbale interno, verbale esterno …
+
+
+== Elenco dei documenti
+=== Documenti semplici
+==== Verbali
+  - Nome: YYYY-MM-DD#footnote()[YYYY-MM-DD : Formato della data della riunione]\_Verbale_CONTESTO #footnote()[Interno o esterno]
+  - Finalità: Riassuntiva della riunione, agenda, decisioni, azioni.
+  - Destinatari: I membri del gruppo
+  - Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
+
+==== Lettera\_#upper()[finalità]
+
+==== Diario di bordo
+
+
+
+=== Documenti gestionali esterni, complessi
+
+==== Piano di Progetto
+==== Piano di Qualifica
+
+=== Documenti gestionali interni, complessi
+
+==== Glossario
+==== Norme di progetto
+
+
+=== Documenti tecnici esterni
+
+==== Analisi dei requisiti
+==== Specifica tecnica
+==== Manuale utente
+
+
+
+
+
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Attività primarie di progetto", documentType: doc)[
+= Attività primarie di progetto
+
+== Descrizione dei ruoli
+#list(
+  [*Responsabile*:
+  - Coordina l’elaborazione di piani e scadenze
+  - Approva il rilascio di prodotti parziali o finali
+  - Comunica con il committente
+  - Garantisce che le risorse disponibili siano usate con efficienza
+  - Presenza richiesta durante tutto l'arco del progetto
+  ],
+  
+  [*Amministratore*: 
+  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working
+  - Prensenza richiesta durante tutto l'arco del progetto
+  ],
+
+  [*Analista*:
+  - Svolge le attività di analisi dei requisiti
+  - Figura essenziale nella fase iniziale del progetto
+  ],
+
+  [*Progettista*:
+  - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
+  - Svolge le attività di design e modellazione
+  - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+  ],
+
+  [*Programmatore*:
+  - Svolge le attività di codifica
+  - Implementa le scelte prese dal progettista
+  - Figura essenziale nella fase di implementazione
+  ],
+  [*Verificatore*:
+  - Garantisce la qualità degli elementi sviluppati
+  - Svolge le attività di testing e validazione
+  - Figura essenziale nella fase di implementazione e successiva
+  ]
+  )
+
+== Ore previste
+
+
+  #let ruoli = (
+    (nome: "Responsabile", costo: 30, oreIndividuali: 11),
+    (nome: "Amministratore", costo: 20, oreIndividuali: 9),
+    (nome: "Analista", costo: 25, oreIndividuali: 19),
+    (nome: "Progettista", costo: 25, oreIndividuali: 17),
+    (nome: "Programmatore", costo: 15, oreIndividuali: 17),
+    (nome: "Verificatore", costo: 15, oreIndividuali: 18),
+  )
+  #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
+
+
+  #let analisiImpegni = ()
+
+  #for ruolo in ruoli {
+    let oreTot = ruolo.at("oreIndividuali") * 6
+    analisiImpegni.push((
+      ruolo.at("nome"),
+      str(ruolo.at("oreIndividuali")),
+      str(oreTot),
+      str(ruolo.at("costo")),
+      str(ruolo.at("costo") * oreTot),
+    ))
+
+    acc.at("oreIndividualiTotali") += ruolo.at("oreIndividuali")
+    acc.at("oreTotali") += oreTot
+    acc.at("costoTot") += ruolo.at("costo") * oreTot
+
+  }
+
+  #analisiImpegni.push((
+    acc.at("nome"),
+    str(acc.at("oreIndividualiTotali")),
+    str(acc.at("oreTotali")),
+    acc.at("placeholder"),
+    str(acc.at("costoTot")),
+  ))
+    #set table(
+      stroke: (_, y) => if y == 7 { (top: 1.5pt) },
+      // gutter: 0.2em,
+      fill: (x, y) => if x == 0 or y == 0 { white },
+    )
+
+
+    #figure(
+      caption: [Ripartizione oraria e dettaglio dei costi],
+      kind: "Tabella",
+      supplement: [Tabella],
+    )[
+      #utilityTable(
+        header: ("Ruolo", "Ore individuali", "Ore Totali", "Costo (€/h)", "Costo totale (€)"),
+        columns: (1fr,) * 5,
+        analisiImpegni,
+      )
+    ]<tabella-ore>
+
+
+== Rendicontazione delle ore
+Al fine di rendicontare e monitorare le ore il gruppo si è dotato di un foglio di calcolo google sheet.
+In esso sono rendicontate le ore dedicate ai ruoli di progetto, per ciascun membro del gruppo sono visibili il ruolo, le ore previste e le ore effettive relative a ciascun periodo di avanzamento.
+
+
+== Distribuzione dei ruoli
+Nel seguente paragrafo si delinea la distribuzione dei ruoli lungo la durata del progetto.
+
+== Strumenti per il controllo di avanzamento
+
+Al momento non vi è separazione tra la rendicontazione delle ore e il controllo dell'avanzamento
+
+== Metodi per l'apprendimento di un nuovo ruolo
+TODO
+
+
+== Risoluzione dei conflitti
+- Disaccordi tecnici: discussione di 15 minuti + votazione a maggioranza
+- Disaccordi personali: mediazione del Responsabile
+
+
+== Fase di analisi
+  #upper("è") la fase che va dalla assegnazione della candidatura alla *RTB*.
+  Le attività principali individuate durante questa fase sono:
+  - *L'analisi dei requisiti*, fissa i requisiti da soddisfare, in accordo con il proponente
+  - *La proof of concept*, dimostra adeguatezza e interoperabilità le tecnologie, i framework, le librerie adottate (non è una demo).
+
+  Ciò porta alla conclusione che in questa fase verrano investite tutte le ore del ruolo analista questa fase.
+  Verranno anche investite ore di progettista, programmatore e verificatore per la realizzazione della proof of concept.
+  Responsabile e amministratore sono ruoli che avranno rilevanza lungo tutta la durata del progetto.
+
+== Fase di realizzazione
+Vaglia la maturità della baseline architetturale del prodotto software e la sua realizzazione (*PB*).
+In questa fase verrann consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore
+
 
 
 ]
