@@ -9,6 +9,7 @@
 #set text(size: 13pt)
 // #set par(justify: true)
 #set heading(numbering: "1.1)")
+#show ref: body => underline()[*#body*]
 
 #let doc="Dichiarazione di Way of Working"
 
@@ -153,7 +154,7 @@ decision making e retrospective.
   ))
 Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \(Autore, Revisore, Validatore\) non rimanga uguale nel tempo (Non è sempre A,B,C o D,E,F);
     
-=== Documenti complessi
+=== Documenti complessi <complexDoc>
 Con documento complesso si intendono documneti molto corposi dal punto di vista dei contenuti e di maggiore rilevanza rispetto ai documenti semplici
 (ad esempio: Dichiarazione di impegni, valutazione dei capitolati e simili).
 
@@ -269,7 +270,7 @@ Una issue deve essere composta da:
 ==== GitHub issue template
 // TODO, abbozzare la struttura di un template per la creazione di issue
 
-== Elenco dei documenti
+== Elenco dei documenti <obblighiDoc>
 === Documenti semplici
 ==== Verbali
   - Nome: YYYY-MM-DD#footnote()[YYYY-MM-DD : Formato della data della riunione]\_Verbale_CONTESTO #footnote()[Interno o esterno]
@@ -277,11 +278,18 @@ Una issue deve essere composta da:
   - Destinatari: I membri del gruppo
   - Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 
-==== Lettera\_#upper()[finalità]
+==== Lettera
 // TODO : stilare una descrizione come  quella dei verbali
+- Nome: Lettera\_#upper()[finalità]
+- Finalità: Comunicare al destinatario un messaggio, ad esempio la lettera di presentazione ha lo scopo di esporre al destinatario la scelta del capitolato, gli impegni presi, ecc...
+- Destinatari: Esterni, specificati anche nella lettera.
+- Procedure e ruoli:Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 ==== Diario di bordo
 // TODO : stilare una descrizione come  quella dei verbali
-
+- Nome: YYYY-MM-DD_Diario_di_bordo
+- Finalità: Esporre lo stato di avanzamento del lavoro durante le apposite lezioni.
+- Destinatari: Il professore e gli altri gruppi.
+- Procedure e ruoli:Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 
 
 === Documenti gestionali esterni, complessi
@@ -291,6 +299,8 @@ Una issue deve essere composta da:
 
 ==== Piano di Qualifica
 // TODO : stilare una descrizione come  quella dei verbali
+
+
 
 
 === Documenti gestionali interni, complessi
@@ -306,6 +316,13 @@ Una issue deve essere composta da:
 
 ==== Analisi dei requisiti
 // TODO : stilare una descrizione come  quella dei verbali
+- Nome: Analisi_requisiti.
+- Finalità: Stabilisce cosa il sistema (prodotto software) deve fare e quali benefici porta.
+- Destinatari: Esterni, BlueWind s.r.l. , professori .
+- Ruoli: Nella realizzazione e rotazione dei ruoli vengono adottate le procedure previste per i documenti complessi 
+  (#ref(<complexDoc>,supplement: "Sezione" )), vengono anche consumate ore produttive del ruolo *Analista* (#ref(<RuoliProgetto>,supplement: "Ruoli"))
+- Struttura: #ref(<strutturaRE>, supplement: "Sezione") .
+- Procedure: Iterazione di Requirements elicitation -> Requirements Validation ->Requirements specification -> Requirements elicitation 
 
 ==== Specifica tecnica
 // TODO : stilare una descrizione come  quella dei verbali
@@ -321,7 +338,7 @@ Una issue deve essere composta da:
 #insertArabicNumberedPagesSenzaData(PageTitle: "Attività primarie di progetto", documentType: doc)[
 = Attività primarie di progetto
 
-== Descrizione dei ruoli
+== Descrizione dei ruoli <RuoliProgetto>
 #list(
   [*Responsabile*:
   - Coordina l’elaborazione di piani e scadenze
@@ -336,10 +353,10 @@ Una issue deve essere composta da:
   - Presenza richiesta durante tutto l'arco del progetto
   ],
 
-  [*Analista*:
+  [*Analista*: 
   - Svolge le attività di analisi dei requisiti
   - Figura essenziale nella fase iniziale del progetto
-  ],
+  ]  ,
 
   [*Progettista*:
   - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
@@ -477,15 +494,14 @@ Al momento non vi è separazione tra la rendicontazione delle ore e il controllo
 Qui viene descritta la struttura dei vari documenti:
 
 //TODO
-// == Document Classification Matrix
+  == Criteri di classificazione dei documenti
+(Analizzati anche nella #ref(<obblighiDoc>,supplement: "Sezione: Elenco dei documenti") )
+  - Complessità.
+  - Destinatari.
+  - Priorità.
+  - Frequenza. 
 
-// Classification criteria:
-// - Complexity (Simple/Medium/Complex)
-// - Audience (Internal/External/Stakeholder)
-// - Criticality (Low/Medium/High)
-// - Frequency (One-time/Periodic/Ongoing)
-
-// === Document Specifications
+ === Specifiche dei documenti
 
 // ==== Verbali
 // Template requirements:
@@ -505,4 +521,31 @@ Qui viene descritta la struttura dei vari documenti:
 // - Resource allocation details
 // - Milestone dependencies
 // - Contingency planning
+// 
+// 
+==== Analisi dei requisiti <strutturaRE>
+Documento complesso la cui scrittura è continuativa per vari periodi di avanzamento. \
+La struttura generale del documento è la seguente:
+#enum(numbering: "1.1)", full: true,
+[Informazioni generali:
++ Frontespizio introduttivo
++ Tabella dello stato del documento
++ Registro delle modifiche
++ Indice dei contenuti
+],
+[Introduzione],
+[User requirements],
+[System requirements
+#enum(
+  [Requisiti funzionali],
+  [Requisiti non funzionali
+    #enum(
+      [Product requirements],
+      [Organization requirements],
+      [External requirements])])
+],
+[],
+[],
+
+)
 ]
