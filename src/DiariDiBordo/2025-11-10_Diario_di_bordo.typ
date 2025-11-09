@@ -9,12 +9,12 @@
 = Attività completate
 #text(size: 19pt)[
   #set list(marker: image(check_icon, width: 0.8em))
-  - Aggiudiczazione dell'appalto
-  - Separata area di rilacio e area di lavoro
+  - Aggiudicazione dell'appalto
+  - Separata area di rilancio e area di lavoro
   - Definita una prima versione del workflow per la stesura dei documenti
   - Deciso di usare google sheets per tracciare le ore di lavoro
   - Stabiliti dei criteri di rotazione
-  - messa per iscritto una bozza del documento di way of working
+  - Messa per iscritto una bozza del documento di way of working
 ]
 
 = Attività da completare
