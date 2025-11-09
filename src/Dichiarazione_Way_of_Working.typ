@@ -322,7 +322,7 @@ Una issue deve essere composta da:
 - Ruoli: Nella realizzazione e rotazione dei ruoli vengono adottate le procedure previste per i documenti complessi 
   (#ref(<complexDoc>,supplement: "Sezione" )), vengono anche consumate ore produttive del ruolo *Analista* (#ref(<RuoliProgetto>,supplement: "Ruoli"))
 - Struttura: #ref(<strutturaRE>, supplement: "Sezione") .
-- Procedure: Iterazione di Requirements elicitation -> Requirements Validation ->Requirements specification -> Requirements elicitation 
+- Procedure: Iterazione di Requirements elicitation -> Requirements specification -> Requirements Validation -> Requirements elicitation 
 
 ==== Specifica tecnica
 // TODO : stilare una descrizione come  quella dei verbali
@@ -534,6 +534,7 @@ La struttura generale del documento è la seguente:
 + Indice dei contenuti
 ],
 [Introduzione],
+[User needs],
 [User requirements],
 [System requirements
 #enum(
@@ -544,8 +545,17 @@ La struttura generale del documento è la seguente:
       [Organization requirements],
       [External requirements])])
 ],
-[],
-[],
 
+[Verification, segue la stessa struttura system requirements],
+
+[Dettataglio del ciclo di vita
+  #enum([Inserire le fasi e i processi di analisi dei requisiti],
+    [Requirements elicitation, attività di raccolta dei requisiti (Analisi approfondita del capitolato, incontri con l'impresa, ecd...)],
+    [Requirements specification, scrittura dei requisiti in modo non ambiguo e in linguaggio umano, eventualmente con l'uso degli opportuni diagrammi],
+    [Requirements validation, controlli sui requisiti individuati e sulla loro accuratezza nel descrivere un sistema per soddisfare i bisogni dell'utente  ],
+    [],
+    [],
+  )],
+[Appendice],
 )
 ]
