@@ -9,6 +9,8 @@
 #let logo_rd = images_dir + "/logoRD.jpg"
 #let clessidra_icon = images_dir + "/clessidra.png"
 #let check_icon = images_dir + "/check.png"
+#let danger_icon = images_dir + "/danger_icon.webp"
+#let question_mark_icon = images_dir + "/question_mark_icon.png"
 
 #let enfasi(doc) = {
   align()[

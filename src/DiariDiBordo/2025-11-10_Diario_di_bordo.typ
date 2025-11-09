@@ -2,7 +2,7 @@
 #import "/src/config.typ": *
 
 #show: slides.with(
-  numero: 1,
+  numero: 2,
   data: "2025-11-10",
 )
 
@@ -14,6 +14,7 @@
   - Definita una prima versione del workflow per la stesura dei documenti
   - Deciso di usare google sheets per tracciare le ore di lavoro
   - Stabiliti dei criteri di rotazione
+  - messa per iscritto una bozza del documento di way of working
 ]
 
 = Attività da completare
@@ -22,12 +23,14 @@
 - Stabilire le milestone (partendo dalla fine)
 - Identificare le attività necessarie a raggiungere le milestone
 - Stabilire la struttura dei nuovi documenti
+- Aggiornare il way of working
 
 
 = Difficoltà incontrate
-#set list(marker: [--])
-- Identificare le prossime attività
+#set list(marker: image(danger_icon, width: 1em))
+- Cambio di candidatura
+- Gestione dei ruoli e ore produttive
 
 = Dubbi
-#set list(marker: [--])
-- 
+#set list(marker: image(question_mark_icon, width: 1em))
+- Identificare le prossime attività
