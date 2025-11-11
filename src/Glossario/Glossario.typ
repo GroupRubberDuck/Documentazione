@@ -8,7 +8,24 @@
 #show ref: body => underline()[*#body*]
 
 // Glossario di riferimento
-
+// LINEE GUIDA PER AGGIUNGERE TERMINI
+// Inserite il termine di cui volete dare una definizione come CHIAVE
+// e la definizione come il rispettivo VALUE in formato stringa 
+// 
+// ESEMPIO:
+//    | 
+//    | 
+//    |
+//   
+//    CHIAVE:[VALUE],
+//    
+//    |
+//    |
+//    |
+  
+//   "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità]
+// 
+// 
 #let doc="Glossario"
 #let dict=(
   Requisiti:[
@@ -21,7 +38,7 @@
 
   Validazione:[Accertare che il prodotto finale corrisponda alle attese],
   
-  "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità]
+  "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità],
 )
 
 
