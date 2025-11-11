@@ -18,8 +18,8 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In review",
-    versione: "1.1",
+    stato: "In progress",
+    versione: "0.1",
     autori: ("Davide Lorenzon, Aldo Bettega",),
     revisori:("-",),
     validatori: ("-",),
