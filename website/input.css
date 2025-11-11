@@ -38,7 +38,7 @@ h1 {
   @apply text-4xl;
 }
 
-h2 {
+h2:not(.footer-title) {
   @apply text-2xl mb-2;
 }
 
@@ -59,6 +59,14 @@ ul.docs-list {
   color: var(--text-secondary);
 }
 
+ul.docs-list li {
+  @apply mt-4;
+}
+
 ul.docs-list a {
   @apply hover:underline;
+}
+
+.file-version {
+  @apply text-sm text-slate-300;
 }
