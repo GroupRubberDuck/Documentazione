@@ -76,7 +76,7 @@
 lettera=chiavi.last().first()
 let tempKey=""
 
-insertArabicNumberedPagesSenzaData(PageTitle:lettera , documentType: doc)[
+insertArabicNumberedPagesSenzaData(PageTitle:upper(lettera) , documentType: doc)[
 = #lettera
 
 #while(chiavi.len() >0 and lettera==chiavi.last().first()){
