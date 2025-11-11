@@ -23,7 +23,7 @@
 //    |
 //    |
   
-//   "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità]
+//   
 // 
 // 
 #let doc="Glossario"
