@@ -10,6 +10,7 @@
 // #set par(justify: true)
 #set heading(numbering: "1.1)")
 #show ref: body => underline()[*#body*]
+#show link: body => {set text(fill:blue); underline()[#body]}
 
 #let doc="Dichiarazione di Way of Working"
 
@@ -33,7 +34,8 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([1.0],[2025-11-05],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
+  ([0.1],[2025-11-11],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
+  ([0.2],[2025-11-11],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)],[Davide Lorenzon],[-],[-]),
   
 )
 #registroModifiche(modifiche)
@@ -83,9 +85,22 @@ decision making e retrospective.
 
   Attualmente il gruppo si è dato delle regole sulle attività relative ai seguenti ambiti:
   - *Area documentale*, quale documentazione produrre, come e chi la produce.
-  - *Area ddelle attività primarie*, suddivisione dei ruoli.
+  - *Area delle attività primarie*, suddivisione dei ruoli.
   - *Regolamento delle riunioni*, come si svolgono le riunioni.
 ]
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
+= Riferimenti
+In questa sezione vengono riportati i riferimenti alle risorse consultate durante la stesura del documento
+== Riferimenti normativi
+  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Sofware Engineering, Ian Sommerville]
+  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
+  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
+Compliance Verification di BlueWind]
+- #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
+== Riferimenti informativi
+]
+
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Ambito documentale", documentType: doc)[
   = Attività documentale
@@ -106,7 +121,7 @@ decision making e retrospective.
     )
     === Obblighi di controllo qualità
     // TODO 
-    // 
+    // checklist degli obblighi di qualità necessari a  un documento pe r passare alla fase successiva
     // stilare gli obblighi di controllo qualità per i documenti
     // Esempio:
     // Level 1 (Author):
@@ -126,7 +141,7 @@ decision making e retrospective.
     === Statistiche di controllo qualità
       // TODO
 
-      //valutare lil tracciamento dei risultati di controllo qualità
+      //valutare il tracciamento dei risultati di controllo qualità
 
     == Rotazione e assegnazione dei ruoli
     Sono previsti 3 meccanismi di rotazione dei ruoli, ognuno di essi risponde a una specifica esigenza che il gruppo si è trovato ad affrontare durante lo svolgimento delle attività.
@@ -296,6 +311,13 @@ Una issue deve essere composta da:
 
 ==== Piano di Progetto
 // TODO : stilare una descrizione come  quella dei verbali
+- Nome: "Piano_progetto_vx.x".
+- Finalità:Documento necessario ad attuare uno sviluppo plan-driven. \ 
+  Le principali informazioni che contiene sono l'ambito del progetto, preventivo iniziale, risorse disponibili, analisi e piano di gestione dei rischi, suddivisione e scheduling del lavoro.
+- Destinatari: Interni, esterni, BlueWind s.r.l. , professori.
+- Ruoli: Il ruolo di progetto primario coivolto è il responsabile, i ruoli documentali coinvolti sono quelli previsti dal workflow per *documenti complessi* (#ref(<complexDoc>,supplement: "Sezione") )
+- Procedure:L'aggiornamento periodico del documento è uno degli obblighi del responsabile, oltre a questa regola vengono applicate le procedure previste per i documenti complessi.
+- Struttura: #ref(<struttPianoProgetto>, supplement: "Sezione") .
 
 ==== Piano di Qualifica
 // TODO : stilare una descrizione come  quella dei verbali
@@ -320,7 +342,7 @@ Una issue deve essere composta da:
 - Finalità: Stabilisce cosa il sistema (prodotto software) deve fare e quali benefici porta.
 - Destinatari: Esterni, BlueWind s.r.l. , professori .
 - Ruoli: Nella realizzazione e rotazione dei ruoli vengono adottate le procedure previste per i documenti complessi 
-  (#ref(<complexDoc>,supplement: "Sezione" )), vengono anche consumate ore produttive del ruolo *Analista* (#ref(<RuoliProgetto>,supplement: "Ruoli"))
+  (#ref(<complexDoc>,supplement: "Sezione" )), vengono anche consumate ore produttive del ruolo *Analista* (#ref(<RuoliProgetto>,supplement: "Ruoli")).
 - Struttura: #ref(<strutturaRE>, supplement: "Sezione") .
 - Procedure: Iterazione di Requirements elicitation -> Requirements specification -> Requirements Validation -> Requirements elicitation 
 
@@ -340,7 +362,7 @@ Una issue deve essere composta da:
 
 == Descrizione dei ruoli <RuoliProgetto>
 #list(
-  [*Responsabile*:
+  [*Responsabile*():project manager
   - Coordina l’elaborazione di piani e scadenze
   - Approva il rilascio di prodotti parziali o finali
   - Comunica con il committente
@@ -350,35 +372,53 @@ Una issue deve essere composta da:
   
   [*Amministratore*: 
   - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working
+  - Definisce, controlla, e manutiene l’ambiente IT di lavoro.
+  - Gestione delle segnalazioni (ticket) su non-funzionamento
+dell’infrastruttura.
   - Presenza richiesta durante tutto l'arco del progetto
   ],
 
   [*Analista*: 
   - Svolge le attività di analisi dei requisiti
   - Figura essenziale nella fase iniziale del progetto
+  - Conoscono il dominio del problema e hanno esperienza
+    professionale
+  - Sono pochi: non seguono il progetto fino alla consegna
   ]  ,
 
   [*Progettista*:
   - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
   - Svolge le attività di design e modellazione
   - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+  - Hanno competenze tecniche e tecnologiche aggiornate
+  - Determinano le scelte realizzative 
+  - Sono pochi: seguono lo sviluppo, non la manutenzione.
   ],
 
   [*Programmatore*:
   - Svolge le attività di codifica
   - Implementa le scelte prese dal progettista
   - Figura essenziale nella fase di implementazione
+  - Contribuiscono alla realizzazione e manutenzione del
+    prodotto. 
+  - Hanno competenze tecniche ma deleghe limitate.
   ],
   [*Verificatore*:
   - Garantisce la qualità degli elementi sviluppati
   - Svolge le attività di testing e validazione
   - Figura essenziale nella fase di implementazione e successiva
+  - Hanno competenze tecniche, esperienza professionale,
+    conoscenza del way of working
+  - Hanno capacità di giudizio e di relazione
   ]
   )
 
-== Procvedure di cedimento del ruolo
+== Procedure di cedimento del ruolo
 Al fine di favorire il passaggio di conoscenze alla rotazione dei ruoli.
-// TODO
+// TODO stabilire procedure per facilitare la comprensione del ruolo
+// A ha ricoperto il ruolo X nel primo sprint
+// B lo ricopre nel secondo
+// A aiuta B a capire cosa fare e come farlo
 
 
 == Ore previste
@@ -462,7 +502,7 @@ Nel seguente paragrafo si delinea la distribuzione dei ruoli lungo la durata del
 
 === Fase di realizzazione
 Vaglia la maturità della baseline architetturale del prodotto software e la sua realizzazione (*PB*).
-In questa fase verrann consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore
+In questa fase verranno consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore
 
 == Strumenti per il controllo di avanzamento
 // TODO, approfondire
@@ -526,7 +566,7 @@ Qui viene descritta la struttura dei vari documenti:
 ==== Analisi dei requisiti <strutturaRE>
 Documento complesso la cui scrittura è continuativa per vari periodi di avanzamento. \
 La struttura generale del documento è la seguente:
-#enum(numbering: "1.1)", full: true,
+#enum(numbering: "1.1)", full: true, start: 0,
 [Informazioni generali:
 + Frontespizio introduttivo
 + Tabella dello stato del documento
@@ -558,4 +598,71 @@ La struttura generale del documento è la seguente:
   )],
 [Appendice],
 )
+
+==== Piano di progetto <struttPianoProgetto>
+#enum( start: 0, full:true, numbering: "1)",
+[Informazioni generali:
++ Frontespizio introduttivo
++ Tabella dello stato del documento
++ Registro delle modifiche
++ Indice dei contenuti
+],
+[
+  Introduzione
+  + Scopo del documento
+  + Scopo del prodotto
+  + Maturità e miglioramenti
+],
+[
+  Riferimenti
+  + Riferimenti normativi
+  + Riferimenti informativi
+],
+[
+  Organizzazione del progetto
+  + Ruoli \
+    Eventualmente separandoli per "scope", processi primari, di supporto, organizzativi.
+],
+[
+  Analisi dei rischi
+  + Identificazione dei rischi \
+    Lista dei potenziali rischi
+  + Analisi dei rischi \
+    Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto. 
+  + Prevenzione e gestione dei rischi \
+    Strategie atte ad evitare, minimizzare o contenere i rischi
+  + Monitoraggio dei rischi \
+    Modalità di monitoraggio e aggiornamento dei rischi, per garantire che l'analisi dei rischi sia efficcacie è necessario un aggiornamento periodico, ovvero un ritorno alla fase di analisi.
+    
+],
+[
+  Requisiti di risorse hardware e software \
+  Software necessario allo sviluppo del progetto.
+  Non sono stati individuati requisiti hardware.   
+],
+[
+  Suddivisione/Scomposizione del lavoro \
+  Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
+  Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
+],
+[
+  Piano di avanzamento del progetto (Project schedule) \
+  Mette in evidenza le dipendenze tra le attività, il tempo assegnato a ogni milestone, l'allocazione dei ruoli alle attività.
+    Eventualmente separandole per "baseline", Candidatura,RTB , PB.
+],
+[
+  Metodi di retrospettiva
+  // da valutarne se lasciare separata o incorporare da altre parti
+],
+[
+  Analisi dei periodi di avanzamento \
+  Per ogni periodo 
+  - Preventivo
+  - Consuntivo
+],
+
+)
+
+
+
 ]
