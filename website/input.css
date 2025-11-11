@@ -70,3 +70,7 @@ ul.docs-list a {
 .file-version {
   @apply text-sm text-slate-300;
 }
+
+#navbar-dropdown.hidden {
+  transition: all 0.4s ease;
+}
