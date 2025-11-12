@@ -321,7 +321,13 @@ Una issue deve essere composta da:
 
 ==== Piano di Qualifica
 // TODO : stilare una descrizione come  quella dei verbali
-
+- Nome: "Piano_qualifica_vx.x".
+- Finalità:Questo documento ha il compito di fissare, delineare e descrivere gli standard di qualità, conformemente ai principi dell'ingegneria del software. \
+Per migliorare la comprensione e la valutazione della qualità del prodotto vengono definiti gli obiettivi di qualità, i processi e le risorse necessari a raggiungerli.
+- Destinatari: Esterni.
+- Ruoli: I ruoli documentali coinvolti sono quelli previsti dal workflow per *documenti complessi* (#ref(<complexDoc>,supplement: "Sezione") ).
+- Procedure:vengono applicate le procedure previste per i documenti complessi.
+- Struttura: #ref(<pianoQualifica>, supplement: "Sezione") .
 
 
 
@@ -329,6 +335,12 @@ Una issue deve essere composta da:
 
 ==== Glossario
 // TODO : stilare una descrizione come  quella dei verbali
+- Nome: "Glossario_vx.x".
+- Finalità:Questo documento ha lo scopo di ridurre l'ambiguità nelle comunicazioni, definisce il significato dei termini all'interno dell'ambito del progetto.
+- Destinatari: Interni, esterni, BlueWind s.r.l.
+- Ruoli: I ruoli documentali coinvolti sono quelli previsti dal workflow per *documenti complessi* (#ref(<complexDoc>,supplement: "Sezione") )
+- Procedure:L'aggiornamento del documento è continuativo e a opera dei membri del gruppo (quando un membro del gruppo incorre in un nuovo termine che ritiene opportuno inserire nel glossario, lo inserisce), oltre a questa regola vengono applicate le procedure previste per i documenti complessi.
+- Struttura: #ref(<glossario>, supplement: "Sezione") .
 
 ==== Norme di progetto
 // TODO : stilare una descrizione come  quella dei verbali
@@ -662,7 +674,54 @@ La struttura generale del documento è la seguente:
 ],
 
 )
+==== Glossario <glossario>
+#enum( start:0,
+  [Informazioni generali:
++ Frontespizio introduttivo
++ Tabella dello stato del documento
++ Registro delle modifiche
++ Indice dei contenuti],
+  [Introduzione],
+)
+Per ogni lettera dell'alfabeto viene definita una apposita sezione, in ogni sezione vengono definiti i termini che iniziano per quella lettera, in ordine alfabetico.
 
 
+
+
+
+
+==== Piano di Qualifica <pianoQualifica>
+#enum( start: 0, full:true, numbering: "1)",
+[Informazioni generali:
++ Frontespizio introduttivo
++ Tabella dello stato del documento
++ Registro delle modifiche
++ Indice dei contenuti
+],
+[
+  Introduzione
+  + Scopo del documento
+  + Scopo del prodotto
+  + Piano di progetto (solo riferimento al documento oppure una sezione a se stante)
+  + Maturità e miglioramenti
+],
+[
+  Riferimenti
+  + Riferimenti normativi
+  + Riferimenti informativi
+],
+[
+Processi
++ descrizione dei processi di di sviluppo e gli standard usati
+],
+[
+Obiettivi di qualità
+],
+[
+  Gestione dei rischi
+],
+
+
+)
 
 ]
