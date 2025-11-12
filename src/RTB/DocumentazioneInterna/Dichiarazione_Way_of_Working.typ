@@ -8,6 +8,8 @@
 #import "@preview/cetz-plot:0.1.3": chart
 #set text(size: 13pt)
 // #set par(justify: true)
+
+#set text(lang: "it")
 #set heading(numbering: "1.1)")
 #show ref: body => underline()[*#body*]
 #show link: body => {set text(fill:blue); underline()[#body]}
@@ -167,7 +169,7 @@ Compliance Verification di BlueWind]
     ("Documento 2","D","E","F"),
     ("Documento 3","B","C","D")
   ))
-Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \(Autore, Revisore, Validatore\) non rimanga uguale nel tempo (Non è sempre A,B,C o D,E,F);
+Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \(Autore, Revisore, Validatore\) non rimanga invariata nel tempo.
     
 === Documenti complessi <complexDoc>
 Con documento complesso si intendono documneti molto corposi dal punto di vista dei contenuti e di maggiore rilevanza rispetto ai documenti semplici
@@ -190,26 +192,26 @@ Il coordinatore del documento (o responsabile, per tradurre in ruoli del progett
 
 === Aggiornamenti di emergenza
 Non è collegato al tipo di documento, ma alla sua priorità. 
-In caso si pongano in essere condizioni straordinarie che rendano necessaria una quanto più tempestiva risposta si possono ignorare i criteri sulla rotazione dei ruoli adottando un criterio molto grezzo:"Chi può fare per primo fa),ma mantenendo il vincolo di indipendenza  (Autore $eq.not$ Revisore $eq.not$ Verificatore) 
+In caso si pongano in essere condizioni straordinarie che rendano necessaria una quanto più tempestiva risposta si possono ignorare i criteri sulla rotazione dei ruoli adottando un criterio molto grezzo (chi può fare per primo fa),ma mantenendo il vincolo di indipendenza  (Autore $eq.not$ Revisore $eq.not$ Verificatore) 
 
 
 == Workflow <workflow>
-All'interno dell'ambito documentale si è optatpo per il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
+All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
 
 === Stati del documento <Workflow>
-  - *Backlog*, magazzino delle attività da svolgere, ogni documento inizia in questo stato.
-  - *In progress*, il documento è stato preso in carico da un autore.
-  - *In review* , il lavoro dell'autore è finito e il documento deve essere revisionato oppure il documento non è stato approvato nella fase "In validazione" e va corretto.
-  - *In validazione*, il lavoro del revisore è finito e  il documento va valutato per l'approvazione o respinto fornendo le opportune motivazioni accompagnate da un elenco delle correzzioni da apportare.
-  - *Done*, il documento è stato approvato
+  - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
+  - *In progress*: il documento è stato preso in carico da un autore.
+  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
+  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzzioni da apportare.
+  - *Done*, il documento è stato approvato.
 
 === Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da *Backlog* a *In Progress*: un autore si assegna una issue e comincia a scrivere la bozza del documento
-  - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, deve portare la issue in revisione, togliersi dagli assegnatari e assegnarla al revisore (deciso a priori) che verrà notificato.
-  - Da *In review* a *In validazione*: il revisore ha correto la bozza e propone una revisione al validatore. Deve portare la issue in validazione, togliersi dagli assegnatari e assegnarla al validatore.
-  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di errori motivati che il revisore dovrà correggere. Dovrà riassegnare la issue al revisore.
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato.
+  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
+  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
   - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
@@ -221,7 +223,7 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
 
 
   == Separazione tra area di rilascio e area di lavoro <separazione>
-    Il gruppo si è trovato bene a lavorare usando GitHub per condividere il proprio lavoro e si è scelto di sfruttare le funzionalità di branching per attuare tale separazione.
+    Il gruppo ha riscontrato un’esperienza positiva nell’utilizzo di GitHub per la condivisione del lavoro e ha scelto di utilizzare le funzionalità di branching per realizzare la separazione delle attività.
 
     A seguito dell'analisi delle best practices, si è giunti alla seguente conclusione: 
 
@@ -233,53 +235,55 @@ All'interno dell'ambito documentale si è optatpo per il seguente modello per de
 
   === Area di rilascio e lavoro
   Vengono usate le funzionalità di GitHub, una prima separazione è realizzata usando il branching. \
-  L'area di rilascio corrisponde al branch main, i documenti presenti in quest'area sono in stato "Done". \
-  L'area di lavoro corrisponde al branch develop, qui vi sono tutti i documenti in lavorazione e completati. \
+  L'area di rilascio corrisponde al branch main. I documenti presenti in quest'area sono in stato "Done". \
+  L'area di lavoro corrisponde al branch develop, qui vi sono tutti i documenti ancora in lavorazione/* e completati*/. \
   Gli allineamenti avvengono tramite merge dei branch.
 
   Tramite la funzionalità GitHub pages viene resa disponibile una pagina web, al fine semplificare l'accesso ai documenti.
 
-  Tramite GitHub action sono state predisposte automazioni per la compilazione automatica dei documenti .typ -> .pdf una volta pubblicati nell'area di rilascio.
+  Mediante GitHub action sono state predisposte automazioni per la compilazione automatica dei documenti .typ -> .pdf una volta pubblicati nell'area di rilascio.
 
   === Strumenti per la scrittura
-  Come Strumento per scrivere la documnetazione è stato scelto typst.
+  Come Strumento per la stesura della documetazione è stato scelto Typst.
 
   === Tracciamento delle attività svolte e dei ruoli 
-  Si è deciso di tracciare i ruoli assegnati all'interno del documento stesso (nella tabella dello stato del documento e nel registro delle modifiche) e in un foglio di calcolo dedicato.
-  Tale foglio di calcolo ha anche lo scopo di facilitare la rotazione dei ruoli, in quanto all'interno delle GitHub issue non viene messo in evidenza il ruolo degli assegnatari ma solo il loro coinvolgimento.
+  Si è deciso di tenere traccia dei ruoli assegnati all'interno del documento stesso (nella tabella dello stato del documento e nel registro delle modifiche) e in un foglio di calcolo dedicato.
+  Tale foglio di calcolo ha anche lo scopo di facilitare la rotazione dei ruoli, in quanto all'interno delle GitHub issue non viene messo in evidenza il ruolo degli assegnatari ma solo il loro coinvolgimento. // frase da revisionare
 
   === Tracciamento del workflow
-  Per la modellazione del workflow sono stati usati i seguenti metodi.
+  Per la modellazione del workflow sono stati implementati i seguenti metodi:
 
-  - A ogni documento viene fatto corrispondere un issue, tale issue viene inserito in una project board i cui stati rappresentano gli stati del workflow.
-  - A ogni passaggio di stato, l'autore del cambiamento deve assicurarsi di spostare l'issue relativa al documento nella sezione appropriata
-  - Per rappresentare il tipo di task, la priorità o altre informazioni rilevanti si sfruttano le funzionalità dell'issue tracking system offerto da GitHub
+  - A ogni documento viene fatto corrispondere un issue, tale issue viene inserito in una project board i cui stati di  avanzamento rappresentano gli stati del workflow.
+  - A ogni passaggio di stato, l'autore del cambiamento deve assicurarsi di spostare l'issue relativa al documento nella sezione appropriata.
+  - Per rappresentare il tipo di task, la priorità o altre informazioni rilevanti si sfruttano le funzionalità dell'issue tracking system offerto da GitHub.
 
   Per realizzare la separazione tra area di rilascio e area di lavoro, come già detto si è deciso di sfruttare le funzionalità di braching offerte da GitHub e Git
 
 
 == Stato dell'arte
 === Scrittura dei commit
-#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ 
-Idea: i commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è il fine del commit, mentre la descrizione aiuta il lettore esterno a capire quali cambiamenti sono stati fatti. Le regole generali sono:
-- iniziare il commit con tipo seguito da ":"
-- lasciare uno spazio tra tipo e descrizione
-- iniziare la descrizione con una lettera maiuscola
-- limitare la descrizione a 50 caratteri
+#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ // cambia il link
+I commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è l'obbiettivo del commit, mentre la descrizione aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettua. \ 
+Le regole generali sono:
+- iniziare il commit con tipo seguito da ":" .
+- lasciare uno spazio tra tipo e descrizione.
+- iniziare la descrizione con una lettera maiuscola.
+- limitare la descrizione a massimo 50 caratteri.
 
-Per modificare un commit ancora in locale risulta utile il comando #block(
+Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
 )[`git commit --amend`]
+N.B. :  #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa. #upper("è") preferible astenersi dal modificare commit che sono già stati resi pubblici.
 
 === Scrittura delle issue
-Una issue deve essere composta da:
-- Un titolo descrittivo
-- Una descrizione dettagliata, con la consegna che lo sviluppatore deve rispettare
-- Label:
-    - priorità: alta/media/bassa
-- Task 
+Una issue deve essere composta dai segueneti elementi :
+- Un titolo descrittivo.
+- Una descrizione dettagliata, con la data di consegna che lo sviluppatore deve rispettare.
+- Una Label:
+    - priorità: alta/media/bassa.
+- Una Task:
     - contenuto: verbale interno, verbale esterno …
 
 ==== GitHub issue template
@@ -290,19 +294,17 @@ Una issue deve essere composta da:
 ==== Verbali
   - Nome: YYYY-MM-DD#footnote()[YYYY-MM-DD : Formato della data della riunione]\_Verbale_CONTESTO #footnote()[Interno o esterno]
   - Finalità: Riassuntiva della riunione, agenda, decisioni, azioni.
-  - Destinatari: I membri del gruppo
-  - Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
+  - Destinatari: I membri del gruppo.
+  - Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")] .
 
 ==== Lettera
-// TODO : stilare una descrizione come  quella dei verbali
-- Nome: Lettera\_#upper()[finalità]
-- Finalità: Comunicare al destinatario un messaggio, ad esempio la lettera di presentazione ha lo scopo di esporre al destinatario la scelta del capitolato, gli impegni presi, ecc...
-- Destinatari: Esterni, specificati anche nella lettera.
-- Procedure e ruoli:Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
+- Nome: Lettera\_#upper()[finalità].
+- Finalità: Comunicare al destinatario della suddetta un messaggio. Per esempio la lettera di presentazione ha lo scopo di esporre al destinatario la scelta del capitolato, gli impegni presi, ecc...
+- Destinatari: Esterni, specificati nella lettera.
+- Procedure e ruoli: Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 ==== Diario di bordo
-// TODO : stilare una descrizione come  quella dei verbali
 - Nome: YYYY-MM-DD_Diario_di_bordo
-- Finalità: Esporre lo stato di avanzamento del lavoro durante le apposite lezioni.
+- Finalità: Esporre lo stato di avanzamento del lavoro del gruppo.
 - Destinatari: Il professore e gli altri gruppi.
 - Procedure e ruoli:Nella sua realizzazione viene seguito il workflow precedentemente definito nella #underline()[#ref(<workflow>,supplement: "sezione")], i ruoli sono quelli previsti per un #underline()[#ref(<simpleDoc>,supplement: "Documento semplice")]
 
@@ -310,13 +312,13 @@ Una issue deve essere composta da:
 === Documenti gestionali esterni, complessi
 
 ==== Piano di Progetto
-// TODO : stilare una descrizione come  quella dei verbali
+
 - Nome: "Piano_progetto_vx.x".
-- Finalità:Documento necessario ad attuare uno sviluppo plan-driven. \ 
+- Finalità: Documento necessario ad attuare uno sviluppo plan-driven. \ 
   Le principali informazioni che contiene sono l'ambito del progetto, preventivo iniziale, risorse disponibili, analisi e piano di gestione dei rischi, suddivisione e scheduling del lavoro.
-- Destinatari: Interni, esterni, BlueWind s.r.l. , professori.
+- Destinatari: Interni, esterni ( BlueWind s.r.l. , professori ).
 - Ruoli: Il ruolo di progetto primario coivolto è il responsabile, i ruoli documentali coinvolti sono quelli previsti dal workflow per *documenti complessi* (#ref(<complexDoc>,supplement: "Sezione") )
-- Procedure:L'aggiornamento periodico del documento è uno degli obblighi del responsabile, oltre a questa regola vengono applicate le procedure previste per i documenti complessi.
+- Procedure: Il responsabile ha l'obbligo di aggiornare periodicamente il documento. Le altre procedure applicate sono quelle previste per i documenti complessi. 
 - Struttura: #ref(<struttPianoProgetto>, supplement: "Sezione") .
 
 ==== Piano di Qualifica
@@ -337,14 +339,13 @@ Una issue deve essere composta da:
 === Documenti tecnici esterni
 
 ==== Analisi dei requisiti
-// TODO : stilare una descrizione come  quella dei verbali
 - Nome: Analisi_requisiti.
-- Finalità: Stabilisce cosa il sistema (prodotto software) deve fare e quali benefici porta.
-- Destinatari: Esterni, BlueWind s.r.l. , professori .
+- Finalità: Stabilire cosa il sistema (prodotto software) deve fare e quali benefici porta.
+- Destinatari: Esterni ( BlueWind s.r.l. , professori ) .
 - Ruoli: Nella realizzazione e rotazione dei ruoli vengono adottate le procedure previste per i documenti complessi 
   (#ref(<complexDoc>,supplement: "Sezione" )), vengono anche consumate ore produttive del ruolo *Analista* (#ref(<RuoliProgetto>,supplement: "Ruoli")).
 - Struttura: #ref(<strutturaRE>, supplement: "Sezione") .
-- Procedure: Iterazione di Requirements elicitation -> Requirements specification -> Requirements Validation -> Requirements elicitation 
+- Procedure: Iterazione di:  Requirements elicitation -> Requirements specification -> Requirements Validation.
 
 ==== Specifica tecnica
 // TODO : stilare una descrizione come  quella dei verbali
@@ -362,54 +363,50 @@ Una issue deve essere composta da:
 
 == Descrizione dei ruoli <RuoliProgetto>
 #list(
-  [*Responsabile*():project manager
-  - Coordina l’elaborazione di piani e scadenze
-  - Approva il rilascio di prodotti parziali o finali
-  - Comunica con il committente
-  - Garantisce che le risorse disponibili siano usate con efficienza
-  - Presenza richiesta durante tutto l'arco del progetto
+  [*Responsabile* (project manager):
+  - Coordina l’elaborazione di piani e scadenze.
+  - Approva il rilascio di prodotti parziali o finali.
+  - Comunica con il committente.
+  - Garantisce che le risorse disponibili siano usate con efficienza.
+  - Presenza richiesta durante tutto l'arco del progetto.
   ],
   
   [*Amministratore*: 
-  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working
+  - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del way of working.
   - Definisce, controlla, e manutiene l’ambiente IT di lavoro.
-  - Gestione delle segnalazioni (ticket) su non-funzionamento
-dell’infrastruttura.
-  - Presenza richiesta durante tutto l'arco del progetto
+  - Gestione delle segnalazioni (ticket) sul non-funzionamento dell’infrastruttura.
+  - Presenza richiesta durante tutto l'arco del progetto.
   ],
 
   [*Analista*: 
-  - Svolge le attività di analisi dei requisiti
-  - Figura essenziale nella fase iniziale del progetto
-  - Conoscono il dominio del problema e hanno esperienza
-    professionale
-  - Sono pochi: non seguono il progetto fino alla consegna
+  - Svolge le attività di analisi dei requisiti.
+  - Figura essenziale nella fase iniziale del progetto.
+  - Conoscono il dominio del problema e hanno esperienza professionale.
+  - Sono pochi: non seguono il progetto fino alla consegna.
   ]  ,
 
   [*Progettista*:
-  - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
-  - Svolge le attività di design e modellazione
-  - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
-  - Hanno competenze tecniche e tecnologiche aggiornate
-  - Determinano le scelte realizzative 
+  - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista.
+  - Svolge le attività di design e modellazione.
+  - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti).
+  - Hanno competenze tecniche e tecnologiche aggiornate.
+  - Determinano le scelte realizzative.
   - Sono pochi: seguono lo sviluppo, non la manutenzione.
   ],
 
   [*Programmatore*:
-  - Svolge le attività di codifica
-  - Implementa le scelte prese dal progettista
-  - Figura essenziale nella fase di implementazione
-  - Contribuiscono alla realizzazione e manutenzione del
-    prodotto. 
+  - Svolge le attività di codifica.
+  - Implementa le scelte prese dal progettista.
+  - Figura essenziale nella fase di implementazione.
+  - Contribuiscono alla realizzazione e manutenzione del prodotto. 
   - Hanno competenze tecniche ma deleghe limitate.
   ],
   [*Verificatore*:
-  - Garantisce la qualità degli elementi sviluppati
-  - Svolge le attività di testing e validazione
-  - Figura essenziale nella fase di implementazione e successiva
-  - Hanno competenze tecniche, esperienza professionale,
-    conoscenza del way of working
-  - Hanno capacità di giudizio e di relazione
+  - Garantisce la qualità degli elementi sviluppati.
+  - Svolge le attività di testing e validazione.
+  - Figura essenziale nella fase di implementazione e successiva.
+  - Hanno competenze tecniche, esperienza professionale, conoscenza del way of working.
+  - Hanno capacità di giudizio e di relazione.
   ]
   )
 
@@ -482,7 +479,7 @@ Al fine di favorire il passaggio di conoscenze alla rotazione dei ruoli.
 
 == Rendicontazione delle ore
 Al fine di rendicontare e monitorare le ore il gruppo si è dotato di un foglio di calcolo google sheet.
-In esso sono rendicontate le ore dedicate ai ruoli di progetto, per ciascun membro del gruppo sono visibili il ruolo, le ore previste e le ore effettive relative a ciascun periodo di avanzamento.
+In esso sono rendicontate le ore dedicate ai rispettivi ruoli di progetto, per ciascun membro del gruppo sono visibili il ruolo, le ore previste e le ore effettive relative a ciascun periodo di avanzamento.
 
 
 == Distribuzione dei ruoli
@@ -502,11 +499,11 @@ Nel seguente paragrafo si delinea la distribuzione dei ruoli lungo la durata del
 
 === Fase di realizzazione
 Vaglia la maturità della baseline architetturale del prodotto software e la sua realizzazione (*PB*).
-In questa fase verranno consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore
+In questa fase verranno consumate le rimanenti ore, le attività richiederanno il lavoro di progettista, programmatore e verificatore.
 
 == Strumenti per il controllo di avanzamento
 // TODO, approfondire
-Al momento non vi è separazione tra la rendicontazione delle ore e il controllo dell'avanzamento
+Al momento non vi è separazione tra la rendicontazione delle ore e il controllo dell'avanzamento.
 
 == Metodi per l'apprendimento di un nuovo ruolo
 
