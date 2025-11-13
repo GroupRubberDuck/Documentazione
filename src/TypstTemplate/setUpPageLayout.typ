@@ -20,6 +20,7 @@
     ]),
     numbering: "i",
   )
+
   doc
 }
 
@@ -70,6 +71,11 @@
     ]),
     numbering: "i",
   )
+
+  show outline.entry.where(level: 1): it => {
+    strong(it)
+  }
+
   doc
 }
 
@@ -95,5 +101,8 @@
     ]),
     numbering: "1",
   )
+
+  set par(justify: true)
+
   doc
 }
