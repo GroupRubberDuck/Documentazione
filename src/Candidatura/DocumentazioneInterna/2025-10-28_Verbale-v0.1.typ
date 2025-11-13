@@ -1,7 +1,8 @@
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage
-#import template_dir + "/setUpPageLayout.typ": insertArabicNumberedPages, insertRomanNumberedPages
+#import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
+#import template_dir + "/statusTab.typ": statusTab
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 
 #set text(size: 12pt)
@@ -11,9 +12,21 @@
 
 #frontPage([Verbale riunione], giornoRiunione)
 
+#insertRomanNumberedPages( "Stato del documento", "Preventivo dei costi",giornoRiunione)[
+  #statusTab(
+    stato: "In validazione",
+    versione: "1.0",
+    autori: ("Felician Mario Necsulescu",),
+    revisori: ("Aldo Bettega",),
+    validatori: ("-",),
+    uso: "Interno",
+    destinatari: ("Tutto il gruppo",),
+  )
+]
+
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
-  ([0.1],[2025-10-29],[Stesura del verbale],[Felician Mario Necsulescu],[Aldo Bettega], [-]),
+  ([1.0],[2025-10-29],[Stesura del verbale],[Felician Mario Necsulescu],[Aldo Bettega], [-]),
 ))
 ]
 
