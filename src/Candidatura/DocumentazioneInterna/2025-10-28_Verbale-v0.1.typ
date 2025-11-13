@@ -13,7 +13,7 @@
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
-  ([0.1],[2025-10-29],[Stesura del verbale],[Felician Mario Necsulescu],[-], [-]),
+  ([0.1],[2025-10-29],[Stesura del verbale],[Felician Mario Necsulescu],[Aldo Bettega], [-]),
 ))
 ]
 
@@ -49,7 +49,7 @@
 
 #align()[
     #set text(weight: "bold")
-#list(marker: [‣])[Discussione collocazione documento diario di bordo][Standard di nomenclatura dei documenti][Determinazione workflow per la gestione dei verbali][Definizione dei TODO e pianificazione delle attività ai fini della candidatura ]
+#list(marker: [‣])[Discussione collocazione documento diario di bordo][Standard di nomenclatura dei documenti][Determinazione workflow per la gestione dei verbali][Definizione dei TODO e pianificazione delle attività in vista della candidatura ]
 ]
 ]
 
@@ -61,7 +61,7 @@
   ][
     Il gruppo ha affrontato la questione della *nomenclatura dei file*, valutando diverse convenzioni possibili. Si è optato per l'adozione di uno standard basato sul formato ISO internazionale, che permette di sfruttare l'ordinamento automatico dei sistemi operativi e facilita la ricerca temporale dei documenti.
   ][
-     È stato analizzato il processo di produzione dei verbali, individuando la necessità di un *workflow strutturato* con fasi dsitinte che garantisca tracciabilità e qualità.
+     È stato analizzato il processo di produzione dei verbali, individuando la necessità di un *workflow strutturato* con fasi distinte che garantisca tracciabilità e qualità.
   ][
     In vista della scadenza per la candidatura, il gruppo ha affrontato la questione della *distribuzione del carico di lavoro*, identificando le principali attività da completare e la necessità di bilanciare equamente le responsabilità.
   ]
