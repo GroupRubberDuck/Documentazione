@@ -84,7 +84,7 @@
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
   == Risoluzione degli argomenti dell'ordine del giorno
-  -  Per la *rotazione dei ruoli* è stato deciso di applicare il metodo definito in "Workflow" nel Way of Working, che consente una rotazione automatica, ma flessibile in caso di necessità, con tracciamento tramite un foglio Excel nel Google Drive del gruppo RubberDuck.
+  -  Per la *rotazione dei ruoli* è stato deciso di applicare il metodo definito nel Way of Working, che consente una rotazione automatica, ma flessibile in caso di necessità, con tracciamento tramite un foglio Excel nel Google Drive del gruppo RubberDuck.
   -  È stato presentato al gruppo il contenuto della dichiarazione di *Way of Working*, discutendone i vari punti e chiarendo le perplessità emerse.
   - Per rendere più *professionale, chiara e standardizzata* la scrittura delle issue — e per facilitare l’assegnatario nella comprensione dei compiti — è stato deciso di adottare un *issue template*, modellato sulle esigenze del progetto e del gruppo. A tal fine è stata svolta una ricerca approfondita consultando vari articoli online.
   - Una volta superata la fase di candidatura, sono state fissate le prossime *milestone*: è stata definita la milestone di RTB, scomposta in sotto-milestone secondo #link("https://drive.google.com/file/d/1pveMXr-zfDxuyzZw_KPKbcDTuhFIdpOJ/view")[queste linee guida generali]  (sono date indicative, ma che danno un'idea per una più efficace gestione del tempo). Sono inoltre stati consultati i documenti dei gruppi degli anni precedenti per valutare, tramite i registri delle modifiche, la durata media di questa fase.
