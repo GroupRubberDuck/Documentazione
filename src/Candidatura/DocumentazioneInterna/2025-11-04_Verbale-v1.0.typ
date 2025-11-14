@@ -13,12 +13,12 @@
 
 #frontPage([Verbale riunione], giornoRiunione)
 
-#insertRomanNumberedPages( "Stato del documento", "Preventivo dei costi",giornoRiunione)[
+#insertRomanNumberedPages( "Stato del documento", "Verbale Interno",giornoRiunione)[
   #statusTab(
-    stato: "In review",
+    stato: "In validazione",
     versione: "1.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("-",),
+    revisori: ("Aldo Bettega",),
     validatori: ("-",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
@@ -30,7 +30,7 @@
   #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
   #let modifiche=(
 
-    ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[-],[-]),
+    ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Davide Lorenzon],[Aldo Bettega],[-]),
       
       ).rev()
 
@@ -51,8 +51,8 @@
 
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
-- *Tipo di riunione* : Interno
-- *Motivazione*:Riunione di emergenza, a seguito della sospenzione dell'aggiudicazione
+- *Tipo di riunione*: Interno
+- *Motivazione*: Riunione di emergenza, a seguito della sospensione dell'aggiudicazione
 - *Data*: #giornoRiunione.display()
 - *Luogo*: Riunione su Discord
 - *Ora inizio*: 15:00
@@ -84,7 +84,7 @@
 
   Gli argomenti di discussione trattati sono i seguenti:
   #list(
-    [La discussione della scelta del capitolato ha messo in evidenza le opinioni del gruppo, arrivando alla conclusione che non era conveniente nella nostra attuale rimanere in concorrenza per l'appalto *C7*. \
+    [La discussione della scelta del capitolato ha messo in evidenza le opinioni del gruppo, arrivando alla conclusione che non era conveniente nella nostra situazione attuale rimanere in concorrenza per l'appalto *C7*. \
     In considerazione della disponibilità di uno slot libero relativo al capitolato *C1*, che era comunque la seconda preferenza del gruppo, si è scelto di candidarsi per suddetto appalto. 
   ],
     [Si è discusso delle carenze e criticità messe in evidenza:
@@ -92,7 +92,7 @@
     [Regole di rotazione dei ruoli e la tabella delle ore/persona],
     [Organizzazione della repo in modo da mettere in evidenza le baseline],
     [Comportamento del sito, apertura dei documenti in una nuova scheda],
-    [Versionamento, a ogni revisione dovrebbe corrispondere una verifica],
+    [Versionamento, a ogni revisione dovrebbe corrispondere una validazione],
     [Tutti i verbali (anche
 quelli esterni) sono attesi riportare
 decisioni prese a valle della
@@ -115,15 +115,15 @@ che da esse scaturiscono]
   - *Revisore*, prende la versione proposta dall'autore e ne migliora forma e contenuti.
   - *Validatore*, valuta il lavoro svolto sul documento ed eventualmente approva lo spostamento in done. \ Se non viene approvato, deve fornire una lista di correzioni da apportare.
 
-  N.B.) Non vi possono essere sovrapposizione nei ruoli, relativamente a un singolo documento.
+  N.B.) Non vi possono essere sovrapposizioni nei ruoli, relativamente a un singolo documento.
   === Rotazione dei ruoli <Rotazione>
     *Rotazione su documenti semplici*:
   - Ogni membro del team segue una sequenza ciclica: \ Validatore → Autore → Revisore → Validatore
   - Criterio di rotazione per documenti semplici (bassa complessità e ridotto numero di pagine): #list(
     [Ogni ruolo ha cardinalità 1],
     [Vengono definite delle code per ciascun ruolo],
-    [Ogni coda contiene 2 membri distinti del grupp (nessuno può stare in 2 code)],
-    [La persona che costituisce la testa della coda viene assegnatata al ruolo associato alla coda],
+    [Ogni coda contiene 2 membri distinti del gruppo (nessuno può stare in 2 code)],
+    [La persona che costituisce la testa della coda viene assegnata al ruolo associato alla coda],
     [Una volta completato il ciclo di vita del documento, i membri del gruppo vengono inseriti alla fine della coda del ruolo successivo]
   )
   Tale criterio garantisce che tutti i membri del gruppo attraversino tutti i ruoli e che la tupla \<Autore, Revisore, Validatore\> sia diversa rispetto a quella dei 2 documenti precedenti.
@@ -132,7 +132,7 @@ che da esse scaturiscono]
 
 - Gli autori possono essere assegnati come revisori/verificatori su sezioni non da loro prodotte
 
-- Il revisore o Validatore non può operare su contenuti di propria creazione
+- Il revisore o validatore non può operare su contenuti di propria creazione
 
 - Ogni sezione deve essere verificata da almeno un soggetto che non ha partecipato alla sua stesura
 
@@ -155,7 +155,7 @@ In caso si pongano in essere condizioni straordinarie che rendano necessaria una
   === Separazione tra area di rilascio e area di lavoro <separazione>
     Il gruppo si è trovato bene a lavorare usando GitHub per condividere il proprio lavoro e si è scelto di sfruttare le funzionalità di branching per attuare tale separazione.
 
-    La scelta su quantità e funzione dei branch è stato rimandato per necessità di ulteriori analisi, con l'unica condizione di avere un branch main in cui l'unica operazione attuabile sono i rilasci corrispondent alle baseline.
+    La scelta su quantità e funzione dei branch è stato rimandata per necessità di ulteriori analisi, con l'unica condizione di avere un branch main in cui l'unica operazione attuabile sono i rilasci corrispondente alle baseline.
 ]
 
 
@@ -168,11 +168,11 @@ In caso si pongano in essere condizioni straordinarie che rendano necessaria una
 #let decisioni=(
     ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornare opportunamente i documenti relativi alla candidatura.],[Il gruppo ha deciso cambiare la scelta del capitolato],[]),
         ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornare il preventivo dei costi in considerazione delle criticità.],[Il gruppo ha deciso cambiare la scelta del capitolato],[]),
-  ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Migliorare e ufficalizzare il way of working per l'area documentale],[#upper("è") una delle criticità, un way of working chiaro e ufficiale permette di velocizzare e migliorare le attività, oltre a facilitare il miglioramento del way of working stesso],[]),
+  ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Migliorare e ufficializzare il way of working per l'area documentale],[#upper("è") una delle criticità, un way of working chiaro e ufficiale permette di velocizzare e migliorare le attività, oltre a facilitare il miglioramento del way of working stesso],[]),
   ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
       [Nuovo workflow per la repo documentale],[Una delle criticità rilevate],[Descrizione più completa *#ref(<Workflow>) *]),
   ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-      [Cambio struttura delle cartelle],[Modifica di cui si era già parlato, anticipata e ufficalizzata in seguito alla revisione della candidatura],[]),
+      [Cambio struttura delle cartelle],[Modifica di cui si era già parlato, anticipata e ufficializzata in seguito alla revisione della candidatura],[]),
   ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
     [Separazione di area di sviluppo e area di rilascio],
     [Una delle criticità messe in evidenza],[Descrizione più completa *#ref(<separazione>) *]),
