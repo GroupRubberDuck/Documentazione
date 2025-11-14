@@ -1,32 +1,41 @@
-# DiarioDiBordo
+# RubberDuck - Gruppo 14
+**Corso di Ingegneria del Software (2025-2026) - Università degli Studi di Padova**
 
-Repository del gruppo RubberDuck, gruppo 14 di Ingegneria del software anno 2025-2026 presso l'università degli studi di Padova.
+Questo repository raccoglie tutta la documentazione e gli strumenti del gruppo **RubberDuck**, dedicata alle attività del progetto del corso di Ingegneria del Software.
 
-Questa repository è dedicata :
+---
 
-- alle attività del diario di bordo e affini.
-- alla documentazione del progetto
+## Diario di bordo e attività correlate
+La repository contiene tutte le informazioni relative alle attività del **diario di bordo** e documenti affini, tra cui:
 
+- Verbali interni ed esterni  
+- Presentazioni delle lezioni di aggiornamento sul progetto  
+- Documentazione di candidatura e valutazioni dei capitolati  
 
-## Struttura della repo
+Questa sezione permette di tenere traccia di tutte le attività e comunicazioni del gruppo durante lo sviluppo del progetto.
 
-La repository raccoglie tutta la documentazione prodotta dal gruppo e gli strumenti necessari per generare il sito web del progetto.
+---
 
-- La cartella scripts contiene gli script che automatizzano la generazione e l’aggiornamento dei documenti Typst.
-- La cartella src raccoglie i sorgenti principali:
-    - in assets sono presenti risorse statiche di supporto (immagini e font)
-    - in Candidatura sono presenti i documenti di questa fase, suddivisi in:
-        - DocumentazioneEsterna: verbali con le aziende
-        - DocumentazioneInterna: verbali del gruppo
-        - Altri documenti: Dichiarazione degli impegni, Lettera di presentazione e Valutazione dei capitolati
-    - in DiariDiBordo ci sono le presentazioni usate a lezione per esporre l'andamento di progetto
-    - in Glossario sono presenti le definizioni del dominio del progetto
-    - in PB (Product Baseline) ci saranno i documenti necessari a questa fase 
-    - in RTB (Requirements and Technology Baseline) è presente la documentazione necessaria per fase:
-        - DocumentazioneEsterna: verbali esterni, Analisi dei requisiti, Piano di progetto e piano di qualifica
-        - DocumentazioneInterna: verbali interni, Dichiarazione di way of working e Glossario
-    - config.typ è un file di configurazine generale per i documenti typst
-- La cartella website sono presenti i file necessari al sito web di documentazione
+## 📂 Struttura della repository
+La repository è organizzata in cartelle principali per raccogliere la documentazione prodotta e gli strumenti necessari alla generazione del **sito web del progetto**:
+
+- **`scripts/`**: script per automatizzare la generazione e l’aggiornamento dei documenti Typst.  
+- **`src/`**: sorgenti principali
+  - **`assets/`**: risorse statiche di supporto (immagini, font, ecc.)  
+  - **`Candidatura/`**: documenti di questa fase
+    - `DocumentazioneEsterna/` → verbali con le aziende  
+    - `DocumentazioneInterna/` → verbali del gruppo  
+    - `AltriDocumenti/` → Dichiarazione degli impegni, Lettera di presentazione, Valutazione dei capitolati  
+  - **`DiariDiBordo/`**: presentazioni usate a lezione per mostrare l’andamento del progetto  
+  - **`Glossario/`**: definizioni del dominio del progetto  
+  - **`PB/`** (Product Baseline): documenti necessari a questa fase  
+  - **`RTB/`** (Requirements and Technology Baseline):
+    - `DocumentazioneEsterna/` → verbali esterni, Analisi dei requisiti, Piano di progetto e Piano di qualifica  
+    - `DocumentazioneInterna/` → verbali interni, Dichiarazione di Way of Working e Glossario  
+- **`config.typ`**: file di configurazione generale per i documenti Typst  
+- **`website/`**: file necessari per la generazione del sito web della documentazione  
+
+---
 
 # Componenti del gruppo
 
