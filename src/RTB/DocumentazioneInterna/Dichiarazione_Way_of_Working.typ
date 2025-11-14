@@ -196,6 +196,7 @@ In caso si pongano in essere condizioni straordinarie che rendano necessaria una
 
 
 == Workflow <workflow>
+
 All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
