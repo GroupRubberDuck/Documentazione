@@ -13,7 +13,7 @@
 
 #frontPage([Verbale riunione], giornoRiunione)
 
-#insertRomanNumberedPages( "Stato del documento", "Preventivo dei costi",giornoRiunione)[
+#insertRomanNumberedPages( "Stato del documento", "Verbale Interno",giornoRiunione)[
   #statusTab(
     stato: "In validazione",
     versione: "1.0",
