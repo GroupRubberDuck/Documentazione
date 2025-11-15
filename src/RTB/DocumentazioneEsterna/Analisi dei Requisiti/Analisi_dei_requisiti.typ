@@ -89,8 +89,7 @@ Il prodotto è un’applicazione software per la verifica automatizzata della co
 L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity attraverso l’esecuzione automatizzata di decision tree, velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. Il sistema sostituisce il processo manuale che è dispendioso in termini di tempo, soggetto a errori umani e difficile da aggiornare. 
   
 == Glossario
-Il presente documento fa riferimento a un *Glossario esterno (v.1.0.0)* che raccoglie tutti i termini tecnici, gli acronimi e i concetti specifici utilizzati nel progetto. 
-
+Il presente documento fa riferimento a un *Glossario esterno (v.1.0.0)* che raccoglie tutti i termini tecnici, gli acronimi e i concetti specifici utilizzati nel progetto. \
 I termini definiti nel Glossario sono evidenziati in corsivo e contrassegnati dal simbolo #sub[G] quando compaiono nei documenti di progetto. Il Glossario è disponibile come documento separato allegato alla documentazione interna di progetto. 
 
 == Miglioramenti del documento
