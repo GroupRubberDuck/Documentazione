@@ -84,7 +84,7 @@
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
-n questo documento vengono raccolti e definiti i termini chiave utilizzati nelle attività di progetto, per garantire chiarezza e coerenza tra i membri del team e tra soggetti esterni coinvolti, come revisori, stakeholder o utenti finali.  
+In questo documento vengono raccolti e definiti i termini chiave utilizzati nelle attività di progetto, per garantire chiarezza e coerenza tra i membri del team e tra soggetti esterni coinvolti, come revisori, stakeholder o utenti finali.  
 Lo scopo del glossario è fornire un riferimento unico per abbreviazioni, concetti tecnici e termini normativi utilizzati durante lo sviluppo del progetto, facilitando comunicazione, collaborazione e documentazione.
 
 Per approfondimenti e riferimenti al capitolato e ad altri documenti di progetto, consultare:

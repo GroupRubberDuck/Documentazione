@@ -43,7 +43,6 @@
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
 
-
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
