@@ -41,8 +41,13 @@
   "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità],
 )
 
-
-
+#let refTerm(term: str) = { 
+  if dict.has(term) {
+    footnote(term, dict.at(term))
+  } else {
+    term
+  }
+}
 
 #frontPageSenzaData(doc)
 
@@ -79,7 +84,13 @@
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
-  In questo documento vengono raccolti e analizzati tutti i termini rilevantio per le attività di progetto relative al capitolato #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[C9]
+n questo documento vengono raccolti e definiti i termini chiave utilizzati nelle attività di progetto, per garantire chiarezza e coerenza tra i membri del team e tra soggetti esterni coinvolti, come revisori, stakeholder o utenti finali.  
+Lo scopo del glossario è fornire un riferimento unico per abbreviazioni, concetti tecnici e termini normativi utilizzati durante lo sviluppo del progetto, facilitando comunicazione, collaborazione e documentazione.
+
+Per approfondimenti e riferimenti al capitolato e ad altri documenti di progetto, consultare:
+- Capitolo del capitolato: #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[C1]  
+- Documentazione tecnica aggiuntiva: #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione")[Repo Progetto]
+
 
 
 

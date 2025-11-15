@@ -585,6 +585,7 @@ La struttura generale del documento è la seguente:
 ],
 [Introduzione
 #enum(numbering: "1.1)", full: true,
+  [Scopo del documento],
   [Scopo del prodotto],
   [Glossario],
   [Miglioramenti del documento],
@@ -596,10 +597,12 @@ La struttura generale del documento è la seguente:
 
 [Descrizione generale
 #enum(numbering: "1.1)", full: true,
+  [Contesto e problema],
   [Obiettivi del prodotto],
-  [Funzionalità del prodotto],
-  [Classi di utenti],
-  [Piattaforma di esecuzione])
+  [Funzioni del prodotto],
+  [Caratteristiche degli utenti],
+  [Piattaforma di esecuzione],
+  [Caso studio fornito -Panoramica])
 ],
 
 [Casi d'uso
