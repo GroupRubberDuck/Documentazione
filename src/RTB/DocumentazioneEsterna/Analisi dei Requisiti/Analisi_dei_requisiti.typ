@@ -6,7 +6,7 @@
 #import template_dir + "/statusTab.typ": statusTab
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
-#import "../../DocumentazioneInterna/Glossario.typ"
+#import "../../DocumentazioneInterna/Glossario.typ" : dict
 #set text(size: 13pt)
 // #set par(justify: true)
 #set heading(numbering: "1.1) ")
@@ -73,7 +73,7 @@ Il documento esplicita le funzionalità che il prodotto finale deve offrire e id
 
 I casi d’uso sono documentati secondo la notazione UMLG e comprendono nome, attori principali, precondizioni, trigger, scenario principale e scenari alternativi. Queste informazioni permettono di rappresentare in modo chiaro le interazioni tra utenti e sistema, facilitando lo sviluppo, i test e la manutenzione futura.
 
-#refTerm("Requisiti")
+
   
 ==  Scopo del documento <sec-scopo-doc>
 

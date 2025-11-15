@@ -38,6 +38,7 @@
 
   ([0.1],[2025-11-11],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
   ([0.2],[2025-11-11],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)],[Davide Lorenzon],[-],[-]),
+  ([0.3],[2025-11-11],[Aggiornata @strutturaRE con le modifiche alla scaletta AdR],[Ana Maria Draghici],[-],[-]),
   
 )
 #registroModifiche(modifiche)

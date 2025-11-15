@@ -30,15 +30,135 @@
 #let dict=(
   Requisiti:[
     - Lato bisogno, capacità necessaria all'utente per raggiungere un obiettivo.
-    - Lato soluzione, la capacità necessaria a un sistema per rispondere a un'aspettativa, l'analisi dei requisiti si concentra su questo.] ,
+    - Lato soluzione, la capacità necessaria a un sistema per rispondere a un'aspettativa, ] ,
 
   End-user:[Utilizzatore finale del prodotto software.],
 
-  Verifica:[Accertare che lo svolgimento delle attività di sviluppo non introduca errori],
+  Verifica:[
+    Controllo che assicura che lo sviluppo non introduca errori rispetto alle specifiche.
+  ],
 
-  Validazione:[Accertare che il prodotto finale corrisponda alle attese],
+  Validazione:[Controllo che assicura che il prodotto rispetti le esigenze dell’utente finale.],
   
   "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità],
+  "Analisi dei requisiti":[Processo di raccolta, definizione e organizzazione dei requisiti necessari allo sviluppo del sistema.
+  ],
+  Attore:[
+    Entità (persona o sistema) che interagisce con il software in un caso d’uso.
+  ],
+  "Caso d’uso":[
+    Descrizione di un'interazione tra un attore e il sistema per raggiungere un obiettivo specifico.
+  ],
+  "Scenario principale":[
+    Sequenza di passi che descrive il comportamento previsto e senza deviazioni di un caso d’uso.
+  ],
+  "Scenario secondario":[
+   Sequenza di passi che rappresenta variazioni, eccezioni o percorsi secondari rispetto allo scenario principale di un caso d’uso.
+  ],
+   "Ciclo di vita del progetto":[
+    Insieme delle fasi che compongono la realizzazione, il rilascio e la manutenzione di un prodotto software.
+  ],
+  Compliance:[
+    Aderenza a norme, regolamenti o standard tecnici applicabili.
+  ],
+  Conformità:[
+    Aderenza del sistema a norme, requisiti tecnici o regolatori stabiliti da enti ufficiali.
+  ],
+  "Valutazione di conformità":[
+  Processo che verifica se un prodotto o sistema soddisfa le norme tecniche o regolamentari applicabili.
+],
+  "Protezione della rete":[
+  Insieme di misure tecniche e procedurali per prevenire accessi non autorizzati, attacchi o compromissioni della rete secondo gli standard della EN 18031.
+ ],
+ "Protezione dei dati personali":[
+  Applicazione di misure e criteri per garantire la tutela delle informazioni personali trattate dal sistema, come previsto dalla EN 18031 e dalle normative vigenti.
+ ],
+ "Prevenzione delle frodi (EN 18031)":[
+  Misure tecniche e organizzative previste dalla norma EN 18031 per impedire manipolazioni, falsificazioni o utilizzi impropri del dispositivo o del servizio.
+ ],
+ 
+  "RED (2014/53/UE)":[
+   Direttiva europea che definisce i requisiti essenziali di sicurezza, compatibilità elettromagnetica ed efficienza spettrale dei dispositivi radio.
+  ],
+  "Decision tree":[
+    Modello di decisione rappresentato tramite una struttura ad albero, in cui ogni nodo interno rappresenta una scelta o condizione e ogni foglia una decisione finale.
+  ],
+  Dashboard:[
+   Interfaccia riassuntiva che mostra dati, indicatori e funzionalità rilevanti in forma aggregata e visuale..
+  ],
+ 
+  CSV:[
+   Formato di file basato su testo in cui i dati sono rappresentati come valori separati da virgole.
+  ],
+  XML:[
+    Linguaggio di markup utilizzato per rappresentare dati strutturati tramite tag annidati e gerarchie.
+ ],
+  JSON:[
+    Formato leggero per la rappresentazione e lo scambio di dati strutturati basato su coppie chiave/valore.
+ ],
+  PDF:[
+    Formato di documento digitale che preserva impaginazione e contenuto indipendentemente da piattaforma o dispositivo di visualizzazione.
+ ],
+  "Dispositivo radio":[
+    Apparecchiatura elettronica in grado di trasmettere e ricevere dati tramite tecnologie wireless, come Wi-Fi, Bluetooth Low Energy (BLE) o LTE, per comunicare con altri sistemi o reti.
+  ],
+  
+  Importazione:[
+    Operazione mediante la quale l’utente inserisce nel sistema file contenenti dati tecnici, configurazioni o decision tree per la valutazione dei requisiti.
+  ],
+
+  Interfaccia:[
+    Punto di accesso attraverso cui un dispositivo comunica con reti o altri sistemi.
+  ],
+  "Norma armonizzata":[
+    Standard europeo che garantisce la presunzione di conformità ai requisiti essenziali di una direttiva UE.
+  ],
+  Pass:[
+    Esito che indica che un requisito è soddisfatto.
+  ],
+  Fail:[
+    Esito che indica che un requisito non è soddisfatto.
+  ],
+  "Not Applicable (N.A.)":[
+    Esito che indica che un requisito non si applica al caso valutato.
+  ],
+
+  "Requisito funzionale":[
+    Specifica un comportamento o una funzionalità che il sistema deve fornire.
+  ],
+   "Requisito non funzionale":[
+    Specifica vincoli o qualità del sistema, come prestazioni, sicurezza, usabilità o interoperabilità
+  ],
+  Stakeholder:[
+    Soggetto che ha interesse o influenza sullo sviluppo del progetto.
+  ],
+  Manutenzione:[
+    Insieme delle attività necessarie per correggere difetti, migliorare prestazioni o adattare il software a nuovi contesti operativi.
+  ],
+  "Editor grafico":[
+   Strumento software che permette la creazione o modifica di contenuti attraverso un’interfaccia visuale, senza necessità di editarne direttamente il codice testuale.
+  ],
+  Wi-Fi:[
+  Tecnologia di rete wireless che consente la connessione di dispositivi a Internet o tra loro tramite onde radio su bande specifiche.
+],
+
+LTE:[
+  Standard di comunicazione wireless per reti mobili di quarta generazione (4G), che garantisce trasmissione dati ad alta velocità.
+],
+
+BLE:[
+  Bluetooth Low Energy, tecnologia di comunicazione wireless a corto raggio progettata per consumare poca energia, usata in dispositivi IoT e wearable.
+],
+IoT:[
+  "Internet of Things": insieme di dispositivi fisici interconnessi tramite Internet, capaci di raccogliere, scambiare e analizzare dati senza intervento umano diretto.
+],
+  
+ 
+  
+  
+  
+  
+
 )
 
 #let refTerm(term: str) = { 
@@ -54,7 +174,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.1",
+    versione: "0.3",
     autori: ("Davide Lorenzon, Aldo Bettega",),
     revisori:("-",),
     validatori: ("-",),
@@ -70,8 +190,11 @@
 #let modifiche=(
 
   ([0.1],[2025-11-09],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
+  ([0.2],[2025-11-15],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Compliance, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE)],[Ana Maria Draghici],[-],[-]),
+  ([0.3],[2025-11-16],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BLE, IoT.],[Ana Maria Draghici],[-],[-]),
   
 )
+
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
 
@@ -110,7 +233,7 @@ insertArabicNumberedPagesSenzaData(PageTitle:upper(lettera) , documentType: doc)
 #while(chiavi.len() >0 and lettera==chiavi.last().first()){
   tempKey=chiavi.pop() 
   [
-    == #tempKey #label(tempKey)
+   == #tempKey #label(tempKey)
     #dict.at(tempKey)
 
 
@@ -123,3 +246,4 @@ insertArabicNumberedPagesSenzaData(PageTitle:upper(lettera) , documentType: doc)
 
 }
 
+F
