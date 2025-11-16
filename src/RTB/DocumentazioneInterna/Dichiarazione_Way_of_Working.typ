@@ -38,11 +38,11 @@
 
   ([0.1],[2025-11-11],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
   ([0.2],[2025-11-11],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)],[Davide Lorenzon],[-],[-]),
+  ([0.3],[2025-11-11],[Aggiornata @strutturaRE con le modifiche alla scaletta AdR],[Ana Maria Draghici],[-],[-]),
   
 )
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
 
 ]
 
@@ -196,6 +196,7 @@ In caso si pongano in essere condizioni straordinarie che rendano necessaria una
 
 
 == Workflow <workflow>
+
 All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
@@ -575,38 +576,58 @@ Qui viene descritta la struttura dei vari documenti:
 ==== Analisi dei requisiti <strutturaRE>
 Documento complesso la cui scrittura è continuativa per vari periodi di avanzamento. \
 La struttura generale del documento è la seguente:
-#enum(numbering: "1.1)", full: true, start: 0,
+#enum(numbering: "1.1)", full: true,
 [Informazioni generali:
 + Frontespizio introduttivo
 + Tabella dello stato del documento
 + Registro delle modifiche
 + Indice dei contenuti
 ],
-[Introduzione],
-[User needs],
-[User requirements],
-[System requirements
-#enum(
-  [Requisiti funzionali],
-  [Requisiti non funzionali
-    #enum(
-      [Product requirements],
-      [Organization requirements],
-      [External requirements])])
+[Introduzione
+#enum(numbering: "1.1)", full: true,
+  [Scopo del documento],
+  [Scopo del prodotto],
+  [Glossario],
+  [Miglioramenti del documento],
+  [Riferimenti
+    #enum(numbering: "1.1)", full: true,
+      [Riferimenti normativi],
+      [Riferimenti informativi])])
 ],
 
-[Verification, segue la stessa struttura system requirements],
+[Descrizione generale
+#enum(numbering: "1.1)", full: true,
+  [Contesto e problema],
+  [Obiettivi del prodotto],
+  [Funzioni del prodotto],
+  [Caratteristiche degli utenti],
+  [Piattaforma di esecuzione],
+  [Caso studio fornito -Panoramica])
+],
 
-[Dettataglio del ciclo di vita
-  #enum([Inserire le fasi e i processi di analisi dei requisiti],
-    [Requirements elicitation, attività di raccolta dei requisiti (Analisi approfondita del capitolato, incontri con l'impresa, ecd...)],
-    [Requirements specification, scrittura dei requisiti in modo non ambiguo e in linguaggio umano, eventualmente con l'uso degli opportuni diagrammi],
-    [Requirements validation, controlli sui requisiti individuati e sulla loro accuratezza nel descrivere un sistema per soddisfare i bisogni dell'utente  ],
-    [],
-    [],
-  )],
-[Appendice],
+[Casi d'uso
+  #enum(numbering: "1.1)", full: true,
+  [Scopo],
+  [Attori],
+  [Elenco dei casi d'uso])
+],
+
+[Requisiti
+  #enum(numbering: "1.1)", full: true,
+  [Requisiti funzionali],
+  [Requisiti qualitativi],
+  [Requisiti di vincolo],
+  [Requisiti prestazionali],
+  [Tracciamento
+    #enum(numbering: "1.1)", full: true,
+      [Fonte - Requisiti],
+      [Requisito - Fonti])])
+],
+[Elenco delle figure],
+[Elenco delle tabelle],
 )
+
+
 
 ==== Piano di progetto <struttPianoProgetto>
 #enum( start: 0, full:true, numbering: "1)",

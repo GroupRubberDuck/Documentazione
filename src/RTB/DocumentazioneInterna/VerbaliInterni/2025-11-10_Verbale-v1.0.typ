@@ -17,7 +17,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", "Verbale Interno",giornoRiunione)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: "1.0",
     autori: ("Aldo Bettega",),
     revisori: ("Ana Maria Draghici",),
@@ -75,30 +75,31 @@
 
 #insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
   = Ordine del giorno
-  - Migliorare la gestione dei ruoli: maggiore precisione nelle consegne dei compiti e tracciamento dei ruoli
-  - Discussione della dichiarazione di way of working
-  - Applicazione di un issue template per standardizzare la scrittura di queste con maggiore precisione
-  - Posizionamento delle prossime milestone
+  - Miglioramento della gestione dei ruoli: maggiore precisione nell’assegnazione dei compiti e nel tracciamento delle responsabilità.
+  - Discussione della dichiarazione di *Way of Working*.
+  - Applicazione di un *issue template* per standardizzare e rendere più precisa la scrittura delle issue.
+  - Pianificazione e posizionamento delle prossime milestone.
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
   == Risoluzione degli argomenti dell'ordine del giorno
-  - Per la rotazione dei ruoli è stato deciso di applicare questo metodo/*DA AGGIUNGERE LINK A CAPITOLO WOW*/ per una rotazione automatica ma flessibile in caso di necessità, con tracciamento tramite un foglio excel nel drive google di RubberDuck.
-  - È stato esposto al gruppo il contenuto della dichiarazione di way of working, discutendone il contenuto e risolvendo varie perplessità.
-  - Per rendere più professionale, chiara e standard la scrittura delle issue e per aiutare l'assegnatario nella loro comprensione in modo da risolverle al meglio, è stato deciso di provare ad applicare un issue template che dovrà essere modellato in base alle necessità del progetto e del gruppo. In merito è stato fatto uno studio approfondito leggendo vari articoli online.
-  - Superata la fase di candidatura sono state fissate le prossime milestone: è stata posizionata la milestone di RTB scomponendola in sotto-milestone secondo #link("https://drive.google.com/file/d/1pveMXr-zfDxuyzZw_KPKbcDTuhFIdpOJ/view")[questa linea guida generale] (sono date indicative ma che danno un'idea per una più efficace gestione del tempo). Sono stati inoltre visti i documenti di gruppi degli anni scorsi per farsi un'idea, tramite il registro delle modifiche, della durata di questa fase.
+  -  Per la *rotazione dei ruoli* è stato deciso di applicare il metodo definito nel Way of Working, che consente una rotazione automatica, ma flessibile in caso di necessità, con tracciamento tramite un foglio Excel nel Google Drive del gruppo RubberDuck.
+  -  È stato presentato al gruppo il contenuto della dichiarazione di *Way of Working*, discutendone i vari punti e chiarendo le perplessità emerse.
+  - Per rendere più *professionale, chiara e standardizzata* la scrittura delle issue — e per facilitare l’assegnatario nella comprensione dei compiti — è stato deciso di adottare un *issue template*, modellato sulle esigenze del progetto e del gruppo. A tal fine è stata svolta una ricerca approfondita consultando vari articoli online.
+  - Una volta superata la fase di candidatura, sono state fissate le prossime *milestone*: è stata definita la milestone di RTB, scomposta in sotto-milestone secondo #link("https://drive.google.com/file/d/1pveMXr-zfDxuyzZw_KPKbcDTuhFIdpOJ/view")[queste linee guida generali]  (sono date indicative, ma che danno un'idea per una più efficace gestione del tempo). Sono inoltre stati consultati i documenti dei gruppi degli anni precedenti per valutare, tramite i registri delle modifiche, la durata media di questa fase.
+.
   
   == Altre questioni emerse
-  - Si è parlato del glossario e di come collegare i suoi termini nei vari documenti, arrivando alla conclusione di creare un link ad un file unico "Glossario" che contiene in ordine alfabetico i termini nel dominio del gruppo di lavoro RubberDuck. In futuro si potrà poi implementare un sistema più complesso ma efficace che aggiungerà automaticamente a piè di pagina del documento la definizione del termine presa dal Glossario.
-  - Bisogna aggiornare lo script del sito affichè i documenti esposti siano visualizzati in ordine cronologico decrescente (il più recente in alto).
-  - Bisogna migliorare la struttura della repo con un README descrittivo che illustra la sua architettura rendendola più familiare ad una figura esterna.
-  - Si è parlato del versionamento dei documenti: come funzionano i numeri di versione e codici vari. Si è deciso di mantenere la data solo per i documenti in copia multipla (verbali e diari di bordo), mentre per gli altri è dichiarativo il titolo. La versione del documento è riportata al termine del nome del file in formato "-v0.0", la cifra più significativa identifica una versione stabile e validata, mentre la cifra meno significativa indica modifiche in corso d'opera all'interno della stessa versione.
-  - Si è discusso sull'utilità di dichiarare da ora dei ruoli e in che modo: come tracciarle? in che formato? come usare ore produttive in modo corretto? che cos'è un'ora produttiva? sono rimaste come questioni aperte e da definire meglio.
-  - È necessaria una revisione del way of working avendo raggiunto una certa corposità di contenuti. Bisogna inoltre aggiungere delle brevi introduzioni dichiarando a chi si rivolge e a che scopo. Bisogna incrementarlo con altre definizioni: verbale interno e verbale esterno.
-  - È stata discussa la differenza tra norme di progetto e dichiarazione di way of working, è da chiarire se siano la stessa cosa o siano documenti differenti.
-  - Bisogna iniziare a pensare come costruire grafici su documenti typst e quali strumenti adottare: librerie Typst? strumenti esterni e poi importare l'immagine sul documento (Gantt/PERT/WBS/UML)? Per ora la strada presa è di usare typst ma si è ancora aperti ad altre proposte per tale questione.
-  - Bisogna capire che cosa sia l'Analisi dei requisiti ed iniziare a definire la sua struttura.
+  - È stato affrontato il tema del *Glossario* e della modalità di collegare i relativi termini nei vari documenti. Si è deciso di creare un unico file “Glossario” contenente, in ordine alfabetico, tutti i termini del dominio del progetto del gruppo RubberDuck. In futuro si valuterà l’adozione di un sistema più avanzato capace di aggiungere automaticamente a piè di pagina le definizioni tratte dal Glossario.
+- È necessario aggiornare lo script del *sito web* affinché i documenti siano visualizzati in ordine cronologico decrescente (il più recente in cima).
+- Si è discusso della necessità di migliorare la struttura della *repository*, aggiungendo un README descrittivo che ne illustri l’architettura, rendendola più comprensibile a figure esterne.
+- È stato affrontato il tema del *versionamento dei documenti*: funzionamento dei numeri di versione e codici associati. È stato deciso di mantenere la data solo per documenti in copia multipla (verbali e diari di bordo), mentre per gli altri sarà sufficiente il titolo. La versione sarà indicata nel nome del file con il suffisso *“-v0.0”*, dove la cifra maggiore indica una versione stabile e validata, mentre quella minore rappresenta modifiche in corso all’interno della stessa versione.
+- È stata avviata una discussione sulla possibilità di *formalizzare i ruoli*: come tracciarli, in che formato e come definire l’uso delle ore produttive. La questione resta aperta e va definita con maggior dettaglio.
+- Si è evidenziata la necessità di una revisione del *Way of Working*, data la crescente quantità di contenuti: vanno aggiunte introduzioni che spieghino destinatari e scopo del documento, oltre ad ampliare le definizioni includendo “verbale interno” e “verbale esterno”.
+- È stata discussa la distinzione tra *Norme di Progetto* e *Way of Working*: è necessario chiarire se siano equivalenti o documenti distinti.
+- Si è introdotta la necessità di valutare strumenti per la creazione di *grafici nei documenti Typst* (Gantt, PERT, WBS, UML). Per ora si propende per l’uso diretto delle librerie Typst, pur restando aperti a soluzioni alternative.
+- È necessario comprendere meglio che cosa sia l’*Analisi dei Requisiti* e iniziare a definirne la struttura.
 ]
 
 
@@ -109,14 +110,14 @@
 #let prefisso="VI.5."
 
 #let decisioni=(
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Foglio excel per rotazione dei ruoli],[semplice ma efficace],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Approvazione contenuto way of working],[coerente con il pensiero del gruppo],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Applicare issue template],[standardizza la scrittura di issue],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Fissata milestone RTB],[data sensata e in linea ai consigli del prof. Vardanega e ai gruppi degli anni scorsi],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Documento unico per il glossario],[semplice e centralizzato],[IEEE 29148-2018 — “Requirements Engineering"]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornare script sito web],[file più recenti in rilievo],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornare README e repo],[maggiore ordine e chiarezza nella repo],[]),
-    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Studio e bozza della struttura dei documenti per la RTB],[avanzare verso RTB],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Foglio Excel per rotazione dei ruoli],[Semplice ed efficace],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Approvazione del contenuto Way of Working],[Coerente con il pensiero del gruppo],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Applicazione dell'issue template],[Standardizza la scrittura delle issue],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Fissata milestone RTB],[Data sensata e coerente con i consigli del prof. Vardanega e con i gruppi degli anni precedenti],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Documento unico per il glossario],[Soluzione semplice e centralizzata],[IEEE 29148-2018 — “Requirements Engineering"]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornamento script sito web],[Rendere più visibili i file più recenti],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Aggiornamento README e struttura della repo],[Maggiore ordine e chiarezza],[]),
+    ([#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],[Studio e bozza della struttura dei documenti per la RTB],[Avanzamento verso la milestone RTB],[]),
 
 )
 
@@ -138,7 +139,7 @@ I punti da approfondire nelle prossime riunioni o in vista di esse individuati s
   ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Ana Maria Draghici \ Felician Mario Necsulescu],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/27")[Studio del doc. Analisi dei requisiti]],[VI.5.8]),
   ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Davide Lorenzon \ Filippo Guerra],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/28")[Studio del doc. Piano di progetto]],[VI.5.8]),
   ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Davide Testolin \ Aldo Bettega],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/29")[Studio del doc. Piano di qualifica]],[VI.5.8]),
-  ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Aldo Bettega \ Ana Maria Draghici \ Felician Mario Necsulescu],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/33")[ Stesura verbale 2025-11-20]],[-]),
+  ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Aldo Bettega \ Ana Maria Draghici \ Felician Mario Necsulescu],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/33")[Stesura verbale 2025-11-20]],[-]),
   )
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task (GitHub)","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
