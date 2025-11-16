@@ -46,9 +46,13 @@
   Attore:[
     Entità (persona o sistema) che interagisce con il software in un caso d’uso.
   ],
+  UML:[
+    Linguaggio di modellazione unificato (Unified Modeling Language) utilizzato per rappresentare graficamente strutture statiche e comportamenti dinamici di un sistema software.
+  ],
   "Caso d’uso":[
     Descrizione di un'interazione tra un attore e il sistema per raggiungere un obiettivo specifico.
   ],
+  
   "Scenario principale":[
     Sequenza di passi che descrive il comportamento previsto e senza deviazioni di un caso d’uso.
   ],
@@ -58,8 +62,8 @@
    "Ciclo di vita del progetto":[
     Insieme delle fasi che compongono la realizzazione, il rilascio e la manutenzione di un prodotto software.
   ],
-  Compliance:[
-    Aderenza a norme, regolamenti o standard tecnici applicabili.
+  "BT (Bluetooth)":[
+   Tecnologia di comunicazione wireless a corto raggio che permette lo scambio di dati tra dispositivi elettronici senza l’uso di cavi
   ],
   Conformità:[
     Aderenza del sistema a norme, requisiti tecnici o regolatori stabiliti da enti ufficiali.
@@ -113,6 +117,9 @@
   "Norma armonizzata":[
     Standard europeo che garantisce la presunzione di conformità ai requisiti essenziali di una direttiva UE.
   ],
+  "Automated EN18031 Compliance Verification":[
+   Processo automatizzato che verifica se un dispositivo soddisfa i requisiti tecnici della norma EN 18031 tramite controlli e regole software.
+  ],
   Pass:[
     Esito che indica che un requisito è soddisfatto.
   ],
@@ -129,8 +136,20 @@
    "Requisito non funzionale":[
     Specifica vincoli o qualità del sistema, come prestazioni, sicurezza, usabilità o interoperabilità
   ],
+  "Applicazione desktop":[
+    Programma software eseguito direttamente su un computer locale (Windows, macOS, Linux), che offre funzionalità complete senza richiedere necessariamente una connessione internet, a differenza di applicazioni web-based.
+  ],
+  "Soluzione web-based":[
+    Applicazione accessibile tramite un browser web, eseguita su server remoti, senza necessità di installazione locale sul dispositivo dell’utente.
+  ],
+  "Report":[
+    Documento che raccoglie, sintetizza e presenta informazioni, dati o risultati di valutazioni in modo strutturato, utile per analisi, tracciabilità e decisioni operative.
+  ],
   Stakeholder:[
     Soggetto che ha interesse o influenza sullo sviluppo del progetto.
+  ],
+   Cybersecurity:[
+    Insieme di pratiche, tecnologie e processi volti a proteggere sistemi, reti e dati da accessi non autorizzati, attacchi e danni informatici.
   ],
   Manutenzione:[
     Insieme delle attività necessarie per correggere difetti, migliorare prestazioni o adattare il software a nuovi contesti operativi.
@@ -146,11 +165,8 @@ LTE:[
   Standard di comunicazione wireless per reti mobili di quarta generazione (4G), che garantisce trasmissione dati ad alta velocità.
 ],
 
-BLE:[
-  Bluetooth Low Energy, tecnologia di comunicazione wireless a corto raggio progettata per consumare poca energia, usata in dispositivi IoT e wearable.
-],
-IoT:[
-  "Internet of Things": insieme di dispositivi fisici interconnessi tramite Internet, capaci di raccogliere, scambiare e analizzare dati senza intervento umano diretto.
+"IoT (Internet of Things)":[
+  Insieme di dispositivi fisici connessi a Internet, capaci di raccogliere, scambiare e analizzare dati automaticamente, senza intervento umano diretto.
 ],
   
  
@@ -190,8 +206,8 @@ IoT:[
 #let modifiche=(
 
   ([0.1],[2025-11-09],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
-  ([0.2],[2025-11-15],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Compliance, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE)],[Ana Maria Draghici],[-],[-]),
-  ([0.3],[2025-11-16],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BLE, IoT.],[Ana Maria Draghici],[-],[-]),
+  ([0.2],[2025-11-15],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML],[Ana Maria Draghici],[-],[-]),
+  ([0.3],[2025-11-16],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.],[Ana Maria Draghici],[-],[-]),
   
 )
 

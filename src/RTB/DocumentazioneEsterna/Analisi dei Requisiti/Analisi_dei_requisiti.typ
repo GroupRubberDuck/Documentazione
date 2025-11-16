@@ -29,7 +29,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.4",
+    versione: "0.5",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
     revisori:("-",),
     validatori: ("-",),
@@ -49,6 +49,7 @@
   ([0.2],[2025-11-12],[Stesura sezione introduzione e descrizione generale],[Felician Necsulescu],[Ana Maria Draghici],[-]),
   ([0.3],[2025-11-13],[Aggiunta UC1],[Felician Necsulescu],[-],[-]),
   ([0.4],[2025-11-15],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale],[Ana Maria Draghici],[-],[-]),
+  ([0.5],[2025-11-16],[Aggiunta la possibilità di collegamento al Glossario interno],[Ana Maria Draghici],[-],[-]),
   
 )
 
@@ -65,13 +66,13 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
 = Introduzione <sec-intro>
 
-Il presente documento di Analisi dei Requisiti costituisce un elemento fondamentale per lo sviluppo del progetto software “Automated EN18031 Compliance Verification”, commissionato da Bluewind S.r.l., e rappresenta la base su cui poggia l’intero processo di progettazione e implementazione del sistema.
+Il presente documento di Analisi dei Requisiti #footnote()[#dict.at("Analisi dei requisiti")] costituisce un elemento fondamentale per lo sviluppo del progetto software “Automated EN18031 Compliance Verification #footnote()[#dict.at("Automated EN18031 Compliance Verification")]", commissionato da Bluewind S.r.l., e rappresenta la base su cui poggia l’intero processo di progettazione e implementazione del sistema.
 
-Questo documento è stato redatto con l’intento di fornire una trattazione esaustiva e dettagliata dei requisiti e dei casi d’uso individuati dal team di sviluppo. La raccolta di questi dati è il risultato di un’analisi approfondita del #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[capitolato d'appalto C1 - Automated EN18031 Compliance Verification], di discussioni interne al gruppo di lavoro e di colloqui con i referenti aziendali, in particolare Tobia Fiorese e Alessandro Zappia.
+Questo documento è stato redatto con l’intento di fornire una trattazione esaustiva e dettagliata dei requisitiᴳ e dei casi d’uso #footnote()[#dict.at("Caso d’uso")] individuati dal team di sviluppo. La raccolta di questi dati è il risultato di un’analisi approfondita del #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[capitolato d'appalto C1 - Automated EN18031 Compliance Verification], di discussioni interne al gruppo di lavoro e di colloqui con i referenti aziendali, in particolare Tobia Fiorese e Alessandro Zappia.
 
 Il documento esplicita le funzionalità che il prodotto finale deve offrire e identifica i vincoli tecnici e operativi entro cui il sistema deve operare. 
 
-I casi d’uso sono documentati secondo la notazione UMLG e comprendono nome, attori principali, precondizioni, trigger, scenario principale e scenari alternativi. Queste informazioni permettono di rappresentare in modo chiaro le interazioni tra utenti e sistema, facilitando lo sviluppo, i test e la manutenzione futura.
+I casi d’usoᴳ sono documentati secondo la notazione UML #footnote()[#dict.at("UML")] e comprendono nome, attori principali, precondizioni, trigger, scenario principale e scenari alternativi. Queste informazioni permettono di rappresentare in modo chiaro le interazioni tra utenti e sistema, facilitando lo sviluppo, i test e la manutenzioneᴳ futura.
 
 
   
@@ -79,21 +80,32 @@ I casi d’uso sono documentati secondo la notazione UMLG e comprendono nome, at
 
 Gli obiettivi principali di questo documento sono:
 #pad(left: 1em)[
-- Fornire una descrizione chiara e dettagliata dei *requisiti funzionali e non funzionali* del sistema;
-- Presentare i *casi d’uso principali* , con indicazione degli attori coinvolti, scenari principali e scenari alternativi;
-- Consentire la *tracciabilità dei requisiti* rispetto ai casi d’uso e alle possibili estensioni future del sistema;
+- Fornire una descrizione chiara e dettagliata dei *requisiti funzionali* #footnote()[#dict.at("Requisito funzionale")] *e non funzionali* #footnote()[#dict.at("Requisito non funzionale")] del sistema;
+- Presentare i *casi d’uso principali* ᴳ , con indicazione degli attori coinvolti, scenari principali e scenari alternativi;
+- Consentire la *tracciabilità dei requisiti* ᴳ rispetto ai casi d’usoᴳ e alle possibili estensioni future del sistema;
 - Fornire un *riferimento* per sviluppatori, tester e manutentori per comprendere le funzionalità del sistema e le condizioni operative;
 - Supportare la *gestione delle modifiche e degli aggiornamenti dei requisiti* nel corso del ciclo di vita del progetto.
 ]
 
 == Scopo del prodotto 
-Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi, LTE, BT, IoT wireless). 
+Il prodotto è un’applicazione software per la verificaᴳ automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi #footnote()[#dict.at("Wi-Fi")], LTE #footnote()[#dict.at("LTE")], BT #footnote()[#dict.at("BT (Bluetooth)")], IoT wireless #footnote()[#dict.at("IoT (Internet of Things)")]). 
 
-L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity attraverso l’esecuzione automatizzata di decision tree, velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. Il sistema sostituisce il processo manuale che è dispendioso in termini di tempo, soggetto a errori umani e difficile da aggiornare. 
+L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity #footnote()[#dict.at("Cybersecurity")] attraverso l’esecuzione automatizzata di decision tree #footnote()[#dict.at("Decision tree")], velocizzando e standardizzando il processo di verifica della conformità#footnote()[#dict.at("Conformità")] e generando la documentazione necessaria. Il sistema sostituisce il processo manuale che è dispendioso in termini di tempo, soggetto a errori umani e difficile da aggiornare. 
   
-== Glossario
-Il presente documento fa riferimento a un *Glossario esterno (v.1.0.0)* che raccoglie tutti i termini tecnici, gli acronimi e i concetti specifici utilizzati nel progetto. \
-I termini definiti nel Glossario sono evidenziati in corsivo e contrassegnati dal simbolo #sub[G] quando compaiono nei documenti di progetto. Il Glossario è disponibile come documento separato allegato alla documentazione interna di progetto. 
+== Glossario // mettere link al glossario
+Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato un approccio ibrido alla gestione dei riferimenti al Glossario.
+I termini tecnici possono essere presentati secondo tre modalità:
+
+- *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
+
+- *Marcatura tramite pedice “G” (termineᴳ)*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
+  
+Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
+
+\
+\
+\
+\
 
 == Miglioramenti del documento
 Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da: 
@@ -104,7 +116,7 @@ Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo 
 
 Le modifiche sostanziali ai requisiti comportano l’incremento della versione principale (es. da 1.0 a 2.0), mentre correzioni minori o chiarimenti incrementano la versione secondaria (es. da 1.0 a 1.1). 
 
-*Nota*: fino al completamento della fase di analisi, non può essere garantita la stabilità dei requisiti. 
+*Nota*: fino al completamento della fase di analisi, non può essere garantita la stabilità dei requisitiᴳ. 
 
   == Riferimenti
   
@@ -129,62 +141,63 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
 #insertArabicNumberedPagesSenzaData(PageTitle: "Descrizione generale", documentType: doc)[
   = Descrizione generale <sec-descrizione_generale>
 == Contesto e problema <sec-contesto>
-La recente pubblicazione dello standard tecnico EN 18031 come norma armonizzata per la Direttiva RED (2014/53/UE) ha reso obbligatoria, dal 1 agosto 2025, la verifica della conformità dei dispositivi radio ai requisiti di sicurezza informatica previsti dagli articoli 3.3(d), 3.3(e) e 3.3(f). Lo standard è articolato in tre parti, ciascuna associata a specifici domini di sicurezza (protezione della rete, protezione dei dati personali, prevenzione delle frodi) e descrive una vasta serie di requisiti da valutare tramite decision tree gerarchici.
+La recente pubblicazione dello standard tecnico EN 18031 come norma armonizzata #footnote()[#dict.at("Norma armonizzata")] per la Direttiva RED (2014/53/UE) #footnote()[#dict.at("RED (2014/53/UE)")] ha reso obbligatoria, dal 1 agosto 2025, la verifica della conformitàᴳ dei dispositivi radio #footnote()[#dict.at("Dispositivo radio")]  ai requisiti di sicurezza informatica previsti dagli articoli 3.3(d), 3.3(e) e 3.3(f). Lo standard è articolato in tre parti, ciascuna associata a specifici domini di sicurezza (protezione della reteᴳ, protezione dei dati personaliᴳ, prevenzione delle frodiᴳ) e descrive una vasta serie di requisitiᴳ da valutare tramite decision treeᴳ gerarchici.
 
 L’attuale processo manuale di verifica — basato sulla lettura approfondita della norma, sulla valutazione ripetitiva di molteplici requisiti e sulla creazione di documentazione — risulta lungo, soggetto a errori e difficilmente tracciabile. Di conseguenza, è necessario uno strumento software che supporti l’automazione, la standardizzazione e la tracciabilità dell’intero processo di valutazione.
 
   == Obiettivi del prodotto
 L’obiettivo principale del prodotto è fornire uno strumento che semplifichi e renda affidabile il processo di valutazione della conformità alla norma EN 18031.\
-Il sistema deve centralizzare le informazioni tecniche sui dispositivi, guidare l’utente nella compilazione dei decision tree in modo strutturato e coerente, e produrre risultati di conformità chiari e completamente tracciabili. Inoltre, deve offrire strumenti per visualizzare e aggiornare sia i decision tree sia la documentazione associata, supportando un processo di verifica più efficiente, standardizzato e facilmente mantenibile.
+Il sistema deve centralizzare le informazioni tecniche sui dispositivi, guidare l’utente nella compilazione dei decision treeᴳ in modo strutturato e coerente, e produrre risultati di conformitàᴳ chiari e completamente tracciabili. Inoltre, deve offrire strumenti per visualizzare e aggiornare sia i decision treeᴳ sia la documentazione associata, supportando un processo di verifica più efficiente, standardizzato e facilmente mantenibile.
 
 == Funzioni del prodotto
 
 Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 #pad(left: 1em)[
-- *Importazione e gestione dei documenti tecnici*: possibilità di caricare file in formati standard (CSV, XML, JSON) contenenti informazioni sui dispositivi, le interfacce, le funzionalità e le configurazioni di rete.
+- *Importazione e gestione dei documenti tecnici*: possibilità di caricare file in formati standard (CSV #footnote()[#dict.at("CSV")], XML #footnote()[#dict.at("XML")], JSON #footnote()[#dict.at("JSON")]) contenenti informazioni sui dispositivi, le interfacce, le funzionalità e le configurazioni di rete.
 
-- *Importazione e gestione dei decision tree*: possibilità di importare decision tree strutturati (XML, JSON) che rappresentano i requisiti normativi, con nodi e percorsi gerarchici.
+- *Importazione e gestione dei decision tree*: possibilità di importare decision tree strutturati (XMLᴳ, JSONᴳ) che rappresentano i requisiti normativi, con nodi e percorsi gerarchici.
 
-- *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision tree, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisiti.
+- *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision treeᴳ, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisitiᴳ.
 
-- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable, Pass, Fail), con registrazione completa del processo decisionale.
+- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable #footnote()[#dict.at("Not Applicable (N.A.)")], Pass #footnote()[#dict.at("Pass")], Fail #footnote()[#dict.at("Fail")]), con registrazione completa del processo decisionale.
 
-- *Visualizzazione dello stato delle valutazioni*: dashboard interattiva che mostra lo stato di avanzamento e la conformità dei dispositivi, con possibilità di filtrare e aggregare i risultati.
+- *Visualizzazione dello stato delle valutazioni*: dashboard interattiva che mostra lo stato di avanzamento e la conformitàᴳ dei dispositivi, con possibilità di filtrare e aggregare i risultati.
 
-- *Navigazione dei decision tree*: visualizzazione grafica della struttura dei decision tree con evidenziazione del percorso seguito durante la valutazione, facilitando la comprensione delle decisioni prese.
+- *Navigazione dei decision tree*: visualizzazione grafica della struttura dei decision treeᴳ con evidenziazione del percorso seguito durante la valutazione, facilitando la comprensione delle decisioni prese.
 
-- *Modifica dei decision tree*: editor grafico integrato per adattare e aggiornare i percorsi decisionali, con salvataggio dei file modificati in formati standard.
+- *Modifica dei decision tree*: editor grafico #footnote()[#dict.at("Editor grafico")] integrato per adattare e aggiornare i percorsi decisionali, con salvataggio dei file modificati in formati standard.
 
 - *Gestione della documentazione associata*: possibilità di aggiornare e modificare i documenti tecnici importati, mantenendo la tracciabilità delle modifiche.
 
-- *Esportazione dei risultati (opzionale)*: generazione di report chiari e completi in diversi formati (PDF, CSV, JSON, XML) contenenti i risultati delle verifiche e le motivazioni associate.
+- *Esportazione dei risultati (opzionale)*: generazione di report chiari e completi in diversi formati (PDFᴳ, CSVᴳ, JSONᴳ, XMLᴳ) contenenti i risultati delle verifiche e le motivazioni associate.
 
 - *Annotazioni e giustificazioni (opzionale)*: possibilità di aggiungere note esplicative per documentare le decisioni prese e migliorare la tracciabilità.
 ]
   == Caratteristiche degli utenti
 
-L’applicazione supporta diversi profili di utenti coinvolti nella verifica della conformità dei dispositivi radio:
+L’applicazione supporta diversi profili di utenti coinvolti nella verifica della conformitàᴳ dei dispositivi radioᴳ:
 #pad(left: 1em)[
-- *Tecnici di conformità*: eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Pass/Fail/Not Applicable), riducendo i tempi e gli errori tipici del processo manuale.
+- *Tecnici di conformità*: eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Passᴳ/Failᴳ/Not Applicableᴳ), riducendo i tempi e gli errori tipici del processo manuale.
 
-- *Responsabili qualità e compliance*: monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report per garantire tracciabilità e supervisione delle decisioni prese.
+- *Responsabili qualità e compliance*: monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report #footnote()[#dict.at("Report")] per garantire tracciabilità e supervisione delle decisioni prese.
 
-- *Nuovi membri del team*: utilizzano strumenti grafici per familiarizzare con la struttura dei requisiti e con il processo di valutazione, accelerando la formazione sul sistema.
+- *Nuovi membri del team*: utilizzano strumenti grafici per familiarizzare con la struttura dei requisitiᴳ e con il processo di valutazione, accelerando la formazione sul sistema.
 ]
   == Piattaforma di esecuzione
 
  Il sistema sarà sviluppato come applicazione software, con possibilità di scelta tra una soluzione web-based o desktop.
 #pad(left: 1em)[
-- *La modalità web-based* consentirà l’accesso tramite i principali browser moderni, garantendo compatibilità generica con i sistemi operativi più diffusi.
+- *La modalità web-based* #footnote()[#dict.at("Soluzione web-based")] consentirà l’accesso tramite i principali browser moderni, garantendo compatibilità generica con i sistemi operativi più diffusi.
 
-- *La modalità desktop* permetterà l’installazione su computer dei principali sistemi operativi (Windows, macOS e Linux).
+- *La modalità desktop* #footnote()[#dict.at("Applicazione desktop")] permetterà l’installazione su computer dei principali sistemi operativi (Windows, macOS e Linux).
 ]
 In entrambe le modalità, l’obiettivo è assicurare che l’applicazione sia accessibile agli utenti finali e fruibile senza vincoli particolari legati alla piattaforma utilizzata.
 
 == Caso studio fornito - Panoramica <sec-caso_studio>
-Per la verifica e il collaudo del sistema sarà fornito un caso studio reale, rappresentato da una macchina del caffè connessa in rete via Wi-Fi. \
-Questo esempio permette di testare l’applicazione in un contesto operativo concreto, valutando i requisiti di accesso e autenticazione dei dispositivi, e di verificare il corretto funzionamento dei decision tree e della generazione dei risultati.
+Per la verifica e il collaudo del sistema sarà fornito un caso studio reale, rappresentato da una macchina del caffè connessa in rete via Wi-Fiᴳ. \
+Questo esempio permette di testare l’applicazione in un contesto operativo concreto, valutando i requisitiᴳ di accesso e autenticazione dei dispositivi, e di verificare il corretto funzionamento dei decision tree e della generazione dei risultati.
+Questo esempio permette di testare l’applicazione in un contesto operativo concreto, valutando i requisitiᴳ di accesso e autenticazione dei dispositivi, e di verificare il corretto funzionamento dei decision treeᴳ e della generazione dei risultati.
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Casi d'uso", documentType: doc)[
 
