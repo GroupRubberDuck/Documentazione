@@ -158,13 +158,14 @@ Create the Gantt chart by loading all information into a project management soft
 
 == Esempio Gantt
 
-#let coloreDurataEffettiva=color.blue
-#let coloreDuratapianificata=color.red
+#let coloreDurataEffettiva=color.red
+#let coloreDuratapianificata=color.blue
 
-#let strokeEffettivo=stroke(paint: red, thickness: 4pt)
-#let strokePianificato=stroke(paint: blue, thickness: 10pt)
+#let strokeEffettivo=stroke(paint: coloreDurataEffettiva, thickness: 4pt)
+#let strokePianificato=stroke(paint: coloreDuratapianificata, thickness: 10pt)
 
-
+#block(fill: coloreDurataEffettiva,inset:8pt,stroke: +1pt,width:10em)[*Durata effettiva*]
+#block(fill: coloreDuratapianificata,inset:8pt,stroke: +1pt,width:10em)[*Durata pianificata*]
 #timeliney.timeline(
   show-grid: true,
   {
