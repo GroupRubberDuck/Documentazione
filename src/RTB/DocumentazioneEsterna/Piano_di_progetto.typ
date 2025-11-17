@@ -1,4 +1,5 @@
 #import "/src/config.typ": *
+#import "@preview/timeliney:0.4.0"
 #import template_dir + "/frontPage.typ": frontPageSenzaData
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
@@ -275,7 +276,6 @@ valutare anche la disponibilità di BlueWind al supporto.
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Piano di avanzamento del progetto", documentType: doc)[
   = Piano di avanzamento del progetto
-
 
 
 
