@@ -12,7 +12,37 @@
 #show ref: body => underline()[*#body*]
 #show link: body => {set text(fill:blue); underline()[#body]}
 
+#let tabellaRischi( codice:str, 
+                    nome:str,
+                    tipo:str,
+                    descr:content,
+                    prevenzione:str,
+                    mitigazione:content,
+                    frequenza:str,
+                    pericolo:str
+                    )={
+  box(width: 100%,height: auto, stroke: black)[
+  #block(  fill: luma(100%),
+  inset: 8pt,width: 100%)[
+  // #lorem(30)
+  #block(stroke:1pt+black,width:100%,inset: 8pt,outset:8pt, fill: luma(230))[
+  #align(center)[*#codice - #nome * ]
+  ]
+  #show table.cell: it =>{
+if it.x == 0 {
 
+    strong(it)
+  } else {
+    it
+  } 
+  }
+  #table(
+    columns: (auto,1fr),
+    fill: (_, y) => if calc.odd(y) { rgb("#bbbdbe") },
+  )[Tipo di rischio][#tipo][Descrizione][#descr][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
+  ]
+  ]
+}
 
 #let doc="Piano di progetto"
 
@@ -185,24 +215,52 @@ Obbligatori dal 1 agosto 2025.
     Tali rischi intaccano l'organizzazione che ha sviluppato o commissionato il software.
 
     === Registro dei rischi
-    #let contatoreTodo= counter("rischi")
-    #let prefisso="R.I."
-    #let rischi=(
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
-      ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[],[]),
 
-      )
+    ==== Rischi tecnologici
+    #let contatoreR= counter("rischi tec")
+    #contatoreR.update(1)
+    #let prefisso="R.T."
 
-      #utilityTable(rischi, columns: (auto, auto, 1fr), header:("Codice","Tipo","Descrizione"))
+    #tabellaRischi(
+      codice:getCode(prefisso:prefisso,contatore:contatoreR),
+      nome:"Inesperienza ",
+      tipo:"Rischio di progetto + Rischio di prodotto",
+      descr: [Mancanza di esperienza da parte dei membri del gruppo in progetti diquesta portata, con architettura non monolitica],
+      prevenzione: lorem(20),
+      mitigazione: [È necessario prevedere la possibilità che parte
+dell’impegno orario sarà dedicato alla formazione
+personale per l’uso di tale componente: è bene
+dunque valutare di spostare attività eventualmente
+di minore importanza al primo periodo successivo
+utile qualora altri componenti del gruppo non
+possano fornire supporto immediato. È necessario
+valutare anche la disponibilità di BlueWind al supporto.
+],
+      frequenza: "Alta",
+      pericolo: "Elevata"
+    )
 
-  == Analisi dei rischi 
-    Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto. 
-  == Prevenzione e gestione dei rischi 
-    Strategie atte ad evitare, minimizzare o contenere i rischi
+
+
+    ==== Rischi personali
+    #let contatoreR= counter("rischi pers")
+    #let prefisso="R.P."
+
+      // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
+
+
+
+    ==== Rischi organizzativi
+    #let contatoreR= counter("rischi org")
+    #let prefisso="R.O."
+
+      // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
+
+
+  // == Analisi dei rischi 
+  //   Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto. 
+  // == Prevenzione e gestione dei rischi 
+  //   Strategie atte ad evitare, minimizzare o contenere i rischi
   == Monitoraggio dei rischi 
     Modalità di monitoraggio e aggiornamento dei rischi, per garantire che l'analisi dei rischi sia efficcacie è necessario un aggiornamento periodico, ovvero un ritorno alla fase di analisi.
 
@@ -217,6 +275,9 @@ Obbligatori dal 1 agosto 2025.
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Piano di avanzamento del progetto", documentType: doc)[
   = Piano di avanzamento del progetto
+
+
+
 
 
 ]
