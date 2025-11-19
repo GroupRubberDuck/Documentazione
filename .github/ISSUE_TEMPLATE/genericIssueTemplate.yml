@@ -9,6 +9,8 @@ body:
       label: Descrizione
       description: Spiegazione dettagliata della issue
       placeholder: Aggiungere una descrizione
+    validations:
+      required: true
 
   - type: textarea
     id: scope
@@ -16,6 +18,8 @@ body:
       label: Scope
       description: Fine della issue, quale dovrebbe essere il risultato
       placeholder: Aggiungere uno scope
+    validations:
+      required: true
 
 
   - type: dropdown
