@@ -35,8 +35,6 @@ body:
         - "@DraghiciAnaMaria"
         - "@aldobettega-unipd"
         - "@FelicianNek"
-    validations:
-      required: true
       
   - type: dropdown
     id: verificator
@@ -51,5 +49,3 @@ body:
         - "@DraghiciAnaMaria"
         - "@aldobettega-unipd"
         - "@FelicianNek"
-    validations:
-      required: true
