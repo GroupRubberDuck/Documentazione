@@ -1,3 +1,18 @@
+// Stato della verifica
+// Verifica conclus: sì / no
+// Il documento è conforme: sì / no
+// checklist
+// 
+// Correttezza grammaticale: V
+// Correttezza sintattica: V
+// Il contenuto è pertinente: X
+// 
+// 
+// 
+// 
+// 
+// 
+
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage
 #import template_dir + "/setUpPageLayout.typ": *

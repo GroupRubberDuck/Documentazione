@@ -25,14 +25,7 @@
         [\ ]
       }
     ],
-    [Revisori],
-    [
-      #for a in revisori {
-        a
-        [\ ]
-      }
-    ],
-    [Validatori],
+    [Verificatori],
     [
       #for a in validatori {
         a

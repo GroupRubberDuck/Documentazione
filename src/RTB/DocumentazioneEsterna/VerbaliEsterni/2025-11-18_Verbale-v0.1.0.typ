@@ -1,3 +1,16 @@
+// Pronto per la verifica: no
+// In verifica :
+// 
+// Verifica superata:
+// 
+// Checklist
+// Conforme ai contenuti:
+// Correttezza grammaticale:
+// Correttezza sintattica: 
+// 
+
+#set text(lang: "IT")
+
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage
 #import template_dir + "/setUpPageLayout.typ": *
@@ -11,13 +24,13 @@
 #set heading(numbering: "1.1)")
 #show heading.where(level: 1): set text(size: 18pt)
 #show heading.where(level: 2): set text(size: 16pt)
-#let giornoRiunione = datetime(year: 2025, month: 11, day: 10)
+#let giornoRiunione = datetime(year: 2025, month: 11, day: 18)
 #let doctype="Verbale esterno"
 #frontPage([Verbale riunione], giornoRiunione)
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "Approvato",
+    stato: "In stesura",
     versione: "0.1.0",
     autori: ("Davide Lorenzon",),
     revisori: ("",),
@@ -29,10 +42,10 @@
 #insertRomanNumberedPages("Registro Modifiche",doctype,giornoRiunione )[
 
 
-  #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Stesura delle domande],[Davide Lorenzon],[],[]),
+    ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
+    ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[],[Prima stesura]),
       
       )
 
@@ -54,11 +67,11 @@
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione*: Esterno
-- *Motivazione*: 
+- *Motivazione*: Chiarimento di dubbi da parte della proponente
 - *Data*: 2025-11-18
 - *Luogo*: Riunione su Zoom
-- *Ora inizio*: 15:00
-- *Ora fine*: 17:20
+- *Ora inizio*: 16:00
+- *Ora fine*: 16:45
 - *Scriba*: Aldo Bettega
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
@@ -67,9 +80,12 @@
 - Felician Mario Necsulescu
 - Davide Testolin
 - Filippo Guerra
-- Aldo Bettega
-- 
-
+- Aldo Bettega  \
+#set list(marker: [#set text(fill:blue) 
+•
+])
+- Alessandro Zappia
+- Tobia Fiorese
 ]
 ]
 
@@ -77,29 +93,118 @@
 #insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
   = Ordine del giorno
   == Domande per la proponente
-  - Ci potete dare delle dritte per  l’analisi dei requisiti ?
-  - Abbiamo iniziato l’Analisi dei Requisiti e stiamo definendo l’ambiente generale del sistema. \ Ci sono però sorti dei dubbi su questa prima valutazione. Una sezione nell’introduzione dell’Analisi dei requisiti è dedicata alla piattaforma/ambiente che andremo a utilizzare. Il capitolo indica sia una possibile soluzione web-based sia un’applicazione desktop. Vorremmo quindi chiedervi: #list([C’è una preferenza che potete fornire, anche dalle vostre esperienze?
+  + Ci potete dare delle dritte per  l’analisi dei requisiti ?
+  + Abbiamo iniziato l’Analisi dei Requisiti e stiamo definendo l’ambiente generale del sistema. \ Ci sono però sorti dei dubbi su questa prima valutazione. Una sezione nell’introduzione dell’Analisi dei requisiti è dedicata alla piattaforma/ambiente che andremo a utilizzare. Il capitolo indica sia una possibile soluzione web-based sia un’applicazione desktop. Vorremmo quindi chiedervi: #list([C’è una preferenza che potete fornire, anche dalle vostre esperienze?
 E dal vostro punto di vista quali sono i pro e contro principali da iniziare a valutare tra soluzione web o desktop?],
 [Una soluzione desktop dovrebbe funzionare anche offline (se l'applicazione è divisa in back-end e front-end)? E questo aumenterebbe la complessità? (Per esempio per caricamento, valutazione dei file, visualizzazione futura dei risultati)],
 [Infine, nella prospettiva di un futuro testing: nel caso web ipotizziamo compatibilità tra i principali browser (chrome,mozilla,safari) ; nel caso desktop, invece, dobbiamo prevedere più sistemi operativi (windows, linux,  MacOs)?Eventualmente quali tool consigliate per scrivere desktop app compatibili con più OS],
 )
-- Vorremmo anche capire meglio chi saranno gli utenti finali del sistema, per definire correttamente i casi d’uso. \ Abbiamo ipotizzato tecnici di conformità che eseguono le valutazioni con i decision tree, responsabili qualità/compliance che usano i risultati dei decision tree e nuovi membri del team per familiarizzare con la norma, ma non sappiamo se sono le figure corrette. Ci sono altri ruoli che pensate possano usare la piattaforma?
++ Vorremmo anche capire meglio chi saranno gli utenti finali del sistema, per definire correttamente i casi d’uso. \ Abbiamo ipotizzato tecnici di conformità che eseguono le valutazioni con i decision tree, responsabili qualità/compliance che usano i risultati dei decision tree e nuovi membri del team per familiarizzare con la norma, ma non sappiamo se sono le figure corrette. Ci sono altri ruoli che pensate possano usare la piattaforma?
 
-- Ci potete dare delle dritte per  la proof of concept (ad esempio requisiti minimi che questa deve avere)?
++ Ci potete dare delle dritte per  la proof of concept (ad esempio requisiti minimi che questa deve avere)?
 
-- È possibile stabilire dei canali di comunicazione asincroni ? Si definisce già un giorno di “recap” specifico o ci aggiorniamo successivamente? 
++ È possibile stabilire dei canali di comunicazione asincroni ? Si definisce già un giorno di “recap” specifico o ci aggiorniamo successivamente? 
 
-- Volevamo chiedervi: noi abbiamo provato già a vedere dei possibili metodi per gestirci fra di noi, però data ancora l’inesperienza non sappiamo bene verso che tecnologie orientarci, anche per questione di coordinamento interno, oppure l’uso di tecnologie per dashboard, monitoraggio attività e qualità…avete delle dritte che potete darci? Dalle vostre esperienze quali ritenete siano gli aspetti fondamentali su cui concentrarsi per lavorare in team in modo efficiente? Noi comunque abbiamo iniziato a lavorare sulla varia documentazione creando una repository github che se serve condividiamo.
-- Per la questione caso di studio machinetta del caffè  : si può già avere un esempio di come questi dati veranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
++ Volevamo chiedervi: noi abbiamo provato già a vedere dei possibili metodi per gestirci fra di noi, però data ancora l’inesperienza non sappiamo bene verso che tecnologie orientarci, anche per questione di coordinamento interno, oppure l’uso di tecnologie per dashboard, monitoraggio attività e qualità…avete delle dritte che potete darci? Dalle vostre esperienze quali ritenete siano gli aspetti fondamentali su cui concentrarsi per lavorare in team in modo efficiente? Noi comunque abbiamo iniziato a lavorare sulla varia documentazione creando una repository github che se serve condividiamo.
++ Per la questione caso di studio machinetta del caffè  : si può già avere un esempio di come questi dati veranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
++ Sarà fornita della documentazione riguardante le tecnologie che dovremo usare, l’Access Control Mechanism e l’Authentication Mechanism e altri aspetti del progetto, in modo da raccogliere ulteriori informazioni del caso studio?
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-  == Risoluzione degli argomenti dell'ordine del giorno
-  
-  
-  == Altre questioni emerse
- 
+  == Risposte della proponente
+  #enum(
+    [
+      La dritta fornita dalla proponente per iniziare l'analisi dei requisiti è stata di studiare lo standard tecnico EN 18031, in particolare i punti oggetto del capitolato.
+      Inoltre sono stati forniti i documenti utili allo studio dello standard:
+      - Testo dello standard
+      - Caso studio
+      - Link utili
+    ],
+    [
+      - Per motivi di facilità di espansione e flessibilità potrebbe essere preferibile una soluzione web-based (una possibile estensione è il supporto al lavoro multipersona in contemporanea).
+      - Se si decidesse di sviluppare un'applicazione desktop, ci si può limitare all'ambiente linux.
+      - Se si decidesse di dividere l'applicativo in front-end e back-end, il back-end può eseguire sulla stessa macchina del front-end. 
+    ],
+    [
+      Gli utenti finali che utilizzeranno l'applicativo sono utenti esperti dell'ambito IT.
+      Il prodotto software serve a questi utenti per semplificare e velocizzare la verifica di standard tecnici.
+    ],
+    [
+      Per quanto riguarda la proof of concept e le tecnologie si preferisce l'uso di python 3.x , mentre per il front-end non vengono imposti particolari vincoli.
+      Le tecnologie consigliate per il front-end sono le seguenti:
+      - Flask(python)
+      - React(javascript)
+      - Angular(typescript)
+      Il consiglio della proponente è quello di scegliere le tecnologie più facili da imparare (basandosi sulla qualità della documentazione oppure siulle nostre esperienze passate).
+    ],
+    [
+      Per qunato riguarda le comunicazioni con l'impresa sono state concordate le seguenti modalità:
+      - Asincronamente, comunicazioni via mail, creazione di un gruppo telegram, uso di GitHub per condividere codice e documenti.
+      - Sincronamente, incontri bisettimanali, prossimo incontro programmato per Martedì 2025-12-02; possibilità di concordare ulteriori incontri qualora siano necessari.
+      Ad esempio, a seguito dello studio del materiale fornito, l'azienda proponente si è resa disponibile a un incontro per rispondere ai dubbi principali.
+    ],
+    [
+      I consigli organizzativi forniti dalla proponente sono basati sulla loro esperienza personale.
+      In genere il loro approccio organizzativo si configura come segue:
+      + Creazione di un gruppo di lavoro interno riguradante il progetto, utile per semplificare e velocizzare le comunicazioni di bassa importanza
+      + Codice e documnetazione sono versionate con GitHub.
+      + Brevi incontri giornalieri
+      + Uso della project board di GitHub per la gestione degli issue
+    ],
+    [
+      Il caso studio è tra i documenti da studiare forniti dalla proponente. 
+    ],
+    [
+      Lo standard tecnico è tra i documenti da studiare forniti dalla proponente.
+    ],
+  )
+
+  == Approfondimenti tecnici
+  #enum(
+    [
+      Logica generale del sistema \
+      La logica si basa su una serie di documenti (assets, decision tree, template) che descrivono i
+      requisiti. \
+      L’applicazione deve leggere questi documenti, interpretare i decision tree e mostrare domande
+      all’utente, che risponde (sì/no). In base alle risposte, il flusso che avanza tra i requisiti e gli output ottenuti (Pass,Fail,Not Applicable).
+    ],
+    [
+      Gli assets \
+      Sono file allegati al progetto che descrivono specifiche del dispositivo. \ 
+      Ogni dispositivo può avere
+      assets diversi. \
+      In futuro potrebbero essere raccolti in un CSV o altri formati. \
+      Servono come base per generare le domande.
+    ],
+    [
+      Origine del template fornito. \
+      Il materiale fornito come esempio deriva da un  
+      #link("https://github.com/zealience/IoT-Cybersecurity-Compliance")[progetto open-source]. \
+    ],
+    [
+      Cosa deve studiare il gruppo adesso:
+      - cosa e quali sono i requisiti.
+      - cosa sono i decision tree.
+      - come sono strutturati gli assets.
+      - come i requisiti sono collegati tra loro.],
+    [
+      Complessità dell'applicazione. \
+      La logica è semplice: prendere in ingresso i documenti, interpretare i decision tree, mostrare domande, registrare risposte e produrre un output (Not Applicable / Pass / Fail).
+    ],
+    [
+      Flusso delle domande. \
+      Ogni decision tree porta a domande la cui risposta è sì/no. \
+      Le risposte determinano se procedere, fermarsi o concludere. \
+      Tutti gli assets devono passare attraverso lo stesso set di domande.
+    ],
+    [
+      Presentazione di bozze per l'analisi dei requisiti. \
+      #upper("è") possibile presentare delle bozze per ricevere un feedback.
+    ],
+
+
+  )
 ]
 
 
@@ -107,13 +212,24 @@ E dal vostro punto di vista quali sono i pro e contro principali da iniziare a v
 = Decisioni
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
-#let prefisso="VI.5."
+#let prefisso="VE.1."
 
 #let decisioni=(
-
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Iniziare lo studio dello standard tecnico tramite i documenti forniti],
+  [#upper("è") stato suggerito dalla proponente ed è un punto di partenza appropriato per l'AdR.],
+  [-]
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Creazione di un gruppo Telegram per la cominicazione asincrona.],
+  [Stabilire un canale di comunicazione asincrona efficacie.],
+  [-]
+),
 )
 
-#utilityTable(decisioni,header:("Codice","Descrizione","Motivazioni","Riferimenti"),columns:(auto,2fr,2fr,1fr))
+#utilityTable(decisioni,header:("Codice","Descrizione","Motivazioni","Ref."),columns:(auto,2fr,2fr,auto))
 
 ]
 
@@ -121,13 +237,26 @@ E dal vostro punto di vista quali sono i pro e contro principali da iniziare a v
 #insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
 
 = TODO
-#let prefisso="TD.5."
+#let prefisso="TD.7."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
-I punti da approfondire nelle prossime riunioni o in vista di esse individuati sono stati i seguenti:
+I TODO sorti da questa riunione sono i seguenti:
 #let TODO=(
-  
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
+  [-],
+  [Redazione del verbale di questa riunione],
+  [VE.1.1],
+), 
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
+  [-],
+  [Creazione del gruppo Telegram],
+  [VE.1.1],
+), 
   )
-#utilityTable(TODO,header: ("Codice","Assegnatari","Task (GitHub)","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
+#utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
+
+Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolto successivamente e ad opera di un singolo membro del gruppo.
 ]
