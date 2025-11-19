@@ -49,7 +49,7 @@
   ([0.2],[2025-11-12],[Stesura sezione introduzione e descrizione generale],[Felician Necsulescu],[Ana Maria Draghici],[-]),
   ([0.3],[2025-11-13],[Aggiunta UC1],[Felician Necsulescu],[-],[-]),
   ([0.4],[2025-11-15],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale],[Ana Maria Draghici],[-],[-]),
-  ([0.5],[2025-11-16],[Aggiunta la possibilità di collegamento al Glossario interno],[Ana Maria Draghici],[-],[-]),
+  ([0.5],[2025-11-18],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind],[Ana Maria Draghici],[-],[-]),
   
 )
 
@@ -90,8 +90,7 @@ Gli obiettivi principali di questo documento sono:
 == Scopo del prodotto 
 Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
 
-L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity  attraverso l’esecuzione automatizzata di decision tree , velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. Il sistema sostituisce il processo manuale che è dispendioso in termini di tempo, soggetto a errori umani e difficile da aggiornare. 
-  
+L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity  attraverso l’esecuzione automatizzata di decision tree , velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. 
 == Glossario // mettere link al glossario
 Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato un approccio ibrido alla gestione dei riferimenti al Glossario.
 I termini tecnici possono essere presentati secondo tre modalità:
@@ -101,7 +100,8 @@ I termini tecnici possono essere presentati secondo tre modalità:
 - *Marcatura tramite pedice “G” (termineᴳ)*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
   
 Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
-
+// Da rivedere, l'uso del glossario è ancora da definire meglio, quindi questa è solo un'idea generale, non definitiva. 
+ 
 == Miglioramenti del documento
 Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da: 
 
@@ -113,13 +113,13 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
 
 *Nota*: fino al completamento della fase di analisi, non può essere garantita la stabilità dei requisiti. 
 
-  == Riferimenti
-  
+ == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
     - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf")[Norme di Progetto v.0.0.1];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
+    - #inserisciLink(url:"https://drive.google.com/file/d/1iXOfcsiHZTf1ViP1t9t9sZ5LV8XzxwDT/view?usp=sharing")[European Standard EN18031]
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
@@ -129,6 +129,9 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
     - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
     - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni]; \
     - #inserisciLink(url:"https://drive.google.com/file/d/1irvFvrXyRsF3ELZAuNre4y3bLHFmszvz/view?usp=sharing")[Software Engineering, Sommerville, edizione X]
+    - #inserisciLink(url:"https://github.com/zealience/IoT-Cybersecurity-Compliance")[IoT-Cybersecurity-Compliance]
+  
+  
   ]
 ]
 
@@ -149,17 +152,15 @@ Il sistema deve centralizzare le informazioni tecniche sui dispositivi, guidare 
 Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 #pad(left: 1em)[
-- *Importazione e gestione dei documenti tecnici*: possibilità di caricare file in formati standard (CSV, XML , JSON  contenenti informazioni sui dispositivi, le interfacce, le funzionalità e le configurazioni di rete.
+- *Importazione e gestione dei documenti tecnici*: possibilità di caricare file in formati standard (CSV, XML, JSON)  contenenti informazioni sui dispositivi, le interfacce, le funzionalità e le configurazioni di rete.
 
 - *Importazione e gestione dei decision tree*: possibilità di importare decision tree strutturati (XML, JSON) che rappresentano i requisiti normativi, con nodi e percorsi gerarchici.
 
-- *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision tree, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisiti.
+- *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision tree, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisiti. Durante l’esecuzione, il sistema considera anche la gerarchia dei requisiti e le interazioni tra i nodi, permettendo di valutare l’influenza reciproca delle decisioni e di rispettare le dipendenze tra i requisiti.
 
 - *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable #footnote()[#dict.at("Not Applicable (N.A.)")], Pass #footnote()[#dict.at("Pass")], Fail #footnote()[#dict.at("Fail")]), con registrazione completa del processo decisionale.
 
-- *Visualizzazione dello stato delle valutazioni*: dashboard interattiva che mostra lo stato di avanzamento e la conformità dei dispositivi, con possibilità di filtrare e aggregare i risultati.
-
-- *Navigazione dei decision tree*: visualizzazione grafica della struttura dei decision tree con evidenziazione del percorso seguito durante la valutazione, facilitando la comprensione delle decisioni prese.
+- *Visualizzazione e navigazione dei decision tree*: dashboard interattiva che mostra lo stato di avanzamento delle valutazioni e la conformità dei dispositivi, con rappresentazione grafica dei decision tree e evidenziazione dei percorsi seguiti durante la valutazione. L’utente può filtrare, aggregare e comprendere facilmente i risultati, garantendo trasparenza e tracciabilità delle decisioni.
 
 - *Modifica dei decision tree*: editor grafico  integrato per adattare e aggiornare i percorsi decisionali, con salvataggio dei file modificati in formati standard.
 
@@ -169,26 +170,25 @@ Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 - *Annotazioni e giustificazioni (opzionale)*: possibilità di aggiungere note esplicative per documentare le decisioni prese e migliorare la tracciabilità.
 ]
-  == Caratteristiche degli utenti
+  == Caratteristiche degli utenti <sec-utenti>
 
 L’applicazione supporta diversi profili di utenti coinvolti nella verifica della conformità dei dispositivi radio:
 #pad(left: 1em)[
-- *Tecnici di conformità*: eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Passᴳ/Failᴳ/Not Applicableᴳ), riducendo i tempi e gli errori tipici del processo manuale.
+- *Tecnici di conformità* (principali): eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Passᴳ/Failᴳ/Not Applicableᴳ), riducendo i tempi e gli errori tipici del processo manuale.
 
-- *Responsabili qualità e compliance*: monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report per garantire tracciabilità e supervisione delle decisioni prese.
+- *Responsabili qualità e compliance* (opzionali): monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report per garantire tracciabilità e supervisione delle decisioni prese.
 
-- *Nuovi membri del team*: utilizzano strumenti grafici per familiarizzare con la struttura dei requisiti e con il processo di valutazione, accelerando la formazione sul sistema.
+- *Nuovi membri del team* (opzionali): utilizzano strumenti grafici per familiarizzare con la struttura dei requisiti e con il processo di valutazione, accelerando la formazione sul sistema.
 ]
-  == Piattaforma di esecuzione
+Gli *utenti principali* del sistema sono i tecnici interni di conformità, mentre le altre categorie ricoprono ruoli di supporto o supervisione.
+  == Piattaforma di esecuzione <sec-piattaforma>
 
- Il sistema sarà sviluppato come applicazione software, con possibilità di scelta tra una soluzione web-based o desktop.
-#pad(left: 1em)[
-- *La modalità web-based* #footnote()[#dict.at("Soluzione web-based")] consentirà l’accesso tramite i principali browser moderni, garantendo compatibilità generica con i sistemi operativi più diffusi.
+Il sistema sarà sviluppato come applicazione software, con possibilità di scelta tra una soluzione *web-based* o *desktop*.
 
-- *La modalità desktop* #footnote()[#dict.at("Applicazione desktop")] permetterà l’installazione su computer dei principali sistemi operativi (Windows, macOS e Linux).
-]
-In entrambe le modalità, l’obiettivo è assicurare che l’applicazione sia accessibile agli utenti finali e fruibile senza vincoli particolari legati alla piattaforma utilizzata.
+Dall’incontro con l’azienda è emerso che *non esiste una preferenza vincolante*, anche se viene suggerita la soluzione web-based per una maggiore flessibilità, la facilità di accesso senza installazione e la possibilità di lavorare con il file system locale quando necessario.
+È stato inoltre chiarito che, nel caso di una soluzione desktop, non è necessario garantire la compatibilità con tutti i sistemi operativi, poiché sarebbe sufficiente supportarne uno solo.
 
+L’obiettivo rimane garantire un’applicazione accessibile, flessibile e fruibile dagli utenti finali, senza vincoli significativi legati alla piattaforma utilizzata.
 == Caso studio fornito - Panoramica <sec-caso_studio>
 Per la verifica e il collaudo del sistema sarà fornito un caso studio reale, rappresentato da una macchina del caffè connessa in rete via Wi-Fi. \
 Questo esempio permette di testare l’applicazione in un contesto operativo concreto, valutando i requisiti di accesso e autenticazione dei dispositivi, e di verificare il corretto funzionamento dei decision tree e della generazione dei risultati.
@@ -200,7 +200,7 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
 
   == Scopo
 
-  Lo scopo di questa sezione è descrivere in maniera dettagliata i casi d'uso individuati dal gruppo, in riferimento alle funzionalità del sistema di verifica della conformità allo standard EN 18031.
+  Lo scopo di questa sezione è descrivere in dettaglio i casi d’uso individuati dal gruppo, al fine di rappresentare le funzionalità principali del sistema di verifica della conformità allo standard EN 18031.
 
   == Attori
 
