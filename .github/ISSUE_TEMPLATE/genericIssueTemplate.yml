@@ -5,11 +5,13 @@ body:
 
   - type: textarea
     id: descrizione
-    label: Descrizione
+    attributes:
+      label: Descrizione
 
   - type: textarea
     id: scope
-    label: Scope
+    attributes:
+      label: Scope
 
   - type: 
 
