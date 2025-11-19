@@ -1,0 +1,36 @@
+name: Issue template generico
+description: Processo strutturato di creazione issue
+title: "[Issue]"
+body:
+
+  - type: dropdown
+    id: autore
+    attributes:
+      label: Autore
+      description: Seleziona un autore
+      multiple: true
+      options:
+        - "@davbios"
+        - "@unluckypippo" 
+        - "@genos36"
+        - "@DraghiciAnaMaria"
+        - "@aldobettega-unipd"
+        - "@FelicianNek"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: verificator
+    attributes:
+      label: Verificatore
+      description: Seleziona un verificatore
+      multiple: true
+      options:
+        - "@davbios"
+        - "@unluckypippo" 
+        - "@genos36"
+        - "@DraghiciAnaMaria"
+        - "@aldobettega-unipd"
+        - "@FelicianNek"
+    validations:
+      required: true
