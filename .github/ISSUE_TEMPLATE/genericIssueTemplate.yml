@@ -13,9 +13,9 @@ body:
       required: true
 
   - type: textarea
-    id: scope
+    id: scopo
     attributes:
-      label: Scope
+      label: Scopo
       description: Fine della issue, quale dovrebbe essere il risultato
       placeholder: Aggiungere uno scope
     validations:
