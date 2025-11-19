@@ -47,6 +47,7 @@
     ]),
     numbering: "1",
   )
+  set par(justify: true)
   doc
 }
 
