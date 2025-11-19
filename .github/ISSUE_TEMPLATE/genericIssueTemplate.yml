@@ -17,7 +17,7 @@ body:
     attributes:
       label: Scopo
       description: Fine della issue, quale dovrebbe essere il risultato
-      placeholder: Aggiungere uno scope
+      placeholder: Aggiungere uno scopo
     validations:
       required: true
 
