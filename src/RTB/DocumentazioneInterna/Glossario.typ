@@ -205,9 +205,9 @@ LTE:[
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-09],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
-  ([0.2],[2025-11-15],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML],[Ana Maria Draghici],[-],[-]),
-  ([0.3],[2025-11-16],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.],[Ana Maria Draghici],[-],[-]),
+  ([0.1],[2025-11-09],[Davide Lorenzon],[-],[Stesura iniziale e scripting per l'ordinamento]),
+  ([0.2],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML]),
+  ([0.3],[2025-11-16],[Ana Maria Draghici],[-],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
   
 )
 

@@ -36,9 +36,9 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-11],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
-  ([0.2],[2025-11-11],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)],[Davide Lorenzon],[-],[-]),
-  ([0.3],[2025-11-11],[Aggiornata @strutturaRE con le modifiche alla scaletta AdR],[Ana Maria Draghici],[-],[-]),
+  ([0.1],[2025-11-11],[Davide Lorenzon],[-],[Stesura iniziale]),
+  ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
+  ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata @strutturaRE con le modifiche alla scaletta AdR]),
   
 )
 #registroModifiche(modifiche)

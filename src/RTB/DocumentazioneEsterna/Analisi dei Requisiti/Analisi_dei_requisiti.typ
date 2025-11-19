@@ -45,11 +45,11 @@
 #let modifiche=(
 
   
-  ([0.1],[2025-11-11],[Creazione del documento],[Aldo Bettega],[-],[-]),
-  ([0.2],[2025-11-12],[Stesura sezione introduzione e descrizione generale],[Felician Necsulescu],[Ana Maria Draghici],[-]),
-  ([0.3],[2025-11-13],[Aggiunta UC1],[Felician Necsulescu],[-],[-]),
-  ([0.4],[2025-11-15],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale],[Ana Maria Draghici],[-],[-]),
-  ([0.5],[2025-11-18],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind],[Ana Maria Draghici],[-],[-]),
+  ([0.1.0],[2025-11-11],[Aldo Bettega],[Davide Lorenzon],[Creazione del documento]),
+  ([0.2.0],[2025-11-12],[Felician Necsulescu],[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
+  ([0.3.0],[2025-11-13],[Felician Necsulescu],[-],[Aggiunta UC1]),
+  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
+  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[-],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
   
 )
 

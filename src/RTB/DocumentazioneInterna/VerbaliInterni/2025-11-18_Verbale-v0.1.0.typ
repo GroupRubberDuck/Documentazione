@@ -73,7 +73,7 @@
 - *Luogo*: Riunione su Zoom
 - *Ora inizio*: 17:00
 - *Ora fine*: 18:00
-- *Scriba*: Aldo Bettega
+- *Scriba*: Davide Lorenzon
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
 - Davide Lorenzon

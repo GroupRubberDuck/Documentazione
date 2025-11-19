@@ -42,16 +42,17 @@
   )
 ]
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
-
-
-  #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
   #let modifiche=(
 
-    ([1.0],[#giornoRiunione.display()],[Stesura del verbale],[Aldo Bettega],[Ana Maria Draghici],[Felician Mario Necsulescu]),
-      
-      ).rev()
+    ([0.1.0],[#giornoRiunione.display()],[Aldo Bettega],[Ana Maria Draghici],[Stesura del verbale]),
+    ([1.0.0],[#giornoRiunione.display()],[Felician Mario Necsulescu],[Felician Mario Necsulescu],[Approvazione]),
+        
+      )
 
-      #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
+      #registroModifiche(modifiche)
+
+
+
 
 
 

@@ -66,7 +66,7 @@ if it.x == 0 {
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-12],[Stesura iniziale],[Davide Lorenzon],[-],[-]),
+  ([0.1.0],[2025-11-12],[Davide Lorenzon],[-],[Stesura iniziale]),
   
 )
 #registroModifiche(modifiche)
