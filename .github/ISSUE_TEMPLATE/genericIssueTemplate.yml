@@ -3,6 +3,16 @@ description: Processo strutturato di creazione issue
 title: "[Issue]"
 body:
 
+  - type: textarea
+    id: descrizione
+    label: Descrizione
+
+  - type: textarea
+    id: scope
+    label: Scope
+
+  - type: 
+
   - type: dropdown
     id: autore
     attributes:
