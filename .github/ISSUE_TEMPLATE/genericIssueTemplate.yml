@@ -7,11 +7,15 @@ body:
     id: descrizione
     attributes:
       label: Descrizione
+      description: Spiegazione dettagliata della issue
+      placeholder: Aggiungere una descrizione
 
   - type: textarea
     id: scope
     attributes:
       label: Scope
+      description: Fine della issue, quale dovrebbe essere il risultato
+      placeholder: Aggiungere uno scope
 
 
   - type: dropdown
