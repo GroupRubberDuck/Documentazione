@@ -169,7 +169,8 @@ LTE:[
   Insieme di dispositivi fisici connessi a Internet, capaci di raccogliere, scambiare e analizzare dati automaticamente, senza intervento umano diretto.
 ],
   
- 
+"best practices":[Procedura di cui è dimostrata la capacità di fornire sicurezza, consistenza e qualità per il corrispondente caso d'uso.
+]
   
   
   
@@ -262,4 +263,3 @@ insertArabicNumberedPagesSenzaData(PageTitle:upper(lettera) , documentType: doc)
 
 }
 
-F
