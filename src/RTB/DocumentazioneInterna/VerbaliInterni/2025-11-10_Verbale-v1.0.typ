@@ -33,7 +33,7 @@
 #insertRomanNumberedPages( "Stato del documento", "Verbale Interno",giornoRiunione)[
   #statusTab(
     stato: "Approvato",
-    versione: "1.0",
+    versione: "1.0.0",
     autori: ("Aldo Bettega",),
     revisori: ("Ana Maria Draghici",),
     validatori: ("Felician Mario Necsulescu",),

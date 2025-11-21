@@ -192,7 +192,7 @@ LTE:[
   #statusTab(
     stato: "In progress",
     versione: "0.3",
-    autori: ("Davide Lorenzon, Aldo Bettega",),
+    autori: ("Davide Lorenzon, Ana Maria Draghici",),
     revisori:("-",),
     validatori: ("-",),
     uso: "Interno",

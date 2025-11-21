@@ -31,11 +31,11 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In stesura",
+    stato: "Verificato",
     versione: "0.1.0",
     autori: ("Davide Lorenzon",),
     revisori: ("",),
-    validatori: ("",),
+    validatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -45,9 +45,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
-    ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[],[Prima stesura]),
-      
+    ([0.1.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura del verbale]),
       )
 
       #registroModifiche(modifiche)
@@ -67,10 +65,10 @@
 
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
-- *Tipo di riunione*: Esterno
+- *Tipo di riunione*: Interno
 - *Motivazione*: Riunione di ripianificazione a seguito dell'incontro con la proponente
 - *Data*: 2025-11-18
-- *Luogo*: Riunione su Zoom
+- *Luogo*: Riunione su Discord
 - *Ora inizio*: 17:00
 - *Ora fine*: 18:00
 - *Scriba*: Davide Lorenzon
@@ -88,14 +86,15 @@
 
 #insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
   = Ordine del giorno
-  Si è approfittato della riunione per discutere anche di attività non collegate alla riunione con la proponente, tali attività sono aggiustamenti ad alcune parti dei documenti, sono una parte del processo di automiglioramento(in questa riunione si cerca di integrare le nuove informazioni fornite dal professore).
-  - Riassunto delle conclusioni tratte dalla riunione con BlueWind.
-  - Miglioramento della struttura del registro delle modifiche
-  - Cambiamenti nella spartizione ruoli compiti.
-  - Introduzione di un verisonamento semantico.
-  - Processo di pubblicazione dei documenti.
-  - Introduzione di issue template.
-  - Nuova definition of Done.
+  Si è approfittato di questo meeting per discutere anche di questioni non connesse alla riunione con la proponente. Queste attività riguardano correzioni ad alcune parti dei documenti e costituiscono un elemento del processo di auto-miglioramento, attraverso cui si tenta di integrare le nuove informazioni fornite dal professore:
+
+  - Riassunto delle conclusioni tratte dalla riunione con BlueWind;
+  - Miglioramento della struttura del registro delle modifiche;
+  - Cambiamenti nella spartizione ruoli/compiti;
+  - Introduzione di un versionamento semantico;
+  - Processo di pubblicazione dei documenti;
+  - Introduzione di issue template;
+  - Nuova Definition of Done.
 
 ]
 
@@ -104,39 +103,39 @@
   La gran parte della riunione è stata dedicata all'aggiornamento dei membri del gruppo non presenti alle lezioni di riferimento.
   
   == Conclusioni dell'incontro con BlueWind
-   Le conclusioni della riunione con BlueWind sono state riportate nell'apposito verbale, in questa sede è stata solo decisa la ripartizione del lavoro. \ Ovvero ogni membro del gruppo si dedicherà allo studio dei documenti forniti.
-  - #upper("è") stato deciso di completare lo studio dei documenti, la loro stesura sarà limitata all'introduzione.
+   Le conclusioni della riunione con BlueWind sono state riportate nell'apposito verbale.\ In questa sede è stata solo decisa la ripartizione del lavoro, ovvero ogni membro del gruppo si dedicherà allo studio dei documenti forniti dalla proponente.
+   
   == Introduzione del versionamento semantico <vers>
-  A lezione è stato spiegato il versionamento semantico, questa best practices si adatta bene alle nostre necessità quindi è stato deciso di implementarla.
+  Durante la lezione è stato spiegato il versionamento semantico, questa best practice si adatta bene alle nostre necessità quindi è stato deciso di implementarla.
 
   #align(center)[
     #text(fill:red)[X].#text(fill:green)[Y].#text(fill:blue)[Z]
   ]
-  - #text(fill:red)[X, Major Version]:\
-  Modifiche e aggiunte sostanziali, non retrocompatibili
+  - #text(fill:red)[X, major Version]:\
+  Modifiche e aggiunte sostanziali, non retrocompatibili;
   
-  - #text(fill:green)[Y, Minor Version]:\
-  Modifiche e aggiunte di minore importanza, retrocompatibili
+  - #text(fill:green)[Y, minor Version]:\
+  Modifiche e aggiunte di minore importanza, retrocompatibili;
 
   - #text(fill:blue)[Z, patch]:\
-  Non ci sono aggiunte, solo correzioni, retrocompatibili
+  Non ci sono aggiunte, solo correzioni, retrocompatibili.
 
-  La retrocompatibilità ha molta importanza per l'applicativo software.
-  Per la documentazione è meno importante.
+  La retrocompatibilità è molto importante per l’applicazione software, mentre è meno rilevante per la documentazione.
+
   == Ruoli primari nei processi di supporto <ruoli>
-  Le attività dei processi di supporto consumanno ore produttive dell'attività di processo primario che li ha generati.
-  Tali relazioni sono descritte nel documento norme di progetto.
+  Le attività dei processi di supporto consumano ore produttive dell'attività di processo primario che li ha generati.
+  Questo concetto e le varie relazioni che sussistono sono descritte meglio nel documento Norme di Progetto.
 
   == Registro delle modifiche <registro>
-  Correzione semantica, non si usa il termine validatore ma bensì verificatore.
-  l'approvazione è rappresentata da una riga del registro delle modifiche in cui autore e verificatore coincidono e la descrizione è "Approvazione del documneto"/"Approvazione della sezione X".
-  == Modifica del worflow per la stesura dei documenti <workflow>
-  La modifica degli stati attraversati dal documento richiede di aggiornare il workflow di conseguenza.
-  == Introdotto Issue Template <issueTemplate>
-  Introdotta una priuma bozza di issue template, se ne prevede il miglioramento a seguito dell'utilizzo in modo da comprenderne meglio come può essere migliorato.
+  È stata apportata una correzione terminologica: si utilizza “verificatore” al posto di “validatore”.
+  L'approvazione invece è rappresentata da una riga del registro delle modifiche in cui autore e verificatore coincidono e la descrizione è "Approvazione del documento"/"Approvazione della sezione X".
 
-  == Definition of Done <DD>
-  La modifica del workflow per i documenti richiede una modifica nella Definition of Done.
+  == Modifica del workflow per la stesura dei documenti <workflow>
+  Il cambiamento degli stati attraversati dal documento richiede di aggiornare il workflow e quindi anche una modifica nella Definition of Done.
+
+  == Introdotto Issue Template <issueTemplate>
+ È stata introdotta una prima bozza dell'issue template. Si prevede di migliorarla sulla base dell’esperienza d’uso, così da comprenderne   meglio le necessità di ottimizzazione.
+
 ]
 
 
@@ -149,27 +148,27 @@
 #let decisioni=(
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Aggiornamento del worflow per la redazione dei documenti.],
-  [Conseguenza della migliore comprensione dei passi necessari a redarre un documento in modo appropriato],
+  [Aggiornamento del workflow per la redazione dei documenti.],
+  [Conseguenza di una migliore comprensione dei passaggi necessari per redigere un documento in modo appropriato.],
   [#ref(<workflow>)]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Correlazione documento-ruolo .],
+  [Correlazione documento-ruolo.],
   [Ufficializzare la relazione ruolo-documento.],
   [#ref(<ruoli>)]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Adozione del verisonamento semantico.],
-  [#upper("è") una best practice],
+  [Adozione del versionamento semantico.],
+  [#upper("è") una best practice.],
   [#ref(<vers>)]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Dare una nuova definition of Done.],
   [Aggiornamento necessario.],
-  [#ref(<vers>)]
+  [#ref(<workflow>)]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
@@ -194,50 +193,44 @@ I TODO sorti da questa riunione sono i seguenti:
 #let TODO=(
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Davide Lorenzon],
   [Redazione del verbale di questa riunione.],
   [-],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Stabilito in seguito],
   [Studio e stesura del nuovo workflow.],
   [VI.6.1],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Stabilito in seguito],
   [Aggiornamento delle norme di progetto, aggiunta nuova correlazione ruolo-documento.],
   [VI.6.2],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Stabilito in seguito],
   [Aggiornamento Norme di progetto e documenti per RTB, per adottare il vers. semantico.],
   [VI.6.3],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
-  [Studio della Definition of Done.],
+  [Stabilito in seguito],
+  [Studio e modifica della Definition of Done.],
   [VI.6.4],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
-  [Aggiornamento norme di progetto, aggiunta del nuovo registro delle modifiche.],
-  [VI.6.5],
-), 
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Tutto il gruppo],
   [Aggiornare i documenti della RTB per uniformarlo ai nuovi standard.],
   [VI.6.5],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
-  [modificare lo script per la compilazione dei documenti in modo che ignori i documenti per la candidatura.Alcune delle modifiche non sono retrocompatibili.],
+  [Stabilito in seguito],
+  [Modificare lo script per la compilazione dei documenti in modo che ignori i documenti per la candidatura. Alcune delle modifiche non sono retrocompatibili.],
   [VI.6.5],
 ), 
   )
