@@ -52,15 +52,18 @@
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
-  In questo documento si tiene traccia e si definisce il way of working adottato dal gruppo. \
+  In questo documento si tiene traccia e si definisce il way of working adottato dal gruppo RubberDuck. \
 
+
+  La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
+  Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
+  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices" comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+  
   Ogni documento è coerente con la versione del way of working definita fino a quel momento, attività antecedenti a una versione del way of working potrebbero non essere coerenti con la versione attuale.
 
   Questo way of working si applica alle attività che vanno dal #strong("23-10-2025") fino all'approvazione della successiva versione del Way of Working
 
-== Cosa è cambiato
-Qui vengono esposte le principali modifiche, aggiunte e rimozioni al documento. 
-Allo stato attuale tale sezione è vuota, in quanto il documento si trova alla prima versione.
+
 
 
 == Modalità di comunicazione
