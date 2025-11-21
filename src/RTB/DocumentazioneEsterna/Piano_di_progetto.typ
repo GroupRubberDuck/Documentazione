@@ -46,6 +46,51 @@
   ]
 }
 
+#let tabellaAtt(titolo:str,attivita:array)={
+let headerBackgroundColor=luma(20%)
+let headerTextColor=luma(100%)
+let BodyTextColor=luma(0%)
+let BodyBackgroundColor1=luma(80%)
+let BodyBackgroundColor2=luma(60%)
+
+
+show table.cell.where(y:0) :body =>{
+  set text(fill:headerTextColor)
+  [*#body*]
+}
+show table.cell.where(y:1) :body =>{
+  set text(fill:headerTextColor)
+  [*#body*]
+}
+
+set table(
+  fill: (x, y) =>
+    if y <= 1{
+      headerBackgroundColor
+    }
+    else {
+      if calc.odd(y){
+        BodyBackgroundColor1
+      }
+      else{
+        BodyBackgroundColor2
+        
+      }
+    }
+
+)
+  table(
+    columns: (1fr, 1fr,1fr),
+    table.header(table.cell(colspan: 3,align: center,titolo),    [Scomposizione],
+    [Periodo di \ svolgimento],
+    [Stato]),
+    ..attivita
+  )
+}
+
+
+
+
 #let doc = "Piano di progetto"
 
 #frontPageSenzaData(doc)
@@ -67,7 +112,8 @@
 
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
-    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale]),
+    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale]),    
+    ([0.2.0], [2025-11-12], [Davide Lorenzon], [], [Layout per la pianificazione di lungo periodo]),
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -77,6 +123,18 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
+
+]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
+#outline(
+  title: [Lista delle tabelle],
+  target: figure.where(kind: table),
+)
+
+]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
+#outline(
+  title: [Lista delle immagini],
+  target: figure.where(kind: image),
+)
 ]
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
@@ -277,19 +335,139 @@
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Suddivisione del lavoro", documentType: doc)[
-  = Scomposizione del lavoro
 
-  Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
-  Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Piano di avanzamento del progetto", documentType: doc)[
   = Piano di avanzamento del progetto
 
+  // == Scomposizione del lavoro
+
+  // Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
+  // Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
+  == Pianificazione di lungo periodo
+  === Requirements and Technology Baseline
+  #let attivitaADR=(
+      "Studio della struttura del documento",
+      [_Sprint 1_],
+      "In corso", 
+      "Redazione dell'introduzione",
+      [_Sprint 1_],
+      "In corso",
+      "Definizione dei casi d'uso",
+      [_Sprint 1_],
+      "In corso",
+  ) 
+#figure(caption:"RTB-Analisi dei Requisiti")[
+#tabellaAtt(titolo:"Analisi dei Requisiti",attivita:attivitaADR)
+]
+
+  #let attivitaPP=(
+      "Studio della struttura del documento",
+      [_Sprint 1_],
+      "In corso", 
+      "Redazione dell'introduzione",
+      [_Sprint 1_],
+      "In corso",
+      [Analisi e gestione \ dei rischi],
+      [_Sprint 1_],
+      "In corso",
+      [Pianificazione di \ lungo periodo],
+      [_Sprint 1_],
+      "In corso",
+      [Pianificazione di \ lungo periodo],
+      [_Sprint 1_],
+      "In corso",
+      [Studio dei metodi \ di retrospettiva],
+      [_Sprint 1_],
+      "In corso",
+  ) 
+#figure(caption:"RTB-Piano di Progetto")[
+#tabellaAtt(titolo:"Piano di Progetto",attivita:attivitaPP)
+]
+
+  #let attivitaPP=(
+      "Studio della struttura del documento",
+      [_Sprint 1_],
+      "In corso", 
+      "Redazione dell'introduzione",
+      [_Sprint 1_],
+      "In corso",
+  ) 
+#figure(caption:"RTB-Piano di Qualifica")[
+#tabellaAtt(titolo:"Piano di Qualifica",attivita:attivitaPP)
+]
+
+
+  #let attivitaNP=(
+      "Studio della struttura del documento",
+      [_Sprint 1_],
+      "In corso", 
+      "Redazione dell'introduzione",
+      [_Sprint 1_],
+      "In corso",
+      "Studio dei processi di di ciclo di vita primari",
+      [_Sprint 1_],
+      "In corso",
+      "Studio dei processi di di ciclo di vita di supporto",
+      [_Sprint 1_],
+      "In corso",
+      "Studio dei processi di di ciclo di vita organizzativi",
+      [_Sprint 1_],
+      "In corso",
+  ) 
+#figure(caption:"RTB-Norme di Progetto")[
+#tabellaAtt(titolo:"Norme di Progetto",attivita:attivitaNP)
+]
+
+  #let attivitaGL=(
+      "Aggiornamento del glossario",
+      [_Sprint 1_],
+      "In corso", 
+  ) 
+#figure(caption:"RTB-Glossario")[
+#tabellaAtt(titolo:"Glossario",attivita:attivitaGL)
+]
+
+
+  #let attivitaPoC=(
+      "",
+      [],
+      "", 
+  ) 
+#figure(caption:"RTB-Proof of Concept")[
+#tabellaAtt(titolo:"Proof of Concept",attivita:attivitaPoC)
+]
 
 
 
+  === Product Baseline
+  Allo stato attuale il gruppo non possiede informazioni sufficienti a eseguire una adeguata previsione delle attività di questa fase.
 
+  #pagebreak()
+  == Pianificazione nel breve periodo
+
+  === Requirements and Technology Baseline
+
+  ==== Sprint 1
+  #grid( columns: 2, inset:0.7em,
+    [Inizio:],[2025-11-10],
+    [Fine prevista:],[2025-11-25],
+    [Fine reale:],[],
+    [Ritardo:],[],
+    )
+  ===== Attività da svolgere
+
+  ===== Rischi attesi
+
+  ===== Rischi incontrati
+
+  ===== Preventivo
+
+  ===== Consuntivo
+
+  ===== Retrospettiva
+  
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[
