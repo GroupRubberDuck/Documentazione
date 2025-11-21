@@ -2,8 +2,8 @@
 #import "/src/config.typ": *
 
 #show: slides.with(
-  numero: 3,
-  data: "2025-11-17",
+  numero: 4,
+  data: "2025-11-24",
 )
 
 = Attività completate
