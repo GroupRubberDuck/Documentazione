@@ -92,6 +92,155 @@ Compliance Verification di BlueWind]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
 = Processi di Supporto
+== Documentazione
+Il processo di documentazione ha lo scopo di registrare le informazioni prodotte da processi primari. 
+
+Permette di tracciare più facilemente le decisioni intraprese, evitare fraintendimenti, favorire l'organizzazione del lavoro asincrono.
+
+Le attività costituenti di questo processo sono le seguenti:
+#enum(numbering: "1.1)",
+  [Implementazione del processo ],
+  [Progettazione e sviluppo],
+  [Produzione],
+  [Manutenzione],
+)
+
+=== Strumenti di supporto
+#list(
+  [
+    *Typst*: \ Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX. \
+    Ha una sintassi più intuitiva e supporta automazionmi tramite template, funzioni e regole di stile riutilizzabili. \
+    La caratteristica più utile è la preview istantanea del documento.
+  ],
+  [
+    GitHub: \
+    Il gruppo ha deciso di usare GitHub come strumento di condivisione del lavoro e il suo sistema di issue tracking system per l'assegnazione delle attività.
+    Viene inoltre usata una GitHub action per la compilazione automatica dei documenti.
+    Tutta la documentazione è reperibile nel seguente #link("https://github.com/GroupRubberDuck/Documentazione")[repository].
+    #upper("è") stato predisposto un sito web, sfruttando la funzionalità GitHub pages per facilitare la consultazione della documentazione.
+  ],
+)
+
+=== Identificazione dei documenti <identif>
+  #upper("è") una fase di pianificazione. \
+  Quasi ogni documento viene identificato dalle seguenti caratteristiche
+
+  #enum(numbering: "a-",
+  [Titolo],
+  [Scopo],
+  [Destinatari],
+  [
+    Procedure e responsabilità nell'attività di documentazione.
+    #terms(separator: ": ",
+      ([Input],[Quali dati servono per scriverlo]),
+      ([Sviluppo],[Chi lo redige]),
+      ([Verifica],[Chi lo controlla]),
+      ([Modifica],[Chi può aggiornarlo]),
+      ([Approvazione],[Chi lo approva]),
+      ([Produzione],[Come viene prodotto]),
+      ([Archiviazione e distribuzione],[Strumenti e tecniche]),
+      ([Manutenzione e gestione della configurazione],[Versioni, tracciabilità]),
+    )
+  ],
+  [Pianificazione di revisioni intermedie e finali],
+  )
+
+==== Informazioni comuni <informazioni_comuni>
+Ogni documento ha una sezione iniziale costituita dai seguenti elementi.
+#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
+  ([Pagina di copertina],[Costituito da nome e logo del gruppo, informazioni di contatto, titolo del documento. \ Generata con apposito template.]),
+  ([Tabella dello stato],[Tabella riassuntiva dello stato del documento. \ Generata con apposito template.]),
+  ([Registro delle modifiche],[Tabella contente le informazioni sul verisonamento e sulla tracciabilità. \ Generata con apposito template.]),
+  ([Indice dei contenuti],[Indice generato automaticamente da typst]),
+  ([Indice delle immagini e delle tabelle],[Questi indici non vengono inseriti in tutti i documenti, anche questi generati automaticamente.]),
+)
+
+==== Verbali
+#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
+  ([Titolo],[Verbale riunione _data della riunione_ .]),
+  ([Scopo],[Ha una finalità riassuntiva della riunione mettendo in evidenza l'agenda, le decisioni e le attività identificate (TODO).]),
+  ([Destinatari],[Membri del gruppo, se il verbale è esterno anche la proponente, BlueWind.]),
+  ([Procedure e responsabilità],[Per la redazione del documento è necessario un riassunto della riunione (ottenuto sia da appunti presi manualmente, sia dalla trascrizione da parte di tool AI). \
+  La redazione è a carico del Responsabile e la verifica a carico del verificatore.
+  L'approvazione è a carico del responsabile.
+  I verbali sono salvati nel repository GitHub seguendo il path:_src/Fase di avanzamento/DocumentazioneEsterna o interna(in base al tipo di riunione)/VerbaliEsterni o interni/data della riuninone_Verbale-vx.y.z.typ_. \
+  ]),
+  ([Revisioni],[Il verbale viene revisionato e approvato quando pronto]),
+  ([Struttura],[#enum( numbering: "1.1)",full: true, start:0,
+    [Informazioni Comuni #ref(<informazioni_comuni>)],
+    [Informazioni Generali \ 
+    Data e luogo della riunione, orario di inizio e fine, partecipanti, Scriba della riunione, motivo della riunione. 
+    ],
+    [Ordine del giorno],
+    [Riassunto della riuninione],
+    [Decisioni],
+    [TODO],
+  )]),
+)
+
+
+==== Diario di Bordo
+Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni gruppo.
+#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
+  ([Titolo],[Diario di bordo _data_.]),
+  ([Scopo],[Permette ai gruppi di avere un feedback sulle attività svolte e di portare all'attenzione di tutti i dubbi sulle attività di processo]),
+  ([Destinatari],[Prof. Tullio Vardanega, altri gruppi.]),
+  ([Procedure e responsabilità],[
+  La redazione è a carico del Responsabile e la verifica a carico del verificatore.
+  L'approvazione è a carico del responsabile.
+  I diari di bordo sono salvati nella sezione src/DiariDiBordo/Data Data_Diario_di_bordo.typ\
+  ]),
+  ([Revisioni],[Revisonato e approvato entro ]),
+  ([Struttura],[#enum( numbering: "1.1)",full: true, start:1,
+    [Principali traguardi raggiunti],
+    [Attività da completare],
+    [Difficoltà incontrate],
+    [Principali dubbi],
+
+  )]),
+)
+
+==== Pianio di Progetto
+#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
+  ([Titolo],[Piano di Progetto]),
+  ([Scopo],[Documento necessario ad attuare uno sviluppo plan-driven. \ 
+  Le principali informazioni che contiene sono l'ambito del progetto, preventivo iniziale, risorse disponibili, analisi e piano di gestione dei rischi, suddivisione e scheduling del lavoro.]),
+  ([Destinatari],[Interni, esterni ( BlueWind s.r.l. , professori )]),
+  ([Procedure e responsabilità],[
+    La redazione del documento è in carico al responsabile, ? analista per l'analisi dei rischi ?.
+    La verifica è a carico del verificatore.
+    L'approvazioen è a carico del responsabile.
+    Il piano di progetto è salvato nel seguente path src/RTB/DocumentazioneEsterna/Piano_di_progetto-vx.y.z.typ
+  ]),
+  ([Revisioni],[Sono previste revisioni intermedie al termine di ogni periodo e un'approvazione finale per la RTB.]),
+)
+
+=== Progettazione dei documenti
+Ogni documento identificato deve rispettare gli standard di documentazione:
+formato A4, i contenuti devono essere coerenti con lo scopo del documento, definito nella #ref(<identif>),un indice dei contenuti (eccetto il diario di bordo), l'header e il footer della pagina deve contenere le seguenti informazioni:
+- Sezione attuale del documento
+- Nome del gruppo  
+- Titolo del documento
+- Pagina corrente, espresse in numeri romani per la "prefazione", in numeri arabi per il corpo del documento
+
+In caso si usino fonti no0n autorevoli è obbligatorio verificarne la correttezza.
+Esempi di fonti autorevoli: Standard ISO o di altre organizzazioni autorevoli, materiale delle lezioni
+
+TODO:
+stabilire una checklist per la verifica ed eventuali strumenti di approvazione o revisione automatica o semi automatica
+
+=== Produzione 
+  I documenti sono compilati automaticamente da una GitHub action.
+  Sono visibili pressa la repository #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].  
+  Per facilitare la consultazione è possibile usarel'apposito sito web: 
+  #link("https://grouprubberduck.github.io/Documentazione")
+
+  Versionamento e tracciabilità vengono realizzati attraverso il registro delle modifiche.
+
+
+=== Manutenzione 
+
+
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
