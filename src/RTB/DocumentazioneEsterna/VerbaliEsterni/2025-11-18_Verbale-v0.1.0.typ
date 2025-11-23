@@ -33,8 +33,7 @@
     stato: "In stesura",
     versione: "0.1.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("",),
-    validatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo","BlueWind srl"),
   )

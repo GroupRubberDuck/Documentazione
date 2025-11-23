@@ -35,8 +35,7 @@
     stato: "Approvato",
     versione: "1.0.0",
     autori: ("Aldo Bettega",),
-    revisori: ("Ana Maria Draghici",),
-    validatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Ana Maria Draghici",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )

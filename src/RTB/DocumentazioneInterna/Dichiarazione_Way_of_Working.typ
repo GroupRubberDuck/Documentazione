@@ -23,8 +23,7 @@
     stato: "In progress",
     versione: "0.1",
     autori: ("Davide Lorenzon, Aldo Bettega",),
-    revisori:("-",),
-    validatori: ("-",),
+    verificatori: ("-",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )

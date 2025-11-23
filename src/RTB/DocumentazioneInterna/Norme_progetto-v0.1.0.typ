@@ -24,9 +24,8 @@
   #statusTab(
     stato: "In progress",
     versione: "0.1",
-    autori: ("Davide Lorenzon, Aldo Bettega",),
-    revisori:("-",),
-    validatori: ("-",),
+    autori: ("Davide Lorenzon", "Aldo Bettega",),
+    verificatori: ("",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )

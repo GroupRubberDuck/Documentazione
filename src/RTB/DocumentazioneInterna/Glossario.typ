@@ -193,8 +193,7 @@ LTE:[
     stato: "In progress",
     versione: "0.3",
     autori: ("Davide Lorenzon, Ana Maria Draghici",),
-    revisori:("-",),
-    validatori: ("-",),
+    verificatori: ("-",),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
   )

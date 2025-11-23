@@ -2,8 +2,7 @@
   versione: "",
   stato: "",
   autori: ("", ""),
-  revisori:("-",),
-  validatori: ("-",),
+  verificatori: ("", ""),
   uso: "",
   destinatari: ("", ""),
   colore: rgb("#dddfe0"),
@@ -27,7 +26,7 @@
     ],
     [Verificatori],
     [
-      #for a in validatori {
+      #for a in verificatori {
         a
         [\ ]
       }

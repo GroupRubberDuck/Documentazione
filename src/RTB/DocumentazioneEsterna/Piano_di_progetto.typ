@@ -100,8 +100,7 @@ set table(
     stato: "In progress",
     versione: "0.1.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("-",),
-    validatori: ("Aldo Bettega",),
+    verificatori: ("Aldo Bettega",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )

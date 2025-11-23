@@ -34,8 +34,7 @@
     stato: "Verificato",
     versione: "0.1.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("",),
-    validatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
