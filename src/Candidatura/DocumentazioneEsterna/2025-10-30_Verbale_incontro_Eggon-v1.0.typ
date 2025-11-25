@@ -6,7 +6,6 @@
 #show heading.where(level: 1): set text(size: 20pt)
 #show heading.where(level: 2): set text(size: 16pt)
 
-
 #let giornoRiunione = datetime(year:2025, month:10 , day:30)
 #frontPage("Verbale Riunione con Eggon",giornoRiunione)
 

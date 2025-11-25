@@ -1,6 +1,6 @@
 #let src_dir = "/src"
 #let template_dir = src_dir + "/TypstTemplate"
-#let images_dir = src_dir + "/Images"
+#let images_dir = src_dir + "/assets/Images"
 
 #let front_page_file = template_dir + "/frontPage.typ"
 #let setup_layout_file = template_dir + "/setUpPageLayout.typ"
@@ -9,6 +9,8 @@
 #let logo_rd = images_dir + "/logoRD.jpg"
 #let clessidra_icon = images_dir + "/clessidra.png"
 #let check_icon = images_dir + "/check.png"
+#let danger_icon = images_dir + "/danger_icon.webp"
+#let question_mark_icon = images_dir + "/question_mark_icon.png"
 
 #let enfasi(doc) = {
   align()[
