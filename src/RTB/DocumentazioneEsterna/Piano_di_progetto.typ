@@ -4,8 +4,38 @@
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
+#import template_dir + "/tabellaRischi.typ": tabellaRischi
+#import template_dir + "/tabellaAtt.typ": tabellaAtt
+#import glossario: dict
 #set text(size: 13pt)
 // #set par(justify: true)
+
+// #for chiave in dict.keys(){
+//   show regex("(?i)"+chiave): {
+
+//   chiave+super(strong("G"))
+// }
+//   [#chiave \ ]
+// }
+#let chiavi=dict.keys().map(key=>{
+  "(?i)\\b" + key + "\\b"
+
+}
+)
+#let reg=regex(chiavi.join("|"))
+#show reg:name=>{
+  name+sub(strong("G"))
+}
+
+Verificatore 
+verifica
+\
+#for chiave in dict.keys(){
+  upper(chiave)
+  [\ ]
+}
+
+
 
 #set text(lang: "it")
 #set heading(numbering: "1.1)")
@@ -15,78 +45,8 @@
   underline()[#body]
 }
 
-#let tabellaRischi(
-  codice: str,
-  nome: str,
-  tipo: str,
-  descr: content,
-  prevenzione: str,
-  mitigazione: content,
-  frequenza: str,
-  pericolo: str,
-) = {
-  box(width: 100%, height: auto, stroke: black)[
-    #block(fill: luma(100%), inset: 8pt, width: 100%)[
-      // #lorem(30)
-      #block(stroke: 1pt + black, width: 100%, inset: 8pt, outset: 8pt, fill: luma(230))[
-        #align(center)[*#codice - #nome * ]
-      ]
-      #show table.cell: it => {
-        if it.x == 0 {
-          strong(it)
-        } else {
-          it
-        }
-      }
-      #table(
-        columns: (auto, 1fr),
-        fill: (_, y) => if calc.odd(y) { rgb("#bbbdbe") },
-      )[Tipo di rischio][#tipo][Descrizione][#descr][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
-    ]
-  ]
-}
-
-#let tabellaAtt(titolo:str,attivita:array)={
-let headerBackgroundColor=luma(20%)
-let headerTextColor=luma(100%)
-let BodyTextColor=luma(0%)
-let BodyBackgroundColor1=luma(80%)
-let BodyBackgroundColor2=luma(60%)
 
 
-show table.cell.where(y:0) :body =>{
-  set text(fill:headerTextColor)
-  [*#body*]
-}
-show table.cell.where(y:1) :body =>{
-  set text(fill:headerTextColor)
-  [*#body*]
-}
-
-set table(
-  fill: (x, y) =>
-    if y <= 1{
-      headerBackgroundColor
-    }
-    else {
-      if calc.odd(y){
-        BodyBackgroundColor1
-      }
-      else{
-        BodyBackgroundColor2
-        
-      }
-    }
-
-)
-  table(
-    columns: (1fr, 1fr,1fr),
-    table.header(table.cell(colspan: 3,align: center,titolo),    [Scomposizione],
-    [Periodo di \ svolgimento],
-    [Stato]),
-    ..attivita
-  )
-}
 
 
 
@@ -456,21 +416,168 @@ set table(
     [Ritardo:],[],
     )
   ===== Attività da svolgere
-
+  In questo primo periodo di avanzamento, gli sforzi del gruppo si concentreranno nello studio dei documento e altre attività di studio.
+  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di spint successivi.
+  - Studio e prima redazione dei documenti#list(
+    [Norme di Progetto],
+    [Piano di Progetto],
+    [Piano di Qualifica],
+    [Analidsi dei Requisiti],
+    [Glossario],
+    )  
+  - Revisione delle pratiche di versionmento.
+  - Revisione tracciamento delle modifiche. 
+  - Revisione del sito web.
+  - Studio degli strumenti offerti da GitHub, al fine di sfruttare le funzionalità utili della piattaforma.
+  - Primo incontro con la proponente, *BlueWind*.
+  - Ricerca di standard.
+  - Raffinamento del workflow.  
   ===== Rischi attesi
+
+
+
 
   ===== Rischi incontrati
 
+
+
   ===== Preventivo
+#set table(
+  stroke: (x, y) => if y == 0 {
+    (bottom: 0.7pt + black)
+  }
+  else{
+    1pt + black
+  },
+  align: (x, y) => (
+    if y == 0 {center+horizon }
+    else { left }
+  ),
+  fill:(x,y)=>{
+    if calc.odd(y){
+      luma(90%)
+    }
+  }
+)
+
+  #show table.cell.where(y:0):header=>{
+
+    align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
+
+  }
+  #table(columns: (1fr,1fr,auto),
+  [Persona],[Ruolo],[Ore],
+  [Davide Lorenzon],[Responsabile],[1],
+  [Ana Maria Draghici],[Analista],[1],
+  [Felician Mario Necsulescu],[Verificatore],[1],
+  [Davide Testolin],[Verificatore],[1],
+  [Filippo Guerra],[Amministratore],[1],
+  [Aldo Bettega ],[Amministratore],[1],
+  )
+
 
   ===== Consuntivo
 
   ===== Retrospettiva
-  
+
+
+    ==== Sprint 2
+  #grid( columns: 2, inset:0.7em,
+    [Inizio:],[2025-11-26],
+    [Fine prevista:],[],
+    [Fine reale:],[],
+    [Ritardo:],[],
+    )
+  ===== Attività da svolgere
+
+  ===== Rischi attesi
+
+
+
+
+  ===== Rischi incontrati
+
+
+
+  ===== Preventivo
+#set table(
+  stroke: (x, y) => if y == 0 {
+    (bottom: 0.7pt + black)
+  }
+  else{
+    1pt + black
+  },
+  align: (x, y) => (
+    if y == 0 {center+horizon }
+    else { left }
+  ),
+  fill:(x,y)=>{
+    if calc.odd(y){
+      luma(90%)
+    }
+  }
+)
+
+  #show table.cell.where(y:0):header=>{
+
+    align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
+
+  }
+  #table(columns: (1fr,1fr,auto),
+  [Persona],[Ruolo],[Ore],
+  [Davide Lorenzon],[Verificatore],[],
+  [Ana Maria Draghici],[Amministratrice],[],
+  [Felician Mario Necsulescu],[Analista],[],
+  [Davide Testolin],[Analista],[],
+  [Filippo Guerra],[Responsabile],[],
+  [Aldo Bettega ],[Verificatore],[],
+  )
+
+
+  ===== Consuntivo
+
+  ===== Retrospettiva
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[
   = Metodi di retrospettiva
+  La retrospettiva è un elemento essenziale dei modelli agile, fornisce informazioni al team per riflettere sul proprio lavoro, identificare punti di miglioramento, e pianificare i prossimi passi da intraprendere negli sprint futuri.
+  Alcuni modelli di retrospettiva sono i seguenti, non sono necessariamente mutualmente esclusivi:
+  #terms(separator: ": ",
+  ([Eventi significativi],[Viene creata una timeline degli eventi significativi.
+  Marcando rilasci importanti, successi, fallimenti e cambiamentia una project board.
+  Utile a rinfrescare la memoria dei membri del team e a fornire contesto.
+  ]),
+  ([Start, stop, continue],[
+
+Questa tecnica orientata all'azione si concentra su ciò che il team dovrebbe iniziare a fare, smettere di fare e continuare a fare. \ Aiuta a identificare elementi attuabili e incoraggia il team a riflettere su comportamenti e pratiche specifici.
+  ]),
+([Gradito, Osteggiato, Mancato, Appreso],[
+
+In questa tecnica, il team discute ciò che è stato gradito, osteggiato, ciò che è mancato e ciò che è stato appreso durante lo sprint. Fornisce una visione completa delle esperienze del team e aiuta a identificare le aree di miglioramento e di apprendimento.]),
+  ([Mad, Sad, Glad],
+  [Questa tecnica si concentra sugli aspetti emotivi del lavoro. I membri del team condividono ciò che li ha fatti sentire arrabbiati, tristi e soddisfatti. Aiuta a identificare le fonti di frustrazione e di soddisfazione, fornendo spunti sulla dinamica di gruppo e sul morale.
+  ]),
+  ([Five Whys],[La tecnica dei Five Whys consiste nel chiedere "perché" cinque volte per risalire alla causa principale di un problema. Aiuta il team ad approfondire le questioni e a trovare soluzioni a lungo termine, anziché affrontare i sintomi superficiali.]),
+  ([Sailboat],[Questa tecnica immaginativa utilizza la metafora di una barca a vela per identificare i rischi (scogli), le sfide (ancore), le forze positive (vento) e gli obiettivi (terraferma). Aiuta il team a visualizzare il proprio lavoro e a identificare i fattori che hanno influenzato i progressi.]),
+  ([What, So What, Now What],[Questa tecnica prevede tre fasi: identificare cosa è accaduto, discutere l'impatto (quindi cosa) e determinare i passi successivi (adesso cosa). Mantiene il team focalizzato sulle azioni e sui miglioramenti futuri.]),
+  ([Energy Levels],[Questa tecnica valuta i livelli di energia del team identificando le attività che li hanno caricati o prosciugati. Aiuta a comprendere la motivazione del team e a pianificare azioni per ricaricare il team per il prossimo sprint.]),
+  ([Dot Voting
+],[La votazione a punti aiuta a dare priorità alle idee di miglioramento, consentendo ai membri del team di votare per i suggerimenti ritenuti più preziosi. Fornisce una direzione chiara su cosa concentrarsi e garantisce che gli sforzi del team siano allineati alle loro priorità.]),
+
+  )
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ]
@@ -481,4 +588,7 @@ set table(
   Per ogni periodo
   - Preventivo
   - Consuntivo
+
+
+  Cybersecurity 
 ]

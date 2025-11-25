@@ -1,6 +1,7 @@
 #let src_dir = "/src"
 #let template_dir = src_dir + "/TypstTemplate"
 #let images_dir = src_dir + "/assets/Images"
+#let glossario = "/src/RTB/DocumentazioneInterna/Glossario.typ"
 
 #let front_page_file = template_dir + "/frontPage.typ"
 #let setup_layout_file = template_dir + "/setUpPageLayout.typ"

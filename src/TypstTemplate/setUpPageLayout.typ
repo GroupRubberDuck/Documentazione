@@ -20,7 +20,15 @@
     ]),
     numbering: "i",
   )
+  // let chiavi=dict.keys().map(key=>{
+  // "(?i)\\b" + key + "\\b"
 
+  // }
+  // )
+  // let reg=regex(chiavi.join("|"))
+  // show reg:name=>{
+  // name+sub(strong("G"))
+  // }
   doc
 }
 

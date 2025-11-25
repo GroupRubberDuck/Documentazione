@@ -212,6 +212,12 @@
 #let prefisso="VE.1."
 
 #let decisioni=(
+  (
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Creazione di un gruppo Telegram per la comunicazione asincrona],
+  [#upper("è") stato suggerito dalla proponente ed è un punto di partenza appropriato per l'AdR.],
+  [-]
+),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Iniziare lo studio dello standard tecnico tramite i documenti forniti],
@@ -243,7 +249,7 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Davide Lorenzon],
   [Redazione del verbale di questa riunione.],
-  [VE.1.1],
+  [],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],

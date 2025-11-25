@@ -28,7 +28,7 @@
 // 
 #let doc="Glossario"
 #let dict=(
-  Requisiti:[
+  Requisito:[
     - Lato bisogno, capacità necessaria all'utente per raggiungere un obiettivo.
     - Lato soluzione, la capacità necessaria a un sistema per rispondere a un'aspettativa, ] ,
 
