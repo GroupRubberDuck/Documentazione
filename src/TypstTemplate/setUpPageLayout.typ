@@ -132,7 +132,7 @@
   )
 
   set par(justify: true)
-  let chiavi=dict.keys().map(key=>{
+if documentType!="Glossario"{  let chiavi=dict.keys().map(key=>{
   "(?i)\\b" + key + "\\b"
 
   }
@@ -142,4 +142,8 @@
   name+sub(strong("G"))
   }
   doc
+  }
+else{
+  doc
+}
 }
