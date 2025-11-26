@@ -48,10 +48,6 @@
       )
 
       #registroModifiche(modifiche)
-
-
-
-
 ]
 
 #insertRomanNumberedPages("Indice","Verbale interno",giornoRiunione )[

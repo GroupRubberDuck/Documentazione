@@ -11,7 +11,7 @@
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale Interno",giornoRiunione )[
 #registroModifiche((
-  ([1.0],[2025-10-30],[Prima stesura],[Filippo Guerra],[Davide Testolin], [Luca Luzzolino]),
+  ([0.1.0],[2025-10-30],[Filippo Guerra],[Davide Testolin],[Prima stesura]),
 ))
 ]
 #insertRomanNumberedPages("Indice","Verbale Esterno",giornoRiunione)[
@@ -188,11 +188,4 @@ Le integrazioni in sé, a livello funzionale, non saranno particolarmente comple
 
 
 #line(length: 100%)
-]
-
-#insertArabicNumberedPages("Approvazione esterna ","Verbale Interno",giornoRiunione )[
-= Approvazione esterna 
-Il confronto ha permesso di chiarire alcuni dei nostri dubbi, rappresentando un'importante occasione di condivisione e collaborazione.
-
-Con la seguente firma, il proponente esterno conferma e valida il presente documento.
 ]

@@ -15,10 +15,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: "Dichiarazione degli impegni")[
   #statusTab(
     stato: "Validato",
-    versione: "2.0",
+    versione: "2.0.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("Aldo Bettega", "Davide Testolin"),
-    validatori: ("Ana Maria Draghici",),
+    verificatori: ("Aldo Bettega", "Davide Testolin"),
     uso: "Esterno",
     destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
   )
@@ -27,8 +26,10 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: "Dichiarazione degli impegni")[
 
   #registroModifiche((
-    ("1.0", "30-10-2025", "Stesura della bozza del documento", "Davide Lorenzon", "Davide Testolin", "Ana Maria Draghici"),
-    ("2.0", "05-11-2025", "Modifiche dovute alla scelta di un nuovo capitolato", "Davide Lorenzon", "Aldo Bettega", "Ana Maria Draghici"),
+    ("0.1.0", "2025-10-30", "Davide Lorenzon", "Davide Testolin", "Stesura della bozza del documento"),
+    ("1.0.0", "2025-10-30", "Ana Maria Draghici", "Ana Maria Draghici", "Approvazione"),
+    ("1.1.0", "2025-11-05", "Davide Lorenzon", "Aldo Bettega", "Modifiche dovute alla scelta di un nuovo capitolato"),
+    ("2.0.0", "2025-11-05", "Ana Maria Draghici", "Ana Maria Draghici", "Approvazione")
   ))
 ]
 

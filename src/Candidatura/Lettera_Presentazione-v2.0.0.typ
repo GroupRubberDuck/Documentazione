@@ -12,10 +12,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
 #statusTab(
   stato:"Validato",
-  versione:"2.0",
+  versione:"2.0.0",
   autori:("Ana Maria Draghici",), 
-  revisori: ("Aldo Bettega",),
-  validatori:("Filippo Guerra",),
+  verificatori: ("Aldo Bettega","Davide Testolin"),
   uso:"Esterno",
   destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]
@@ -23,8 +22,10 @@
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione")[
 
 #registroModifiche((
-  ("1.0","28-10-2025","Stesura lettera di presentazione", "Ana Maria Draghici", "Davide Testolin", "-"),
-  ("2.0","04-11-2025","Ristesura per nuova candidatura", "Ana Maria Draghici", "Aldo Bettega", "-")
+  ("0.1.0","2025-10-28","Ana Maria Draghici", "Davide Testolin", "Stesura lettera di presentazione"),
+  ("1.0.0", "2025-10-28", "Davide Lorenzon", "Davide Lorenzon", "Approvazione"),
+  ("1.1.0","2025-11-04","Ana Maria Draghici", "Aldo Bettega","Ristesura per nuova candidatura"),
+  ("2.0.0", "2025-11-04", "Davide Lorenzon", "Davide Lorenzon", "Approvazione"),
 ))
 ]
 

@@ -14,11 +14,10 @@
 
 #insertRomanNumberedPages( "Stato del documento", "Verbale Interno",giornoRiunione)[
   #statusTab(
-    stato: "In validazione",
-    versione: "1.0",
+    stato: "Validato",
+    versione: "1.0.0",
     autori: ("Felician Mario Necsulescu",),
-    revisori: ("Aldo Bettega",),
-    validatori: ("-",),
+    verificatori: ("Aldo Bettega",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -26,7 +25,8 @@
 
 #insertRomanNumberedPages("Registro Modifiche","Verbale interno",giornoRiunione )[
 #registroModifiche((
-  ([1.0],[2025-10-29],[Stesura del verbale],[Felician Mario Necsulescu],[Aldo Bettega], [-]),
+  ([0.1.0],[2025-10-29],[Felician Mario Necsulescu],[Aldo Bettega], [Stesura del verbale]),
+  ([1.0.0],[2025-10-30],[Davide Lorenzon],[Davide Lorenzon],[Approvazione])
 ))
 ]
 
