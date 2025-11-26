@@ -17,10 +17,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento", documentType:"Valutazione capitolati")[
   #statusTab(
     stato: "Validato",
-    versione: "2.0",
-    autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu, Draghici Ana Maria"),
-    revisori: ("Filippo Guerra", "Davide Testolin", "Aldo Bettega",),
-    validatori: ("Filippo Guerra", "Davide Testolin",),
+    versione: "2.0.0",
+    autori: ("Aldo Bettega","Davide Lorenzon","Felician Mario Necsulescu", "Draghici Ana Maria"),
+    verificatori: ("Filippo Guerra", "Davide Testolin", "Aldo Bettega",),
     uso: "Esterno",
     destinatari: ("Professor Tullio Vardanega
 Professor Riccardo Cardin",),
@@ -29,8 +28,10 @@ Professor Riccardo Cardin",),
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro Modifiche", documentType:"Valutazione capitolati")[
   #registroModifiche((
-    ([1.0], [2025-10-29], [Prima stesura], [Aldo Bettega, \ Davide Lorenzon, \ Felician Mario Necsulescu],[Davide Testolin], [Filippo Guerra]),
-    ([2.0], [2025-11-04], [Riscrittura per nuova candidatura], [Ana Maria Draghici, Felician Mario Necsulescu], [Aldo Bettega],[Davide Testolin]),
+    ([0.1.0], [2025-10-29], [Aldo Bettega, \ Davide Lorenzon, \ Felician Mario Necsulescu],[Davide Testolin],[Prima stesura]),
+    ([1.0.0],[2025-10-29],[Filippo Guerra],[Filippo Guerra], [Approvazione]),
+    ([1.1.0], [2025-11-04],  [Ana Maria Draghici, \ Felician Mario Necsulescu], [Aldo Bettega],[Riscrittura per nuova candidatura]),
+    ([2.0.0], [2025-11-04],[Davide Testolin],[Davide Testolin],[Approvazione])
   ))
 ]
 

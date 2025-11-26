@@ -11,7 +11,7 @@ Non è stato volutamente impaginato per mettere in risalto i contenuti e lasciar
 == Scopo del documento
 Lo scopo del documento è:
 - certificare che il progetto rispetta elevati standard di qualità dell'ingegneria del software
-- al suo interno ci sono il processo, gli obbiettivi e le metriche di qualità -> *testing*
+- al suo interno ci sono il processo, gli obiettivi e le metriche di qualità -> *testing*
 - il documento è rivolto a chi crea il prodotto, a chi lo usa e chi lo valuta.
 
 In questo documento sono presenti:
@@ -47,7 +47,7 @@ Per ciascun parametro viene associato un codice, poi vengono raggruppati in una 
 Monitora l'efficienza e l'andamento economico/temporale dello sviluppo rispetto a quanto pianificato
 - Metriche economiche e temporali: Include il calcolo di Earned Value (EV), Actual Cost (AC), Planned Value (PV) ed Estimated at Completion (EAC).
 - Varianza: analizza gli scostamenti di budget
-- Indici di performance: valuta l'efficienza tramite CPI (Cost Perfomance Index) e SPI (Schedule Perfomance Index)
+- Indici di performance: valuta l'efficienza tramite CPI (Cost Performance Index) e SPI (Schedule Performance Index)
 
 Vengono definite una serie di metriche calcolabili con formule matematiche, da definire quali metriche usare.
 
@@ -59,11 +59,11 @@ Definisce le caratteristiche che il software e la documentazione devono avere. Q
 - documentazione
 - software
 
-=== Qualità dell' architettura
+=== Qualità dell'architettura
 Vengono definite tutte le best practice che una buona architettura deve avere, per fare questa parte può essere utile vedere le slide di Cardin.
 
 === Qualità della documentazione
-Questa parte è relativa ai documenti prodotti: quali metodologie vengono usate affinchè un documento sia corretto in forma e contenuti
+Questa parte è relativa ai documenti prodotti: quali metodologie vengono usate affinché un documento sia corretto in forma e contenuti
 
 === Qualità del software
 Questa parte definisce quali siano i parametri per misurare la qualità di un buon prodotto software, ponendo anche un focus sulla soddisfazione del cliente.

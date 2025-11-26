@@ -31,8 +31,7 @@
     stato: "In review",
     versione: "0.5",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
-    revisori:("-",),
-    validatori: ("-",),
+    verificatori:("-",),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
