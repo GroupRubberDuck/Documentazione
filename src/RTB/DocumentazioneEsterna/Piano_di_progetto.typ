@@ -8,27 +8,21 @@
 #import template_dir + "/tabellaAtt.typ": tabellaAtt
 #import glossario: dict
 #set text(size: 13pt)
-// #set par(justify: true)
+#set par(justify: true)
 
-// #for chiave in dict.keys(){
-//   show regex("(?i)"+chiave): {
 
-//   chiave+super(strong("G"))
+// #let chiavi=dict.keys().map(key=>{
+//   "(?i)\\b" + key + "\\b"
+
 // }
-//   [#chiave \ ]
+// )
+// #let reg=regex(chiavi.join("|"))
+// #show reg:name=>{
+//   name+sub(strong("G"))
 // }
-#let chiavi=dict.keys().map(key=>{
-  "(?i)\\b" + key + "\\b"
-
-}
-)
-#let reg=regex(chiavi.join("|"))
-#show reg:name=>{
-  name+sub(strong("G"))
-}
 
 Verificatore 
-verifica
+verifica.
 \
 #for chiave in dict.keys(){
   upper(chiave)

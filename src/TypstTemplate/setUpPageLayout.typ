@@ -1,3 +1,6 @@
+#import "/src/config.typ":glossario
+#import glossario:*
+
 #let insertRomanNumberedPages(PageTitle, documentType, date, doc) = {
   set page(
     paper: "a4",
@@ -20,15 +23,15 @@
     ]),
     numbering: "i",
   )
-  // let chiavi=dict.keys().map(key=>{
-  // "(?i)\\b" + key + "\\b"
+  let chiavi=dict.keys().map(key=>{
+  "(?i)\\b" + key + "\\b"
 
-  // }
-  // )
-  // let reg=regex(chiavi.join("|"))
-  // show reg:name=>{
-  // name+sub(strong("G"))
-  // }
+  }
+  )
+  let reg=regex(chiavi.join("|"))
+  show reg:name=>{
+  name+sub(strong("G"))
+  }
   doc
 }
 
@@ -56,6 +59,15 @@
     numbering: "1",
   )
   set par(justify: true)
+  let chiavi=dict.keys().map(key=>{
+  "(?i)\\b" + key + "\\b"
+
+  }
+  )
+  let reg=regex(chiavi.join("|"))
+  show reg:name=>{
+  name+sub(strong("G"))
+  }  
   doc
 }
 
@@ -84,7 +96,15 @@
   show outline.entry.where(level: 1): it => {
     strong(it)
   }
+  let chiavi=dict.keys().map(key=>{
+  "(?i)\\b" + key + "\\b"
 
+  }
+  )
+  let reg=regex(chiavi.join("|"))
+  show reg:name=>{
+  name+sub(strong("G"))
+  }
   doc
 }
 
@@ -112,6 +132,14 @@
   )
 
   set par(justify: true)
+  let chiavi=dict.keys().map(key=>{
+  "(?i)\\b" + key + "\\b"
 
+  }
+  )
+  let reg=regex(chiavi.join("|"))
+  show reg:name=>{
+  name+sub(strong("G"))
+  }
   doc
 }
