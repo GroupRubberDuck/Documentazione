@@ -58,7 +58,7 @@
 
   La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
   Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
-  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
   == Scopo del prodotto
   Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
 
@@ -245,6 +245,79 @@ stabilire una checklist per la verifica ed eventuali strumenti di approvazione o
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
 = Processi Organizzativi
+== Gestione del Processo
+=== Ruoli di Progetto
+#list(
+    [*Responsabile*:
+      - Coordina l’elaborazione di piani e scadenze
+      - Approva il rilascio di prodotti parziali o finali
+      - Comunica con il committente
+      - Garantisce che le risorse disponibili siano usate con efficienza
+      - Si occupa della redazione di documenti
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+
+    [*Amministratore*:
+      - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+
+    [*Analista*:
+      - Svolge le attività di analisi dei requisiti
+      - Figura essenziale nella fase iniziale del progetto
+    ],
+
+    [*Progettista*:
+      - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
+      - Svolge le attività di design e modellazione
+      - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+    ],
+
+    [*Programmatore*:
+      - Svolge le attività di codifica
+      - Implementa le scelte prese dal progettista
+      - Figura essenziale nella fase di implementazione
+    ],
+    [*Verificatore*:
+      - Garantisce la qualità degli elementi sviluppati
+      - Svolge le attività di testing e validazione
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+  )
+=== Matrice Ruolo-Documento
+*Legenda* :\
+Azioni:
+- R = Redazione.
+- V = Verifica.
+- A = Approvazione.
+- C = Contribuente.
+Ruoli:
+- Responsabile = RESP.
+- Amministratore = AMM.
+- Analista = ANL.
+- Progettista = PRG.
+- Programmatore = PGRmm.
+- Verificatore = VRF.
+
+#{
+  show table.cell: set text(size: 11pt)
+  table(
+    columns: 7,
+    align: horizon,
+    table.header([*Documento*],[*RESP*],[*AMM*],[*ANL*],[*PRG*],[*PRGmm*],[*VRF*]),
+  [Norme di Progetto (NdP)],[R/A],[R],[-],[-],[-],[V],
+  [Analisi dei Requisiti (AdR)],[A],[-],[R],[-],[-],[V],
+  [Piano di Progetto (PdP)],[R/A],[-],[C (supporto rischi)],[-],[-],[V],
+  [Piano di Qualifica (PdQ)],[A],[R],[-],[-],[-],[V],
+  [Design Document (DD)],[A],[-],[C (per coerenza requisiti)],[R],[C],[V],
+  [Manuale Utente (MU)],[A],[-],[-],[R],[C],[V],
+  [Verbali interni],[R/A],[R],[-],[-],[-],[V],
+  [Verbali esterni],[R/A],[R],[-],[-],[-],[V],
+  [Test Report (TR)],[A],[-],[-],[C],[R],[V],
+  [Documentazione tecnica interna],[A],[R (per strumenti e template)],[R],[C],[-],[V],
+  )
+}
+
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
