@@ -23,7 +23,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.1",
+    versione: "0.4",
     autori: ("Davide Lorenzon", "Aldo Bettega",),
     verificatori: ("",),
     uso: "Interno",
@@ -37,9 +37,10 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-11],[Davide Lorenzon],[-],[Stesura iniziale]),
+  ([0.1],[2025-11-],[Davide Lorenzon],[-],[Stesura iniziale]),
   ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
+  ([0.4],[2025-11-29],[Guerra	Filippo],[-],[Aggiunta sezione ruolo-documento])
   
 )
 #registroModifiche(modifiche)
