@@ -1,6 +1,7 @@
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage, frontPageSenzaData
 #import template_dir + "/setUpPageLayout.typ": *
+#import "@preview/cheq:0.3.0": checklist
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/statusTab.typ": statusTab
@@ -23,8 +24,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.4",
-    autori: ("Davide Lorenzon", "Aldo Bettega",),
+    versione: "0.5",
+    autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
     verificatori: ("",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
@@ -40,7 +41,8 @@
   ([0.1],[2025-11-],[Davide Lorenzon],[-],[Stesura iniziale]),
   ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
-  ([0.4],[2025-11-29],[Guerra	Filippo],[-],[Aggiunta sezione ruolo-documento])
+  ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
+  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done])
   
 )
 #registroModifiche(modifiche)
@@ -285,7 +287,10 @@ stabilire una checklist per la verifica ed eventuali strumenti di approvazione o
       - Presenza richiesta durante tutto l'arco del progetto
     ],
   )
-=== Matrice Ruolo-Documento
+=== Assegnazione Ruolo-Documento
+La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
+L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
+
 *Legenda* :\
 Azioni:
 - R = Redazione.
@@ -318,6 +323,40 @@ Ruoli:
   [Documentazione tecnica interna],[A],[R (per strumenti e template)],[R],[C],[-],[V],
   )
 }
+
+=== Definition of Done (DoD)
+La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
+I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
+
+Di seguito viene riportata la Definition of Done per la fase RTB:
+
+#show: checklist.with(marker-map: (" ": sym.ballot, "x": sym.ballot.cross, "-": sym.bar.h, "/": sym.slash.double))
+
+- [ ] Controllare a livello semantico e grammaticale che tutto sia corretto (grammatica, punteggiatura, sintassi, rivedere frasi ripetute/ mal espresse)
+
+- [ ] Controllare di aver incluso tutte le sezioni definite nel WoW nel documento su cui si lavora 
+
+- [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
+- [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
+- [ ] Nei verbali, controllare che tutte le decisioni corrispondano a issue specifiche nell’issue template.
+- [ ] Un documento ( o una sua sezione) è considerato completato quando:
+- È stato scritto;
+- È stato verificato;
+- È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
+
+- [ ] Quando il documento/prodotto è completato, chiudere l’issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`] Verificare poi effettivamente la chiusura nel Projects Board.
+
+- [ ] Quando tutti i punti sopra sono completati e tutte le issue sono spostate in “Done”:
+- Il branch develop può essere unito a main
+- Controllare l’incremento dello sprint corrispondente ( e il website)
+\
+La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
+
+
 
 ]
 
