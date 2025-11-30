@@ -250,43 +250,42 @@ stabilire una checklist per la verifica ed eventuali strumenti di approvazione o
 = Processi Organizzativi
 == Gestione del Processo
 === Ruoli di Progetto
-#list(
-    [*Responsabile*:
-      - Coordina l’elaborazione di piani e scadenze
-      - Approva il rilascio di prodotti parziali o finali
-      - Comunica con il committente
-      - Garantisce che le risorse disponibili siano usate con efficienza
-      - Si occupa della redazione di documenti
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+La seguente sezione descrive le fasi della progettazione software.
+All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruolo ha compiti specifici e interviene in momenti diversi del progetto.
 
-    [*Amministratore*:
-      - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+Nel contesto del corso di Ingegneria del Software, tutti i membri del team devono ricoprire almeno una volta ciascun ruolo definito.
 
-    [*Analista*:
-      - Svolge le attività di analisi dei requisiti
-      - Figura essenziale nella fase iniziale del progetto
-    ],
+La tabella sottostante riassume in maniera chiara i compiti associati a ciascun ruolo.
 
-    [*Progettista*:
-      - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
-      - Svolge le attività di design e modellazione
-      - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
-    ],
 
-    [*Programmatore*:
-      - Svolge le attività di codifica
-      - Implementa le scelte prese dal progettista
-      - Figura essenziale nella fase di implementazione
-    ],
-    [*Verificatore*:
-      - Garantisce la qualità degli elementi sviluppati
-      - Svolge le attività di testing e validazione
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+// -------- TIMELINE VISIVA --------
+#align(center)[
+  *Fasi di progetto*\
+  #v(6pt)
+  ── ● *Analisi* ──▶ ● *Progettazione* ──▶ ● *Implementazione* ──▶ ● *Verifica*
+#{
+  show table.cell: set text(size: 11pt)
+  table(
+    columns: 3,
+    align: horizon,
+    table.header([*Ruolo*],[*Compiti*],[*Presenza*]),
+
+    [Responsabile], "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti", [Tutto il progetto],
+
+    [Amministratore], "- Garanzia efficienza strumenti\n- Gestione tecnologie di supporto\n- Verifica procedure secondo norme", [Tutto il progetto],
+
+    [Verificatore], "- Testing e validazione\n- Controllo qualità deliverable\n- Conformità ai requisiti", [Tutto il progetto],
+
+    [Analista], "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali", [Fase iniziale],
+
+    [Progettista], "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica", [Dopo analisi],
+
+    [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
   )
+}
+
+]
+
 === Assegnazione Ruolo-Documento
 La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
 L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
@@ -334,7 +333,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare a livello semantico e grammaticale che tutto sia corretto (grammatica, punteggiatura, sintassi, rivedere frasi ripetute/ mal espresse)
 
-- [ ] Controllare di aver incluso tutte le sezioni definite nel WoW nel documento su cui si lavora 
+- [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
 - [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
 - [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
