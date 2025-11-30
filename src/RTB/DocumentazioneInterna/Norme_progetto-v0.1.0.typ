@@ -397,7 +397,7 @@ Permette di distinguere la natura delle attività:
 *8. Priorità : Bassa, Media, Alta * \
 Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
 
-*9. Dimensione : Small, Medium, Large * \
+*9. Dimensione : ExtraSmall, Small, Medium, Large * \
 Serve per stimare la complessità o l'impegno richiesto.
 
 *10. Data di scadenza*\
