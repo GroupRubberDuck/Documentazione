@@ -42,7 +42,9 @@
   ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
   ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
-  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done])
+  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done e Issue tracking System]),
+
+
   
 )
 #registroModifiche(modifiche)
@@ -203,7 +205,7 @@ Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega
   )]),
 )
 
-==== Pianio di Progetto
+==== Piano di Progetto
 #terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
   ([Titolo],[Piano di Progetto]),
   ([Scopo],[Documento necessario ad attuare uno sviluppo plan-driven. \ 
@@ -286,7 +288,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 
 ]
 
-=== Assegnazione Ruolo-Documento
+== Assegnazione Ruolo-Documento
 La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
 L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
 
@@ -323,7 +325,7 @@ Ruoli:
   )
 }
 
-=== Definition of Done (DoD)
+== Definition of Done (DoD)
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
 
@@ -352,10 +354,64 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 - [ ] Quando tutti i punti sopra sono completati e tutte le issue sono spostate in “Done”:
 - Il branch develop può essere unito a main
 - Controllare l’incremento dello sprint corrispondente ( e il website)
-\
+  
 La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
 
+== Issue tracking System – Guida Operativa
+L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
+Il sistema è accessibile a tutti i membri del gruppo attraverso la repository Github, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
 
+// stati dell'issue -> quando si avrà immagine del workflow
+=== Creazione di una nuova issue
+A seguito di verbali interni o esterni, il gruppo decide le attività su cui concentrarsi. 
+L'*amministratore* ha il compito di creare le issue nel sistema utilizzando il *template condiviso*.
+
+Ogni nuova issue deve includere:
+
+*1. Assegnatario/i* \
+Generalmente è preferibile assegnare la issue a una sola persona. Tuttavia, per attività di formazione o esercitazioni ("palestra") si possono assegnare più persone o l'intero gruppo. 
+
+*2. Descrizione*\
+Una spiegazione dettagliata e specifica delle azioni da svolgere.
+
+*3. Scopo*\
+Indica cosa ci si aspetta di ottenere al termine dell'issue e dove andrà documentato il risultato (ad esempio, in quale documento o sezione del repository).
+
+*4. Autore*\
+La persona che ha ideato l'issue (solitamente l'amministratore).
+
+*5. Verificatore*\
+La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
+
+*6. Label (ambito/destinazione)*\
+Permette di classificare la issue in base al suo ambito: 
+- Esterno -> documentazione rivolta anche all’esterno del gruppo  
+- Interno -> documentazione utile solo all'interno del gruppo
+
+*7. Tipo di issue (Type)*\
+Permette di distinguere la natura delle attività:
+- Palestra -> ore formative non redicontate, attività di ricerca o di studio 
+- Produttivo -> ore redicontate con risultati concreti, come la scrittura di documenti da presentare  
+- Bug -> correzione di errori, sia su documenti che su codice o sistemi interni.
+
+*8. Priorità : Bassa, Media, Alta * \
+Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
+
+*9. Dimensione : Small, Medium, Large * \
+Serve per stimare la complessità o l'impegno richiesto.
+
+*10. Data di scadenza*\
+Normalmente coincide con la fine dello sprint di riferimento. 
+
+=== Flusso operativo
+
+1. L’amministratore crea una nuova issue tramite il template condiviso.
+   
+2. Si assegnano autore, verificatore e assegnatario/i.
+
+3. Si compilano descrizione, scopo, label, type, priorità, dimensione, scadenza. 
+
+4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
 ]
 
