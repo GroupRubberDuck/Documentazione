@@ -35,7 +35,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.5",
+    versione: "0.6",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
     verificatori:("Davide Lorenzon",),
     uso: "Esterno",
