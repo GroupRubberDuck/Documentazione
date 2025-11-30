@@ -8,7 +8,7 @@
 #import "@preview/cetz-plot:0.1.3": chart
 #import "../../DocumentazioneInterna/Glossario.typ" : dict
 #set text(size: 13pt)
-// #set par(justify: true)
+
 #set heading(numbering: "1.1) ")
 // Level 1 headings: leggermente più grandi, stesso font, nero bold
 #show heading.where(level: 1): set text(
@@ -16,10 +16,16 @@
   weight: "bold",  
 )
 
+
 // Level 2 headings: leggermente più piccoli, grigio scuro, stesso font
 #show heading.where(level: 2): set text(
   size: 18pt,     
 )
+#show ref: body => underline()[*#body*]
+#show link: body => {
+  set text(fill: blue)
+  underline()[#body]
+}
 
 
 #let doc="Analisi dei requisiti"
@@ -29,9 +35,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.5",
+    versione: "0.6",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
-    verificatori:("-",),
+    verificatori:("Davide Lorenzon",),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -46,14 +52,17 @@
   
   ([0.1.0],[2025-11-11],[Aldo Bettega],[Davide Lorenzon],[Creazione del documento]),
   ([0.2.0],[2025-11-12],[Felician Necsulescu],[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
-  ([0.3.0],[2025-11-13],[Felician Necsulescu],[-],[Scrittura del primo caso d'uso UC1]),
-  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
-  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[-],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
-  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[-],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
+  ([0.3.0],[2025-11-13],[Felician Necsulescu],[Davide Lorenzon],[Scrittura del primo caso d'uso UC1]),
+  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
+  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[Davide Lorenzon],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
+  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
 )
 
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
+
+
+
 
 
 ]
@@ -96,7 +105,7 @@ I termini tecnici possono essere presentati secondo 2 modalità:
 
 - *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
 
-- *Marcatura tramite pedice “G” (termineᴳ)*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
+- *Marcatura tramite pedice “G” (esempio#sub("G"))*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
   
 Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
 // Da rivedere, l'uso del glossario è ancora da definire meglio, quindi questa è solo un'idea generale, non definitiva. 
@@ -157,7 +166,7 @@ Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 - *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision tree, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisiti. Durante l’esecuzione, il sistema considera anche la gerarchia dei requisiti e le interazioni tra i nodi, permettendo di valutare l’influenza reciproca delle decisioni e di rispettare le dipendenze tra i requisiti.
 
-- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicableᴳ, Passᴳ, Failᴳ), con registrazione completa del processo decisionale.
+- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable, Pass, Fail), con registrazione completa del processo decisionale.
 
 - *Visualizzazione e navigazione dei decision tree*: dashboard interattiva che mostra lo stato di avanzamento delle valutazioni e la conformità dei dispositivi, con rappresentazione grafica dei decision tree e evidenziazione dei percorsi seguiti durante la valutazione. 
 //L’utente può filtrare, aggregare e comprendere facilmente i risultati, garantendo trasparenza e tracciabilità delle decisioni.
@@ -174,7 +183,7 @@ Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 L’applicazione supporta diversi profili di utenti coinvolti nella verifica della conformità dei dispositivi radio:
 #pad(left: 1em)[
-- *Tecnici di conformità* (principali): eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Passᴳ/Failᴳ/Not Applicableᴳ), riducendo i tempi e gli errori tipici del processo manuale.
+- *Tecnici di conformità* (principali): eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Pass/Fail/Not Applicable), riducendo i tempi e gli errori tipici del processo manuale.
 
 - *Responsabili qualità e compliance* (opzionali): monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report per garantire tracciabilità e supervisione delle decisioni prese.
 
@@ -457,6 +466,6 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
     4. Il sistema raccoglie tutti i risultati delle esecuzioni completate;
     5. Il sistema genera il file nel formato selezionato;
     6. Il sistema salva il file sul file system locale;
-    7. Il sistema notifica all'utente il completamento dell'esportazione e la posizione del file.
+    7. Il sistema notifica all'utente il completamento dell'esportazione e la posizione del file. 
 ]
 ]

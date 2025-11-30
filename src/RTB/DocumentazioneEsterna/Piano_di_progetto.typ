@@ -4,8 +4,8 @@
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
-#import template_dir + "/tabellaRischi.typ": tabellaRischi
-#import template_dir + "/tabellaAtt.typ": tabellaAtt
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischi
+#import template_dir + "/PdP/tabellaAtt.typ": tabellaAtt
 #import glossario: dict
 #set text(size: 13pt)
 #set par(justify: true)
@@ -21,13 +21,6 @@
 //   name+sub(strong("G"))
 // }
 
-Verificatore 
-verifica.
-\
-#for chiave in dict.keys(){
-  upper(chiave)
-  [\ ]
-}
 
 
 
@@ -246,7 +239,7 @@ verifica.
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Inesperienza ",
     tipo: "Rischio di progetto + Rischio di prodotto",
-    descr: [Mancanza di esperienza da parte dei membri del gruppo in progetti diquesta portata, con architettura non monolitica],
+    descrizione: [Mancanza di esperienza da parte dei membri del gruppo in progetti di questa portata, con architettura non monolitica],
     prevenzione: [],
     mitigazione: [È necessario prevedere la possibilità che parte
       dell’impegno orario sarà dedicato alla formazione
@@ -264,7 +257,7 @@ verifica.
 
 
   ==== Rischi personali
-  #let contatoreR = counter("rischi pers")
+  #let contatoreR = counter("rischi personali")
   #let prefisso = "R.P."
 
   // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
@@ -411,12 +404,12 @@ verifica.
     )
   ===== Attività da svolgere
   In questo primo periodo di avanzamento, gli sforzi del gruppo si concentreranno nello studio dei documento e altre attività di studio.
-  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di spint successivi.
+  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di sprint successivi.
   - Studio e prima redazione dei documenti#list(
     [Norme di Progetto],
     [Piano di Progetto],
     [Piano di Qualifica],
-    [Analidsi dei Requisiti],
+    [Analisi dei Requisiti],
     [Glossario],
     )  
   - Revisione delle pratiche di versionmento.
@@ -454,11 +447,14 @@ verifica.
   }
 )
 
+#let preventivo
+
   #show table.cell.where(y:0):header=>{
 
     align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
 
   }
+  #figure(caption:"Preventivo Sprint 1")[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   [Davide Lorenzon],[Responsabile],[1],
@@ -467,10 +463,20 @@ verifica.
   [Davide Testolin],[Verificatore],[1],
   [Filippo Guerra],[Amministratore],[1],
   [Aldo Bettega ],[Amministratore],[1],
-  )
+  )]
 
 
   ===== Consuntivo
+  #figure(caption:"Consuntivo Sprint 1")[
+  #table(columns: (1fr,1fr,auto),
+  [Persona],[Ruolo],[Ore],
+  [Davide Lorenzon],[Responsabile],[1],
+  [Ana Maria Draghici],[Analista],[1],
+  [Felician Mario Necsulescu],[Verificatore],[1],
+  [Davide Testolin],[Verificatore],[1],
+  [Filippo Guerra],[Amministratore],[1],
+  [Aldo Bettega ],[Amministratore],[1],
+  )]
 
   ===== Retrospettiva
 
@@ -512,11 +518,19 @@ verifica.
   }
 )
 
-  #show table.cell.where(y:0):header=>{
+#figure(caption:"Preventivo Sprint 2")[
+  #table(columns: (1fr,1fr,auto),
+  [Persona],[Ruolo],[Ore],
+  [Davide Lorenzon],[Verificatore],[],
+  [Ana Maria Draghici],[Amministratrice],[],
+  [Felician Mario Necsulescu],[Analista],[],
+  [Davide Testolin],[Analista],[],
+  [Filippo Guerra],[Responsabile],[],
+  [Aldo Bettega ],[Verificatore],[],
+  )]
 
-    align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
 
-  }
+  ===== Consuntivo
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   [Davide Lorenzon],[Verificatore],[],
@@ -526,9 +540,6 @@ verifica.
   [Filippo Guerra],[Responsabile],[],
   [Aldo Bettega ],[Verificatore],[],
   )
-
-
-  ===== Consuntivo
 
   ===== Retrospettiva
 ]

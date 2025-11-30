@@ -13,6 +13,9 @@
 #let danger_icon = images_dir + "/danger_icon.webp"
 #let question_mark_icon = images_dir + "/question_mark_icon.png"
 
+#let flagMarcaturaAutoamticaTerminiGlossario=false
+
+
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)
