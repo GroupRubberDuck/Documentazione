@@ -26,7 +26,7 @@
     stato: "In progress",
     versione: "0.5",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("",),
+    verificatori: ("Ana Maria Draghici",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -151,14 +151,20 @@ Le attività costituenti di questo processo sono le seguenti:
   )
 
 ==== Informazioni comuni <informazioni_comuni>
-Ogni documento ha una sezione iniziale costituita dai seguenti elementi.
-#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
-  ([Pagina di copertina],[Costituito da nome e logo del gruppo, informazioni di contatto, titolo del documento. \ Generata con apposito template.]),
-  ([Tabella dello stato],[Tabella riassuntiva dello stato del documento. \ Generata con apposito template.]),
-  ([Registro delle modifiche],[Tabella contente le informazioni sul verisonamento e sulla tracciabilità. \ Generata con apposito template.]),
-  ([Indice dei contenuti],[Indice generato automaticamente da typst]),
-  ([Indice delle immagini e delle tabelle],[Questi indici non vengono inseriti in tutti i documenti, anche questi generati automaticamente.]),
-)
+Ogni documento presenta una sezione iniziale standarizzata per tutti i membri del team. 
+Questa sezione viene generata utilizzando un apposito template centrale e unico, al fine di garantire coerenza e facilitare la compilazione. 
+
+La sezione iniziale è composta dai seguenti elementi: 
+
+*1. Pagina di copertina* contenenete il titolo del documento, il nome e il logo del gruppo e le relative informazioni di contatto.
+
+*2. Tabella dello stato * che riassume lo stato del documento e informazioni generali quali versione, autori, verificatori, uso e destinatari.
+
+*3. Registro delle modifiche * costituito da una tabella contenente le informazioni sul versionamento e sulla tracciabilità.
+
+*4. Indice dei contenuti * aggiornato automaticamente  tramite sintassi Typst.
+
+*5. Indice delle immagini e delle tabelle* presente solo nei documenti che ne contengono. 
 
 ==== Verbali
 #terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
@@ -221,26 +227,27 @@ Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega
 )
 
 === Progettazione dei documenti
-Ogni documento identificato deve rispettare gli standard di documentazione:
-formato A4, i contenuti devono essere coerenti con lo scopo del documento, definito nella #ref(<identif>),un indice dei contenuti (eccetto il diario di bordo), l'header e il footer della pagina deve contenere le seguenti informazioni:
-- Sezione attuale del documento
-- Nome del gruppo  
-- Titolo del documento
-- Pagina corrente, espresse in numeri romani per la "prefazione", in numeri arabi per il corpo del documento
+Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
+#pad(left: 1em)[
+  - Essere in formato A4; 
+  - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso, definito nella sezione #ref(<identif>) di questo documento;
+  - Tutti i documenti devono includere un indice dei contenuti e delle relative sottosezioni visibile all'inizio (ad eccezione del diario di bordo, che ne è esentato);
+  - Ogni pagina deve contenere nell'header e nel footer:
+   1. La sezione corrente del documento (in alto a sinistra);
+   2. Il nome del gruppo (in alto a destra);
+   3. Il titolo del documento (in basso a sinistra);
+   4. Il numero della pagina : espresso in numeri romani per la prefazione e in numeri arabi per le pagine del corpo del documento. 
+]
+Per la redazione dei documenti è corretto e necessario fare riferimento a fonti autorevoli e aggiornate, quali standard ISO, università e organizzazioni ufficialmente riconosciute, materiale didattico e link di approfondimento forniti durante il corso. Eventuali informazioni provenienti da altre fonti, se ritenute utili, devono essere obbligatoriamente verificate per accertarne la correttezza e l'affidabilità.
 
-In caso si usino fonti no0n autorevoli è obbligatorio verificarne la correttezza.
-Esempi di fonti autorevoli: Standard ISO o di altre organizzazioni autorevoli, materiale delle lezioni
-
-TODO:
-stabilire una checklist per la verifica ed eventuali strumenti di approvazione o revisione automatica o semi automatica
 
 === Produzione 
-  I documenti sono compilati automaticamente da una GitHub action.
-  Sono visibili pressa la repository #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].  
-  Per facilitare la consultazione è possibile usarel'apposito sito web: 
-  #link("https://grouprubberduck.github.io/Documentazione")
+I documenti vengono ricompilati automaticamente in PDF tramite GitHub Action e sono consultabili da tutti i membri del team.
+Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].  
 
-  Versionamento e tracciabilità vengono realizzati attraverso il registro delle modifiche.
+Per facilitarne la consultazione è inoltre possibile accedere al  #link("https://grouprubberduck.github.io/Documentazione")[sito web ufficiale] del gruppo, creato appositamente per visualizzare e navigare i documenti in modo più immediato.
+
+La versione del documento e la tracciabilità delle modifiche sono gestite tramite il Registro delle Modifiche, integrato direttamente all’interno di ciascun documento.
 
 
 === Manutenzione 
