@@ -239,7 +239,7 @@
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Inesperienza ",
     tipo: "Rischio di progetto + Rischio di prodotto",
-    descr: [Mancanza di esperienza da parte dei membri del gruppo in progetti diquesta portata, con architettura non monolitica],
+    descrizione: [Mancanza di esperienza da parte dei membri del gruppo in progetti di questa portata, con architettura non monolitica],
     prevenzione: [],
     mitigazione: [È necessario prevedere la possibilità che parte
       dell’impegno orario sarà dedicato alla formazione
@@ -257,7 +257,7 @@
 
 
   ==== Rischi personali
-  #let contatoreR = counter("rischi pers")
+  #let contatoreR = counter("rischi personali")
   #let prefisso = "R.P."
 
   // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
@@ -404,12 +404,12 @@
     )
   ===== Attività da svolgere
   In questo primo periodo di avanzamento, gli sforzi del gruppo si concentreranno nello studio dei documento e altre attività di studio.
-  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di spint successivi.
+  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di sprint successivi.
   - Studio e prima redazione dei documenti#list(
     [Norme di Progetto],
     [Piano di Progetto],
     [Piano di Qualifica],
-    [Analidsi dei Requisiti],
+    [Analisi dei Requisiti],
     [Glossario],
     )  
   - Revisione delle pratiche di versionmento.

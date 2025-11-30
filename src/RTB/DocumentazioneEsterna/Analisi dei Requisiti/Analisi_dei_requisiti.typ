@@ -37,7 +37,7 @@
     stato: "In review",
     versione: "0.5",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
-    verificatori:("-",),
+    verificatori:("Davide Lorenzon",),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -52,10 +52,10 @@
   
   ([0.1.0],[2025-11-11],[Aldo Bettega],[Davide Lorenzon],[Creazione del documento]),
   ([0.2.0],[2025-11-12],[Felician Necsulescu],[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
-  ([0.3.0],[2025-11-13],[Felician Necsulescu],[-],[Scrittura del primo caso d'uso UC1]),
-  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
-  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[-],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
-  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[-],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
+  ([0.3.0],[2025-11-13],[Felician Necsulescu],[Davide Lorenzon],[Scrittura del primo caso d'uso UC1]),
+  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
+  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[Davide Lorenzon],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
+  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
 )
 
 #registroModifiche(modifiche)

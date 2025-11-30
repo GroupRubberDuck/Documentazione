@@ -87,7 +87,7 @@ let preventivo=oreProduttive.map(item=>{
 })
 
 
-let consutivo=oreProduttive.map(item=>{
+let consuntivo=oreProduttive.map(item=>{
   ([#item.persona],[#item.ruolo],[
     #item.oreEffettive
     #let temp=item.oreEffettive - item.orePreviste 
@@ -117,7 +117,7 @@ heading("Consuntivo", depth: depth+1)
   figure(caption:"Preventivo Sprint "+context contatore.display())[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
-  ..(consutivo.flatten())
+  ..(consuntivo.flatten())
   )]
 
 heading("Risorse residue", depth: depth+1)

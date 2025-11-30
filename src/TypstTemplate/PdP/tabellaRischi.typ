@@ -3,7 +3,7 @@
   codice: str,
   nome: str,
   tipo: str,
-  descr: content,
+  descrizione: content,
   prevenzione: str,
   mitigazione: content,
   frequenza: str,
@@ -25,7 +25,7 @@
       #table(
         columns: (auto, 1fr),
         fill: (_, y) => if calc.odd(y) { rgb("#bbbdbe") },
-      )[Tipo di rischio][#tipo][Descrizione][#descr][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
+      )[Tipo di rischio][#tipo][Descrizione][#descrizione][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
     ]
   ]
 }
