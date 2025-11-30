@@ -390,8 +390,8 @@ Permette di classificare la issue in base al suo ambito:
 
 *7. Tipo di issue (Type)*\
 Permette di distinguere la natura delle attività:
-- Palestra -> ore formative non redicontate, attività di ricerca o di studio 
-- Produttivo -> ore redicontate con risultati concreti, come la scrittura di documenti da presentare  
+- Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
+- Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
 - Bug -> correzione di errori, sia su documenti che su codice o sistemi interni.
 
 *8. Priorità : Bassa, Media, Alta * \
