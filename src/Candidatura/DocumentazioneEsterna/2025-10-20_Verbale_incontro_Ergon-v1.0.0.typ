@@ -15,7 +15,8 @@
   
     #let color=rgb("#dddfe0")
   #registroModifiche(colore:color,(
-  ([1.0], giornoRiunione.display(), [Prima stesura], [Aldo Bettega \ Davide Lorenzon], [Filippo Guerra], [Gianluca Carlesso]),
+  ([0.1.0], giornoRiunione.display(), [Aldo Bettega \ Davide Lorenzon], [Filippo Guerra], [Prima stesura],),
+  ([1.0.0], [2025-10-29], [Gianluca Carlesso], [Gianluca Carlesso], [Approvazione])
   ))
 ]
 

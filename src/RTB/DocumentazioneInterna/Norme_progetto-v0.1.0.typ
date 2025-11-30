@@ -1,6 +1,7 @@
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage, frontPageSenzaData
 #import template_dir + "/setUpPageLayout.typ": *
+#import "@preview/cheq:0.3.0": checklist
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/statusTab.typ": statusTab
@@ -23,8 +24,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.1",
-    autori: ("Davide Lorenzon", "Aldo Bettega",),
+    versione: "0.5",
+    autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
     verificatori: ("",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
@@ -37,9 +38,11 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-11],[Davide Lorenzon],[-],[Stesura iniziale]),
+  ([0.1],[2025-11-],[Davide Lorenzon],[-],[Stesura iniziale]),
   ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
+  ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
+  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done])
   
 )
 #registroModifiche(modifiche)
@@ -58,7 +61,7 @@
 
   La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
   Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
-  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
   == Scopo del prodotto
   Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
 
@@ -245,6 +248,116 @@ stabilire una checklist per la verifica ed eventuali strumenti di approvazione o
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
 = Processi Organizzativi
+== Gestione del Processo
+=== Ruoli di Progetto
+#list(
+    [*Responsabile*:
+      - Coordina l’elaborazione di piani e scadenze
+      - Approva il rilascio di prodotti parziali o finali
+      - Comunica con il committente
+      - Garantisce che le risorse disponibili siano usate con efficienza
+      - Si occupa della redazione di documenti
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+
+    [*Amministratore*:
+      - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+
+    [*Analista*:
+      - Svolge le attività di analisi dei requisiti
+      - Figura essenziale nella fase iniziale del progetto
+    ],
+
+    [*Progettista*:
+      - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
+      - Svolge le attività di design e modellazione
+      - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+    ],
+
+    [*Programmatore*:
+      - Svolge le attività di codifica
+      - Implementa le scelte prese dal progettista
+      - Figura essenziale nella fase di implementazione
+    ],
+    [*Verificatore*:
+      - Garantisce la qualità degli elementi sviluppati
+      - Svolge le attività di testing e validazione
+      - Presenza richiesta durante tutto l'arco del progetto
+    ],
+  )
+=== Assegnazione Ruolo-Documento
+La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
+L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
+
+*Legenda* :\
+Azioni:
+- R = Redazione.
+- V = Verifica.
+- A = Approvazione.
+- C = Contribuente.
+Ruoli:
+- Responsabile = RESP.
+- Amministratore = AMM.
+- Analista = ANL.
+- Progettista = PRG.
+- Programmatore = PGRmm.
+- Verificatore = VRF.
+
+#{
+  show table.cell: set text(size: 11pt)
+  table(
+    columns: 7,
+    align: horizon,
+    table.header([*Documento*],[*RESP*],[*AMM*],[*ANL*],[*PRG*],[*PRGmm*],[*VRF*]),
+  [Norme di Progetto (NdP)],[R/A],[R],[-],[-],[-],[V],
+  [Analisi dei Requisiti (AdR)],[A],[-],[R],[-],[-],[V],
+  [Piano di Progetto (PdP)],[R/A],[-],[C (supporto rischi)],[-],[-],[V],
+  [Piano di Qualifica (PdQ)],[A],[R],[-],[-],[-],[V],
+  [Design Document (DD)],[A],[-],[C (per coerenza requisiti)],[R],[C],[V],
+  [Manuale Utente (MU)],[A],[-],[-],[R],[C],[V],
+  [Verbali interni],[R/A],[R],[-],[-],[-],[V],
+  [Verbali esterni],[R/A],[R],[-],[-],[-],[V],
+  [Test Report (TR)],[A],[-],[-],[C],[R],[V],
+  [Documentazione tecnica interna],[A],[R (per strumenti e template)],[R],[C],[-],[V],
+  )
+}
+
+=== Definition of Done (DoD)
+La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
+I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
+
+Di seguito viene riportata la Definition of Done per la fase RTB:
+
+#show: checklist.with(marker-map: (" ": sym.ballot, "x": sym.ballot.cross, "-": sym.bar.h, "/": sym.slash.double))
+
+- [ ] Controllare a livello semantico e grammaticale che tutto sia corretto (grammatica, punteggiatura, sintassi, rivedere frasi ripetute/ mal espresse)
+
+- [ ] Controllare di aver incluso tutte le sezioni definite nel WoW nel documento su cui si lavora 
+
+- [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
+- [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
+- [ ] Nei verbali, controllare che tutte le decisioni corrispondano a issue specifiche nell’issue template.
+- [ ] Un documento ( o una sua sezione) è considerato completato quando:
+- È stato scritto;
+- È stato verificato;
+- È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
+
+- [ ] Quando il documento/prodotto è completato, chiudere l’issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`] Verificare poi effettivamente la chiusura nel Projects Board.
+
+- [ ] Quando tutti i punti sopra sono completati e tutte le issue sono spostate in “Done”:
+- Il branch develop può essere unito a main
+- Controllare l’incremento dello sprint corrispondente ( e il website)
+\
+La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
+
+
+
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[

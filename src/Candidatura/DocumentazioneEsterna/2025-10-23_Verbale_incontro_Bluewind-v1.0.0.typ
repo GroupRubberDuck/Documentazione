@@ -12,7 +12,8 @@
 
 #insertRomanNumberedPages("Registro Modifiche", "Verbale Esterno", giornoRiunione)[
   #registroModifiche((
-    ([1.0], [2025-10-23], [Prima stesura], [Felician Mario Necsulescu], [Davide Testolin], [Alessandro Zappia]),
+    ([0.1.0], [2025-10-23], [Felician Mario Necsulescu], [Davide Testolin], [Prima stesura]),
+    ([1.0.0], [2025-10-29], [Alessandro Zappia], [Alessandro Zappia], [Approvazione]),
   ))
 ]
 
