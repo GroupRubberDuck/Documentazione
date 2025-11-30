@@ -42,7 +42,9 @@
   ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
   ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
-  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done])
+  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done e Issue tracking System]),
+
+
   
 )
 #registroModifiche(modifiche)
@@ -203,7 +205,7 @@ Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega
   )]),
 )
 
-==== Pianio di Progetto
+==== Piano di Progetto
 #terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
   ([Titolo],[Piano di Progetto]),
   ([Scopo],[Documento necessario ad attuare uno sviluppo plan-driven. \ 
@@ -250,44 +252,43 @@ stabilire una checklist per la verifica ed eventuali strumenti di approvazione o
 = Processi Organizzativi
 == Gestione del Processo
 === Ruoli di Progetto
-#list(
-    [*Responsabile*:
-      - Coordina l’elaborazione di piani e scadenze
-      - Approva il rilascio di prodotti parziali o finali
-      - Comunica con il committente
-      - Garantisce che le risorse disponibili siano usate con efficienza
-      - Si occupa della redazione di documenti
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+La seguente sezione descrive le fasi della progettazione software.
+All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruolo ha compiti specifici e interviene in momenti diversi del progetto.
 
-    [*Amministratore*:
-      - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+Nel contesto del corso di Ingegneria del Software, tutti i membri del team devono ricoprire almeno una volta ciascun ruolo definito.
 
-    [*Analista*:
-      - Svolge le attività di analisi dei requisiti
-      - Figura essenziale nella fase iniziale del progetto
-    ],
+La tabella sottostante riassume in maniera chiara i compiti associati a ciascun ruolo.
 
-    [*Progettista*:
-      - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
-      - Svolge le attività di design e modellazione
-      - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
-    ],
 
-    [*Programmatore*:
-      - Svolge le attività di codifica
-      - Implementa le scelte prese dal progettista
-      - Figura essenziale nella fase di implementazione
-    ],
-    [*Verificatore*:
-      - Garantisce la qualità degli elementi sviluppati
-      - Svolge le attività di testing e validazione
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+// -------- TIMELINE VISIVA --------
+#align(center)[
+  *Fasi di progetto*\
+  #v(6pt)
+  ── ● *Analisi* ──▶ ● *Progettazione* ──▶ ● *Implementazione* ──▶ ● *Verifica*
+#{
+  show table.cell: set text(size: 11pt)
+  table(
+    columns: 3,
+    align: horizon,
+    table.header([*Ruolo*],[*Compiti*],[*Presenza*]),
+
+    [Responsabile], "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti", [Tutto il progetto],
+
+    [Amministratore], "- Garanzia efficienza strumenti\n- Gestione tecnologie di supporto\n- Verifica procedure secondo norme", [Tutto il progetto],
+
+    [Verificatore], "- Testing e validazione\n- Controllo qualità deliverable\n- Conformità ai requisiti", [Tutto il progetto],
+
+    [Analista], "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali", [Fase iniziale],
+
+    [Progettista], "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica", [Dopo analisi],
+
+    [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
   )
-=== Assegnazione Ruolo-Documento
+}
+
+]
+
+== Assegnazione Ruolo-Documento
 La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
 L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
 
@@ -324,7 +325,7 @@ Ruoli:
   )
 }
 
-=== Definition of Done (DoD)
+== Definition of Done (DoD)
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
 
@@ -334,7 +335,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare a livello semantico e grammaticale che tutto sia corretto (grammatica, punteggiatura, sintassi, rivedere frasi ripetute/ mal espresse)
 
-- [ ] Controllare di aver incluso tutte le sezioni definite nel WoW nel documento su cui si lavora 
+- [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
 - [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
 - [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
@@ -353,10 +354,64 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 - [ ] Quando tutti i punti sopra sono completati e tutte le issue sono spostate in “Done”:
 - Il branch develop può essere unito a main
 - Controllare l’incremento dello sprint corrispondente ( e il website)
-\
+  
 La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
 
+== Issue tracking System – Guida Operativa
+L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
+Il sistema è accessibile a tutti i membri del gruppo attraverso la repository Github, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
 
+// stati dell'issue -> quando si avrà immagine del workflow
+=== Creazione di una nuova issue
+A seguito di verbali interni o esterni, il gruppo decide le attività su cui concentrarsi. 
+L'*amministratore* ha il compito di creare le issue nel sistema utilizzando il *template condiviso*.
+
+Ogni nuova issue deve includere:
+
+*1. Assegnatario/i* \
+Generalmente è preferibile assegnare la issue a una sola persona. Tuttavia, per attività di formazione o esercitazioni ("palestra") si possono assegnare più persone o l'intero gruppo. 
+
+*2. Descrizione*\
+Una spiegazione dettagliata e specifica delle azioni da svolgere.
+
+*3. Scopo*\
+Indica cosa ci si aspetta di ottenere al termine dell'issue e dove andrà documentato il risultato (ad esempio, in quale documento o sezione del repository).
+
+*4. Autore*\
+La persona che ha ideato l'issue (solitamente l'amministratore).
+
+*5. Verificatore*\
+La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
+
+*6. Label (ambito/destinazione)*\
+Permette di classificare la issue in base al suo ambito: 
+- Esterno -> documentazione rivolta anche all’esterno del gruppo  
+- Interno -> documentazione utile solo all'interno del gruppo
+
+*7. Tipo di issue (Type)*\
+Permette di distinguere la natura delle attività:
+- Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
+- Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
+- Bug -> correzione di errori, sia su documenti che su codice o sistemi interni.
+
+*8. Priorità : Bassa, Media, Alta * \
+Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
+
+*9. Dimensione : ExtraSmall, Small, Medium, Large * \
+Serve per stimare la complessità o l'impegno richiesto.
+
+*10. Data di scadenza*\
+Normalmente coincide con la fine dello sprint di riferimento. 
+
+=== Flusso operativo
+
+1. L’amministratore crea una nuova issue tramite il template condiviso.
+   
+2. Si assegnano autore, verificatore e assegnatario/i.
+
+3. Si compilano descrizione, scopo, label, type, priorità, dimensione, scadenza. 
+
+4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
 ]
 
