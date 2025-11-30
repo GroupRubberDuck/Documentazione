@@ -17,8 +17,7 @@
     stato: "Validato",
     versione: "2.0",
     autori: ("Davide Lorenzon",),
-    revisori: ("Aldo Bettega", "Davide Testolin"),
-    validatori: ("Ana Maria Draghici",),
+    verificatori: ("Aldo Bettega", "Davide Testolin"),
     uso: "Esterno",
     destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
   )
