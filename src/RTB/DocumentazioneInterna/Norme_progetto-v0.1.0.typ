@@ -88,7 +88,7 @@ Questo approccio permette di accelerare, standardizzare e rendere più affidabil
 #insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
   = Riferimenti
 == Riferimenti normativi
-  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Sofware Engineering, Ian Sommerville]
+  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville]
   - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
   - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
 Compliance Verification di BlueWind]
@@ -162,7 +162,7 @@ Le principali attività che compongono questo processo sono:
 Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
 #pad(left: 1em)[
   - Essere in formato A4; 
-  - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso, definito nella sezione #ref(<identif>) di questo documento;
+  - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso;
   - Tutti i documenti devono includere un indice dei contenuti e delle relative sottosezioni visibile all'inizio (ad eccezione del diario di bordo, che ne è esentato);
   - Ogni pagina deve contenere nell'header e nel footer:
    1. La sezione corrente del documento (in alto a sinistra);
@@ -214,7 +214,7 @@ I verbali sono suddivisi in due categorie principali :
 Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue Github*, che il gruppo si impegna a completare. 
 ]
 
-==== Procedure e responsabilità:
+==== Procedure e responsabilità
 
 Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
 Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe].
@@ -278,7 +278,7 @@ Il documento fornisce una visione strutturata dell’intero progetto, includendo
 *Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
 
 
-==== Revisioni: 
+==== Revisioni 
 
 Il documento prevede un processo di revisione cadenzato in più iterazioni, con:
 
@@ -327,7 +327,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 #align(center)[
   *Fasi di progetto*\
   #v(6pt)
-  ── ● *Analisi* ──▶ ● *Progettazione* ──▶ ● *Implementazione* ──▶ ● *Verifica*
+  #sym.bar.h ● *Analisi* #sym.arrow.r ● *Progettazione* #sym.arrow.r ● *Implementazione* #sym.arrow.r ● *Verifica*
 #{
   show table.cell: set text(size: 11pt)
   table(

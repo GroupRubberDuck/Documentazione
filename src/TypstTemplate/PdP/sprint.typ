@@ -25,7 +25,7 @@
   Verificatore:(costo:15,oreTotali:108,),
 )
 
-
+#{ruoli.Responsabile.oreTotali=1}
 
 // TEMPLATE
 // #set heading(numbering: "1.")
