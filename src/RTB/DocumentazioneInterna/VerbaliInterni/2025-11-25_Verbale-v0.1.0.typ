@@ -31,10 +31,10 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
-    versione: "0.1.0",
+    stato: "In validazione",
+    versione: "1.0.0",
     autori: ("Davide Lorenzon",),
-    verificatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Aldo Bettega",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -44,7 +44,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura del verbale]),
+    ([1.0.0],[#giornoRiunione.display()],[Davide Lorenzon],[Aldo Bettega],[Stesura del verbale]),
       )
 
       #registroModifiche(modifiche)
@@ -96,7 +96,7 @@
   La prima parte della riunione è stata dedicata all'attività di retrospettiva.
 
   
-  Altri punti discussione riguardavano tecniche e tecnologie per il miglioramento dei processi già implementati.
+  Altri punti di discussione riguardavano tecniche e tecnologie per il miglioramento dei processi già implementati.
 
   Infine sono stati valutati i task da svolgere nel successivo periodo di avanzamento.
   
@@ -106,7 +106,7 @@
     Le attività non completate sono state le seguenti:
     #terms(separator:[ \ ],
       ([Definition of Done],[La formalizzazione della Definition of Done sarà molto utile per semplificare il lavoro dei verificatori ed eventualmente implementare automazioni.]),
-      ([Piano di Qualifica],[Durante lo svolgimento dello Sprint 1 non vi erano informazioni sufficienti per stilarlo efficaciemente.
+      ([Piano di Qualifica],[Durante lo svolgimento dello Sprint 1 non vi erano informazioni sufficienti per stilarlo efficacemente.
       Si è inoltre verificato un rischio legato a persone che ha sottratto tempo utile allo studio.
       ]),
       ([Norme di progetto],[
@@ -119,11 +119,11 @@
       ([Trascrizione delle riunioni e stesura dei verbali],[#upper("è") stato approvato l'uso di tool AI per la trascrizione automatica delle riunioni e per la loro sintesi.   \
       Questo permette di avere velocemente un riassunto della discussione e semplificare la stesura, anche se non la automatizza totalmente]),
       ([Marcatura dei termini del glossario],[Sfruttando le funzionalità di Typst è possibile rendere automatica la marcatura #super(strong("G")) di tutte le occorrenze dei termini presenti nel Glossario]),
-      ([Template dei rischi],[Predisposto approvato un template Typst per rappresentare i rischi e le loro caratteristiche]),
-      ([Tempalte per le attività di lungo periodo],[Predisposto un template per mettere in evidenza le attività di lungo periodo e la loro scomposizione in task]),
+      ([Template dei rischi],[Predisposto e approvato un template Typst per rappresentare i rischi e le loro caratteristiche]),
+      ([Template per le attività di lungo periodo],[Predisposto un template per mettere in evidenza le attività di lungo periodo e la loro scomposizione in task]),
     )
   == Prossime attività <next>
-  Il gruppo ha ritenuto importanti le seguenti attività attività:
+  Il gruppo ha ritenuto importanti le seguenti attività:
   - Studio del dominio.
   - Analisi dei requisiti, Diagramma dei casi d'uso.
   - Aggiornare e raffinare le Norme di progetto.
@@ -140,7 +140,7 @@
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Completare i task arretrati.],
-  [In questo sprint sono disponibili le risorse e conoscienze necessarie],
+  [In questo sprint sono disponibili le risorse e conoscenze necessarie],
   [@retr]
 ),
 (
@@ -153,7 +153,7 @@
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Analisi dei requisiti. \ Concentrarsi sui casi d'uso.],
-  [In vista dell'incontro con la proponente è utile approfondire il dominio così da poter ricevere un feedback],
+  [In vista dell'incontro con la proponente è utile approfondire il dominio, così da poter ricevere un feedback],
   [@next]
 ),
 (
