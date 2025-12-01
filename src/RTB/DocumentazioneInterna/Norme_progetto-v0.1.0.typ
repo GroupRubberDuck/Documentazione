@@ -38,8 +38,8 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-],[Davide Lorenzon],[-],[Stesura iniziale]),
-  ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
+  ([0.1],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
+  ([0.2],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
   ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
   ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done e Issue tracking System]),
@@ -59,15 +59,18 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   == Scopo del documento
-  In questo documento si tiene traccia e si definisce il way of working adottato dal gruppo. \
 
-  La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
-  Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
-  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+In questo documento il gruppo definisce e mantiene traccia del proprio way of working, ovvero l’insieme di pratiche e convenzioni adottate per organizzare e svolgere il lavoro di progetto.
+
+La stesura del documento avviene in modo incrementale, evolvendosi parallelamente all’avanzamento delle attività. Nel corso del progetto potrà essere soggetto ad aggiunte, modifiche o rimozioni, derivate dal processo di apprendimento e sperimentazione del team.
+
+Tali aggiornamenti nascono dall’analisi e dall’evoluzione delle best practices comuni nell’ingegneria del software, che il gruppo studia, applica e adatta in funzione delle esigenze del team e del contesto progettuale.
+
   == Scopo del prodotto
-  Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
+Il prodotto sviluppato è un’applicazione software progettata per verificare in modo automatico la conformità alla norma EN 18031, lo standard tecnico europeo che definisce i requisiti di sicurezza informatica per i dispositivi radio wireless (es. Wi-Fi, LTE, Bluetooth, IoT wireless).
 
-  L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity  attraverso l’esecuzione automatizzata di decision tree , velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. 
+L’obiettivo dell’applicazione è supportare e guidare l’utente nella valutazione dei requisiti di cybersecurity, eseguendo in autonomia i percorsi decisionali tramite decision tree (alberi di decisione).
+Questo approccio permette di accelerare, standardizzare e rendere più affidabile il processo di verifica della conformità, con la generazione automatica della documentazione tecnica richiesta a supporto dell’assessment. 
   == Glossario
   Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato un approccio ibrido alla gestione dei riferimenti al Glossario.
   I termini tecnici possono essere presentati secondo 2 modalità:
@@ -75,6 +78,8 @@
   - *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
 
   - *Marcatura tramite pedice “G” (termine #sub()[G])*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
+
+// da definire bene meglio una volta che effettivamente viene usato per bene
   
 
 
@@ -89,6 +94,14 @@
 Compliance Verification di BlueWind]
 - #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
 == Riferimenti informativi
+
+- #link("https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization") 
+- #link("https://www.agileway.it/definition-of-done-dod-cose-cosa-serve/")
+- #link("https://www.atlassian.com/agile/project-management/definition-of-done")
+
+
+
+
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
@@ -98,133 +111,52 @@ Compliance Verification di BlueWind]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
 = Processi di Supporto
 == Documentazione
-Il processo di documentazione ha lo scopo di registrare le informazioni prodotte da processi primari. 
 
-Permette di tracciare più facilemente le decisioni intraprese, evitare fraintendimenti, favorire l'organizzazione del lavoro asincrono.
+Il processo di documentazione ha lo scopo di registrare e rendere disponibili le informazioni prodotte dai processi primari del progetto.
 
-Le attività costituenti di questo processo sono le seguenti:
-#enum(numbering: "1.1)",
-  [Implementazione del processo ],
-  [Progettazione e sviluppo],
-  [Produzione],
-  [Manutenzione],
-)
+Consente di tracciare con maggiore efficacia le decisioni adottate, ridurre il rischio di ambiguità, evitare fraintendimenti e facilitare l’organizzazione del *lavoro asincrono e collaborativo*.
 
+Le principali attività che compongono questo processo sono:
+#pad(left: 1em)[ 
+1. *Progettazione e sviluppo del documento* → definizione della struttura e stesura dei contenuti;
+
+2. *Implementazione del processo documentale* → applicazione delle norme e del workflow stabilito;
+
+3. *Produzione* → generazione del documento in formato destinato alla distribuzione;
+
+4. *Manutenzione* → aggiornamento continuo del contenuto e gestione delle modifiche;
+
+5. *Archiviazione e tracciabilità* → versionamento, conservazione e accessibilità nel tempo.
+]
 === Strumenti di supporto
-#list(
-  [
-    *Typst*: \ Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX. \
-    Ha una sintassi più intuitiva e supporta automazionmi tramite template, funzioni e regole di stile riutilizzabili. \
-    La caratteristica più utile è la preview istantanea del documento.
-  ],
-  [
-    GitHub: \
-    Il gruppo ha deciso di usare GitHub come strumento di condivisione del lavoro e il suo sistema di issue tracking system per l'assegnazione delle attività.
-    Viene inoltre usata una GitHub action per la compilazione automatica dei documenti.
-    Tutta la documentazione è reperibile nel seguente #link("https://github.com/GroupRubberDuck/Documentazione")[repository].
-    #upper("è") stato predisposto un sito web, sfruttando la funzionalità GitHub pages per facilitare la consultazione della documentazione.
-  ],
-)
 
-=== Identificazione dei documenti <identif>
-  #upper("è") una fase di pianificazione. \
-  Quasi ogni documento viene identificato dalle seguenti caratteristiche
+*Typst*: Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX.
+#pad(left: 1em)[
+- Sintassi intuitiva;
+- Supporto ad automazioni tramite template, funzioni e regole di stile riutilizzabili;
+- Preview istantanea del documento.
+]
 
-  #enum(numbering: "a-",
-  [Titolo],
-  [Scopo],
-  [Destinatari],
-  [
-    Procedure e responsabilità nell'attività di documentazione.
-    #terms(separator: ": ",
-      ([Input],[Quali dati servono per scriverlo]),
-      ([Sviluppo],[Chi lo redige]),
-      ([Verifica],[Chi lo controlla]),
-      ([Modifica],[Chi può aggiornarlo]),
-      ([Approvazione],[Chi lo approva]),
-      ([Produzione],[Come viene prodotto]),
-      ([Archiviazione e distribuzione],[Strumenti e tecniche]),
-      ([Manutenzione e gestione della configurazione],[Versioni, tracciabilità]),
-    )
-  ],
-  [Pianificazione di revisioni intermedie e finali],
-  )
-
-==== Informazioni comuni <informazioni_comuni>
-Ogni documento presenta una sezione iniziale standarizzata per tutti i membri del team. 
-Questa sezione viene generata utilizzando un apposito template centrale e unico, al fine di garantire coerenza e facilitare la compilazione. 
-
-La sezione iniziale è composta dai seguenti elementi: 
-
-*1. Pagina di copertina* contenenete il titolo del documento, il nome e il logo del gruppo e le relative informazioni di contatto.
-
-*2. Tabella dello stato * che riassume lo stato del documento e informazioni generali quali versione, autori, verificatori, uso e destinatari.
-
-*3. Registro delle modifiche * costituito da una tabella contenente le informazioni sul versionamento e sulla tracciabilità.
-
-*4. Indice dei contenuti * aggiornato automaticamente  tramite sintassi Typst.
-
-*5. Indice delle immagini e delle tabelle* presente solo nei documenti che ne contengono. 
-
-==== Verbali
-#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
-  ([Titolo],[Verbale riunione _data della riunione_ .]),
-  ([Scopo],[Ha una finalità riassuntiva della riunione mettendo in evidenza l'agenda, le decisioni e le attività identificate (TODO).]),
-  ([Destinatari],[Membri del gruppo, se il verbale è esterno anche la proponente, BlueWind.]),
-  ([Procedure e responsabilità],[Per la redazione del documento è necessario un riassunto della riunione (ottenuto sia da appunti presi manualmente, sia dalla trascrizione da parte di tool AI). \
-  La redazione è a carico del Responsabile e la verifica a carico del verificatore.
-  L'approvazione è a carico del responsabile.
-  I verbali sono salvati nel repository GitHub seguendo il path:_src/Fase di avanzamento/DocumentazioneEsterna o interna(in base al tipo di riunione)/VerbaliEsterni o interni/data della riuninone_Verbale-vx.y.z.typ_. \
-  ]),
-  ([Revisioni],[Il verbale viene revisionato e approvato quando pronto]),
-  ([Struttura],[#enum( numbering: "1.1)",full: true, start:0,
-    [Informazioni Comuni #ref(<informazioni_comuni>)],
-    [Informazioni Generali \ 
-    Data e luogo della riunione, orario di inizio e fine, partecipanti, Scriba della riunione, motivo della riunione. 
-    ],
-    [Ordine del giorno],
-    [Riassunto della riuninione],
-    [Decisioni],
-    [TODO],
-  )]),
-)
+*Github*  : Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
+#pad(left: 1em)[ 
+- Utilizzo di GitHub Actions per la compilazione automatica dei documenti;
+- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github] ;
+- #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
 
 
-==== Diario di Bordo
-Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni gruppo.
-#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
-  ([Titolo],[Diario di bordo _data_.]),
-  ([Scopo],[Permette ai gruppi di avere un feedback sulle attività svolte e di portare all'attenzione di tutti i dubbi sulle attività di processo]),
-  ([Destinatari],[Prof. Tullio Vardanega, altri gruppi.]),
-  ([Procedure e responsabilità],[
-  La redazione è a carico del Responsabile e la verifica a carico del verificatore.
-  L'approvazione è a carico del responsabile.
-  I diari di bordo sono salvati nella sezione src/DiariDiBordo/Data Data_Diario_di_bordo.typ\
-  ]),
-  ([Revisioni],[Revisonato e approvato entro ]),
-  ([Struttura],[#enum( numbering: "1.1)",full: true, start:1,
-    [Principali traguardi raggiunti],
-    [Attività da completare],
-    [Difficoltà incontrate],
-    [Principali dubbi],
+]
 
-  )]),
-)
+== Identificazione dei documenti <identif>
+  Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
 
-==== Piano di Progetto
-#terms(separator:": ", indent: 0em, hanging-indent: 1em, tight: false,
-  ([Titolo],[Piano di Progetto]),
-  ([Scopo],[Documento necessario ad attuare uno sviluppo plan-driven. \ 
-  Le principali informazioni che contiene sono l'ambito del progetto, preventivo iniziale, risorse disponibili, analisi e piano di gestione dei rischi, suddivisione e scheduling del lavoro.]),
-  ([Destinatari],[Interni, esterni ( BlueWind s.r.l. , professori )]),
-  ([Procedure e responsabilità],[
-    La redazione del documento è in carico al responsabile, ? analista per l'analisi dei rischi ?.
-    La verifica è a carico del verificatore.
-    L'approvazioen è a carico del responsabile.
-    Il piano di progetto è salvato nel seguente path src/RTB/DocumentazioneEsterna/Piano_di_progetto-vx.y.z.typ
-  ]),
-  ([Revisioni],[Sono previste revisioni intermedie al termine di ogni periodo e un'approvazione finale per la RTB.]),
-)
+#pad(left: 1em)[
+- Titolo;
+- Scopo;
+- Destinatari;
+- Procedure e responsabilità nella redazione e gestione del documento;
+- Contenuto effettivo specifico per ciascun documento.
+]
+
 
 === Progettazione dei documenti
 Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
@@ -243,17 +175,141 @@ Per la redazione dei documenti è corretto e necessario fare riferimento a fonti
 
 === Produzione 
 I documenti vengono ricompilati automaticamente in PDF tramite GitHub Action e sono consultabili da tutti i membri del team.
-Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].  
+Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].
+La posizione ufficiale dei file è indicata nel README.md del repository.  
 
-Per facilitarne la consultazione è inoltre possibile accedere al  #link("https://grouprubberduck.github.io/Documentazione")[sito web ufficiale] del gruppo, creato appositamente per visualizzare e navigare i documenti in modo più immediato.
+Per facilitarne la consultazione è inoltre possibile accedere al  #link("https://grouprubberduck.github.io/Documentazione")[sito web ufficiale] del gruppo, creato appositamente per visualizzare e navigare i documenti in modo più immediato. 
 
 La versione del documento e la tracciabilità delle modifiche sono gestite tramite il Registro delle Modifiche, integrato direttamente all’interno di ciascun documento.
+
+
+== Informazioni comuni <informazioni_comuni>
+Ogni documento presenta una sezione iniziale standardizzata per tutti i membri del team. 
+Questa sezione viene generata utilizzando un apposito template centrale e unico, al fine di garantire coerenza e facilitare la compilazione. 
+
+La sezione iniziale è composta dai seguenti elementi: 
+#pad(left: 1em)[
+*1. Pagina di copertina* contenenete il titolo del documento, il nome e il logo del gruppo e le relative informazioni di contatto.
+
+*2. Tabella dello stato * che riassume lo stato del documento e informazioni generali quali versione, autori, verificatori, uso e destinatari.
+
+*3. Registro delle modifiche * costituito da una tabella contenente le informazioni sul versionamento e sulla tracciabilità.
+
+*4. Indice dei contenuti * aggiornato automaticamente  tramite sintassi Typst.
+
+*5. Indice delle immagini e delle tabelle* presente solo nei documenti che ne contengono. 
+]
+== Struttura specifica dei documenti 
+
+Di seguito viene riportata la struttura standard dei principali documenti, delle rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
+
+ 
+=== Verbali
+
+I verbali sono suddivisi in due categorie principali : 
+#pad(left: 1em)[
+- Verbali interni -> documentano riflessioni e confronti avvenuti esclusivamente tra i membri del gruppo.
+- Verbali esterni -> vengono redatti in corrispondenza di riunioni o confronti con l'azienda di riferimento (Bluewind).
+
+Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue Github*, che il gruppo si impegna a completare. 
+]
+
+==== Procedure e responsabilità:
+
+Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
+Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe].
+
+==== Struttura Verbale
+
+Ogni verbale deve avere la seguente suddivisione numerata: 
+#pad(left: 1em)[
+  1. *Informazioni comuni della sezione 4.1.2.1* (standard condivisi di documento)
+  2. *Informazioni generali*
+      #pad(left: 1em)[
+        - Data e luogo della riunione
+        - Orario di inizio/fine
+        - Partecipanti
+        - Tipo(interno/esterno)
+        - Motivo (principalmente per verbali esterni)
+        - Scriba (responsabile del verbale in quel momento)
+]
+    3. *Ordine del giorno* 
+    #pad(left: 1em)[
+    - Scaletta dei temi da discutere, raccolti e organizzati del responsabile sulla base dei contributi dei membri del gruppo o dei referenti aziendali. 
+]
+    4. *Riassunto della riunione* 
+    #pad(left: 1em)[
+    - Sintesi breve e oggettiva dei punti discussi.
+]
+    5. *Decisioni * 
+    #pad(left: 1em)[
+    - Azioni o obiettivi (anche ad alto livello) che il gruppo deve intraprendere per dare seguito alla riunione.
+]
+    6. *TODO* 
+    #pad(left: 1em)[
+    - Attività specifiche derivate dalle decisioni. Una singola decisione può essere suddivisa in più TODO, che complessivamente consentono di raggiungere l'obiettivo stabilito. 
+]
+]
+
+=== Diario di Bordo
+
+Il Diario di bordo è un’attività prevista dal Prof. Tullio Vardanega all’interno del progetto di Ingegneria del Software. Rappresenta un momento di condivisione in cui ciascun gruppo espone il proprio stato di avanzamento, con particolare attenzione a dubbi o problematiche emerse durante lo svolgimento delle attività.
+
+Composto principalmente da: 
+#pad(left: 1em)[
+*Titolo*: Diario di bordo seguito dal numero progressivo associato.
+
+*Scopo*: Fornire ai gruppi un feedback sulle attività svolte e consentire di portare all’attenzione comune eventuali dubbi relativi al processo di lavoro.
+
+*Destinatari*: Prof. Tullio Vardanega e gli altri gruppi coinvolti nel progetto.
+]
+
+=== Piano di Progetto
+
+Il Piano di Progetto definisce e documenta l’approccio plan-driven adottato dal gruppo per lo sviluppo del prodotto.
+==== Scaletta Piano di Progetto 
+Il documento fornisce una visione strutturata dell’intero progetto, includendo in particolare:
+#pad(left: 1em)[
+  1. L’ambito e gli obiettivi del sistema sviluppato;
+  2. Il preventivo iniziale e le risorse disponibili;
+  3. L’analisi dei rischi e il relativo piano di mitigazione e gestione;
+  4. La suddivisione del lavoro tra ruoli e lo scheduling temporale delle attività.
+]
+*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+
+==== Revisioni: 
+
+Il documento prevede un processo di revisione cadenzato in più iterazioni, con:
+
+#pad(left: 1em)[
+- Revisioni intermedie al termine di ogni periodo di sprint;
+
+- Approvazione finale in corrispondenza della RTB (Requirements and Technology Baseline);
+]
+
+Ogni sprint genera una sezione dedicata del documento, che registra in modo trasparente l’avanzamento e l’effort del gruppo attraverso la seguente scaletta standard:
+
+#pad(left: 1em)[
+
+- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
+
+- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
+
+- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
+
+- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
+
+- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
+]
+]
+
 
 
 === Manutenzione 
 
 
-]
+
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
 = Processi Organizzativi
@@ -391,16 +447,19 @@ La persona che ha ideato l'issue (solitamente l'amministratore).
 La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
 
 *6. Label (ambito/destinazione)*\
-Permette di classificare la issue in base al suo ambito: 
-- Esterno -> documentazione rivolta anche all’esterno del gruppo  
-- Interno -> documentazione utile solo all'interno del gruppo
-
+Questa classificazione consente di organizzare le issue in base al loro ambito o posizione all’interno del progetto: 
+- Analisi dei requisiti 
+- Piano di progetto 
+- Piano di qualifica 
+- Norme progetto
+- Glossario 
+- Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali
 *7. Tipo di issue (Type)*\
 Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
-- Bug -> correzione di errori, sia su documenti che su codice o sistemi interni.
-
+- Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
+- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze
 *8. Priorità : Bassa, Media, Alta * \
 Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
 
