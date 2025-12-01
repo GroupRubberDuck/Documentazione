@@ -63,7 +63,7 @@
 
   La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
   Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
-  Esse sono causate dall'apprendimento e dalla sperimemntazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+  Esse sono causate dall'apprendimento e dalla sperimentazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
   == Scopo del prodotto
   Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
 
@@ -83,7 +83,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
   = Riferimenti
 == Riferimenti normativi
-  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Sofware Engineering, Ian Sommerville]
+  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville]
   - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
   - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
 Compliance Verification di BlueWind]
@@ -114,7 +114,7 @@ Le attività costituenti di questo processo sono le seguenti:
 #list(
   [
     *Typst*: \ Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX. \
-    Ha una sintassi più intuitiva e supporta automazionmi tramite template, funzioni e regole di stile riutilizzabili. \
+    Ha una sintassi più intuitiva e supporta automazioni tramite template, funzioni e regole di stile riutilizzabili. \
     La caratteristica più utile è la preview istantanea del documento.
   ],
   [
@@ -126,7 +126,7 @@ Le attività costituenti di questo processo sono le seguenti:
   ],
 )
 
-=== Identificazione dei documenti <identif>
+=== Identificazione dei documenti <Identificazione>
   #upper("è") una fase di pianificazione. \
   Quasi ogni documento viene identificato dalle seguenti caratteristiche
 
@@ -177,7 +177,7 @@ Ogni documento ha una sezione iniziale costituita dai seguenti elementi.
     Data e luogo della riunione, orario di inizio e fine, partecipanti, Scriba della riunione, motivo della riunione. 
     ],
     [Ordine del giorno],
-    [Riassunto della riuninione],
+    [Riassunto della riunione],
     [Decisioni],
     [TODO],
   )]),
@@ -214,7 +214,7 @@ Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega
   ([Procedure e responsabilità],[
     La redazione del documento è in carico al responsabile, ? analista per l'analisi dei rischi ?.
     La verifica è a carico del verificatore.
-    L'approvazioen è a carico del responsabile.
+    L'approvazione è a carico del responsabile.
     Il piano di progetto è salvato nel seguente path src/RTB/DocumentazioneEsterna/Piano_di_progetto-vx.y.z.typ
   ]),
   ([Revisioni],[Sono previste revisioni intermedie al termine di ogni periodo e un'approvazione finale per la RTB.]),
@@ -222,13 +222,13 @@ Nell’ambito del progetto di Ingegneria del Software, il Prof. Tullio Vardanega
 
 === Progettazione dei documenti
 Ogni documento identificato deve rispettare gli standard di documentazione:
-formato A4, i contenuti devono essere coerenti con lo scopo del documento, definito nella #ref(<identif>),un indice dei contenuti (eccetto il diario di bordo), l'header e il footer della pagina deve contenere le seguenti informazioni:
+formato A4, i contenuti devono essere coerenti con lo scopo del documento, definito nella #ref(<Identificazione>),un indice dei contenuti (eccetto il diario di bordo), l'header e il footer della pagina deve contenere le seguenti informazioni:
 - Sezione attuale del documento
 - Nome del gruppo  
 - Titolo del documento
 - Pagina corrente, espresse in numeri romani per la "prefazione", in numeri arabi per il corpo del documento
 
-In caso si usino fonti no0n autorevoli è obbligatorio verificarne la correttezza.
+In caso si usino fonti non autorevoli è obbligatorio verificarne la correttezza.
 Esempi di fonti autorevoli: Standard ISO o di altre organizzazioni autorevoli, materiale delle lezioni
 
 TODO:
@@ -264,7 +264,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 #align(center)[
   *Fasi di progetto*\
   #v(6pt)
-  ── ● *Analisi* ──▶ ● *Progettazione* ──▶ ● *Implementazione* ──▶ ● *Verifica*
+  #sym.bar.h ● *Analisi* #sym.arrow.r ● *Progettazione* #sym.arrow.r ● *Implementazione* #sym.arrow.r ● *Verifica*
 #{
   show table.cell: set text(size: 11pt)
   table(

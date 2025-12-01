@@ -259,7 +259,7 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
     1. *UC1.1*: File di ingresso non valido per formato.
 ]
 
-  === UC1.1: File di ingresso non valido
+  ==== UC1.1: File di ingresso non valido
 /*#figure(
   image("immagini/UC1.1.png", width: 80%),
   caption: [File di ingresso non valido]
@@ -304,7 +304,7 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
     1. *UC2.1*: Errore nel caricamento di un decision tree.
 ]
 
-=== UC2.1: Errore nel caricamento di un decision tree
+==== UC2.1: Errore nel caricamento di un decision tree
 /*#figure(
   image("immagini/UC2.1.png", width: 80%),
   caption: [Errore nel caricamento di un decision tree]
@@ -350,7 +350,7 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
     1. *UC3.1*: Prerequisiti non soddisfatti - il sistema notifica all'utente quali requisiti devono essere completati prima di procedere .
 ]
 
-=== UC3.1: Prerequisiti non soddisfatti
+==== UC3.1: Prerequisiti non soddisfatti
 /*#figure(
   image("immagini/UC3.1.png", width: 80%),
   caption: [Prerequisiti non soddisfatti]

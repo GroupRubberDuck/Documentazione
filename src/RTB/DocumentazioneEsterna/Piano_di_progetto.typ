@@ -108,7 +108,7 @@
 
   == Scopo del prodotto
   Dal gennaio 2025 lo standard tecnico EN 18031 è stato inserito nella Gazzetta Ufficiale
-  dell’Unione Europea. Questo comporta l'entrata in vigore di nuovi standard per un’ampia gamma di prodotti che utilizzano Wi-Fi, LTE, BlueTooth o dispositivi IoT wireless, obbligatori dall' 1 agosto 2025.\
+  dell’Unione Europea. Questo comporta l'entrata in vigore di nuovi standard per un’ampia gamma di prodotti che utilizzano Wi-Fi, LTE, BlueTooth o dispositivi IoT wireless, obbligatori dal 1 agosto 2025.\
 
   Lo scopo del prodotto è sviluppare un sistema software che automatizzi e semplifichi il processo di verifica della conformità dei dispositivi radio allo standard tecnico EN 18031, norma armonizzata per la RED (Direttiva sulle apparecchiature radio 2014/53/UE). Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
   La soluzione permetterà di importare documenti tecnici relativi ai dispositivi da analizzare, elaborare automaticamente i decision tree associati ai requisiti di sicurezza informatica della norma EN 18031, e generare output chiari sulla conformità (Not Applicable, Pass o Fail). Una dashboard interattiva consentirà agli utenti di visualizzare lo stato delle valutazioni, modificare i decision tree e gestire la documentazione in modo efficiente.
@@ -412,7 +412,7 @@
     [Analisi dei Requisiti],
     [Glossario],
     )  
-  - Revisione delle pratiche di versionmento.
+  - Revisione delle pratiche di versionamento.
   - Revisione tracciamento delle modifiche. 
   - Revisione del sito web.
   - Studio degli strumenti offerti da GitHub, al fine di sfruttare le funzionalità utili della piattaforma.
