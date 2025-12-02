@@ -55,7 +55,7 @@ insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,date:da
 
 
 #let insertArabicNumberedPages(PageTitle, documentType, date, doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,date:date.display(),doc)
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1" ,date:date.display(),doc)
 
 }
 
