@@ -24,9 +24,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.5",
+    versione: "0.6.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici",),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -38,11 +38,12 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-],[Davide Lorenzon],[-],[Stesura iniziale]),
-  ([0.2],[2025-11-11],[Davide Lorenzon],[-],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
-  ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
-  ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
-  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done e Issue tracking System]),
+  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
+  ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
+  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
+  ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
+  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
+  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
 
 
   
@@ -59,15 +60,18 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   == Scopo del documento
-  In questo documento si tiene traccia e si definisce il way of working adottato dal gruppo. \
 
-  La modalità di stesura di questo documento è incrementale, essa procede con l'avanzamento delle attività di progetto. \
-  Il documento sarà soggetto ad aggiunte, modifiche o cancellazioni. \
-  Esse sono causate dall'apprendimento e dalla sperimentazione da parte del gruppo delle "Best practices"#footnote()[#dict.at("Best practices")] comuni nell'ambito dell'ingegneria del software, in modo da poterle adattare alle necessità del team e del progetto. 
+In questo documento il gruppo definisce e mantiene traccia del proprio way of working, ovvero l’insieme di pratiche e convenzioni adottate per organizzare e svolgere il lavoro di progetto.
+
+La stesura del documento avviene in modo incrementale, evolvendosi parallelamente all’avanzamento delle attività. Nel corso del progetto potrà essere soggetto ad aggiunte, modifiche o rimozioni, derivate dal processo di apprendimento e sperimentazione del team.
+
+Tali aggiornamenti nascono dall’analisi e dall’evoluzione delle best practices comuni nell’ingegneria del software, che il gruppo studia, applica e adatta in funzione delle esigenze del team e del contesto progettuale.
+
   == Scopo del prodotto
-  Il prodotto è un’applicazione software per la verifica automatizzata della conformità alla norma EN18031, uno standard tecnico europeo per la sicurezza informatica dei dispositivi radio (Wi-Fi , LTE , BT , IoT wireless ). 
+Il prodotto sviluppato è un’applicazione software progettata per verificare in modo automatico la conformità alla norma EN 18031, lo standard tecnico europeo che definisce i requisiti di sicurezza informatica per i dispositivi radio wireless (es. Wi-Fi, LTE, Bluetooth, IoT wireless).
 
-  L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity  attraverso l’esecuzione automatizzata di decision tree , velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. 
+L’obiettivo dell’applicazione è supportare e guidare l’utente nella valutazione dei requisiti di cybersecurity, eseguendo in autonomia i percorsi decisionali tramite decision tree (alberi di decisione).
+Questo approccio permette di accelerare, standardizzare e rendere più affidabile il processo di verifica della conformità, con la generazione automatica della documentazione tecnica richiesta a supporto dell’assessment. 
   == Glossario
   Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato un approccio ibrido alla gestione dei riferimenti al Glossario.
   I termini tecnici possono essere presentati secondo 2 modalità:
@@ -75,6 +79,8 @@
   - *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
 
   - *Marcatura tramite pedice “G” (termine #sub()[G])*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
+
+// da definire bene meglio una volta che effettivamente viene usato per bene
   
 
 
@@ -89,6 +95,14 @@
 Compliance Verification di BlueWind]
 - #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
 == Riferimenti informativi
+
+- #link("https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization") 
+- #link("https://www.agileway.it/definition-of-done-dod-cose-cosa-serve/")
+- #link("https://www.atlassian.com/agile/project-management/definition-of-done")
+
+
+
+
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
@@ -96,11 +110,16 @@ Compliance Verification di BlueWind]
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
-  = Processi di Supporto
+= Processi di Supporto
 
 #include "content/04-processi_supporto/index.typ"
 
+
 ]
+
+
+
+
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
 = Processi Organizzativi
@@ -238,16 +257,19 @@ La persona che ha ideato l'issue (solitamente l'amministratore).
 La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
 
 *6. Label (ambito/destinazione)*\
-Permette di classificare la issue in base al suo ambito: 
-- Esterno -> documentazione rivolta anche all’esterno del gruppo  
-- Interno -> documentazione utile solo all'interno del gruppo
-
+Questa classificazione consente di organizzare le issue in base al loro ambito o posizione all’interno del progetto: 
+- Analisi dei requisiti 
+- Piano di progetto 
+- Piano di qualifica 
+- Norme progetto
+- Glossario 
+- Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali
 *7. Tipo di issue (Type)*\
 Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
-- Bug -> correzione di errori, sia su documenti che su codice o sistemi interni.
-
+- Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
+- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze
 *8. Priorità : Bassa, Media, Alta * \
 Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
 
@@ -267,8 +289,48 @@ Normalmente coincide con la fine dello sprint di riferimento.
 
 4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
+
+
+=== Versionamento
+
+==== Codice di versione
+
+Ogni modifica apportata a un documento genera automaticamente una nuova versione, identificata tramite un codice nel formato:
+
+#align(center, block[
+  #set align(left)
+  *X.Y.Z*
+])
+
+dove ciascuna componente rappresenta uno stato diverso del processo di validazione:
+
+#pad(left: 1em)[
+- *X – Versione stabile approvata*  
+- 
+  Indica l’ultima versione ufficialmente approvata dal Responsabile.  
+  Il suo incremento segnala una revisione sostanziale o una modifica di grande rilievo.  
+  L’incremento di X comporta l’azzeramento automatico di Y e Z.
+
+- *Y – Feature proposta / Approvazione generale*  
+  
+  Rappresenta l’ultima approvazione da parte di un Verificatore.  
+  Il suo incremento indica l’introduzione o modifica di una nuova funzionalità o sezione del documento.  
+  L’incremento di Y comporta l’azzeramento di Z.
+
+- *Z – Patch della feature proposta / Modifica verificata*  
+  
+  Indica l’ultima modifica di dettaglio verificata (correzioni minori, refusi, aggiustamenti formali).  
+  L’incremento di Z rappresenta cambiamenti minori.
 ]
 
+==== Regole di incremento
+
+#pad(left: 1em)[
+- Ogni approvazione genera un incremento della cifra di versione pertinente.  
+- Più rilevante è il cambiamento, maggiore è la cifra da incrementare (da destra verso sinistra).  
+- L’incremento di una cifra comporta sempre l’azzeramento delle cifre alla sua destra, mantenendo coerenza nella progressione delle versioni.
+]
+]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
 = Metriche e standard per la Qualità
 ]
