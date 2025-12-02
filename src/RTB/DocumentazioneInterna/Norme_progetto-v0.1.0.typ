@@ -24,9 +24,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.5",
+    versione: "0.6.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici",),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -38,11 +38,12 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
-  ([0.2],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
-  ([0.3],[2025-11-11],[Ana Maria Draghici],[-],[Aggiornata strutturaRE con le modifiche alla scaletta AdR]),
-  ([0.4],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione ruolo-documento]),
-  ([0.5],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione Definition of Done e Issue tracking System]),
+  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
+  ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
+  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
+  ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
+  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
+  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
 
 
   
@@ -158,7 +159,7 @@ Le principali attività che compongono questo processo sono:
 ]
 
 
-=== Progettazione dei documenti
+== Progettazione dei documenti
 Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
 #pad(left: 1em)[
   - Essere in formato A4; 
@@ -173,7 +174,7 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
 Per la redazione dei documenti è corretto e necessario fare riferimento a fonti autorevoli e aggiornate, quali standard ISO, università e organizzazioni ufficialmente riconosciute, materiale didattico e link di approfondimento forniti durante il corso. Eventuali informazioni provenienti da altre fonti, se ritenute utili, devono essere obbligatoriamente verificate per accertarne la correttezza e l'affidabilità.
 
 
-=== Produzione 
+== Pubblicazione e Distribuzione della Documentazione
 I documenti vengono ricompilati automaticamente in PDF tramite GitHub Action e sono consultabili da tutti i membri del team.
 Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].
 La posizione ufficiale dei file è indicata nel README.md del repository.  
@@ -182,6 +183,10 @@ Per facilitarne la consultazione è inoltre possibile accedere al  #link("https:
 
 La versione del documento e la tracciabilità delle modifiche sono gestite tramite il Registro delle Modifiche, integrato direttamente all’interno di ciascun documento.
 
+== Impegno del gruppo nella produzione della documentazione
+
+Il gruppo si impegna a fornire alla proponente e ai docenti tutta la documentazione necessaria a supportare le attività di analisi, progettazione, sviluppo e verifica del progetto.
+Tale documentazione ha lo scopo di garantire trasparenza, tracciabilità e qualità del lavoro svolto, oltre a costituire un riferimento chiaro per tutti gli stakeholder coinvolti.
 
 == Informazioni comuni <informazioni_comuni>
 Ogni documento presenta una sezione iniziale standardizzata per tutti i membri del team. 
@@ -199,11 +204,113 @@ La sezione iniziale è composta dai seguenti elementi:
 
 *5. Indice delle immagini e delle tabelle* presente solo nei documenti che ne contengono. 
 ]
+
+
+
+== Documentazione prevista per la fase RTB
+
+La documentazione fornita in corrispondenza della fase RTB (Requirements and Technology Baseline) comprende sia materiali tecnici sia documenti operativi e organizzativi, al fine di garantire una valutazione completa e trasparente dello stato del progetto.
+
+In particolare, vengono prodotti:
+
+*Documenti tecnici* : 
+#pad(left: 1em)[
+- Analisi dei Requisiti (AdR);
+- Piano di Progetto (PdP);
+- Piano di Qualifica (PdQ);
+- Preventivo dei Costi e delle risorse impiegate;
+]
+*Documenti operativi e organizzativi*
+#pad(left: 1em)[
+- Norme di Progetto (NdP);
+- Verbali interni;
+- Verbali esterni;
+- Glossario;
+- Diario di bordo.
+]
+
+
+
 == Struttura specifica dei documenti 
 
 Di seguito viene riportata la struttura standard dei principali documenti, delle rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
 
- 
+=== Analisi dei Requisiti
+L’Analisi dei Requisiti ha il compito di descrivere in modo completo, chiaro e verificabile tutte le funzionalità che il sistema deve offrire, includendo sia requisiti funzionali sia non funzionali. Il documento fornisce inoltre i principali casi d’uso, con attori e scenari associati, e garantisce la tracciabilità tra requisiti, casi d’uso ed eventuali estensioni future. Rappresenta un riferimento stabile per sviluppatori, tester e manutentori durante tutte le fasi del progetto.
+
+*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+==== Struttura principale 
+Il documento comprende:
+#pad(left: 1em)[
+- Definizione formale dei requisiti funzionali e non funzionali;
+
+- Modellazione dei casi d’uso con attori e flussi narrativi;
+
+- Matrice di tracciabilità requisiti–casi d’uso;
+
+- Eventuali vincoli tecnici, operativi o di contesto.
+
+]
+
+=== Piano di Progetto
+
+Il Piano di Progetto definisce la pianificazione complessiva del lavoro, descrivendo l’approccio plan–driven adottato dal gruppo. Documenta obiettivi, risorse, ruoli, tempistiche e rischi, fornendo una visione strutturata dell’organizzazione del progetto. Ha inoltre lo scopo di monitorare l’avanzamento attraverso revisioni periodiche e rendicontazioni per sprint.
+
+*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+==== Struttura principale 
+
+La struttura del documento comprende:
+#pad(left: 1em)[
+
+- Ambito e obiettivi del progetto;
+
+- Preventivo iniziale e disponibilità delle risorse;
+
+- Analisi dei rischi e piano di mitigazione;
+
+- Distribuzione dei ruoli e pianificazione temporale;
+
+- Sezione dedicata alle revisioni, con per ogni sprint:
+#pad(left: 1em)[
+- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
+
+- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
+
+- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
+
+- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
+
+- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
+
+]
+
+
+=== Piano di Qualifica 
+
+Il piano di qualifica ha l’obiettivo di garantire che il prodotto sviluppato rispetti elevati standard di qualità. Definisce processi, metriche, strategie di testing e criteri di valutazione necessari a verificare la qualità del software e del processo di sviluppo. Fornisce inoltre strumenti operativi per la misurazione e la validazione dei risultati.
+
+*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+
+==== Struttura principale
+
+Il documento è articolato nelle seguenti componenti:
+#pad(left: 1em)[
+
+- Metriche di qualità del prodotto e del processo;
+
+- Strategie, livelli e tecniche di testing;
+
+- Piano delle verifiche e validazioni;
+
+- Cruscotto qualità con indicatori e soglie di accettazione;
+]
+
+
+]
+
 === Verbali
 
 I verbali sono suddivisi in due categorie principali : 
@@ -264,45 +371,27 @@ Composto principalmente da:
 *Destinatari*: Prof. Tullio Vardanega e gli altri gruppi coinvolti nel progetto.
 ]
 
-=== Piano di Progetto
+=== Norme di Progetto (NdP)
 
-Il Piano di Progetto definisce e documenta l’approccio plan-driven adottato dal gruppo per lo sviluppo del prodotto.
-==== Scaletta Piano di Progetto 
-Il documento fornisce una visione strutturata dell’intero progetto, includendo in particolare:
+Le Norme di Progetto hanno l’obiettivo di definire regole, convenzioni e standard condivisi all’interno del gruppo, al fine di garantire coerenza, qualità e uniformità nella produzione di documenti, codice e deliverable.  
+Esse servono a stabilire procedure comuni per redazione, revisione, versionamento, gestione dei file e comunicazione interna, riducendo il rischio di errori, ambiguità o incongruenze tra i membri del team.
+
+*Destinatari* : Tutti i membri del gruppo di progetto
+
+==== Struttura principale  
+Il documento delle Norme di Progetto è organizzato in sezioni facilmente consultabili riassunte in:  
 #pad(left: 1em)[
-  1. L’ambito e gli obiettivi del sistema sviluppato;
-  2. Il preventivo iniziale e le risorse disponibili;
-  3. L’analisi dei rischi e il relativo piano di mitigazione e gestione;
-  4. La suddivisione del lavoro tra ruoli e lo scheduling temporale delle attività.
-]
-*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
-
-
-==== Revisioni 
-
-Il documento prevede un processo di revisione cadenzato in più iterazioni, con:
-
-#pad(left: 1em)[
-- Revisioni intermedie al termine di ogni periodo di sprint;
-
-- Approvazione finale in corrispondenza della RTB (Requirements and Technology Baseline);
+- *Convezioni sui documenti*: formato, intestazioni, footer, numerazione pagine, stili e template Typst da utilizzare.  
+- *Processo di redazione e revisione*: ruoli coinvolti, responsabilità, iter di approvazione, gestione modifiche e versionamento.  
+- *Standard di codifica e naming*: linee guida per nomi di file, classi, funzioni e repository, se applicabile al progetto software.  
+- *Procedure operative comuni*: modalità di collaborazione, uso di strumenti (GitHub, Issue Tracking, AI tools), backup e archiviazione.  
+- *Tracciabilità e registri*: indicazioni per mantenere il Registro delle Modifiche aggiornato e verificabile.  
+- *Definizione della qualità minima*: criteri generali per accettazione dei documenti e dei deliverable.
 ]
 
-Ogni sprint genera una sezione dedicata del documento, che registra in modo trasparente l’avanzamento e l’effort del gruppo attraverso la seguente scaletta standard:
 
-#pad(left: 1em)[
-
-- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
-
-- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
-
-- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
-
-- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
-
-- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
 ]
-]
+
 
 
 
@@ -479,8 +568,48 @@ Normalmente coincide con la fine dello sprint di riferimento.
 
 4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
+
+
+=== Versionamento
+
+==== Codice di versione
+
+Ogni modifica apportata a un documento genera automaticamente una nuova versione, identificata tramite un codice nel formato:
+
+#align(center, block[
+  #set align(left)
+  *X.Y.Z*
+])
+
+dove ciascuna componente rappresenta uno stato diverso del processo di validazione:
+
+#pad(left: 1em)[
+- *X – Versione stabile approvata*  
+- 
+  Indica l’ultima versione ufficialmente approvata dal Responsabile.  
+  Il suo incremento segnala una revisione sostanziale o una modifica di grande rilievo.  
+  L’incremento di X comporta l’azzeramento automatico di Y e Z.
+
+- *Y – Feature proposta / Approvazione generale*  
+  
+  Rappresenta l’ultima approvazione da parte di un Verificatore.  
+  Il suo incremento indica l’introduzione o modifica di una nuova funzionalità o sezione del documento.  
+  L’incremento di Y comporta l’azzeramento di Z.
+
+- *Z – Patch della feature proposta / Modifica verificata*  
+  
+  Indica l’ultima modifica di dettaglio verificata (correzioni minori, refusi, aggiustamenti formali).  
+  L’incremento di Z rappresenta cambiamenti minori.
 ]
 
+==== Regole di incremento
+
+#pad(left: 1em)[
+- Ogni approvazione genera un incremento della cifra di versione pertinente.  
+- Più rilevante è il cambiamento, maggiore è la cifra da incrementare (da destra verso sinistra).  
+- L’incremento di una cifra comporta sempre l’azzeramento delle cifre alla sua destra, mantenendo coerenza nella progressione delle versioni.
+]
+]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
 = Metriche e standard per la Qualità
 ]
