@@ -1,18 +1,3 @@
-// Stato della verifica
-// Verifica conclus: sì / no
-// Il documento è conforme: sì / no
-// checklist
-// 
-// Correttezza grammaticale: V
-// Correttezza sintattica: V
-// Il contenuto è pertinente: X
-// 
-// 
-// 
-// 
-// 
-// 
-
 #import "/src/config.typ": *
 #import template_dir + "/frontPage.typ": frontPage
 #import template_dir + "/setUpPageLayout.typ": *
@@ -69,7 +54,7 @@
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione*: Interno
-- *Motivazione*: 
+- *Motivazione*: allineamento e definizione attività
 - *Data*: #giornoRiunione.display()
 - *Luogo*: Riunione su Discord
 - *Ora inizio*: 15:00
@@ -147,7 +132,7 @@
 #let prefisso="TD.5."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
-I punti da approfondire nelle prossime riunioni o in vista di esse individuati sono stati i seguenti:
+I punti da approfondire nelle prossime riunioni sono stati i seguenti:
 #let TODO=(
   ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Davide Testolin],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/34")[Aggiornare script sito web]],[VI.5.6]),
   ([#getCode(prefisso:prefisso,contatore:contatoreTodo)],[Aldo Bettega],[#inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/31")[Aggiornamento repo], #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/issues/32")[Aggiornamento readme]],[VI.5.7]),

@@ -1,14 +1,3 @@
-// Pronto per la verifica: no
-// In verifica :
-// 
-// Verifica superata:
-// 
-// Checklist
-// Conforme ai contenuti:
-// Correttezza grammaticale:
-// Correttezza sintattica: 
-// 
-
 #set text(lang: "IT")
 
 #import "/src/config.typ": *
@@ -31,10 +20,10 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
-    versione: "0.1.0",
+    stato: "Approvato",
+    versione: "1.0.0",
     autori: ("Davide Lorenzon",),
-    verificatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Aldo Bettega",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -44,7 +33,8 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura del verbale]),
+    ([0.1.0],[#giornoRiunione.display()],[Davide Lorenzon],[Aldo Bettega],[Stesura del verbale]),
+    ([1.0.0],[2025-11-20],[Davide Lorenzon],[Davide Lorenzon],[Approvazione])
       )
 
       #registroModifiche(modifiche)
@@ -219,7 +209,7 @@ I TODO sorti da questa riunione sono i seguenti:
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Tutto il gruppo],
-  [Aggiornare i documenti della RTB per uniformarlo ai nuovi standard.],
+  [Aggiornare i documenti della RTB per uniformarli ai nuovi standard.],
   [VI.6.5],
 ), 
 (
