@@ -127,7 +127,7 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
     - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf")[Norme di Progetto v.0.0.1];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
-    - #inserisciLink(url:"https://drive.google.com/file/d/1iXOfcsiHZTf1ViP1t9t9sZ5LV8XzxwDT/view?usp=sharing")[European Standard EN18031]
+    - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031]
   ]
   === Riferimenti informativi
   #pad(left: 1em)[

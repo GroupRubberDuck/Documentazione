@@ -44,6 +44,7 @@
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2]),
 
 
   
@@ -321,6 +322,28 @@ I verbali sono suddivisi in due categorie principali :
 Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue Github*, che il gruppo si impegna a completare. 
 ]
 
+All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
+#image(images_dir+"/workflow.drawio.png" )
+
+==== Stati del documento <Workflow>
+  - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
+  - *In progress*: il documento è stato preso in carico da un autore.
+  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
+  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzzioni da apportare.
+  - *Done*, il documento è stato approvato.
+
+==== Procedura di avanzamento tra stati <Procedura_Workflow>
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato.
+  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
+  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
+  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`]
+
+
 ==== Procedure e responsabilità
 
 Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
@@ -489,8 +512,12 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
-- [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
+- [ ] Controllare di aver aggiornato nello status TAB: 
+  - stato
+  - versione
+  - ruoli
 - [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
+- [ ] Nei Verbali: Controllare di aver aggiornato la versione nel nome del file
 - [ ] Nei verbali, controllare che tutte le decisioni corrispondano a issue specifiche nell’issue template.
 - [ ] Un documento ( o una sua sezione) è considerato completato quando:
 - È stato scritto;
@@ -623,3 +650,30 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
 ]
 
 
+#insertArabicNumberedPagesSenzaData(PageTitle: "Best Practices", documentType: doc)[
+= Best Practices
+In questa sezione vengono riportate le best practices e pratiche standard concordate col gruppo al fine di garantire coerenza all'interno dei documenti.
+
+== Formato nome dei verbali
+Al fine di avere ordine estetico all'interno della repo, è stato deciso di adottare il seguente standard per la nomina dei verbali.
+Di questi documenti interessa data e versione, dunque saranno nel formato: \
+YYYY-MM-DD_Verbale-vX.Y.Z.typ
+
+== Scrittura dei commit
+#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ // cambia il link
+I commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è l'obbiettivo del commit, mentre la descrizione aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettua. \ 
+Le regole generali sono:
+- iniziare il commit con tipo seguito da ":" .
+- lasciare uno spazio tra tipo e descrizione.
+- iniziare la descrizione con una lettera maiuscola.
+- limitare la descrizione a massimo 50 caratteri.
+
+Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit --amend`]
+N.B. :  #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa. #upper("è") preferible astenersi dal modificare commit che sono già stati resi pubblici.
+
+== Issue Template
+]
