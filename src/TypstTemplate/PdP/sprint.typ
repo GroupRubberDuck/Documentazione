@@ -25,12 +25,12 @@
   Verificatore:(costo:15,oreTotali:108,),
 )
 
-#{ruoli.Responsabile.oreTotali=1}
+// #{ruoli.Responsabile.oreTotali=1}
 
 // TEMPLATE
 // #set heading(numbering: "1.")
 #let sprint(
-  test:duration,
+  // test:duration,
   contatore:counter, 
   depth:4,
   timeline:(inizio:datetime,finePrevista:datetime,fineEffettiva:datetime),
@@ -165,19 +165,19 @@ retrospettiva
 
 
 
-// TEST
-#let date=(inizio:datetime(year: 2025,month: 11,day:10),
-finePrevista:datetime(year: 2025,month: 11,day:25),
-fineEffettiva:datetime(year: 2025,month: 11,day:25))
+// // TEST
+// #let date=(inizio:datetime(year: 2025,month: 11,day:10),
+// finePrevista:datetime(year: 2025,month: 11,day:25),
+// fineEffettiva:datetime(year: 2025,month: 11,day:25))
 
 
-#let oreSprint=persone.values().map(it=>{
-(persona:it,ruolo:"Responsabile",orePreviste:10,oreEffettive:1)
-})
+// #let oreSprint=persone.values().map(it=>{
+// (persona:it,ruolo:"Responsabile",orePreviste:10,oreEffettive:1)
+// })
 
-#for i in range(0,10){
-sprint(contatore:counter(page),timeline: date,TODO: [TODO \ #lorem(50)],rischiAttesi: [rischiAttesi \ #lorem(50)], rischieffettivi: [rischi effettivi \ #lorem(50)],oreProduttive: oreSprint,retrospettiva: lorem(20))
-}
+// #for i in range(0,10){
+// sprint(contatore:counter(page),timeline: date,TODO: [TODO \ #lorem(50)],rischiAttesi: [rischiAttesi \ #lorem(50)], rischieffettivi: [rischi effettivi \ #lorem(50)],oreProduttive: oreSprint,retrospettiva: lorem(20))
+// }
 
 
 
