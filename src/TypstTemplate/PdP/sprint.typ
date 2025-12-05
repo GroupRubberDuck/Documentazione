@@ -17,12 +17,12 @@
 //   VER:(nome:"Verificatore",costo:15,oreTotali:108,),
 // )
 #let ruoli=(
-  Responsabile:(costo:30,oreTotali:66,),
-  Amministratore:(costo:20,oreTotali:54,),
-  Analista:(costo:25,oreTotali:114,),
-  Progettista:(costo:25,oreTotali:102,),
-  Programmatore:(costo:15,oreTotali:102,),
-  Verificatore:(costo:15,oreTotali:108,),
+  Responsabile:(costo:30,oreTotali:66,nome:"Responsabile"),
+  Amministratore:(costo:20,oreTotali:54,nome:"Amministratore"),
+  Analista:(costo:25,oreTotali:114,nome:"Analista"),
+  Progettista:(costo:25,oreTotali:102,nome:"Progettista"),
+  Programmatore:(costo:15,oreTotali:102,nome:"Programmatore"),
+  Verificatore:(costo:15,oreTotali:108,nome:"Verificatore"),
 )
 
 // #{ruoli.Responsabile.oreTotali=1}
@@ -36,7 +36,7 @@
   timeline:(inizio:datetime,finePrevista:datetime,fineEffettiva:datetime),
   TODO:content,
   rischiAttesi:content,
-  rischieffettivi:content,
+  rischiEffettivi:content,
   oreProduttive:((persona:str,ruolo:str,orePreviste:int,oreEffettive:int),),
   retrospettiva:content,
 
@@ -83,12 +83,12 @@ set table(
 )
 
 let preventivo=oreProduttive.map(item=>{
-  ([#item.persona],[#item.ruolo],[#item.orePreviste])
+  ([#item.persona],[#item.ruolo.nome],[#item.orePreviste])
 })
 
 
 let consuntivo=oreProduttive.map(item=>{
-  ([#item.persona],[#item.ruolo],[
+  ([#item.persona],[#item.ruolo.nome],[
     #item.oreEffettive
     #let temp=item.oreEffettive - item.orePreviste 
     #if temp>0 {
@@ -120,44 +120,18 @@ heading("Consuntivo", depth: depth+1)
   ..(consuntivo.flatten())
   )]
 
-heading("Risorse residue", depth: depth+1)
 
 //   oreProduttive:((persona:str,ruolo:str,orePreviste:int,oreEffettive:int),),
 
 let oreConsumate=ruoli.keys().map(chiave=>{
-  (chiave, oreProduttive.filter(item=>{item.ruolo == chiave}).map(item=>{item.oreEffettive}).sum(default:0))
+  (chiave, oreProduttive.filter(item=>{item.ruolo.nome == chiave}).map(item=>{item.oreEffettive}).sum(default:0))
 }).to-dict()
-
-
-let residuo=ruoli.keys().map(chiave=>{
-
-  
-  (chiave,str(ruoli.at(chiave).costo),str(oreConsumate.at(chiave)),
-  str(oreConsumate.at(chiave)*ruoli.at(chiave).costo)+"€",
-
-  str(ruoli.at(chiave).oreTotali -oreConsumate.at(chiave))+" ("+str(-oreConsumate.at(chiave))+")",
-  (  str((ruoli.at(chiave).oreTotali -oreConsumate.at(chiave))*ruoli.at(chiave).costo)+"€ ("+str(-oreConsumate.at(chiave)*ruoli.at(chiave).costo)+"€)"),
-  
-  )
-
-
-})
-
-
-
-
-figure(caption:"Risorse rimaste dopo lo Sprint "+context contatore.display())[
-  #table(columns:(1fr,auto,auto,auto,auto,1fr,),
-  [Ruolo],[Costo \ unitario],[Ore  \ consumate],[Costo \ complessivo],[Ore \ residue],[Budget \ residuo],
-  ..(residuo.flatten())
-  )]
-
 
 
 
 heading("Rischi incontrati", depth: depth+1)
 
-rischieffettivi
+rischiEffettivi
 heading("Retrospettiva", depth: depth+1)
 retrospettiva
 
@@ -176,9 +150,117 @@ retrospettiva
 // })
 
 // #for i in range(0,10){
-// sprint(contatore:counter(page),timeline: date,TODO: [TODO \ #lorem(50)],rischiAttesi: [rischiAttesi \ #lorem(50)], rischieffettivi: [rischi effettivi \ #lorem(50)],oreProduttive: oreSprint,retrospettiva: lorem(20))
+// sprint(contatore:counter(page),timeline: date,TODO: [TODO \ #lorem(50)],rischiAttesi: [rischiAttesi \ #lorem(50)], rischiEffettivi: [rischi effettivi \ #lorem(50)],oreProduttive: oreSprint,retrospettiva: lorem(20))
 // }
 
 
 
+#let aggiornaResiduo(
+    old:( 
+      ruoli.Responsabile.nome:int,
+      ruoli.Amministratore.nome:int,
+      ruoli.Analista.nome:int,
+      ruoli.Progettista.nome:int,
+      ruoli.Programmatore.nome:int,
+      ruoli.Verificatore.nome:int,
+    ),
+  oreProduttive:((persona:str,ruolo:str,orePreviste:int,oreEffettive:int),),
+)={
 
+
+let oreConsumate=ruoli.keys().map(chiave=>{
+
+  (str(chiave), 
+  oreProduttive.filter(
+    item=>{item.ruolo.nome == chiave}
+    ).map(
+      item=>{item.oreEffettive}
+      ).sum(default:0))
+}
+).to-dict()
+
+
+return("new":ruoli.keys().map(
+  chiave=>{
+  (str(chiave),(old.at(str(chiave)) - oreConsumate.at(chiave)))
+}
+).to-dict(),
+"oreConsumate":oreConsumate
+  )
+
+
+
+
+}
+
+#let displayResiduo(
+      residuo:( 
+      ruoli.Responsabile.nome:int,
+      ruoli.Amministratore.nome:int,
+      ruoli.Analista.nome:int,
+      ruoli.Progettista.nome:int,
+      ruoli.Programmatore.nome:int,
+      ruoli.Verificatore.nome:int,
+    ),
+    oreConsumate:( 
+      ruoli.Responsabile.nome:int,
+      ruoli.Amministratore.nome:int,
+      ruoli.Analista.nome:int,
+      ruoli.Progettista.nome:int,
+      ruoli.Programmatore.nome:int,
+      ruoli.Verificatore.nome:int,
+    ),
+    contatore:counter,
+    depth:5,
+  )={
+
+
+
+
+let toDisplay=ruoli.keys().map(
+  chiave=>{
+    (
+      str(chiave),
+      str(ruoli.at(chiave).costo)+"€",
+      str(oreConsumate.at(chiave)),
+      str((ruoli.at(chiave).costo)*(oreConsumate.at(chiave)))+"€",
+      [#str(residuo.at(chiave)) #if oreConsumate.at(chiave)>0{
+        text(fill:red)[(-#oreConsumate.at(chiave))]
+      }
+      ],
+      [#str(residuo.at(chiave)*(ruoli.at(chiave).costo))€
+      #if oreConsumate.at(chiave)>0{
+        text(fill:red)[(-#{oreConsumate.at(chiave)*(ruoli.at(chiave).costo)}€)]
+      }],
+      )
+  }
+)
+
+
+heading(depth:depth)[Risorse rimanenti]
+  show table.cell.where(y:0):strong
+set table(
+  stroke: (x, y) => if y == 0 {
+    (bottom: 0.7pt + black)
+  }
+  else{
+    1pt + black
+  },
+  align: (x, y) => (
+    if y == 0 {center+horizon }
+    else { left }
+  ),
+  fill:(x,y)=>{
+    if calc.odd(y){
+      luma(90%)
+    }
+  }
+)
+
+figure(caption:"Risorse rimaste dopo lo Sprint "+context contatore.display())[
+  #table(columns:(1fr,auto,auto,auto,auto,1fr,),
+  [Ruolo],[Costo \ unitario],[Ore  \ consumate],[Costo \ complessivo],[Ore \ residue],[Budget \ residuo],
+  ..(toDisplay.flatten())
+  )]
+
+}
