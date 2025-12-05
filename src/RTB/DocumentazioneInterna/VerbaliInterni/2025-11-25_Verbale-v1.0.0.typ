@@ -1,14 +1,3 @@
-// Pronto per la verifica: no
-// In verifica :
-// 
-// Verifica superata:
-// 
-// Checklist
-// Conforme ai contenuti:
-// Correttezza grammaticale:
-// Correttezza sintattica: 
-// 
-
 #set text(lang: "IT")
 
 #import "/src/config.typ": *
@@ -126,7 +115,7 @@
   == Prossime attività <next>
   Il gruppo ha ritenuto importanti le seguenti attività:
   - Studio del dominio.
-  - Analisi dei requisiti, Diagramma dei casi d'uso.
+  - Analisi dei requisiti, Diagrammi dei casi d'uso.
   - Aggiornare e raffinare le Norme di progetto.
 ]
 
@@ -147,7 +136,7 @@
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Approvate le automazioni proposte],
-  [Permettono di semplificare e alleggerire il lavoro, elimininando attività tediose e molto time consuming],
+  [Permettono di semplificare e alleggerire il lavoro, eliminando attività tediose e molto time consuming],
   [@aut]
 ),
 
@@ -209,7 +198,7 @@ I TODO sorti da questa riunione sono i seguenti:
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Davide Lorenzon],
-  [Sviluppo di una automazione per la marcatura dei termini del glossario.],
+  [Sviluppo di un'automazione per la marcatura dei termini del glossario.],
   [VI.7.2],
 ), 
 (
