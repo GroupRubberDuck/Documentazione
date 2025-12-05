@@ -1,3 +1,5 @@
+#import "/src/config.typ":images_dir
+ 
 #set heading(numbering: "1.1)")
 #set footnote.entry(
   separator: repeat[.],
@@ -26,6 +28,33 @@ Le principali attività che compongono questo processo sono:
 
 Il gruppo si impegna a fornire alla proponente e ai docenti tutta la documentazione necessaria a supportare le attività di analisi, progettazione, sviluppo e verifica del progetto.
 Tale documentazione ha lo scopo di garantire trasparenza, tracciabilità e qualità del lavoro svolto, oltre a costituire un riferimento chiaro per tutti gli stakeholder coinvolti.
+
+=== Workflow documentale
+All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
+#image(images_dir+"/workflow.drawio.png" )
+
+==== Stati del documento <Workflow>
+  - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
+  - *In progress*: il documento è stato preso in carico da un autore.
+  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
+  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *Done*, il documento è stato approvato.
+
+==== Procedura di avanzamento tra stati <Procedura_Workflow>
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In progress* a *In review*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
+  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
+  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`]
+
+
+
+
+
 === Strumenti di supporto
 
 *Typst*: Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX.
@@ -35,14 +64,17 @@ Tale documentazione ha lo scopo di garantire trasparenza, tracciabilità e quali
 - Preview istantanea del documento.
 ]
 
-*Github*  : Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
+*Github*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
 #pad(left: 1em)[ 
-- Utilizzo di GitHub Actions per la compilazione automatica dei documenti;
-- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github] ;
+- Utilizzo di GitHub Actions per la compilazione automatica dei documenti.
+- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github].
 - #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
 
 
 ]
+
+*TurboScribe AI*: Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe] che consente di trascrivere facilmente da registrazioni audio, utile per funzionalità come il riascolto di momenti specifici della riunione tramite selezione testuale.
+
 
 === Identificazione dei documenti <identif>
   Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
@@ -156,7 +188,7 @@ In particolare, vengono prodotti:
 
 === Struttura specifica dei documenti 
 
-Di seguito vengono riportate le caratteristiche standard dei principali documenti. 
+Di seguito viene riportata la struttura standard dei documenti principali, le rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
 
 #figure(kind:"documenti",supplement: "Documento", caption:"Analisi dei Requisiti")[
   #box(width: 100%,stroke:1pt,inset: 1em)[
@@ -242,7 +274,7 @@ La struttura del documento comprende:
 
 Il piano di qualifica ha l’obiettivo di garantire che il prodotto sviluppato rispetti elevati standard di qualità. Definisce processi, metriche, strategie di testing e criteri di valutazione necessari a verificare la qualità del software e del processo di sviluppo. Fornisce inoltre strumenti operativi per la misurazione e la validazione dei risultati.
 
-*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+*Destinatari*: stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
 
 
 ===== Struttura principale
@@ -276,7 +308,7 @@ I verbali sono suddivisi in due categorie principali :
 - Verbali interni -> documentano riflessioni e confronti avvenuti esclusivamente tra i membri del gruppo.
 - Verbali esterni -> vengono redatti in corrispondenza di riunioni o confronti con l'azienda di riferimento (Bluewind).
 
-Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue Github*, che il gruppo si impegna a completare. 
+Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
 ]
 
 ===== Procedure e responsabilità

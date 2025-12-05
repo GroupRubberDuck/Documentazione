@@ -24,9 +24,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.6.0",
+    versione: "0.7.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici", "Davide Lorenzon" ),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -42,9 +42,10 @@
   ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
   ([0.3.0],[2025-11-11],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
-  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
-  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
+  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
+  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
   ([0.6.1],[2025-12-02],[Davide Lorenzon],[-],[implementato il registro delle modifiche e apportate modifiche di ordine nella sottosezione documentazione]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
 
 
   
@@ -211,15 +212,19 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
-- [ ] Controllare di aver aggiornato la versione, lo stato e gli autori ( “status TAB” ), per includere le ultime modifiche
+- [ ] *Nei verbali*: Controllare di aver aggiornato nello status TAB: 
+  - stato
+  - versione
+  - ruoli
 - [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
-- [ ] Nei verbali, controllare che tutte le decisioni corrispondano a issue specifiche nell’issue template.
-- [ ] Un documento ( o una sua sezione) è considerato completato quando:
-- È stato scritto;
-- È stato verificato;
-- È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
+- [ ] *Nei verbali*: controllare di aver aggiornato la versione nel nome del file
+- [ ] *Nei verbali*, controllare che tutte le decisioni corrispondano a issue specifiche nell'issue template.
+- [ ] Un documento (o una sua sezione) è considerato completato quando:
+  - È stato scritto;
+  - È stato verificato;
+  - È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
 
-- [ ] Quando il documento/prodotto è completato, chiudere l’issue con #block(
+- [ ] Quando il documento/prodotto è completato, chiudere la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
@@ -233,7 +238,7 @@ La seguente *Definition of Done* non è statica, ma dinamica: evolve in base all
 
 == Issue tracking System – Guida Operativa
 L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
-Il sistema è accessibile a tutti i membri del gruppo attraverso la repository Github, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
+Il sistema è accessibile a tutti i membri del gruppo attraverso la repository GitHub, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
 
 // stati dell'issue -> quando si avrà immagine del workflow
 === Creazione di una nuova issue
@@ -242,58 +247,47 @@ L'*amministratore* ha il compito di creare le issue nel sistema utilizzando il *
 
 Ogni nuova issue deve includere:
 
-*1. Assegnatario/i* \
-Generalmente è preferibile assegnare la issue a una sola persona. Tuttavia, per attività di formazione o esercitazioni ("palestra") si possono assegnare più persone o l'intero gruppo. 
++ *Assegnatario/i* \ Generalmente è preferibile assegnare la issue a una sola persona. Tuttavia, per attività di formazione o esercitazioni ("palestra") si possono assegnare più persone o l'intero gruppo. 
 
-*2. Descrizione*\
-Una spiegazione dettagliata e specifica delle azioni da svolgere.
++ *Descrizione*\ Una spiegazione dettagliata e specifica delle azioni da svolgere.
 
-*3. Scopo*\
-Indica cosa ci si aspetta di ottenere al termine dell'issue e dove andrà documentato il risultato (ad esempio, in quale documento o sezione del repository).
++ *Scopo*\ Indica cosa ci si aspetta di ottenere al termine dell'issue e dove andrà documentato il risultato (ad esempio, in quale documento o sezione del repository).
 
-*4. Autore*\
-La persona che ha ideato l'issue (solitamente l'amministratore).
++ *Autore*\ La persona che deve svolgere la issue.
++ *Verificatore*\ La persona incaricata di verificare che la issue sia stata risolta correttamente, in base alla Definition of Done. Il verificatore, a meno di eccezioni, è diversa dall'autore.
 
-*5. Verificatore*\
-La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
-
-*6. Label (ambito/destinazione)*\
-Questa classificazione consente di organizzare le issue in base al loro ambito o posizione all’interno del progetto: 
++ *Label (ambito/destinazione)*\ #[Questa classificazione consente di organizzare le issue in base al loro ambito o posizione all’interno del progetto: 
 - Analisi dei requisiti 
 - Piano di progetto 
 - Piano di qualifica 
 - Norme progetto
 - Glossario 
-- Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali
-*7. Tipo di issue (Type)*\
+- Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali]
++ *Tipo di issue (Type)*\ #[
 Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
 - Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
-- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze
-*8. Priorità : Bassa, Media, Alta * \
-Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
-
-*9. Dimensione : ExtraSmall, Small, Medium, Large * \
-Serve per stimare la complessità o l'impegno richiesto.
-
-*10. Data di scadenza*\
-Normalmente coincide con la fine dello sprint di riferimento. 
+- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze ]
++ *Priorità : Bassa, Media, Alta * \ #[
+Questa suddivisione ha due scopi:
+- ragionare sull'importanza della issue che si sta scrivendo
+- comunicare all'assegnatario con quale tempestività dovrà svolgere la issue
+]
++ *Dimensione : ExtraSmall, Small, Medium, Large * \ Serve per stimare la mole di lavoro necessaria per portare a termine quella issue.
++ *Data di scadenza*\ Normalmente coincide con la fine dello sprint di riferimento. 
 
 === Flusso operativo
 
-1. L’amministratore crea una nuova issue tramite il template condiviso.
-   
-2. Si assegnano autore, verificatore e assegnatario/i.
-
-3. Si compilano descrizione, scopo, label, type, priorità, dimensione, scadenza. 
-
-4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
++ L’amministratore crea una nuova issue tramite il template condiviso.
++ Si assegnano autore/i e verificatore/i.
++ Si compilano descrizione, scopo, label, type, priorità, dimensione, scadenza. 
++ La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
 
 
 === Versionamento
-
+In questa sezione viene spiegata la logica di versionamento dei documenti.
 ==== Codice di versione
 
 Ogni modifica apportata a un documento genera automaticamente una nuova versione, identificata tramite un codice nel formato:
@@ -327,8 +321,9 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
 ==== Regole di incremento
 
 #pad(left: 1em)[
-- Ogni approvazione genera un incremento della cifra di versione pertinente.  
-- Più rilevante è il cambiamento, maggiore è la cifra da incrementare (da destra verso sinistra).  
+- Ogni approvazione genera un incremento della cifra di versione stabile.  
+- Nel versionamento X.Y.Z, maggiore è il cambiamento, più significativa è la cifra che viene incrementata: X ha un peso maggiore di Y, e Y maggiore di Z
+
 - L’incremento di una cifra comporta sempre l’azzeramento delle cifre alla sua destra, mantenendo coerenza nella progressione delle versioni.
 ]
 ]
@@ -345,3 +340,31 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
 ]
 
 
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Best Practices", documentType: doc)[
+= Best Practices
+In questa sezione vengono riportate le best practices e pratiche standard concordate col gruppo al fine di garantire coerenza all'interno dei documenti.
+
+== Formato nome dei verbali
+Al fine di avere ordine estetico all'interno della repo, è stato deciso di adottare il seguente standard per la nomina dei verbali.
+Di questi documenti interessa data e versione, dunque saranno nel formato: \
+YYYY-MM-DD_Verbale-vX.Y.Z.typ
+
+== Scrittura dei commit
+#inserisciLink(url:"https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ // cambia il link
+I commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è l'obbiettivo del commit, mentre la descrizione aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettua. \ 
+Le regole generali sono:
+- iniziare il commit con tipo seguito da ":" .
+- lasciare uno spazio tra tipo e descrizione.
+- iniziare la descrizione con una lettera maiuscola.
+- limitare la descrizione a massimo 50 caratteri.
+
+Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit --amend`]
+N.B. :  #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa. #upper("è") preferible astenersi dal modificare commit che sono già stati resi pubblici.
+
+== Issue Template
+]
