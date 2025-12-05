@@ -26,7 +26,7 @@
     stato: "In progress",
     versione: "0.6.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici", "Davide Lorenzon" ),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -40,11 +40,11 @@
 
   ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
   ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
-  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
+  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
-  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[-],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
-  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
-  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2]),
+  ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
+  ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
 
 
   
@@ -130,6 +130,29 @@ Le principali attività che compongono questo processo sono:
 
 5. *Archiviazione e tracciabilità* → versionamento, conservazione e accessibilità nel tempo.
 ]
+=== Workflow documentale
+All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
+#image(images_dir+"/workflow.drawio.png" )
+
+==== Stati del documento <Workflow>
+  - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
+  - *In progress*: il documento è stato preso in carico da un autore.
+  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
+  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *Done*, il documento è stato approvato.
+
+==== Procedura di avanzamento tra stati <Procedura_Workflow>
+  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In progress* a *In review*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
+  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
+  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "commento. Close #numero_issue"`]
+
+
 === Strumenti di supporto
 
 *Typst*: Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX.
@@ -139,14 +162,14 @@ Le principali attività che compongono questo processo sono:
 - Preview istantanea del documento.
 ]
 
-*Github*  : Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
+*GitHub*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
 #pad(left: 1em)[ 
-- Utilizzo di GitHub Actions per la compilazione automatica dei documenti;
-- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github] ;
+- Utilizzo di GitHub Actions per la compilazione automatica dei documenti.
+- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[GitHub].
 - #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
-
-
 ]
+
+*TurboScribe AI*: Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe] che consente di trascrivere facilmente da registrazioni audio, utile per funzionalità come il riascolto di momenti specifici della riunione tramite selezione testuale.
 
 == Identificazione dei documenti <identif>
   Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
@@ -234,12 +257,12 @@ In particolare, vengono prodotti:
 
 == Struttura specifica dei documenti 
 
-Di seguito viene riportata la struttura standard dei principali documenti, delle rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
+Di seguito viene riportata la struttura standard dei documenti principali, le rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
 
 === Analisi dei Requisiti
 L’Analisi dei Requisiti ha il compito di descrivere in modo completo, chiaro e verificabile tutte le funzionalità che il sistema deve offrire, includendo sia requisiti funzionali sia non funzionali. Il documento fornisce inoltre i principali casi d’uso, con attori e scenari associati, e garantisce la tracciabilità tra requisiti, casi d’uso ed eventuali estensioni future. Rappresenta un riferimento stabile per sviluppatori, tester e manutentori durante tutte le fasi del progetto.
 
-*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+*Destinatari*: stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
 
 ==== Struttura principale 
 Il documento comprende:
@@ -319,37 +342,10 @@ I verbali sono suddivisi in due categorie principali :
 - Verbali interni -> documentano riflessioni e confronti avvenuti esclusivamente tra i membri del gruppo.
 - Verbali esterni -> vengono redatti in corrispondenza di riunioni o confronti con l'azienda di riferimento (Bluewind).
 
-Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue Github*, che il gruppo si impegna a completare. 
+Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
 ]
 
-All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
-#image(images_dir+"/workflow.drawio.png" )
-
-==== Stati del documento <Workflow>
-  - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
-  - *In progress*: il documento è stato preso in carico da un autore.
-  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
-  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzzioni da apportare.
-  - *Done*, il documento è stato approvato.
-
-==== Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
-  - Da *In progress* a *In review*: l'autore consegna la bozza in stato di revisione, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato.
-  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
-  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
-  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
-  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
-  stroke: 1pt + black, // Bordo nero da 1 punto
-  inset: 10pt          // Padding interno di 10 punti
-)[`git commit -m "commento. Close #numero_issue"`]
-
-
-==== Procedure e responsabilità
-
-Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
-Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe].
-
-==== Struttura Verbale
+==== Struttura principale
 
 Ogni verbale deve avere la seguente suddivisione numerata: 
 #pad(left: 1em)[
@@ -512,19 +508,19 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
-- [ ] Controllare di aver aggiornato nello status TAB: 
+- [ ] *Nei verbali*: Controllare di aver aggiornato nello status TAB: 
   - stato
   - versione
   - ruoli
 - [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
-- [ ] Nei Verbali: Controllare di aver aggiornato la versione nel nome del file
-- [ ] Nei verbali, controllare che tutte le decisioni corrispondano a issue specifiche nell’issue template.
-- [ ] Un documento ( o una sua sezione) è considerato completato quando:
-- È stato scritto;
-- È stato verificato;
-- È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
+- [ ] *Nei verbali*: controllare di aver aggiornato la versione nel nome del file
+- [ ] *Nei verbali*, controllare che tutte le decisioni corrispondano a issue specifiche nell'issue template.
+- [ ] Un documento (o una sua sezione) è considerato completato quando:
+  - È stato scritto;
+  - È stato verificato;
+  - È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
 
-- [ ] Quando il documento/prodotto è completato, chiudere l’issue con #block(
+- [ ] Quando il documento/prodotto è completato, chiudere la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
@@ -538,7 +534,7 @@ La seguente *Definition of Done* non è statica, ma dinamica: evolve in base all
 
 == Issue tracking System – Guida Operativa
 L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
-Il sistema è accessibile a tutti i membri del gruppo attraverso la repository Github, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
+Il sistema è accessibile a tutti i membri del gruppo attraverso la repository GitHub, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
 
 // stati dell'issue -> quando si avrà immagine del workflow
 === Creazione di una nuova issue
@@ -557,10 +553,10 @@ Una spiegazione dettagliata e specifica delle azioni da svolgere.
 Indica cosa ci si aspetta di ottenere al termine dell'issue e dove andrà documentato il risultato (ad esempio, in quale documento o sezione del repository).
 
 *4. Autore*\
-La persona che ha ideato l'issue (solitamente l'amministratore).
+La persona che deve svolgere la issue.
 
 *5. Verificatore*\
-La persona incaricata di controllare e approvare l'issue quando viene spostata nello stato di verifica.
+La persona incaricata di verificare che la issue sia stata risolta correttamente, in base alla Definition of Done. Il verificatore, a meno di eccezioni, è diversa dall'autore.
 
 *6. Label (ambito/destinazione)*\
 Questa classificazione consente di organizzare le issue in base al loro ambito o posizione all’interno del progetto: 
@@ -576,11 +572,13 @@ Permette di distinguere la natura delle attività:
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
 - Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
 - Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze
-*8. Priorità : Bassa, Media, Alta * \
-Il gruppo concentra le proprie energie prima sulle issue ad alta priorità.
+*8. Priorità: Bassa, Media, Alta * \
+Questa suddivisione ha due scopi:
+- ragionare sull'importanza della issue che si sta scrivendo
+- comunicare all'assegnatario con quale tempestività dovrà svolgere la issue
 
 *9. Dimensione : ExtraSmall, Small, Medium, Large * \
-Serve per stimare la complessità o l'impegno richiesto.
+Serve per stimare la mole di lavoro necessaria per portare a termine quella issue.
 
 *10. Data di scadenza*\
 Normalmente coincide con la fine dello sprint di riferimento. 
@@ -589,15 +587,16 @@ Normalmente coincide con la fine dello sprint di riferimento.
 
 1. L’amministratore crea una nuova issue tramite il template condiviso.
    
-2. Si assegnano autore, verificatore e assegnatario/i.
+2. Si assegnano autore/i e verificatore/i.
 
-3. Si compilano descrizione, scopo, label, type, priorità, dimensione, scadenza. 
+3. Si compilano descrizione, scopo, label, type, priorità, dimensione, assegnatario, scadenza, milestone. 
 
 4. La issue viene inserita nello stato iniziale Backlog e segue il flusso fino a Done.
 
 
 
 === Versionamento
+In questa sezione viene spiegata la logica di versionamento dei documenti.
 
 ==== Codice di versione
 
@@ -632,8 +631,8 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
 ==== Regole di incremento
 
 #pad(left: 1em)[
-- Ogni approvazione genera un incremento della cifra di versione pertinente.  
-- Più rilevante è il cambiamento, maggiore è la cifra da incrementare (da destra verso sinistra).  
+- Ogni approvazione genera un incremento della cifra di versione stabile.  
+- Nel versionamento X.Y.Z, maggiore è il cambiamento, più significativa è la cifra che viene incrementata: X ha un peso maggiore di Y, e Y maggiore di Z
 - L’incremento di una cifra comporta sempre l’azzeramento delle cifre alla sua destra, mantenendo coerenza nella progressione delle versioni.
 ]
 ]
