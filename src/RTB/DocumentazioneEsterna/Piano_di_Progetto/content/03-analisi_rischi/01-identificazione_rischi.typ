@@ -1,15 +1,35 @@
 #import "/src/config.typ":template_dir
 #import template_dir + "/utilityTable.typ": getCode
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischi
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiPersonali
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiOrganizzativi
   === Tipi di rischi
-  Si è optato per catalogare i possibili rischi, in base alla loro natura e al loro impatto, nelle seguenti categorie non mutualmente esclusive:
-  - Rischi di progetto \
-    Tali rischi intaccano la tabella di marcia o le risorse disponibili per il progetto.
-  - Rischi di prodotto \
-    Tali rischi intaccano la qualità o le capacità del prodotto.
+  Si è deciso di catalogare i possibili rischi, in base alla loro natura e al loro impatto, nelle seguenti categorie non mutualmente esclusive:
+  #pad(left: 1em)[ 
+  - *Rischi di progetto* : Questi rischi possono influire sulla tabella di marcia o sulle risorse disponibili per il progetto. 
+  - *Rischi di prodotto* : Questi rischi possono influire sulla qualità o sulle funzionalità del prodotto.
 
-  - #strike()[Rischi legati al business] #footnote()[Data la natura del progetto, attualmente non si ritiene possibile l'insorgere di queste tipologie di rischi ] \
-  Tali rischi intaccano l'organizzazione che ha sviluppato o commissionato il software.
+=== Struttura delle tabelle dei rischi 
+
+Per facilitare l'identificazione dei rischi si è utilizzata una convenzione per classificarli secondo il seguente formato:  
+#align(center)[
+R[Tipo][Indice]]
+
+dove:
+
+*R* #sym.arrow indica che si tratta di un rischio
+
+*Tipo* #sym.arrow rappresenta la categoria di un rischio, che può essere:
+
+T = tecnologico
+
+P = personale
+
+O = organizzativo
+
+*Indice* #sym.arrow numero progressivo che identifica univocamente il rischio all'interno della categoria
+  
+  ]
 
   === Registro dei rischi
 
@@ -18,26 +38,22 @@
   #contatoreR.update(1)
   #let prefisso = "R.T."
 
-  #tabellaRischi(
+//tabella sotto solo come esempio
+
+  #tabellaRischiTecnologici(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Inesperienza con le tecnologie",
     tipo: "Rischio di progetto + Rischio di prodotto",
-    descrizione: [Mancanza di esperienza da parte dei membri del gruppo in progetti di questa portata, con architettura non monolitica],
-    prevenzione: [],
-    mitigazione: [È necessario prevedere la possibilità che parte
-      dell’impegno orario sarà dedicato alla formazione
-      personale per l’uso di tale componente: è bene
-      dunque valutare di spostare attività eventualmente
-      di minore importanza al primo periodo successivo
-      utile qualora altri componenti del gruppo non
-      possano fornire supporto immediato. È necessario
-      valutare anche la disponibilità di BlueWind al supporto.
+    descrizione: [-
+    ],
+    prevenzione: [-],
+    mitigazione: [- 
     ],
     frequenza: "Alta",
     pericolo: "Elevata",
   )
 
-  #tabellaRischi(
+  #tabellaRischiTecnologici(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Problemi critici",
     tipo: "",
@@ -48,7 +64,7 @@
     pericolo: "",
   )
 
-  #tabellaRischi(
+  #tabellaRischiTecnologici(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Rischio tecnologico legato a errori nel codice",
     tipo: "",
@@ -62,13 +78,16 @@
 
 
   ==== Rischi personali
-  #let contatoreR = counter("rischi personali")
+  
+  #let contatoreP = counter("rischi personali")
+  #contatoreP.update(1)
   #let prefisso = "R.P."
   #contatoreR.update(1)
 
 
   // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
-  #tabellaRischi(
+  #tabellaRischiPersonali(
+
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Disponibilità variabile dei membri del team o imprevisti di impegno",
     tipo: "",
@@ -80,7 +99,8 @@
   )
 
 
-  #tabellaRischi(
+    #tabellaRischiPersonali(
+
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Rischio individuale dovuto ad altre attività",
     tipo: "",
@@ -95,11 +115,12 @@
 
 
   ==== Rischi organizzativi
-  #let contatoreR = counter("rischi org")
+   #let contatoreO = counter("rischi organizzativi")
+  #contatoreO.update(1)
   #let prefisso = "R.O."
   #contatoreR.update(1)
 
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: " Pianificazione iniziale errata o ottimistica",
     tipo: "",
@@ -110,7 +131,7 @@
     pericolo: "Media",
   )
 
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Sovrastima delle attività",
     tipo: "",
@@ -120,7 +141,7 @@
     frequenza: "Media",
     pericolo: "Bassa",
   )
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Mancanza di comunicazione e collaborazione",
     tipo: "",
@@ -132,7 +153,7 @@
   )
 
 
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Scarsa definizione dei ruoli",
     tipo: "",
@@ -144,7 +165,7 @@
   )
 
 
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Strumenti di coordinamento usati in modo non efficace",
     tipo: "",
@@ -156,7 +177,7 @@
   )
 
 
-  #tabellaRischi(
+  #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Inesperienza del team con progetti di grosse dimensioni",
     tipo: "",
@@ -169,7 +190,21 @@
 
 
 
-  // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
+  #tabellaRischiOrganizzativi(
+    codice: getCode(prefisso: prefisso, contatore: contatoreO),
+    nome: "Carenze di conoscenze nella gestione di progetti di questa portata",
+    tipo: "Rischio di progetto + Rischio organizzativo",
+    descrizione: [Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori a quelli affrontati in precedenza. Questa mancanza può influire sulla capacità di coordinare attività, stimare correttamente tempi e risorse, e gestire un'architettura non monolitica composta da componenti eterogenei.
+    ],
+    prevenzione: [Introdurre momenti di formazione specifica sulla gestione di progetti complessi e sulle metodologie organizzative da adottare.
+    Studiare casi reali e best pratice per migliorare la capacità di pianificazione e coordinamento. 
+    Promuovere la condivisione interna della conoscenza tramite meeting periodici, retrospettive e documentazione condivisa. ],
+    mitigazione: [Considerare che parte dell'impegno orario dovrà essere dedicato alla formazione tecnica individuale. Pianificare una possibile riorganizzazione delle attività, spostando quelle meno critiche ai periodi successivi qualora il supporto da parte del team non sia immediatamente disponibile. Valutare la disponibilità di Bluewind nel fornire supporto tecnico, mentoring o chiarimenti architetturali.
+ 
+    ],
+    frequenza: "Alta",
+    pericolo: "Elevata",
+  )
 
 
   // == Analisi dei rischi

@@ -35,7 +35,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.6",
+    versione: "0.7.0",
     autori: ("Felician Necsulescu", "Ana Maria Draghici"),
     verificatori:("Davide Lorenzon",),
     uso: "Esterno",
@@ -56,6 +56,8 @@
   ([0.4.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
   ([0.5.0],[2025-11-18],[Ana Maria Draghici],[Davide Lorenzon],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
   ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
+  ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
+  ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
 )
 
 #registroModifiche(modifiche)
