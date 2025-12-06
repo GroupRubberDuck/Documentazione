@@ -44,8 +44,8 @@
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
-  ([0.6.1],[2025-12-02],[Davide Lorenzon],[-],[implementato il registro delle modifiche e apportate modifiche di ordine nella sottosezione documentazione]),
-  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
+  ([0.6.1],[2025-12-02],[Davide Lorenzon],[-],[Apportate modifiche di ordine nella sottosezione documentazione]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
 
 
   

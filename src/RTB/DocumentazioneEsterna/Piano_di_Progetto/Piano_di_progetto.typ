@@ -76,7 +76,8 @@
   target: figure.where(kind: table),
 )
 
-]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
+]
+#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
 #outline(
   title: [Lista delle immagini],
   target: figure.where(kind: image),
