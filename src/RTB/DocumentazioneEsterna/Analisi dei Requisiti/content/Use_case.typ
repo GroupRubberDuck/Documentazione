@@ -1,5 +1,5 @@
 
-  = Casi d'uso
+ = Casi d'uso
 
   == Scopo
 
@@ -308,3 +308,57 @@ caption: [Aggiunta giustificazione a un risultato]
    6. Il sistema associa la giustificazione al risultato;
    7. La giustificazione viene visualizzata insieme al risultato.
 ]
+
+=== UC9: Aggiunta di un nuovo asset tramite interfaccia
+- *Attori principali*: Utente;
+- *Precondizioni*: L'utente ha caricato un file di configurazione del dispositivo o ha aperto una valutazione esistente;
+- *Postcondizioni*: Il nuovo asset viene aggiunto al dispositivo e tutti i decision tree standard vengono associati ad esso;
+- *Trigger*: L'utente desidera aggiungere manualmente un nuovo asset al dispositivo;;
+- *Scenario Principale*:#pad(left: 1em)[
+#v(-0.5em)
+   1. L'utente accede alla sezione di gestione degli asset;
+   2. L'utente seleziona l'opzione "Aggiungi nuovo asset";
+   3. Il sistema presenta un form per l'inserimento dei dati dell'asset;
+   4. L'utente inserisce le informazioni richieste (nome, tipo, descrizione, proprietà tecniche);
+   5. L'utente conferma l'inserimento;
+   6. Il sistema valida i dati inseriti;
+   7. Il sistema crea il nuovo asset;
+   8. Il sistema associa tutti i decision tree standard al nuovo asset con stato "Non valutato";
+   9. Il sistema aggiorna la dashboard mostrando il nuovo asset;
+
+- *Scenari Alternativi*:#pad(left: 1em)[
+  #v(-0.5em)
+    1. *UC9.1*: Visualizzazione errore nella validazione dei dati dell'asset;
+]
+]
+
+=== UC10: Navigazione al passo precedente durante l'esecuzione di un decision tree
+/*#figure(
+  image("immagini/UC10.png", width: 80%),
+  caption: [Navigazione al passo precedente durante l'esecuzione di un decision tree]
+)*/
+- *Attori Principale*: Utente;
+- *Precondizioni*: L'utente sta eseguendo un decision tree e ha risposto ad almeno una domanda;
+- *Postcondizioni*: Il sistema torna alla domanda precedente e la risposta può essere modificata;
+- *Trigger*: l'utente desidera tornare alla domanda precedente per correggere la risposta;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+    1. L'utente sta rispondendo alle domande di un decision tree;
+    2. Il sistema ha presentato una domanda;
+    3. L'utente seleziona il pulsante "Passo precedente" o "Indietro";
+    4. Il sistema torna alla domanda precedente nel percorso del decision tree;
+    5. Il sistema mostra la risposta precedentemente data;
+    6. L'utente può:
+        - Confermare la risposta precedente e procedere;
+        - Modificare la risposta;
+    7. Se l'utente modifica la risposta:
+        - Il sistema invalida tutte le risposte successive a quella modificata;
+        - Il sistema ricalcola il percorso del decision tree dalla domanda modificata;
+        - Il sistema presenta la domanda successiva in base al nuovo percorso.
+]
+- *Scenari Alternativi*:#pad(left: 1em)[
+  #v(-0.5em)
+    1. Se l'utente è alla prima domanda, il pulsante "Passo precedente" non è disponibile o riporta alla dashboard;
+]
+
+//Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
