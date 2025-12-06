@@ -4,7 +4,9 @@
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischi
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiPersonali
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiOrganizzativi
 #import template_dir + "/PdP/tabellaAtt.typ": tabellaAtt
 #import glossario: dict
 #set text(size: 13pt)
@@ -86,31 +88,27 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   == Scopo del documento
-  Nell'ambito dei progetti di sviluppo software,
-  al fine di garantire obiettivi di efficacia ed efficienza,
-  è necessario un documento che consenta alle parti interessate di allineare il
-  proprio lavoro, coordinarsi e valutare lo stato del progetto.
+ Nell'ambito dei progetti di sviluppo software,
+  al fine di garantire il raggiungimento di  obiettivi di efficacia ed efficienza,
+  è fondamentale predisporre un documento che consenta alle parti interessate di allineare il
+  proprio lavoro, coordinarsi e monitorare lo stato di avanzamento  lo stato del progetto.
 
-  Definisce l'ambito del progetto, specifica quali sono le attività
-  necessarie allo sviluppo del progetto.
+  Tale documento definisce l'ambito del progetto e specifica quali sono le attività
+  necessarie per il suo sviluppo. Inoltre, fornisce informazioni dettagliate sulle ore di lavoro dedicate a ciascuna attività e sui relativi costi. 
 
-  Fornisce informazioni precise sulle ore dedicate a ciascuna attività e i costi derivanti.
-
-  In particolare vengono analizzati i seguenti temi:
+  In particolare, il documento analizza i seguenti temi:
+  #pad(left: 1em)[ 
   - Analisi dei rischi
   - Pianificazione delle attività
-  - Stima dei costi e delle risorse necessarie allo sviluppo del progetto.
-
-
-
-
-
-
+  - Stima dei costi e delle risorse necessarie allo sviluppo del progetto
+]
   == Scopo del prodotto
   Dal gennaio 2025 lo standard tecnico EN 18031 è stato inserito nella Gazzetta Ufficiale
   dell’Unione Europea. Questo comporta l'entrata in vigore di nuovi standard per un’ampia gamma di prodotti che utilizzano Wi-Fi, LTE, BlueTooth o dispositivi IoT wireless, obbligatori dal 1 agosto 2025.\
 
-  Lo scopo del prodotto è sviluppare un sistema software che automatizzi e semplifichi il processo di verifica della conformità dei dispositivi radio allo standard tecnico EN 18031, norma armonizzata per la RED (Direttiva sulle apparecchiature radio 2014/53/UE). Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
+  Lo scopo del prodotto è sviluppare un sistema software che automatizzi e semplifichi il processo di verifica della conformità dei dispositivi radio allo standard tecnico EN 18031, norma armonizzata per la RED (Direttiva sulle apparecchiature radio 2014/53/UE). 
+
+  Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
   La soluzione permetterà di importare documenti tecnici relativi ai dispositivi da analizzare, elaborare automaticamente i decision tree associati ai requisiti di sicurezza informatica della norma EN 18031, e generare output chiari sulla conformità (Not Applicable, Pass o Fail). Una dashboard interattiva consentirà agli utenti di visualizzare lo stato delle valutazioni, modificare i decision tree e gestire la documentazione in modo efficiente.
 
   == Miglioramenti del documento
@@ -159,7 +157,7 @@
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Organizzazione del progetto", documentType: doc)[
   = Organizzazione del progetto
-
+// valutare se lasciarlo qui 
   == Ruoli
 
   #list(
