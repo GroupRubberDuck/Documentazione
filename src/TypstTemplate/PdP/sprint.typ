@@ -31,7 +31,7 @@
 // #set heading(numbering: "1.")
 #let sprint(
   // test:duration,
-  contatore:counter, 
+  numeroSprint:content, 
   depth:4,
   timeline:(inizio:datetime,finePrevista:datetime,fineEffettiva:datetime),
   TODO:content,
@@ -41,8 +41,8 @@
   retrospettiva:content,
 
   )={
-
-heading("Sprint "+context contatore.display(),depth: depth)
+let titolo= "Sprint "+numeroSprint
+heading(titolo,depth: depth)
 // recap della timeline dello sprint
 let ritardo=(timeline.fineEffettiva - timeline.finePrevista).days()
   grid( columns: 2, inset:0.7em,
@@ -103,7 +103,7 @@ let consuntivo=oreProduttive.map(item=>{
 })
 
   show table.cell.where(y:0):strong
-  figure(caption:"Consuntivo Sprint "+context contatore.display())[
+  figure(caption:"Consuntivo Sprint "+numeroSprint)[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   ..(preventivo.flatten())
@@ -114,7 +114,7 @@ let consuntivo=oreProduttive.map(item=>{
 
 heading("Consuntivo", depth: depth+1)
 
-  figure(caption:"Preventivo Sprint "+context contatore.display())[
+  figure(caption:"Preventivo Sprint "+numeroSprint)[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   ..(consuntivo.flatten())
@@ -210,7 +210,7 @@ return("new":ruoli.keys().map(
       ruoli.Programmatore.nome:int,
       ruoli.Verificatore.nome:int,
     ),
-    contatore:counter,
+    numeroSprint: content,
     depth:5,
   )={
 
@@ -236,7 +236,31 @@ let toDisplay=ruoli.keys().map(
   }
 )
 
+let sommaCosti=ruoli.keys().map(chiave=>{
+oreConsumate.at(chiave)*ruoli.at(chiave).costo
+}).sum(default:0)
 
+let oreTotaliconsumate=oreConsumate.values().sum(default :0)
+
+
+let budgetResiduoTotale=ruoli.keys().map(chiave=>{
+  residuo.at(chiave)*(ruoli.at(chiave).costo)
+}).sum(default:0)
+let totali =("Totale","-",
+str(oreTotaliconsumate),
+str(oreConsumate.keys().map(
+  chiave=>{
+    (ruoli.at(chiave).costo)*(oreConsumate.at(chiave))
+  }
+).sum(default:0))+"€",
+
+[#str(ruoli.keys().map(chiave=>{
+residuo.at(chiave)
+}).sum(default:0)) #text(fill:red)[(-#oreTotaliconsumate)]],
+
+[   #budgetResiduoTotale€ #text("(-"+str(sommaCosti)+"€)",fill:red)]
+)
+toDisplay.push(totali)
 heading(depth:depth)[Risorse rimanenti]
   show table.cell.where(y:0):strong
 set table(
@@ -257,7 +281,7 @@ set table(
   }
 )
 
-figure(caption:"Risorse rimaste dopo lo Sprint "+context contatore.display())[
+figure(caption:"Risorse rimaste dopo lo Sprint "+numeroSprint)[
   #table(columns:(1fr,auto,auto,auto,auto,1fr,),
   [Ruolo],[Costo \ unitario],[Ore  \ consumate],[Costo \ complessivo],[Ore \ residue],[Budget \ residuo],
   ..(toDisplay.flatten())

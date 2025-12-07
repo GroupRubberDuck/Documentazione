@@ -214,21 +214,3 @@ O = organizzativo
   // 
   // 
   // 
-Rischi organizzativi 
-- Pianificazione iniziale errata o ottimistica -> la stima troppo breve dei tempi o sottovalutazione della complessità complessiva del progetto.
-- Sovrastima delle attività -> le attività si sono svolte più velocemente di quanto ritenuto, allora i membri segnalano e si concentrano su altro
-- Mancanza di comunicazione e collaborazione
-- Scarsa definizione dei ruoli -> Compiti non assegnati chiaramente portano a sovrapposizioni o a task non coperti.
-- Strumenti di coordinamento usati in modo non efficace (GitHub, Discord, Drive) -> Rischio di disordine, duplicazione file, conflitti Git o mancanza di tracciamento.
-- Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori rispetto a quelli affrontati in precedenza.
-
-Rischi personali 
-- Disponibilità variabile dei membri del team o imprevisti di impegno 
-- Rischio individuale derivante a altre attività universitarie-> Difficoltà a seguire contemporaneamente lezioni, progetti e studio.
-
-
-
-Rischi tecnologici :
-- Problemi critici importanti -> integrazioni difficili e bug critici 
-- Rischio tecnologico legato a errori nel codice
-- Mancanza conoscenza delle tecnologie proposte

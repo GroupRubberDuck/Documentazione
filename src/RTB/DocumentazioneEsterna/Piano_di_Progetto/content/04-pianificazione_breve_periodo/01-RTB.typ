@@ -49,7 +49,7 @@ fineEffettiva:datetime(year: 2025,month: 11,day:25))
 
 #let retrospettiva=[]
 #sprint(
-  contatore: sprintcounter,
+  numeroSprint: "1",
   timeline:date,
   TODO: TODO,
   rischiAttesi: rischiAttesi,
@@ -69,7 +69,7 @@ fineEffettiva:datetime(year: 2025,month: 11,day:25))
 #displayResiduo(
   residuo:sprintResiduo.new, 
     oreConsumate:sprintResiduo.oreConsumate,
-  contatore:sprintcounter
+    numeroSprint: "1",
   )
 
 
@@ -107,7 +107,7 @@ retrospettiva=[]
 
 }
 #sprint(
-  contatore: sprintcounter,
+  numeroSprint: "2",
   timeline:date,
   TODO: TODO,
   rischiAttesi: rischiAttesi,
@@ -124,7 +124,7 @@ retrospettiva=[]
 #displayResiduo(
   residuo:sprintResiduo.new, 
     oreConsumate:sprintResiduo.oreConsumate,
-  contatore:sprintcounter
+  numeroSprint: "2",
   )
 
 
