@@ -29,3 +29,6 @@
     #link(url)[#testo]
   ]
 }
+#show ref: riferimento=>{
+  strong(riferimento)
+}

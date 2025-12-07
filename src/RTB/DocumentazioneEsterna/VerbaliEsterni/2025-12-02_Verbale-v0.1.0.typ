@@ -20,9 +20,9 @@
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
     stato: "In Verifica",
-    versione: "0.1.0",
-    autori: ("Filippo Guerra",),
-    verificatori: (""),
+    versione: "0.1.1",
+    autori: ("Filippo Guerra","Davide Lorenzon"),
+    verificatori: ("Davide Lorenzon",),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo","BlueWind srl"),
   )
@@ -32,8 +32,10 @@
 
   #let modifiche=(
 
-    ([0.1.0],[2025-12-03],[Filippo Guerra],[],[Stesura del verbale]),
+    ([0.1.0],[2025-12-03],[Filippo Guerra],[Davide Lorenzon],[Stesura del verbale]),
+    ([0.1.1],[2025-12-07],[Davide Lorenzon],[],[Correzione dei contenuti del verbale]),
     )
+    
 
       #registroModifiche(modifiche)
 
@@ -94,16 +96,17 @@
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-  La riunione si è svolta partendo dalla presentazione del gruppo del documento *Analisi dei Requisiti*, che è stata intervallata da domande riguardo ai requisiti funzionali e non del proggetto. Successivamente sono state fatte alla proponente delle domande riguardanti la gestione dei documenti e i problemi riscontrati durante questo sprint dai vari membri del gruppo. 
-  == Revisione dei riferimenti e gestione del copyright
-  Il gruppo chiede conferma sull’utilizzo di riferimenti normativi nel documento di analisi.
-  BlueWind raccomanda di evitare link a documenti non pubblici o copiati da Drive.
+  La riunione si è svolta partendo dalla presentazione del gruppo del documento *Analisi dei Requisiti*, che è stata intervallata da domande riguardo ai requisiti funzionali e non del progetto. \ 
+  Successivamente sono state fatte alla proponente delle domande riguardanti la gestione dei documenti e i problemi riscontrati durante questo sprint dai vari membri del gruppo. 
+  == Revisione dei riferimenti e gestione del copyright <riferimenti>
+  Il gruppo chiede conferma sull’uso di riferimenti normativi nel documento di analisi. \
+  BlueWind raccomanda di evitare link a documenti non pubblici o copiati da Drive. \
   Devono essere utilizzati solo link ufficiali, come quelli del sito dell’ente normativo o della pagina di acquisto dello standard EN18031.
 
-  == Distinzione tra documenti tecnici e decision tree
+  == Distinzione tra documenti tecnici e decision tree <separazioneDT-asset>
   L'azienda chiarisce che :
   - I *Documenti Tecnici* sono file descrittivi (CSV, JSON, XML) contenenti asset, funzioni e configurazioni del dispositivo.
-  - I *Decision Tree* sono file strutturati (JSON o XML) contenenti la logica dei requisiti EN18031. \ Essi non devono essere hard-coded nell’applicazione per garantire aggiornabilità futura.
+  - I *Decision Tree* sono file strutturati (JSON o XML) contenenti la logica dei requisiti EN18031. \ Essi non devono essere hard-coded nell’applicazione per semplificare aggiornamenti futuri.
   Per quanto riguarda l'importazione dei file viene stabilito che:
   - I *decision tree devono essere importati automaticamente* all’avvio dell’applicazione. \ Non è previsto che l’utente selezioni manualmente quali alberi importare.
   - I *documenti tecnici possono essere importati da più file* e in momenti differenti.
@@ -111,7 +114,7 @@
   - Per i documenti tecnici devono essere previsti errori di formato e/o errori di parsing parziale.
   - per i decision tree un errore è più grave e deve essere trattato come un'anomalia globale di caricamento.
 
-  == Gestione dei Decision Tree e permessi degli User
+  == Gestione dei Decision Tree e permessi degli User <gestioneDT>
   BlueWind conferma che la modifica dei *Decision Tree* riguarda: i testi delle domande, i nodi e la struttora gerarchica, le foglie e gli esiti finali. \ 
   La modifica è pensata per: 
   - adattamenti dovuti a revisioni della norma EN18031;
@@ -121,35 +124,31 @@
   - *nodi orfani*,
   - *percorsi interrotti*,
   - *foglie finali mancanti*,
-  - *incoerenze logiche*.
-  Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze, 
-  BlueWind specifica che *l’esito finale è calcolato solo all’ultimo nodo*.
-  Il sistema deve bloccare l’esecuzione se i prerequisiti non sono in stato *Pass* o *Not Applicable*.
-  In tal caso il sistema:
-  - notifica i requisiti non soddisfatti,
-  - li evidenzia in dashboard,
-  - impedisce l’avvio del decision tree.
+  - *altre incoerenze logiche*.//cosa è un'incoerenza logica
+  
 
-  === Gestione dei requisiti Not Applicable e giustificazioni
+  === Gestione dei requisiti Not Applicable e giustificazioni <gestioneNA>
   BlueWind conferma che : 
-  - Se un requisito è Not Applicable, anche i requisiti figli devono diventare automaticamente Not Applicable.
-  - La lista degli asset determina se un requisito è applicabile o meno.
-  - Quando un requisito risulta Not Applicable, è obbligatoria la compilazione di una giustificazione, prevista dalla norma.
+  - Ove lo standard lo prevede, quando un requisito è Not Applicable, anche i requisiti da esso dipendenti devono diventare automaticamente Not Applicable, le dipendenze sono stabilite nello standard.
+  - La documentazione tecnica degli asset determina se un requisito è applicabile o meno.
+  - Può essere obbligatoria la compilazione di una giustificazione, come previsto dalla norma.
   L’interfaccia dovrà quindi:
   - mostrare una textbox in caso di esito N/A,
   - memorizzare e rendere consultabili le giustificazioni,
   - includerle nel report finale.
 
   Riguardante i ruoli degli utenti vengono definiti due tipologie di utenti differenti, 
-  *l'utente standard* e un *responsabile tecnico* (BlueWind suggerisce di definire formalmente tale ruolo come “amministratore”, ma lascia libertà di nomenclatura)
-  con le relative aurotizzazioni:
-  - L’utente standard può eseguire i decision tree e consultare i risultati.
+  *l'utente standard* e un *responsabile tecnico* (nomenclatura temporanea)
+  con le relative autorizzazioni:
+  - L’utente standard può:
+    - inserire asset e relative specifiche tecniche,
+    - eseguire i decision tree e consultare i risultati.
   - Il *responsabile tecnico autorizzato* può:
     - accedere all’editor grafico,
     - modificare decision tree,
     - salvare nuove versioni dei file.
 
-  == Struttura della dashboard e comportamento dell’esecuzione dei requisiti.
+  == Struttura della dashboard e comportamento dell’esecuzione dei requisiti. <dashboard>
 Viene stabilito che la dashboard deve mostrare:
   - lista asset,
   - requisiti per ogni asset,
@@ -157,20 +156,30 @@ Viene stabilito che la dashboard deve mostrare:
   - dipendenze dei requisiti,
   - disponibilità all’esecuzione.
 La dashboard deve inoltre offrire la possibilità di filtraggio e ordinamento, un 
-accesso all’editor grafico (solo per responsabile tecnico), e la possibilità di rieseguire o cancellare valutazioni.
+accesso all’editor grafico (la parte che permette di modificare i DT è disponibile solo per i responsabili tecnici), e la possibilità di rieseguire o cancellare valutazioni.
 
-  == Esportazione dei risultati
-  BlueWind afferma che sarà possibile anche esportare *risultati parziali*. \
-  I formati supportati includono PDF, CSV e JSON/XML. Inoltre l’export deve includere i seguenti elementi:
-  esiti, percorsi decisionali e le eventuali giustificazioni.
 
-  == Indicazioni sulla gestione del progetto, pianificazione e comunicazione interna.
-  Viene consigliata un analisi dei rischi dettagliata nel Project Plan, una pianificazione realistica delle attività e un'assegnazione chiara dei ruoli.
-  Per quanto riguarda la gestione delle issue, il gruppo ha riscontrato difficoltà a definire issue atomiche quando non si conosce bene il risultato finale. 
-  BlueWind consiglia di creare issue "di indagine" preliminari e di trasformarle in issue atomiche solo successivamente. Inoltre suggerisce di suddividere i compiti
-  anche tra più persone nella fase di esplorazione, così da prevenire ritardi dovuti da eventuali problemi personali dei membri del gruppo.
-  Relativamente alla comunicazione interna, il gruppo effettua costantemente una riunione lunga alla settimana che non sempre risultà essere efficace.
-  BlueWind consiglia incontri più brevi e frequenti (bi-daily) per sincronizzarsi meglio, una revisione costante delle issue e aggiornamenti più rapidi per evitare l'accumulo di problemi che potrebbero 
+Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze, 
+  BlueWind specifica che *l’esito finale è calcolato solo all’ultimo nodo*.
+  Il sistema deve bloccare l’esecuzione se i prerequisiti non sono in stato *Pass* o *Not Applicable*.
+  In tal caso il sistema:
+  - notifica i requisiti non soddisfatti,
+  - li evidenzia in dashboard,
+  - impedisce l’avvio del decision tree.
+  == Esportazione dei risultati <export>
+  BlueWind afferma che sarà possibile anche esportare *risultati parziali*(negli stessi formati ammessi in importazione). \
+  I formati supportati per i report includono PDF. \
+  Inoltre l’export deve includere i seguenti elementi:
+  esiti, percorsi di esecuzione dei decision tree e le eventuali giustificazioni.
+
+  == Indicazioni sulla gestione del progetto, pianificazione e comunicazione interna. <organizzazione>
+  Viene consigliata un analisi dei rischi dettagliata nel "Piano di progetto", una pianificazione realistica delle attività e un'assegnazione chiara dei ruoli. \
+  Per quanto riguarda la gestione delle issue, il gruppo ha riscontrato difficoltà a definire issue atomiche quando non si conosce bene il risultato finale.  \
+  BlueWind consiglia di creare issue "di indagine" preliminari e di trasformarle in issue atomiche solo successivamente. 
+  \ Inoltre suggerisce di suddividere i compiti
+  anche tra più persone nella fase di esplorazione, così da prevenire ritardi dovuti da eventuali problemi personali dei membri del gruppo. \
+  Relativamente alla comunicazione interna, il gruppo effettua costantemente una riunione lunga alla settimana che non sempre risulta essere efficace. \
+  BlueWind consiglia incontri più brevi e frequenti (bigiornalieri) per sincronizzarsi meglio, una revisione costante delle issue e aggiornamenti più rapidi per evitare l'accumulo di problemi che potrebbero 
   sopraggiungere, una definizione chiara di priorità e responsabilità.
 
 ]
@@ -180,45 +189,80 @@ accesso all’editor grafico (solo per responsabile tecnico), e la possibilità 
 = Decisioni
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
-#let prefisso="VE.1."
+#let prefisso="VE.2."
 
 #let decisioni=(
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [I decision tree saranno importati globalmente e automaticamente.],
-  [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [Su suggerimento della proponente.],
+  [@separazioneDT-asset]
 ),
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [I file dei documenti tecnici possono essere multipli e importati separatamente.],
-  [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [Su suggerimento della proponente.],
+  [@separazioneDT-asset]
 ),
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [L’editor dei decision tree sarà accessibile solo a un responsabile tecnico.],
-  [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [Su suggerimento della proponente.],
+  [@gestioneDT]
 ),
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Le giustificazioni sono obbligatorie per esiti N/A e devono essere incluse anche nei report.],
-  [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [Le giustificazioni sono obbligatorie richieste dallo standard devono essere incluse nei report.],
+  [Su suggerimento della proponente.],
+  [@gestioneDT]
 ),
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Il sistema deve validare in modo rigoroso la struttura dei decision tree.],
-  [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [Su suggerimento della proponente.],
+  [@dashboard]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [La dashboard sarà l’elemento centrale di navigazione del sistema.],
   [#upper("è") stato suggerito dalla proponente.],
-  [-]
+  [@dashboard]
 ),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Aggiunto un nuovo attore, responsabile tecnico.],
+  [Su suggerimento della proponente.],
+  [@gestioneDT]
+),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Formati supportati per l'import dei DT: JSON, XML.],
+  [Su suggerimento della proponente.],
+  [@separazioneDT-asset]
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Formati supportati per l'import dei documenti tecnici legati agli asset: JSON, XML, CSV.],
+  [Su suggerimento della proponente.],
+  [@separazioneDT-asset]
+),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Formati supportati per l'export dei risultati parziali: JSON, XML, CSV.],
+  [Su suggerimento della proponente.],
+  [@export]
+),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Formati supportati per i report: PDF.],
+  [Al gruppo è sembrato un formato opportuno per un report.],
+  [@export]
+),
+
 )
 
 #utilityTable(decisioni,header:("Codice","Descrizione","Motivazioni","Ref."),columns:(auto,2fr,2fr,auto))
@@ -228,7 +272,7 @@ accesso all’editor grafico (solo per responsabile tecnico), e la possibilità 
 #insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
 
 = TODO
-#let prefisso="TD.8."
+#let prefisso="TD.9."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
@@ -237,40 +281,35 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Filippo Guerra],
   [Redazione del verbale di questa riunione.],
-  [],
+  [-],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [Deciso in seguito.],
   [Aggiornare il documento Analisi dei Requisiti con tutte le precisazioni ricevute],
-  [],
+  [VE.2.1-VE.2.6],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [Deciso in seguito.],
   [Raffinare i casi d’uso su importazione, esecuzione, dashboard, modifiche DT],
-  [],
+  [VE.2.1-VE.2.6],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [Deciso in seguito.],
   [Introdurre la distinzione tra utente standard e responsabile tecnico],
-  [],
+  [VE.2.7],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
-  [Implementare gestione giustificazioni nei casi d’uso],
-  [],
-), 
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
-  [],
-  [],
-), 
+  [Deciso in seguito.],
+  [Aggiornare i casi d’uso],
+  [VE.2.1-VE.2.11],
+),
+
   )
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
-La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicazione interna tra i membri del gruppo non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", il compito è ad opera di un singolo membro del gruppo.
+La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicazione interna tra i membri del gruppo non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra".
 ]

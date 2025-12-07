@@ -23,7 +23,10 @@
     numbering: numbering,
   )
 
-  set par(justify: true)
+show ref: riferimento=>{
+  underline(strong(riferimento))
+}
+set par(justify: true)
 
 
 
