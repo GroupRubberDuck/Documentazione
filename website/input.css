@@ -42,6 +42,21 @@ h2:not(.footer-title) {
   @apply text-2xl mb-2;
 }
 
+.docs h2 {
+  @apply text-2xl mb-2;
+  /* font-size: 1.7em; */
+}
+
+.docs h3 {
+  @apply text-xl mb-2;
+  /* font-size: 1.3em; */
+}
+
+.docs h4 {
+  @apply text-lg font-medium italic;
+  /* font-size: 1.1em; */
+}
+
 main > section:first-of-type {
   border-top: none;
 }
@@ -73,4 +88,38 @@ ul.docs-list a {
 
 #navbar-dropdown.hidden {
   transition: all 0.4s ease;
+}
+
+section.docs {
+  background-color: var(--bg-primary);
+  padding: 1.5em;
+  @apply rounded-lg;
+  margin-bottom: 1em;
+}
+
+section.docs .collapsible {
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.btn-collapse {
+  float: right;
+  margin-top: -2em;
+  transition: 100ms linear all;
+}
+
+.collapsible {
+  cursor: pointer;
+}
+
+.active .btn-collapse {
+  transform: rotate(-90deg);
+}
+
+section.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }

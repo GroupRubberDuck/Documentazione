@@ -22,6 +22,10 @@ replaceInFile() {
     sed -z -i "s#<!--%BEGIN_$2%-->.*<!--%END_$2%-->#$out#g" index.html
 }
 
+# RTB
+replaceInFile "output/RTB/DocumentazioneEsterna/VerbaliEsterni/" "RTB_VERBALI_ESTERNI"
+replaceInFile "output/RTB/DocumentazioneInterna/VerbaliInterni/" "RTB_VERBALI_INTERNI"
+
 # Candidatura
 # replaceInFile "output/Candidatura/" "CANDIDATURA_VERBALI"
 replaceInFile "output/Candidatura/DocumentazioneInterna/" "CANDIDATURA_VERBALI_INTERNI"
