@@ -23,7 +23,7 @@
     stato: "In Verifica",
     versione: "0.1.0",
     autori: ("Filippo Guerra",),
-    verificatori: (" ",),
+    verificatori: ("Aldo Bettega",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -33,7 +33,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[-],[Stesura del verbale]),
+    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[Aldo Bettega],[Stesura del verbale]),
 
       )
 
@@ -82,7 +82,7 @@
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-La riunione è iniziata con un confronto tecnico sull’audio e sull’obiettivo dell’incontro. È stata confermata la necessità di anticipare una riunione interna prima del prossimo incontro con l’azienda, così da poter effettuare una revisione congiunta dei casi d’uso.
+È stata confermata la necessità di anticipare una riunione interna prima del prossimo incontro con l’azienda, così da poter effettuare una revisione congiunta dei casi d’uso.
 
 È stato chiarito che la riunione in oggetto non richiedeva un verbale formale, ma è stata mantenuta una traccia delle decisioni principali per futura consultazione.
   
