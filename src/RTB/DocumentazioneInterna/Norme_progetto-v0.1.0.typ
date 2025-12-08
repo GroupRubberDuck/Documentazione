@@ -44,7 +44,7 @@
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
-  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
 
 
   
@@ -144,6 +144,7 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
   - Da *Backlog* a *In lavorazione*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
   - Da *In lavorazione* a *In verifica*: l'autore consegna la bozza, trasferendo la issue in verifica e assegnandola al verificatore (deciso a priori) che verrà notificato automaticamente.
+    - Da *In verifica* a *In lavorazione*: il verificatore ritiene vi siano discrete lacune o incorrettezze nel contenuto e ritiene che l'issue non sia stato ultimato. \ Il verificatore fornisce inoltre un report di fix e integrazioni da applicare.
   - Da *In verifica* a *In approvazione*: il verificatore ha apportato modifiche alla bozza e propone la verifica al responsabile. Il verificatore deve spostare la issue in approvazione e assegnarla al responsabile.
   - Da *In approvazione* a *In verifica*: il responsabile rifiuta la verifica proposta allegando una lista di modifiche motivate che il verificatore dovrà apportare al documento. Il responsabile dovrà riassegnare la issue al verificatore.
   - Da *In approvazione* a *Done*: il responsabile accetta la verifica proposta e chiude la issue con #block(

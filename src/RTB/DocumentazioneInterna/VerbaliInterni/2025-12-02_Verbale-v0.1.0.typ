@@ -75,46 +75,57 @@
   = Ordine del giorno
   - Revisione delle attività pendenti
    -Discussione su casi d’uso e modifiche post-incontro con l’azienda
-  - Organizzazione della documentazione (Norme di Progetto, Use Case, structure dei file)
+  - Organizzazione della documentazione (Norme di Progetto, Use Case, struttura dei file)
   - Considerazioni sul Piano di Qualifica
 
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-La riunione è iniziata con un confronto tecnico sull’audio e sull’obiettivo dell’incontro. È stata confermata la necessità di anticipare una riunione interna prima del prossimo incontro con l’azienda, così da poter effettuare una revisione congiunta dei casi d’uso.
+La riunione è iniziata con un breve confronto sull’incontro. \
+Gli altri argomenti di discussione  riguardano l'ambito organizzativo. \
+È stata confermata la necessità di anticipare una riunione interna prima del prossimo incontro con l’azienda, così da poter effettuare una revisione congiunta dei casi d’uso. \
+Revisione del sito web.
 
-È stato chiarito che la riunione in oggetto non richiedeva un verbale formale, ma è stata mantenuta una traccia delle decisioni principali per futura consultazione.
   
   == Discussione sui Casi d'Uso <uc>
   Durante la conversazione sono state evidenziate numerose necessità operative:
   - Aggiornare gli use case alla luce delle informazioni ottenute dall’azienda.
   - Chiarire distinzione tra:
     - documenti tecnici che descrivono gli asset del sistema
-    - documenti del questionario (Season 3) che vengono caricati automaticamente
+    - struttura dei decision tree e delle verifiche
   - Correzione degli attori nei casi d’uso:
-  il sistema non deve essere un attore esplicito, salvo interazioni con servizi esterni.
+  il sistema non deve essere un attore.
   - Definizione della necessità di un utente amministratore per la sezione di modifica.
-  - Criteri che necessitano di giustificazione: inserirli in modo generico in attesa di conferme.
-  Si è inoltre discusso della necessità di rendere gli use case più atomici e meglio correlati tramite ereditarietà/estensioni.
+  - Criteri di necessità delle giustificazioni: inserirli in modo generico in attesa di uno studio più accurato dello standard.
+  - Si è inoltre discusso della necessità di rendere gli use case più atomici e meglio correlati tramite inclusioni, estensioni, ereditarietà.
     
 
   == Riorganizzazione documentale <rd>
-  Durante la riunione è stato proposto di scomporre i documenti in più file .typ usando include, per migliore manutenibilità, con la seguente suddivisione consigliata: 
+  Durante la riunione è stato proposto di scomporre i documenti in più file typst usando include, per migliore manutenibilità, con la seguente suddivisione consigliata: 
   - file principale → contiene la struttura
   - sottocartella con sezioni (es. use_cases/, processi/, ecc.)
-  È stata inoltre discussa l'introduzione di flag per migliorare prestazioni della preview Typst (es. disattivare marcatura glossario).
-  Per quanto riguarda le *Norme di Progetto* è stata presentata la necessità di completare le mancanti sezioni del documento:
+  #figure(caption:"Esempio di scomposizione del Piano di progetto",)[
+#image(images_dir+"/esempio_struttura_file.png",fit:"stretch",width: 100%)
+
+  ]
+  - È stata inoltre discussa l'introduzione di flag per migliorare prestazioni della preview Typst (es. disattivare marcatura glossario).
+
+
+
+
+  == Completamento dei documenti
+  === Norme di progetto
+  #upper("è") stata presentata la necessità di completare le sezioni mancanti del documento:
   - processi primari
   - identificazione dei documenti
   - metriche di qualità
-  In aggiunta è stata considerata dal gruppo la possibilità di realizzare un *indice automatico* delle sezioni documentate.
 
-  == Piano di Qualifica <pq>
+  === Piano di Qualifica <pq>
   La discussione ha evidenziato che mancano ancora le competenze e il tempo necessari per affrontare adeguatamente il Piano di Qualifica. \
   Le metriche di qualità viste a lezione richiedono ulteriori approfondimenti (qualità del processo, del prodotto, metriche documentali).
-  Per ora si può iniziare dalla qualità della documentazione, ma la parte di testing e metriche software è prematura. \ 
-  Nel complesso, si è deciso che il Piano di Qualifica non verrà avviato formalmente in questo sprint.
+  Per ora si può iniziare dalla qualità della documentazione, ma la parte di testing e metriche software è prematura e richiede una maggiore comprensione. \ 
+  Nel complesso, si è deciso che il Piano di Qualifica non verrà avviato formalmente in questo sprint. \
 ]
 
 
@@ -125,18 +136,6 @@ La riunione è iniziata con un confronto tecnico sull’audio e sull’obiettivo
 #let prefisso="VI.8."
 
 #let decisioni=(
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Revisionare e aggiornare tutti gli use case secondo le indicazioni emerse.],
-  [Allineamento post-incontro con azienda e miglioramento struttura.],
-  [@uc]
-),
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Introdurre attore amministratore e revisione attori presenti.],
-  [Correggere semantica degli use case.],
-  [@uc]
-),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Implementare struttura dei documenti usando include Typst.],
@@ -175,7 +174,7 @@ La riunione è iniziata con un confronto tecnico sull’audio e sull’obiettivo
 
 = TODO
 
-#let prefisso="TD.9."
+#let prefisso="TD.10."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
@@ -189,12 +188,6 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Analista],
-  [Revisione completa degli use case esistenti],
-  [VI.8.1],
-), 
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Davide Lorenzon],
   [Implementazione struttura moduli Typst e refactoring documenti.],
   [VI.8.3],
@@ -203,7 +196,7 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Analisti],
   [Completamento Norme di \ Progetto: processi primari,\ metriche, identificazione \ documenti],
-  [VI.8.4],
+  [VI.8.2],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
@@ -216,7 +209,7 @@ I TODO sorti da questa riunione sono i seguenti:
   [Da Definire],
   [Aggiornamento del sito web (aprire nuova issue). \ 
   Verifica versionamento e \ normalizzazione dei file.],
-  [VI.8.6],
+  [VI.8.4],
 ), 
 
 

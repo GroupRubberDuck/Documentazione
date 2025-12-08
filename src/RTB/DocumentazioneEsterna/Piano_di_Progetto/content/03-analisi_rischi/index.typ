@@ -1,8 +1,8 @@
 
  == Introduzione
 
-  Durante lo svolgimento di un progetto possono emergere difficoltà che ostacolano il progresso delle attività. Per minimizzare i possibili impatti negativi e prevenire ritardi, questa sezione del Piano di Progetto definisce i potenziali rischi e le relative strategie di mitigazione.
-  Il team ha individuato azioni concrete da attuare , garantendo così un avanzamento regolare e strutturato del lavoro.
+  Nella seguente sezione vengono esplorati i potenziali rischi che potrebbero verificarsi durante la durata del progetto.
+  Al fine di prevenire o mitigare i danni derivanti dai rischi è necessaria un'analisi adeguata.
 
   Il processo di analisi dei rischi, conforme allo standard ISO/IEC 31000:2018, si articola in cinque fasi principali:
   #pad(left: 1em)[ 
