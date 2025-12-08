@@ -22,7 +22,7 @@
     stato: "In Verifica",
     versione: "0.1.1",
     autori: ("Filippo Guerra","Davide Lorenzon"),
-    verificatori: ("Davide Lorenzon",),
+    verificatori: ("Davide Lorenzon","Aldo Bettega"),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo","BlueWind srl"),
   )
@@ -33,7 +33,7 @@
   #let modifiche=(
 
     ([0.1.0],[2025-12-03],[Filippo Guerra],[Davide Lorenzon],[Stesura del verbale]),
-    ([0.1.1],[2025-12-07],[Davide Lorenzon],[],[Correzione dei contenuti del verbale]),
+    ([0.1.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Correzione dei contenuti del verbale]),
     )
     
 
@@ -115,7 +115,7 @@
   - per i decision tree un errore è più grave e deve essere trattato come un'anomalia globale di caricamento.
 
   == Gestione dei Decision Tree e permessi degli User <gestioneDT>
-  BlueWind conferma che la modifica dei *Decision Tree* riguarda: i testi delle domande, i nodi e la struttora gerarchica, le foglie e gli esiti finali. \ 
+  BlueWind conferma che la modifica dei *Decision Tree* riguarda: i testi delle domande, i nodi e la struttura gerarchica, le foglie e gli esiti finali. \ 
   La modifica è pensata per: 
   - adattamenti dovuti a revisioni della norma EN18031;
   - applicazione della stessa logica ad altri standard.
@@ -167,13 +167,13 @@ Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze,
   - li evidenzia in dashboard,
   - impedisce l’avvio del decision tree.
   == Esportazione dei risultati <export>
-  BlueWind afferma che sarà possibile anche esportare *risultati parziali*(negli stessi formati ammessi in importazione). \
+  BlueWind afferma che sarà possibile anche esportare *risultati parziali* (negli stessi formati ammessi in importazione). \
   I formati supportati per i report includono PDF. \
   Inoltre l’export deve includere i seguenti elementi:
   esiti, percorsi di esecuzione dei decision tree e le eventuali giustificazioni.
 
   == Indicazioni sulla gestione del progetto, pianificazione e comunicazione interna. <organizzazione>
-  Viene consigliata un analisi dei rischi dettagliata nel "Piano di progetto", una pianificazione realistica delle attività e un'assegnazione chiara dei ruoli. \
+  Viene consigliata un'analisi dei rischi dettagliata nel "Piano di progetto", una pianificazione realistica delle attività e un'assegnazione chiara dei ruoli. \
   Per quanto riguarda la gestione delle issue, il gruppo ha riscontrato difficoltà a definire issue atomiche quando non si conosce bene il risultato finale.  \
   BlueWind consiglia di creare issue "di indagine" preliminari e di trasformarle in issue atomiche solo successivamente. 
   \ Inoltre suggerisce di suddividere i compiti
@@ -212,7 +212,7 @@ Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze,
 ),
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Le giustificazioni sono obbligatorie richieste dallo standard devono essere incluse nei report.],
+  [Le giustificazioni richieste dallo standard sono obbligatorie e devono essere incluse nei report],
   [Su suggerimento della proponente.],
   [@gestioneDT]
 ),
