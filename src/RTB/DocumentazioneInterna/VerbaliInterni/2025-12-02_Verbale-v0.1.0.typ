@@ -23,7 +23,7 @@
     stato: "In Verifica",
     versione: "0.1.0",
     autori: ("Filippo Guerra",),
-    verificatori: (" ",),
+    verificatori: ("Aldo Bettega",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -33,7 +33,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[-],[Stesura del verbale]),
+    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[Aldo Bettega],[Stesura del verbale]),
 
       )
 
