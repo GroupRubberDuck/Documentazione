@@ -136,17 +136,17 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
 
 ==== Stati del documento <Workflow>
   - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
-  - *In progress*: il documento è stato preso in carico da un autore.
-  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
-  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *In lavorazione*: il documento è stato preso in carico da un autore.
+  - *In verifica*: Il lavoro dell’autore è terminato. Il documento deve ora essere verificato oppure corretto, nel caso in cui non sia stato approvato durante la fase di approvazione.
+  - *In approvazione*, il lavoro del verificatore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
   - *Done*, il documento è stato approvato.
 
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
-  - Da *In progress* a *In review*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
-  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
-  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
-  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  - Da *Backlog* a *In lavorazione*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In lavorazione* a *In verifica*: l'autore consegna la bozza, trasferendo la issue in verifica e assegnandola al verificatore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In verifica* a *In approvazione*: il verificatore ha apportato modifiche alla bozza e propone la verifica al responsabile. Il verificatore deve spostare la issue in approvazione e assegnarla al responsabile.
+  - Da *In approvazione* a *In verifica*: il responsabile rifiuta la verifica proposta allegando una lista di modifiche motivate che il verificatore dovrà apportare al documento. Il responsabile dovrà riassegnare la issue al verificatore.
+  - Da *In approvazione* a *Done*: il responsabile accetta la verifica proposta e chiude la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
@@ -564,13 +564,15 @@ Questa classificazione consente di organizzare le issue in base al loro ambito o
 - Piano di progetto 
 - Piano di qualifica 
 - Norme progetto
+- Verbale
+- Diario di bordo
 - Glossario 
 - Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali
 *7. Tipo di issue (Type)*\
 Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
-- Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
+- Bug -> errori o malfunzionamenti nel codice
 - Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze
 *8. Priorità: Bassa, Media, Alta * \
 Questa suddivisione ha due scopi:

@@ -206,7 +206,77 @@
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Analisi dei rischi", documentType: doc)[
   = Analisi dei rischi
+<<<<<<< HEAD:src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ
 #include "content/03-analisi_rischi/index.typ"
+=======
+  Nella seguente sezione vengono esplorati i potenziali rischi che potrebbero verificarsi durante la durata del progetto.
+  Al fine di prevenire o mitigare i danni derivanti dai rischi è necessaria un'analisi adeguata.
+
+  Il processo di analisi dei rischi consiste dei seguenti passaggi:
+  - Identificazione dei rischi, è la prima fase della gestione dei rischi
+  - Analisi dei rischi
+  - Valutazione dei rischi
+  - Gestione dei rischi
+  - Monitoraggio e revisione dei rischi
+
+  == Identificazione dei rischi
+  === Tipi di rischi
+  Si è optato per catalogare i possibili rischi, in base alla loro natura e al loro impatto, nelle seguenti categorie non mutualmente esclusive:
+  - Rischi di progetto \
+    Tali rischi intaccano la tabella di marcia o le risorse disponibili per il progetto.
+
+
+  === Registro dei rischi
+
+  ==== Rischi tecnologici
+  #let contatoreR = counter("rischi tec")
+  #contatoreR.update(1)
+  #let prefisso = "R.T."
+
+  #tabellaRischi(
+    codice: getCode(prefisso: prefisso, contatore: contatoreR),
+    nome: "Inesperienza ",
+    tipo: "Rischio di progetto + Rischio di prodotto",
+    descrizione: [Mancanza di esperienza da parte dei membri del gruppo in progetti di questa portata, con architettura non monolitica],
+    prevenzione: [],
+    mitigazione: [È necessario prevedere la possibilità che parte
+      dell’impegno orario sarà dedicato alla formazione
+      personale per l’uso di tale componente: è bene
+      dunque valutare di spostare attività eventualmente
+      di minore importanza al primo periodo successivo
+      utile qualora altri componenti del gruppo non
+      possano fornire supporto immediato. È necessario
+      valutare anche la disponibilità di BlueWind al supporto.
+    ],
+    frequenza: "Alta",
+    pericolo: "Elevata",
+  )
+
+
+
+  ==== Rischi personali
+  #let contatoreR = counter("rischi personali")
+  #let prefisso = "R.P."
+
+  // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
+
+
+
+  ==== Rischi organizzativi
+  #let contatoreR = counter("rischi org")
+  #let prefisso = "R.O."
+
+  // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
+
+
+  // == Analisi dei rischi
+  //   Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto.
+  // == Prevenzione e gestione dei rischi
+  //   Strategie atte ad evitare, minimizzare o contenere i rischi
+  == Monitoraggio dei rischi
+  Modalità di monitoraggio e aggiornamento dei rischi, per garantire che l'analisi dei rischi sia efficacie è necessario un aggiornamento periodico, ovvero un ritorno alla fase di analisi.
+
+>>>>>>> 0e3fc99 (Verifica: piccoli aggiornamenti norme di progetto):src/RTB/DocumentazioneEsterna/Piano_di_progetto.typ
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Suddivisione del lavoro", documentType: doc)[
