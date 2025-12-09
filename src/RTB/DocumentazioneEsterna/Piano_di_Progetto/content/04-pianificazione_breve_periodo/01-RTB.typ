@@ -75,12 +75,14 @@ fineEffettiva:datetime(year: 2025,month: 11,day:25))
 
 #sprintcounter.step()
 
+#pagebreak()
 
 
 // 
 // Sprint 2
 // 
-#{date=(inizio:datetime(year: 2025,month: 11,day:26),
+#{
+date=(inizio:datetime(year: 2025,month: 11,day:26),
 finePrevista:datetime(year: 2025,month: 12,day:07),
 fineEffettiva:datetime(year: 2025,month: 12,day:7))
 
@@ -95,12 +97,12 @@ rischiEffettivi=[
 
 ]
 oreProduttive=(
-  (persona:persone.DL,ruolo:ruoli.Responsabile,orePreviste:1,oreEffettive:1),
-  (persona:persone.ALDO,ruolo:ruoli.Amministratore,orePreviste:1,oreEffettive:1),
-  (persona:persone.ANA,ruolo:ruoli.Analista,orePreviste:1,oreEffettive:1),
-  (persona:persone.FELIX,ruolo:ruoli.Analista,orePreviste:1,oreEffettive:1),
-  (persona:persone.DT,ruolo:ruoli.Verificatore,orePreviste:1,oreEffettive:1),
-  (persona:persone.FILIPPO,ruolo:ruoli.Amministratore,orePreviste:1,oreEffettive:1),
+  (persona:persone.DL,ruolo:ruoli.Verificatore,orePreviste:3,oreEffettive:4),
+  (persona:persone.ALDO,ruolo:ruoli.Verificatore,orePreviste:3,oreEffettive:3),
+  (persona:persone.ANA,ruolo:ruoli.Amministratore,orePreviste:2,oreEffettive:2),
+  (persona:persone.FELIX,ruolo:ruoli.Analista,orePreviste:3,oreEffettive:3),
+  (persona:persone.DT,ruolo:ruoli.Analista,orePreviste:2,oreEffettive:2),
+  (persona:persone.FILIPPO,ruolo:ruoli.Responsabile,orePreviste:3,oreEffettive:3),
 )
 
 retrospettiva=[]
@@ -128,9 +130,56 @@ retrospettiva=[]
   )
 
 
-#sprintcounter.step()
+#pagebreak()
 
 
 // 
 // Sprint 3 
 // 
+#{
+date=(inizio:datetime(year: 2025,month: 11,day:26),
+finePrevista:datetime(year: 2025,month: 12,day:07),
+fineEffettiva:datetime(year: 2025,month: 12,day:7))
+
+
+
+TODO=[  
+  ]
+rischiAttesi=[
+
+]
+rischiEffettivi=[
+
+]
+oreProduttive=(
+  (persona:persone.DL,ruolo:ruoli.Amministratore,orePreviste:3,oreEffettive:4),
+  (persona:persone.ALDO,ruolo:ruoli.Analista,orePreviste:3,oreEffettive:3),
+  (persona:persone.ANA,ruolo:ruoli.Verificatore,orePreviste:2,oreEffettive:2),
+  (persona:persone.FELIX,ruolo:ruoli.Responsabile,orePreviste:3,oreEffettive:3),
+  (persona:persone.DT,ruolo:ruoli.Verificatore,orePreviste:2,oreEffettive:2),
+  (persona:persone.FILIPPO,ruolo:ruoli.Analista,orePreviste:3,oreEffettive:3),
+)
+
+retrospettiva=[]
+
+}
+#sprint(
+  numeroSprint: "3",
+  timeline:date,
+  TODO: TODO,
+  rischiAttesi: rischiAttesi,
+  rischiEffettivi: rischiEffettivi,
+  oreProduttive: oreProduttive,
+  retrospettiva:retrospettiva
+  )
+
+
+#let sprintResiduo=aggiornaResiduo(
+    old:sprintResiduo.new,
+  oreProduttive:oreProduttive,
+)
+#displayResiduo(
+  residuo:sprintResiduo.new, 
+    oreConsumate:sprintResiduo.oreConsumate,
+  numeroSprint: "3",
+  )

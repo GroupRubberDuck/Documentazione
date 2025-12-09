@@ -32,3 +32,12 @@
 #show ref: riferimento=>{
   strong(riferimento)
 }
+
+#let persone=(
+  DL:"Davide Lorenzon",
+  DT:"Davide Testolin",
+  ANA:"Ana Maria Draghici",
+  ALDO:"Aldo Bettega",
+  FELIX:"Felician Mario Necsulescu",
+  FILIPPO:"Filippo Guerra"
+)

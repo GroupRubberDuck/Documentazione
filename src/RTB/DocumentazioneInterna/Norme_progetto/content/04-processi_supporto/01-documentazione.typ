@@ -35,16 +35,16 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
 
 ==== Stati del documento <Workflow>
   - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
-  - *In progress*: il documento è stato preso in carico da un autore.
-  - *In review*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
-  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *In lavorazione*: il documento è stato preso in carico da un autore.
+  - *In verifica*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
+  - *In approvazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
   - *Done*, il documento è stato approvato.
 
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da *Backlog* a *In Progress*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
-  - Da *In progress* a *In review*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
-  - Da *In review* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
-  - Da *In validazione* a *In review*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
+  - Da *Backlog* a *In lavorazione*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
+  - Da *In lavorazione* a *In verifica*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In verifica* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
+  - Da *In validazione* a *In verifica*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
   - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto

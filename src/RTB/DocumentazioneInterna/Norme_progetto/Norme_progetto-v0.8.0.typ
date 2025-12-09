@@ -24,7 +24,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.7.0",
+    versione: "0.8.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
     verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
     uso: "Interno",
@@ -40,18 +40,18 @@
 
   ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
   ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti (come stabilito da verbale 2025-11-10)]),
-  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[-],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
+  ([0.3.0],[2025-11-11],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta sezione 4.8.1 struttura Analisi Requisiti ]),
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunta sezione 5.2 "ruolo-documento"]),
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
-  ([0.6.1],[2025-12-02],[Davide Lorenzon],[-],[Apportate modifiche di ordine nella sottosezione documentazione]),
-  ([0.7.0],[2025-12-04],[Aldo Bettega],[-],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
+  ([0.6.1],[2025-12-02],[Davide Lorenzon],[Davide Lorenzon],[Apportate modifiche di ordine nella sottosezione documentazione]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
+  ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 3.1]),
 
 
   
 )
 #registroModifiche(modifiche)
-// #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
 
 ]
 
@@ -109,6 +109,7 @@ Compliance Verification di BlueWind]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
   = Processi Primari
+  #include "content/03-processi_primari/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
@@ -261,14 +262,16 @@ Ogni nuova issue deve includere:
 - Piano di progetto 
 - Piano di qualifica 
 - Norme progetto
+- Verbale
+- Diario di bordo
 - Glossario 
 - Generale -> attività che non rientrano nei documenti sopra: studio di materiale aziendale, lavori sul sito web, gestione repository, attività varie fuori dai documenti principali]
 + *Tipo di issue (Type)*\ #[
 Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
-- Bug -> errori o malfunzionamenti rilevati in documenti o applicazioni, che richiedono correzione e tracciamento
-- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze ]
+- Bug -> errori o malfunzionamenti nel codice;
+- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze; ]
 + *Priorità : Bassa, Media, Alta * \ #[
 Questa suddivisione ha due scopi:
 - ragionare sull'importanza della issue che si sta scrivendo
@@ -358,13 +361,18 @@ Le regole generali sono:
 - lasciare uno spazio tra tipo e descrizione.
 - iniziare la descrizione con una lettera maiuscola.
 - limitare la descrizione a massimo 50 caratteri.
+- indicare alla fine del commit la issue a cui ci si sta riferendo con: #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "Commento.Issue #01"`]
 
 Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
 )[`git commit --amend`]
-N.B. :  #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa. #upper("è") preferible astenersi dal modificare commit che sono già stati resi pubblici.
+N.B. :  #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa. #upper("è") preferibile astenersi dal modificare commit che sono già stati resi pubblici.
 
 == Issue Template
 ]

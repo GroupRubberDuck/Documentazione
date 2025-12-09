@@ -177,21 +177,12 @@ O = organizzativo
   )
 
 
+
+
+
+
   #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Inesperienza del team con progetti di grosse dimensioni",
-    tipo: "",
-    descrizione: [],
-    prevenzione: [],
-    mitigazione: [],
-    frequenza: "",
-    pericolo: "",
-  )
-
-
-
-  #tabellaRischiOrganizzativi(
-    codice: getCode(prefisso: prefisso, contatore: contatoreO),
     nome: "Carenze di conoscenze nella gestione di progetti di questa portata",
     tipo: "Rischio di progetto + Rischio organizzativo",
     descrizione: [Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori a quelli affrontati in precedenza. Questa mancanza può influire sulla capacità di coordinare attività, stimare correttamente tempi e risorse, e gestire un'architettura non monolitica composta da componenti eterogenei.
