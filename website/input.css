@@ -123,3 +123,22 @@ section.content {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
+.title-glossario {
+  @apply text-4xl mt-4 mx-6;
+}
+.glossario h2 {
+  @apply text-3xl mb-4;
+}
+.glossario {
+  @apply p-6;
+}
+.glossario dt {
+  @apply font-bold text-lg;
+}
+.glossario dd {
+  @apply ml-4 mb-8;
+}
+.glossario dd ul {
+  @apply list-disc ml-4 mb-4;
+}

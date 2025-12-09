@@ -168,3 +168,4 @@ Questo approccio garantisce che ogni dispositivo radio connesso a Internet sia v
   
 
 )
+#metadata(dict)<dizionario>
