@@ -82,7 +82,7 @@
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-La riunione è iniziata con un breve confronto sull’incontro. \
+La riunione è iniziata con un breve confronto sull’incontro con BlueWind. \
 Gli altri argomenti di discussione  riguardano l'ambito organizzativo. \
 È stata confermata la necessità di anticipare una riunione interna prima del prossimo incontro con l’azienda, così da poter effettuare una revisione congiunta dei casi d’uso. \
 Revisione del sito web.
