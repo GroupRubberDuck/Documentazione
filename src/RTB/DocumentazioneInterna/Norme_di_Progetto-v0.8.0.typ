@@ -726,6 +726,12 @@ Le regole generali sono:
 - lasciare uno spazio tra tipo e descrizione.
 - iniziare la descrizione con una lettera maiuscola.
 - limitare la descrizione a massimo 50 caratteri.
+- indicare alla fine del commit la issue a cui ci si sta riferendo con: #block(
+  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+  stroke: 1pt + black, // Bordo nero da 1 punto
+  inset: 10pt          // Padding interno di 10 punti
+)[`git commit -m "Commento.Issue #01"`]
+
 
 Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
