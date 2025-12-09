@@ -19,8 +19,8 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In Verifica",
-    versione: "0.1.1",
+    stato: "Validato",
+    versione: "1.0.0",
     autori: ("Filippo Guerra","Davide Lorenzon"),
     verificatori: ("Davide Lorenzon","Aldo Bettega"),
     uso: "Esterno",
@@ -34,6 +34,7 @@
 
     ([0.1.0],[2025-12-03],[Filippo Guerra],[Davide Lorenzon],[Stesura del verbale]),
     ([0.1.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Correzione dei contenuti del verbale]),
+    ([1.0.0],[2025-12-09],[Filippo Guerra],[Filippo Guerra],[Approvazione del documento]),
     )
     
 
@@ -112,7 +113,7 @@
   - I *documenti tecnici possono essere importati da più file* e in momenti differenti.
   Per quanto riguarda la gestione degli errori di importazione:
   - Per i documenti tecnici devono essere previsti errori di formato e/o errori di parsing parziale.
-  - per i decision tree un errore è più grave e deve essere trattato come un'anomalia globale di caricamento.
+  - Per i decision tree un errore è più grave e deve essere trattato come un'anomalia globale di caricamento.
 
   == Gestione dei Decision Tree e permessi degli User <gestioneDT>
   BlueWind conferma che la modifica dei *Decision Tree* riguarda: i testi delle domande, i nodi e la struttura gerarchica, le foglie e gli esiti finali. \ 
@@ -137,7 +138,7 @@
   - memorizzare e rendere consultabili le giustificazioni,
   - includerle nel report finale.
 
-  Riguardante i ruoli degli utenti vengono definiti due tipologie di utenti differenti, 
+  In merito ai ruoli utente, vengono definiti due tipologie di utenti differenti, 
   *l'utente standard* e un *responsabile tecnico* (nomenclatura temporanea)
   con le relative autorizzazioni:
   - L’utente standard può:
@@ -177,7 +178,7 @@ Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze,
   Per quanto riguarda la gestione delle issue, il gruppo ha riscontrato difficoltà a definire issue atomiche quando non si conosce bene il risultato finale.  \
   BlueWind consiglia di creare issue "di indagine" preliminari e di trasformarle in issue atomiche solo successivamente. 
   \ Inoltre suggerisce di suddividere i compiti
-  anche tra più persone nella fase di esplorazione, così da prevenire ritardi dovuti da eventuali problemi personali dei membri del gruppo. \
+  anche tra più persone nella fase di esplorazione, così da prevenire ritardi dovuti a eventuali problemi personali dei membri del gruppo. \
   Relativamente alla comunicazione interna, il gruppo effettua costantemente una riunione lunga alla settimana che non sempre risulta essere efficace. \
   BlueWind consiglia incontri più brevi e frequenti (bigiornalieri) per sincronizzarsi meglio, una revisione costante delle issue e aggiornamenti più rapidi per evitare l'accumulo di problemi che potrebbero 
   sopraggiungere, una definizione chiara di priorità e responsabilità.

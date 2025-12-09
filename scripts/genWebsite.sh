@@ -33,3 +33,8 @@ replaceInFile "output/Candidatura/DocumentazioneEsterna/" "CANDIDATURA_VERBALI_E
 
 # Diario di bordo
 replaceInFile "output/DiariDiBordo/" "DIARIO_DI_BORDO"
+
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SRC_DIR="$BASE_DIR/src"
+path_dizionario="$SRC_DIR/RTB/DocumentazioneInterna/dizionario.typ"
+typst query --root "$BASE_DIR" --format json --field value --one "$path_dizionario" "<dizionario>" | python3 ./scripts/genGlossario.py > glossario.html 
