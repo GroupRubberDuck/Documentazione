@@ -24,7 +24,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.6.0",
+    versione: "0.8.0",
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
     verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
     uso: "Interno",
@@ -45,6 +45,7 @@
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 5.3 e 5.4, rispettivamente  "Definition of Done" e "Issue tracking System"]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
   ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.8.4.1/2 e sezione 9]),
+  ([0.8.0],[2025-12-09],[Filippo Guerra],[-],[Aggiunta sezione 3.1]),
 
 
   
@@ -158,7 +159,7 @@ Compliance Verification di BlueWind]
 
   Di seguito un elenco dei documenti forniti, con collegamento alla versione pubblicata:
 
-    - #link("https://grouprubberduck.github.io/Documentazione/")[Analisi dei Requisiti]  
+  - #link("https://grouprubberduck.github.io/Documentazione/")[Analisi dei Requisiti]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Progetto]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Norme di Progetto]  
