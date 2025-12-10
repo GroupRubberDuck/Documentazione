@@ -9,7 +9,7 @@ All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruol
 Nel contesto del corso di Ingegneria del Software, tutti i membri del team devono ricoprire almeno una volta ciascun ruolo definito.
 
 La tabella sottostante riassume in maniera chiara i compiti associati a ciascun ruolo.
-=== Rendicontazione delle ore
+=== Rendicontazione delle ore <Rendicontazione_delle_ore> 
 Le ore produttive catalogate, per ruolo e persona, sono tracciate nel documento "Piano di progetto".
 
 Sono tracciate le ore produttive previste ed effettive;

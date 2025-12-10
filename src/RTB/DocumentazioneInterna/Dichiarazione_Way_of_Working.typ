@@ -508,7 +508,7 @@ Nel seguente paragrafo si delinea la distribuzione dei ruoli lungo la durata del
   - *L'analisi dei requisiti*, fissa i requisiti da soddisfare, in accordo con il proponente
   - *La proof of concept*, dimostra adeguatezza e interoperabilità le tecnologie, i framework, le librerie adottate (non è una demo).
 
-  Ciò porta alla conclusione che in questa fase verrano investite tutte le ore del ruolo analista questa fase.
+  Ciò porta alla conclusione che in questa fase verano investite tutte le ore del ruolo analista questa fase.
   Verranno anche investite ore di progettista, programmatore e verificatore per la realizzazione della proof of concept.
   Responsabile e amministratore sono ruoli che avranno rilevanza lungo tutta la durata del progetto.
 

@@ -31,8 +31,8 @@
 
 #let currentVersion=(
   major:0,
-  minor:1,
-  patch:0,
+  minor:2,
+  patch:1,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -44,7 +44,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.1.0",
+    versione: versionNumber,
     autori: ("Davide Lorenzon",),
     verificatori: ("Aldo Bettega",),
     uso: "Esterno",
@@ -58,7 +58,9 @@
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
     ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale]),    
-    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo]),
+    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo]),    
+    ([0.2.1], [2025-12-10], [Davide Lorenzon], [-], [Modificata la struttura del documento, organizzazione de progetto incluso nell'introduzione@orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
+    Pianificazione di breve e lungo periodo promosse a sezioni.]),    
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -109,54 +111,9 @@
   Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
   La soluzione permetterà di importare documenti tecnici relativi ai dispositivi da analizzare, elaborare automaticamente i decision tree associati ai requisiti di sicurezza informatica della norma EN 18031, e generare output chiari sulla conformità (Not Applicable, Pass o Fail). Una dashboard interattiva consentirà agli utenti di visualizzare lo stato delle valutazioni, modificare i decision tree e gestire la documentazione in modo efficiente.
 
-  == Miglioramenti del documento
-  Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da:
-
-  - Team di sviluppo: in caso di ambiguità o necessità di chiarimenti tecnici
-  - Azienda proponente: per integrazioni o modifiche ai requisiti
-
-  Le modifiche sostanziali ai requisiti comportano l'incremento della versione principale (es. da 1.0.0 a 2.0.0), mentre chiarimenti incrementano la versione secondaria (es. da 1.0.0 a 1.1.0). La correzione ortografica o di parti errate relative ad una versione secondaria incrementerà la versione terziaria (es. da 1.1.0 a 1.1.1).\
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
-
-  == Riferimenti
-
-  === Riferimenti normativi
-  #pad(left: 1em)[
-    - #inserisciLink(
-        url: "https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf",
-      )[Norme di Progetto];\
-    - #inserisciLink(
-        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf",
-      )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
-    - #inserisciLink(
-        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf",
-      )[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
-  ]
-  === Riferimenti informativi
-  #pad(left: 1em)[
-    - #inserisciLink(
-        url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf",
-      )[Glossario]; \
-    - #inserisciLink(
-        url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf",
-      )[Diagrammi dei casi d'uso]; \
-    - #inserisciLink(
-        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf",
-      )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti ];\
-    - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
-    - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni]; \
-  ]
-
-
-]
-
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Organizzazione del progetto", documentType: doc)[
-  = Organizzazione del progetto
+  == Organizzazione del progetto <orgProgetto>
 // valutare se lasciarlo qui 
-  == Ruoli
+  === Ruoli
 
   #list(
     [*Responsabile*:
@@ -196,6 +153,109 @@
     ],
   )
 
+=== Preventivo <Preventivo>
+In fase di candidatura, è stato approvato il seguente preventivo dei costi.
+
+  #let ruoli = (
+    (nome: "Responsabile", costo: 30, oreIndividuali: 11),
+    (nome: "Amministratore", costo: 20, oreIndividuali: 9),
+    (nome: "Analista", costo: 25, oreIndividuali: 19),
+    (nome: "Progettista", costo: 25, oreIndividuali: 17),
+    (nome: "Programmatore", costo: 15, oreIndividuali: 17),
+    (nome: "Verificatore", costo: 15, oreIndividuali: 18),
+  )
+  #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
+
+
+  #let analisiImpegni = ()
+
+  #for ruolo in ruoli {
+    let oreTot = ruolo.at("oreIndividuali") * 6
+    analisiImpegni.push((
+      ruolo.at("nome"),
+      str(ruolo.at("oreIndividuali")),
+      str(oreTot),
+      str(ruolo.at("costo")),
+      str(ruolo.at("costo") * oreTot),
+    ))
+
+    acc.at("oreIndividualiTotali") += ruolo.at("oreIndividuali")
+    acc.at("oreTotali") += oreTot
+    acc.at("costoTot") += ruolo.at("costo") * oreTot
+
+  }
+
+  #analisiImpegni.push((
+    acc.at("nome"),
+    str(acc.at("oreIndividualiTotali")),
+    str(acc.at("oreTotali")),
+    acc.at("placeholder"),
+    str(acc.at("costoTot")),
+  ))
+    #set table(
+      stroke: (_, y) => if y == 7 { (top: 1.5pt) },
+      // gutter: 0.2em,
+      fill: (x, y) => if x == 0 or y == 0 { white },
+    )
+
+
+    #figure(
+      caption: [Ripartizione oraria e dettaglio dei costi],
+      kind: "Tabella",
+      supplement: [Tabella],
+    )[
+      #utilityTable(
+        header: ("Ruolo", "Ore individuali", "Ore Totali", "Costo (€/h)", "Costo totale (€)"),
+        columns: (1fr,) * 5,
+        analisiImpegni,
+      )
+    ]<tabella-ore>
+
+  == Miglioramenti del documento
+  Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da:
+
+  - Team di sviluppo: in caso di ambiguità o necessità di chiarimenti tecnici
+  - Azienda proponente: per integrazioni o modifiche ai requisiti
+
+  Le modifiche sostanziali ai requisiti comportano l'incremento della versione principale (es. da 1.0.0 a 2.0.0), mentre chiarimenti incrementano la versione secondaria (es. da 1.0.0 a 1.1.0). La correzione ortografica o di parti errate relative ad una versione secondaria incrementerà la versione terziaria (es. da 1.1.0 a 1.1.1).\
+]
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
+
+  = Riferimenti
+
+  == Riferimenti normativi
+  #pad(left: 1em)[
+    - #inserisciLink(
+        url: "https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf",
+      )[Norme di Progetto];\
+    - #inserisciLink(
+        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf",
+      )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
+    - #inserisciLink(
+        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf",
+      )[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
+  ]
+  == Riferimenti informativi
+  #pad(left: 1em)[
+    - #inserisciLink(
+        url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf",
+      )[Glossario]; \
+    - #inserisciLink(
+        url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf",
+      )[Diagrammi dei casi d'uso]; \
+    - #inserisciLink(
+        url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf",
+      )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti ];\
+    - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
+    - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni]; \
+  ]
+
+
+]
+
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Organizzazione del progetto", documentType: doc)[
 
 
 ]
@@ -210,15 +270,29 @@
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Piano di avanzamento del progetto", documentType: doc)[
-  = Piano di avanzamento del progetto
+#insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo", documentType: doc)[
+
 
   // == Scomposizione del lavoro
 
   // Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
   // Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
-  == Pianificazione di lungo periodo
-  === Requirements and Technology Baseline
+  = Pianificazione di lungo periodo
+
+  == Requirements and Technology Baseline
+
+  In questa fase le attività di progetto sono legate all'analisi dei requisiti e alla progettazione.
+  I ruoli di maggiore rilevanza sono i seguenti:
+  - analista, per la baseline dei requisiti;
+  - progettista, per la fase di progettazione.
+  
+  Amministratore e responsabile ricoprono un ruolo significativo in quanto svolgono attività che portano beneficia tutto il gruppo.
+
+
+
+
+
+
   #let attivitaADR=(
       "Studio della struttura del documento",
       [_Sprint 1_],
@@ -315,9 +389,10 @@
 
   === Product Baseline
   Allo stato attuale il gruppo non possiede informazioni sufficienti a eseguire una adeguata previsione delle attività di questa fase.
+]
 
-  #pagebreak()
-  == Pianificazione nel breve periodo
+#insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di breve periodo", documentType: doc)[
+  == Pianificazione di breve periodo
   #include "content/04-pianificazione_breve_periodo/index.typ"
 ]
 
