@@ -11,7 +11,7 @@
   <link href="website/style.css" rel="stylesheet">
 </head>
 
-<body class="bg-container text-white">
+<body class="bg-container text-white" onload="loaded()">
   <script defer>
     function navbarToggle() {
       const controller = document.getElementById('nav-controller');
@@ -25,6 +25,21 @@
         navbar.classList.add('block');
       }
       controller.setAttribute('aria-expanded', navStatus ? 'false' : 'true');
+    }
+
+    function loaded() {
+      var els = document.getElementsByClassName('collapsible');
+      Array.prototype.forEach.call(els, function (el) {
+        el.addEventListener('click', function () {
+          this.classList.toggle('active');
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
     }
   </script>
   <header>
@@ -49,13 +64,16 @@
               <a href="#home" class="block py-2 px-3 md:p-0" aria-current="page">Home</a>
             </li>
             <li>
-              <a href="#candidatura" class="block py-2 px-3 md:p-0">Candidatura</a>
-            </li>
-            <li>
               <a href="#rtb" class="block py-2 px-3 md:p-0">RTB</a>
             </li>
             <li>
               <a href="#pb" class="block py-2 px-3 md:p-0">PB</a>
+            </li>
+            <li>
+              <a href="#candidatura" class="block py-2 px-3 md:p-0">Candidatura</a>
+            </li>
+            <li>
+              <a href="./glossario.html" class="block py-2 px-3 md:p-0">Glossario</a>
             </li>
             <li>
               <a href="#diariodibordo" class="block py-2 px-3 md:p-0">Diario
@@ -126,11 +144,90 @@
 <!--%END_DIARIO_DI_BORDO%-->
       </ul>
     </section>
-    <section id="rtb">
-      <h2>RTB</h2>
+    <section id="candidatura" class="docs">
+      <button class="collapsible">
+        <h2>
+          Candidatura
+        </h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-chevron-left btn-collapse">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <section class="content">
+        <ul class="docs-list">
+          <!--%BEGIN_CANDIDATURA_VERBALI%-->
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/Lettera_Presentazione-v2.0.0.pdf"
+              target="_blank">Lettera di Presentazione</a> - <span class="file-version">v2.0.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/Valutazione_Capitolati-v2.0.0.pdf"
+              target="_blank">Valutazione Capitolati</a> - <span class="file-version">v2.0.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/Dichiarazione_Impegni-v2.0.0.pdf"
+              target="_blank">Dichiarazione Impegni</a> - <span class="file-version">v2.0.0</span></li>
+          <!--%END_CANDIDATURA_VERBALI%-->
+        </ul>
+        <h4>Verbali Esterni</h4>
+        <ul class="docs-list">
+          <!--%BEGIN_CANDIDATURA_VERBALI_ESTERNI%-->
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-30_Verbale_incontro_Eggon-v1.0.pdf"
+              target="_blank">2025-10-30</a> - <span class="file-version">v1.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31-v1.0.pdf"
+              target="_blank">2025-10-23</a> - <span class="file-version">v1.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind-v1.0.pdf"
+              target="_blank">2025-10-23</a> - <span class="file-version">v1.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneEsterna/2025-10-20_Verbale_incontro_Ergon-v1.0.pdf"
+              target="_blank">2025-10-20</a> - <span class="file-version">v1.0</span></li>
+          <!--%END_CANDIDATURA_VERBALI_ESTERNI%-->
+        </ul>
+        <h4>Verbali Interni</h4>
+        <ul class="docs-list">
+          <!--%BEGIN_CANDIDATURA_VERBALI_INTERNI%-->
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneInterna/2025-11-04_Verbale-v1.0.pdf"
+              target="_blank">2025-11-04</a> - <span class="file-version">v1.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneInterna/2025-10-28_Verbale-v0.1.pdf"
+              target="_blank">2025-10-28</a> - <span class="file-version">v0.1</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneInterna/2025-10-23_Verbale-v0.1.pdf"
+              target="_blank">2025-10-23</a> - <span class="file-version">v0.1</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/Candidatura/DocumentazioneInterna/2025-10-18_Verbale-v0.1.pdf"
+              target="_blank">2025-10-18</a> - <span class="file-version">v0.1</span></li>
+          <!--%END_CANDIDATURA_VERBALI_INTERNI%-->
+        </ul>
+      </section>
     </section>
-    <section id="pb">
-      <h2>PB</h2>
+    <section id="diariodibordo" class="docs">
+      <button class="collapsible">
+        <h2>
+          Diario di bordo
+        </h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-chevron-left btn-collapse">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <section class="content">
+        <ul class="docs-list">
+          <!--%BEGIN_DIARIO_DI_BORDO%-->
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/DiariDiBordo/2025-11-10_Diario_di_bordo-v1.0.pdf"
+              target="_blank">2025-11-10</a> - <span class="file-version">v1.0</span></li>
+          <li><a
+              href="https://grouprubberduck.github.io/Documentazione/output/DiariDiBordo/2025-10-27_Diario_di_bordo-v1.0.pdf"
+              target="_blank">2025-10-27</a> - <span class="file-version">v1.0</span></li>
+          <!--%END_DIARIO_DI_BORDO%-->
+        </ul>
+      </section>
     </section>
     <section id="team">
       <h2>Membri del gruppo</h2>

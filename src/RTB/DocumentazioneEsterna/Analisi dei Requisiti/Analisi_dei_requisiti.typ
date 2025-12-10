@@ -8,7 +8,7 @@
 #import "@preview/cetz-plot:0.1.3": chart
 #import "../../DocumentazioneInterna/Glossario.typ" : dict
 #set text(size: 13pt)
-// #set par(justify: true)
+
 #set heading(numbering: "1.1) ")
 // Level 1 headings: leggermente più grandi, stesso font, nero bold
 #show heading.where(level: 1): set text(
@@ -16,10 +16,16 @@
   weight: "bold",  
 )
 
+
 // Level 2 headings: leggermente più piccoli, grigio scuro, stesso font
 #show heading.where(level: 2): set text(
   size: 18pt,     
 )
+#show ref: body => underline()[*#body*]
+#show link: body => {
+  set text(fill: blue)
+  underline()[#body]
+}
 
 
 #let doc="Analisi dei requisiti"
@@ -29,9 +35,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.5",
-    autori: ("Felician Necsulescu", "Ana Maria Draghici"),
-    verificatori:("-",),
+    versione: "0.7.1",
+    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon"),
+    verificatori:("Davide Lorenzon",),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -46,14 +52,20 @@
   
   ([0.1.0],[2025-11-11],[Aldo Bettega],[Davide Lorenzon],[Creazione del documento]),
   ([0.2.0],[2025-11-12],[Felician Necsulescu],[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
-  ([0.3.0],[2025-11-13],[Felician Necsulescu],[-],[Aggiunta UC1]),
-  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
-  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[-],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
-  
+  ([0.3.0],[2025-11-13],[Felician Necsulescu],[Davide Lorenzon],[Scrittura del primo caso d'uso UC1]),
+  ([0.4.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
+  ([0.5.0],[2025-11-18],[Ana Maria Draghici],[Davide Lorenzon],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
+  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
+  ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
+  ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
+  ([0.7.1],[2025-12-07],[Davide Lorenzon],[],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
 )
 
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
+
+
+
 
 
 ]
@@ -96,7 +108,7 @@ I termini tecnici possono essere presentati secondo 2 modalità:
 
 - *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
 
-- *Marcatura tramite pedice “G” (termineᴳ)*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
+- *Marcatura tramite pedice “G” (esempio#sub("G"))*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
   
 Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
 // Da rivedere, l'uso del glossario è ancora da definire meglio, quindi questa è solo un'idea generale, non definitiva. 
@@ -118,7 +130,7 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
     - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf")[Norme di Progetto v.0.0.1];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
-    - #inserisciLink(url:"https://drive.google.com/file/d/1iXOfcsiHZTf1ViP1t9t9sZ5LV8XzxwDT/view?usp=sharing")[European Standard EN18031]
+    - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031]
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
@@ -157,7 +169,7 @@ Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 - *Esecuzione guidata dei decision tree*: presentazione interattiva delle domande contenute nei decision tree, con logica di navigazione basata sulle risposte precedenti (Yes/No), garantendo una valutazione ripetibile e tracciabile dei requisiti. Durante l’esecuzione, il sistema considera anche la gerarchia dei requisiti e le interazioni tra i nodi, permettendo di valutare l’influenza reciproca delle decisioni e di rispettare le dipendenze tra i requisiti.
 
-- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable #footnote()[#dict.at("Not Applicable (N.A.)")], Pass #footnote()[#dict.at("Pass")], Fail #footnote()[#dict.at("Fail")]), con registrazione completa del processo decisionale.
+- *Valutazione automatizzata della conformità*: determinazione automatica dei risultati per ciascun requisito secondo gli esiti standard (Not Applicable, Pass, Fail), con registrazione completa del processo decisionale.
 
 - *Visualizzazione e navigazione dei decision tree*: dashboard interattiva che mostra lo stato di avanzamento delle valutazioni e la conformità dei dispositivi, con rappresentazione grafica dei decision tree e evidenziazione dei percorsi seguiti durante la valutazione. 
 //L’utente può filtrare, aggregare e comprendere facilmente i risultati, garantendo trasparenza e tracciabilità delle decisioni.
@@ -174,7 +186,7 @@ Le funzioni principali che l'applicazione consentirà agli utenti includono:
 
 L’applicazione supporta diversi profili di utenti coinvolti nella verifica della conformità dei dispositivi radio:
 #pad(left: 1em)[
-- *Tecnici di conformità* (principali): eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Passᴳ/Failᴳ/Not Applicableᴳ), riducendo i tempi e gli errori tipici del processo manuale.
+- *Tecnici di conformità* (principali): eseguono decision tree interattivi, importano documenti tecnici, rispondono a domande strutturate e visualizzano risultati chiari (Pass/Fail/Not Applicable), riducendo i tempi e gli errori tipici del processo manuale.
 
 - *Responsabili qualità e compliance* (opzionali): monitorano lo stato complessivo delle valutazioni, accedono ai risultati aggregati e generano report per garantire tracciabilità e supervisione delle decisioni prese.
 
@@ -194,50 +206,8 @@ Per la verifica e il collaudo del sistema sarà fornito un caso studio reale, ra
 Questo esempio permette di testare l’applicazione in un contesto operativo concreto, valutando i requisiti di accesso e autenticazione dei dispositivi, e di verificare il corretto funzionamento dei decision tree e della generazione dei risultati.
 
 ]
+
 #insertArabicNumberedPagesSenzaData(PageTitle: "Casi d'uso", documentType: doc)[
-
-  = Casi d'uso
-
-  == Scopo
-
-  Lo scopo di questa sezione è descrivere in dettaglio i casi d’uso individuati dal gruppo, al fine di rappresentare le funzionalità principali del sistema di verifica della conformità allo standard EN 18031.
-
-  == Attori
-
-  L'applicazione prevede la presenza di un Attore principale:
-
-  - *Utente*: Persona che utilizza l'applicazione per effettuare la verifica della conformità dei dispositivi radio allo standard EN 18031. L'utente interagisce direttamente con il sistema attraverso l'interfaccia grafica, importa i documenti tecnici, risponde alle domande dei decision tree, visualizza i risultati delle valutazioni e gestisce la documentazione associata. 
-
-== Lista casi d'uso
-
-=== UC1: Importazione documenti tecnici del dispositivo
-
-#figure(
-  image("immagini/UC1.png", width: 80%),
-  caption: [Importazione documenti tecnici del dispositivo]
-)
-- *Attori Principale*: Utente;
-- *Precondizioni*: L'utente ha avviato l'applicazione e si trova nella schermata principale;
-- *Postcondizioni*: I documenti tecnici sono stati caricati correttamente nel sistema e sono disponibili per l'elaborazione;
-- *Trigger*: L'utente seleziona l'opzione per importare i documenti tecnici;
-- *Scenario Principale*:#pad(left: 1em)[
-    1. L'utente accede alla funzionalità di importazione documenti
-    2. Il sistema mostra l'interfaccia di selezione dei file
-    3. L'utente seleziona uno o più file nei formati supportati (CSV, XML, JSON)
-    4. Il sistema valida i file selezionati verificando formato e struttura
-    5. Il sistema carica i documenti e li memorizza
-    6. Il sistema mostra un messaggio di conferma dell'avvenuta importazione
-    7. Il sistema visualizza un riepilogo delle informazioni importate
-]
-- *Scenari Alternativi*:
-  - *3a*: L'utente annulla la selezione
-    - 3a.1: Il sistema torna alla schermata principale senza modifiche
-  - *4a*: Il formato del file non è supportato
-    - 4a.1: Il sistema mostra un messaggio di errore indicando i formati validi
-    - 4a.2: Il sistema torna al passo 2
-  - *4b*: La struttura del file non è valida
-    - 4b.1: Il sistema mostra un messaggio di errore con i dettagli del problema
-    - 4b.2: Il sistema torna al passo 2
-
+  #include "content/Use_case.typ"
 
 ]

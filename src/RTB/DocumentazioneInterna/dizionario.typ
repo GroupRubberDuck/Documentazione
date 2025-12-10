@@ -147,10 +147,25 @@ LTE:[
 ],
   
 "Best practices":[Procedura di cui è dimostrata la capacità di fornire sicurezza, consistenza e qualità per il corrispondente caso d'uso.
-]
+],
+"Asset":[
+  Gli assets sono gli elementi critici (di sicurezza e di rete) che devono essere protetti. 
   
+  La norma stabilisce un metodo rigoroso per:
+
+  - documentarli,
+
+  - giustificare le scelte di protezione,
+
+  - verificarne la completezza,
+
+  - testarne l’efficacia.
+
+Questo approccio garantisce che ogni dispositivo radio connesso a Internet sia valutato in modo sistematico e coerente, riducendo i rischi di vulnerabilità.
+]
   
   
   
 
 )
+#metadata(dict)<dizionario>

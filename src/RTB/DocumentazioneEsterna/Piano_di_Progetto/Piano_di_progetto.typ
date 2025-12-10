@@ -4,8 +4,10 @@
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
-#import template_dir + "/tabellaRischi.typ": tabellaRischi
-#import template_dir + "/tabellaAtt.typ": tabellaAtt
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiPersonali
+#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiOrganizzativi
+#import template_dir + "/PdP/tabellaAtt.typ": tabellaAtt
 #import glossario: dict
 #set text(size: 13pt)
 #set par(justify: true)
@@ -21,13 +23,6 @@
 //   name+sub(strong("G"))
 // }
 
-Verificatore 
-verifica.
-\
-#for chiave in dict.keys(){
-  upper(chiave)
-  [\ ]
-}
 
 
 
@@ -66,7 +61,7 @@ verifica.
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
     ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale]),    
-    ([0.2.0], [2025-11-12], [Davide Lorenzon], [], [Layout per la pianificazione di lungo periodo]),
+    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo]),
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -83,7 +78,8 @@ verifica.
   target: figure.where(kind: table),
 )
 
-]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
+]
+#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
 #outline(
   title: [Lista delle immagini],
   target: figure.where(kind: image),
@@ -93,31 +89,27 @@ verifica.
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   == Scopo del documento
-  Nell'ambito dei progetti di sviluppo software,
-  al fine di garantire obiettivi di efficacia ed efficienza,
-  è necessario un documento che consenta alle parti interessate di allineare il
-  proprio lavoro, coordinarsi e valutare lo stato del progetto.
+ Nell'ambito dei progetti di sviluppo software,
+  al fine di garantire il raggiungimento di  obiettivi di efficacia ed efficienza,
+  è fondamentale predisporre un documento che consenta alle parti interessate di allineare il
+  proprio lavoro, coordinarsi e monitorare lo stato di avanzamento  lo stato del progetto.
 
-  Definisce l'ambito del progetto, specifica quali sono le attività
-  necessarie allo sviluppo del progetto.
+  Tale documento definisce l'ambito del progetto e specifica quali sono le attività
+  necessarie per il suo sviluppo. Inoltre, fornisce informazioni dettagliate sulle ore di lavoro dedicate a ciascuna attività e sui relativi costi. 
 
-  Fornisce informazioni precise sulle ore dedicate a ciascuna attività e i costi derivanti.
-
-  In particolare vengono analizzati i seguenti temi:
+  In particolare, il documento analizza i seguenti temi:
+  #pad(left: 1em)[ 
   - Analisi dei rischi
   - Pianificazione delle attività
-  - Stima dei costi e delle risorse necessarie allo sviluppo del progetto.
-
-
-
-
-
-
+  - Stima dei costi e delle risorse necessarie allo sviluppo del progetto
+]
   == Scopo del prodotto
   Dal gennaio 2025 lo standard tecnico EN 18031 è stato inserito nella Gazzetta Ufficiale
-  dell’Unione Europea. Questo comporta l'entrata in vigore di nuovi standard per un’ampia gamma di prodotti che utilizzano Wi-Fi, LTE, BlueTooth o dispositivi IoT wireless, obbligatori dall' 1 agosto 2025.\
+  dell’Unione Europea. Questo comporta l'entrata in vigore di nuovi standard per un’ampia gamma di prodotti che utilizzano Wi-Fi, LTE, BlueTooth o dispositivi IoT wireless, obbligatori dal 1 agosto 2025.\
 
-  Lo scopo del prodotto è sviluppare un sistema software che automatizzi e semplifichi il processo di verifica della conformità dei dispositivi radio allo standard tecnico EN 18031, norma armonizzata per la RED (Direttiva sulle apparecchiature radio 2014/53/UE). Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
+  Lo scopo del prodotto è sviluppare un sistema software che automatizzi e semplifichi il processo di verifica della conformità dei dispositivi radio allo standard tecnico EN 18031, norma armonizzata per la RED (Direttiva sulle apparecchiature radio 2014/53/UE). 
+
+  Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
   La soluzione permetterà di importare documenti tecnici relativi ai dispositivi da analizzare, elaborare automaticamente i decision tree associati ai requisiti di sicurezza informatica della norma EN 18031, e generare output chiari sulla conformità (Not Applicable, Pass o Fail). Una dashboard interattiva consentirà agli utenti di visualizzare lo stato delle valutazioni, modificare i decision tree e gestire la documentazione in modo efficiente.
 
   == Miglioramenti del documento
@@ -166,7 +158,7 @@ verifica.
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Organizzazione del progetto", documentType: doc)[
   = Organizzazione del progetto
-
+// valutare se lasciarlo qui 
   == Ruoli
 
   #list(
@@ -214,77 +206,7 @@ verifica.
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Analisi dei rischi", documentType: doc)[
   = Analisi dei rischi
-  Nella seguente sezione vengono esplorati i potenziali rischi che potrebbero verificarsi durante la durata del progetto.
-  Al fine di prevenire o mitigare i danni derivanti dai rischi è necessaria un'analisi adeguata.
-
-  Il processo di analisi dei rischi consiste dei seguenti passaggi:
-  - Identificazione dei rischi, è la prima fase della gestione dei rischi
-  - Analisi dei rischi
-  - Valutazione dei rischi
-  - Gestione dei rischi
-  - Monitoraggio e revisione dei rischi
-
-  == Identificazione dei rischi
-  === Tipi di rischi
-  Si è optato per catalogare i possibili rischi, in base alla loro natura e al loro impatto, nelle seguenti categorie non mutualmente esclusive:
-  - Rischi di progetto \
-    Tali rischi intaccano la tabella di marcia o le risorse disponibili per il progetto.
-  - Rischi di prodotto \
-    Tali rischi intaccano la qualità o le capacità del prodotto.
-
-  - #strike()[Rischi legati al business] #footnote()[Data la natura del progetto, attualmente non si ritiene possibile l'insorgere di queste tipologie di rischi ] \
-  Tali rischi intaccano l'organizzazione che ha sviluppato o commissionato il software.
-
-  === Registro dei rischi
-
-  ==== Rischi tecnologici
-  #let contatoreR = counter("rischi tec")
-  #contatoreR.update(1)
-  #let prefisso = "R.T."
-
-  #tabellaRischi(
-    codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Inesperienza ",
-    tipo: "Rischio di progetto + Rischio di prodotto",
-    descr: [Mancanza di esperienza da parte dei membri del gruppo in progetti diquesta portata, con architettura non monolitica],
-    prevenzione: [],
-    mitigazione: [È necessario prevedere la possibilità che parte
-      dell’impegno orario sarà dedicato alla formazione
-      personale per l’uso di tale componente: è bene
-      dunque valutare di spostare attività eventualmente
-      di minore importanza al primo periodo successivo
-      utile qualora altri componenti del gruppo non
-      possano fornire supporto immediato. È necessario
-      valutare anche la disponibilità di BlueWind al supporto.
-    ],
-    frequenza: "Alta",
-    pericolo: "Elevata",
-  )
-
-
-
-  ==== Rischi personali
-  #let contatoreR = counter("rischi pers")
-  #let prefisso = "R.P."
-
-  // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
-
-
-
-  ==== Rischi organizzativi
-  #let contatoreR = counter("rischi org")
-  #let prefisso = "R.O."
-
-  // ([#getCode(prefisso:prefisso,contatore:contatoreR)],[],[]),
-
-
-  // == Analisi dei rischi
-  //   Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto.
-  // == Prevenzione e gestione dei rischi
-  //   Strategie atte ad evitare, minimizzare o contenere i rischi
-  == Monitoraggio dei rischi
-  Modalità di monitoraggio e aggiornamento dei rischi, per garantire che l'analisi dei rischi sia efficacie è necessario un aggiornamento periodico, ovvero un ritorno alla fase di analisi.
-
+#include "content/03-analisi_rischi/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Suddivisione del lavoro", documentType: doc)[
@@ -399,138 +321,7 @@ verifica.
 
   #pagebreak()
   == Pianificazione nel breve periodo
-
-  === Requirements and Technology Baseline
-
-  ==== Sprint 1
-  #grid( columns: 2, inset:0.7em,
-    [Inizio:],[2025-11-10],
-    [Fine prevista:],[2025-11-25],
-    [Fine reale:],[],
-    [Ritardo:],[],
-    )
-  ===== Attività da svolgere
-  In questo primo periodo di avanzamento, gli sforzi del gruppo si concentreranno nello studio dei documento e altre attività di studio.
-  Il fine di questa fase è la creazione di buone basi per svolgere in maniera efficacie ed efficiente le attività di spint successivi.
-  - Studio e prima redazione dei documenti#list(
-    [Norme di Progetto],
-    [Piano di Progetto],
-    [Piano di Qualifica],
-    [Analidsi dei Requisiti],
-    [Glossario],
-    )  
-  - Revisione delle pratiche di versionmento.
-  - Revisione tracciamento delle modifiche. 
-  - Revisione del sito web.
-  - Studio degli strumenti offerti da GitHub, al fine di sfruttare le funzionalità utili della piattaforma.
-  - Primo incontro con la proponente, *BlueWind*.
-  - Ricerca di standard.
-  - Raffinamento del workflow.  
-  ===== Rischi attesi
-
-
-
-
-  ===== Rischi incontrati
-
-
-
-  ===== Preventivo
-#set table(
-  stroke: (x, y) => if y == 0 {
-    (bottom: 0.7pt + black)
-  }
-  else{
-    1pt + black
-  },
-  align: (x, y) => (
-    if y == 0 {center+horizon }
-    else { left }
-  ),
-  fill:(x,y)=>{
-    if calc.odd(y){
-      luma(90%)
-    }
-  }
-)
-
-  #show table.cell.where(y:0):header=>{
-
-    align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
-
-  }
-  #table(columns: (1fr,1fr,auto),
-  [Persona],[Ruolo],[Ore],
-  [Davide Lorenzon],[Responsabile],[1],
-  [Ana Maria Draghici],[Analista],[1],
-  [Felician Mario Necsulescu],[Verificatore],[1],
-  [Davide Testolin],[Verificatore],[1],
-  [Filippo Guerra],[Amministratore],[1],
-  [Aldo Bettega ],[Amministratore],[1],
-  )
-
-
-  ===== Consuntivo
-
-  ===== Retrospettiva
-
-
-    ==== Sprint 2
-  #grid( columns: 2, inset:0.7em,
-    [Inizio:],[2025-11-26],
-    [Fine prevista:],[],
-    [Fine reale:],[],
-    [Ritardo:],[],
-    )
-  ===== Attività da svolgere
-
-  ===== Rischi attesi
-
-
-
-
-  ===== Rischi incontrati
-
-
-
-  ===== Preventivo
-#set table(
-  stroke: (x, y) => if y == 0 {
-    (bottom: 0.7pt + black)
-  }
-  else{
-    1pt + black
-  },
-  align: (x, y) => (
-    if y == 0 {center+horizon }
-    else { left }
-  ),
-  fill:(x,y)=>{
-    if calc.odd(y){
-      luma(90%)
-    }
-  }
-)
-
-  #show table.cell.where(y:0):header=>{
-
-    align(center+bottom)[#rotate(header,360deg-45deg, reflow:true)]
-
-  }
-  #table(columns: (1fr,1fr,auto),
-  [Persona],[Ruolo],[Ore],
-  [Davide Lorenzon],[Verificatore],[],
-  [Ana Maria Draghici],[Amministratrice],[],
-  [Felician Mario Necsulescu],[Analista],[],
-  [Davide Testolin],[Analista],[],
-  [Filippo Guerra],[Responsabile],[],
-  [Aldo Bettega ],[Verificatore],[],
-  )
-
-
-  ===== Consuntivo
-
-  ===== Retrospettiva
+  #include "content/04-pianificazione_breve_periodo/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[

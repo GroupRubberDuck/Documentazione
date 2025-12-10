@@ -1,14 +1,3 @@
-// Pronto per la verifica: no
-// In verifica :
-// 
-// Verifica superata:
-// 
-// Checklist
-// Conforme ai contenuti:
-// Correttezza grammaticale:
-// Correttezza sintattica: 
-// 
-
 #set text(lang: "IT")
 
 #import "/src/config.typ": *
@@ -30,10 +19,10 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In stesura",
-    versione: "0.1.0",
+    stato: "Approvato",
+    versione: "1.0.0",
     autori: ("Davide Lorenzon",),
-    verificatori: ("Felician Mario Necsulescu",),
+    verificatori: ("Felician Mario Necsulescu","Aldo Bettega"),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo","BlueWind srl"),
   )
@@ -45,8 +34,9 @@
 
     ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
     ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura delle sezioni rimanenti]),
-      
-      )
+    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione]),
+
+    )
 
       #registroModifiche(modifiche)
 
@@ -222,12 +212,6 @@
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Iniziare lo studio dello standard tecnico tramite i documenti forniti],
   [#upper("è") stato suggerito dalla proponente ed è un punto di partenza appropriato per l'AdR.],
-  [-]
-),
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Creazione di un gruppo Telegram per la comunicazione asincrona.],
-  [Stabilire un canale di comunicazione asincrona efficace.],
   [-]
 ),
 )
