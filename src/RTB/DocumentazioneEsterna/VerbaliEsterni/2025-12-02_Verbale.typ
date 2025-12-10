@@ -13,14 +13,32 @@
 #set heading(numbering: "1.1)")
 #show heading.where(level: 1): set text(size: 18pt)
 #show heading.where(level: 2): set text(size: 16pt)
-#let giornoRiunione = datetime(year: 2025, month: 12, day: 02)
+
+
+
+
+// 
+//Info del documento 
+// 
+#let currentVersion=(
+  major:1,
+  minor:0,
+  patch:0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
 #let doctype="Verbale esterno"
+#let giornoRiunione = datetime(year: 2025, month: 12, day: 02)
+
+
+
 #frontPage([Verbale riunione], giornoRiunione)
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
     stato: "Validato",
-    versione: "1.0.0",
+    versione: versionNumber,
     autori: ("Filippo Guerra","Davide Lorenzon"),
     verificatori: ("Davide Lorenzon","Aldo Bettega"),
     uso: "Esterno",

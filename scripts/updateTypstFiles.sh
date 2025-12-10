@@ -15,25 +15,16 @@ compile_typst() {
     local input_file="$1"
     local output_dir="$2"
     local filename=$(basename "$input_file" .typ)
-    local versionNumber=$(typst query filename "<versionNumber>" --field value --one --root $BASE_DIR 2>/dev/null)
     local output_pdf="$output_dir/$filename.pdf"
-if [ -n "$versionNumber" ]; then
-        # Se la variabile $version non è vuota
-        local new_name="${output_dir}/${filename}${versionNumber}.pdf"
-        
-        mv "$output_pdf" "$new_name"
-        echo -e "${GREEN}✅ Versione rilevata ($version). Rinominato in:${NC} $(basename "$new_name")"
-    else
-        # Se non c'è versione
-        echo -e "${YELLOW}ℹ️  Nessuna versione trovata. Mantenuto:${NC} $(basename "$pdf_default")"
-    fi
+
     echo "---------------------------------------------------"    
     mkdir -p "$output_dir"
 
     echo -e "${YELLOW}↻ Ricompilo: $input_file${NC}"
 
     local relative_input="${input_file#$BASE_DIR/}"
-
+    local rawVersionNumber=$(typst query $input_file "<versionNumber>" --field value --one --root $BASE_DIR 2>/dev/null)
+    local versionNumber=$(echo "$rawVersionNumber" | tr -d '"')
     cd "$BASE_DIR"
     if typst compile --font-path "$BASE_DIR/src/fonts" --root "$BASE_DIR" "$relative_input" "$output_pdf"; then
         echo -e "${GREEN}✓ Completato: $output_pdf${NC}"
@@ -43,6 +34,16 @@ if [ -n "$versionNumber" ]; then
         return 1
     fi
     cd - > /dev/null
+    if [ -n "$versionNumber" ]; then
+        # Se la variabile $version non è vuota
+        local new_name="${output_dir}/${filename}-v${versionNumber}.pdf"
+        
+        mv "$output_pdf" "$new_name"
+        echo -e "${GREEN}✅ Versione rilevata ($versionNumber). Rinominato in:${NC} $(basename "$new_name")"
+    else
+        # Se non c'è versione
+        echo -e "${YELLOW}ℹ️  Nessuna versione trovata. Mantenuto:${NC} $(basename "$output_pdf")"
+    fi
 }
 
 main() {

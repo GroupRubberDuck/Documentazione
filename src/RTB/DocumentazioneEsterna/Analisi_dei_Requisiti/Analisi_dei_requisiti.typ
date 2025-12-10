@@ -27,15 +27,25 @@
   underline()[#body]
 }
 
-
+// 
+//Info del documento 
+// 
 #let doc="Analisi dei requisiti"
+#let currentVersion=(
+  major:0,
+  minor:7,
+  patch:1,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
 
 #frontPageSenzaData(doc)
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In review",
-    versione: "0.7.1",
+    versione: versionNumber,
     autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon"),
     verificatori:("Davide Lorenzon",),
     uso: "Esterno",

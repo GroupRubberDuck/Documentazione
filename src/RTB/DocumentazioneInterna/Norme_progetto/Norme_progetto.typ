@@ -17,6 +17,18 @@
 #show ref: body => underline()[*#body*]
 #show link: body => {set text(fill:blue); underline()[#body]}
 
+
+// 
+//Info del documento 
+// 
+#let currentVersion=(
+  major:0,
+  minor:8,
+  patch:0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
 #let doc="Norme di Progetto"
 
 #frontPageSenzaData(doc)
@@ -24,7 +36,7 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.8.0",
+    versione: versionNumber,
     autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
     verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
     uso: "Interno",

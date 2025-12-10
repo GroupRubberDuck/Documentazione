@@ -13,17 +13,6 @@
 #set par(justify: true)
 
 
-// #let chiavi=dict.keys().map(key=>{
-//   "(?i)\\b" + key + "\\b"
-
-// }
-// )
-// #let reg=regex(chiavi.join("|"))
-// #show reg:name=>{
-//   name+sub(strong("G"))
-// }
-
-
 
 
 #set text(lang: "it")
@@ -35,12 +24,20 @@
 }
 
 
-
-
-
-
-
+// 
+//Info del documento 
+// 
 #let doc = "Piano di progetto"
+
+#let currentVersion=(
+  major:0,
+  minor:1,
+  patch:0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
+
 
 #frontPageSenzaData(doc)
 

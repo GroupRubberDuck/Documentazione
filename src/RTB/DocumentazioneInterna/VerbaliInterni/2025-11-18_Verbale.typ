@@ -14,14 +14,33 @@
 #set heading(numbering: "1.1)")
 #show heading.where(level: 1): set text(size: 18pt)
 #show heading.where(level: 2): set text(size: 16pt)
+
+
+// 
+//Info del documento 
+// 
+#let currentVersion=(
+  major:1,
+  minor:0,
+  patch:0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
+
+
 #let giornoRiunione = datetime(year: 2025, month: 11, day: 18)
 #let doctype="Verbale interno"
+
+
+
+
 #frontPage([Verbale riunione], giornoRiunione)
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
     stato: "Approvato",
-    versione: "1.0.0",
+    versione: versionNumber,
     autori: ("Davide Lorenzon",),
     verificatori: ("Aldo Bettega",),
     uso: "Interno",
