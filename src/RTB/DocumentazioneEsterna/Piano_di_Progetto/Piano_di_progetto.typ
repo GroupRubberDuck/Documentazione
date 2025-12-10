@@ -393,7 +393,7 @@ In fase di candidatura, è stato approvato il seguente preventivo dei costi.
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di breve periodo", documentType: doc)[
   == Pianificazione di breve periodo
-  #include "content/04-pianificazione_breve_periodo/index.typ"
+  #include "content/05-pianificazione_breve_periodo/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[

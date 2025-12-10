@@ -50,7 +50,13 @@ main() {
     echo -e "${GREEN}=== Typst Compiler ===${NC}"
     echo "Sorgente: $SRC_DIR"
     echo "Output:   $OUTPUT_DIR"
-
+# --- INIZIO MODIFICA: Pulizia ---
+    if [ -d "$OUTPUT_DIR" ]; then
+        echo -e "${YELLOW}🗑️  Pulisco la directory di output...${NC}"
+        rm -rf "$OUTPUT_DIR"
+    fi
+    mkdir -p "$OUTPUT_DIR"
+    # --- FINE MODIFICA ---
     if ! command -v typst &> /dev/null; then
         echo -e "${RED}Errore: typst non è installato o non è nel PATH${NC}"
         exit 1
