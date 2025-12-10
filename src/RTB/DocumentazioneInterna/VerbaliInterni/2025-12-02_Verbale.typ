@@ -32,7 +32,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In Verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Filippo Guerra",),
     verificatori: ("Aldo Bettega",),
@@ -46,6 +46,7 @@
   #let modifiche=(
 
     ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[Aldo Bettega],[Stesura del verbale]),
+    ([1.0.0],[#giornoRiunione.display()],[Filippo Guerra],[Filippo Guerra],[Approvazione]),
 
       )
 
