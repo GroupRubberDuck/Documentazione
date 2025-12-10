@@ -6,6 +6,22 @@ Questa bozza vuole essere uno studio iniziale del documento dando un occhio alle
 Non è stato volutamente impaginato per mettere in risalto i contenuti e lasciare la struttura flessibile in attesa di miglioramenti. La forma verrà ad una forma più matura di questo documento.
 */
 
+#let currentVersion1="-v0.0.1"
+#let currentVersion2=(
+  major:0,
+  minor:1,
+  patch:0,
+)
+
+#let versionNumber="-v"+currentVersion2.values().map(n=>{str(n)}).join(".")
+// #let versionNumber=currentVersion1
+#metadata(versionNumber)<versionNumber>
+
+
+
+
+
+
 = Introduzione
 
 == Scopo del documento

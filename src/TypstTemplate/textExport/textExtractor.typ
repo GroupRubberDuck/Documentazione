@@ -1,4 +1,4 @@
-#let extract_text(elem) = {
+#let extract_text_smart(elem) = {
   if elem == none {
     ""
   } else if type(elem) == str {
@@ -17,7 +17,7 @@
 
   // Liste (Puntate, Numerate, Termini): Aggiungiamo un a capo dopo ogni elemento
   } else if elem.func() == list.item or elem.func() == enum.item or elem.func() == terms.item {
-    extract_text_smart(elem.body) + "\n"
+    if elem.has("body") {extract_text_smart(elem.body) + "\n"}
 
   // === 3. Gestione Testo e Spazi standard ===
   } else if elem.has("text") {
@@ -43,7 +43,7 @@
 
 // Funzione di visualizzazione
 #let show_smart_text(content) = {
-  let raw_string = extract_text(content)
+  let raw_string = extract_text_smart(content)
   // Pulizia: Rimuovi spazi multipli ma mantieni i newline
   let clean_string = raw_string.replace(regex(" +"), " ").trim()
   
@@ -54,3 +54,5 @@
     #raw(clean_string, block: true)
   ]
 }
+
+// #show_smart_text(include("/src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.0.typ"))

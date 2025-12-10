@@ -22,7 +22,7 @@
     ]),
     numbering: numbering,
   )
-
+set text(lang: "IT")
 show ref: riferimento=>{
   underline(strong(riferimento))
 }
