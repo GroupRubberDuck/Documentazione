@@ -25,6 +25,7 @@ jobs:
       - name: Run Typst build script
         run: |
           chmod +x scripts/updateTypstFiles.sh
+          chmod +x scripts/genWebsite.sh
           ./scripts/updateTypstFiles.sh
           ./scripts/genWebsite.sh
 
