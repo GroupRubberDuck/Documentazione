@@ -9,14 +9,7 @@ All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruol
 Nel contesto del corso di Ingegneria del Software, tutti i membri del team devono ricoprire almeno una volta ciascun ruolo definito.
 
 La tabella sottostante riassume in maniera chiara i compiti associati a ciascun ruolo.
-=== Rendicontazione delle ore <Rendicontazione_delle_ore> 
-Le ore produttive catalogate, per ruolo e persona, sono tracciate nel documento "Piano di progetto".
-
-Sono tracciate le ore produttive previste ed effettive;
-
-Al fine di semplificare eventuali analisi, le ore produttive sono rendicontate anche tramite foglio di calcolo google sheet. 
-
-
+ 
 // -------- TIMELINE VISIVA --------
 #align(center)[
   *Fasi di progetto*\
@@ -44,7 +37,10 @@ Al fine di semplificare eventuali analisi, le ore produttive sono rendicontate a
 }
 
 ]
+=== Rendicontazione delle ore <Rendicontazione_delle_ore> 
+La pianificazione e il monitoraggio delle ore produttive del progetto sono gestiti tramite il documento "Piano di progetto", in cui vengono registrate sia le ore previste sia quelle effettivamente svolte per ciascun ruolo e membro del gruppo.
 
+ La ripartizione oraria è accompagnata dai relativi costi, consentendo una visione completa delle risorse economiche impiegate. Per facilitare l'analisi e garantire trasparenza durante l'eventuale rotazione dei ruoli, il gruppo utilizza inoltre un foglio di calcolo Google Sheet in cui ogni componente può rendicontare e consultare le proprie ore, sia pianificate sia effettive.  Questa organizzazione strutturata favorisce una gestione chiara, trasparente e collaborativa della distribuzione dei ruoli all'interno del team.
 == Assegnazione Ruolo-Documento
 La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
 L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
@@ -83,6 +79,7 @@ Ruoli:
 }
 
 == Definition of Done (DoD)
+
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
 
@@ -118,6 +115,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
   
 La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
 
+#link("https://www.atlassian.com/agile/project-management/definition-of-done")[Definition-of-done-Guide]
 == Issue tracking System – Guida Operativa
 L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
 Il sistema è accessibile a tutti i membri del gruppo attraverso la repository GitHub, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
@@ -152,7 +150,10 @@ Permette di distinguere la natura delle attività:
 - Palestra -> ore formative non rendicontate, attività di ricerca o di studio 
 - Produttivo -> ore rendicontate con risultati concreti, come la scrittura di documenti da presentare  
 - Bug -> errori o malfunzionamenti nel codice;
-- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze; ]
+- Correzione -> interventi su documenti o materiali già prodotti per migliorarli, aggiornarli o correggere inesattezze; 
+
+#link("https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization")[Tracking-your-work-with-issue-Guide]
+ ]
 + *Priorità : Bassa, Media, Alta * \ #[
 Questa suddivisione ha due scopi:
 - ragionare sull'importanza della issue che si sta scrivendo
@@ -170,9 +171,9 @@ Questa suddivisione ha due scopi:
 
 
 
-=== Versionamento
+== Versionamento
 In questa sezione viene spiegata la logica di versionamento dei documenti.
-==== Codice di versione
+=== Codice di versione
 
 Ogni modifica apportata a un documento genera automaticamente una nuova versione, identificata tramite un codice nel formato:
 

@@ -227,7 +227,8 @@ Il documento comprende:
 
   
 #align(left)[
-Il Piano di Progetto definisce la pianificazione complessiva del lavoro, descrivendo l’approccio plan–driven adottato dal gruppo. Documenta obiettivi, risorse, ruoli, tempistiche e rischi, fornendo una visione strutturata dell’organizzazione del progetto. Ha inoltre lo scopo di monitorare l’avanzamento attraverso revisioni periodiche e rendicontazioni per sprint.
+Il Piano di Progetto definisce la pianificazione complessiva delle attività, descrivendo l’approccio plan–driven adottato dal gruppo. Il documento fornisce una visione strtturata dell'organizzazione del lavoro, includendo la definizione degli obiettivi, la gestione delle risorse, l'assegnazione dei ruoli, la pianificazione temporale e l'analisi dei rischi.
+La sua funzione principale è quella di garantire un monitoraggio costante dell'avanzamento del progetto attraverso revisioni periodiche e rendicontazioni relative ai vari sprint. Tale monitoraggio consente al gruppo di valutare l'efficienza del workflow, di individuare tempestivamente criticità e di adattare la pianificazione quando necessario.
 
 *Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
 
@@ -307,9 +308,9 @@ I verbali sono suddivisi in due categorie principali :
 #pad(left: 1em)[
 - Verbali interni -> documentano riflessioni e confronti avvenuti esclusivamente tra i membri del gruppo.
 - Verbali esterni -> vengono redatti in corrispondenza di riunioni o confronti con l'azienda di riferimento (Bluewind).
-
-Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
 ]
+Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
+
 
 ===== Procedure e responsabilità
 Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
@@ -385,20 +386,19 @@ Composto principalmente da:
 
   
 #align(left)[
-Le Norme di Progetto hanno l’obiettivo di definire regole, convenzioni e standard condivisi all’interno del gruppo, al fine di garantire coerenza, qualità e uniformità nella produzione di documenti, codice e deliverable.  
-Esse servono a stabilire procedure comuni per redazione, revisione, versionamento, gestione dei file e comunicazione interna, riducendo il rischio di errori, ambiguità o incongruenze tra i membri del team.
+Le Norme di Progetto definiscono l'insieme di regole, convenzioni e standard adottati dal gruppo al fine di garantire coerenza, qualità e uniformità nella peoduzione della documentazione, del codice e dei deliverable. Il documento stabilisce inoltre procedure condivise per redazione, revisione, versionamento, gestione dei file e communicazione interne, riducendo il rischio di errori, fraintendimenti o incoerenze operative tra i membri del team.
 
 *Destinatari* : Tutti i membri del gruppo di progetto
 
 ===== Struttura principale  
 Il documento delle Norme di Progetto è organizzato in sezioni facilmente consultabili riassunte in:  
 #pad(left: 1em)[
-- *Convezioni sui documenti*: formato, intestazioni, footer, numerazione pagine, stili e template Typst da utilizzare.  
-- *Processo di redazione e revisione*: ruoli coinvolti, responsabilità, iter di approvazione, gestione modifiche e versionamento.  
-- *Standard di codifica e naming*: linee guida per nomi di file, classi, funzioni e repository, se applicabile al progetto software.  
-- *Procedure operative comuni*: modalità di collaborazione, uso di strumenti (GitHub, Issue Tracking, AI tools), backup e archiviazione.  
-- *Tracciabilità e registri*: indicazioni per mantenere il Registro delle Modifiche aggiornato e verificabile.  
-- *Definizione della qualità minima*: criteri generali per accettazione dei documenti e dei deliverable.
+- *Convezioni sui documenti*: regole relative al formato, all'impostazione grafica, alle intestazioni e ai footer, alla numerazione delle pagine, nonché agli stili e ai template Typst adottati dal gruppo.  
+- *Processo di redazione e revisione*: descrizione dei ruoli coinvolti, della responsabilità, dell'iter di approvazione dei documenti, della gestione delle modifiche e del versionamento.  
+- *Standard di codifica e naming*: linee guida per la definizione dei nomi di file, classi, funzioni e repository, qualora pertinenti allo sviluppo software.
+- *Procedure operative comuni*: indicazioni sulle modalità di collaborazione all'interno del team, sull'uso degli strumenti (GitHub, Issue Tracking, AI tools), sulle politiche di backup e sulle modalità di archiviazione.  
+- *Tracciabilità e registri*: norme per mantenere aggiornato e verificabile il Registro delle Modifiche.  
+- *Definizione della qualità minima*: criteri oggettivi necessari per l'accettazione dei documenti e dei deliverable, utilizzati come riferimento durante verifiche e revisioni.
 ]
 
 
@@ -414,12 +414,12 @@ Il documento delle Norme di Progetto è organizzato in sezioni facilmente consul
   #box(width: 100%,stroke:1pt,inset: 1em)[
     
 ==== Glossario
-Il glossario ha l'obiettivo di disambiguare le comunicazioni con l'esterno e tra i membri del gruppo.
+Il glossario ha l'obiettivo di garantire chiarezza e uniformità nelle comunicazioni, sia verso l'esterno sia all'interno del gruppo di lavoro.
+Raccoglie i termini ritenuti non banali, le abbreviazioni e gli acronimi utilizzati nei documenti di progetto, fornendone una definizione precisa per evitare ambiguità interpretative.
 
-Contiene l'elenco dei termini ritenuti non banali, le abbreviazioni o acronimi, e le loro definizioni.
+Il documento è soggetto ad aggiornamento continuo, così da riflettere l'evoluzione del progetto e mantenere allineata la terminologia utilizzata dal gruppo. Oltre alla versione inclusa nei documenti ufficiali, il team ha definito anche un glossario interno accessibile tramite il website ufficiale della documentazione, che funge da riferimento centralizzato e sempre aggiornato. 
 
-il documento è sottoposto ad aggiornamento continuo.
-
+Per favorire la tracciabilità e semplificare la consultazione, nei singoli documenti tutte le parole presenti nel glossario sono evidenziate. Tale evidenziazione permette agli utenti di riconoscere immediatamente i termini che dispongono di una definizione formale, facilitando il rimando al glossario in caso di dubbi o potenziali ambiguità. 
   
 #align(left)[
 

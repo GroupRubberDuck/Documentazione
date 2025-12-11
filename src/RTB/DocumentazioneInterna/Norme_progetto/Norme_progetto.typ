@@ -56,7 +56,7 @@
   ([0.6.1],[2025-12-02],[Davide Lorenzon],[Davide Lorenzon],[Apportate modifiche di ordine nella sottosezione documentazione]),
   ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
   ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 3.1]),  
-  ([0.8.1],[2025-12-10],[Davide Lorenzon],[-],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
+  ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
 
 
   
@@ -72,7 +72,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
 #include "content/01-introduzione/introduzione.typ"
-// da definire bene meglio una volta che effettivamente viene usato per bene
+
   
 
 
@@ -88,9 +88,7 @@ Compliance Verification di BlueWind]
 - #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
 == Riferimenti informativi
 
-- #link("https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization") 
-- #link("https://www.agileway.it/definition-of-done-dod-cose-cosa-serve/")
-- #link("https://www.atlassian.com/agile/project-management/definition-of-done")
+
 
 
 
@@ -142,7 +140,7 @@ Di questi documenti interessa data e versione, dunque saranno nel formato: \
 YYYY-MM-DD_Verbale-vX.Y.Z.typ
 
 == Scrittura dei commit
-#link("https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[fonte interessante] \ // cambia il link
+#link("https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49")[The-art-of-writing-meaningful-git-commit-messages-fonte] \ // cambia il link
 I commit dovrebbero avere un tipo ed una descrizione: il tipo indica qual è l'obbiettivo del commit, mentre la descrizione aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettua. \ 
 Le regole generali sono:
 - iniziare il commit con tipo seguito da ":" .
