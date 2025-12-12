@@ -331,4 +331,16 @@ I TODO sorti da questa riunione sono i seguenti:
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
 La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicazione interna tra i membri del gruppo non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra".
+
 ]
+
+#insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
+= Approvazione esterna 
+La presente sezione documenta la conferma e la validazione del verbale da parte del proponente esterno.
+Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
+
+Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
+#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]
+
+]
+

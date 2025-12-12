@@ -264,3 +264,14 @@ I TODO sorti da questa riunione sono i seguenti:
 
 Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolto successivamente e ad opera di un singolo membro del gruppo.
 ]
+
+#insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
+= Approvazione esterna 
+La presente sezione documenta la conferma e la validazione del verbale da parte del proponente esterno.
+Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
+
+Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
+
+#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]
+
+]
