@@ -31,8 +31,8 @@
 
 #let currentVersion=(
   major:0,
-  minor:2,
-  patch:1,
+  minor:3,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -45,7 +45,7 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Davide Lorenzon",),
+    autori: ("Davide Lorenzon, Felician Mario Necsulescu",),
     verificatori: ("Aldo Bettega",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -57,10 +57,11 @@
 
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
-    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale]),    
-    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo]),    
-    ([0.2.1], [2025-12-10], [Davide Lorenzon], [-], [Modificata la struttura del documento, organizzazione de progetto incluso nell'introduzione@orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
+    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale.]),    
+    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo.]),    
+    ([0.2.1], [2025-12-10], [Davide Lorenzon], [-], [Modificata la struttura del documento, organizzazione de progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
     Pianificazione di breve e lungo periodo promosse a sezioni.]),    
+    ([0.3.0], [2025-12-12], [Felician Mario Necsulescu], [], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -262,7 +263,7 @@ In fase di candidatura, è stato approvato il seguente preventivo dei costi.
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Analisi dei rischi", documentType: doc)[
-  = Analisi dei rischi
+  = Analisi dei rischi <Analisi-dei-rischi>
 #include "content/03-analisi_rischi/index.typ"
 ]
 

@@ -15,8 +15,10 @@
 
 Risulta fondamentale applicare in modo costante e continuativo le fasi del processo di analisi dei rischi per l'intero ciclo di vita del progetto, perché l'avanzamento delle attività può generare  nuove problematiche che richiedono soluzioni tempestive e adeguate.
 
-
+#pagebreak()
   == Identificazione dei rischi
   #include "01-identificazione_rischi.typ"
   == Monitoraggio dei rischi
-  Modalità di monitoraggio e aggiornamento dei rischi, per garantire che l'analisi dei rischi sia efficacie è necessario un aggiornamento periodico, ovvero un ritorno alla fase di analisi.
+  Il processo di gestione dei rischi richiede un monitoraggio continuo e un aggiornamento periodico delle informazioni, al fine di garantire che le misure adottate rimangano efficaci e che eventuali cambiamenti del contesto vengano tempestivamente considerati.
+  Inoltre, i rischi del progetto devono essere riesaminati regolarmente, verificando l’efficacia delle azioni di risposta e identificando nuovi rischi emergenti.
+  Per assicurare l’efficacia dell’analisi dei rischi, il progetto prevede quindi un riesame periodico, con un ritorno strutturato alle fasi di identificazione e valutazione, e l’aggiornamento del registro dei rischi.
