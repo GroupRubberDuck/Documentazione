@@ -47,7 +47,7 @@
 
   #let modifiche=(
 
-    ([0.0.1],[#giornoRiunione.display()],[],[],[]),
+    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[],[Scrittura verbale interno.]),
 
       )
 
@@ -74,7 +74,7 @@
 - *Luogo*: Riunione su Discord
 - *Ora inizio*: 15:00;
 - *Ora fine*: 18:50
-- *Scriba*: 
+- *Scriba*: Filippo Guerra
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
 - Filippo Guerra
@@ -105,7 +105,13 @@
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
+  La prima parte della riunione è stata dedicata all'attività di retrospettiva.
 
+  Durante la riunione è emersa la necessità di completare l’analisi degli ACM e degli AUM. È stato chiarito che gli ACM precedono gli AUM e che è importante che tutti i membri del gruppo svolgano l’analisi dei documenti assegnati, producendo un riassunto scritto utile anche per consultazioni future. Una delle parti più onerose dell’attività è risultata essere la traduzione e comprensione dei requisiti.
+
+  Si è concordato sulla possibilità di suddividere il materiale (circa 27 pagine) tra i membri del gruppo, assegnando un TODO per ciascuna persona
+
+  Infine sono stati valutati i task da svolgere nel successivo periodo di avanzamento e sono stati assegnati i ruoli per lo sprint successivo.
 ]
 
 
@@ -118,13 +124,28 @@
 #let decisioni=(
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [],
-  [],
+  [Suddividere l’analisi degli ACM e degli AUM tra tutti i membri del gruppo.],
+  [Ridurre il carico di lavoro individuale e garantire una copertura completa dei documenti entro le scadenze.],
   []
 ),
-
-
-
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Assegnare un to-do specifico a ciascun membro del gruppo.],
+  [Migliorare l’organizzazione del lavoro e la tracciabilità delle attività svolte.],
+  []
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Procedere con l’approvazione dei verbali e dei documenti ancora contrassegnati come “in verifica”.],
+  [Consentire l’avanzamento dello stato dei documenti e permettere le successive operazioni di merge.],
+  []
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Effettuare il merge delle Norme di Progetto nella giornata successiva alla riunione.],
+  [Allineare il repository alla versione approvata del documento e renderlo disponibile a tutto il gruppo.],
+  []
+),
 )
 
 #utilityTable(decisioni,header:("Codice","Descrizione","Motivazioni","Ref."),columns:(auto,2fr,2fr,auto))
