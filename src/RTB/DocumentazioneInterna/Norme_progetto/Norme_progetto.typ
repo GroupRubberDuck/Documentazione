@@ -21,7 +21,7 @@
 #let currentVersion=(
   major:0,
   minor:8,
-  patch:1,
+  patch:2,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -57,7 +57,7 @@
   ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
   ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 3.1]),  
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
-
+  ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
 
   
 )
@@ -78,32 +78,16 @@
 
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Riferimenti", documentType: doc)[
-  = Riferimenti
-== Riferimenti normativi
-  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
-Compliance Verification di BlueWind]
-- #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
-== Riferimenti informativi
-
-
-
-
-
-
-]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
   = Processi Primari
-  #include "content/03-processi_primari/index.typ"
+  #include "content/02-processi_primari/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
 = Processi di Supporto
 
-#include "content/04-processi_supporto/index.typ"
+#include "content/03-processi_supporto/index.typ"
 
 
 ]
@@ -114,7 +98,7 @@ Compliance Verification di BlueWind]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
 = Processi Organizzativi
-#include "content/05-processi_organizzativi/index.typ"
+#include "content/04-processi_organizzativi/index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
 = Metriche e standard per la Qualità

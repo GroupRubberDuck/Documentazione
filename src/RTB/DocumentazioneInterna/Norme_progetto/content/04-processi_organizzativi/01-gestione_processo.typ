@@ -1,8 +1,59 @@
 #import "@preview/cheq:0.3.0": checklist
+#import "/src/config.typ":he
+#set heading(numbering: "1.1)")
+#he(body:"Scopo", level:3)
+La *gestione dei processi* ha l'obiettivo di individuare le attività, i compiti da svolgere e i ruoli ai quali questi saranno assegnati.
+
+Stabilisce come un processo vada gestito e monitorato.
+
+Nonché permettere una comunicazione interna ed esterna efficacie.
 
 
-== Gestione del Processo
-=== Ruoli di Progetto
+
+#he(body:"Attività previste", level:3)
+Lo standard #link("https://www.iso.org/standard/63712.html")[ISO ISO/IEC/IEEE 12207:1997] individua le seguenti attività.
+
+#he(body:"Inizializzazione", level:4)
+#upper("è") la prima fase del processo. \
+Vanno stabiliti i requisiti di ogni processo che sta venendo analizzato.
+Una volta stabiliti i requisiti, il responsabile ne valuta la fattibilità in base alle risorse disponibili.
+
+#he(body:"Pianificazione", level:4)
+Il responsabile deve pianificare le attività del processo.
+
+I piani devono contenere la descrizione delle attività e dei task associati, oltre a descrivere il prodotto software.
+
+I piani devono contenere le seguenti informazioni:
+- La tabella di marcia per il completamento dei task;
+- Stima dello sforzo;
+- Risorse necessarie;
+- Assegnazione del compito;
+- Assegnazione delle responsabilità, maggiori dettagli alla @ruoli-di-progetto
+- Quantificazione dei rischi;
+- Metriche di controllo della qualità;
+- Costi associati al processo di esecuzione;
+- Fornitura di ambiente e infrastrutture.
+
+
+
+#he(body:"Esecuzione e Controllo", level:4)
+Il responsabile avvia le attività di processo, in modo congruo a quanto stabilito nella fase di  pianificazione, e le monitora.
+
+- #[*Internamente* \ Controlla il progresso delle attività e ne tiene traccia. \
+   In caso un membro del gruppo incontri problemi che rischino di rallentare le attività deve riferirlo al responsabile.]
+
+- #[*Esternamente* \
+   Gestisce le comunicazioni con la *proponente* e il *committente*.]
+#he(body:"Revisione e valutazione", level:4)
+Al completamento dell'attività il verificatore si assicura che sia conforme alle metriche di qualità stabilite.
+#he(body:"Chiusura", level:4)
+Un'attività si ritiene completa dopo aver superato l'attività di verifica.
+Si veda la @definition-of-done per maggiori dettagli.
+
+La chiusura delle issue legate alle attività avviene tramite merge sul main a intervalli prefissati.
+
+
+#he(body:"Ruoli di Progetto",level:3)
 La seguente sezione descrive le fasi della progettazione software.
 All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruolo ha compiti specifici e interviene in momenti diversi del progetto.
 
@@ -41,7 +92,9 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 La pianificazione e il monitoraggio delle ore produttive del progetto sono gestiti tramite il documento "Piano di progetto", in cui vengono registrate sia le ore previste sia quelle effettivamente svolte per ciascun ruolo e membro del gruppo.
 
  La ripartizione oraria è accompagnata dai relativi costi, consentendo una visione completa delle risorse economiche impiegate. Per facilitare l'analisi e garantire trasparenza durante l'eventuale rotazione dei ruoli, il gruppo utilizza inoltre un foglio di calcolo Google Sheet in cui ogni componente può rendicontare e consultare le proprie ore, sia pianificate sia effettive.  Questa organizzazione strutturata favorisce una gestione chiara, trasparente e collaborativa della distribuzione dei ruoli all'interno del team.
-== Assegnazione Ruolo-Documento
+
+
+=== Assegnazione Ruolo-Documento
 La seguente sezione chiarisce i documenti associati a ciascun ruolo.\
 L’assegnazione viene rappresentata tramite una *legenda* e una *tabella riassuntiva*. \
 
@@ -78,7 +131,7 @@ Ruoli:
   )
 }
 
-== Definition of Done (DoD)
+#he(body:"Definition of Done",level:3)
 
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
@@ -116,12 +169,12 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
 
 #link("https://www.atlassian.com/agile/project-management/definition-of-done")[Definition-of-done-Guide]
-== Issue tracking System – Guida Operativa
+=== Issue tracking System – Guida Operativa
 L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
 Il sistema è accessibile a tutti i membri del gruppo attraverso la repository GitHub, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.
 
 // stati dell'issue -> quando si avrà immagine del workflow
-=== Creazione di una nuova issue
+==== Creazione di una nuova issue
 A seguito di verbali interni o esterni, il gruppo decide le attività su cui concentrarsi. 
 L'*amministratore* ha il compito di creare le issue nel sistema utilizzando il *template condiviso*.
 
@@ -162,7 +215,7 @@ Questa suddivisione ha due scopi:
 + *Dimensione : ExtraSmall, Small, Medium, Large * \ Serve per stimare la mole di lavoro necessaria per portare a termine quella issue.
 + *Data di scadenza*\ Normalmente coincide con la fine dello sprint di riferimento. 
 
-=== Flusso operativo
+==== Flusso operativo
 
 + L’amministratore crea una nuova issue tramite il template condiviso.
 + Si assegnano autore/i e verificatore/i.
@@ -171,9 +224,9 @@ Questa suddivisione ha due scopi:
 
 
 
-== Versionamento
+=== Versionamento
 In questa sezione viene spiegata la logica di versionamento dei documenti.
-=== Codice di versione
+==== Codice di versione
 
 Ogni modifica apportata a un documento genera automaticamente una nuova versione, identificata tramite un codice nel formato:
 
@@ -203,7 +256,7 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
   L’incremento di Z rappresenta cambiamenti minori.
 ]
 
-==== Regole di incremento
+===== Regole di incremento
 
 #pad(left: 1em)[
 - Ogni approvazione genera un incremento della cifra di versione stabile.  

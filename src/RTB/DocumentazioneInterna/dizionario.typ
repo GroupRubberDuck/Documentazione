@@ -162,9 +162,12 @@ LTE:[
   - testarne l’efficacia.
 
 Questo approccio garantisce che ogni dispositivo radio connesso a Internet sia valutato in modo sistematico e coerente, riducendo i rischi di vulnerabilità.
-]
+],
   
-  
+equipment:[
+  Indica l’apparecchiatura radio connessa a Internet che è oggetto dei requisiti di sicurezza.
+  Ad esempio un router wifi domestico.
+],
   
 
 )

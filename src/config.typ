@@ -41,3 +41,15 @@
   FELIX:"Felician Mario Necsulescu",
   FILIPPO:"Filippo Guerra"
 )
+
+
+#let slugify(text) = {
+  lower(text).replace(" ", "-")
+}
+
+// Funzione wrapper per creare header con label automatica
+#let he(body:text, level: 1) = {
+  let tag = slugify((body))
+  // Crea l'heading e gli attacca la label dinamica
+  [#heading(level: level, body) #label(tag)]
+}
