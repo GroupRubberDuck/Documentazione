@@ -62,34 +62,21 @@ O = organizzativo
     tipo: "Rischio di progetto + Rischio di prodotto",
     descrizione: [L’utilizzo di tecnologie nuove o poco conosciute può rallentare significativamente il progetto, poiché richiede tempo per lo studio e la sperimentazione.],
     prevenzione: [Per prevenirlo si prevedono momenti iniziali di studio e la creazione di piccoli prototipi per acquisire familiarità. Il team può inoltre condividere materiali o esperienze per velocizzare l’apprendimento.],
-    mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorre al supporto del team di Bluewind o si scelgono soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
+    mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorre al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
     frequenza: "Alta",
     pericolo: "Alta",
   )
 
   #tabellaRischiTecnologici(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Problemi critici nel prodotto finale",
-    tipo: "Rischio di prodotto",
-    descrizione: [Rischio legato a integrazioni difficili e bug critici],
-    prevenzione: [Test frequenti e integrazioni progressive aiutano a intercettare i problemi prima che diventino critici. È utile adottare una logica di sviluppo incrementale, che consente di individuare facilmente dove nasce un malfunzionamento. ],
-    mitigazione: [Quando emerge un problema grave, si procede con sessioni di debug collaborativo e, se necessario, si torna a una versione stabile precedente. Questo permette di lavorare in un ambiente più sicuro e di risolvere i difetti senza compromettere il resto del progetto. L’obiettivo è contenere il danno e riprendere lo sviluppo rapidamente.],
-    frequenza: "Media",
-    pericolo: "Alto",
-  )
-
- /* #tabellaRischiTecnologici(
-    codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Rischio tecnologico legato a errori nel codice",
-    tipo: "",
-    descrizione: [],
-    prevenzione: [],
-    mitigazione: [],
-    frequenza: "",
-    pericolo: "",
-  )*/
-
-
+    tipo: "Rischio di prodotto + Rischio di progetto",
+    descrizione: [Rischio di malfunzionamenti o comportamenti inattesi dovuti a errori nel codice, come bug, logica errata o implementazioni incomplete. Questi problemi possono compromettere la funzionalità del software, rallentare lo sviluppo e aumentare i costi di correzione.],
+    prevenzione: [Applicare pratiche di sviluppo sicuro e standardizzate, come code review, pair programming, test automatici e analisi statica del codice. Seguire linee guida per la scrittura di codice pulito, modulare e manutenibile. ],
+    mitigazione: [In caso di errori critici, individuare rapidamente la causa tramite debug collaborativo e strumenti di tracciamento dei bug. Ripristinare versioni stabili se necessario e pianificare correzioni incrementalmente per ridurre l'impatto sul progetto complessivo.],
+    frequenza: "Media",
+    pericolo: "Alta",
+  )
 
   ==== Rischi personali
   
@@ -116,11 +103,11 @@ O = organizzativo
     #tabellaRischiPersonali(
 
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Rischio individuale dovuto ad altre attività universitarie",
+    nome: "Rischio individuale dovuto ad altre attività o impegni esterni",
     tipo: "Rischio di progetto",
-    descrizione: [Rischio legato alla difficoltà a seguire contemporaneamente lezioni, progetti e studio.],
-    prevenzione: [È utile pianificare in anticipo i periodi accademici più impegnativi, ad esempio la sessione d'esami invernale, considerando dunque possibili riduzioni temporanee della disponibilità. In questo modo si evitano sovrapposizioni troppo pesanti.],
-    mitigazione: [Se un membro è in difficoltà, si può intervenire ridistribuendo temporaneamente alcuni compiti o posticipando scadenze interne meno urgenti. Anche un supporto reciproco tra membri può risultare molto utile.],
+    descrizione: [Rischio legato alla difficoltà di gestire contemporaneamente il progetto e altri impegni personali o lavorativi che possono ridurre temporaneamente la disponibilità dei membri del team.],
+    prevenzione: [È importante pianificare con anticipo eventuali periodi particolarmente impegnativi – come sovraccarichi lavorativi, scadenze esterne o impegni personali – per adeguare la distribuzione delle attività e prevenire sovrapposizioni critiche.],
+    mitigazione: [Se un membro del team incontra difficoltà nel rispettare le scadenze a causa di impegni esterni, è possibile ridistribuire temporaneamente alcune attività, rivedere le priorità interne o fornire supporto collaborativo per evitare rallentamenti significativi nello sviluppo del progetto.],
     frequenza: "Media",
     pericolo: "Elevata",
   )
@@ -138,9 +125,9 @@ O = organizzativo
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: " Pianificazione iniziale errata o ottimistica",
     tipo: "Rischio di progetto",
-    descrizione: [Rischio organizzativo legato all'inesperienza nella stima delle attività necessarie e/o sottovalutazione della complessità effettiva del progetto.],
-    prevenzione: [Per prevenire questo rischio è importante effettuare una scomposizione delle attività in task più piccoli e stimabili con maggiore precisione, inoltre verificare più volte la validità delle stime attraverso confronti interni. Un’analisi approfondita all'inizio di ogni sprint aiuta a riconoscere eventuali punti critici prima che emergano. È inoltre utile mantenere un margine di sicurezza nelle tempistiche."],
-    mitigazione: [Se emergono problemi legati a stime inadeguate, il piano viene riesaminato e ricalibrato, distribuendo nuovamente le responsabilità e ridefinendo le priorità. Le attività più critiche vengono gestite con maggiore attenzione e si può prevedere l’aggiunta di tempo extra.],
+    descrizione: [Rischio organizzativo legato all'inesperienza nella stima delle attività o alla sottovalutazione della complessità reale del progetto, con conseguente rischio di pianificazioni irrealistiche e difficoltà nel rispettare scadenze e carichi di lavoro.],
+    prevenzione: [Per prevenire questo rischio è utile scomporre il lavoro in task più piccoli e facilmente stimabili, verificare periodicamente la correttezza delle stime tramite confronti interni e condurre un’analisi approfondita all'inizio di ogni sprint per individuare tempestivamente possibili criticità. Inoltre, mantenere un adeguato margine di sicurezza nelle tempistiche consente di gestire eventuali imprevisti senza compromettere il piano complessivo.],
+    mitigazione: [Se emergono problemi dovuti a stime non accurate, il piano viene riesaminato e ricalibrato, ridefinendo priorità, ridistribuendo responsabilità e riorganizzando le attività critiche. All’occorrenza, può essere previsto tempo aggiuntivo per garantire la continuità e la sostenibilità del progetto.],
     frequenza: "Alta",
     pericolo: "Media",
   )
@@ -149,9 +136,9 @@ O = organizzativo
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Sovrastima delle attività",
     tipo: "Rischio di progetto",
-    descrizione: [Rischio legato alla sovrastima della complessità di un o più task e la conseguente inattività del team o di un suo membro. ],
-    prevenzione: [Per prevenirlo è utile confrontare le stime con esperienze precedenti o con la percezione di più membri del team. Un sistema di revisione collettiva delle valutazioni aiuta a ridurre deviazioni significative. Inoltre, aggiornare le stime man mano che si acquisiscono nuove informazioni favorisce una migliore allineamento temporale.],
-    mitigazione: [In caso di sovrastima, gli interessati segnalano l'avvenuto e si procede riorganizzando rapidamente il lavoro disponibile, assegnando loro nuove attività e mantenendo un flusso costante. Questo evita sprechi e periodi di inattività.],
+    descrizione: [Rischio legato alla sovrastima della complessità di uno o più task, con la conseguente possibilità che un membro del team rimanga inattivo o sottoutilizzato. ],
+    prevenzione: [Per prevenire questo rischio è utile confrontare le stime con esperienze passate, o consolidarle tramite il contributo di più membri del team. Un processo di revisione collettiva delle valutazioni aiuta a ridurre scostamenti significativi. Inoltre, aggiornare le stime man mano che emergono nuove informazioni consente un migliore allineamento temporale.],
+    mitigazione: [In caso di sovrastima, il team segnala tempestivamente la situazione e riorganizza il lavoro, assegnando nuove attività disponibili ai membri coinvolti per mantenere un flusso operativo costante ed evitare periodi di inattività.],
     frequenza: "Media",
     pericolo: "Bassa",
   )
@@ -159,57 +146,41 @@ O = organizzativo
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
     nome: "Mancanza di comunicazione e collaborazione",
     tipo: "Rischio di progetto",
-    descrizione: [Rischi legati a compiti non assegnati chiaramente portano a sovrapposizioni o a task non coperti.],
-    prevenzione: [È fondamentale stabilire momenti ricorrenti di confronto e utilizzare in modo rigoroso il canale di comunicazione scelto, ovvero Github. Una chiara definizione di come e dove condividere aggiornamenti riduce la possibilità di dispersione delle informazioni.],
-    mitigazione: [Quando si notano segnali di scarsa comunicazione, si organizzano rapidamente incontri di allineamento per ristabilire una visione comune. La documentazione viene aggiornata e resa facilmente accessibile per garantire trasparenza.],
+    descrizione: [Rischio legato a una comunicazione inefficace o alla mancata condivisione delle informazioni, che può portare a compiti non assegnati chiaramente, sovrapposizioni nel lavoro o task non coperti.],
+    prevenzione: [È fondamentale definire momenti ricorrenti di confronto e utilizzare in modo rigoroso il canale di comunicazione stabilito, ovvero GitHub. Una chiara struttura per la condivisione degli aggiornamenti riduce la dispersione delle informazioni e garantisce maggiore coordinamento tra i membri del team.],
+    mitigazione: [Quando emergono segnali di scarsa comunicazione, è utile organizzare tempestivamente incontri di allineamento per ristabilire una visione comune. La documentazione viene aggiornata e resa facilmente accessibile per favorire trasparenza e continuità operativa.],
     frequenza: "Media",
     pericolo: "Alta",
   )
 
-
-  /*#tabellaRischiOrganizzativi(
-    codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Scarsa definizione dei ruoli",
-    tipo: "",
-    descrizione: [Rischio legato a disordini, duplicazioni di file, conflitti Git o mancanza di tracciamento.],
-    prevenzione: [],
-    mitigazione: [],
-    frequenza: "",
-    pericolo: "",
-  )*/
-
-
   #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Strumenti di coordinamento usati in modo non efficace",
+    nome: "Utilizzo inefficace degli strumenti di coordinamento",
     tipo: "Rischio di progetto",
-    descrizione: [Strumenti come GitHub, Discord o Drive vengono usati in modo disordinato, si rischia confusione nei file, difficoltà nel tracciamento delle attività e conflitti nella gestione del codice. La mancanza di un metodo condiviso porta rapidamente a caos organizzativo.],
-    prevenzione: [Per evitarlo è essenziale definire linee guida d’uso e standard comuni, come convenzioni di naming e strutture chiare delle cartelle. La definizione di queste pratiche nel documento Norme di Progetto aiuta sicuramente a garantire che tutti usino gli strumenti correttamente. Il rispetto delle regole condivise favorisce un ambiente ordinato.],
-    mitigazione: [Se l’inefficienza si manifesta, si procede con una riorganizzazione dei repository e dei documenti, eliminando materiali duplicati o inutili. Eventuali membri in difficoltà vengono supportati per migliorare l’utilizzo degli strumenti. ],
+    descrizione: [Rischio legato a un uso disordinato o incoerente degli strumenti di coordinamento — come GitHub, Discord o Drive — che può generare confusione nei file, difficoltà nel tracciamento delle attività e conflitti nella gestione del codice. L’assenza di metodi condivisi favorisce rapidamente il caos organizzativo.],
+    prevenzione: [Per prevenire il rischio è essenziale stabilire linee guida e standard comuni per l’utilizzo degli strumenti, come convenzioni di naming e strutture chiare delle cartelle. Formalizzare queste pratiche nelle Norme di Progetto garantisce uniformità e ordine, favorendo un ambiente di lavoro strutturato e comprensibile per tutti.],
+    mitigazione: [Se emergono inefficienze, è utile procedere a una riorganizzazione dei repository e dei documenti, eliminando duplicati o materiali obsoleti. I membri che mostrano difficoltà vengono supportati tramite chiarimenti o formazione mirata, così da ristabilire un utilizzo corretto degli strumenti.],
     frequenza: "Bassa",
     pericolo: "Media",
   )
 
-/*
+
   #tabellaRischiOrganizzativi(
     codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Carenze di conoscenze nella gestione di progetti di questa portata",
+    nome: "Carenze nella governance di progetti complessi",
     tipo: "Rischio di progetto",
-    descrizione: [Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori a quelli affrontati in precedenza. Questa mancanza può influire sulla capacità di coordinare attività e gestire un'architettura non monolitica composta da componenti eterogenei.
+    descrizione: [Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori a quelli affrontati in precedenza.
+Tale carenza non riguarda singole attività operative, ma la capacità di governare il progetto nel suo insieme, inclusa la gestione delle dipendenze tra componenti, il coordinamento di un’architettura non monolitica e il mantenimento di una visione complessiva coerente.
     ],
-    prevenzione: [Introdurre momenti di formazione specifica sulla gestione di progetti complessi e sulle metodologie organizzative da adottare.
-    Studiare casi reali e best pratice per migliorare la capacità di pianificazione e coordinamento. Promuovere la condivisione interna della conoscenza tramite meeting periodici, retrospettive e documentazione condivisa.],
-    mitigazione: [Considerare che parte dell'impegno orario dovrà essere dedicato alla formazione tecnica individuale. Pianificare una possibile riorganizzazione delle attività, spostando quelle meno critiche ai periodi successivi qualora il supporto da parte del team non sia immediatamente disponibile. Valutare la disponibilità di Bluewind nel fornire supporto tecnico, mentoring o chiarimenti architetturali.
-    ],
+    prevenzione: [Per prevenire questo rischio è necessario introdurre momenti di formazione mirata sulla gestione di progetti complessi e sulle pratiche di governance adottate.
+    Lo studio di casi reali e best practices consente di sviluppare maggiore consapevolezza nella pianificazione e nel coordinamento di sistemi articolati.
+    È inoltre fondamentale promuovere la condivisione della visione architetturale tramite meeting di allineamento, retrospettive periodiche e documentazione strutturata.],
+    mitigazione: [Qualora emergano difficoltà legate alla gestione della complessità, parte dell’impegno del team verrà riallocata verso attività di approfondimento e consolidamento organizzativo.
+    Le attività meno critiche potranno essere posticipate per garantire la stabilità delle componenti principali.
+    Ove necessario, verrà valutato il supporto di Bluewind per attività di mentoring, revisione architetturale o chiarimenti metodologici, al fine di ridurre l’impatto sul progetto complessivo.],
     frequenza: "Alta",
     pericolo: "Alta",
-  )*/
+  )
 
 
-  // == Analisi dei rischi
-  //   Lista dei rischi ordinati per priorità, espressa in probabilità che accada e impatto sul progetto.
-  // == Prevenzione e gestione dei rischi
-  //   Strategie atte ad evitare, minimizzare o contenere i rischi
-  // 
-  // 
-  // 
+

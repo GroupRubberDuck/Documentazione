@@ -93,7 +93,7 @@
   width: 100%,
   inset: 8pt,
   outset: 8pt,
-  fill:rgb("#e1bee7") 
+  fill:rgb("#b0a0ca") 
 )[
   #align(center)[*#codice - #nome*]
 ]
@@ -106,7 +106,7 @@
       }
       #table(
         columns: (auto, 1fr),
-        fill: (_, y) => if calc.odd(y) {  rgb("#f3e5f5") },
+        fill: (_, y) => if calc.odd(y) {  rgb("#dcd1ec") },
       )[Tipo di rischio][#tipo][Descrizione][#descrizione][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
     ]
   ]
