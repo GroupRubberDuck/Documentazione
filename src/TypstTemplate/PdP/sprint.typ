@@ -32,7 +32,7 @@
 #let sprint(
   // test:duration,
   numeroSprint:content, 
-  depth:4,
+  depth:3,
   timeline:(inizio:datetime,finePrevista:datetime,fineEffettiva:datetime),
   TODO:content,
   rischiAttesi:content,

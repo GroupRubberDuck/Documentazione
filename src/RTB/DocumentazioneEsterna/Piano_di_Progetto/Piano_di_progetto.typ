@@ -31,7 +31,7 @@
 
 #let currentVersion=(
   major:0,
-  minor:3,
+  minor:4,
   patch:0,
 )
 //converte dizionario in stringa
@@ -45,7 +45,7 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Davide Lorenzon, Felician Mario Necsulescu",),
+    autori: ("Davide Lorenzon, Felician Mario Necsulescu, Ana Maria Draghici",),
     verificatori: ("Aldo Bettega, Ana Maria Draghici",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -57,11 +57,12 @@
 
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
-    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale.]),    
+    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale e redazione Sprint 1]),    
     ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo.]),    
-    ([0.2.1], [2025-12-10], [Davide Lorenzon], [-], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
+    ([0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
     Pianificazione di breve e lungo periodo promosse a sezioni.]),    
-    ([0.3.0], [2025-12-12], [Felician Mario Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
+    ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
+    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [-], [Aggiunta @Pianificazione e completata scrittura Sprint 2] )
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -107,39 +108,151 @@
 
 ]
 
+ 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo", documentType: doc)[
+
 
 
   // == Scomposizione del lavoro
 
   // Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
   // Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
-  = Pianificazione di lungo periodo
+   #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione", documentType: doc)[
+  = Pianificazione <Pianificazione>
+
+  La pianificazione del progetto si basa su un modello *iterativo e incrementale*, ispirato ai principi dell'approccio *Agile*, con l'obiettivo di garantire un monitoraggio continuo dell'avanzamento e una gestione efficace delle attività.
+  
+  Il lavoro del gruppo è organizzato in *sprint di durata bisettimanale*, scelti come compromesso ottimale tra capacità di pianificazione realistica e frequenza di verifica dei risultati ottenuti.
+
+  Ogni sprint ha inizio con un *incontro di pianificazione*, durante il quale vengono definite le attività da svolgere, gli obiettivi da raggiungere e le priorità associate.
+  Nel corso dello sprint è previsto inoltre un *incontro settimanale di allineamento* ("punto della situazione"), finalizzato a verificare lo stato delle attività in corso, individuare eventuali criticità e, se necessario, ricalibrare il carico di lavoro.
+  
+  Al termine di ogni sprint viene svolta una *retrospettiva*, che consente al gruppo di valutare il lavoro svolto, analizzare le difficioltà incontrate e individuare possibili miglioramenti del processo organizzativo.
+  Contestualmente,  i ruoli vengono ruotati a ogni sprint , al fine di permettere a tutti i membri del gruppo di acquisire esperienza nelle diverse responsabilità previste e di individuare una distribuzione dei ruoli efficace e sostenibile nel tempo.
+  
+  Questo approccio consente di mantenere una visione chiara delle priorità, favorire l'adattamento alle esigenze del progetto e assicurare una progressione costante e controllata verso il raggiungimento degli obiettivi prefissati.
+
+]
+  #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo ", documentType: doc)[
+  = Pianificazione di lungo periodo <Pianificazione_di_lungo_periodo>
+  == Organizzazione del progetto <orgProgetto>
+  === Ruoli
+  #align(center)[
+  #{
+  show table.cell: set text(size: 11pt)
+  table(
+    columns: 3,
+    align: horizon,
+    table.header([*Ruolo*],[*Compiti*],[*Presenza*]),
+
+    [Responsabile], "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti", [Tutto il progetto],
+
+    [Amministratore], "- Garanzia efficienza strumenti\n- Gestione tecnologie di supporto\n- Verifica procedure secondo norme", [Tutto il progetto],
+
+    [Verificatore], "- Testing e validazione\n- Controllo qualità deliverable\n- Conformità ai requisiti", [Tutto il progetto],
+
+    [Analista], "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali", [Fase iniziale],
+
+    [Progettista], "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica", [Dopo analisi],
+
+    [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
+  )
+}]
+]
+
+
+=== Preventivo <Preventivo>
+Il gruppo di lavoro prevede di completare il progetto entro e non oltre il *30 aprile 2026*, nel rispetto di un  *budget complessivo pari a 11610€*.
+
+Il dettaglio della pianificazione e del budget stimato è consultabile nel documento di candidatura disponibile al seguente link: 
+#link("https://grouprubberduck.github.io/Documentazione/output/Candidatura/Dichiarazione_Impegni-v2.0.0.pdf")[
+Dichiarazione degli Impegni – versione 2.0.0
+]
+
+Di seguito viene riportata la *tabella riepilogativa dei costi*, già inclusa nella *Dichiarazione degli Impegni*. La tabella rappresenta la stima economica elaborata in fase di candidatura e costituisce il riferimento principale per la pianificazione, il monitoraggio e il controllo dei costi lungo l'intero ciclo di vita del progetto.
+  #let ruoli = (
+    (nome: "Responsabile", costo: 30, oreIndividuali: 11),
+    (nome: "Amministratore", costo: 20, oreIndividuali: 9),
+    (nome: "Analista", costo: 25, oreIndividuali: 19),
+    (nome: "Progettista", costo: 25, oreIndividuali: 17),
+    (nome: "Programmatore", costo: 15, oreIndividuali: 17),
+    (nome: "Verificatore", costo: 15, oreIndividuali: 18),
+  )
+  #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
+
+
+  #let analisiImpegni = ()
+
+  #for ruolo in ruoli {
+    let oreTot = ruolo.at("oreIndividuali") * 6
+    analisiImpegni.push((
+      ruolo.at("nome"),
+      str(ruolo.at("oreIndividuali")),
+      str(oreTot),
+      str(ruolo.at("costo")),
+      str(ruolo.at("costo") * oreTot),
+    ))
+
+    acc.at("oreIndividualiTotali") += ruolo.at("oreIndividuali")
+    acc.at("oreTotali") += oreTot
+    acc.at("costoTot") += ruolo.at("costo") * oreTot
+
+  }
+
+  #analisiImpegni.push((
+    acc.at("nome"),
+    str(acc.at("oreIndividualiTotali")),
+    str(acc.at("oreTotali")),
+    acc.at("placeholder"),
+    str(acc.at("costoTot")),
+  ))
+    #set table(
+      stroke: (_, y) => if y == 7 { (top: 1.5pt) },
+      // gutter: 0.2em,
+      fill: (x, y) => if x == 0 or y == 0 { white },
+    )
+
+
+    #figure(
+      caption: [Ripartizione oraria e dettaglio dei costi],
+      kind: "Tabella",
+      supplement: [Tabella],
+    )[
+      #utilityTable(
+        header: ("Ruolo", "Ore individuali", "Ore Totali", "Costo (€/h)", "Costo totale (€)"),
+        columns: (1fr,) * 5,
+        analisiImpegni,
+      )
+    ]<tabella-ore>
+
 
   == Requirements and Technology Baseline
 
-  In questa fase le attività di progetto sono legate all'analisi dei requisiti e alla progettazione.
-  I ruoli di maggiore rilevanza sono i seguenti:
-  - analista, per la baseline dei requisiti;
-  - progettista, per la fase di progettazione.
-  
-  Amministratore e responsabile ricoprono un ruolo significativo in quanto svolgono attività che portano beneficia tutto il gruppo.
+In questa fase iniziale del progetto, le attività sono principalmente orientate all'*analisi dei requisiti* e all'*analisi dei rischi*, con l'obiettivo di definire una baseline solida e condivisa su cui fondare le fasi successive.
 
-
-
-
+Di seguito vengono riportati i documenti richiesti per questa fase.
+Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo agile*.   
 
 
   #let attivitaADR=(
       "Studio della struttura del documento",
       [_Sprint 1_],
-      "In corso", 
+      "Completato", 
       "Redazione dell'introduzione",
       [_Sprint 1_],
-      "In corso",
-      "Definizione dei casi d'uso",
-      [_Sprint 1_],
-      "In corso",
+      "Completato",
+      "Definizione dei casi d'uso: requisiti obbligatori",
+      [_Sprint 2_],
+      "Completato",
+      "Definizione dei casi d'uso: requisiti non obbligatori;",
+      [_Sprint 3_],
+      "Da definire",
+       "Raffinazione dei casi d'uso",
+      [_Sprint 3_],
+      "Da definire",
+      "Requisiti",
+      [_Sprint _],
+      "Da definire",
   ) 
 #figure(caption:"RTB-Analisi dei Requisiti")[
 #tabellaAtt(titolo:"Analisi dei Requisiti",attivita:attivitaADR)
@@ -148,21 +261,24 @@
   #let attivitaPP=(
       "Studio della struttura del documento",
       [_Sprint 1_],
-      "In corso", 
+      "Completato", 
       "Redazione dell'introduzione",
       [_Sprint 1_],
-      "In corso",
-      [Analisi e gestione \ dei rischi],
-      [_Sprint 1_],
-      "In corso",
-      [Pianificazione di \ lungo periodo],
-      [_Sprint 1_],
-      "In corso",
-      [Pianificazione di \ lungo periodo],
-      [_Sprint 1_],
-      "In corso",
+      "Completato",
       [Studio dei metodi \ di retrospettiva],
-      [_Sprint 1_],
+      [_Sprint 2_],
+      "Completato",
+      [Analisi e gestione \ dei rischi],
+      [_Sprint 3_],
+      "Completato",
+      [Studio dei metodi \ pianificazione],
+      [_Sprint 3_],
+      "In corso",
+      [Pianificazione di \ lungo periodo],
+      [_Sprint 3_],
+      "Completato",
+      [Pianificazione di \ breve periodo],
+      [_Tutti sprint_],
       "In corso",
   ) 
 #figure(caption:"RTB-Piano di Progetto")[
@@ -172,10 +288,22 @@
   #let attivitaPP=(
       "Studio della struttura del documento",
       [_Sprint 1_],
-      "In corso", 
+      "Completato", 
       "Redazione dell'introduzione",
-      [_Sprint 1_],
+      [_Sprint 3_],
       "In corso",
+      "Soglie delle misurazioni",
+      [_Sprint 3_],
+      "In corso",
+      "Automiglioramento",
+      [_Sprint 1_],
+      "Da definire",
+      "Metodi di testing",
+      [_Sprint 1_],
+      "Da definire",
+      "Cruscotto di valutazione",
+      [_Sprint 1_],
+      "Da definire",
   ) 
 #figure(caption:"RTB-Piano di Qualifica")[
 #tabellaAtt(titolo:"Piano di Qualifica",attivita:attivitaPP)
@@ -185,18 +313,21 @@
   #let attivitaNP=(
       "Studio della struttura del documento",
       [_Sprint 1_],
-      "In corso", 
+      "Completato", 
       "Redazione dell'introduzione",
       [_Sprint 1_],
-      "In corso",
+      "Completato",
       "Studio dei processi di di ciclo di vita primari",
-      [_Sprint 1_],
+      [_Sprint 3_],
       "In corso",
       "Studio dei processi di di ciclo di vita di supporto",
-      [_Sprint 1_],
-      "In corso",
+      [_Sprint 2_],
+      "Compleato",
       "Studio dei processi di di ciclo di vita organizzativi",
-      [_Sprint 1_],
+      [_Sprint 2_],
+      "Completato",
+      "Studio delle best pratices o altro materiale ritenuto importante",
+      [_Tutti sprint_],
       "In corso",
   ) 
 #figure(caption:"RTB-Norme di Progetto")[
@@ -205,7 +336,7 @@
 
   #let attivitaGL=(
       "Aggiornamento del glossario",
-      [_Sprint 1_],
+      [_Tutti gli sprint_],
       "In corso", 
   ) 
 #figure(caption:"RTB-Glossario")[
@@ -214,9 +345,15 @@
 
 
   #let attivitaPoC=(
-      "",
-      [],
-      "", 
+      "Python 3x",
+      [_Sprint 1_],
+      "Da definire", 
+       "Flask",
+      [_Sprint 1_],
+      "Da definire", 
+       "Docker",
+      [_Sprint 1_],
+      "Da definire",
   ) 
 #figure(caption:"RTB-Proof of Concept")[
 #tabellaAtt(titolo:"Proof of Concept",attivita:attivitaPoC)
@@ -225,7 +362,7 @@
 
 
   === Product Baseline
-  Allo stato attuale il gruppo non possiede informazioni sufficienti a eseguire una adeguata previsione delle attività di questa fase.
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della Requirements and Technology Baseline(RTB).
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di breve periodo", documentType: doc)[
@@ -233,56 +370,3 @@
   #include "content/04-pianificazione_breve_periodo/index.typ"
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[
-  = Metodi di retrospettiva
-  La retrospettiva è un elemento essenziale dei modelli agile, fornisce informazioni al team per riflettere sul proprio lavoro, identificare punti di miglioramento, e pianificare i prossimi passi da intraprendere negli sprint futuri.
-  Alcuni modelli di retrospettiva sono i seguenti, non sono necessariamente mutualmente esclusivi:
-  #terms(separator: ": ",
-  ([Eventi significativi],[Viene creata una timeline degli eventi significativi.
-  Marcando rilasci importanti, successi, fallimenti e cambiamentia una project board.
-  Utile a rinfrescare la memoria dei membri del team e a fornire contesto.
-  ]),
-  ([Start, stop, continue],[
-
-Questa tecnica orientata all'azione si concentra su ciò che il team dovrebbe iniziare a fare, smettere di fare e continuare a fare. \ Aiuta a identificare elementi attuabili e incoraggia il team a riflettere su comportamenti e pratiche specifici.
-  ]),
-([Gradito, Osteggiato, Mancato, Appreso],[
-
-In questa tecnica, il team discute ciò che è stato gradito, osteggiato, ciò che è mancato e ciò che è stato appreso durante lo sprint. Fornisce una visione completa delle esperienze del team e aiuta a identificare le aree di miglioramento e di apprendimento.]),
-  ([Mad, Sad, Glad],
-  [Questa tecnica si concentra sugli aspetti emotivi del lavoro. I membri del team condividono ciò che li ha fatti sentire arrabbiati, tristi e soddisfatti. Aiuta a identificare le fonti di frustrazione e di soddisfazione, fornendo spunti sulla dinamica di gruppo e sul morale.
-  ]),
-  ([Five Whys],[La tecnica dei Five Whys consiste nel chiedere "perché" cinque volte per risalire alla causa principale di un problema. Aiuta il team ad approfondire le questioni e a trovare soluzioni a lungo termine, anziché affrontare i sintomi superficiali.]),
-  ([Sailboat],[Questa tecnica immaginativa utilizza la metafora di una barca a vela per identificare i rischi (scogli), le sfide (ancore), le forze positive (vento) e gli obiettivi (terraferma). Aiuta il team a visualizzare il proprio lavoro e a identificare i fattori che hanno influenzato i progressi.]),
-  ([What, So What, Now What],[Questa tecnica prevede tre fasi: identificare cosa è accaduto, discutere l'impatto (quindi cosa) e determinare i passi successivi (adesso cosa). Mantiene il team focalizzato sulle azioni e sui miglioramenti futuri.]),
-  ([Energy Levels],[Questa tecnica valuta i livelli di energia del team identificando le attività che li hanno caricati o prosciugati. Aiuta a comprendere la motivazione del team e a pianificare azioni per ricaricare il team per il prossimo sprint.]),
-  ([Dot Voting
-],[La votazione a punti aiuta a dare priorità alle idee di miglioramento, consentendo ai membri del team di votare per i suggerimenti ritenuti più preziosi. Fornisce una direzione chiara su cosa concentrarsi e garantisce che gli sforzi del team siano allineati alle loro priorità.]),
-
-  )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Metodi di retrospettiva", documentType: doc)[
-  = Analisi dei periodi di avanzamento
-
-  Per ogni periodo
-  - Preventivo
-  - Consuntivo
-
-
-  Cybersecurity 
-]

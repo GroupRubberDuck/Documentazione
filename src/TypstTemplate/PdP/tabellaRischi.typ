@@ -106,7 +106,7 @@
       }
       #table(
         columns: (auto, 1fr),
-        fill: (_, y) => if calc.odd(y) {  rgb("#dcd1ec") },
+        fill: (_, y) => if calc.odd(y) {  rgb("#e2d9ee") },
       )[Tipo di rischio][#tipo][Descrizione][#descrizione][Prevenzione][#prevenzione][Mitigazione][#mitigazione][Frequenza/Probabilità \ di avvenimento][#frequenza][Pericolosità][#pericolo]
     ]
   ]
