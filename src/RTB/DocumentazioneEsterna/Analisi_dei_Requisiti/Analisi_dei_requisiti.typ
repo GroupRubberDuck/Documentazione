@@ -47,7 +47,7 @@
     stato: "In review",
     versione: versionNumber,
     autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon"),
-    verificatori:("Davide Lorenzon",),
+    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -68,7 +68,7 @@
   ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
   ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
   ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
-  ([0.7.1],[2025-12-07],[Davide Lorenzon],[],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
+  ([0.7.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
 )
 
 #registroModifiche(modifiche)
