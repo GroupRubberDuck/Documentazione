@@ -1,4 +1,4 @@
-#import "/src/config.typ":h,template_dir, inserisciLink
+#import "/src/config.typ":he,template_dir, inserisciLink
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 
   == Scopo del documento

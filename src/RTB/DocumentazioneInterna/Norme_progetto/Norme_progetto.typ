@@ -21,7 +21,7 @@
 #let currentVersion=(
   major:0,
   minor:8,
-  patch:2,
+  patch:3,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -58,6 +58,7 @@
   ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 3.1]),  
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
+  ([0.8.3],[2025-12-14],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("gestione-dell'infrastruttura")), \ Gestione dell'infrastruttura]),
 
   
 )

@@ -4,7 +4,7 @@
 
 #include "01-gestione_processo.typ"
 
-#he(body:"Infrastruttura", level:2)
+#he(body:"Gestione dell'Infrastruttura", level:2)
 
 #include "02-infrastruttura.typ"
 
