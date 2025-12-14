@@ -1,9 +1,10 @@
-name: Compile and Update typst
+name: Compilazione dei documenti e aggiornamento del sito web
 
 on:
   push:
     branches:
-      - main
+      - main 
+      - develop
 permissions:
   contents: write
 jobs:
@@ -29,6 +30,7 @@ jobs:
           ./scripts/genWebsite.sh
 
       - name: Commit and push PDFs
+        if: github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
