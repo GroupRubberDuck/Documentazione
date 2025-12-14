@@ -1,10 +1,10 @@
 
 #let tabellaAtt(titolo:str,attivita:array)={
-let headerBackgroundColor=luma(20%)
-let headerTextColor=luma(100%)
+let headerBackgroundColor = rgb("#bebebe") 
+let headerTextColor=luma(0%)
 let BodyTextColor=luma(0%)
-let BodyBackgroundColor1=luma(80%)
-let BodyBackgroundColor2=luma(60%)
+let BodyBackgroundColor1= rgb("#ffffff")
+let BodyBackgroundColor2= rgb("#e7e7e7")
 
 
 show table.cell.where(y:0) :body =>{

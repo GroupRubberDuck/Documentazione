@@ -165,22 +165,8 @@ O = organizzativo
   )
 
 
-  #tabellaRischiOrganizzativi(
-    codice: getCode(prefisso: prefisso, contatore: contatoreR),
-    nome: "Carenze nella governance di progetti complessi",
-    tipo: "Rischio di progetto",
-    descrizione: [Limitata esperienza del team nella gestione di progetti complessi e di dimensioni superiori a quelli affrontati in precedenza.
-Tale carenza non riguarda singole attività operative, ma la capacità di governare il progetto nel suo insieme, inclusa la gestione delle dipendenze tra componenti, il coordinamento di un’architettura non monolitica e il mantenimento di una visione complessiva coerente.
-    ],
-    prevenzione: [Per prevenire questo rischio è necessario introdurre momenti di formazione mirata sulla gestione di progetti complessi e sulle pratiche di governance adottate.
-    Lo studio di casi reali e best practices consente di sviluppare maggiore consapevolezza nella pianificazione e nel coordinamento di sistemi articolati.
-    È inoltre fondamentale promuovere la condivisione della visione architetturale tramite meeting di allineamento, retrospettive periodiche e documentazione strutturata.],
-    mitigazione: [Qualora emergano difficoltà legate alla gestione della complessità, parte dell’impegno del team verrà riallocata verso attività di approfondimento e consolidamento organizzativo.
-    Le attività meno critiche potranno essere posticipate per garantire la stabilità delle componenti principali.
-    Ove necessario, verrà valutato il supporto di Bluewind per attività di mentoring, revisione architetturale o chiarimenti metodologici, al fine di ridurre l’impatto sul progetto complessivo.],
-    frequenza: "Alta",
-    pericolo: "Alta",
-  )
+
+
 
 
 
