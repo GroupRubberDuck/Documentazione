@@ -27,45 +27,45 @@
 
   == Organizzazione del progetto 
 // valutare se lasciarlo qui 
-  === Ruoli
+  // === Ruoli
 
-  #list(
-    [*Responsabile*:
-      - Coordina l’elaborazione di piani e scadenze
-      - Approva il rilascio di prodotti parziali o finali
-      - Comunica con il committente
-      - Garantisce che le risorse disponibili siano usate con efficienza
-      - Si occupa della redazione di documenti
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+  // #list(
+  //   [*Responsabile*:
+  //     - Coordina l’elaborazione di piani e scadenze
+  //     - Approva il rilascio di prodotti parziali o finali
+  //     - Comunica con il committente
+  //     - Garantisce che le risorse disponibili siano usate con efficienza
+  //     - Si occupa della redazione di documenti
+  //     - Presenza richiesta durante tutto l'arco del progetto
+  //   ],
 
-    [*Amministratore*:
-      - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
+  //   [*Amministratore*:
+  //     - Assicura l’efficienza di procedure, strumenti e tecnologie a supporto delle norme di progetto
+  //     - Presenza richiesta durante tutto l'arco del progetto
+  //   ],
 
-    [*Analista*:
-      - Svolge le attività di analisi dei requisiti
-      - Figura essenziale nella fase iniziale del progetto
-    ],
+  //   [*Analista*:
+  //     - Svolge le attività di analisi dei requisiti
+  //     - Figura essenziale nella fase iniziale del progetto
+  //   ],
 
-    [*Progettista*:
-      - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
-      - Svolge le attività di design e modellazione
-      - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
-    ],
+  //   [*Progettista*:
+  //     - Si occupa di progettare un'architettura che soddisfi i requisiti stabiliti dall'analista
+  //     - Svolge le attività di design e modellazione
+  //     - Figura essenziale nella fase di progettazione (successiva all'analisi dei requisiti)
+  //   ],
 
-    [*Programmatore*:
-      - Svolge le attività di codifica
-      - Implementa le scelte prese dal progettista
-      - Figura essenziale nella fase di implementazione
-    ],
-    [*Verificatore*:
-      - Garantisce la qualità degli elementi sviluppati
-      - Svolge le attività di testing e validazione
-      - Presenza richiesta durante tutto l'arco del progetto
-    ],
-  )
+  //   [*Programmatore*:
+  //     - Svolge le attività di codifica
+  //     - Implementa le scelte prese dal progettista
+  //     - Figura essenziale nella fase di implementazione
+  //   ],
+  //   [*Verificatore*:
+  //     - Garantisce la qualità degli elementi sviluppati
+  //     - Svolge le attività di testing e validazione
+  //     - Presenza richiesta durante tutto l'arco del progetto
+  //   ],
+  // )
 
 // === Preventivo <Preventivo>
 // In fase di candidatura, è stato approvato il seguente preventivo dei costi.

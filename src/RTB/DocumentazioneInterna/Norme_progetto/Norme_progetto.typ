@@ -1,4 +1,4 @@
-#import "/src/config.typ": template_dir
+#import "/src/config.typ": template_dir,he
 #import template_dir + "/frontPage.typ": frontPage, frontPageSenzaData
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
@@ -21,7 +21,7 @@
 #let currentVersion=(
   major:0,
   minor:8,
-  patch:3,
+  patch:4,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -59,6 +59,7 @@
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("gestione-dell'infrastruttura")), \ Gestione dell'infrastruttura]),
+  ([0.8.4],[2025-12-15],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("processo-di-miglioramento")), \ Processo di miglioramento]),
 
   
 )
@@ -98,7 +99,7 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Organizzativi", documentType: doc)[
-= Processi Organizzativi
+#he(body:"Processi Organizzativi")
 #include "content/04-processi_organizzativi/index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
@@ -106,7 +107,7 @@
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche di Qualità del Processo", documentType: doc)[
-= Metriche di Qualità del Processo
+#he(body:"Metriche di Qualità del Processo")
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche di Qualità del Prodotto", documentType: doc)[

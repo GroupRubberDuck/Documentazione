@@ -1,0 +1,1 @@
+// prima di iniziarlo bisognerebbe scegliere le tecnologie.
