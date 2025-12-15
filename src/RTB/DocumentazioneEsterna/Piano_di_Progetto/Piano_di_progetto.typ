@@ -127,7 +127,7 @@
   Ogni sprint ha inizio con un *incontro di pianificazione*, durante il quale vengono definite le attività da svolgere, gli obiettivi da raggiungere e le priorità associate.
   Nel corso dello sprint è previsto inoltre un *incontro settimanale di allineamento* ("punto della situazione"), finalizzato a verificare lo stato delle attività in corso, individuare eventuali criticità e, se necessario, ricalibrare il carico di lavoro.
   
-  Al termine di ogni sprint viene svolta una *retrospettiva*, che consente al gruppo di valutare il lavoro svolto, analizzare le difficioltà incontrate e individuare possibili miglioramenti del processo organizzativo.
+  Al termine di ogni sprint viene svolta una *retrospettiva*, che consente al gruppo di valutare il lavoro svolto, analizzare le difficoltà incontrate e individuare possibili miglioramenti del processo organizzativo.
   Contestualmente,  i ruoli vengono ruotati a ogni sprint , al fine di permettere a tutti i membri del gruppo di acquisire esperienza nelle diverse responsabilità previste e di individuare una distribuzione dei ruoli efficace e sostenibile nel tempo.
   
   Questo approccio consente di mantenere una visione chiara delle priorità, favorire l'adattamento alle esigenze del progetto e assicurare una progressione costante e controllata verso il raggiungimento degli obiettivi prefissati.

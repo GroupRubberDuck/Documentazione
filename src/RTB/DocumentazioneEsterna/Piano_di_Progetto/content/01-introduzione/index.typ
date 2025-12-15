@@ -25,7 +25,7 @@
   Il sistema dovrà essere in grado di guidare gli utenti attraverso la valutazione dei requisiti normativi tramite decision tree interattivi, riducendo significativamente i tempi di verifica e minimizzando gli errori umani.
   La soluzione permetterà di importare documenti tecnici relativi ai dispositivi da analizzare, elaborare automaticamente i decision tree associati ai requisiti di sicurezza informatica della norma EN 18031, e generare output chiari sulla conformità (Not Applicable, Pass o Fail). Una dashboard interattiva consentirà agli utenti di visualizzare lo stato delle valutazioni, modificare i decision tree e gestire la documentazione in modo efficiente.
 
-  == Organizzazione del progetto <orgProgetto>
+  == Organizzazione del progetto 
 // valutare se lasciarlo qui 
   === Ruoli
 
@@ -67,63 +67,63 @@
     ],
   )
 
-=== Preventivo <Preventivo>
-In fase di candidatura, è stato approvato il seguente preventivo dei costi.
+// === Preventivo <Preventivo>
+// In fase di candidatura, è stato approvato il seguente preventivo dei costi.
 
-  #let ruoli = (
-    (nome: "Responsabile", costo: 30, oreIndividuali: 11),
-    (nome: "Amministratore", costo: 20, oreIndividuali: 9),
-    (nome: "Analista", costo: 25, oreIndividuali: 19),
-    (nome: "Progettista", costo: 25, oreIndividuali: 17),
-    (nome: "Programmatore", costo: 15, oreIndividuali: 17),
-    (nome: "Verificatore", costo: 15, oreIndividuali: 18),
-  )
-  #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
-
-
-  #let analisiImpegni = ()
-
-  #for ruolo in ruoli {
-    let oreTot = ruolo.at("oreIndividuali") * 6
-    analisiImpegni.push((
-      ruolo.at("nome"),
-      str(ruolo.at("oreIndividuali")),
-      str(oreTot),
-      str(ruolo.at("costo")),
-      str(ruolo.at("costo") * oreTot),
-    ))
-
-    acc.at("oreIndividualiTotali") += ruolo.at("oreIndividuali")
-    acc.at("oreTotali") += oreTot
-    acc.at("costoTot") += ruolo.at("costo") * oreTot
-
-  }
-
-  #analisiImpegni.push((
-    acc.at("nome"),
-    str(acc.at("oreIndividualiTotali")),
-    str(acc.at("oreTotali")),
-    acc.at("placeholder"),
-    str(acc.at("costoTot")),
-  ))
-    #set table(
-      stroke: (_, y) => if y == 7 { (top: 1.5pt) },
-      // gutter: 0.2em,
-      fill: (x, y) => if x == 0 or y == 0 { white },
-    )
+//   #let ruoli = (
+//     (nome: "Responsabile", costo: 30, oreIndividuali: 11),
+//     (nome: "Amministratore", costo: 20, oreIndividuali: 9),
+//     (nome: "Analista", costo: 25, oreIndividuali: 19),
+//     (nome: "Progettista", costo: 25, oreIndividuali: 17),
+//     (nome: "Programmatore", costo: 15, oreIndividuali: 17),
+//     (nome: "Verificatore", costo: 15, oreIndividuali: 18),
+//   )
+//   #let acc = (nome: "Totali", oreIndividualiTotali: 0, oreTotali: 0, placeholder: "", costoTot: 0)
 
 
-    #figure(
-      caption: [Ripartizione oraria e dettaglio dei costi],
-      kind: "Tabella",
-      supplement: [Tabella],
-    )[
-      #utilityTable(
-        header: ("Ruolo", "Ore individuali", "Ore Totali", "Costo (€/h)", "Costo totale (€)"),
-        columns: (1fr,) * 5,
-        analisiImpegni,
-      )
-    ]<tabella-ore>
+//   #let analisiImpegni = ()
+
+  // #for ruolo in ruoli {
+  //   let oreTot = ruolo.at("oreIndividuali") * 6
+  //   analisiImpegni.push((
+  //     ruolo.at("nome"),
+  //     str(ruolo.at("oreIndividuali")),
+  //     str(oreTot),
+  //     str(ruolo.at("costo")),
+  //     str(ruolo.at("costo") * oreTot),
+  //   ))
+
+  //   acc.at("oreIndividualiTotali") += ruolo.at("oreIndividuali")
+  //   acc.at("oreTotali") += oreTot
+  //   acc.at("costoTot") += ruolo.at("costo") * oreTot
+
+  // }
+
+  // #analisiImpegni.push((
+    // acc.at("nome"),
+    // str(acc.at("oreIndividualiTotali")),
+    // str(acc.at("oreTotali")),
+    // acc.at("placeholder"),
+    // str(acc.at("costoTot")),
+  // ))
+  //   #set table(
+  //     stroke: (_, y) => if y == 7 { (top: 1.5pt) },
+  //     // gutter: 0.2em,
+  //     fill: (x, y) => if x == 0 or y == 0 { white },
+  //   )
+
+
+  //   #figure(
+  //     caption: [Ripartizione oraria e dettaglio dei costi],
+  //     kind: "Tabella",
+  //     supplement: [Tabella],
+  //   )[
+  //     #utilityTable(
+  //       header: ("Ruolo", "Ore individuali", "Ore Totali", "Costo (€/h)", "Costo totale (€)"),
+  //       columns: (1fr,) * 5,
+  //       analisiImpegni,
+  //     )
+  //   ]<tabella-ore>
 
   == Miglioramenti del documento
   Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da:
