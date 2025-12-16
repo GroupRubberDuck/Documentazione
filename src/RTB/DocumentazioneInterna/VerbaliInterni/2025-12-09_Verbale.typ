@@ -20,8 +20,8 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
-  minor:1,
+  major:1,
+  minor:0,
   patch:0,
 )
 //converte dizionario in stringa
@@ -34,7 +34,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.FILIPPO,),
     verificatori: (persone.DT,),
@@ -47,7 +47,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],giornoRiunione.display(),persone.FILIPPO,persone.DT,[Scrittura verbale interno.]),
+    ([1.0.0],giornoRiunione.display(),persone.FILIPPO,persone.DT,[Scrittura verbale interno.]),
 
       )
 
@@ -105,15 +105,27 @@
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
   = Riassunto della riunione
-  La prima parte della riunione è stata dedicata all'attività di retrospettiva.
 
-  Durante la riunione è emersa la necessità di completare l’analisi degli ACM e degli AUM. È stato chiarito che gli ACM precedono gli AUM e che è importante che tutti i membri del gruppo svolgano l’analisi dei documenti assegnati, producendo un riassunto scritto utile anche per consultazioni future. Una delle parti più onerose dell’attività è risultata essere la traduzione e comprensione dei requisiti.
+La prima parte della riunione è stata dedicata all’attività di retrospettiva, durante la quale i membri del gruppo hanno condiviso lo stato di avanzamento delle attività assegnate e le principali criticità riscontrate.
 
-  Si è concordato sulla possibilità di suddividere il materiale (circa 27 pagine) tra i membri del gruppo, assegnando un TODO per ciascuna persona
+ == Studio del materiale fornito dall'azienda <materiale-studio>
+Nel corso della discussione è emersa la necessità di completare l’analisi degli ACM e degli AUM. È stato chiarito che l’analisi degli ACM deve precedere quella degli AUM e che è fondamentale che tutti i membri del gruppo analizzino i documenti loro assegnati, producendo un riassunto scritto, utile anche per future consultazioni. È stato inoltre evidenziato come una delle attività più onerose consista nella traduzione e nella comprensione dei requisiti.
 
-  Infine sono stati valutati i task da svolgere nel successivo periodo di avanzamento e sono stati assegnati i ruoli per lo sprint successivo.
+Al fine di rendere l’attività più sostenibile, si è concordato di suddividere il materiale complessivo, pari a circa 27 pagine complessive, tra i membri del gruppo, assegnando a ciascuno un TODO specifico e tracciabile.
+
+== Piano di Qualifica e metriche di qualità <metriche-pdq>
+
+È stata inoltre discussa la necessità di approfondire le metriche di qualità richieste nel Piano di Qualifica e di comprenderne la struttura complessiva. A tal fine, il gruppo ha concordato sull’opportunità di svolgere attività di studio sulle metriche di qualità più adeguate al progetto, in modo da agevolare la successiva stesura e revisione del documento.
+
+== Aggiornamento dell’analisi dei rischi <analisi-rischi>
+
+A seguito della discussione con l’azienda, il gruppo ha deciso di analizzare, studiare e aggiornare l’analisi dei rischi contenuta nel Piano di Progetto. L’obiettivo è individuare possibili criticità future e definire strategie di mitigazione più efficaci, migliorando così la solidità della pianificazione complessiva.
+== Verificare la documentazione prodotta e attività future
+<verifica-documentazione>
+Infine, sono stati analizzati i task da svolgere nel periodo di avanzamento successivo. In tale contesto, sono stati assegnati i ruoli per lo sprint seguente ed è stato pianificato l’avanzamento dello stato dei documenti attualmente in verifica, inclusa l’approvazione dei verbali e il merge delle Norme di Progetto.
+
+ È stata inoltre condivisa la necessità di studiare le best practices relative alla pianificazione e al preventivo, al fine di migliorare l’organizzazione del lavoro e comprendere come ottimizzare la gestione delle attività future.
 ]
-
 
 #insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
 = Decisioni
@@ -126,25 +138,33 @@
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Suddividere l’analisi degli ACM e degli AUM tra tutti i membri del gruppo.],
   [Ridurre il carico di lavoro individuale e garantire una copertura completa dei documenti entro le scadenze.],
-  [-]
+  [@materiale-studio]
 ),
+
+
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Assegnare un to-do specifico a ciascun membro del gruppo.],
-  [Migliorare l’organizzazione del lavoro e la tracciabilità delle attività svolte.],
-  [-]
-),
-(
-  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
-  [Procedere con l’approvazione dei verbali e dei documenti ancora contrassegnati come “in verifica”.],
-  [Consentire l’avanzamento dello stato dei documenti e permettere le successive operazioni di merge.],
-  [-]
+  [Avviare lo studio delle best practices per la pianificazione e il preventivo.],
+  [Migliorare l’efficacia dei processi di pianificazione e di stima economica.],
+  [@verifica-documentazione]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Effettuare il merge delle Norme di Progetto nella giornata successiva alla riunione.],
   [Allineare il repository alla versione approvata del documento e renderlo disponibile a tutto il gruppo.],
-  [-]
+  [@verifica-documentazione]
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Effettuare ricerche preventive sulle metriche di qualità da includere nel Piano di Qualifica.],
+  [Individuare metriche adeguate al progetto prima dell’inserimento formale nel documento.],
+  [@metriche-pdq]
+),
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
+  [Analizzare e aggiornare l’analisi dei rischi nel Piano di Progetto.],
+  [Mitigare potenziali criticità future, anche sulla base dei suggerimenti dell’azienda.],
+  [@analisi-rischi]
 ),
 )
 
@@ -174,12 +194,12 @@ I TODO sorti da questa riunione sono i seguenti:
   [#persone.DL],
   [Finire la transizione da "Dichiarazione di way of working" a norme di progetto. \
   (4.3, 4.4, 4.5)],
-  [-],
+  [V.I.9.3],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Analisti],
-  [Continuare le norme di progetto],
+  [Proseguire la stesura delle Norme di Progetto],
   [VI.8.2],
 ), 
 
@@ -263,14 +283,14 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.FELIX],
   [Ricerca metriche di qualità.],
-  [VI.9.2],
+  [VI.9.4],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.FELIX],
-  [Continuare Analisi dei rischi.],
-  [-],
+  [Proseguire l’analisi dei rischi],
+  [V.I.9.5],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
