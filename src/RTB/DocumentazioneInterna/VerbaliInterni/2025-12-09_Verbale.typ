@@ -21,8 +21,8 @@
 // 
 #let currentVersion=(
   major:0,
-  minor:0,
-  patch:1,
+  minor:1,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -34,10 +34,10 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
-    versione: "0.0.1",
-    autori: ("",),
-    verificatori: ("",),
+    stato: "In verifica",
+    versione: versionNumber,
+    autori: (persone.FILIPPO,),
+    verificatori: (persone.DT,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -47,7 +47,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Filippo Guerra],[],[Scrittura verbale interno.]),
+    ([0.1.0],giornoRiunione.display(),persone.FILIPPO,persone.DT,[Scrittura verbale interno.]),
 
       )
 
@@ -126,25 +126,25 @@
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Suddividere l’analisi degli ACM e degli AUM tra tutti i membri del gruppo.],
   [Ridurre il carico di lavoro individuale e garantire una copertura completa dei documenti entro le scadenze.],
-  []
+  [-]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Assegnare un to-do specifico a ciascun membro del gruppo.],
   [Migliorare l’organizzazione del lavoro e la tracciabilità delle attività svolte.],
-  []
+  [-]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Procedere con l’approvazione dei verbali e dei documenti ancora contrassegnati come “in verifica”.],
   [Consentire l’avanzamento dello stato dei documenti e permettere le successive operazioni di merge.],
-  []
+  [-]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Effettuare il merge delle Norme di Progetto nella giornata successiva alla riunione.],
   [Allineare il repository alla versione approvata del documento e renderlo disponibile a tutto il gruppo.],
-  []
+  [-]
 ),
 )
 
@@ -165,125 +165,125 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [#persone.FELIX],
+  [#persone.FILIPPO],
   [Verbale riunione],
-  [],
+  [-],
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.DL],
   [Finire la transizione da "Dichiarazione di way of working" a norme di progetto. \
   (4.3, 4.4, 4.5)],
-  [],
+  [-],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [Analisti],
   [Continuare le norme di progetto],
-  [],
+  [VI.8.2],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.ALDO],
   [Riassumere AUM-1],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.FELIX],
   [Riassumere AUM-2],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.FILIPPO],
   [Riassumere AUM-3],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.DT],
   [Riassumere AUM-4],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.ANA],
   [Riassumere AUM-5],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [Davide Lorenzon],
   [Riassumere AUM-6],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.ALDO],
   [Riassumere ACM-1],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.ALDO],
   [Riassumere ACM-2],
-  [],
+  [VI.9.1],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [#persone.DL],
   [Implementare variabile per il tracciamento automatico della versione.],
-  [],
+  [-],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.ANA],
   [Ricerca tecniche di pianificazione.],
-  [],
+  [VI.9.2],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.DT],
   [Ricerca tecniche di preventivo.],
-  [],
+  [VI.9.2],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.FELIX],
   [Ricerca metriche di qualità.],
-  [],
+  [VI.9.2],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [],
+  [#persone.FELIX],
   [Continuare Analisi dei rischi.],
-  [],
+  [-],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Analista],
   [Aggiornamento del glossario con i termini di dominio del documento.],
-  [],
+  [-],
 ), 
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Analista],
   [Aggiunta Sezione abbreviazioni al dizionario.],
-  [],
+  [-],
 ), 
 
 
