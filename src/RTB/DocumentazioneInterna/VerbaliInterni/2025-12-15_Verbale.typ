@@ -22,7 +22,7 @@
 #let currentVersion=(
   major:0,
   minor:0,
-  patch:0,
+  patch:1,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -35,8 +35,8 @@
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
     stato: "In lavorazione",
-    versione: "0.0.1",
-    autori: ("",),
+    versione: "0.1.0",
+    autori: ("Felician Mario Necsulescu",),
     verificatori: ("",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
@@ -47,7 +47,7 @@
 
   #let modifiche=(
 
-
+    ([0.1.0],[#giornoRiunione.display()],[Felician Mario Necsulescu],[],[Stesura del verbale]),
       )
 
       #registroModifiche(modifiche)
@@ -68,12 +68,12 @@
 #insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione*: Interno
-- *Motivazione*: Riunione fine sprint;
+- *Motivazione*: Riunione di allineamento;
 - *Data*: #giornoRiunione.display()
 - *Luogo*: Riunione su Discord
 - *Ora inizio*: 15:00;
-- *Ora fine*: 18:50
-- *Scriba*: Filippo Guerra
+- *Ora fine*: 16:30;
+- *Scriba*: Felician Mario Necsulescu
 - *Partecipanti*:#align(left)[
 #set list(marker: [--])
 - Filippo Guerra
@@ -96,10 +96,44 @@
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
+
   = Riassunto della riunione
+  La riunione ha avuto l’obiettivo di verificare lo stato di avanzamento dello sprint in corso e prepararsi in vista dell'imminente incontro con l'azienda Bluewind. I membri del team hanno presentato le attività svolte e illustrato le parti di norma assegnate, condividendo eventuali dubbi emersi. Sono stati inoltre discussi l’avanzamento dell’analisi dei requisiti, lo stato della documentazione di progetto e la pianificazione dei prossimi sprint, in relazione alle disponibilità del team.
+  
+  == Stato di avanzamento dello sprint e attività svolte
+  La riunione si è aperta con una retrospettiva in cui ogni membro ha illustrato il lavoro svolto: completamento di issue, aggiornamenti a norme di progetto, riassunti delle norme assegnate (ACM, AUM), revisione di documenti, aggiornamento di verbali, glossario e diario di bordo. È emerso che il lavoro procede complessivamente bene, anche se con ritmi diversi tra i membri.
+
+  == Documentazione di progetto e strumenti di supporto
+  È stato discusso l’aggiornamento dei principali documenti di progetto: norme di progetto, piano di progetto, piano di qualifica e analisi dei requisiti.
+  In particolare:#pad(left: 1em)[
+
+  - il piano di progetto è in continuo aggiornamento;
+
+  - il piano di qualifica risulta più indietro, dunque è stata stabilita una stesura iniziale che verrà poi aggiornata con l'avanzamento dell’analisi dei requisiti;
+
+  - l’analisi dei requisiti è in gran parte completata, ma necessita ancora di raffinamenti;
+
+  - è stato presentato un template per automatizzare la gestione delle label e degli heading nei documenti typst, come supporto facoltativo alla stesura.
+  ]
+  
+  == Gestione del tempo, carico di lavoro e ruoli <gestione-tempo>
+
+  È emerso un confronto sulla gestione del tempo e sulla disponibilità oraria dei membri:#pad(left: 1em)[
+
+  - alcune attività sono state svolte all'ultimo senza comunicazione preventiva;
+
+  - è stata sottolineata l’importanza di dichiarare in anticipo impegni esterni (lavoro, altri corsi, esami);
+
+  - si è concordata una gestione più flessibile del carico di lavoro, con sprint di durata maggiore e issue lasciate libere soprattutto in vista del periodo natalizio e degli esami;
+
+  - è stato chiarito che una persona può ricoprire più ruoli in momenti diversi, mantenendo però la separazione tra produzione e verifica per una stessa persona.
+  ]
+
+  == Riepilogo norme e raccolta dubbi per l’azienda
+
+  Nel corso della riunione, ciascun membro del gruppo ha presentato la parte di norma precedentemente assegnata, illustrandone i contenuti principali e le modalità di applicazione. Le esposizioni hanno consentito un allineamento comune sul quadro normativo di riferimento. A seguito delle presentazioni, sono stati raccolti dubbi e richieste di chiarimento emersi durante lo studio delle norme, da sottoporre all’azienda nel successivo incontro.
 
 ]
-
 
 #insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
 = Decisioni 
@@ -109,11 +143,11 @@
 
 #let decisioni=(
 (
-  // sentiti libero di snellire le decisioni, le ho scritte lunghe perché manca il riassunto della riunione, almeno così c'è un po' di contesto
+
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Stabilite delle misure per gestire gli impegni personali.],
-  [Negli sprint precedenti è emerso che le disponibilità dichiarate per gli sprint di alcuni membri del team non erano corrette.],
-  []
+  [Negli sprint precedenti sono emerse alcune differenze tra le disponibilità inizialmente dichiarate e l’impegno effettivamente sostenuto da alcuni membri del team.],
+  [@gestione-tempo]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
@@ -137,7 +171,6 @@
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
 
-  //stessa cosa anche sui TODO sentiti libero di snellire le decisioni, le ho scritte lunghe perché manca il riassunto della riunione, almeno così c'è un po' di contesto
 #let TODO=(
 
 (
@@ -148,9 +181,9 @@ I TODO sorti da questa riunione sono i seguenti:
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [-],
+  [Felician Mario Necsulescu],
   [Inizio stesura piano di qualifica.],
-  [],
+  [VI.10.2],
 ),
 
   )
