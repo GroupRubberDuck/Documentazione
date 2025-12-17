@@ -426,7 +426,6 @@ caption: [Aggiunta giustificazione a un risultato]
       - Il sistema presenta la domanda successiva in base al nuovo percorso.
   ]
 - *Scenari Alternativi*:#pad(left: 1em)[
-<<<<<<< HEAD
   #v(-0.5em)
     + *UC11.1*: Se l'utente è alla prima domanda, sostituzione del pulsante "Passo precedente" con un pulsante "Ritorna alla dashboard";
 ]
@@ -443,10 +442,3 @@ caption: [Aggiunta giustificazione a un risultato]
    + L'utente può annullare esecuzione;
 ]
 //Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
-=======
-    #v(-0.5em)
-    + Se l'utente è alla prima domanda, il pulsante "Passo precedente" non è disponibile e viene sostituito da un pulsante "Ritorna alla dashboard";
-  ]
-
-//Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
->>>>>>> fe51b8e (feat: Avanzamento nella redazione degli use cases, necessita ancora lavoro e riorganizzazione dei vari casi. Issue #82)
