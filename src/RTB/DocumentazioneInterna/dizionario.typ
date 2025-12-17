@@ -168,7 +168,92 @@ equipment:[
   Indica l’apparecchiatura radio connessa a Internet che è oggetto dei requisiti di sicurezza.
   Ad esempio un router wifi domestico.
 ],
+
+"Factory Default State":[Stato definito in cui le impostazioni e la configurazione dell'apparecchiatura sono impostate sui valori iniziali.],
+
+"Access Control Mechanism":[ Funzionalità dell'apparecchiatura per concedere, limitare o negare l'accesso a risorse specifiche.],
+
+"Authentication Mechanism":[Funzionalità dell'apparecchiatura per verificare che un'entità sia chi o cosa dichiara di essere.],
+
+"Hard-coded":[Pratica di sviluppo software di incorporare dati direttamente nel codice sorgente di un programma o altro oggetto eseguibile.],
+
+"Assessment Objective":[Dichiarazione che definisce le ragioni per eseguire una valutazione.],
+
+"Attacco Brute Force":[ Attacco a un sistema crittografico che impiega una ricerca per tentativi di un insieme di chiavi, password o altri dati.],
+
+Giustificazione:[Informazione documentata che fornisce evidenza di un'affermazione.],
+
+"Communication Mechanism":[ Funzionalità dell'apparecchiatura che consente la comunicazione tramite un'interfaccia macchina..],
+
+"Confidential Cryptographic Key":[(Chiave crittografica riservata).\ Parametro di sicurezza riservato, escluse le password, utilizzato nell'operazione di un algoritmo o protocollo crittografico.],
+
+"Interfaccia Macchina":[nterfaccia esterna tra l'apparecchiatura e un servizio/dispositivo.],
+
+"Confidential Network Function Configuration":[(Configurazione riservata della funzione di rete).\ Configurazione della funzione di rete la cui divulgazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
+
+"Denial of Service":[Prevenzione o interruzione dell'accesso autorizzato a una risorsa dell'apparecchiatura o ritardo delle operazioni e funzioni dell'apparecchiatura.],
+
+Entità:[Utente, dispositivo, apparecchiatura o servizio.],
+
+"Interfaccia esterna":[Interfaccia di un'apparecchiatura accessibile dall'esterno dell'apparecchiatura (device).],
+
+"Network Asset":[Configurazione sensibile della funzione di rete, configurazione riservata della funzione di rete o funzioni di rete. ],
+
+"Network Equipment":[Apparecchiatura che scambia dati tra reti diverse utilizzata per connettere permanentemente direttamente altri dispositivi a Internet.],
+
+"Network Function Configuration":[(Configurazione della funzione di rete).\ Dati elaborati dall'apparecchiatura che definiscono il comportamento della funzione di rete dell'apparecchiatura.],
+
+"Stato operativo":[Stato in cui l'apparecchiatura funziona normalmente secondo la funzionalità prevista e all'interno del suo ambiente operativo previsto.],
+
+"Security Asset":[(Risorsa di sicurezza).\ Parametro di sicurezza sensibile e riservato o funzione di sicurezza.],
+
+Vulnerabilità:[Debolezza, errore di progettazione o implementazione che può portare a un evento imprevisto e indesiderato che compromette la sicurezza dell'apparecchiatura, della rete, dell'applicazione o del protocollo coinvolto.],
+
+"Sensitive Network Function Configuration ":[(Configurazione sensibile della funzione di rete).\ Configurazione della funzione di rete la cui manipolazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
+
+"Sensitive Security Parameter":[(Parametro di sicurezza sensibile).\ Parametro di sicurezza la cui manipolazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
   
 
 )
+
 #metadata(dict)<dizionario>
+
+)
+
+#let abbr = (
+
+  ACM:"Access Control Mechanism",
+  AUM:"Authentication Mechanism",
+  CCK:"Confidential Cryptographic Key",
+  CRY:"Criptography",
+  CSP:"Confidential Security Parameter",
+  CWE:"Common Weakness Enumeration",
+  DHCP:"Dynamic Host Configuration Protocol",
+  DN:"Decision Node",
+  DoS:"Denial of Service",
+  DT:"Decision Tree",
+  E:"Evidence",
+  "E.Info":"Evidence.Info",
+  "E.Just":"Evidence.Justification",
+  GEC:"General Equipment Capabilities",
+  IC:"Implementation Category",
+  ICMP:"Internet Control Message Protocol",
+  IP:"Internet Protocol",
+  LAN:"Local Area Network",
+  MitM:"Man in the Middle",
+  NMM:"Network Monitoring Mechanism",
+  OS:"Operating System",
+  PIN:"Personal Identification Number",
+  PKI:"Public Key Infrastructure",
+  RLM:"Resilience Mechanism",
+  SCM:"Secure Communication Mechanism",
+  SDO:"Standards Developing Organization",
+  SQL:"Structured Query Language",
+  SSM:"Secure Storage Mechanism",
+  SSP:"Sensitive Security Parameter",
+  SUM:"Secure Update Mechanism",
+  TCM:"Traffic Control Mechanism",
+  USB:"Universal Serial Bus",
+  WLAN:"Wireless Local Area Network",
+)
+#metadata(abbr)<abbreviazioni>

@@ -4,6 +4,7 @@
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
 #import glossario:dict
+#import glossario:abbr
 #set heading(numbering: "1.1)")
 #show ref: body => underline()[*#body*]
 
@@ -28,7 +29,7 @@
 // 
 #let doc="Glossario"
 
-
+#type(abbr)
 #let refTerm(term: str) = { 
   if dict.has(term) {
     footnote(term, dict.at(term))
@@ -42,8 +43,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In progress",
-    versione: "0.3",
-    autori: ("Davide Lorenzon, Ana Maria Draghici",),
+    versione: "0.4",
+    autori: ("Davide Lorenzon, Ana Maria Draghici, Filippo Guerra",),
     verificatori: ("-",),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
@@ -59,6 +60,7 @@
   ([0.1],[2025-11-09],[Davide Lorenzon],[-],[Stesura iniziale e scripting per l'ordinamento]),
   ([0.2],[2025-11-15],[Ana Maria Draghici],[-],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML]),
   ([0.3],[2025-11-16],[Ana Maria Draghici],[-],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
+  ([0.4],[2025-12-16],[Filippo Guerra],[-],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
   
 )
 
@@ -83,6 +85,40 @@ Per approfondimenti e riferimenti al capitolato e ad altri documenti di progetto
 
 
 
+
+]
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Abbreviazioni", documentType: doc)[
+= Abbreviazioni
+Qui sotto si riportano le sigle e abbreviazioni che sono state utilizzate nei documenti di progetto.\
+
+#block(
+  inset: (left: 1cm)
+)[
+
+
+#let lettera=""
+
+#let chiavi=abbr.keys().sorted(key:item=>{
+lower(item.first())
+}).rev()
+
+#while(chiavi.len()>0) {
+lettera=chiavi.last().first()
+let tempKey=""
+
+while(chiavi.len() >0 and lower(lettera)==lower(chiavi.last().first())){
+  tempKey=chiavi.pop() 
+  [
+  * #{ upper(tempKey.first())+tempKey.slice(1) } #label(tempKey) *  -->  
+    #abbr.at(tempKey)
+
+
+  ]
+}
+}
+
+]
 
 ]
 
