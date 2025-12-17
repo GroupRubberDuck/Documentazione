@@ -124,6 +124,17 @@ caption: [Autenticazione del Responsabile Tecnico]
   #v(-0.5em)
     1. *UC2.1*: Errore nelle credenziali di accesso.
 ]
+==== UC2.1: Gestione credenziali errate
+- *Attore Principale*: Responsabile Tecnico;
+- *Precondizioni*: Inserimento delle credenziali;
+- *Postcondizioni*: Notifica dell'errore;
+- *Trigger*: Fallimento della verifica delle credenziali;
+- *Scenario Principale*:#pad(left: 1em)[
+#v(-0.5em)
+   + Il sistema notifica l'errore;
+   + Il sistema richiede il reinserimento delle credenziali;
+   + L'utente ritenta o annulla l'operazione;
+]
 
 
 === UC3: Avvio dell'esecuzione di un decision tree
@@ -390,7 +401,18 @@ caption: [Aggiunta giustificazione a un risultato]
 ]
 - *Scenari Alternativi*:#pad(left: 1em)[
   #v(-0.5em)
-    + Se l'utente è alla prima domanda, il pulsante "Passo precedente" non è disponibile e viene sostituito da un pulsante "Ritorna alla dashboard";
+    + *UC11.1*: Se l'utente è alla prima domanda, sostituzione del pulsante "Passo precedente" con un pulsante "Ritorna alla dashboard";
 ]
 
+=== UC11.1: Gestione della prima domanda
+- *Attore principali*: Utente;
+- *Precondizioni*: Visualizzazione della prima domanda;
+- *Postcondizioni*: Pulsante "Indietro" disabilitato, opzione "Torna a dashboard" aggiunta;
+- *Trigger*: Tentativo navigazione indietro alla prima domanda;
+- *Scenario Principale*:#pad(left: 1em)[
+#v(-0.5em)
+   + Sistema disabilita "Passo precedente";
+   + Il sistema mostra il pulsante "Torna a dashboard";
+   + L'utente può annullare esecuzione;
+]
 //Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
