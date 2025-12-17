@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "Validato",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Filippo Guerra","Davide Lorenzon"),
     verificatori: ("Davide Lorenzon","Aldo Bettega"),
@@ -63,7 +63,7 @@
 
 ]
 
-#insertRomanNumberedPages("Indice","Verbale interno",giornoRiunione )[
+#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione )[
 #outline( depth: 2,title: "Indice")
 ]
 
@@ -71,7 +71,7 @@
   #context counter(page).update(1)
 
 
-#insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Informazioni generali","Verbale esterno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione*: Esterno
 - *Motivazione*: Chiarimento di dubbi da parte della proponente
@@ -98,22 +98,22 @@
 
 #insertArabicNumberedPages("Ordine del giorno","Verbale esterno",giornoRiunione )[
   = Ordine del giorno
-    + Revisione del documento di Analisi dei Requisiti.
+    - Revisione del documento di Analisi dei Requisiti.
 
-    + Chiarimenti sulla distinzione tra documenti tecnici del dispositivo e decision tree.
+    - Chiarimenti sulla distinzione tra documenti tecnici del dispositivo e decision tree.
 
-    + Discussione sulla gestione dei decision tree (importazione, modifica, validazione) e sui ruoli dell'utente e permessi (utente standard e responsabile tecnico).
+    - Discussione sulla gestione dei decision tree (importazione, modifica, validazione) e sui ruoli dell'utente e permessi (utente standard e responsabile tecnico).
+    
+    - Gestione delle giustificazioni e requisiti Not Applicable.
 
-      - Gestione delle giustificazioni e requisiti Not Applicable.
+    - Struttura della dashboard e comportamento dell’esecuzione dei requisiti.
 
-    + Struttura della dashboard e comportamento dell’esecuzione dei requisiti.
+    - Esportazione dei risultati.
 
-    + Esportazione dei risultati.
-
-    + Indicazioni sulla gestione del progetto, pianificazione e comunicazione interna.
+    - Indicazioni sulla gestione del progetto, pianificazione e comunicazione interna.
 ]
 
-#insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Riassunto della riunione","Verbale esterno",giornoRiunione )[
   = Riassunto della riunione
   La riunione si è svolta partendo dalla presentazione del gruppo del documento *Analisi dei Requisiti*, che è stata intervallata da domande riguardo ai requisiti funzionali e non del progetto. \ 
   Successivamente sono state fatte alla proponente delle domande riguardanti la gestione dei documenti e i problemi riscontrati durante questo sprint dai vari membri del gruppo. 
@@ -204,7 +204,7 @@ Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze,
 ]
 
 
-#insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Decisioni","Verbale esterno",giornoRiunione )[
 = Decisioni
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
@@ -288,7 +288,7 @@ Per quanto riguarda l'esecuzione dei requisiti e gestione delle dipendenze,
 
 ]
 
-#insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("TODO","Verbale esterno",giornoRiunione )[
 
 = TODO
 #let prefisso="TD.9."
@@ -334,7 +334,7 @@ La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicaz
 
 ]
 
-#insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Approvazione esterna ","Verbale esterno",giornoRiunione )[
 = Approvazione esterna 
 La presente sezione documenta la conferma e la validazione del verbale da parte del proponente esterno.
 Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.

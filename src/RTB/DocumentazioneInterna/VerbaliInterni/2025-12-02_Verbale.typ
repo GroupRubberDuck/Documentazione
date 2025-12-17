@@ -87,7 +87,7 @@
 #insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
   = Ordine del giorno
   - Revisione delle attività pendenti
-   -Discussione su casi d’uso e modifiche post-incontro con l’azienda
+  - Discussione su casi d’uso e modifiche post-incontro con l’azienda
   - Organizzazione della documentazione (Norme di Progetto, Use Case, struttura dei file)
   - Considerazioni sul Piano di Qualifica
 

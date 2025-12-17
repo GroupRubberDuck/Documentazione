@@ -51,7 +51,7 @@
 
     ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
     ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura delle sezioni rimanenti]),
-    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione]),
+    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione del documento]),
 
     )
 
@@ -62,7 +62,7 @@
 
 ]
 
-#insertRomanNumberedPages("Indice","Verbale interno",giornoRiunione )[
+#insertRomanNumberedPages("Indice","Verbale esterno",giornoRiunione )[
 #outline( depth: 2,title: "Indice")
 ]
 
@@ -70,7 +70,7 @@
   #context counter(page).update(1)
 
 
-#insertArabicNumberedPages("Informazioni generali","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Informazioni generali","Verbale esterno",giornoRiunione )[
   = Informazioni generali
 - *Tipo di riunione*: Esterno
 - *Motivazione*: Chiarimento di dubbi da parte della proponente
@@ -96,7 +96,7 @@
 ]
 
 
-#insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Ordine del giorno","Verbale esterno",giornoRiunione )[
   = Ordine del giorno
   == Domande per la proponente
   + Ci potete dare delle dritte per l’Analisi dei Requisiti?
@@ -121,7 +121,7 @@
   + Sarà fornita della documentazione riguardante le normative che dovremo usare, cioè l’Access Control Mechanism e l’Authentication Mechanism?
 ]
 
-#insertArabicNumberedPages("Riassunto della riunione","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Riassunto della riunione","Verbale esterno",giornoRiunione )[
   = Riassunto della riunione
   == Risposte della proponente
   #enum(
@@ -212,7 +212,7 @@
 ]
 
 
-#insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Decisioni","Verbale esterno",giornoRiunione )[
 = Decisioni
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
@@ -238,10 +238,10 @@
 ]
 
 
-#insertArabicNumberedPages("TODO","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("TODO","Verbale esterno",giornoRiunione )[
 
 = TODO
-#let prefisso="TD.7."
+#let prefisso="TD.6."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
@@ -265,7 +265,7 @@ I TODO sorti da questa riunione sono i seguenti:
 Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolto successivamente e ad opera di un singolo membro del gruppo.
 ]
 
-#insertArabicNumberedPages("Approvazione esterna ","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Approvazione esterna ","Verbale esterno",giornoRiunione )[
 = Approvazione esterna 
 La presente sezione documenta la conferma e la validazione del verbale da parte del proponente esterno.
 Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
