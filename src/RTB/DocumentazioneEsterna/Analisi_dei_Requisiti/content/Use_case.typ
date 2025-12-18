@@ -85,7 +85,7 @@ utente(padre)<----responsabile tecnico(figlio), cioè Responsabile tecnico eredi
     + L'utente può tentare nuovamente l'importazione (*UC1*).
   ]
 
-  === UC1.2: File di ingresso di dimensione eccessiva
+  ====   UC1.2: File di ingresso di dimensione eccessiva
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha selezionato un file per l'importazione;
 - *Postcondizioni*: L'utente viene informato dell'errore e può tentare una nuova importazione;
@@ -108,7 +108,7 @@ utente(padre)<----responsabile tecnico(figlio), cioè Responsabile tecnico eredi
     + Il sistema rileva le funzionalità/asset ;
     + Il sistema rileva degli errori nel parsing di alcune funzionalità/asset di alcuni asset;
     + Il sistema riporta gli errori;
-    + L'utente può completare manualmente la documentazione, tramite editor integrato . *UC7.1*
+    + L'utente può completare manualmente la documentazione, tramite editor integrato . *UC7.1* ?
   ]
 
 === UC2: Autenticazione del Responsabile Tecnico
@@ -135,7 +135,7 @@ caption: [Autenticazione del Responsabile Tecnico]
     1. *UC2.1*: Errore nelle credenziali di accesso.
 ]
 ==== UC2.1: Gestione credenziali errate
-- *Attore Principale*: Responsabile Tecnico;
+- *Attore Principale*: Responsabile Tecnico/Utente;
 - *Precondizioni*: Inserimento delle credenziali;
 - *Postcondizioni*: Notifica dell'errore;
 - *Trigger*: Fallimento della verifica delle credenziali;
@@ -146,8 +146,25 @@ caption: [Autenticazione del Responsabile Tecnico]
    + L'utente ritenta o annulla l'operazione;
 ]
 
+==== UC3: Autenticazione utente normale
+- *Attore Principale*: utente;
+- *Precondizioni*: L’utente ha accesso alla piattaforma e desidera operare con privilegi bassi;
+- *Postcondizioni*: l'utente è autenticato e riconosciuto come utente con privilegi bassi;
+- *Trigger*: l'utente accede alla piattaforma;
+- *Scenario Principale*:#pad(left: 1em)[
+    #v(-0.5em)
+    + L’utente accede alla schermata di login;
+    + L’utente inserisce le credenziali (username, password);
+    + Il sistema verifica le credenziali;
+    + Il sistema conferma l’autenticazione e assegna i privilegi bassi;
+    + L'utente accede alla piattaforma con le funzionalità standard.
+  ]
+- *Scenari Alternativi*:#pad(left: 1em)[
+  #v(-0.5em)
+    1. *UC2.1*: Errore nelle credenziali di accesso.
+]
 
-=== UC3: Avvio dell'esecuzione di un decision tree
+=== UC4: Avvio dell'esecuzione di un decision tree
 
 /*#figure(
   image("immagini/UC3.png", width: 80%),
@@ -155,7 +172,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 )*/
 - *Attore Principale*: Utente;
 - *Precondizioni*: I decision tree sono stati importati correttamente nel sistema;
-- *Postcondizioni*: L'utente ha avviato la compilazione delle domande del decision tree selezionato;
+- *Postcondizioni*: Si apre correttamente la compilazione di un decision tree di un requisito;
 - *Trigger*: L'utente seleziona un requisito da valutare per un asset specifico dalla dashboard;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
@@ -163,74 +180,135 @@ caption: [Autenticazione del Responsabile Tecnico]
     + L'utente seleziona uno dei requisiti proposti dal sistema (è il sistema che si occupa di mostrare i requisiti nell'ordine di gerarchia corretto)
     + Il sistema apre una schermata dedicata alla compilazione del decision tree;
     + Il sistema mostra la prima domanda del decision tree;
-    + L'utente seleziona una risposta tra "Yes" o "No";
-    + Il sistema naviga automaticamente nell'albero in base alla risposta.
   ]
 
-=== UC4: Si arriva in uno stato NOT APPLICABLE
+=== UC5: Navigazione di un decision tree
+- *Attore Principale*: Utente;
+- *Precondizioni*: È stato aperta correttamente la compilazione di un requisito;
+- *Postcondizioni*: Si passa al prossimo nodo dell'albero;
+- *Trigger*: L'utente risponde alla domanda con "yes/no";
+- *Scenario Principale*:#pad(left: 1em)[
+    #v(-0.5em)
+    + L'utente legge la domanda mostrata dal sistema
+    + L'utente seleziona la risposta corretta
+    + Il Sistema naviga nel prossimo nodo dell'albero mostrando la relativa domanda
+  ]
+- *Scenari Alternativi*:#pad(left: 1em)[
+    #v(-0.5em)
+    + *UC5.1*: Il sistema arriva in uno stato di N.A.
+    + *UC5.2*: Il sistema arriva in uno stato di FAIL
+    + *UC5.3*: Il sistema arriva in uno stato di PASS
+  ]
+
+
+==== UC5.1: Si arriva in uno stato NOT APPLICABLE
 /*#figure(
   image("immagini/UC3.png", width: 80%),
   caption: [Avvio dell'esecuzione di un decision tree]
 )*/
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato NOT APPLICABLE;
-- *Postcondizioni*: Il sistema blocca l'esecuzione e segnala che non è necessario continuare nella compilazione;
+- *Postcondizioni*: Il sistema ferma la compilazione dell'albero e segnala che non è necessario continuarla;
 - *Trigger*: si arriva in uno stato NOT APPLICABLE;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente risponde 'Yes/No' ad un nodo
     + Il sistema naviga nell'albero in base alla risposta
     + Il sistema arriva in uno stato NOT APPLICABLE
-    + Il sistema segnala che non è necessario continuare a verificare i requisiti
-    + Il sistema esce e segnala l'asset come NOT APPLICABLE, indicando dove si fermato
-    + Il sistema mostra gli altri asset da verificare
+    + Il sistema esce e segnala il requisito come NOT APPLICABLE
+    + Il sistema blocca i requisiti che dipendono da questo requisito
+    + Il sistema, se ce ne sono, mostra gli altri requisiti da verificare
   ]
 
-=== UC4: Si arriva in uno stato FAIL
+==== UC5.2: Si arriva in uno stato FAIL
 /*#figure(
   image("immagini/UC3.png", width: 80%),
   caption: [Avvio dell'esecuzione di un decision tree]
 )*/
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato FAIL;
-- *Postcondizioni*: Il sistema blocca l'esecuzione e segnala una falla di sicurezza;
+- *Postcondizioni*: Il sistema blocca l'esecuzione e segnala una falla di sicurezza per quel requisito;
 - *Trigger*: si arriva in uno stato FAIL;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente risponde 'Yes/No' ad un nodo
     + Il sistema naviga nell'albero in base alla risposta
     + Il sistema arriva in uno stato FAIL
-    + Il sistema segnala che c'è un problema di sicurezza nell'asset che si sta verificando, indicando dove ha fallito
-    + Il sistema esce e segnala l'asset come FAIL
-    + Il sistema mostra gli altri asset da verificare
+    + Il sistema esce e segnala il requisito come FAIL
+    + Il sistema blocca i requisiti che dipendono da questo requisito
+    + Il sistema, se ce ne sono, mostra gli altri requisiti da verificare
   ]
 
-
-=== UC5: Completamento positivo dell'esecuzione di un decision tree
+==== UC5.3: Si arriva in uno stato di PASS
 - *Attore Principale*: Utente;
-- *Precondizioni*: L'utente ha risposto a tutte le domande del decision tree seguendo il percorso decisionale;
-- *Postcondizioni*: Viene generato l'esito finale del requisito (PASS) e lo stato viene aggiornato nella dashboard;
-- *Trigger*: L'ultimo nodo del percorso decisionale viene raggiunto;
+- *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato PASS;
+- *Postcondizioni*: Il sistema segnala che la verifica del requisito è andata a buon fine;
+- *Trigger*: si arriva in uno stato FAIL;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
-    + Il sistema rileva che il nodo finale è stato raggiunto con PASS
-    + Il sistema salva l'esito del requisito come PASS
-    + Il sistema esce e mostra eventuali requisiti da verificare
+    + L'utente risponde 'Yes/No' ad un nodo
+    + Il sistema naviga nell'albero in base alla risposta
+    + Il sistema arriva in uno stato PASS
+    + Il sistema segnala all'utente che l'albero è terminato e il requisito è stato superato
+    + Il sistema esce, mostra eventuali altri requisiti dello stesso livello e, se ce ne sono, sblocca i livelli successivi che dipendono dal requisito appena verificato
   ]
 
-=== UC6: Terminazione verifica di requisiti per un asset
+=== UC6: Navigazione al passo precedente durante l'esecuzione di un decision tree
+/*#figure(
+  image("immagini/UC10.png", width: 80%),
+  caption: [Navigazione al passo precedente durante l'esecuzione di un decision tree]
+)*/
 - *Attore Principale*: Utente;
-- *Precondizioni*: L'utente ha terminato la verifica dei requisiti di un asset;
-- *Postcondizioni*: Resoconto della verifica;
-- *Trigger*: Si è arrivati in uno stato di FAIL o NOT APPLICABLE, oppure si sono terminati tutti i requisiti con PASS;
+- *Precondizioni*: L'utente sta eseguendo un decision tree e ha risposto ad almeno una domanda;
+- *Postcondizioni*: Il sistema torna alla domanda precedente e la risposta può essere modificata;
+- *Trigger*: l'utente desidera tornare alla domanda precedente per correggere la risposta;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
-    + Il sistema rileva che la verifica è terminata, o perchè si è arrivati in FAIL/NOT APPLICABLE o perchè si sono terminati tutti i requisiti con PASS
+    + L'utente sta rispondendo alle domande di un decision tree;
+    + Il sistema ha presentato una domanda;
+    + L'utente seleziona il pulsante "Passo precedente" o "Indietro";
+    + Il sistema torna alla domanda precedente nel percorso del decision tree;
+    + Il sistema mostra la risposta precedentemente data;
+    + L'utente può:
+      - Confermare la risposta precedente e procedere;
+      - Modificare la risposta;
+    + Se l'utente modifica la risposta:
+      - Il sistema invalida tutte le risposte successive a quella modificata;
+      - Il sistema ricalcola il percorso del decision tree dalla domanda modificata;
+      - Il sistema presenta la domanda successiva in base al nuovo percorso.
+  ]
+- *Scenari Alternativi*:#pad(left: 1em)[
+  #v(-0.5em)
+    + *UC6.1*: Se l'utente è alla prima domanda, sostituzione del pulsante "Passo precedente" con un pulsante "Ritorna alla dashboard";
+]
+
+=== UC6.1: Gestione della prima domanda
+- *Attore principali*: Utente;
+- *Precondizioni*: Visualizzazione della prima domanda;
+- *Postcondizioni*: Pulsante "Indietro" disabilitato, opzione "Torna a dashboard" aggiunta;
+- *Trigger*: Tentativo navigazione indietro alla prima domanda;
+- *Scenario Principale*:#pad(left: 1em)[
+#v(-0.5em)
+   + Sistema disabilita "Passo precedente";
+   + Il sistema mostra il pulsante "Torna a dashboard";
+   + L'utente può annullare esecuzione;
+]
+//Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
+
+=== UC7: Terminazione verifica di requisiti per un asset
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha compilato tutti i decision tree di un asset;
+- *Postcondizioni*: Resoconto delle operazioni;
+- *Trigger*: Il sistema rileva che i requisiti sono stati tutti verificati (significa anche che ce ne possono essere N.A. e FAIL)
+- *Scenario Principale*:#pad(left: 1em)[
+    #v(-0.5em)
+    + Il sistema conclude la compilazione di un decision tree
+    + Il sistema rileva che non ci sono altri requisiti da verificare
     + Il sistema comunica all'utente che la verifica è terminata ed esce dalla pagina di verifica dei requisiti dell'asset
-    + L'utente riceve un resoconto dettagliato delle operazioni
+    + L'utente riceve un resoconto dettagliato delle operazioni e, se ce ne sono, mostra gli altri asset del dispositivo
   ]
 
-=== UC7: Visualizzazione degli asset
+=== UC8: Visualizzazione degli asset
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha importato correttamente i documenti;
 - *Postcondizioni*: Apertura della lista degli asset;
@@ -239,10 +317,10 @@ caption: [Autenticazione del Responsabile Tecnico]
     #v(-0.5em)
     + Il sistema mostra un'icona nella home che indica l'area di lavoro per uno specifico dispositivo, di cui si sono caricati i documenti
     + L'utente clicca sull'icona
-    + Vengono mostrati tutti gli asset da verificare per quel dispositivo, con lo stato dell'asset
+    + Vengono mostrati tutti gli asset del dispositivo e il loro stato di lavorazione
   ]
 
-=== UC8: Visualizzazione dei requisiti per un asset
+=== UC9: Visualizzazione dei requisiti per un asset
 /*#figure(
   image("immagini/UC5.png", width: 80%),
   caption: [Visualizzazione della dashboard dei requisiti]
@@ -258,10 +336,7 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-=== UC6: Modifica di un decision tree tramite editor grafico
+=== UC10: Modifica di un decision tree tramite editor grafico
 /*#figure(
   image("immagini/UC6.png", width: 80%),
   caption: [Modifica di un decision tree tramite editor grafico]
@@ -289,11 +364,11 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 - *Scenari Alternativi*:#pad(left: 1em)[
     #v(-0.5em)
-    + *UC6.1*: Struttura del decision tree non valida dopo la modifica;
+    + *UC10.1*: Struttura del decision tree non valida dopo la modifica;
   ]
 
 
-==== UC6.1: Struttura del decision tree non valida dopo la modifica
+==== UC10.1: Struttura del decision tree non valida dopo la modifica
 - *Attore Principale*: Responsabile Tecnico;
 - *Precondizioni*: Il responsabile tecnico ha effettuato modifiche al decision tree e ha confermato il salvataggio;
 - *Postcondizioni*: Il decision tree non viene salvato e rimane nello stato precedente alla modifica, l'editor rimane aperto;
@@ -305,11 +380,11 @@ caption: [Autenticazione del Responsabile Tecnico]
     + Il sistema interrompe il processo di salvataggio;
     + Il sistema mostra un messaggio di errore dettagliato con l'elenco delle anomalie riscontrate;
     + Il sistema mantiene l'editor aperto con le modifiche correnti evidenziando gli elementi errati;
-    + Il responsabile tecnico corregge le anomalie segnalate (torna al punto 5 di *UC6*);
+    + Il responsabile tecnico corregge le anomalie segnalate (torna al punto 5 di *UC10*);
 
   ]
 
-=== UC7: Modifica delle caratteristiche degli asset
+=== UC11: Modifica delle caratteristiche degli asset
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente vuole modificare una o più caratteristiche di un asset;
 - *Postcondizioni*: Le modifiche sono state salvate e gli output ricalcolati di conseguenza;
@@ -325,10 +400,10 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 - *Scenari alternativi*:#pad(left: 1em)[
     #v(-0.5em)
-    + *UC7.1*: Visualizzazione errore nella validazione dei dati dell'asset.
+    + *UC11.1*: Visualizzazione errore nella validazione dei dati dell'asset.
   ]
 
-==== UC7.1: Visualizzazione errore nella validazione dei dati dell'asset
+==== UC11.1: Visualizzazione errore nella validazione dei dati dell'asset
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha modificato i dati di un asset e ha tentato di salvare;
 - *Postcondizioni*: Le modifiche non vengono applicate, l'editor rimane aperto mostrando l'errore;
@@ -339,33 +414,13 @@ caption: [Autenticazione del Responsabile Tecnico]
     + Il sistema segnala all'utente i campi non validi con messaggi di errore specifici;
     + L'utente corregge i dati o annulla l'operazione.
   ]
-=== UC8: Esportazione dei risultati
-/*#figure(
-  image("immagini/UC7.png", width: 80%),
-  caption: [Esportazione dei risultati]
-)*/
-- *Attore Principale*: Utente;
-- *Precondizioni*: L'esecuzione di almeno un decision tree è stata completata;
-- *Postcondizioni*: Il file contenente i risultati è stato generato e salvato nel formato selezionato;
-- *Trigger*: L'utente richiede l'esportazione dei risultati;
-- *Scenario Principale*:#pad(left: 1em)[
-    #v(-0.5em)
-    + L'utente accede al menù "Esporta risultati";
-    + Il sistema mostra le opzioni di formato disponibili (PDF, CSV, JSON);
-    + L'utente seleziona il formato desiderato per l'esportazione;
-    + Il sistema raccoglie per ogni asset tutti i risultati delle esecuzioni completate;
-    + Il sistema genera il file nel formato selezionato;
-    + Il sistema salva il file sul file system locale;
-    + Il sistema notifica all'utente il completamento dell'esportazione e la posizione del file.
-  ]
 
 
-=== UC9: Aggiunta giustificazione ad un risultato N/A (Not Applicable)
+=== UC12: Aggiunta giustificazione ad un risultato N/A (Not Applicable)
 /*#figure(
-image("immagini/UC8.png", width: 80%),
+image("immagini/UC12.png", width: 80%),
 caption: [Aggiunta giustificazione a un risultato]
 )*/
-
 - *Attore Principale*: Utente;
 - *Precondizioni*: Un requisito è stato valutato e ha prodotto il risultato N/A (Not Applicable);
 - *Postcondizioni*: La giustificazione viene associata al risultato e salvata;
@@ -381,7 +436,7 @@ caption: [Aggiunta giustificazione a un risultato]
     + La giustificazione viene visualizzata insieme al risultato.
   ]
 
-=== UC10: Aggiunta di un nuovo asset tramite interfaccia
+=== UC13: Aggiunta di un nuovo asset tramite interfaccia
 - *Attore principali*: Utente;
 - *Precondizioni*: L'utente ha caricato un file di configurazione del dispositivo o ha aperto una valutazione esistente;
 - *Postcondizioni*: Il nuovo asset viene aggiunto al dispositivo e tutti i decision tree standard vengono associati ad esso;
@@ -400,48 +455,59 @@ caption: [Aggiunta giustificazione a un risultato]
   ]
 - *Scenari Alternativi*:#pad(left: 1em)[
     #v(-0.5em)
-    + *UC7.1*: Visualizzazione errore nella validazione dei dati dell'asset;
+    + *UC11.1*: Visualizzazione errore nella validazione dei dati dell'asset;
   ]
 
 
-=== UC11: Navigazione al passo precedente durante l'esecuzione di un decision tree
+=== UC14: Esportazione dei risultati
 /*#figure(
-  image("immagini/UC10.png", width: 80%),
-  caption: [Navigazione al passo precedente durante l'esecuzione di un decision tree]
+image("immagini/UC11.png", width: 80%),
+caption: [Aggiunta giustificazione a un risultato]
 )*/
 - *Attore Principale*: Utente;
-- *Precondizioni*: L'utente sta eseguendo un decision tree e ha risposto ad almeno una domanda;
-- *Postcondizioni*: Il sistema torna alla domanda precedente e la risposta può essere modificata;
-- *Trigger*: l'utente desidera tornare alla domanda precedente per correggere la risposta;
+- *Precondizioni*: L'esecuzione di almeno un decision tree è stata completata;
+- *Postcondizioni*: Il file contenente i risultati è stato generato e salvato nel formato selezionato;
+- *Trigger*: L'utente richiede l'esportazione dei risultati;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
-    + L'utente sta rispondendo alle domande di un decision tree;
-    + Il sistema ha presentato una domanda;
-    + L'utente seleziona il pulsante "Passo precedente" o "Indietro";
-    + Il sistema torna alla domanda precedente nel percorso del decision tree;
-    + Il sistema mostra la risposta precedentemente data;
-    + L'utente può:
-      - Confermare la risposta precedente e procedere;
-      - Modificare la risposta;
-    + Se l'utente modifica la risposta:
-      - Il sistema invalida tutte le risposte successive a quella modificata;
-      - Il sistema ricalcola il percorso del decision tree dalla domanda modificata;
-      - Il sistema presenta la domanda successiva in base al nuovo percorso.
+    + L'utente accede al menù "Esporta risultati";
+    + Il sistema mostra le opzioni di formato disponibili (PDF, CSV, JSON);
+    + L'utente seleziona il formato desiderato per l'esportazione;
+    + Il sistema raccoglie per ogni asset tutti i risultati delle esecuzioni completate;
+    + Il sistema genera il file nel formato selezionato;
+    + Il sistema salva il file sul file system locale;
+    + Il sistema notifica all'utente il completamento dell'esportazione e la posizione del file.
+    + La compilazione viene messa in stand by se non sono stati verificati tutti gli asset del dispositivo
   ]
-- *Scenari Alternativi*:#pad(left: 1em)[
-  #v(-0.5em)
-    + *UC11.1*: Se l'utente è alla prima domanda, sostituzione del pulsante "Passo precedente" con un pulsante "Ritorna alla dashboard";
-]
 
-=== UC11.1: Gestione della prima domanda
+
+
+=== UC16: Apertura cronologia
 - *Attore principali*: Utente;
-- *Precondizioni*: Visualizzazione della prima domanda;
-- *Postcondizioni*: Pulsante "Indietro" disabilitato, opzione "Torna a dashboard" aggiunta;
-- *Trigger*: Tentativo navigazione indietro alla prima domanda;
+- *Precondizioni*: Essere in Home o in Area utente;
+- *Postcondizioni*: Visualizzazione della cronologia
+- *Trigger*: Click del tasto cronologia;
 - *Scenario Principale*:#pad(left: 1em)[
 #v(-0.5em)
-   + Sistema disabilita "Passo precedente";
-   + Il sistema mostra il pulsante "Torna a dashboard";
-   + L'utente può annullare esecuzione;
+   + L'utente si trova in home o in area utente e clicca il tasto cronologia
+   + Il sistema apre la cronologia dei dispositivi verificati, è possibile vederci lo stato (verificati o in lavorazione) e aprirli per vedere asset->requisiti
 ]
-//Infine, nel caso in cui l'utente apra, tramite la web app, un file relativo a un test precedente, questo non dovrà presentare i risultati in modalità sola lettura, bensì dovranno essere pienamente modificabili.
+- *Scenari Alternativi*:#pad(left: 1em)[
+#v(-0.5em)
+   + *UC 16.1*: selezione di un asset dalla cronologia
+]
+
+=== UC16.1: Selezione di un asset dalla cronologia
+- *Attore principali*: Utente;
+- *Precondizioni*: Essere nella cronologia di un dispositivo
+- *Postcondizioni*: Apertura 
+- *Trigger*: Click del tasto cronologia;
+- *Scenario Principale*:#pad(left: 1em)[
+#v(-0.5em)
+   + L'utente si trova in home o in area utente e clicca il tasto cronologia
+   + Il sistema apre la cronologia dei dispositivi verificati, è possibile vederci lo stato (verificati o in lavorazione) e aprirli per vedere asset->requisiti
+]
+- *Scenari Alternativi*:#pad(left: 1em)[
+#v(-0.5em)
+   + UC 16.1: selezione di un asset dalla cronologia
+]

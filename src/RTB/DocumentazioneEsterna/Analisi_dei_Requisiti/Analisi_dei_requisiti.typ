@@ -46,7 +46,7 @@
   #statusTab(
     stato: "In review",
     versione: versionNumber,
-    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon"),
+    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega"),
     verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
@@ -69,6 +69,7 @@
   ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
   ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
   ([0.7.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
+  ([0.8.0], [2025-12-18], [Aldo Bettega], [], [Riscrittura e riordinazione di diversi UC, aggiunti altri UC])
 )
 
 #registroModifiche(modifiche)
