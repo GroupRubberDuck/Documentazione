@@ -40,7 +40,7 @@
     stato: "In verifica",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
-    verificatori: (""),
+    verificatori: (persone.DT,),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo","BlueWind srl"),
   )
@@ -50,7 +50,7 @@
 
   #let modifiche=(
 
-    ([0.1.0],[2025-12-17],[Felician Mario Necsulescu],[],[Stesura del verbale]),
+    ([0.1.0],[2025-12-17],[Felician Mario Necsulescu],persone.DT,[Stesura del verbale]),
     
     )
     
