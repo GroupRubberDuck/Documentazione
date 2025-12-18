@@ -258,6 +258,9 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 === UC6: Modifica di un decision tree tramite editor grafico
 /*#figure(
   image("immagini/UC6.png", width: 80%),
