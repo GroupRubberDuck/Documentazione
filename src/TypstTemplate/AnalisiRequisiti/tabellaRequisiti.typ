@@ -1,4 +1,4 @@
-#let header-color = rgb("#008080f6")
+#let header-color = rgb("#008080b0")
 
 #let tabella-requisiti(contenuto) = {
   table(

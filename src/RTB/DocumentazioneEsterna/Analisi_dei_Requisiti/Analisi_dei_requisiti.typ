@@ -222,3 +222,8 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
   #include "content/Use_case.typ"
 
 ]
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Requisiti", documentType: doc)[
+  #include "content/Requisiti.typ"
+
+]
