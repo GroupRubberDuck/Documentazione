@@ -24,6 +24,14 @@ Questi sono stati divisi in obbligatori (requisiti che devono essere presenti pe
   "ROF7", "Obbligatorio", "Il sistema deve mostrare i requisiti da verificare per un dispositivo, basandosi sulla gerarchia della norma", "UC9",
 
   "ROF8", "Obbligatorio", "Il sistema deve permettere l'inserimento di una giustificazione testuale per gli esiti, in particolare per N.A.", "UC",
+  
+  "ROF9", "Obbligatorio", "Il sistema deve salvare in modo persistente le risposte fornite dall’utente durante l’esecuzione di un decision tree", "UC3, UC11",
+
+  "ROF10", "Obbligatorio", "Il sistema deve tracciare e memorizzare il percorso decisionale seguito (nodi visitati e risposte) per ogni requisito verificato", "UC3, UC6",
+
+  "ROF11", "Obbligatorio", "Il sistema deve bloccare la prosecuzione del decision tree quando viene raggiunto uno stato terminale (PASS, FAIL o N.A.)", "UC4, UC5",
+
+  "ROF12", "Obbligatorio", "In caso di modifica di una risposta precedente, il sistema deve invalidare automaticamente le risposte successive e ricalcolare il percorso decisionale", "UC11",
 
   "RDF1", "Desiderabile", "Il sistema deve gestire l'autenticazione di un responsabile tecnico", "UC2",
 
@@ -42,8 +50,12 @@ Questi sono stati divisi in obbligatori (requisiti che devono essere presenti pe
   "RDF8", "Desiderabile", "Il sistema deve permettere l'esportazione dei risultati della verifica in diversi formati (PDF, CSV, JSON, XML)", "UC14",
 
   "RDF9", "Desiderabile", "Il sistema deve permettere di visualizzare uno storico interattivo delle verifiche effettuate", "UC16",
+  
+  "RDF10", "Desiderabile", "IIl sistema deve permettere di riprendere una verifica interrotta dal punto in cui era stata sospesa", "UC3, UC6",
 
+  "RDF11", "Desiderabile", "Il sistema deve permettere la visualizzazione grafica del percorso seguito all’interno di un decision tree", "UC3",
 
+  "RDF12", "Desiderabile", "Il sistema deve permettere di filtrare i requisiti di un asset in base al loro stato (PASS, FAIL, N.A., Non valutato)", "UC8",
 
 )
 )
