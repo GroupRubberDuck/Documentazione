@@ -48,6 +48,7 @@
   #let modifiche=(
 
     ([1.0.0],[#giornoRiunione.display()],[Felician Mario Necsulescu],[Draghici Ana Maria],[Stesura del verbale]),
+    ([1.0.0],[#giornoRiunione.display()],[Felician Mario Necsulescu],[Felician Mario Necsulescu],[Approvazione])
       )
 
       #registroModifiche(modifiche)
