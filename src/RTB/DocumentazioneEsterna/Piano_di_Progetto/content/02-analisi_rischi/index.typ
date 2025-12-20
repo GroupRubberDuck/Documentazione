@@ -1,8 +1,7 @@
 
  == Introduzione
 
-  Nella seguente sezione vengono esplorati i potenziali rischi che potrebbero verificarsi durante la durata del progetto.
-  Al fine di prevenire o mitigare i danni derivanti dai rischi è necessaria un'analisi adeguata.
+ Nella presente sezione vengono analizzati i potenziali rischi che potrebbero verificarsi durante la durata del progetto. Per prevenirne o mitigarne gli effetti, è necessaria un’analisi adeguata.
 
   Il processo di analisi dei rischi, conforme allo standard ISO/IEC 31000:2018, si articola in cinque fasi principali:
   #pad(left: 1em)[ 
@@ -13,7 +12,7 @@
   + *Monitoraggio e Revisione dei Rischi* : Le attività di monitoraggio e revisione vengono integrate nel ciclo di vita del progetto per verificare l'efficacia delle misure adottate e identificare eventuali nuovi rischi. A tal proposito un monitoraggio continuo è fondamentale. 
   ]
 
-Risulta fondamentale applicare in modo costante e continuativo le fasi del processo di analisi dei rischi per l'intero ciclo di vita del progetto, perché l'avanzamento delle attività può generare  nuove problematiche che richiedono soluzioni tempestive e adeguate.
+È fondamentale applicare in modo costante e continuativo le fasi del processo di analisi dei rischi per l’intero ciclo di vita del progetto, poiché l’avanzamento delle attività può generare nuove problematiche che richiedono soluzioni tempestive e adeguate.
 
 #pagebreak()
   == Identificazione dei rischi

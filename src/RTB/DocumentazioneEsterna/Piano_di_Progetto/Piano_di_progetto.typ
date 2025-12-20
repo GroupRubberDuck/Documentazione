@@ -32,7 +32,7 @@
 #let currentVersion=(
   major:0,
   minor:4,
-  patch:0,
+  patch:1,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -62,7 +62,8 @@
     ([0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
     Pianificazione di breve e lungo periodo promosse a sezioni.]),    
     ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
-    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [-], [Aggiunta @Pianificazione e completata scrittura Sprint 2] )
+    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [-], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
+    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [-], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -120,7 +121,7 @@
    #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione", documentType: doc)[
   = Pianificazione <Pianificazione>
 
-  La pianificazione del progetto si basa su un modello *iterativo e incrementale*, ispirato ai principi dell'approccio *Agile*, con l'obiettivo di garantire un monitoraggio continuo dell'avanzamento e una gestione efficace delle attività.
+  La pianificazione del progetto si basa su un modello *iterativo*, ispirato ai principi dell'approccio *Agile*, con l'obiettivo di garantire un monitoraggio continuo dell'avanzamento e una gestione efficace delle attività.
   
   Il lavoro del gruppo è organizzato in *sprint di durata bisettimanale*, scelti come compromesso ottimale tra capacità di pianificazione realistica e frequenza di verifica dei risultati ottenuti.
 
@@ -128,9 +129,9 @@
   Nel corso dello sprint è previsto inoltre un *incontro settimanale di allineamento* ("punto della situazione"), finalizzato a verificare lo stato delle attività in corso, individuare eventuali criticità e, se necessario, ricalibrare il carico di lavoro.
   
   Al termine di ogni sprint viene svolta una *retrospettiva*, che consente al gruppo di valutare il lavoro svolto, analizzare le difficoltà incontrate e individuare possibili miglioramenti del processo organizzativo.
-  Contestualmente,  i ruoli vengono ruotati a ogni sprint , al fine di permettere a tutti i membri del gruppo di acquisire esperienza nelle diverse responsabilità previste e di individuare una distribuzione dei ruoli efficace e sostenibile nel tempo.
+  Contestualmente,  i ruoli vengono ruotati a ogni sprint, al fine di permettere a tutti i membri del gruppo di acquisire esperienza nelle diverse responsabilità previste e di individuare una distribuzione dei ruoli efficace e sostenibile nel tempo.
   
-  Questo approccio consente di mantenere una visione chiara delle priorità, favorire l'adattamento alle esigenze del progetto e assicurare una progressione costante e controllata verso il raggiungimento degli obiettivi prefissati.
+  Questo approccio iterativo consente di mantenere una visione chiara delle priorità, favorire l’adattamento continuo alle esigenze del progetto e assicurare una progressione costante e controllata verso il raggiungimento degli obiettivi prefissati, permettendo di correggere e modificare il lavoro già svolto quando necessario.
 
 ]
   #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo ", documentType: doc)[
@@ -226,9 +227,7 @@ Di seguito viene riportata la *tabella riepilogativa dei costi*, già inclusa ne
     ]<tabella-ore>
 
 
-  == Requirements and Technology Baseline
-
-In questa fase iniziale del progetto, le attività sono principalmente orientate all'*analisi dei requisiti* e all'*analisi dei rischi*, con l'obiettivo di definire una baseline solida e condivisa su cui fondare le fasi successive.
+  === Requirements and Technology Baseline
 
 Di seguito vengono riportati i documenti richiesti per questa fase.
 Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo agile*.   
@@ -326,7 +325,7 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
       "Studio dei processi di di ciclo di vita organizzativi",
       [_Sprint 2_],
       "Completato",
-      "Studio delle best pratices o altro materiale ritenuto importante",
+      "Studio delle best practices o altro materiale ritenuto importante",
       [_Tutti sprint_],
       "In corso",
   ) 
@@ -362,11 +361,11 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
 
 
   === Product Baseline
-La redazione di questo paragrafo sarà effettuato in seguito al superamento della Requirements and Technology Baseline(RTB).
+La redazione di questo paragrafo sarà effettuata in seguito al superamento della Requirements and Technology Baseline (RTB).
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di breve periodo", documentType: doc)[
-  == Pianificazione di breve periodo
+  = Pianificazione di breve periodo
   #include "content/04-pianificazione_breve_periodo/index.typ"
 ]
 
