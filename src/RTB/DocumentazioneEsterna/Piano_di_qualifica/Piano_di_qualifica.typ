@@ -373,7 +373,7 @@ Misura quanto facilmente il software può essere modificato o esteso senza intro
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Strategie di testing", documentType: doc)[
-== Strategie di testing
+= Strategie di testing
 
 
 
@@ -387,7 +387,7 @@ Misura quanto facilmente il software può essere modificato o esteso senza intro
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Cruscotto di valutazione", documentType: doc)[
-== Cruscotto di valutazione
+= Cruscotto di valutazione
 
 
 
