@@ -43,7 +43,7 @@
     stato: "In progress",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
-    verificatori: ("",),
+    verificatori: ("Davide Testolin",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -54,8 +54,8 @@
 
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = ( 
-    ([0.0.1], [2025-12-15], [Felician Mario Necsulescu ], [], [Creazione del documento e stesura iniziale.]),    
-    ([0.1.0], [2025-12-18], [Felician Mario Necsulescu], [], [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.]),    
+    ([0.0.1], [2025-12-15], [Felician Mario Necsulescu ], [Davide Testolin], [Creazione del documento e stesura iniziale.]),    
+    ([0.1.0], [2025-12-18], [Felician Mario Necsulescu], [Davide Testolin], [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.]),    
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -109,13 +109,13 @@
 
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/blob/main/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.0.pdf")[Norme di Progetto v.1.0.0];\ 
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf")[Norme di Progetto v0.8.4];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
   ]
 
   === Riferimenti informativi
   #pad(left: 1em)[
-     - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/blob/main/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v.1.0.0]; \
+     - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v0.4]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[ISO/IEC 12207 - 1995]; \
     - #inserisciLink(url:"https://it.wikipedia.org/wiki/ISO/IEC_9126")[ISO/IEC 9126]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T08.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Qualità di processo];\
@@ -140,7 +140,7 @@
  Il controllo dell’efficacia dei processi è supportato dall’adozione di metriche di processo, utilizzate per monitorare l’andamento delle attività e l’efficienza delle risorse impiegate.
 
   == Processi primari
-  I processi primari riguardano le attività di sviluppo del software, come requisiti, progettazione, implementazione, integrazione e manutenzione. Per valutarne andamento ed efficacia, si utilizzano metriche di processo che permettono di monitorare tempi, costi e progressi, evidenziando eventuali scostamenti rispetto agli obiettivi.
+  I processi primari riguardano le attività di sviluppo del software, come requisiti, progettazione, implementazione, integrazione e manutenzione. Per valutarne andamento ed efficacia si utilizzano metriche di processo che permettono di monitorare tempi, costi e progressi, evidenziando eventuali scostamenti rispetto agli obiettivi.
 
  === Fornitura
 
