@@ -16,7 +16,23 @@
     extract_text_smart(elem.body) + "\n\n"
 
   // Liste (Puntate, Numerate, Termini): Aggiungiamo un a capo dopo ogni elemento
-  } else if elem.func() == list.item or elem.func() == enum.item or elem.func() == terms.item {
+  } 
+  else if elem.func() == link {
+  let body_text = if elem.has("body") { extract_text_smart(elem.body) }   
+                  else { "" }
+  if body_text.starts-with("http://") or body_text.starts-with("https://") or body_text.starts-with("www.") or body_text.starts-with("mailto:") {
+      "link" // segnaposto, indica che esiste un link, ma non intacca valutazioni come gulpease
+    } else {
+      body_text // È un testo alternativo (es. "Vedi il sito"), tienilo
+    }
+  // Liste (Puntate, Numerate, Termini): Aggiungiamo un a capo dopo ogni elemento
+  }   else if elem.func() == ref or elem.func()== cite{
+  let body_text = if elem.has("body") { extract_text_smart(elem.body) }   
+                  else { "sezione" }
+  body_text
+  // Liste (Puntate, Numerate, Termini): Aggiungiamo un a capo dopo ogni elemento
+  } 
+  else if elem.func() == list.item or elem.func() == enum.item or elem.func() == terms.item {
     if elem.has("body") {extract_text_smart(elem.body) + "\n"}
 
   // === 3. Gestione Testo e Spazi standard ===
@@ -27,7 +43,7 @@
   } else if elem.func() == parbreak {
     "\n\n"
   } else if elem.func() == smartquote {
-    "\""
+    "'"
     
   // === 4. Ricorsione Generica ===
   } else if elem.has("children") {
@@ -49,7 +65,7 @@
   
   [
     #pagebreak()
-    = Testo per Analisi (Con Liste e Titoli corretti)
+    // = Testo per Analisi (Con Liste e Titoli corretti)
     
     #raw(clean_string, block: true)
   ]
