@@ -59,7 +59,7 @@
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("gestione-dell'infrastruttura")), \ Gestione dell'infrastruttura]),
-  ([0.8.4],[2025-12-15],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("processo-di-miglioramento")), \ Processo di miglioramento]),
+  ([0.8.4],[2025-12-15],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("processo-di-miglioramento")), \ Processo di miglioramento e  #ref(label("processo-di-formazione")), processo di formazione]),
 
   
 )

@@ -88,7 +88,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
 = Introduzione <sec-intro>
 
-Il presente documento di Analisi dei Requisiti  costituisce un elemento fondamentale per lo sviluppo del progetto software “Automated EN18031 Compliance Verification", commissionato da Bluewind S.r.l., e rappresenta la base su cui poggia l’intero processo di progettazione e implementazione del sistema.
+Il presente documento di Analisi dei Requisiti  costituisce un elemento fondamentale per lo sviluppo del progetto software "Automated EN18031 Compliance Verification", commissionato da Bluewind S.r.l., e rappresenta la base su cui poggia l’intero processo di progettazione e implementazione del sistema.
 
 Questo documento è stato redatto con l’intento di fornire una trattazione chiara  dei requisiti e dei casi d’uso  individuati dal team di sviluppo. La raccolta di questi dati è il risultato di un’analisi approfondita del #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[capitolato d'appalto C1 - Automated EN18031 Compliance Verification], di discussioni interne al gruppo di lavoro e di colloqui con i referenti aziendali, in particolare Tobia Fiorese e Alessandro Zappia.
 
@@ -115,17 +115,12 @@ Il prodotto è un’applicazione software per la verifica automatizzata della co
 L’obiettivo è guidare l’utente nella valutazione dei requisiti di cybersecurity  attraverso l’esecuzione strutturata dei decision tree normativi, velocizzando e standardizzando il processo di verifica della conformità e generando la documentazione necessaria. 
 == Glossario // mettere link al glossario
 Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato un approccio ibrido alla gestione dei riferimenti al Glossario.
-I termini tecnici possono essere presentati secondo 2 modalità:
-
-- *Footnote al primo utilizzo*: applicata ai concetti critici o potenzialmente ambigui, permette un accesso immediato alla definizione senza interrompere il flusso logico del testo.
-
-- *Marcatura tramite pedice “G” (esempio#sub("G"))*: utilizzata per termini ricorrenti o già contestualizzati, indica semplicemente la presenza del termine nel Glossario.
-  
+I termini tecnici vengono marcati con *pedice “G” (esempio#sub("G"))* .\ 
 Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
 // Da rivedere, l'uso del glossario è ancora da definire meglio, quindi questa è solo un'idea generale, non definitiva. 
  
 == Miglioramenti del documento
-Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da: 
+Il presente documento è soggetto a revisioni e aggiornamenti periodici durante tutto il ciclo di vita del progetto. Le modifiche possono essere proposte da: 
 
 - *Team di sviluppo*: in caso di ambiguità o necessità di chiarimenti tecnici; 
 
