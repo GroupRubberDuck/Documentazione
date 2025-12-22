@@ -68,6 +68,8 @@ utente(padre)<----responsabile tecnico(figlio), cioè Responsabile tecnico eredi
 
   ]
 
+  #colbreak()
+
   ==== UC1.1: File di ingresso vuoto
 /*#figure(
   image("immagini/UC1.1.png", width: 80%),

@@ -33,8 +33,8 @@
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
   major:0,
-  minor:7,
-  patch:1,
+  minor:9,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -47,7 +47,7 @@
     stato: "In review",
     versione: versionNumber,
     autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega"),
-    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici"),
+    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -69,8 +69,8 @@
   ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
   ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
   ([0.7.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
-  ([0.8.0], [2025-12-18], [Aldo Bettega], [], [Riscrittura e riordinazione di diversi UC, aggiunti altri UC]),
-  ([0.9.0], [2025-12-18], [Aldo Bettega], [], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili])
+  ([0.8.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Riscrittura e riordinazione di diversi UC, aggiunti altri UC]),
+  ([0.9.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili])
 )
 
 #registroModifiche(modifiche)
@@ -139,14 +139,14 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
  == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf")[Norme di Progetto v.0.0.1];\ 
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf")[Norme di Progetto v0.8.4];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
     - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031]
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v.0.0.1]; \
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v0.3]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[Diagrammi dei casi d'uso]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti ];\
     - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
