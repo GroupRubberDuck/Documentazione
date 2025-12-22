@@ -211,7 +211,7 @@ return("new":ruoli.keys().map(
       ruoli.Verificatore.nome:int,
     ),
     numeroSprint: content,
-    depth:5,
+    depth:4,
   )={
 
 

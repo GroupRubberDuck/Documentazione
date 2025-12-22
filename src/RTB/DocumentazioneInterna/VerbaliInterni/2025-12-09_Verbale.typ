@@ -47,7 +47,8 @@
 
   #let modifiche=(
 
-    ([1.0.0],giornoRiunione.display(),persone.FILIPPO,persone.DT,[Scrittura verbale interno.]),
+    ([0.1.0],giornoRiunione.display(),persone.FILIPPO,persone.DT,[Scrittura verbale interno.]),
+    ([1.0.0],[#giornoRiunione.display()],[Davide Testolin],[Davide Testolin],[Approvazione]),
 
       )
 

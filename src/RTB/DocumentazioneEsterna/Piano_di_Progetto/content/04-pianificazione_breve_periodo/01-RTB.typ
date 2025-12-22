@@ -50,11 +50,11 @@ Per *lo Sprint 1*, essendo focalizzato su attività di studio e impostazione org
 #let rischiEffettivi=[
 Durante lo *Sprint 1* sono stati riscontrati i seguenti rischi, in linea con quanto previsto:
 
-- *R.P.1 – Disponibilità variabile dei membri del team o imprevisti di impegno*:  alcuni membri hanno avuto meno tempo disponibile per impegni esterni, rallentando lo studio di alcuni documenti.
+- *R.P.1 – Disponibilità variabile dei membri del team o imprevisti di impegno*:  alcuni membri hanno avuto meno tempo disponibile per impegni esterni. In risposta a ciò, è stato avviato un approfondimento volto a migliorare la definizione e la gestione delle issue, al fine di ottimizzare l’organizzazione del lavoro.
 
-- *R.O.1 – Pianificazione iniziale errata o ottimistica*: alcune attività di studio e revisione documentale (Norme di Progetto e Analisi dei Requisiti) hanno richiesto più tempo del previsto.
+- *R.O.1 – Pianificazione iniziale errata o ottimistica*: alcune attività di studio e revisione documentale (Norme di Progetto e Analisi dei Requisiti) hanno richiesto più tempo del previsto. Per questo motivo, durante questo sprint il gruppo si è orientato principalmente verso attività di apprendimento e di comprensione della struttura e dei contenuti dei documenti.
 
-Non sono emersi rischi tecnologici critici, in quanto lo sprint era focalizzato su attività preparatorie e di analisi, senza sviluppo software.
+Non sono invece emersi rischi tecnologici critici, come inizialmente ipotizzato, poiché lo Sprint 1 era focalizzato su attività preparatorie e di analisi e non prevedeva ancora lo sviluppo software.
 ]
 
 
@@ -69,11 +69,13 @@ Non sono emersi rischi tecnologici critici, in quanto lo sprint era focalizzato 
 )
 
 #let retrospettiva=[
-  Sprint 1 ha rappresentato una *fase di avvio*. Il gruppo ha incontrato difficoltà nella definizione di task e stima dei tempi, e la comunicazione interna non era ancora pienamente strutturata. Nonostante ciò, le attività di studio e documentazione principali sono state completate. 
-  
-  Il primo incontro con BlueWind ha fornito indicazioni utili. 
-  
-  Il gruppo ha deciso di migliorare la pianificazione, la scomposizione delle attività e la comunicazione interna.
+La Retrospettiva 1 ha rappresentato una *fase di avvio* del progetto. Durante questo sprint il gruppo si è concentrato principalmente sulla *definizione della struttura* dei documenti principali, nonché sull’individuazione delle *migliori pratiche* di versionamento e tracciamento delle modifiche. Le attività di studio e di documentazione previste sono state in larga parte completate.
+
+Tuttavia, il gruppo ha riscontrato alcune difficoltà, in particolare nella *stima dei tempi* e nella *definizione delle task*. Inoltre, la comunicazione interna non risultava ancora pienamente strutturata. Le attività di mitigazione dei rischi adottate sono state valutate come mediamente efficaci: trattandosi di una fase iniziale del progetto, non è stato possibile ottenere risultati pienamente consolidati, che si prevede emergeranno nei prossimi sprint. 
+
+Alla luce di queste considerazioni, il gruppo ha deciso che nel prossimo sprint si lavorerà in modo mirato sul *miglioramento della pianificazione*, sulla *scomposizione delle attività* e sul *rafforzamento della comunicazione interna*. Questi aspetti rappresentano infatti aree di miglioramento su cui il gruppo deve migliorare.
+
+Di conseguenza, nel prossimo sprint si prevede un maggiore impegno nelle *attività di verifica*, dato che il metodo di lavoro non è ancora completamente strutturato, e nel ruolo di amministratore. Parallelamente, continueranno le attività principali di analisi e studio.
 ]
 #sprint(
   numeroSprint: "1",
@@ -118,7 +120,7 @@ fineEffettiva:datetime(year: 2025,month: 12,day:8))
 TODO=[  Durante questo sprint il gruppo ha deciso di  concentrare la maggior parte delle proprie energie sull’*analisi dei requisiti e la definizione dei casi d’uso*. 
 
 In particolare il gruppo si concentra su: 
-- Aggiornare e completare le Norme di Progetto (processi primari/ di supporto /organizzativi/ best pratices).
+- Aggiornare e completare le Norme di Progetto (processi primari/ di supporto /organizzativi/ best practices).
 
 - Aggiornare il Glossario con automazioni per marcatura termini.
 
@@ -140,9 +142,9 @@ rischiAttesi=[
 - *R.O.3 – Mancanza di comunicazione e collaborazione*: compiti poco chiari e ritardi nella scomposizione dei casi d’uso.
 ]
 rischiEffettivi=[
-- *R.T.1 – Comprensione errata della norma EN 18031*: il gruppo ha avuto difficoltà a interpretare correttamente i requisiti; è stato organizzato un incontro con l’azienda per chiarimenti.
+- *R.T.1 – Comprensione errata della norma EN 18031*: il gruppo ha avuto difficoltà a interpretare correttamente i requisiti; durante l’incontro periodico con l’azienda sono stati quindi posti chiarimenti specifici in merito.
 
-- *R.O.3 – Mancanza di comunicazione e collaborazione*: inizialmente task poco chiari; il gruppo ha introdotto un issue template per rendere le attività più precise.
+- *R.O.3 – Mancanza di comunicazione e collaborazione*: inizialmente task poco chiari; il gruppo ha introdotto un issue template per rendere le attività più precise e brevi incontri informali interni.
 
 - *R.T.2 – Inesperienza con le tecnologie*: alcuni membri poco familiari con software e gestione documentale; mitigato tramite automatizzazioni, tabelle ripetibili e scomposizione dei file dai membri più esperti.
 
@@ -157,12 +159,15 @@ oreProduttive=(
 )
 
 retrospettiva=[
-Nello Sprint 2 il gruppo ha riscontrato difficoltà nella *definizione dei casi d’uso*. Per questo motivo è stata adottata una visione iniziale a *macroblocchi*, da dettagliare nei prossimi sprint.
+Durante lo *Sprint 2* il gruppo ha proseguito lo studio volto a migliorare l’efficacia della comunicazione e della gestione delle issue, emerse come criticità nello sprint precedente. A tal fine è stato introdotto un *issue template condiviso* che sta funzionando in modo soddisfacente, poiché consente di definire in maniera chiara gli scopi specifici delle attività. Il gruppo prevede quindi di mantenere l’attuale template, ritenendolo efficace.
 
-È stato svolto lo studio del materiale fornito e migliorata la documentazione principale (Piano di Progetto, Norme di Progetto).
+Parallelamente è stato portato avanti lo studio del materiale fornito dall’azienda e si è lavorato al miglioramento della documentazione principale, in particolare il *Piano di Progetto*, le *Norme di Progetto* e l'*Analisi dei requisiti*. Tuttavia, sono emerse difficoltà nella *definizione dei casi d’uso* e nella redazione del *documento di Analisi dei requisiti*. Per questo motivo il gruppo ha deciso di adottare inizialmente una visione ad *alto livello* (a macro-blocchi), rimandando un maggiore dettaglio ai prossimi sprint.
 
-Le principali criticità organizzative riguardano il *coordinamento nella stesura dei casi d’uso* e lo *studio condiviso del materiale*.
-Per risolverle, il gruppo ha proposto brevi incontri informali per suddividere lo studio e creare momenti di confronto interno.]
+Le principali criticità organizzative hanno riguardato il *coordinamento nella stesura dei casi d’uso* e lo *studio condiviso del materiale*. In particolare, il gruppo ha riscontrato difficoltà nel conciliare lo studio con la redazione degli altri documenti. Per mitigare tali problemi sono stati proposti *brevi incontri informali*, finalizzati alla suddivisione dello studio e alla creazione di momenti strutturati di confronto interno.
+
+Rispetto allo Sprint 1, *le attività di mitigazione dei rischi* sono risultate complessivamente più efficaci, anche se il gruppo ritiene che sia possibile un ulteriore miglioramento. Le mitigazioni adottate dovranno quindi essere testate anche negli sprint successivi per valutarne concretamente l’efficacia.
+
+Alla luce di quanto emerso, nel *prossimo sprint* le attività principali saranno incentrate su una *definizione più accurata dei casi d’uso*; di conseguenza, i ruoli maggiormente coinvolti saranno quelli di Analista e Verificatore.]
 
 }
 #sprint(
