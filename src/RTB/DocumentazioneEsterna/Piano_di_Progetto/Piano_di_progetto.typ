@@ -46,7 +46,7 @@
     stato: "In progress",
     versione: versionNumber,
     autori: ("Davide Lorenzon, Felician Mario Necsulescu, Ana Maria Draghici",),
-    verificatori: ("Aldo Bettega, Ana Maria Draghici",),
+    verificatori: ("Aldo Bettega, Ana Maria Draghici, Davide Testolin",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -62,8 +62,8 @@
     ([0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
     Pianificazione di breve e lungo periodo promosse a sezioni.]),    
     ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
-    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [-], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
-    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [-], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
+    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
+    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))

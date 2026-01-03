@@ -103,7 +103,7 @@ let consuntivo=oreProduttive.map(item=>{
 })
 
   show table.cell.where(y:0):strong
-  figure(caption:"Consuntivo Sprint "+numeroSprint)[
+  figure(caption:"Preventivo Sprint "+numeroSprint)[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   ..(preventivo.flatten())
@@ -114,7 +114,7 @@ let consuntivo=oreProduttive.map(item=>{
 
 heading("Consuntivo", depth: depth+1)
 
-  figure(caption:"Preventivo Sprint "+numeroSprint)[
+  figure(caption:"Consuntivo Sprint "+numeroSprint)[
   #table(columns: (1fr,1fr,auto),
   [Persona],[Ruolo],[Ore],
   ..(consuntivo.flatten())
