@@ -5,7 +5,7 @@ In questa sezione sono presenti i requisiti nati dai casi d'uso trovati grazie a
 
 == Requisiti funzionali
 I requisiti funzionali definiscono le funzioni, i comportamenti e le azioni specifiche che il software deve essere in grado di eseguire in risposta a determinati input o eventi.
-Questi sono stati divisi in obbligatori (requisiti che devono essere presenti per soddisfare la richiesta della proponente) e desiderabili (requisiti che arricchiscono il sistema con funzionalità utili).
+Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali - requisiti che devono essere presenti per soddisfare la richiesta della proponente) e desiderabili (RDF: Requisiti Desiderabili Funzionali - requisiti che arricchiscono il sistema con funzionalità utili).
 
 
 #tabella-requisiti((
@@ -51,7 +51,7 @@ Questi sono stati divisi in obbligatori (requisiti che devono essere presenti pe
 
   "RDF9", "Desiderabile", "Il sistema deve permettere di visualizzare uno storico interattivo delle verifiche effettuate", "UC16",
   
-  "RDF10", "Desiderabile", "IIl sistema deve permettere di riprendere una verifica interrotta dal punto in cui era stata sospesa", "UC3, UC6",
+  "RDF10", "Desiderabile", "Il sistema deve permettere di riprendere una verifica interrotta dal punto in cui era stata sospesa", "UC3, UC6",
 
   "RDF11", "Desiderabile", "Il sistema deve permettere la visualizzazione grafica del percorso seguito all’interno di un decision tree", "UC3",
 
@@ -60,9 +60,44 @@ Questi sono stati divisi in obbligatori (requisiti che devono essere presenti pe
 )
 )
 
-Non obbligatori:
-- modifica giustificazione
-
 == Requisiti di qualità
+I requisiti di qualità definiscono le caratteristiche che deve rispettare il sistema affinchè raggiunga uno stato consono ad una buona user experience.
+
+#tabella-requisiti((
+  "ROQ1", "Obbligatorio", "Il sistema deve seguire le metriche indicate nel Piano di Qualifica", "?",
+
+  "ROQ2", "Obbligatorio", "Il sistema deve rispettare le indicazioni delle Norme di Progetto", "?",
+
+  "ROQ3", "Obbligatorio", "Deve essere allegato al sistema un manuale utente", "Capitolato",
+
+  "ROQ4", "Obbligatorio", "La documentazione del prodotto deve essere fornita tramite una repo Github", "Capitolato",
+
+  "ROQ5", "Obbligatorio", "Il codice del prodotto deve essere fornito tramite una repo Github", "Capitolato",
+
+  "ROQ6", "Obbligatorio", "Il sistema deve essere basato sul lavoro descritto nell'Analisi dei requisiti, dove sono definiti Use Case e i requisiti che scaturiscono da essi", "?",
+))
 
 == Requisiti di vincolo
+Questa sezione definisce le restrizioni tecniche, normative e implementative che limitano le scelte progettuali nello sviluppo del sistema. Tali vincoli impongono condizioni obbligatorie, come l'uso di specifiche tecnologie e standard di compatibilità che il prodotto finale deve soddisfare.
+
+#tabella-requisiti((
+  "ROV1", "Obbligatorio" , "Il sistema deve rispettare rigorosamente la logica e i contenuti (terminologia tecnica in particolare) descritti sullo standard EVS-EN 18031-1:2024", "Capitolato",
+
+  "ROV2", "Obbligatorio", "La struttura dei decision tree deve essere importata da file di configurazione esterni in un formato strutturato prestabilito (es. JSON)", "UC4, UC10",
+
+  "ROV3", "Obbligatorio", "L'applicazione deve essere web based e accessibile da un browser", "Capitolato, UC1",
+
+  "ROV4", "Obbligatorio", "I report finali devono essere generati in un formato standard esportabile (es. PDF, CVS)", "Capitolato, UC14",
+
+  "RDV1", "Desiderabile", "La logica del sistema deve essere scritta in linguaggio Python", "Capitolato"
+))
+
+
+//La sezione che segue è ancora soggetta a studio esplorativo
+== Altro
+Possibili altre classi di requisiti:
++ requisiti di sicurezza
++ requisiti di performance
+
+== Tracciamento
+In questa parte bisogna scrivere una tabella riassuntiva con tutti i codici dei requisiti e degli use case.
