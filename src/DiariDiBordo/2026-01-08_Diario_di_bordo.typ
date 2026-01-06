@@ -35,6 +35,17 @@
 - Sospensione delle attività di progetto nel periodo 2025/12/23-2026/01/05
 - Allungamento del periodo di sprint per il primo sprint dopo la pausa, a causa degli esami il gruppo non è in grado di portare una adeguata quantità di incrementi al progetto nell'arco di tempo di un normale sprint. 
 
+= Previsione di completamento della RTB
+Il gruppo prevede di raggiungere la baseline RTB entro la fine di febbraio, questa previsione tiene conto anche di alcuni periodi di slack.
+
+#set list(marker:sym.arrow)
+Motivazioni:
+- Il gruppo ha intensità di impegno media;
+- Vi è stata una pausa delle attività, come dichiarato precedentemente.
+- Il gruppo prevede di completare la RB verso la fine di gennaio e primi di febbraio e di chiedere un colloquio con il Professor Cardin per ricevere correzioni al riguardo.
+- Successivamente alla sessione di esami tutti i membri del gruppo prevedono di poter aumentare la loro intensità di impegno.
+
+
 = Dubbi
 #set list(marker: [--])
 - Scelta e adeguatezza dei pattern architetturali più idonei per l’implementazione del software, in relazione ai requisiti del prodotto e all’evoluzione verso il PoC.
