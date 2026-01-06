@@ -3,7 +3,7 @@
 
 #show: slides.with(
   numero: 7,
-  data: "06-01-2026",
+  data: "08-01-2026",
 )
 
 = Attività completate
@@ -17,8 +17,8 @@
 #set list(marker: image(clessidra_icon, width: 0.7em))
 - Predisporre lo scheletro della sezione cruscotto di valutazione.
 - Ricercare e valutare i tool più adatti per il plotting e la visualizzazione dei dati. 
-- Stesura della sezione relativa ai processi primari nel documento *Norme di Progetto*, descrivendo come il gruppo implementa i processi primari selezionati. 
-- Inserire nel documento le definizioni delle metriche di qualità già elencate nel PdQ, che conterrà informazioni più dettagliate sui metodi di monitoraggio della qualità.
+- Completare il documento *Norme di Progetto*. 
+// - Inserire nel documento le definizioni delle metriche di qualità già elencate nel PdQ, che conterrà informazioni più dettagliate sui metodi di monitoraggio della qualità.
 - Aggiornamento del *Piano di Qualifica*, includendo:
   + Le definizioni delle metriche.
   + Lo scheletro del cruscotto di valutazione.
@@ -27,7 +27,13 @@
 
 = Difficoltà incontrate
 #set list(marker: [--])
-- Nessuna difficoltà significativa riscontrata nel periodo considerato, in quanto il gruppo ha programmato intenzionalmente una fase di pausa dalle attività operative
+- Il gruppo ha rivalutato le scadenze delle baseline precedentemente fissate, in quanto esse erano troppo ottimistiche per la situazione attuale. (Conformandole maggiormente alla intensità di impegno dichiarata, media)
+- Nessuna altra difficoltà significativa riscontrata nel periodo considerato, in quanto il gruppo ha programmato intenzionalmente una fase di pausa dalle attività operative.
+
+= Decisioni
+#set list(marker:sym.bullet.o)
+- Sospensione delle attività di progetto nel periodo 2025/12/23-2026/01/05
+- Allungamento del periodo di sprint per il primo sprint dopo la pausa, a causa degli esami il gruppo non è in grado di portare una adeguata quantità di incrementi al progetto nell'arco di tempo di un normale sprint. 
 
 = Dubbi
 #set list(marker: [--])
