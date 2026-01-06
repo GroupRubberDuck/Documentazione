@@ -122,3 +122,12 @@
 
 
 ]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
+
+#he(body: "Appendice")
+#set heading(numbering: "1.A.1)")
+#include "content/appendice/index.typ"
+
+
+
+]

@@ -6,7 +6,7 @@
 #let listaDocumenti=(
 "Norme di progetto":"/src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ",
 "Piano di progetto":"/src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ",
-"Piano di qualità":"/src/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ",
+"Piano di qualifica":"/src/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ",
 "Analisi dei requisiti":"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ",
 )
 #let risultati=()

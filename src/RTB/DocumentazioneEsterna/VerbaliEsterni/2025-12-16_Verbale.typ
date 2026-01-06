@@ -21,8 +21,8 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
-  minor:1,
+  major:1,
+  minor:0,
   patch:0,
 )
 //converte dizionario in stringa
@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvazione",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
     verificatori: (persone.DT,),
@@ -51,6 +51,7 @@
   #let modifiche=(
 
     ([0.1.0],[2025-12-17],[Felician Mario Necsulescu],persone.DT,[Stesura del verbale]),
+    ([1.0.0],[2025-12-23],[Felician Mario Necsulescu],persone.FELIX,[Approvazione]),
     
     )
     
@@ -107,6 +108,7 @@
 #insertArabicNumberedPages("Riassunto della riunione","Verbale esterno",giornoRiunione )[
   = Riassunto della riunione
   La riunione è stata dedicata all’analisi e al chiarimento di alcune tematiche rilevanti emerse durante l'attività di analisi dei requisiti, con particolare riferimento alla gestione delle valutazioni nei decision tree, all’organizzazione delle informazioni a supporto dell’utente e alle modalità di trattamento degli input. L’incontro ha consentito di allineare le interpretazioni condivise e di definire indicazioni utili per la prosecuzione delle attività.
+  #upper("è") stato anche delimitato lo scope del progetto al solo ambito di valutazione concettuale, escludendo le altre valutazioni definite nello standard (completezza funzionale e sufficienza funzionale, in quanto meno adatte all'automazione e con criteri meno oggettivi.
 
   == Gestione dello stato dei decision tree <stato>
  Uno dei temi affrontati riguarda la *possibilità di salvare lo stato di avanzamento* durante l’esecuzione degli alberi decisionali. Si discute se il salvataggio debba avvenire esclusivamente al termine dell’albero oppure anche *in modo intermedio*. Viene condivisa l’idea che il salvataggio a metà percorso sia sensato, ad esempio nel caso in cui l’utente debba interrompere l’analisi per mancanza di tempo o preferisca rimandare una decisione. Questa funzionalità permetterebbe di riprendere il lavoro esattamente dal punto in cui era stato lasciato.
