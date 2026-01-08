@@ -1,4 +1,5 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisiti
+#import "/src/TypstTemplate/AnalisiRequisiti/tabellaTracciamento.typ": tabella-tracciamento
 
 = Requisiti
 In questa sezione sono presenti i requisiti nati dai casi d'uso trovati grazie allo studio del capitolato, lo studio del dominio di progetto e dal confronto con l'azienda proponente.
@@ -25,13 +26,17 @@ Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali -
 
   "ROF8", "Obbligatorio", "Il sistema deve permettere l'inserimento di una giustificazione testuale per gli esiti, in particolare per N.A.", "UC12",
   
-  "ROF9", "Obbligatorio", "Il sistema deve salvare in modo persistente le risposte fornite dall’utente durante l’esecuzione di un decision tree", "UC3, UC11",
+  "ROF9", "Obbligatorio", "Il sistema deve salvare in modo persistente le risposte fornite dall’utente durante l’esecuzione di un decision tree", "UC5",
 
-  "ROF10", "Obbligatorio", "Il sistema deve tracciare e memorizzare il percorso decisionale seguito (nodi visitati e risposte) per ogni requisito verificato", "UC3, UC6",
+  "ROF10", "Obbligatorio", "Il sistema deve tracciare e memorizzare il percorso decisionale seguito (nodi visitati e risposte) per ogni requisito verificato", "UC5, UC6",
 
   "ROF11", "Obbligatorio", "Il sistema deve bloccare la prosecuzione del decision tree quando viene raggiunto uno stato terminale (PASS, FAIL o N.A.)", "UC4, UC5",
 
-  "ROF12", "Obbligatorio", "In caso di modifica di una risposta precedente, il sistema deve invalidare automaticamente le risposte successive e ricalcolare il percorso decisionale", "UC11",
+  "ROF12", "Obbligatorio", "In caso di modifica di una risposta precedente, il sistema deve invalidare automaticamente le risposte successive e ricalcolare il percorso decisionale", "UC6",
+
+  "ROF13", "Obbligatorio", "Il sistema deve riconoscere il completamento di tutti i requisiti di un asset e fornire un resoconto finale all'utente", "UC7",
+
+  "ROF14", "Obbligatorio", "Il sistema deve distinguere il tipo di interfaccia (Rete o Utente)", "UC4",
 
   "RDF1", "Desiderabile", "Il sistema deve gestire l'autenticazione di un responsabile tecnico", "UC2",
 
@@ -49,7 +54,7 @@ Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali -
 
   "RDF8", "Desiderabile", "Il sistema deve permettere l'esportazione dei risultati della verifica in diversi formati (PDF, CSV, JSON, XML)", "UC14",
 
-  "RDF9", "Desiderabile", "Il sistema deve permettere di visualizzare uno storico interattivo delle verifiche effettuate", "UC16",
+  "RDF9", "Desiderabile", "Il sistema deve permettere di visualizzare uno storico interattivo delle verifiche effettuate", "UC15",
   
   "RDF10", "Desiderabile", "Il sistema deve permettere di riprendere una verifica interrotta dal punto in cui era stata sospesa", "UC3, UC6",
 
@@ -64,9 +69,9 @@ Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali -
 I requisiti di qualità definiscono le caratteristiche che deve rispettare il sistema affinchè raggiunga uno stato consono ad una buona user experience.
 
 #tabella-requisiti((
-  "ROQ1", "Obbligatorio", "Il sistema deve seguire le metriche indicate nel Piano di Qualifica", "?",
+  "ROQ1", "Obbligatorio", "Il sistema deve seguire le metriche indicate nel Piano di Qualifica", "Piano di Qualifica",
 
-  "ROQ2", "Obbligatorio", "Il sistema deve rispettare le indicazioni delle Norme di Progetto", "?",
+  "ROQ2", "Obbligatorio", "Il sistema deve rispettare le indicazioni delle Norme di Progetto", "Norme di Progetto",
 
   "ROQ3", "Obbligatorio", "Deve essere allegato al sistema un manuale utente", "Capitolato",
 
@@ -74,7 +79,7 @@ I requisiti di qualità definiscono le caratteristiche che deve rispettare il si
 
   "ROQ5", "Obbligatorio", "Il codice del prodotto deve essere fornito tramite una repo Github", "Capitolato",
 
-  "ROQ6", "Obbligatorio", "Il sistema deve essere basato sul lavoro descritto nell'Analisi dei requisiti, dove sono definiti Use Case e i requisiti che scaturiscono da essi", "?",
+  "ROQ6", "Obbligatorio", "Il sistema deve essere basato sul lavoro descritto nell'Analisi dei requisiti, dove sono definiti Use Case e i requisiti che scaturiscono da essi", "Analisi dei requisiti",
 ))
 
 == Requisiti di vincolo
@@ -92,12 +97,230 @@ Questa sezione definisce le restrizioni tecniche, normative e implementative che
   "RDV1", "Desiderabile", "La logica del sistema deve essere scritta in linguaggio Python", "Capitolato"
 ))
 
+== Requisiti di sicurezza
+Questa sezione analizza i requisiti che l'applicazione debba avere affinchè siano garantiti adeguati livelli di sicurezza, integrità e riservatezza dei dati trattati.
 
-//La sezione che segue è ancora soggetta a studio esplorativo
-== Altro
-Possibili altre classi di requisiti:
-+ requisiti di sicurezza
-+ requisiti di performance
+#tabella-requisiti((
+  "ROS1", "Obbligatorio", "Le password utente e admin non devono essere salvate in chiaro nel database", "UC1",
+
+  "ROS2", "Obbligatorio", "Il sistema deve garantire che la modifica dei decision tree sia consentita esclusivamente ad utenti autentificati come Responsabile Tecnico", "UC2, UC10",
+
+  "RDS1", "Desiderablie", "Ogni input di testo deve essere sanificato affinchè vengano introdotti nel db tipi di dati previsti", "Riunione esterna",
+))
+
+== Requisiti di performance
+Da chiedere all'azienda se azioni come conversione, caricamento del nodo successivo ecc... debbano avere un tempo di durata massimo
 
 == Tracciamento
-In questa parte bisogna scrivere una tabella riassuntiva con tutti i codici dei requisiti e degli use case.
+=== Fonte - Requisiti
+#tabella-tracciamento(
+  "Fonte",
+  "Requisiti",
+  (
+    "UC1",
+    "ROF1, ROF2, ROV3, ROS1",
+
+    "UC1.1",
+    "ROF3",
+
+    "UC1.2",
+    "ROF3",
+
+    "UC1.3",
+    "ROF3",
+
+    "UC2",
+    "RDF1, RDF2, ROS2",
+
+    "UC3",
+    "RDF3, RDF10, RDF11",
+
+    "UC4",
+    "ROF4, ROF11, ROF14, ROV2",
+
+    "UC5",
+    "ROF4, ROF9, ROF10, ROF11",
+
+    "UC5.1",
+    "ROF5",
+
+    "UC5.2",
+    "ROF5",
+
+    "UC5.3",
+    "ROF5",
+
+    "UC6",
+    "ROF10, ROF12, RDF4, RDF10",
+
+    "UC7",
+    "ROF13",
+
+    "UC8",
+    "ROF6, RDF12",
+
+    "UC9",
+    "ROF7",
+
+    "UC10",
+    "RDF2, RDF5, ROV2, ROS2",
+
+    "UC11",
+    "RDF6",
+
+    "UC12",
+    "ROF8",
+
+    "UC13",
+    "RDF7",
+
+    "UC14",
+    "RDF8, ROV4",
+
+    "UC15",
+    "RDF9",
+
+    "Capitolato",
+    "ROQ3, ROQ4, ROQ5, ROV1, ROV3, ROV4, RDV1",
+
+    "Riunione esterna",
+    "RDS1",
+
+    "Analisi dei requisiti",
+    "ROQ6",
+
+    "Piano di Qualifica",
+    "ROQ1",
+
+    "Norme di Progetto",
+    "ROQ2"
+  )
+)
+
+== Requisito fonte
+#tabella-tracciamento(
+  "Requisito",
+  "Fonte",
+  (
+    "ROF1",
+    "UC1",
+
+    "ROF2",
+    "UC1",
+
+    "ROF3",
+    "UC1.1, UC1.2, UC1.3",
+
+    "ROF4",
+    "UC4, UC5",
+
+    "ROF5",
+    "UC5.1, UC5.2, UC5.3",
+
+    "ROF6",
+    "UC8",
+
+    "ROF7",
+    "UC9",
+
+    "ROF8",
+    "UC12",
+
+    "ROF9",
+    "UC5",
+
+    "ROF10",
+    "UC5, UC6",
+
+    "ROF11",
+    "UC4, UC5",
+
+    "ROF12",
+    "UC6",
+
+    "ROF13",
+    "UC7",
+
+    "ROF14",
+    "UC4",
+
+    "RDF1",
+    "UC2",
+
+    "RDF2",
+    "UC2, UC10",
+
+    "RDF3",
+    "UC3",
+
+    "RDF4",
+    "UC6",
+
+    "RDF5",
+    "UC10",
+
+    "RDF6",
+    "UC11",
+
+    "RDF7",
+    "UC13",
+
+    "RDF8",
+    "UC14",
+
+    "RDF9",
+    "UC15",
+
+    "RDF10",
+    "UC3, UC6",
+
+    "RDF11",
+    "UC3",
+
+    "RDF12",
+    "UC8",
+
+    "ROQ1",
+    "Piano di Qualifica",
+
+    "ROQ2",
+    "Norme di Progetto",
+
+    "ROQ3",
+    "Capitolato",
+
+    "ROQ4",
+    "Capitolato",
+
+    "ROQ5",
+    "Capitolato",
+
+    "ROQ6",
+    "Analisi dei requisiti",
+
+    "ROV1",
+    "Capitolato",
+
+    "ROV2",
+    "UC4, UC10",
+
+    "ROV3",
+    "Capitolato, UC1",
+
+    "ROV4",
+    "Capitolato, UC14",
+
+    "RDV1",
+    "Capitolato",
+
+    "ROS1",
+    "UC1",
+
+    "ROS2",
+    "UC2, UC10",
+
+    "RDS1",
+    "Riunione esterna"
+  )
+)
+

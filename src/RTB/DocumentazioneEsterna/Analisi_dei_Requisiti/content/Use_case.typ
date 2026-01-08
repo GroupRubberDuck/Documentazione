@@ -197,7 +197,7 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 - *Scenari Alternativi*:#pad(left: 1em)[
     #v(-0.5em)
-    + *UC5.1*: Il sistema arriva in uno stato di N.A.
+    + *UC5.1*: Il sistema arriva in uno stato di NOT APPLICABLE
     + *UC5.2*: Il sistema arriva in uno stato di FAIL
     + *UC5.3*: Il sistema arriva in uno stato di PASS
   ]
@@ -484,7 +484,7 @@ caption: [Aggiunta giustificazione a un risultato]
 
 
 
-=== UC16: Apertura cronologia
+=== UC15: Apertura cronologia
 - *Attore principali*: Utente;
 - *Precondizioni*: Essere in Home o in Area utente;
 - *Postcondizioni*: Visualizzazione della cronologia
@@ -499,7 +499,7 @@ caption: [Aggiunta giustificazione a un risultato]
    + *UC 16.1*: selezione di un asset dalla cronologia
 ]
 
-=== UC16.1: Selezione di un asset dalla cronologia
+=== UC15.1: Selezione di un asset dalla cronologia
 - *Attore principali*: Utente;
 - *Precondizioni*: Essere nella cronologia di un dispositivo
 - *Postcondizioni*: Apertura 
