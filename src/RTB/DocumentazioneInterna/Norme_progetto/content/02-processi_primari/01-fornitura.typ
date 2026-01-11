@@ -26,7 +26,7 @@ Gli obiettivi principali includono:
 + *Inizializzazione* \ Analisi delle richieste della proponente, identificazione dei requisiti contrattuali e valutazione dei vincoli organizzativi.
 
 
-+ *Preparazione delle risposte* \ Realizzazione di eventuali contro-proposte basate sull’analisi dei requisiti.
++ *Preparazione delle risposte* \ Realizzazione di eventuali contro-proposte basate Analisi dei Requisiti (AdR).
 
 
 + *Contrattazione* \ Confronto con la proponente per formalizzare requisiti, scadenze e modalità di lavoro.
@@ -41,7 +41,7 @@ Gli obiettivi principali includono:
 === Procedure operative
 Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utilizza modalità *sincrone e asincrone*:
 
-*Comunicazione sincrona (meeting)*:
+==== Comunicazione sincrona (meeting):
 
 - *Riunioni con la proponente (BlueWind S.r.l.):* 
 

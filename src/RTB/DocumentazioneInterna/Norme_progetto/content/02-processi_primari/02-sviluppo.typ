@@ -24,7 +24,7 @@ In particolare, il processo di sviluppo ha l’obiettivo di:
 
 Il processo di sviluppo costituisce quindi il fulcro tecnico del progetto e guida in modo strutturato tutte le attività necessarie alla costruzione del prodotto finale.
 
-=== Attività del processo di sviluppo
+=== Attività del processo 
 Il processo di sviluppo è articolato in un insieme di attività tra loro correlate, definite in conformità allo *standard ISO/IEC 12207*, che guidano la realizzazione del prodotto software lungo l’intero ciclo di vita.
 
 Le principali attività previste sono le seguenti:
@@ -39,7 +39,7 @@ Le principali attività previste sono le seguenti:
 + *Installazione e supporto all’accettazione* \ Consegna del prodotto software nell’ambiente concordato e supporto alla proponente nelle attività di accettazione, al fine di verificare il soddisfacimento dei requisiti contrattuali.
 ]
 
-=== Inquadramento del processo rispetto alle Baseline
+=== Inquadramento del processo nelle Baseline di progetto
 
 Il processo di sviluppo è strettamente collegato alle baseline previste dal progetto:
 
@@ -125,7 +125,7 @@ Le attività del processo di sviluppo vengono svolte seguendo procedure operativ
 - Eseguire nuovamente le verifiche previste dal PdQ; 
 - Garantire il mantenimento della tracciabilità tra requisiti, codice e test. 
 
-=== Documentazione prodotta
+=== Documenti principali
 
 Durante il processo di sviluppo, le attività sono supportate dalla documentazione di progetto già definita nel processo di fornitura (AdR, PdP, PdQ, NdP), con l’aggiunta di riferimenti specifici alle fasi di implementazione e verifica software.
 

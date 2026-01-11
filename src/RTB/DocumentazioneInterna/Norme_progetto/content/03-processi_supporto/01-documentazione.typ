@@ -5,31 +5,83 @@
   separator: repeat[.],
   indent: 0em
 )
+== Introduzione ai processi di supporto
+I processi di supporto hanno lo scopo di garantire *l’efficace gestione, controllo e qualità delle attività del ciclo di vita del progetto*, fornendo strumenti, procedure e linee guida per supportare i processi primari (analisi, progettazione, sviluppo, verifica).
 
-Il processo di documentazione ha lo scopo di registrare e rendere disponibili le informazioni prodotte dai processi primari del progetto.
+In conformità agli standard ISO di riferimento, i processi di supporto considerati nel presente documento includono:
 
-Consente di tracciare con maggiore efficacia le decisioni adottate, ridurre il rischio di ambiguità, evitare fraintendimenti e facilitare l’organizzazione del *lavoro asincrono e collaborativo*.
++ *Documentazione*:\  Processo volto a registrare, organizzare e rendere disponibili tutte le informazioni prodotte durante il ciclo di vita del progetto, assicurando tracciabilità, trasparenza e coerenza dei contenuti.
 
++ *Gestione delle configurazioni*:\ Processo finalizzato a identificare, controllare, monitorare e aggiornare tutti gli elementi del progetto, garantendo la corretta gestione delle versioni e delle modifiche.
+
++ *Accertamento qualità*:\  Insieme di attività di verifica e validazione volte a garantire che i prodotti e i processi rispettino i requisiti, le specifiche e gli standard di qualità previsti.
+
++ *Qualifica*:\ Processo composto da attività di verifica e validazione, che assicurano la conformità del prodotto finale alle specifiche tecniche e funzionali, riducendo il rischio di difetti e incongruenze.
+
+== Processo di documentazione
+=== Introduzione
+Il processo di documentazione definisce le *modalità con cui il team raccoglie, organizza e gestisce i documenti* prodotti durante il progetto. \ Fornisce un quadro chiaro dei *flussi documentali, delle responsabilità e degli strumenti utilizzati*, garantendo che le informazioni siano aggiornate, accessibili e coerenti con gli obiettivi del progetto.
+=== Scopo del processo
+Il processo di documentazione ha lo scopo di *registrare, organizzare e rendere disponibili tutte le informazioni* prodotte durante il ciclo di vita del progetto. \
+Esso garantisce:
+-  *Tracciabilità* delle decisioni;
+-  *Coerenza* tra le attività svolte;
+-  *Trasparenza* verso gli stakeholder e supporto del lavoro collaborativo del team.\
+La documentazione prodotta costituisce un *riferimento chiaro e accessibile* per tutte le fasi del progetto, riducendo ambiguità e fraintendimenti.
+
+=== Attività del processo 
+==== Impegno del gruppo
+Il gruppo si impegna a fornire alla proponente e ai docenti tutta la documentazione necessaria a supportare le attività di analisi, progettazione, sviluppo e verifica del progetto.
+Tale documentazione ha lo scopo di garantire *trasparenza, tracciabilità e qualità del lavoro *svolto, oltre a costituire un *riferimento chiaro per tutti gli stakeholder* coinvolti.
+==== Attività principali
 Le principali attività che compongono questo processo sono:
 #pad(left: 1em)[ 
-+ *Identificazione dei documenti* #sym.arrow individuazione dei documenti necessari e ne riferisce 
++ *Identificazione dei documenti* \ Individuazione dei documenti necessari e definizione delle relative responsabilità.
 
 
-+ *Progettazione dei documenti* → applicazione delle norme e del workflow stabilito;
++ *Progettazione dei documenti* \ Applicazione delle norme e del workflow stabilito.
 
 
-+ *Pubblicazione e Distribuzione della Documentazione* → generazione del documento in formato destinato alla distribuzione;
++ *Pubblicazione e Distribuzione della Documentazione* \ Generazione del documento nel formato previsto e distribuzione ai destinatari autorizzati.
 
-+ *Manutenzione* → aggiornamento continuo del contenuto e gestione delle modifiche;
++ *Manutenzione* \ Aggiornamento continuo dei contenuti e gestione delle modifiche e delle revisioni.
 
-+ *Archiviazione e tracciabilità* → versionamento, conservazione e accessibilità nel tempo.
++ *Archiviazione e tracciabilità* \ Gestione del versionamento, conservazione dei documenti e garanzia dell’accessibilità nel tempo.
 ]
-=== Impegno del gruppo nella produzione della documentazione
 
-Il gruppo si impegna a fornire alla proponente e ai docenti tutta la documentazione necessaria a supportare le attività di analisi, progettazione, sviluppo e verifica del progetto.
-Tale documentazione ha lo scopo di garantire trasparenza, tracciabilità e qualità del lavoro svolto, oltre a costituire un riferimento chiaro per tutti gli stakeholder coinvolti.
 
-=== Workflow documentale
+=== Procedure operative
+
+==== Identificazione dei documenti <identif>
+  Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
+
+#pad(left: 1em)[
+- Titolo;
+- Scopo;
+- Destinatari;
+- Procedure e responsabilità nella redazione e gestione del documento;
+- Pianificazione per le versioni e  i loro contenuti.
+]
+
+Per la redazione dei documenti è corretto e necessario fare riferimento a fonti autorevoli e aggiornate, quali standard ISO, università e organizzazioni ufficialmente riconosciute, materiale didattico e link di approfondimento forniti durante il corso. Eventuali informazioni provenienti da altre fonti, se ritenute utili, devono essere obbligatoriamente verificate per accertarne la correttezza e l'affidabilità.
+
+==== Progettazione dei documenti
+Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
+#pad(left: 1em)[
+  - Essere in formato A4; 
+  - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso;
+  - Tutti i documenti devono includere un indice dei contenuti e delle relative sottosezioni visibile all'inizio (ad eccezione del diario di bordo, che ne è esentato);
+  - Ogni pagina deve contenere nell'header e nel footer:
+   1. La sezione corrente del documento (in alto a sinistra);
+   2. Il nome del gruppo (in alto a destra);
+   3. Il titolo del documento (in basso a sinistra);
+   4. Il numero della pagina : espresso in numeri romani per la prefazione e in numeri arabi per le pagine del corpo del documento. 
+]
+à.
+
+
+
+==== Workflow documentale
 All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
@@ -37,7 +89,7 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
   - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
   - *In lavorazione*: il documento è stato preso in carico da un autore.
   - *In verifica*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
-  - *In approvazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
   - *Done*, il documento è stato approvato.
 
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
@@ -51,70 +103,7 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
   inset: 10pt          // Padding interno di 10 punti
 )[`git commit -m "commento. Close #numero_issue"`]
 
-
-
-
-
-=== Strumenti di supporto
-
-*Typst*: Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX.
-#pad(left: 1em)[
-- Sintassi intuitiva;
-- Supporto ad automazioni tramite template, funzioni e regole di stile riutilizzabili;
-- Preview istantanea del documento.
-]
-
-*Github*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
-#pad(left: 1em)[ 
-- Utilizzo di GitHub Actions per la compilazione automatica dei documenti.
-- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github].
-- #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
-
-
-]
-
-*TurboScribe AI*: Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe] che consente di trascrivere facilmente da registrazioni audio, utile per funzionalità come il riascolto di momenti specifici della riunione tramite selezione testuale.
-
-
-=== Identificazione dei documenti <identif>
-  Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
-
-#pad(left: 1em)[
-- Titolo;
-- Scopo;
-- Destinatari;
-- Procedure e responsabilità nella redazione e gestione del documento;
-//DUBBIO
-- Pianificazione per le versioni e  i loro contenuti.
-]
-==== Elenco dei documenti
-#outline(title:none,target:figure.where(kind: "documenti"))
-
-
-=== Progettazione dei documenti
-Ogni documento identificato all'interno dello sviluppo software deve rispettare alcuni standard di documentazione uguali per tutti: 
-#pad(left: 1em)[
-  - Essere in formato A4; 
-  - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso;
-  - Tutti i documenti devono includere un indice dei contenuti e delle relative sottosezioni visibile all'inizio (ad eccezione del diario di bordo, che ne è esentato);
-  - Ogni pagina deve contenere nell'header e nel footer:
-   1. La sezione corrente del documento (in alto a sinistra);
-   2. Il nome del gruppo (in alto a destra);
-   3. Il titolo del documento (in basso a sinistra);
-   4. Il numero della pagina : espresso in numeri romani per la prefazione e in numeri arabi per le pagine del corpo del documento. 
-]
-Per la redazione dei documenti è corretto e necessario fare riferimento a fonti autorevoli e aggiornate, quali standard ISO, università e organizzazioni ufficialmente riconosciute, materiale didattico e link di approfondimento forniti durante il corso. Eventuali informazioni provenienti da altre fonti, se ritenute utili, devono essere obbligatoriamente verificate per accertarne la correttezza e l'affidabilità.
-
-
-=== Pubblicazione e Distribuzione della Documentazione
-I documenti vengono ricompilati automaticamente in PDF tramite GitHub Action e sono consultabili da tutti i membri del team.
-Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].
-La posizione ufficiale dei file è indicata nel README.md del repository.  
-
-Per facilitarne la consultazione è inoltre possibile accedere al  #link("https://grouprubberduck.github.io/Documentazione")[sito web ufficiale] del gruppo, creato appositamente per visualizzare e navigare i documenti in modo più immediato. 
-
-La versione del documento e la tracciabilità delle modifiche sono gestite tramite il Registro delle Modifiche, integrato direttamente all’interno di ciascun documento.
-=== Posizione del Documento
+==== Procedura di archiviazione e tracciabilità
 I documenti sono salvati sull'apposito repository.
 
 Il path relativo è ricavabile nel seguente modo:
@@ -142,27 +131,16 @@ Il path relativo è ricavabile nel seguente modo:
     ]),
 )
 
+==== Pubblicazione e Distribuzione della Documentazione
+I documenti vengono ricompilati automaticamente in PDF tramite GitHub Action e sono consultabili da tutti i membri del team.
+Sono disponibili nella repository del gruppo dedicata alla #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione].
+La posizione ufficiale dei file è indicata nel README.md del repository.  
 
-=== Informazioni comuni <informazioni_comuni>
-Ogni documento presenta una sezione iniziale standardizzata per tutti i membri del team. 
-Questa sezione viene generata utilizzando un apposito template centrale e unico, al fine di garantire coerenza e facilitare la compilazione. 
+Per facilitarne la consultazione è inoltre possibile accedere al  #link("https://grouprubberduck.github.io/Documentazione")[sito web ufficiale] del gruppo, creato appositamente per visualizzare e navigare i documenti in modo più immediato. 
 
-La sezione iniziale è composta dai seguenti elementi: 
-#pad(left: 1em)[
-*1. Pagina di copertina* contenente il titolo del documento, il nome e il logo del gruppo e le relative informazioni di contatto.
+La versione del documento e la tracciabilità delle modifiche sono gestite tramite il Registro delle Modifiche, integrato direttamente all’interno di ciascun documento.
 
-*2. Tabella dello stato * che riassume lo stato del documento e informazioni generali quali versione, autori, verificatori, uso e destinatari.
-
-*3. Registro delle modifiche * costituito da una tabella contenente le informazioni sul versionamento e sulla tracciabilità.
-
-*4. Indice dei contenuti * aggiornato automaticamente  tramite sintassi Typst.
-
-*5. Indice delle immagini e delle tabelle* presente solo nei documenti che ne contengono. 
-]
-
-
-
-=== Documentazione prevista per la fase RTB
+=== Inquadramento del processo nelle Baseline di progetto
 
 La documentazione fornita in corrispondenza della fase RTB (Requirements and Technology Baseline) comprende sia materiali tecnici sia documenti operativi e organizzativi, al fine di garantire una valutazione completa e trasparente dello stato del progetto.
 
@@ -185,10 +163,35 @@ In particolare, vengono prodotti:
 ]
 
 
+=== Documentazione fornita
 
-=== Struttura specifica dei documenti 
+==== Elenco dei documenti
+#outline(title:none,target:figure.where(kind: "documenti"))
+==== Informazioni comuni <informazioni_comuni>
+Ogni documento presenta una sezione iniziale standardizzata per tutti i membri del team. 
+Questa sezione viene generata utilizzando un apposito template centrale e unico, al fine di garantire coerenza e facilitare la compilazione. 
 
+La sezione iniziale è composta dai seguenti elementi: 
+
+*1. Pagina di copertina* : contenente il titolo del documento, il nome e il logo del gruppo e le relative informazioni di contatto.
+
+*2. Tabella dello stato * : che riassume lo stato del documento e informazioni generali quali versione, autori, verificatori, uso e destinatari.
+
+*3. Registro delle modifiche * : costituito da una tabella contenente le informazioni sul versionamento e sulla tracciabilità.
+
+*4. Indice dei contenuti * : aggiornato automaticamente  tramite sintassi Typst.
+
+*5. Indice delle immagini e delle tabelle* : presente solo nei documenti che ne contengono. 
+
+
+
+==== Struttura specifica
 Di seguito viene riportata la struttura standard dei documenti principali, le rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
+
+\ 
+
+
+
 
 #figure(kind:"documenti",supplement: "Documento", caption:"Analisi dei Requisiti")[
   #box(width: 100%,stroke:1pt,inset: 1em)[
@@ -198,7 +201,9 @@ Di seguito viene riportata la struttura standard dei documenti principali, le ri
   
 #align(left)[
 
-L’Analisi dei Requisiti ha il compito di descrivere in modo completo, chiaro e verificabile tutte le funzionalità che il sistema deve offrire, includendo sia requisiti funzionali sia non funzionali. Il documento fornisce inoltre i principali casi d’uso, con attori e scenari associati, e garantisce la tracciabilità tra requisiti, casi d’uso ed eventuali estensioni future. Rappresenta un riferimento stabile per sviluppatori, tester e manutentori durante tutte le fasi del progetto.
+L’Analisi dei Requisiti ha il compito di descrivere in modo completo, chiaro e verificabile tutte le *funzionalità* che il sistema deve offrire, includendo sia *requisiti funzionali sia non funzionali*.  \
+Il documento fornisce inoltre i principali *casi d’uso, con attori e scenari associati*, e garantisce la *tracciabilità tra requisiti*, casi d’uso ed eventuali *estensioni future*.  
+Rappresenta un riferimento stabile per sviluppatori, tester e manutentori durante tutte le fasi del progetto.
 
 
 *Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
@@ -214,52 +219,6 @@ Il documento comprende:
 - Eventuali vincoli tecnici, operativi o di contesto.
 
 ]
-]
-
-  ]
-]
-
-
-#figure(kind:"documenti",supplement: "Documento", caption:"Piano di Progetto")[
-  #box(width: 100%,stroke:1pt,inset: 1em)[
-    
-==== Piano di Progetto
-
-  
-#align(left)[
-Il Piano di Progetto definisce la pianificazione complessiva delle attività, descrivendo l’approccio plan–driven adottato dal gruppo. Il documento fornisce una visione strtturata dell'organizzazione del lavoro, includendo la definizione degli obiettivi, la gestione delle risorse, l'assegnazione dei ruoli, la pianificazione temporale e l'analisi dei rischi.
-La sua funzione principale è quella di garantire un monitoraggio costante dell'avanzamento del progetto attraverso revisioni periodiche e rendicontazioni relative ai vari sprint. Tale monitoraggio consente al gruppo di valutare l'efficienza del workflow, di individuare tempestivamente criticità e di adattare la pianificazione quando necessario.
-
-*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
-
-===== Struttura principale 
-
-La struttura del documento comprende:
-#pad(left: 1em)[
-
-- Ambito e obiettivi del progetto;
-
-- Preventivo iniziale e disponibilità delle risorse;
-
-- Analisi dei rischi e piano di mitigazione;
-
-- Distribuzione dei ruoli e pianificazione temporale;
-
-- Sezione dedicata alle revisioni, con per ogni sprint:
-#pad(left: 1em)[
-- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
-
-- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
-
-- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
-
-- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
-
-- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
-
-]
-]
-
 ]
 
   ]
@@ -296,6 +255,56 @@ Il documento è articolato nelle seguenti componenti:
   ]
 ]
 
+
+#figure(kind:"documenti",supplement: "Documento", caption:"Piano di Progetto")[
+  #box(width: 120%,stroke:1pt,inset: 1em)[
+    
+==== Piano di Progetto
+
+  
+#align(left)[
+Il Piano di Progetto definisce la pianificazione complessiva delle attività, descrivendo l’approccio *plan-driven* adottato dal gruppo. \  
+Il documento fornisce una visione strutturata dell’*organizzazione del lavoro*, includendo la definizione degli obiettivi, la gestione delle risorse, l’assegnazione dei ruoli, la pianificazione temporale e l’analisi dei rischi. \ 
+La sua funzione principale è garantire un monitoraggio costante dell’*avanzamento* del progetto attraverso *revisioni periodiche* e *rendicontazioni* relative ai vari sprint.  \
+Tale monitoraggio consente al gruppo di valutare l’efficienza del workflow, individuare tempestivamente eventuali criticità e adattare la pianificazione quando necessario.
+
+*Destinatari* : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+===== Struttura principale 
+
+La struttura del documento comprende:
+#pad(left: 1em)[
+
+- Ambito e obiettivi del progetto;
+
+- Analisi dei rischi e piano di mitigazione;
+
+- Preventivo iniziale e disponibilità delle risorse;
+
+- Pianificazione di lungo periodo;
+
+- Sezione dedicata alle revisioni, con per ogni sprint:
+#pad(left: 1em)[
+
+- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
+
+- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
+
+- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
+
+- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
+
+- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
+
+]
+]
+
+]
+
+  ]
+]
+
+
 #figure(kind:"documenti",supplement: "Documento", caption:"Verbali")[
   #box(width: 120%,stroke:1pt,inset: 1em )[
     
@@ -311,15 +320,10 @@ I verbali sono suddivisi in due categorie principali :
 ]
 Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
 
-
-===== Procedure e responsabilità
-Il verbale deve essere un riassunto chiaro e oggettivo della riunione. 
-Per velocizzare il processo, il gruppo utilizza il tool AI #link("https://turboscribe.ai/it")[TurboScribe].
-
 ===== Struttura Verbale
 
 Ogni verbale deve avere la seguente suddivisione numerata: 
-#pad(left: 1em)[
+
   1. *Informazioni comuni della sezione 4.1.2.1* (standard condivisi di documento)
   2. *Informazioni generali*
       #pad(left: 1em)[
@@ -330,23 +334,14 @@ Ogni verbale deve avere la seguente suddivisione numerata:
         - Motivo (principalmente per verbali esterni)
         - Scriba (responsabile del verbale in quel momento)
 ]
-    3. *Ordine del giorno* 
-    #pad(left: 1em)[
-    - Scaletta dei temi da discutere, raccolti e organizzati del responsabile sulla base dei contributi dei membri del gruppo o dei referenti aziendali. 
-]
-    4. *Riassunto della riunione* 
-    #pad(left: 1em)[
-    - Sintesi breve e oggettiva dei punti discussi.
-]
-    5. *Decisioni * 
-    #pad(left: 1em)[
-    - Azioni o obiettivi (anche ad alto livello) che il gruppo deve intraprendere per dare seguito alla riunione.
-]
-    6. *TODO* 
-    #pad(left: 1em)[
-    - Attività specifiche derivate dalle decisioni. Una singola decisione può essere suddivisa in più TODO, che complessivamente consentono di raggiungere l'obiettivo stabilito. 
-]
-]
+    3. *Ordine del giorno* :  scaletta dei temi da discutere, raccolti e organizzati del responsabile sulla base dei contributi dei membri del gruppo o dei referenti aziendali. 
+
+    4. *Riassunto della riunione* :  sintesi breve e oggettiva dei punti discussi.
+
+    5. *Decisioni * : azioni o obiettivi (anche ad alto livello) che il gruppo deve intraprendere per dare seguito alla riunione.
+    6. *TODO* : attività specifiche derivate dalle decisioni.  Una singola decisione può essere suddivisa in più TODO, che complessivamente consentono di raggiungere l'obiettivo stabilito. 
+
+
 
 
 ]
@@ -386,19 +381,20 @@ Composto principalmente da:
 
   
 #align(left)[
-Le Norme di Progetto definiscono l'insieme di regole, convenzioni e standard adottati dal gruppo al fine di garantire coerenza, qualità e uniformità nella peoduzione della documentazione, del codice e dei deliverable. Il documento stabilisce inoltre procedure condivise per redazione, revisione, versionamento, gestione dei file e communicazione interne, riducendo il rischio di errori, fraintendimenti o incoerenze operative tra i membri del team.
+Le Norme di Progetto definiscono l'insieme di regole, convenzioni e standard adottati dal gruppo al fine di garantire coerenza, qualità e uniformità nella produzione della documentazione, del codice e dei deliverable. Il documento stabilisce inoltre procedure condivise per redazione, revisione, versionamento, gestione dei file e communicazione interne, riducendo il rischio di errori, fraintendimenti o incoerenze operative tra i membri del team.
 
-*Destinatari* : Tutti i membri del gruppo di progetto
+*Destinatari* : Tutti i membri del gruppo di progetto (interno)
 
 ===== Struttura principale  
-Il documento delle Norme di Progetto è organizzato in sezioni facilmente consultabili riassunte in:  
+
+Il documento delle Norme di Progetto è organizzato secondo i tipi di processo presenti nel progetto:
+
 #pad(left: 1em)[
-- *Convezioni sui documenti*: regole relative al formato, all'impostazione grafica, alle intestazioni e ai footer, alla numerazione delle pagine, nonché agli stili e ai template Typst adottati dal gruppo.  
-- *Processo di redazione e revisione*: descrizione dei ruoli coinvolti, della responsabilità, dell'iter di approvazione dei documenti, della gestione delle modifiche e del versionamento.  
-- *Standard di codifica e naming*: linee guida per la definizione dei nomi di file, classi, funzioni e repository, qualora pertinenti allo sviluppo software.
-- *Procedure operative comuni*: indicazioni sulle modalità di collaborazione all'interno del team, sull'uso degli strumenti (GitHub, Issue Tracking, AI tools), sulle politiche di backup e sulle modalità di archiviazione.  
-- *Tracciabilità e registri*: norme per mantenere aggiornato e verificabile il Registro delle Modifiche.  
-- *Definizione della qualità minima*: criteri oggettivi necessari per l'accettazione dei documenti e dei deliverable, utilizzati come riferimento durante verifiche e revisioni.
+- *Processi primari*: attività direttamente legate alla realizzazione del prodotto software.  
+- *Processi di supporto*: attività che garantiscono qualità, tracciabilità e gestione della documentazione.  
+- *Processi organizzativi*: attività relative alla gestione del team, pianificazione e coordinamento.  
+- *Processi di qualità*: attività dedicate alla verifica, validazione e mantenimento degli standard qualitativi.
+
 ]
 
 
@@ -414,42 +410,47 @@ Il documento delle Norme di Progetto è organizzato in sezioni facilmente consul
   #box(width: 100%,stroke:1pt,inset: 1em)[
     
 ==== Glossario
-Il glossario ha l'obiettivo di garantire chiarezza e uniformità nelle comunicazioni, sia verso l'esterno sia all'interno del gruppo di lavoro.
-Raccoglie i termini ritenuti non banali, le abbreviazioni e gli acronimi utilizzati nei documenti di progetto, fornendone una definizione precisa per evitare ambiguità interpretative.
-
-Il documento è soggetto ad aggiornamento continuo, così da riflettere l'evoluzione del progetto e mantenere allineata la terminologia utilizzata dal gruppo. Oltre alla versione inclusa nei documenti ufficiali, il team ha definito anche un glossario interno accessibile tramite il website ufficiale della documentazione, che funge da riferimento centralizzato e sempre aggiornato. 
-
-Per favorire la tracciabilità e semplificare la consultazione, nei singoli documenti tutte le parole presenti nel glossario sono evidenziate. Tale evidenziazione permette agli utenti di riconoscere immediatamente i termini che dispongono di una definizione formale, facilitando il rimando al glossario in caso di dubbi o potenziali ambiguità. 
-  
 #align(left)[
+Il Glossario ha l’obiettivo di garantire *chiarezza e uniformità nella terminologia* utilizzata nei documenti di progetto, sia verso l’esterno (proponente, docenti) sia all’interno del gruppo di lavoro.
 
+Raccoglie i *termini ritenuti non banali, abbreviazioni e acronimi*, fornendo definizioni precise per ridurre ambiguità interpretative e favorire una comprensione condivisa dei concetti chiave.
 
+Il documento è soggetto ad *aggiornamento continuo*, in modo da riflettere l’evoluzione del progetto e mantenere allineata la terminologia. Oltre alla versione ufficiale inclusa nei documenti di progetto, il team mantiene un glossario interno aggiornato disponibile sul sito web della documentazione, che funge da riferimento centralizzato sempre accessibile.
+
+Per *favorire la tracciabilità e la consultazione immediata*, all’interno dei singoli documenti tutte le parole presenti nel glossario vengono evidenziate. Questa evidenziazione consente agli utenti di riconoscere rapidamente i termini definiti formalmente e di rimandare al glossario in caso di dubbi o possibili ambiguità.
 ]
-
   ]
-]
-
-
-#figure(kind:"documenti",supplement: "Documento", caption:"")[
-  #box(width: 100%,stroke:1pt,inset: 1em)[
-    
-==== 
-
-  
-#align(left)[
-
 
 ]
 
-  ]
+
+ 
+
+=== Strumenti di supporto
+
+*Typst*: Linguaggio di markup moderno per la composizione e la tipografia di documenti, pensato come alternativa più semplice e veloce a LaTeX.
+#pad(left: 1em)[
+- Sintassi intuitiva;
+- Supporto ad automazioni tramite template, funzioni e regole di stile riutilizzabili;
+- Preview istantanea del documento.
 ]
 
+*Github*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
+#pad(left: 1em)[ 
+- Utilizzo di GitHub Actions per la compilazione automatica dei documenti.
+- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github].
+- #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
+
+
+]
+
+*TurboScribe AI*:Per velocizzare il processo di documentazione, il gruppo utilizza il tool di intelligenza artificiale #link("https://turboscribe.ai/it")[TurboScribe], che consente di trascrivere registrazioni audio in formato testuale. 
+Lo strumento è utilizzato in particolare per il supporto alla redazione dei verbali, permettendo il riascolto rapido di momenti specifici delle riunioni tramite selezione testuale.
 
 
 
 
 
 
-=== Manutenzione 
 
 
