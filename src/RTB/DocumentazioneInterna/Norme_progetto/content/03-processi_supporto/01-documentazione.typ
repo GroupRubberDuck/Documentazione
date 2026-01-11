@@ -14,9 +14,9 @@ In conformità agli standard ISO di riferimento, i processi di supporto consider
 
 + *Gestione delle configurazioni*:\ Processo finalizzato a identificare, controllare, monitorare e aggiornare tutti gli elementi del progetto, garantendo la corretta gestione delle versioni e delle modifiche.
 
-+ *Accertamento qualità*:\  Insieme di attività di verifica e validazione volte a garantire che i prodotti e i processi rispettino i requisiti, le specifiche e gli standard di qualità previsti.
++ *Accertamento qualità*:\  Processo che comprende attività sistematiche di verifica volte a controllare che processi, documenti e prodotti intermedi siano conformi ai requisiti, agli standard e alle metriche di qualità definiti durante lo svolgimento del progetto.
 
-+ *Qualifica*:\ Processo composto da attività di verifica e validazione, che assicurano la conformità del prodotto finale alle specifiche tecniche e funzionali, riducendo il rischio di difetti e incongruenze.
++ *Processo di Qualifica (Verifica e Validazione)*:\ Processo che comprende attività di verifica e validazione finalizzate a stabilire se un prodotto o deliverable può essere considerato concluso e idoneo al rilascio, garantendo la conformità alle specifiche tecniche e funzionali.
 
 == *Processo di documentazione*
 === Introduzione

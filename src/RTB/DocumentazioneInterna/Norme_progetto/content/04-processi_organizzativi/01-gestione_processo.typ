@@ -1,4 +1,4 @@
-#import "@preview/cheq:0.3.0": checklist
+
 #import "/src/config.typ":he
 #set heading(numbering: "1.1)")
 #he(body:"Scopo", level:3)
@@ -48,7 +48,7 @@ Il responsabile avvia le attività di processo, in modo congruo a quanto stabili
 Al completamento dell'attività il verificatore si assicura che sia conforme alle metriche di qualità stabilite.
 #he(body:"Chiusura", level:4)
 Un'attività si ritiene completa dopo aver superato l'attività di verifica.
-Si veda la @definition-of-done per maggiori dettagli.
+Si veda la definition-of-done per maggiori dettagli.
 
 La chiusura delle issue legate alle attività avviene tramite merge sul main a intervalli prefissati.
 
@@ -131,44 +131,7 @@ Ruoli:
   )
 }
 
-#he(body:"Definition of Done",level:3)
 
-La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
-I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
-
-Di seguito viene riportata la Definition of Done per la fase RTB:
-
-#show: checklist.with(marker-map: (" ": sym.ballot, "x": sym.ballot.cross, "-": sym.bar.h, "/": sym.slash.double))
-
-- [ ] Controllare a livello semantico e grammaticale che tutto sia corretto (grammatica, punteggiatura, sintassi, rivedere frasi ripetute/ mal espresse)
-
-- [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
-
-- [ ] *Nei verbali*: Controllare di aver aggiornato nello status TAB: 
-  - stato
-  - versione
-  - ruoli
-- [ ] Controllare di aver aggiunto le ultime modifiche anche sulla “tabella delle modifiche del documento”
-- [ ] *Nei verbali*: controllare di aver aggiornato la versione nel nome del file
-- [ ] *Nei verbali*, controllare che tutte le decisioni corrispondano a issue specifiche nell'issue template.
-- [ ] Un documento (o una sua sezione) è considerato completato quando:
-  - È stato scritto;
-  - È stato verificato;
-  - È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
-
-- [ ] Quando il documento/prodotto è completato, chiudere la issue con #block(
-  fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
-  stroke: 1pt + black, // Bordo nero da 1 punto
-  inset: 10pt          // Padding interno di 10 punti
-)[`git commit -m "commento. Close #numero_issue"`] Verificare poi effettivamente la chiusura nel Projects Board.
-
-- [ ] Quando tutti i punti sopra sono completati e tutte le issue sono spostate in “Done”:
-- Il branch develop può essere unito a main
-- Controllare l’incremento dello sprint corrispondente ( e il website)
-  
-La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
-
-#link("https://www.atlassian.com/agile/project-management/definition-of-done")[Definition-of-done-Guide]
 === Issue tracking System – Guida Operativa
 L'*Issue Tracking System* è lo strumento utilizzato dal nostro team di sviluppo per tracciare in maniera efficiente tutte le issue da svolgere e il loro stato di completamento.
 Il sistema è accessibile a tutti i membri del gruppo attraverso la repository GitHub, dove è disponibile un *template di issue condiviso e centrale*, in modo da evitare incongruenze o confusione.

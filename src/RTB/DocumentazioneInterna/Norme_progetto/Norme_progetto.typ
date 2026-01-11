@@ -103,7 +103,7 @@
 #include "content/04-processi_organizzativi/index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
-= Metriche e standard per la Qualità
+= Metriche e standard per la Qualità 
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche di Qualità del Processo", documentType: doc)[
