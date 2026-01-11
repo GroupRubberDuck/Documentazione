@@ -82,12 +82,12 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
-  = Processi Primari
+  = *Processi Primari*
   #include "content/02-processi_primari/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
-= Processi di Supporto
+= *Processi di Supporto*
 
 #include "content/03-processi_supporto/index.typ"
 

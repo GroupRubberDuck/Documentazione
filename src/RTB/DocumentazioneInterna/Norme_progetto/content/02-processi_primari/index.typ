@@ -12,10 +12,10 @@ Secondo lo *standard ISO/IEC 12207*, i principali processi primari sono:
 
 
 
-== Processo di fornitura <fornitura>
+== *Processo di fornitura* <fornitura>
 
 #include "01-fornitura.typ"
 
-== Processo di sviluppo <sviluppo_primario>
+== *Processo di sviluppo* <sviluppo_primario>
 
 #include "02-sviluppo.typ"

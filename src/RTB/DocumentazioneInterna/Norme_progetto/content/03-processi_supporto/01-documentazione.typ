@@ -18,7 +18,7 @@ In conformità agli standard ISO di riferimento, i processi di supporto consider
 
 + *Qualifica*:\ Processo composto da attività di verifica e validazione, che assicurano la conformità del prodotto finale alle specifiche tecniche e funzionali, riducendo il rischio di difetti e incongruenze.
 
-== Processo di documentazione
+== *Processo di documentazione*
 === Introduzione
 Il processo di documentazione definisce le *modalità con cui il team raccoglie, organizza e gestisce i documenti* prodotti durante il progetto. \ Fornisce un quadro chiaro dei *flussi documentali, delle responsabilità e degli strumenti utilizzati*, garantendo che le informazioni siano aggiornate, accessibili e coerenti con gli obiettivi del progetto.
 === Scopo del processo
@@ -77,7 +77,7 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
    3. Il titolo del documento (in basso a sinistra);
    4. Il numero della pagina : espresso in numeri romani per la prefazione e in numeri arabi per le pagine del corpo del documento. 
 ]
-à.
+
 
 
 
@@ -320,7 +320,7 @@ I verbali sono suddivisi in due categorie principali :
 ]
 Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale emergono decisioni operative che vengono successivamente formalizzate tramite la creazione di *issue GitHub*, che il gruppo si impegna a completare. 
 
-===== Struttura Verbale
+===== Struttura principale
 
 Ogni verbale deve avere la seguente suddivisione numerata: 
 
