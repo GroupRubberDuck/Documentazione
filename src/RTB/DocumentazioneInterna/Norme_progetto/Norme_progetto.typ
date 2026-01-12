@@ -60,7 +60,7 @@
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("gestione-dell'infrastruttura")), \ Gestione dell'infrastruttura]),
   ([0.8.4],[2025-12-15],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("processo-di-miglioramento")), \ Processo di miglioramento e  #ref(label("processo-di-formazione")), processo di formazione]),
-  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[-],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
+  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Filippo Guerra],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
   
 )
 #registroModifiche(modifiche)
