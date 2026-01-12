@@ -20,8 +20,8 @@
 // 
 #let currentVersion=(
   major:0,
-  minor:8,
-  patch:4,
+  minor:9,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -55,12 +55,12 @@
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Aggiunta sezione 4.8 "struttura specifica dei documenti" e relative sottosezioni, aggiunto sezione 5.4.3 "Versionamento"]),
   ([0.6.1],[2025-12-02],[Davide Lorenzon],[Davide Lorenzon],[Apportate modifiche di ordine nella sottosezione documentazione]),
   ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta sezione 4.1.2 e sezione 9. aggiornata 5.3 definition of done]),
-  ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 3.1]),  
+  ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunta sezione 2.2: Processo di fornitura]),  
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta: \ @Rendicontazione_delle_ore  \ Rendicontazione delle ore ]),
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[-],[Rivista introduzione, approfondita @gestione-del-processo , gestione del processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("gestione-dell'infrastruttura")), \ Gestione dell'infrastruttura]),
   ([0.8.4],[2025-12-15],[Davide Lorenzon],[-],[Stesura della sezione #ref(label("processo-di-miglioramento")), \ Processo di miglioramento e  #ref(label("processo-di-formazione")), processo di formazione]),
-
+  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Filippo Guerra],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
   
 )
 #registroModifiche(modifiche)
@@ -82,12 +82,12 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi Primari", documentType: doc)[
-  = Processi Primari
+  = *Processi Primari*
   #include "content/02-processi_primari/index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Processi di Supporto", documentType: doc)[
-= Processi di Supporto
+= *Processi di Supporto*
 
 #include "content/03-processi_supporto/index.typ"
 
@@ -103,7 +103,7 @@
 #include "content/04-processi_organizzativi/index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche e standard per la Qualità", documentType: doc)[
-= Metriche e standard per la Qualità
+= Metriche e standard per la Qualità 
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Metriche di Qualità del Processo", documentType: doc)[
@@ -136,7 +136,7 @@ Le regole generali sono:
 - indicare alla fine del commit la issue a cui ci si sta riferendo con: #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
-  inset: 10pt          // Padding interno di 10 punti
+  inset: 10pt          
 )[`git commit -m "Commento.Issue #01"`]
 
 Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando #block(

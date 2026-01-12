@@ -33,7 +33,7 @@
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
   major:0,
-  minor:9,
+  minor:10,
   patch:0,
 )
 //converte dizionario in stringa
@@ -44,7 +44,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In review",
+    stato: "In lavorazione",
     versione: versionNumber,
     autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega"),
     verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin"),
@@ -70,7 +70,8 @@
   ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
   ([0.7.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
   ([0.8.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Riscrittura e riordinazione di diversi UC, aggiunti altri UC]),
-  ([0.9.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili])
+  ([0.9.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili]),
+  ([0.10.0], [2026-01-08], [Aldo Bettega], [], [Aggiunti requisiti di sicurezza e tabella riassuntiva])
 )
 
 #registroModifiche(modifiche)

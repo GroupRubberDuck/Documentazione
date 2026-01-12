@@ -152,7 +152,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: utente;
 - *Precondizioni*: L’utente ha accesso alla piattaforma e desidera operare con privilegi bassi;
 - *Postcondizioni*: l'utente è autenticato e riconosciuto come utente con privilegi bassi;
-- *Trigger*: l'utente accede alla piattaforma;
+- *Trigger*: L'utente accede alla piattaforma;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L’utente accede alla schermata di login;
@@ -186,9 +186,9 @@ caption: [Autenticazione del Responsabile Tecnico]
 
 === UC5: Navigazione di un decision tree
 - *Attore Principale*: Utente;
-- *Precondizioni*: È stato aperta correttamente la compilazione di un requisito;
+- *Precondizioni*: È stata aperta correttamente la compilazione di un requisito;
 - *Postcondizioni*: Si passa al prossimo nodo dell'albero;
-- *Trigger*: L'utente risponde alla domanda con "yes/no";
+- *Trigger*: L’utente seleziona una risposta («Yes» o «No») alla domanda corrente.;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente legge la domanda mostrata dal sistema
@@ -197,9 +197,9 @@ caption: [Autenticazione del Responsabile Tecnico]
   ]
 - *Scenari Alternativi*:#pad(left: 1em)[
     #v(-0.5em)
-    + *UC5.1*: Il sistema arriva in uno stato di N.A.
-    + *UC5.2*: Il sistema arriva in uno stato di FAIL
-    + *UC5.3*: Il sistema arriva in uno stato di PASS
+    + *UC5.1*: Il sistema rileva il raggiungimento dello stato NOT APPLICABLE.
+    + *UC5.2*: Il sistema rileva il raggiungimento dello stato FAIL.
+    + *UC5.3*: Il sistema rileva il raggiungimento dello stato PASS.
   ]
 
 
@@ -211,7 +211,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato NOT APPLICABLE;
 - *Postcondizioni*: Il sistema ferma la compilazione dell'albero e segnala che non è necessario continuarla;
-- *Trigger*: si arriva in uno stato NOT APPLICABLE;
+- *Trigger*: il sistema raggiunge uno stato NOT APPLICABLE;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente risponde 'Yes/No' ad un nodo
@@ -230,7 +230,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato FAIL;
 - *Postcondizioni*: Il sistema blocca l'esecuzione e segnala una falla di sicurezza per quel requisito;
-- *Trigger*: si arriva in uno stato FAIL;
+- *Trigger*: il sistema raggiunge uno stato FAIL;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente risponde 'Yes/No' ad un nodo
@@ -245,7 +245,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente risponde ad un nodo e il sistema arriva in uno stato PASS;
 - *Postcondizioni*: Il sistema segnala che la verifica del requisito è andata a buon fine;
-- *Trigger*: si arriva in uno stato FAIL;
+- *Trigger*: il sistema raggiunge uno stato FAIL;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente risponde 'Yes/No' ad un nodo
@@ -263,7 +263,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente sta eseguendo un decision tree e ha risposto ad almeno una domanda;
 - *Postcondizioni*: Il sistema torna alla domanda precedente e la risposta può essere modificata;
-- *Trigger*: l'utente desidera tornare alla domanda precedente per correggere la risposta;
+- *Trigger*: L’utente seleziona il pulsante «Passo precedente»;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente sta rispondendo alle domande di un decision tree;
@@ -285,10 +285,10 @@ caption: [Autenticazione del Responsabile Tecnico]
 ]
 
 === UC6.1: Gestione della prima domanda
-- *Attore principali*: Utente;
+- *Attore Principale*: Utente;
 - *Precondizioni*: Visualizzazione della prima domanda;
 - *Postcondizioni*: Pulsante "Indietro" disabilitato, opzione "Torna a dashboard" aggiunta;
-- *Trigger*: Tentativo navigazione indietro alla prima domanda;
+- *Trigger*: L’utente seleziona il pulsante «Passo precedente» mentre si trova alla prima domanda;
 - *Scenario Principale*:#pad(left: 1em)[
 #v(-0.5em)
    + Sistema disabilita "Passo precedente";
@@ -300,8 +300,8 @@ caption: [Autenticazione del Responsabile Tecnico]
 === UC7: Terminazione verifica di requisiti per un asset
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha compilato tutti i decision tree di un asset;
-- *Postcondizioni*: Resoconto delle operazioni;
-- *Trigger*: Il sistema rileva che i requisiti sono stati tutti verificati (significa anche che ce ne possono essere N.A. e FAIL)
+- *Postcondizioni*: Il sistema fornisce il resoconto delle operazioni;
+- *Trigger*: Il sistema rileva che i requisiti sono stati tutti verificati, ciò include anche i casi N.A. e FAIL;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + Il sistema conclude la compilazione di un decision tree
@@ -314,7 +314,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha importato correttamente i documenti;
 - *Postcondizioni*: Apertura della lista degli asset;
-- *Trigger*: Si seleziona il dispositivo di cui si sono caricati i documenti e si vuole iniziare a lavorare;
+- *Trigger*: L’utente seleziona un dispositivo per il quale sono stati caricati i documenti;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + Il sistema mostra un'icona nella home che indica l'area di lavoro per uno specifico dispositivo, di cui si sono caricati i documenti
@@ -330,7 +330,7 @@ caption: [Autenticazione del Responsabile Tecnico]
 - *Attore Principale*: Utente;
 - *Precondizioni*: I documenti sono stati caricati correttamente e sono visibili tutti gli asset di un dispositivo;
 - *Postcondizioni*: L'utente visualizza i requisiti da verificare per quell'asset
-- *Trigger*: L'utente seleziona un asset;
+- *Trigger*: L’utente seleziona un asset dalla lista degli asset disponibili;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente seleziona un asset che vuole verificare
@@ -426,7 +426,7 @@ caption: [Aggiunta giustificazione a un risultato]
 - *Attore Principale*: Utente;
 - *Precondizioni*: Un requisito è stato valutato e ha prodotto il risultato N/A (Not Applicable);
 - *Postcondizioni*: La giustificazione viene associata al risultato e salvata;
-- *Trigger*: L'utente decide di documentare la motivazione di un risultato N/A;
+- *Trigger*: L’utente seleziona l’opzione per aggiungere una giustificazione al risultato N/A;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente visualizza il risultato del requisito;
@@ -439,10 +439,10 @@ caption: [Aggiunta giustificazione a un risultato]
   ]
 
 === UC13: Aggiunta di un nuovo asset tramite interfaccia
-- *Attore principali*: Utente;
+- *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha caricato un file di configurazione del dispositivo o ha aperto una valutazione esistente;
 - *Postcondizioni*: Il nuovo asset viene aggiunto al dispositivo e tutti i decision tree standard vengono associati ad esso;
-- *Trigger*: L'utente desidera aggiungere manualmente un nuovo asset al dispositivo;
+- *Trigger*: L’utente seleziona l’opzione «Aggiungi nuovo asset»;
 - *Scenario Principale*:#pad(left: 1em)[
     #v(-0.5em)
     + L'utente accede alla sezione di gestione degli asset;
@@ -484,11 +484,11 @@ caption: [Aggiunta giustificazione a un risultato]
 
 
 
-=== UC16: Apertura cronologia
-- *Attore principali*: Utente;
-- *Precondizioni*: Essere in Home o in Area utente;
+=== UC15: Apertura cronologia
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente si trova nella Home o nell'Area utente;
 - *Postcondizioni*: Visualizzazione della cronologia
-- *Trigger*: Click del tasto cronologia;
+- *Trigger*: L’utente seleziona il pulsante «Cronologia»;
 - *Scenario Principale*:#pad(left: 1em)[
 #v(-0.5em)
    + L'utente si trova in home o in area utente e clicca il tasto cronologia
@@ -499,11 +499,11 @@ caption: [Aggiunta giustificazione a un risultato]
    + *UC 16.1*: selezione di un asset dalla cronologia
 ]
 
-=== UC16.1: Selezione di un asset dalla cronologia
-- *Attore principali*: Utente;
+=== UC15.1: Selezione di un asset dalla cronologia
+- *Attore Principale*: Utente;
 - *Precondizioni*: Essere nella cronologia di un dispositivo
 - *Postcondizioni*: Apertura 
-- *Trigger*: Click del tasto cronologia;
+- *Trigger*: L’utente seleziona un asset dalla cronologia dei dispositivi verificati;
 - *Scenario Principale*:#pad(left: 1em)[
 #v(-0.5em)
    + L'utente si trova in home o in area utente e clicca il tasto cronologia

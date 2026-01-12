@@ -1,54 +1,130 @@
 
-  === Introduzione
-  Il processo di fornitura descrive le attività necessarie per instaurare, gestire e mantenere il rapporto tra il gruppo e la proponente esterna (*BlueWind S.r.l.*) durante lo svolgimento del progetto.  
-  Seguendo le linee guida dettate dai principi espressi dallo standard *ISO/IEC 12207:1997* (che definisce il *processo di Supply* come l’insieme delle attività volte alla definizione degli accordi contrattuali, alla pianificazione, al monitoraggio e alla consegna dei prodotti software), il gruppo si impegna a stabilire modalità organizzate, verificabili e tracciabili per comunicare, consegnare documentazione e garantire trasparenza verso la proponente.
+ 
+=== Introduzione
+ Il processo di fornitura descrive le attività necessarie per *instaurare, gestire e mantenere il rapporto tra il gruppo e la proponente esterna (BlueWind S.r.l.)* durante lo svolgimento del progetto.
 
-  === Scopo e descrizione
-  Lo scopo del processo di fornitura è garantire che la relazione tra committente e proponente sia strutturata, efficiente e basata su comunicazioni chiare e documentate.  
-  Questo processo permette di:
-  - definire i canali ufficiali di comunicazione;
-  - stabilire frequenza e modalità dei confronti;
-  - assicurare che le richieste della proponente siano comprese, tracciate e integrate nel flusso di lavoro;
-  - produrre la documentazione necessaria alle revisioni e alle fasi di progetto.
-  Il rapporto tra committente e proponente si basa su interazioni periodiche e sul rispetto dei ruoli previsti dal capitolato, con l’obiettivo di garantire conformità alle richieste espresse e mantenere una visione condivisa dello stato del progetto.
+Seguendo le linee guida dettate dai principi espressi dallo *standard ISO/IEC 12207:1997* — che definisce il processo di supply come l’insieme delle attività volte alla definizione degli accordi contrattuali, alla pianificazione, al monitoraggio e alla consegna dei prodotti software — il gruppo si impegna a stabilire modalità *organizzate, verificabili e tracciabili* per comunicare, consegnare documentazione e garantire trasparenza verso la proponente.
 
-  === Rapporti con la proponente
-  Le interazioni con la proponente avvengono attraverso modalità sia sincrone che asincrone, garantendo continuità nelle comunicazioni.
+  === Scopo del processo
+ Lo scopo del processo di fornitura è garantire che la relazione tra gruppo e proponente sia *strutturata, efficiente e basata su comunicazioni chiare e documentate.*
 
-  *Comunicazione sincrona (meeting)*  
-  - Riunioni periodiche fissate in base alle necessità del progetto;  
-  - Gli incontri vengono documentati tramite *verbale esterno*;  
-  - Decisioni, richieste e dubbi emersi vengono convertiti in issue GitHub.
+Gli obiettivi principali includono:
 
-  *Comunicazione asincrona*  
-  - Email indicata da BlueWind ;  
-  - Eventuale uso di strumenti di messaggistica (telegram);  
-  - Domande e chiarimenti tecnici possono essere richiesti tra una riunione e l’altra.
+ - Definire i *canali ufficiali di comunicazione* tra gruppo e proponente;
 
-  *Documentazione e tracciamento*  
-  Ogni comunicazione rilevante deve essere documentata.  
-  In particolare:
-  - I meeting generano sempre un verbale esterno;  
-  - Le decisioni operative vengono tracciate tramite issue GitHub.
+- Stabilire *frequenza, modalità e tempi dei confronti*;
 
-  *Disponibilità*  
-  Il gruppo assicura di fornire aggiornamenti regolari e materiali richiesti entro i tempi stabiliti dal capitolato, rispettando le scadenze di sprint e di milestone.
+- Assicurare che le richieste della proponente siano *comprese, tracciate e integrate* nel flusso di lavoro;
 
-  === Documentazione prodotta
-  Il processo di fornitura genera diversi documenti necessari a garantire tracciabilità e trasparenza nel rapporto con la proponente.
+- Produrre *documentazione coerente* per revisioni e fasi di progetto;
 
-  La documentazione prodotta comprende:
+- Garantire *trasparenza, tracciabilità e rispetto delle scadenze* previste da capitolato e milestone.
 
-  - *Verbali esterni*: registrazione formale dei meeting con BlueWind;  
-  - *Norme di Progetto (NdP)*: descrizione dei processi adottati e organizzazione interna;  
-  - *Piano di Progetto (PdP)*: pianificazione, disponibilità e avanzamento del lavoro;  
-  - *Analisi dei Requisiti (AdR)*: recepisce e formalizza le richieste della proponente;  
-  - *Piano di Qualifica (PdQ)*: descrive verifiche e criteri di qualità per dimostrare conformità.
+=== Attività del processo
+  Il processo di fornitura comprende le seguenti attività principali:
+#pad(left: 1em)[ 
++ *Inizializzazione* \ Analisi delle richieste della proponente, identificazione dei requisiti contrattuali e valutazione dei vincoli organizzativi.
 
-  Di seguito un elenco dei documenti forniti, con collegamento alla versione pubblicata:
 
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Analisi dei Requisiti]  
++ *Preparazione delle risposte* \ Realizzazione di eventuali contro-proposte basate Analisi dei Requisiti (AdR).
+
+
++ *Contrattazione* \ Confronto con la proponente per formalizzare requisiti, scadenze e modalità di lavoro.
+
++ *Pianificazione* \  Definizione dell’organizzazione, del ciclo di vita del software, assegnazione delle risorse e gestione dei rischi.
+
++ *Esecuzione e controllo* \ Implementazione delle attività pianificate, monitoraggio della qualità e del progresso del lavoro.
++ *Revisione e valutazione* \ Raccolta di feedback dalla proponente per eventuali correzioni o aggiornamenti del lavoro.
++ *Consegna e completamento* \ Rilascio dei prodotti software e della documentazione, garantendo supporto post-consegna.
+]
+
+=== Procedure operative
+Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utilizza modalità *sincrone e asincrone*:
+
+==== Comunicazione sincrona (meeting):
+
+- *Riunioni con la proponente (BlueWind S.r.l.):* 
+
+- Programmate periodicamente secondo le esigenze del progetto.
+
+- Documentate tramite verbali esterni.
+
+- Decisioni, richieste e dubbi vengono registrati come issue su GitHub.
+
+- *Riunioni interne al gruppo:* 
+
+- Programmate per coordinare attività e aggiornare lo stato del progetto.
+
+- Documentate tramite verbali interni.
+
+- Decisioni operative e compiti interni tracciati come issue su GitHub.
+
+*Comunicazione asincrona:*
+
+- *Con la proponente*: email ufficiale, messaggistica (Telegram) per chiarimenti rapidi.
+
+- *Internamente al gruppo*: chat interne (Discord/WhatsApp) per coordinamento e aggiornamenti.
+
+
+*Tracciamento*
+
+- Tutte le comunicazioni rilevanti vengono registrate;
+
+- Verbali esterni e interni (questi ultimi per riunioni del gruppo senza la presenza della proponente);
+
+- Issue GitHub per decisioni operative e richieste tracciate.
+
+*Disponibilità*
+
+Il gruppo si impegna a fornire aggiornamenti regolari e materiali richiesti entro le scadenze di sprint e milestone.
+Il processo di fornitura produce documentazione fondamentale per la tracciabilità e la trasparenza del progetto.
+
+=== Documenti principali 
+
+- *Verbali esterni*: registrazione dei meeting con BlueWind;
+
+- *Verbali interni*: documentazione di riunioni interne;
+
+- *Norme di Progetto (NdP)*: descrizione dei processi adottati e dell’organizzazione interna;
+
+- *Piano di Progetto (PdP)*: pianificazione delle attività, disponibilità delle risorse, avanzamento del lavoro;
+
+- *Analisi dei Requisiti (AdR)*: raccolta e formalizzazione dei requisiti della proponente;
+
+- *Piano di Qualifica (PdQ)*: criteri di verifica e validazione, test effettuati e risultati;
+
+- *Glossario*: definizione dei termini tecnici e concetti chiave utilizzati nel progetto;
+
+- *Dichiarazione degli Impegni*: stima dei costi del progetto, ore per ruolo e responsabilità dei componenti del gruppo;
+
+- *Lettera di Candidatura*: presentazione ufficiale della candidatura del gruppo al capitolato proposto;
+
+- *Valutazione dei Capitolati*: analisi dei capitolati disponibili, punti di forza, criticità e motivazioni della scelta effettuata dal gruppo.
+
+// valuto in seguito se tenere i link o no così
+  /*- #link("https://grouprubberduck.github.io/Documentazione/")[Analisi dei Requisiti]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Progetto]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica]  
   - #link("https://grouprubberduck.github.io/Documentazione/")[Norme di Progetto]  
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Verbali esterni]
+  - #link("https://grouprubberduck.github.io/Documentazione/")[Verbali esterni] */
+=== Strumenti a supporto
+
+Per svolgere le attività del processo di fornitura, il gruppo utilizza strumenti sia interni sia esterni:
+
+*Strumenti interni*
+
+- *GitHub*: gestione backlog, ticketing;
+
+- *Google Calendar*: gestione appuntamenti e scadenze;
+
+- *Discord / Whatsapp* : coordinamento interno e riunioni del gruppo.
+
+
+*Strumenti verso la proponente*
+
+- *Google Mail*: comunicazioni ufficiali scritte;
+
+- *Zoom*: riunioni sincrone remote.
+
+- *Telegram* : indicata dalla proponente per chiarimenti rapidi.
+
