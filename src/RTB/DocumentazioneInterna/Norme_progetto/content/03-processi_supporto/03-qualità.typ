@@ -1,5 +1,5 @@
 #import "/src/config.typ":he
-== *Processo di Accertamento Qualità*
+== *Processo di Accertamento Qualità* <qualità>
 === Introduzione
 
 Il processo di Accertamento Qualità ha il compito di verificare che documenti, deliverable e processi siano conformi agli standard, alle procedure e alle metriche definite dal progetto.
@@ -17,15 +17,50 @@ Assicurare che il lavoro del team sia:
 
 - Adeguatamente *preparato per le successive attività* di Qualifica.
 
-=== Attività principali
+=== Attività del processo
 
 - Revisione della documentazione e dei deliverable;
 
-- Verifica del rispetto delle Norme di Progetto e degli standard adottati;;
+- Verifica del rispetto delle Norme di Progetto e degli standard adottati;
 
 - Individuazione e segnalazione di eventuali non conformità;
 
 - Raccolta e archiviazione delle evidenze di controllo.
+=== Procedure operative
+
+==== Scrittura dei commit  <commit>
+ I commit dovrebbero avere un *tipo* ed una *descrizione*:
+- Il *tipo* indica qual è l’obiettivo del commit (ad esempio `feat`, `fix`, `docs`, ecc.); 
+ 
+- La *descrizione* aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettuati.
+
+Le regole generali sono:
+- Iniziare il commit con il tipo seguito da `:`  
+- Lasciare uno spazio tra tipo e descrizione  
+- Iniziare la descrizione con lettera maiuscola  
+- Limitare la descrizione a massimo 50 caratteri  
+- Indicare alla fine del commit la issue a cui ci si sta riferendo
+
+#block(
+  fill: rgb("#f9f9f9"),
+  stroke: 1pt + black,
+  inset: 10pt
+)[
+git commit -m "Commento. Issue #01"
+]
+
+Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando#footnote[ #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa.  
+#upper("è") preferibile astenersi dal modificare commit che sono già stati resi pubblici.]:
+
+#block(
+  fill: rgb("#f9f9f9"),
+  stroke: 1pt + black,
+  inset: 10pt
+)[
+git commit --amend
+]
+
+
 
 === Strumenti
 
@@ -43,4 +78,4 @@ Le metriche relative all’Accertamento Qualità sono riportate nella sezione �
 
 //mettere link alla sezione nel documento
 
-Oppure consultare il seguente documento per approfodnimenti : #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.1.0.pdf")[Piano di Qualifica (PdQ)]
+Oppure consultare il seguente documento per approfondimenti : #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.1.0.pdf")[Piano di Qualifica (PdQ)]
