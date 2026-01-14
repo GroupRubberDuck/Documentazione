@@ -52,7 +52,7 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-01-13], persone.ALDO, [], [Stesura del verbale]),
+    ([0.1.0], [2026-01-14], persone.ALDO, [], [Stesura del verbale]),
   )
 
   #registroModifiche(modifiche)
@@ -70,7 +70,7 @@
   = Informazioni generali
   - *Tipo di riunione*: Esterno
   - *Motivazione*: Allineamento sui requisiti prodotti
-  - *Data*: 2026-01-13
+  - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Zoom
   - *Ora inizio*: 16:00
   - *Ora fine*: 16:45
