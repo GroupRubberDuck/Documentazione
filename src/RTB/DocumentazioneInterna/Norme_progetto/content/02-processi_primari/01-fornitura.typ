@@ -41,7 +41,8 @@ Gli obiettivi principali includono:
 === Procedure operative
 Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utilizza modalità *sincrone e asincrone*:
 
-==== Comunicazione sincrona (meeting):
+==== Metodi di comunicazione
+*Comunicazione sincrona (meeting)*:
 
 - *Riunioni con la proponente (BlueWind S.r.l.):* 
 

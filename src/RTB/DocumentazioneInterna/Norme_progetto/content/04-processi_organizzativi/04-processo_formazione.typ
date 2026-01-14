@@ -46,7 +46,7 @@ In particolare:
 
 Questo approccio consente di *mantenere l’efficienza del team* e di valorizzare l’esperienza accumulata durante il progetto.
 
-==== Rendicontazione delle ore:
+==== Rendicontazione delle ore
 Essendo un progetto svolto per la prima volta, ogni attività formativa viene registrata anche termini di ore non retribuite #footnote[Oltre alle ore retribuite da contare nel budget].  
 Tali ore comprendono:
   - *Studio dei documenti e dei materiali forniti* dal docente;

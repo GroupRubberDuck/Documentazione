@@ -59,7 +59,7 @@ Per raggiungere una retrospettiva soddisfacente sono stati studiati diversi meto
 
 Dall’analisi dei diversi metodi, il gruppo ha deciso di adottare una *retrospettiva più semplice*, ritenuta più pratica ed efficace in relazione al tempo disponibile per il progetto.
 
-==== Retrospettiva semplificata 
+===== Retrospettiva semplificata 
 
 + A turno, ogni membro del gruppo condivide le attività svolte e segnala eventuali problemi riscontrati.
 + Si discutono le criticità o i dubbi emersi durante le attività.
