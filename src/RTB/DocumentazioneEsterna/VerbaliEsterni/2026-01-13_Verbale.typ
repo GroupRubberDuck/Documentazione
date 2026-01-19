@@ -52,7 +52,7 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-01-14], persone.ALDO, [], [Stesura del verbale]),
+    ([0.1.0], [2026-01-14], persone.ALDO, [Filippo Guerra], [Stesura del verbale]),
   )
 
   #registroModifiche(modifiche)
@@ -93,9 +93,9 @@
 
 #insertArabicNumberedPages("Ordine del giorno", "Verbale esterno", giornoRiunione)[
   = Ordine del giorno
-  - Esposizione dubbi su specifici requisiti
+  - Esposizione dubbi su specifici requisiti.
   - Esposizione di possibili soluzioni in ambito architetturale e di tecnologie utilizzabili
-  - come procedere
+  - Definizione delle modalità operative per le fasi successive.
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale esterno", giornoRiunione)[
@@ -104,9 +104,10 @@
 
   === Editor di testo
   Nella produzione dei requisiti è stata notata la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
-  BlueWind ha rassicurato che questo secondo editor non dovrebbe essere di difficile implementazione.
+  BlueWind ha rassicurato che questo secondo editor non dovrebbe presentare difficoltà implementative significative.
+
   === Requisiti di performance
-  Si è discusso della loro necessità, arrivando alla conclusione che non sono di grande importanza, data la natura del capitolato.
+  Si è discusso della loro necessità, arrivando alla conclusione che non sono di primaria importanza, data la natura del capitolato.
   Infatti l'unica operazione che potrebbe avere necessità di tali requisiti è il caricamento degli alberi: per rendere la user experience più fluida è stato consigliato di caricare tutti gli alberi in un primo momento (aumentando il tempo di caricamento iniziale), per poi averli tutti a disposizione.
 
   == Tecnologie e architettura
