@@ -5,7 +5,7 @@
   separator: repeat[.],
   indent: 0em
 )
-== Introduzione ai processi di supporto
+== Introduzione ai processi di supporto <supporto>
 I processi di supporto hanno lo scopo di garantire *l’efficace gestione, controllo e qualità delle attività del ciclo di vita del progetto*, fornendo strumenti, procedure e linee guida per supportare i processi primari (analisi, progettazione, sviluppo, verifica).
 
 In conformità agli standard ISO di riferimento, i processi di supporto considerati nel presente documento includono:
@@ -18,7 +18,7 @@ In conformità agli standard ISO di riferimento, i processi di supporto consider
 
 + *Processo di Qualifica (Verifica e Validazione)*:\ Processo che comprende attività di verifica e validazione finalizzate a stabilire se un prodotto o deliverable può essere considerato concluso e idoneo al rilascio, garantendo la conformità alle specifiche tecniche e funzionali.
 
-== *Processo di documentazione*
+== *Processo di documentazione* <documentazione>
 === Introduzione
 Il processo di documentazione definisce le *modalità con cui il team raccoglie, organizza e gestisce i documenti* prodotti durante il progetto. \ Fornisce un quadro chiaro dei *flussi documentali, delle responsabilità e degli strumenti utilizzati*, garantendo che le informazioni siano aggiornate, accessibili e coerenti con gli obiettivi del progetto.
 === Scopo del processo
@@ -81,7 +81,7 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
 
 
 
-==== Workflow documentale
+==== Workflow documentale <workflow>
 All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
@@ -185,7 +185,7 @@ La sezione iniziale è composta dai seguenti elementi:
 
 
 
-==== Struttura specifica
+==== Struttura specifica <struttura>
 Di seguito viene riportata la struttura standard dei documenti principali, le rispettive sezioni, il loro scopo, i destinatari, e le metodologie adottate per la scrittura e la revisione, al fine di mantenere coerenza e uniformità all'interno del gruppo. 
 
 \ 
@@ -196,7 +196,7 @@ Di seguito viene riportata la struttura standard dei documenti principali, le ri
 #figure(kind:"documenti",supplement: "Documento", caption:"Analisi dei Requisiti")[
   #box(width: 100%,stroke:1pt,inset: 1em)[
     
-==== Analisi dei Requisiti
+==== Analisi dei Requisiti <requisiti>
 
   
 #align(left)[

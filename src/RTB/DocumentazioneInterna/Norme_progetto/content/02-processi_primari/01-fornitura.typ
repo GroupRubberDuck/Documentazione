@@ -3,7 +3,7 @@
 === Introduzione
  Il processo di fornitura descrive le attività necessarie per *instaurare, gestire e mantenere il rapporto tra il gruppo e la proponente esterna (BlueWind S.r.l.)* durante lo svolgimento del progetto.
 
-Seguendo le linee guida dettate dai principi espressi dallo *standard ISO/IEC 12207:1997* — che definisce il processo di supply come l’insieme delle attività volte alla definizione degli accordi contrattuali, alla pianificazione, al monitoraggio e alla consegna dei prodotti software — il gruppo si impegna a stabilire modalità *organizzate, verificabili e tracciabili* per comunicare, consegnare documentazione e garantire trasparenza verso la proponente.
+Seguendo le linee guida dettate dai principi espressi dallo #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017] — che definisce il processo di supply come l’insieme delle attività volte alla definizione degli accordi contrattuali, alla pianificazione, al monitoraggio e alla consegna dei prodotti software — il gruppo si impegna a stabilire modalità *organizzate, verificabili e tracciabili* per comunicare, consegnare documentazione e garantire trasparenza verso la proponente.
 
   === Scopo del processo
  Lo scopo del processo di fornitura è garantire che la relazione tra gruppo e proponente sia *strutturata, efficiente e basata su comunicazioni chiare e documentate.*
@@ -41,7 +41,8 @@ Gli obiettivi principali includono:
 === Procedure operative
 Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utilizza modalità *sincrone e asincrone*:
 
-==== Comunicazione sincrona (meeting):
+==== Metodi di comunicazione
+*Comunicazione sincrona (meeting)*:
 
 - *Riunioni con la proponente (BlueWind S.r.l.):* 
 

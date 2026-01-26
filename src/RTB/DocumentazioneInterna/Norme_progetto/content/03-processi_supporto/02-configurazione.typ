@@ -1,4 +1,4 @@
-== *Processo di Gestione delle Configurazioni*
+== *Processo di Gestione delle Configurazioni* <configurazione>
 
 === Introduzione
 Il processo di Gestione delle Configurazioni ha lo scopo di garantire la corretta identificazione, controllo, monitoraggio e aggiornamento di tutti gli elementi del progetto, siano essi documenti, codice, deliverable o altri artefatti di progetto. \
@@ -111,7 +111,8 @@ Il registro modifiche è la tabella principale presente in ogni documento  che t
 
 ]
 
-
+==== Formato nome dei verbali
+ Al fine di avere ordine estetico all'interno della repo, è stato deciso di adottare il seguente standard per la nomina dei verbali. Di questi documenti interessa data e versione, dunque saranno nel formato: \ YYYY-MM-DD_Verbale-vX.Y.Z.typ
 
 === Strumenti principali utilizzati
 

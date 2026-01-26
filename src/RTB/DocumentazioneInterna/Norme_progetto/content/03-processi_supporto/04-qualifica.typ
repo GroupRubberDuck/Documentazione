@@ -1,5 +1,5 @@
 #import "@preview/cheq:0.3.0": checklist
-== *Processo di Qualifica (Verifica e Validazione)*
+== *Processo di Qualifica (Verifica e Validazione)* <qualifica>
 === Introduzione
 Il processo di Qualifica ha lo scopo di stabilire se un prodotto del progetto (documento, software o deliverable) possa essere considerato *concluso e idoneo al rilascio*.
 Esso rappresenta la fase finale di verifica e validazione, successiva alle attività di Accertamento Qualità.
@@ -14,7 +14,7 @@ Esso rappresenta la fase finale di verifica e validazione, successiva alle attiv
 
 - Definire criteri oggettivi di completamento tramite la *Definition of Done (DoD)*.
 
-=== Attività principali
+=== Attività del processo
 Le attività principali del processo di Qualifica comprendono:
 
 - *Revisione finale dei deliverable* rispetto ai requisiti e agli standard;
@@ -38,7 +38,7 @@ Durante il processo di Qualifica vengono applicate le seguenti procedure:
 
 - *Rilascio del deliverable* solo al soddisfacimento di tutti i criteri previsti.
 
-==== Definition of Done
+==== Definition of Done <DOD>
 
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
@@ -74,6 +74,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 - Controllare l’incremento dello sprint corrispondente ( e il website)
   
 La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
+
 
 === Strumenti a supporto
 
