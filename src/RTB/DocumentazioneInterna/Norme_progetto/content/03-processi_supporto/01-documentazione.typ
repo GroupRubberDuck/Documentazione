@@ -381,7 +381,7 @@ Composto principalmente da:
 
   
 #align(left)[
-Le Norme di Progetto definiscono l'insieme di regole, convenzioni e standard adottati dal gruppo al fine di garantire coerenza, qualità e uniformità nella produzione della documentazione, del codice e dei deliverable. Il documento stabilisce inoltre procedure condivise per redazione, revisione, versionamento, gestione dei file e communicazione interne, riducendo il rischio di errori, fraintendimenti o incoerenze operative tra i membri del team.
+Le Norme di Progetto definiscono l'insieme di regole, convenzioni e standard adottati dal gruppo al fine di garantire coerenza, qualità e uniformità nella produzione della documentazione, del codice e dei deliverable. Il documento stabilisce inoltre procedure condivise per redazione, revisione, versionamento, gestione dei file e comunicazione interne, riducendo il rischio di errori, fraintendimenti o incoerenze operative tra i membri del team.
 
 *Destinatari* : Tutti i membri del gruppo di progetto (interno)
 

@@ -46,19 +46,19 @@ Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utiliz
 
 - *Riunioni con la proponente (BlueWind S.r.l.):* 
 
-- Programmate periodicamente secondo le esigenze del progetto.
+  - Programmate periodicamente secondo le esigenze del progetto.
 
-- Documentate tramite verbali esterni.
+  - Documentate tramite verbali esterni.
 
-- Decisioni, richieste e dubbi vengono registrati come issue su GitHub.
+  - Decisioni, richieste e dubbi vengono registrati come issue su GitHub.
 
 - *Riunioni interne al gruppo:* 
 
-- Programmate per coordinare attività e aggiornare lo stato del progetto.
+  - Programmate per coordinare attività e aggiornare lo stato del progetto.
 
-- Documentate tramite verbali interni.
+  - Documentate tramite verbali interni.
 
-- Decisioni operative e compiti interni tracciati come issue su GitHub.
+  - Decisioni operative e compiti interni tracciati come issue su GitHub.
 
 *Comunicazione asincrona:*
 
@@ -71,7 +71,7 @@ Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utiliz
 
 - Tutte le comunicazioni rilevanti vengono registrate;
 
-- Verbali esterni e interni (questi ultimi per riunioni del gruppo senza la presenza della proponente);
+- Verbali esterni e interni;
 
 - Issue GitHub per decisioni operative e richieste tracciate.
 

@@ -60,9 +60,9 @@
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[Ana Maria Draghici],[Rivista introduzione, approfondita Gestione del processo @gestione-del-processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[Ana Maria Draghici],[Stesura della sezione Gestione dell'infrastruttura @gestione-infrastruttura]),
   ([0.8.4],[2025-12-15],[Davide Lorenzon],[Ana Maria Draghici],[Stesura della sezione del Processo di miglioramento @processo_miglioramento  e  processo di formazione @processo_di_formazione]),
-  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[-],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
-  ([0.10.0],[2026-01-10],[Ana Maria Draghici],[-],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
-  ([0.11.0],[2026-01-14],[Ana Maria Draghici],[-],[Completata scrittura Norme di Progetto e pronta per revisione finale]),
+  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
+  ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
+  ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto e pronta per revisione finale]),
   
 )
 #registroModifiche(modifiche)

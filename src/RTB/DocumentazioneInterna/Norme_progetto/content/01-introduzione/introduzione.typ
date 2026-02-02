@@ -1,6 +1,6 @@
   == Scopo del documento
 
-In questo documento il gruppo definisce e mantiene traccia del proprio way of working, ovvero l’insieme di pratiche e convenzioni adottate per organizzare e svolgere il lavoro di progetto.
+In questo documento il gruppo definisce e tiene traccia del proprio way of working, ovvero l’insieme di pratiche e convenzioni adottate per organizzare e svolgere il lavoro di progetto.
 
 La stesura del documento avviene in modo incrementale, evolvendosi parallelamente all’avanzamento delle attività. Nel corso del progetto potrà essere soggetto ad aggiunte, modifiche o rimozioni, derivate dal processo di apprendimento e sperimentazione del team.
 

@@ -47,7 +47,7 @@ Il processo di sviluppo è strettamente collegato alle baseline previste dal pro
 
 - Analisi dei Requisiti;
 
-- Prime attività di codifica e prototipazione, ove previste.
+- Prime attività di codifica e prototipazione nella forma di Proof of Concept.
 
 *Product Baseline (PB)*
 \ Comprende principalmente le attività di:

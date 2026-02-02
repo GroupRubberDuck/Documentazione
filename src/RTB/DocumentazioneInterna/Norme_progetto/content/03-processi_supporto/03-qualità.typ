@@ -64,7 +64,7 @@ git commit --amend
 
 === Strumenti
 
-- *Typst* → Calcolo automatico delle metriche principali (es. indice Gulpease, correttezza ortografica) tramite script Typst;
+- *Typst* → Calcolo automatico di alcune metriche principali (es. indice Gulpease) tramite script Typst;
 
 - *GitHub* → repository condiviso, issue tracking e versionamento delle modifiche.
 

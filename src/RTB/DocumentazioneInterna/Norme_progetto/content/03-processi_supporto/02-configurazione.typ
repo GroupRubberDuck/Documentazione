@@ -72,7 +72,8 @@ Il processo di gestione delle configurazioni utilizza uno snippet Typst per gest
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          
-)[`#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+)[ #set raw(lang: "typ")
+  `#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
 #metadata(versionNumber)<versionNumber>
 #let doc="Norme di Progetto"
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")`]
@@ -118,7 +119,7 @@ Il registro modifiche è la tabella principale presente in ogni documento  che t
 
 Per la gestione delle configurazioni, delle versioni e della documentazione il gruppo utilizza i seguenti strumenti:
 
-- *Typst*: composizione automatizzata dei documenti, template riutilizzabili, gestione dei metadati e preview istantanea.
+- *Typst*: compilazione dei documenti, template riutilizzabili, gestione dei metadati e preview istantanea.
 
 - *GitHub*: repository centralizzato, controllo versioni, gestione issue e collaborazione asincrona.
 
