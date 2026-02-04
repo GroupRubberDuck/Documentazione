@@ -9,6 +9,6 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
 L’adozione sistematica delle metriche permette di identificare aree di miglioramento, garantire trasparenza e mantenere elevati standard di qualità durante l’intero ciclo di vita del progetto.
  
 
-#include "01-qualità_processo.typ" 
+#include "02-qualità_processo.typ" 
 
-#include "02-qualità_prodotto.typ"
+#include "03-qualità_prodotto.typ"
