@@ -1,5 +1,6 @@
 #import "/src/config.typ":template_dir,he, slugify
 #import "@preview/lilaq:0.5.0" as lq
+#import "@preview/cetz-plot:0.1.3"
 
 
 L'indice di gulpease è usato per valutare la leggibilità di un testo.
@@ -26,46 +27,32 @@ Per il calcolo il gruppo ha sviluppato una propria automazione sfruttando le fun
 Questo permette una forte integrazione e analisi di dettaglio più fine.
 
 Per maggiori dettagli è stato stilato un report consultabile in appendice (
-  #ref(label(slugify(("Metodologia di Calcolo dell'Indice di Gulpease")))))
+  // #ref(label(slugify(("Metodologia di Calcolo dell'Indice di Gulpease")))))
 
 *Monitoraggio*:
 
 da studiare come usare il package lilaq per il plot dei diagrammi
 
-// #let infoDocumenti=(
-//   "norme di progetto":
-//     (
-//       sprint3:60,
-//       ),
-//   "piano di progetto":(
-//     sprint3:61,
-//   ),  
-//   "piano di qualifica":(
-//     sprint3:56,
-//   ),
-//   "analisi dei requisiti":(
-//     sprint3:59,
-//   )
-// )
+#let infoDocumenti=(
+  "norme di progetto":
+    (
+      sprint3:60,
+      sprint4:70,
+
+      ),
+  "piano di progetto":(
+    sprint3:61,
+  ),  
+  "piano di qualifica":(
+    sprint3:56,
+  ),
+  "analisi dei requisiti":(
+    sprint3:59,
+    sprint4:70,
+  )
+)
 
 
 
-// #lq.diagram(
-//   lq.plot(( lq.tick-label("sprint3",kind:"x"), 1, 2,  lq.tick-label("sprint3",kind:"x"), 4), (3, 5, 4, 2, 3)),
- 
 
-// )
 
-// #let xs = (0, 1, 2, 3, 4)
-
-// #lq.diagram(
-//   title: [Precious data],
-//   xlabel: $x$, 
-//   ylabel: $y$,
-
-//   lq.plot(xs, (3, 5, 4, 2, 3), mark: "s", label: [A]),
-//   lq.plot(
-//     xs, x => 2*calc.cos(x) + 3, 
-//     mark: "o", label: [B]
-//   )
-// )
