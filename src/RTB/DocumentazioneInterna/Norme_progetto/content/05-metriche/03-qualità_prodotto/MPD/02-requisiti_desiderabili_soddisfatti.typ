@@ -10,8 +10,8 @@
     " utile a monitorare il grado di soddisfacimento dei requisiti desiderabili.",
     formula:$ "RDesS"="Numero di requisiti desiderabili soddisfatti" / "Numero di requisiti desiderabili" $,
     interpretazione:[
-      - Valore accettabile:$>=0 percent $
-      - Valore ottimo:75%
+      - Valore accettabile:$>=50 percent $
+      - Valore ottimo:$>=75 percent$
     ],
     come-calcolo:none
 

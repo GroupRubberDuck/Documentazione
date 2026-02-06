@@ -17,12 +17,12 @@ Valuta la capacità del software di fornire correttamente le funzionalità richi
   ( codice: "MPD-02",
     nome: "Requisiti desiderabili soddisfatti",
     accettabile: $>= 50 percent$,
-    preferibile: $100 percent$
+    preferibile: $>=75 percent$
   ),
   (codice: "MPD-03",
     nome: "Requisiti opzionali soddisfatti",
     accettabile: $>= 0 percent$,
-    preferibile: $>= 75 percent$
+    preferibile: $>= 50 percent$
   ),
 ),[Metriche funzionalità del prodotto])
 
@@ -69,13 +69,13 @@ Indica l’ottimizzazione delle risorse e la rapidità di risposta del software 
 #tabellaMetriche((
   (codice: "MPD-09",
     nome: "Response Time",
-    accettabile: $<= 2 sec$,
+    accettabile: $<= 3 sec$,
     preferibile: $<= 1 sec$
   ),
   (codice: "MPD-10",
     nome: "CPU Utilization",
-    accettabile: $<= 75%$,
-    preferibile: $<= 60%$
+    accettabile: $<= 35%$,
+    preferibile: $<= 20%$
   ),
   (codice: "MPD-11",
     nome: "Memory Utilization",

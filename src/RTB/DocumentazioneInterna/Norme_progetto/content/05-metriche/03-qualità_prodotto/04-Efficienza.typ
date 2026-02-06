@@ -4,13 +4,13 @@
 #tabellaMetriche((
   (codice: "MPD-09",
     nome: "Response Time",
-    accettabile: $<= 2 sec$,
+    accettabile: $<= 3 sec$,
     preferibile: $<= 1 sec$
   ),
   (codice: "MPD-10",
     nome: "CPU Utilization",
-    accettabile: $<= 75%$,
-    preferibile: $<= 60%$
+    accettabile: $<= 35%$,
+    preferibile: $<= 20%$
   ),
   (codice: "MPD-11",
     nome: "Memory Utilization",

@@ -3,7 +3,7 @@
 #import template_dir + "/PdQ/metricaDescrizione.typ":descrizione-metrica
 
 #descrizione-metrica(
-    codice:"MPC-14",
+    codice:"MPC-15",
     nome:"Task Completion on Time",
     descrizione-breve:[
       Misura quanto spesso vi sono ritardi nel completamento di un task.

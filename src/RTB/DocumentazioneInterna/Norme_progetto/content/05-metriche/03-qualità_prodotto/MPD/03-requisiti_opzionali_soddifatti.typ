@@ -10,7 +10,7 @@
     formula:$ "ROpzS"="Numero di requisiti opzionali soddisfatti" / "Numero di requisiti opzionali" $,
     interpretazione:[
       - Valore accettabile:$>=0 percent$
-      - Valore ottimo:100%
+      - Valore ottimo:$>=50 percent$
     ],
     come-calcolo:none
 

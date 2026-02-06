@@ -6,14 +6,14 @@
     codice:"MPC-03",
     nome:"Actual Cost",
     descrizione-breve:"Rappresenta il costo effettivo sostenuto.
-    Risulta utile nel verificare che il lavoro svolto sia in linea con le aspettativa",
+    Risulta utile nel verificare che il lavoro svolto sia in linea con le aspettative",
     formula:[$
   "AC"= "Costo sostenuto nello sprint"
 $
 
 ],
     interpretazione:[
-      - Valore accettabile:$0<= "AC" <= 1,2*"EV"$
+      - Valore accettabile:$0<= "AC" <= 1.2*"EV"$
       - Valore ottimo:$<= "EV"$
     ],
     come-calcolo:none

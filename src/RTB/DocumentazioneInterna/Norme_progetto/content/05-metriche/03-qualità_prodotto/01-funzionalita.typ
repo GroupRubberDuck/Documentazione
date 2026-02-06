@@ -13,12 +13,12 @@
   ( codice: "MPD-02",
     nome: "Requisiti desiderabili soddisfatti",
     accettabile: $>= 50 percent$,
-    preferibile: $100 percent$
+    preferibile: $>= 75 percent$
   ),
   (codice: "MPD-03",
     nome: "Requisiti opzionali soddisfatti",
     accettabile: $>= 0 percent$,
-    preferibile: $>= 75 percent$
+    preferibile: $>= 50 percent$
   ),
 ),[Metriche funzionalità del prodotto])
 

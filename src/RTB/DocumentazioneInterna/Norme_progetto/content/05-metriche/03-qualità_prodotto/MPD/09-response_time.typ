@@ -4,7 +4,7 @@
 #descrizione-metrica(
     codice:"MPD-09",
     nome:"Response Time",
-    descrizione-breve:"Misura il tempo medio impiegato da l prodotto per rispondere a una richiesta",
+    descrizione-breve:"Misura il tempo medio impiegato dal prodotto per rispondere a una richiesta",
     formula:none,
     interpretazione:[
       - Valore accettabile:$<=3 "secondi"$
