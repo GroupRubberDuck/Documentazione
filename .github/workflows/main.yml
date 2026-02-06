@@ -27,7 +27,6 @@ jobs:
         run: |
           chmod +x scripts/updateTypstFiles.sh
           ./scripts/updateTypstFiles.sh
-          ./scripts/genWebsite.sh
 
       - name: Commit and push PDFs
         if: github.ref == 'refs/heads/main'
@@ -49,3 +48,8 @@ jobs:
         with:
           name: PDF-and-Logs
           path: output/
+
+      - name: update website
+        run: |
+          chmod +x scripts/updateTypstFiles.sh
+          ./scripts/genWebsite.sh
