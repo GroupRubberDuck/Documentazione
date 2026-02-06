@@ -255,5 +255,6 @@ Vulnerabilità:[Debolezza, errore di progettazione o implementazione che può po
   TCM:"Traffic Control Mechanism",
   USB:"Universal Serial Bus",
   WLAN:"Wireless Local Area Network",
+  KLOC:"Kilo Lines Of Code",
 )
 #metadata(abbr)<abbreviazioni>

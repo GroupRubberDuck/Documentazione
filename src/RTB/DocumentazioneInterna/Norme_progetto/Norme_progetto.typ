@@ -9,6 +9,7 @@
 // #set par(justify: true)
 
 #set text(lang: "it")
+#set terms(separator: ": \n")
 #set heading(numbering: "1.1)")
 #set footnote.entry(indent: 0em)
 #show ref: body => underline()[*#body*]
@@ -20,7 +21,7 @@
 // 
 #let currentVersion=(
   major:0,
-  minor:11,
+  minor:12,
   patch:0,
 )
 //converte dizionario in stringa
@@ -62,7 +63,8 @@
   ([0.8.4],[2025-12-15],[Davide Lorenzon],[Ana Maria Draghici],[Stesura della sezione del Processo di miglioramento @processo_miglioramento  e  processo di formazione @processo_di_formazione]),
   ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
   ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
-  ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto e pronta per revisione finale]),
+  ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
+  ([0.12.0],[2026-02-05],[Davide Lorenzon],[],[Aggiunte descrizioni delle metriche di qualità]),
   
 )
 #registroModifiche(modifiche)

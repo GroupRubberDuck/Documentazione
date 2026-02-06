@@ -28,7 +28,7 @@
 
 #let currentVersion=(
   major:0,
-  minor:1,
+  minor:2,
   patch:0,
 )
 //converte dizionario in stringa
@@ -56,6 +56,7 @@
   #let modifiche = ( 
     ([0.0.1], [2025-12-15], [Felician Mario Necsulescu ], [Davide Testolin], [Creazione del documento e stesura iniziale.]),    
     ([0.1.0], [2025-12-18], [Felician Mario Necsulescu], [Davide Testolin], [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.]),    
+    ([0.2.0], [2026-02-06], [Davide Lorenzon], [], [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index]),    
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))

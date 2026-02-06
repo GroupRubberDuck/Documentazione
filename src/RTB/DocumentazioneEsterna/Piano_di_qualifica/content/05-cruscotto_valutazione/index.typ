@@ -19,7 +19,7 @@
 #he(body:"Estimate at Completion",level:2)
 #include "MPC/06-estimate_at_completion.typ" 
 
-#he(body:"to Complete Performance Index",level:2)
+#he(body:"To Complete Performance Index",level:2)
 #include "MPC/07-to_complete_performance_index.typ" 
 
 #he(body:"Estimate to Complete",level:2)
@@ -28,35 +28,34 @@
 #he(body:"Requirements Stability",level:2)
 #include "MPC/09-requirements_stability.typ"
 
-#he(body:"Requirements Coverage",level:2)
-#include "MPC/10-requirements_coverage.typ" 
+
 
 #he(body:"Indice di Gulpease",level:2)
-#include "MPC/11-indice_gulpease.typ"
+#include "MPC/10-indice_gulpease.typ"
 
 #he(body:"Correttezza Ortografica",level:2)
-#include "MPC/12-correttezza_ortografica.typ" 
+#include "MPC/11-correttezza_ortografica.typ" 
 
 #he(body:"Test Success Rate",level:2)
-#include "MPC/13-test_success_rate.typ" 
+#include "MPC/12-test_success_rate.typ" 
 
 #he(body:"Code Coverage",level:2)
-#include "MPC/14-code_coverage.typ" 
+#include "MPC/13-code_coverage.typ" 
 
-#he(body:"Process Lead Time",level:2)
-#include "MPC/15-process_lead_time.typ" 
+#he(body:"Time Efficiency",level:2)
+#include "MPC/14-time_efficiency.typ" 
 
 #he(body:"Task Completion on Time",level:2)
-#include "MPC/16-task_completion_on_time.typ"
+#include "MPC/15-task_completion_on_time.typ"
 
 #he(body:"Requisiti Obbligatori Soddisfatti",level:2)
 #include "MPD/01-requisiti_obbligatori_soddifatti.typ" 
 
-#he(body:"Requisiti Opzionali Soddisfatti",level:2)
-#include "MPD/02-requisiti_opzionali_soddifatti.typ" 
-
 #he(body:"Requisiti Desiderabili Soddisfatti",level:2)
-#include "MPD/03-requisiti_desiderabili_soddisfatti.typ" 
+#include "MPD/02-requisiti_desiderabili_soddisfatti.typ" 
+
+#he(body:"Requisiti Opzionali Soddisfatti",level:2)
+#include "MPD/03-requisiti_opzionali_soddifatti.typ" 
 
 #he(body:"Failure Density",level:2)
 #include "MPD/04-failure_density.typ" 
@@ -85,8 +84,8 @@
 #he(body:"Cyclomatic Complexity",level:2)
 #include "MPD/12-cyclomatic_complexity.typ" 
 
-#he(body:"Modularity Index",level:2)
-#include "MPD/13-modularity_index.typ" 
+#he(body:"Instability Index",level:2)
+#include "MPD/13-instability_index.typ" 
 
 #he(body:"Coefficient of Couplings",level:2)
 #include "MPD/14-coefficient_of_couplings.typ" 
