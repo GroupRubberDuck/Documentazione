@@ -145,7 +145,7 @@
 #insertArabicNumberedPages("TODO", "Verbale esterno", giornoRiunione)[
 
   = TODO
-  #let prefisso = "TD.14."
+  #let prefisso = "TD.15."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
   I TODO sorti da questa riunione sono i seguenti:

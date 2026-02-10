@@ -218,7 +218,7 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Casi d'uso", documentType: doc)[
-  #include "content/Use_case.typ"
+  #include "content/Use_case.new.typ"
 
 ]
 
