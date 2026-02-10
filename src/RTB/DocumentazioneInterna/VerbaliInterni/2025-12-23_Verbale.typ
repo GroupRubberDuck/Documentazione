@@ -20,8 +20,8 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
-  minor:1,
+  major:1,
+  minor:0,
   patch:0,
 )
 //converte dizionario in stringa
@@ -35,9 +35,9 @@
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
     stato: "In lavorazione",
-    versione: "0.1.0",
+    versione: "1.0.0",
     autori: ("Aldo Bettega",),
-    verificatori: ("",),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -47,7 +47,8 @@
 
   #let modifiche=(
 
-    ([0.1.0],[#giornoRiunione.display()],[Aldo Bettega],[-],[Stesura del verbale]),
+    ([0.1.0],[#giornoRiunione.display()],[Aldo Bettega],[Felician Mario Necsulescu],[Stesura del verbale]),
+    ([1.0.0], [2026-12-24], persone.ALDO, persone.ALDO, [Approvazione]),
       )
 
       #registroModifiche(modifiche)
@@ -77,15 +78,14 @@
 - Ana Maria Draghici 
 - Aldo Bettega
 - Davide Testolin
-\
+- Felician Mario Necsulescu
 ]
 ]
 
 
 #insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
   = Ordine del giorno
-  - Retrospettiva;
-  - 
+  - Retrospettiva
 
 ]
 
@@ -100,18 +100,18 @@
   - Decisione condivisa di considerare il periodo di vacanze come pausa, senza rotazione dei ruoli e avanzamento dello sprint
   
   = Retrospettiva
-  + Glossario web: aggiornamento dello script
-  + Use case: completati al 90%, raggiunta maturità di struttura e contenuti
-  + Requisiti: struttura generale definita, da concludere; Analisi dei requisiti quasi conclusa
-  + Piano di qualifica: prima stesura presente, inserita sezione sull'indice di Gulpease con appendice conclusiva
-  + Piano di progetto / Preventivo: avviata ricerca sulle tecniche di stima, difficolt causate dall'inesperienza che deve essere messa in considerazione dichiarandola
+  + Glossario web: aggiornamento dello script.
+  + Use case: completati al 90%, raggiunta maturità di struttura e contenuti.
+  + Requisiti: struttura generale definita, da concludere; Analisi dei requisiti quasi conclusa.
+  + Piano di qualifica: prima stesura presente, inserita sezione sull'indice di Gulpease con appendice conclusiva.
+  + Piano di progetto / preventivo: avviata ricerca sulle tecniche di stima, difficoltà causate dall'inesperienza che deve essere messa in considerazione e dichiarata.
   + Retrospettiva di sprint:
     - Cosa ha funzionato:
-      - studio dei documenti condiviso tramite Riassunti
+      - studio dei documenti condiviso tramite riassunti.
     - Proposte di miglioramento: 
-      - ricerca a coppie su temi complessi
-      - migliore pianificazione basata sugli errori degli sprint precedenti
-      - esplicitare azioni concrete per gli sprint successivi
+      - ricerca a coppie su temi complessi;
+      - migliore pianificazione basata sugli errori degli sprint precedenti;
+      - esplicitare azioni concrete per gli sprint successivi.
   + Organizzazione e sprint: vacanze considerate come periodo di pausa, nessuna rotazione dei ruoli ed eventuale lavoro prodotto slitterà allo sprint successivo.
 
 
@@ -138,7 +138,7 @@ Una parte significativa della riunione è stata dedicata alle difficoltà incont
 = Decisioni 
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
-#let prefisso="VI.10."
+#let prefisso="VI.11."
 
 #let decisioni=(
 (
@@ -181,7 +181,7 @@ Una parte significativa della riunione è stata dedicata alle difficoltà incont
 
 = TODO
 
-#let prefisso="TD.12."
+#let prefisso="TD.14."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
@@ -219,7 +219,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definiroe],
+  [Da definire],
   [Definire una tecnica di preventivo e aggiornare il piano nelle retrospettive future],
   [Decisione su preventivo]
 ),

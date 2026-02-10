@@ -37,10 +37,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "In verifica",
     versione: versionNumber,
     autori: (persone.DL,),
-    verificatori: (),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -50,7 +50,8 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-02-09], persone.DL, [Stesura del verbale]),
+    ([0.1.0], [2026-02-09], persone.DL, [Felician Mario Necsulescu],[Stesura del verbale]),
+    //([1.0.0], [2026-02-00], persone.DL, persone.DL,[Approvazione]),
   )
 
   #registroModifiche(modifiche)
@@ -70,8 +71,8 @@
   - *Motivazione*: Riunione interna programmata
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
-  - *Ora inizio*: 17:00;
-  - *Ora fine*: 18:00;
+  - *Ora inizio*: 17:00
+  - *Ora fine*: 18:00
   - *Scriba*: #persone.DL
   - *Partecipanti*:#align(left)[
       #set list(marker: [--])
@@ -104,7 +105,7 @@
 
   Ciò ha portato allo spostamento in avanti nel tempo delle attività relative al PoC previste nel periodo precedente:
   - Ricerca sulle tecnologie relative al prodotto;
-  - Ricerca sulle tecnologie relative all'ambiente di deploy e sviluppo
+  - Ricerca sulle tecnologie relative all'ambiente di deploy e sviluppo;
   - Studio delle tecnologie tramite creazione di esempi giocattolo.
 
   == Gestione della disponibilità ridotta <gest>
@@ -135,8 +136,8 @@
 
 Questo comporta la possibilità di accavallamento dei ruoli, un approccio diverso potrebbe essere deleterio all'avanzamento delle attività.
 Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità:
-- Non si può essere il verificatore delle attività svolte da se stessi
-- Non si possono portare avanti attività di più ruoli contemporaneamente
+- Non si può essere il verificatore delle attività svolte da se stessi;
+- Non si possono portare avanti attività di più ruoli contemporaneamente.
   
   == Revisione del workflow <workflow>
   Il workflow attuale ha evidenziato numerose criticità, si è deciso di passare a una procedura con maggiore livello di dettaglio.
@@ -148,20 +149,19 @@ Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità
 
   == Attività urgenti <imp>
   Sono state identificate le attività urgenti a cui dedicare maggiore attenzione:
-  - Analisi dei requisiti
-  - Attività relative al PoC
+  - Analisi dei requisiti;
+  - Attività relative al PoC.
 
   == Altre attività
-  - Aggiornamento piano di progetto
-  - Rivisitare il workflow di approvazione per le attività relative al porcesso di fornitura
-  // Non ricordo bene se tutte le robe che stiamo facendo ora sono di fornitura
+  - Aggiornamento piano di progetto;
+  - Rivisitare il workflow di approvazione per le attività relative al processo di fornitura.
 ]
 
 #insertArabicNumberedPages("Decisioni", "Verbale interno", giornoRiunione)[
   = Decisioni
   #let contatoreDecisioni = counter("decisioni")
   #contatoreDecisioni.update(1)
-  #let prefisso = "VI.13."
+  #let prefisso = "VI.14."
 
   #let decisioni = (
     (
@@ -200,7 +200,7 @@ Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità
 
   = TODO
 
-  #let prefisso = "TD.16."
+  #let prefisso = "TD.18."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
   I TODO sorti da questa riunione sono i seguenti:
@@ -210,37 +210,37 @@ Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Redazione verbale interno della riunione svoltasi il  2026-01-13],
-      [VI.13.1],
+      [VI.14.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [Aggiornamento del Piano di Progetto],
-      [VI.13.2],
+      [VI.14.2],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Controllo e raffinamento dei casi d'uso],
-      [VI.13.3],
+      [VI.14.3],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Redazione dei diagrammi dei casi d'uso],
-      [VI.13.3],
+      [VI.14.3],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Progettazione di un nuovo workflow],
-      [VI.13.4],
+      [VI.14.4],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Integrazione del nuovo workflow],
-      [VI.13.4],
+      [VI.14.4],
     ),
   )
   #utilityTable(

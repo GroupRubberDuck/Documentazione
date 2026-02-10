@@ -139,7 +139,7 @@
 = Decisioni 
 #let contatoreDecisioni= counter("decisioni")
 #contatoreDecisioni.update(1)
-#let prefisso="VI.11."
+#let prefisso="VI.12."
 
 #let decisioni=(
 (
@@ -160,7 +160,7 @@
 
 = TODO
 
-#let prefisso="TD.13."
+#let prefisso="TD.15."
 #let contatoreTodo= counter("todo")
 #contatoreTodo.update(1)
 I TODO sorti da questa riunione sono i seguenti:
@@ -171,20 +171,20 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Davide Lorenzon],
   [Aggiornare il piano di qualifica con i cruscotti di valutazione.],
-  [VI.11.1],
+  [VI.12.1],
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Aldo Bettega],
   [Portare ad uno stato accettabile l'analisi dei requisiti.],
-  [VI.11.1],
+  [VI.12.1],
 ),
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Ana Maria Draghici],
   [Completare la sezione processi nel documento norme di progetto.],
-  [VI.11.1],
+  [VI.12.1],
 ),
 
   )

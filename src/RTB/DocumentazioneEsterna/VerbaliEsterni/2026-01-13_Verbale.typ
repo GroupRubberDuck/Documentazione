@@ -24,7 +24,7 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
+  major: 0, //manca approvazione bluewind
   minor: 1,
   patch: 0,
 )
@@ -43,7 +43,7 @@
     stato: "In lavorazione",
     versione: versionNumber,
     autori: (persone.ALDO,),
-    verificatori: (),
+    verificatori: ("Filippo Guerra",),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo", "BlueWind srl"),
   )
@@ -53,6 +53,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-01-14], persone.ALDO, [Filippo Guerra], [Stesura del verbale]),
+    ([1.0.0], [2026-01-14], persone.ALDO, persone.ALDO, [Approvazione]),
   )
 
   #registroModifiche(modifiche)
@@ -93,13 +94,14 @@
 
 #insertArabicNumberedPages("Ordine del giorno", "Verbale esterno", giornoRiunione)[
   = Ordine del giorno
-  - Esposizione dubbi su specifici requisiti.
+  - Esposizione dubbi su specifici requisiti
   - Esposizione di possibili soluzioni in ambito architetturale e di tecnologie utilizzabili
-  - Definizione delle modalità operative per le fasi successive.
+  - Definizione delle modalità operative per le fasi successive
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale esterno", giornoRiunione)[
   = Riassunto della riunione
+
   == Analisi dei requisiti
 
   === Editor di testo
@@ -111,7 +113,7 @@
   Infatti l'unica operazione che potrebbe avere necessità di tali requisiti è il caricamento degli alberi: per rendere la user experience più fluida è stato consigliato di caricare tutti gli alberi in un primo momento (aumentando il tempo di caricamento iniziale), per poi averli tutti a disposizione.
 
   == Tecnologie e architettura
-  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto ci sono a disposizione varie librerie python per quanto riguarda il bakcend.
+  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto ci sono a disposizione varie librerie python per quanto riguarda il backend.
   Per quanto riguarda il database è necessario che sia relazionale.
   Per l'architettura di sistema ci sono due opzioni: layered architecture con strati MVC (semplice, efficace per il problema e conosciuta dai membri del gruppo) oppure architettura esagonale (più sofisticata ma difficile da implementare).
 
@@ -145,7 +147,7 @@
 #insertArabicNumberedPages("TODO", "Verbale esterno", giornoRiunione)[
 
   = TODO
-  #let prefisso = "TD.14."
+  #let prefisso = "TD.16."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
   I TODO sorti da questa riunione sono i seguenti:
@@ -154,7 +156,7 @@
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [-],
       [Creazione di esempio giocattolo],
-      [VE4.1],
+      [VE.4.1],
     ),
   )
   #utilityTable(
