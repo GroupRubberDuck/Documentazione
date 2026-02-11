@@ -1,0 +1,49 @@
+settings:
+      # Percorso dove creare i file (relativo allo script)
+      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
+
+      # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+      index_file: "_index.typ"
+
+      # Il prefisso non può contenere il carattere di title separator
+      prefix: "UC"
+      # Estensione dei file generati
+      extension: ".typ"
+
+      # Regole di numerazione e stile
+      formatting:
+            padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
+            separator: "." # Separatore numeri: "1.1" vs "1-1"
+            title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
+            filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+
+      # (Opzionale) File template da copiare per i nuovi file
+      template_path: "scripts/use_case_generator/template.typ"
+
+# La struttura gerarchica
+structure:
+      - Autenticazione:
+              - Inserimento username
+              - Inserimento password
+      - Errore autenticazione
+      - Seleziona file:
+            - Seleziona file con filtri:
+                  - File con estensione non permessa
+            - Selezione con drag and drop:
+                  - Drag and drop fuori dalla drop zone
+      - Annulla selezione
+      - Errore nella selezione
+      - Importa lista di file di asset:
+              - Conferma termine selezione file asset
+              - Importa file asset singolo:
+                      - Importa json:
+                              - Struttura json non valida
+                      - Importa xml:
+                              - Struttura xml non valida
+                      - Importa csv:
+                              - Struttura csv non valida
+              - Errore import file asset:
+                      - Errore file vuoto
+                      - Errore file troppo grande
+                      - Errore estensione non valida
+      - Errore conflitto merge asset

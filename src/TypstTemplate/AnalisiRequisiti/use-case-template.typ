@@ -1,4 +1,5 @@
 #import "/src/config.typ":he,slugify
+#import "use-case-id-handler.typ":format-code,get-use-case-code
 #let use-case-template(
     livello-intestazione:int,
     codice:str,
@@ -27,6 +28,12 @@
 
 
 let elementi-lista-opzionali=(
+      if scenario-principale != none{
+      [
+        *Scenario principale*: \ 
+        #pad(left: 1em,top:-0.5em)[ #scenario-principale ]
+      ]
+      } else {none},      
       if scenari-alternativi != none{
       [
         *Scenari alternativi*: \
@@ -64,10 +71,7 @@ let elementi-lista-opzionali=(
       [*Attore principale*: #attore-principale],
       [*Precondizioni*:\ #pad(left: 1em,top:-0.5em)[ #pre-condizioni ]],
       [*Postcondizioni*:\ #pad(left: 1em,top:-0.5em)[ #post-condizioni ]],
-      [
-        *Scenario principale*: \ 
-        #pad(left: 1em,top:-0.5em)[ #scenario-principale ]
-      ],
+
 
       ..elementi-lista-opzionali
     )
@@ -76,9 +80,9 @@ let elementi-lista-opzionali=(
 
 }
 
-
-#let use-case-label(codice:str, nome-etichetta:str)={
-  ref(label(slugify(nome-etichetta)),supplement: codice+" ,§")
+// codice è non serve più, rimane per retrocompatibilità
+#let use-case-label(codice:"", nome-etichetta:str)={
+  ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" ,§")
 }
 
 // #use-case-template(
