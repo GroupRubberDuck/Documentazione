@@ -1,63 +1,40 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-
-
 #let use-case-nome="Importa xml"
-#let use-case-level=3
-
-
-#let codice=get-use-case-code(nome-etichetta: use-case-nome)
-
-
-#let attore-principale="Utente"
-
-#let scenario-principale=[
-    + L'utente seleziona un file xml
-    + Il sistema legge il file selezionato
-    + Il sistema interpreta il contenuto
-    + Il sistema salva le informazioni lette
-]
-
-#let pre-condizioni=[
-    - L'utente è autenticato
-    - Il sistema è online
-    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche
-]
-
-#let post-condizioni=[    
-    - Il sistema ha caricato in memoria gli asset importati dal file
-    ]
-
-
-#let trigger=none
-
-#let scenari-alternativi=none
-
-#let inclusioni=none
-
-#let estensioni=none
-
-#let generalizzazioni=none
-
-#let path-immagine-diagramma=none
-
-#let figure-caption=none
-
-
+#let depth=2
 #use-case-template(
-    livello-intestazione:use-case-level,
-    codice:codice,
-    nome:use-case-nome,
-    attore-principale:attore-principale,
-    scenario-principale:scenario-principale,
-    pre-condizioni:pre-condizioni,
-    post-condizioni:post-condizioni,
-    trigger:trigger,
-    scenari-alternativi:scenari-alternativi,
-    inclusioni:inclusioni,
-    estensioni:estensioni,
-    generalizzazioni:generalizzazioni,
-    path-immagine-diagramma:path-immagine-diagramma,
-    figure-caption:figure-caption,
+    
+    nome: use-case-nome,
+    
+    livello-intestazione:depth+2,
+    
+    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    
+    attore-principale:"Utente",
+    
+    scenario-principale:[
+         + L'utente ha selezionato la funzione di importazione file dal dispositivo.
+        + L'utente ha selezionato un file .xml.],
+    
+    pre-condizioni:[
+    - Il formato .xml è supportato dal sistema 
+    - L'utente si trova nella sezione di inserimento file asset],
+    
+    post-condizioni:[
+        - Il file .xml è stato correttamente selezionato e caricato nel sistema.],
+    
+    trigger:none,
+    
+    scenari-alternativi:none,
+    
+    inclusioni:none,
+    
+    estensioni:none,
+    
+    generalizzazioni:none,
+    
+    path-immagine-diagramma:none,
+    
+    figure-caption:none,
 )

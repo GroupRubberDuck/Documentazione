@@ -4,66 +4,41 @@
 
 
 #let use-case-nome="Importa lista di file di asset"
-#let use-case-level=3
-
-
-#let codice=get-use-case-code(nome-etichetta: use-case-nome)
-
-
-#let attore-principale="Utente"
-
-#let scenario-principale=[
-    + L'utente seleziona uno o più file da importare #sym.arrow 
-    + Per ogni file selezionato 
-        + Il sistema importa il file   #sym.arrow Vedi #use-case-label(nome-etichetta: "Importa file asset singolo")
-        + Il sistema registra l'esito dell'importazione
-    + Il sistema unisce i dati estratti
-]
-
-#let pre-condizioni=[
-    - L'utente è autenticato
-    - Il sistema è online
-    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche
-]
-
-#let post-condizioni=[
-    - Il sistema ha caricato in memoria gli asset importati dai file
-]
-
-#let trigger=[
-    L'utente ha selezionato la funzionalità di importazione degli asset
-]
-
-#let scenari-alternativi=[
-    - Errore nel merge dei file
-]
-
-#let inclusioni=[
-    -  #sym.arrow Vedi #use-case-label(nome-etichetta: "Importa file asset singolo")
-]
-
-#let estensioni=none
-
-#let generalizzazioni=none
-
-#let path-immagine-diagramma=none
-
-#let figure-caption=none
-
-
+#let depth=1
 #use-case-template(
-    livello-intestazione:use-case-level,
-    codice:codice,
-    nome:use-case-nome,
-    attore-principale:attore-principale,
-    scenario-principale:scenario-principale,
-    pre-condizioni:pre-condizioni,
-    post-condizioni:post-condizioni,
-    trigger:trigger,
-    scenari-alternativi:scenari-alternativi,
-    inclusioni:inclusioni,
-    estensioni:estensioni,
-    generalizzazioni:generalizzazioni,
-    path-immagine-diagramma:path-immagine-diagramma,
-    figure-caption:figure-caption,
+    nome: use-case-nome,
+    livello-intestazione:depth+2,
+    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    attore-principale:"Utente",
+    scenario-principale:[
+        + L'utente seleziona uno o più file da importare (supportati: JSON, XML, CSV).
+    + Per ogni file selezionato:
+        + Il sistema esegue l'importazione del singolo asset
+        + Il sistema registra l'esito dell'importazione (successo o fallimento).
+    + Il sistema normalizza e riconcilia gli asset provenienti da fonti diverse creando un modello unico del dispositivo.
+    + Il sistema mostra un riepilogo dell'operazione 
+
+    ],
+    pre-condizioni:[
+    - Il sistema è online.
+    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche.
+    ],
+    post-condizioni:[
+        - Gli asset validi contenuti nei file sono caricati nella memoria del sistema.
+    ],
+    trigger:[
+        L'utente ha selezionato la funzionalità di importazione degli asset.
+    ],
+    scenari-alternativi:[
+        - *Conflitto di merge*: Durante l'unione dei dati, il sistema rileva conflitti (vedi UC10).
+    ],
+    inclusioni:[
+    - Importa file asset singolo (vedi UC07).
+    - Visualizza riepilogo di importazione (vedi UC09).],
+    estensioni:[
+        - UC10: Errore conflitto merge asset.
+    ],
+    generalizzazioni:none,
+    path-immagine-diagramma:none,
+    figure-caption:none,
 )

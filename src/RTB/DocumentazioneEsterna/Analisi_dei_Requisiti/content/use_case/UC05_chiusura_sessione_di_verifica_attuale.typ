@@ -4,32 +4,35 @@
 #let use-case-nome="Chiusura sessione di verifica attuale"
 #let depth=1
 #use-case-template(
-    
     nome: use-case-nome,
-    
     livello-intestazione:depth+2,
-    
     codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
-    
-    trigger:none,
-    
-    scenari-alternativi:none,
-    
+    attore-principale:"Utente",
+    scenario-principale:[
+        + L'utente richiede di uscire dalla sessione di verifica corrente.
+        + Il sistema verifica lo stato di avanzamento della valutazione.
+        + Il sistema esegue il salvataggio automatico dello stato corrente (risposte date e nodi visitati).
+        + Il sistema aggiorna i metadati della sessione contrassegnandola come "In corso" e aggiorna la data di ultima valutazione.
+
+    ],
+    pre-condizioni:[
+        - È in corso una sessione di verifica attiva.
+    ],
+    post-condizioni:[
+        - Lo stato della verifica è salvato in modo persistente.
+        - La sessione è disponibile per essere ripresa in futuro.
+    ],
+    trigger:[
+        L'utente esce dalla sessione di verifica attuale.
+    ],
+    scenari-alternativi:[
+        - *Errore salvataggio*: Durante il tentativo di salvataggio automatico, si verifica un errore. Il sistema avvisa l'utente (Vedi UC05.1).
+    ],
     inclusioni:none,
-    
-    estensioni:none,
-    
+    estensioni:[
+        - UC05.1: Errore durante il salvataggio automatico.
+    ],
     generalizzazioni:none,
-    
     path-immagine-diagramma:none,
-    
     figure-caption:none,
 )

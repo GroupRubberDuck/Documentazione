@@ -29,8 +29,13 @@ structure:
       - Inserimento di un nuovo dispositivo:
             - Creazione di un nuovo dispositivo per la verifica
             - Caricamento di un dispositivo per la verifica
-      - Modifica di un dispositivo
-      - Chiusura sessione di verifica attuale
+      - Modifica di un dispositivo:
+            - Avviso cambio versione standard
+            - Errore dati dispositivo non validi
+
+      - Chiusura sessione di verifica attuale:
+            - Errore durante il salvataggio automatico
+
       # - Seleziona file:
       #       - Selezione di un file tramite finestra
       #       - Selezione con drag and drop:
@@ -39,9 +44,9 @@ structure:
       # - Errore nella selezione
       - Importa lista di file di asset
       - Importa file asset singolo:
-            - Importa json:
-            - Importa xml:
-            - Importa csv:
+            - Importa json
+            - Importa xml
+            - Importa csv
       - Errore importazione file asset:
             - Errore caricamento file
             - Importazione di asset appartenenti a uno standard diverso
