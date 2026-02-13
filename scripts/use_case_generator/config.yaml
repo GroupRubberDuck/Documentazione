@@ -26,24 +26,85 @@ structure:
               - Inserimento username
               - Inserimento password
       - Errore autenticazione
-      - Seleziona file:
-            - Seleziona file con filtri:
-                  - File con estensione non permessa
-            - Selezione con drag and drop:
-                  - Drag and drop fuori dalla drop zone
-      - Annulla selezione
-      - Errore nella selezione
-      - Importa lista di file di asset:
-              - Conferma termine selezione file asset
-              - Importa file asset singolo:
-                      - Importa json:
-                              - Struttura json non valida
-                      - Importa xml:
-                              - Struttura xml non valida
-                      - Importa csv:
-                              - Struttura csv non valida
-              - Errore import file asset:
-                      - Errore file vuoto
-                      - Errore file troppo grande
-                      - Errore estensione non valida
+      - Inserimento di un nuovo dispositivo:
+            - Creazione di un nuovo dispositivo per la verifica
+            - Caricamento di un dispositivo per la verifica
+      - Modifica di un dispositivo
+      - Chiusura sessione di verifica attuale
+      # - Seleziona file:
+      #       - Selezione di un file tramite finestra
+      #       - Selezione con drag and drop:
+      #             - Drag and drop fuori dalla drop zone
+      # - Annulla selezione
+      # - Errore nella selezione
+      - Importa lista di file di asset
+      - Importa file asset singolo:
+            - Importa json:
+            - Importa xml:
+            - Importa csv:
+      - Errore importazione file asset:
+            - Errore caricamento file
+            - Importazione di asset appartenenti a uno standard diverso
+            - Errore struttura di alcuni asset non valida
+      - Visualizza riepilogo di importazione
       - Errore conflitto merge asset
+      - Risoluzione conflitto di merge
+      - Visualizza lista asset:
+            - Visualizza asset singolo
+            - Visualizza riepilogo requisiti:
+                  - Vedi numero PASS
+                  - Vedi numero FAIL
+                  - Vedi numero NOT APPLICABLE
+      - Visualizza riepilogo risultati:
+            - Vedi numero di asset in sospeso
+      - Aggiunta asset tramite interfaccia
+      - Eliminazione di un asset
+      - Modifica asset
+      - Cerca asset
+      - Salva modifica asset
+      - Errore dati non validi
+      - Sospendi inserimento dei dati
+      - Esporta lista asset:
+            - Esporta lista asset .xml
+            - Esporta lista asset .json
+            - Esporta lista asset .csv
+            - Esporta lista asset .pdf
+      - Errore nell'esportazione
+      - Errore nel salvataggio dei dati degli asset
+      - Visualizza decision tree
+      - Esegui decision tree
+      - Aggiungi giustificazione al nodo
+      - Visualizza risultato dell'esecuzione
+      - Modifica percorso dell'esecuzione
+      - Navigazione del decision tree
+      - Esporta risultato dell'esecuzione
+      - Visualizza nodo decision tree:
+            - Visualizza primo nodo
+            - Visualizza nodo intermedio
+            - Visualizza foglia
+      - Modifica della struttura del decision tree:
+            - Modifica con editor grafico:
+                  - Modifica testo di una domanda
+                  - Modifica connessione tra i nodi
+                  - Aggiungi nodo: 
+                        - Aggiungi nodo di decisione 
+                        - Aggiungi nodo foglia
+                  - Rimozione nodo 
+            - Importazione nuova struttura 
+      - Struttura non valida dopo la modifica
+      - Salvataggio modifiche alla struttura dei DT
+      - Errore nel salvataggio della struttura del decision tree
+      - Visualizza cronologia dei dispositivi verificati
+      # - Importa file test di conformità
+      # - Errore nell'importaizone dei test
+      # - Visualizza lista test di conformità:
+      #       - Visualizza test di conformità
+      # - Lista dei test vuota
+      # - Aggiungi test di conformità
+      # - Errore nell'aggiunta
+      # - Elimina test di conformità
+      # - Errore nell'eliminazione
+      # - Modifica test di conformità
+      # - Errore nella modifica
+
+

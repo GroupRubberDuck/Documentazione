@@ -23,6 +23,7 @@ Lo scopo del processo di Gestione del Processo è:
 
 Lo standard #link("https://www.iso.org/standard/63712.html")[ISO/IEC/IEEE 12207:1997] definisce la gestione del processo come un insieme di attività organizzate che permettono di pianificare, controllare e valutare l’esecuzione dei processi di progetto.
 
+
 Nel contesto del progetto, tali attività coprono l’intero ciclo di vita del processo e sono strutturate in fasi successive, ciascuna con obiettivi e responsabilità ben definite.  
 Esse consentono di garantire il corretto avanzamento delle attività, il rispetto delle risorse disponibili e la conformità agli standard di qualità stabiliti.
 

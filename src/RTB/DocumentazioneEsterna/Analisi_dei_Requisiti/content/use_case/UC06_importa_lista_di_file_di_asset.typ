@@ -20,15 +20,27 @@
     + Il sistema unisce i dati estratti
 ]
 
-#let pre-condizioni=none
+#let pre-condizioni=[
+    - L'utente è autenticato
+    - Il sistema è online
+    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche
+]
 
-#let post-condizioni=none
+#let post-condizioni=[
+    - Il sistema ha caricato in memoria gli asset importati dai file
+]
 
-#let trigger=none
+#let trigger=[
+    L'utente ha selezionato la funzionalità di importazione degli asset
+]
 
-#let scenari-alternativi=none
+#let scenari-alternativi=[
+    - Errore nel merge dei file
+]
 
-#let inclusioni=none
+#let inclusioni=[
+    -  #sym.arrow Vedi #use-case-label(nome-etichetta: "Importa file asset singolo")
+]
 
 #let estensioni=none
 

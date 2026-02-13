@@ -3,26 +3,32 @@
 
 
 
-#let use-case-nome="Errore autenticazione"
+#let use-case-nome="Importa json"
 #let use-case-level=3
 
 
-#let codice=get-use-case-code(nome-etichetta: "Errore autenticazione")
+#let codice=get-use-case-code(nome-etichetta: use-case-nome)
 
 
 #let attore-principale="Utente"
 
 #let scenario-principale=[
-    - Il sistema non trova lo username o rileva che la password è errata
+    + L'utente seleziona un file json
+    + Il sistema legge il file selezionato
+    + Il sistema interpreta il contenuto
+    + Il sistema salva le informazioni lette
 ]
 
 #let pre-condizioni=[
-      - Il sistema è attivo
-      - L'utente non è autenticato nel sistema
-      - L'utente ha inserito uno username non valido o una password errata
-      ]
+    - L'utente è autenticato
+    - Il sistema è online
+    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche
+]
 
-#let post-condizioni=[L'utente visualizza un messaggio di errore 'Username o password errata']
+#let post-condizioni=[    
+    - Il sistema ha caricato in memoria gli asset importati dal file
+    ]
+
 
 #let trigger=none
 

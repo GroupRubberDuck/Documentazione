@@ -120,6 +120,7 @@
 = Cruscotto di valutazione
 #include "content/05-cruscotto_valutazione/index.typ"
 
+
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
