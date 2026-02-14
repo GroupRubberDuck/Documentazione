@@ -13,7 +13,9 @@
     
     attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + Il sistema genera un report sui risultati
+    ],
     
     pre-condizioni:none,
     
