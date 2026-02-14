@@ -27,11 +27,27 @@ structure:
               - Inserimento password
       - Errore autenticazione
       - Inserimento di un nuovo dispositivo:
-            - Creazione di un nuovo dispositivo per la verifica
-            - Caricamento di un dispositivo per la verifica
+      - Creazione di un nuovo dispositivo per la verifica:
+            - Inserimento dati dispositivo: 
+                  - Inserimento nome dispositivo
+                  - Inserimento sistema operativo dispositivo
+                  - Inserimento versione firmware dispositivo
+                  - Inserimento funzionalita dispositivo
+                  - Inserimento descrizione dispositivo
+      - Caricamento di un dispositivo per la verifica:
+            - Selezione file sorgente:
+                  - Selezione file JSON
+                  - Selezione file XML
+                  - Selezione file CSV
+      - Errore importazione file :  
+      - Visualizza dati del dispostivo: 
+            - Visualizza nome dispositivo
+            - Visualizza sistema operativo dispositivo
+            - Visualizza versione firmware dispositivo
+            - Visualizza funzionalita dispositivo
+            - Visualizza descrizione dispositivo
+
       - Modifica di un dispositivo:
-            - Avviso cambio versione standard
-            - Errore dati dispositivo non validi
 
       - Chiusura sessione di verifica attuale:
             - Errore durante il salvataggio automatico
@@ -44,11 +60,7 @@ structure:
       # - Errore nella selezione
       - Importa lista di file di asset
       - Importa file asset singolo:
-            - Importa json
-            - Importa xml
-            - Importa csv
       - Errore importazione file asset:
-            - Errore caricamento file
             - Importazione di asset appartenenti a uno standard diverso
             - Errore struttura di alcuni asset non valida
       - Visualizza riepilogo di importazione
@@ -67,8 +79,7 @@ structure:
       - Modifica asset
       - Cerca asset
       - Salva modifica asset
-      - Errore dati non validi
-      - Sospendi inserimento dei dati
+      - Inserimento dati non validi:
       - Esporta lista asset:
             - Esporta lista asset .xml
             - Esporta lista asset .json
@@ -100,6 +111,8 @@ structure:
       - Salvataggio modifiche alla struttura dei DT
       - Errore nel salvataggio della struttura del decision tree
       - Visualizza cronologia dei dispositivi verificati
+      - Elimina dispositivo:
+      - Annullamento creazione dispositivo:
       # - Importa file test di conformità
       # - Errore nell'importaizone dei test
       # - Visualizza lista test di conformità:

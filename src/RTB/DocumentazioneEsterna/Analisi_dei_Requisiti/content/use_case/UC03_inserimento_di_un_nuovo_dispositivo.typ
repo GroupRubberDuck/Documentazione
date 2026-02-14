@@ -14,36 +14,27 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema chiede i dati del nuovo dispositivo
-        + L'utente inserisce i dati del dispositivo
+        + L'utente inserisce il dispositivo
         + L'utente conferma l'avvio della procedura
-        + Il sistema memorizza i dati inseriti
-        + Il sistema registra il dispositivo 
-        + Il sistema realizza la permanenza dei dati
-        + Il sistema avvia il processo di verifica
+        + Il sistema valida e memorizza i dati inseriti
     ],
     
     pre-condizioni:[
-        - L'utente è autenticato.
         - Il sistema è attivo.
+        - L'utente visualizza la funzione inserimento di un nuovo dispositivo
+        - L'utente si trova nell'area personale.
     ],
     
     post-condizioni:[
         - Il dispositivo è stato registrato nel sistema.
-        - Le informazioni del dispositivo sono caricate nel sistema di permanenza
-        - Il processo di verifica è in avviato.    
-        - L'utente si trova nell'area utente 
+        - Le informazioni del dispositivo sono caricate nel sistema di permanenza. 
         ],
     
     trigger:[
         L'utente seleziona la funzione per il caricamento di un nuovo dispositivo da verificare
     ],
     
-    scenari-alternativi:[
-        - Errore nel caricamento del nuovo dispositivo
-        - Verifica di un'altro dispositivo già in corso
-        - Annullamento dell'operazione
-    ],
+    scenari-alternativi:none,
     
     inclusioni:none,
     
@@ -54,7 +45,7 @@
         - #use-case-label(nome-etichetta: "Caricamento di un dispositivo per la verifica")
     ],
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/immagini/UC3.drawio.png",
     
-    figure-caption:none,
+    figure-caption:get-use-case-code(nome-etichetta: use-case-nome),
 )
