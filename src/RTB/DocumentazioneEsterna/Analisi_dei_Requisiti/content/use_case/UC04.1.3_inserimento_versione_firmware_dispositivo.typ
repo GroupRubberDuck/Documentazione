@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Importa xml"
-#let depth=2
+#let use-case-nome="Inserimento versione firmware dispositivo"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -13,28 +13,18 @@
     
     attore-principale:"Utente",
     
-    scenario-principale:[
-         + L'utente ha selezionato la funzione di importazione file dal dispositivo.
-        + L'utente ha selezionato un file .xml.],
-    
-    pre-condizioni:[
-    - Il formato .xml è supportato dal sistema 
-    - L'utente si trova nella sezione di inserimento file asset],
-    
-    post-condizioni:[
-        - Il file .xml è stato correttamente selezionato e caricato nel sistema.],
-    
+     scenario-principale:[
+        + L'Utente inserisce la versione del firmware del dispositivo nel corrispondente campo dati
+        + Il Sistema memorizza il valore inserito
+    ],
+    pre-condizioni:[La procedura di creazione dispositivo è attiva],
+    post-condizioni:[La versione firmware del dispositivo è impostata],
     trigger:none,
-    
     scenari-alternativi:none,
-    
     inclusioni:none,
-    
     estensioni:none,
-    
     generalizzazioni:none,
-    
     path-immagine-diagramma:none,
-    
     figure-caption:none,
 )
+

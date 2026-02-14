@@ -10,7 +10,6 @@
     attore-principale:"Utente",
     scenario-principale:[
         + L'utente richiede di uscire dalla sessione di verifica corrente.
-        + Il sistema verifica lo stato di avanzamento della valutazione.
         + Il sistema esegue il salvataggio automatico dello stato corrente (risposte date e nodi visitati).
         + Il sistema aggiorna i metadati della sessione contrassegnandola come "In corso" e aggiorna la data di ultima valutazione.
 
@@ -26,11 +25,11 @@
         L'utente esce dalla sessione di verifica attuale.
     ],
     scenari-alternativi:[
-        - *Errore salvataggio*: Durante il tentativo di salvataggio automatico, si verifica un errore. Il sistema avvisa l'utente (Vedi UC05.1).
+        - *Errore salvataggio*: Durante il tentativo di salvataggio automatico, si verifica un errore. Il sistema avvisa l'utente #sym.arrow  #use-case-label(nome-etichetta: "Errore durante il salvataggio automatico").
     ],
     inclusioni:none,
     estensioni:[
-        - UC05.1: Errore durante il salvataggio automatico.
+        - #use-case-label(nome-etichetta: "Errore durante il salvataggio automatico").
     ],
     generalizzazioni:none,
     path-immagine-diagramma:none,
