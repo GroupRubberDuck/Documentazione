@@ -45,7 +45,7 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Davide Lorenzon, Felician Mario Necsulescu, Ana Maria Draghici",),
+    autori: ("Davide Lorenzon, Felician Mario Necsulescu, Ana Maria Draghici, Aldo Bettega",),
     verificatori: ("Aldo Bettega, Ana Maria Draghici, Davide Testolin",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -64,6 +64,7 @@
     ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
     ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
     ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
+    ([0.5.0], [2026-02-17], [Aldo Bettega], [/], [Rivisto sprint 3, Scritto sprint 4, ])
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
