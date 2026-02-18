@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
-#let depth=1
+#let use-case-nome="Salva come nuovo file"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,22 +14,24 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + L'utente specifica il percorso in cui creare il file
+        + Il sistema crea il nuovo file contente le informazioni
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
-    
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente ha inserito un dispositivo da verificare
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente può vedere il file sul suo file system locale
+    ],
+    
+    trigger:[
+        L'utente seleziona la funzione di salvataggio del file come nuovo file
+    ],
     
     scenari-alternativi:none,
+    
     
     inclusioni:none,
     

@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza primo nodo"
-#let depth=2
+#let use-case-nome="Nodo root"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,

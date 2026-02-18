@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza decision tree"
-#let depth=1
+#let use-case-nome="Visualizza nome di una assessment unit"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,21 +14,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema mostra a schermo il decision tree
+        + L'utente visualizza il nome dell'assessment unit
     ],
     
     pre-condizioni:[
-        - L'utente è autenticato
-        - L'utente ha selezionato un'asset
+        - L'utente sta visualizzando un'assessment unit
     ],
     
     post-condizioni:[
-        - L'utente può navigare il decision tree 
+        - L'utente visualizza il nome dell'assessment unit
     ],
     
-    trigger:[
-        L'utente seleziona la funzionalità visualizza decision tree
-    ],
+    trigger:none,
     
     scenari-alternativi:none,
     

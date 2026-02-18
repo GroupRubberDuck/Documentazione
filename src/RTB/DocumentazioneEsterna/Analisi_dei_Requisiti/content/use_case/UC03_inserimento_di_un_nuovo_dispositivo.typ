@@ -31,7 +31,7 @@
         ],
     
     trigger:[
-        L'utente seleziona la funzione per il caricamento di un nuovo dispositivo da verificare
+        L'utente seleziona la funzione per il caricamento di un nuovo dispositivo da valutare
     ],
     
     scenari-alternativi:none,
@@ -41,8 +41,8 @@
     estensioni:none,
     
     generalizzazioni:[
-        - #use-case-label(nome-etichetta: "Creazione di un nuovo dispositivo per la verifica")
-        - #use-case-label(nome-etichetta: "Caricamento di un dispositivo per la verifica")
+        - #use-case-label(nome-etichetta: "Creazione di un nuovo dispositivo per la valutazione")
+        - #use-case-label(nome-etichetta: "Caricamento di un dispositivo per la valutazione")
     ],
     
     path-immagine-diagramma:"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/immagini/UC3.drawio.png",

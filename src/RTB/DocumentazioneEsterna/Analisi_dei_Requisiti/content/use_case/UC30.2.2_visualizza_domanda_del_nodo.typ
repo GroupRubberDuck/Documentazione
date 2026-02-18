@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza cronologia dei dispositivi verificati"
-#let depth=1
+#let use-case-nome="Visualizza domanda del nodo"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -11,13 +11,21 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:[
+        Utente
+    ],
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente visualizza la domanda associata al nodo
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente sta visualizzando un nodo del decision tree
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente visualizza la domanda associata al nodo
+    ],
     
     trigger:none,
     

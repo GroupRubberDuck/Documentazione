@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Salva valutazione"
 #let depth=1
 #use-case-template(
     
@@ -14,28 +14,33 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Il sistema salva l'attuale stato della valutazione
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
-    
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente ha inserito un dispositivo per la valutazione
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente può vedere il nuovo file sul suo file system locale
+    ],
     
-    scenari-alternativi:none,
+    trigger:[
+        L'utente ha selezionato la funzionalità di salvataggio dei dati
+    ],
+    
+    scenari-alternativi:[
+        - Errore nel salvataggio dei dati
+    ],
     
     inclusioni:none,
     
     estensioni:none,
     
-    generalizzazioni:none,
+    generalizzazioni:[
+        - #use-case-label(nome-etichetta: "Salva sul file corrente")
+        - #use-case-label(nome-etichetta: "Salva come nuovo file")
+    ],
     
     path-immagine-diagramma:none,
     

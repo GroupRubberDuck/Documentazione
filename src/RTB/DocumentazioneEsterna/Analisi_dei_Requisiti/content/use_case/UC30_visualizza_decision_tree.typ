@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Visualizza decision tree"
 #let depth=1
 #use-case-template(
     
@@ -14,20 +14,23 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + L'utente visualizza graficamente il decision tree
+        + Per ogni nodo del decision tree attraversato dal percorso selezionato
+            + L'utente visualizza il nodo
+        + L'utente visualizza lo stato della valutazione
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
-    
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente sta visualizzando un'assessment unit
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente può compilare un qualsiasi nodo del decision tree 
+    ],
+    
+    trigger:[
+        L'utente seleziona la funzionalità visualizza decision tree
+    ],
     
     scenari-alternativi:none,
     

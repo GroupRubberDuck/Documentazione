@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
-#let depth=1
+#let use-case-nome="Visualizza stato della valutazione assessment unit"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -11,20 +11,22 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"Utente",
+    attore-principale:[
+        Utente
+    ],
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Il sistema esegue il decision tree associato
+        + L'utente visualizza lo stato della valutazione dell'assessment unit
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
+        - L'utente sta visualizzando un'assessment unit o un decision tree a essa associato
+    ],
     
     post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente visualizza lo stato della valutazione dell'assessment unit
+
     ],
     
     trigger:none,

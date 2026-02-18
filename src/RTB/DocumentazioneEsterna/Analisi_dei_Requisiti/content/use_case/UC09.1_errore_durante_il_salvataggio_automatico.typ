@@ -15,7 +15,7 @@
     ],
     pre-condizioni:[
         - Il sistema sta tentando di eseguire il salvataggio automatico.
-        - Si verifica un'eccezione tecnica che impedisce la scrittura dei dati.
+        - Si valuta un'eccezione tecnica che impedisce la scrittura dei dati.
     ],
     post-condizioni:[
         - La sessione viene chiusa.

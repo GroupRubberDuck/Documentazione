@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Navigazione del decision tree"
 #let depth=1
 #use-case-template(
     
@@ -14,22 +14,24 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
-    ],
-    
-    pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
+            + L'utente visualizza un nuovo nodo del decision tree
         ],
     
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+    pre-condizioni:[
+        - L'utente sta visualizzando un nodo del DT
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente visualizza un nuovo nodo del decision tree
+    ],
     
-    scenari-alternativi:none,
+    trigger:[
+        L'utente seleziona la funzionalità di navigazione dei nodi del decision tree 
+    ],
+    
+    scenari-alternativi:[
+        - Nodo da compilare
+    ],
     
     inclusioni:none,
     

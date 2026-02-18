@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza risultato dell'esecuzione"
+#let use-case-nome="Esegui decision tree"
 #let depth=1
 #use-case-template(
     
@@ -14,20 +14,23 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente visualizza il percorso di esecuzione del DT
+        + Il sistema esegue il decision tree
+        + L'utente vede il risultato dell'elaborazione
     ],
     
     pre-condizioni:[
-        - Il sistema può verificare un requisito
+        - L'utente sta visualizzando un decision tree
     ],
     
     post-condizioni:[
-        - L'utente vede il risultato della valutazione
+        - L'utente vede il risultato della nuova valutazione decision tree
     ],
     
     trigger:none,
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Il decision tree non è stato compilato fino ad un nodo foglia
+    ],
     
     inclusioni:none,
     

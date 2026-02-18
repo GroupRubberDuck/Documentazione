@@ -20,7 +20,7 @@
     ],
     pre-condizioni:[
     - Il sistema è online.
-    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche.
+    - Il sistema ha in memoria un dispositivo su cui eseguire le valutazioni.
     - L'utente ha selezionato l'importazione di un asset o una lista di asset.
     ],
     post-condizioni:[

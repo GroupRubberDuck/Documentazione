@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Gestione della valutazione del DT"
 #let depth=1
 #use-case-template(
     
@@ -11,23 +11,25 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"Utente",
+    attore-principale:[
+        Utente
+    ],
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Per ogni nodo del DT
+            + Compila il nodo del decision tree #use-case-label(nome-etichetta: "compilazione nodo")
     ],
     
-    pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
+    pre-condizioni:[L'utente sta visualizzando un'assessment unit],
     
     post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente ha compilato il nodo
+        - L'utente può navigare il DT
     ],
     
-    trigger:none,
+    trigger:[
+        L'utente ha selezionato la funzionalità di gestione della valutazione del decision tree
+    ],
     
     scenari-alternativi:none,
     

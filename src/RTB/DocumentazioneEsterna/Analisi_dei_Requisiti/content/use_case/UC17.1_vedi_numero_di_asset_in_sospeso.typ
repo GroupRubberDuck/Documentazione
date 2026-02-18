@@ -14,7 +14,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema mostra il numero di requisiti la cui verifica è ancora in corso
+        + Il sistema mostra il numero di requisiti la cui valutazione è ancora in corso
     ],
     
     pre-condizioni:[
@@ -22,7 +22,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza il numero di requisiti la cui verifica è ancora in corso per l'asset visualizzato
+        - L'utente visualizza il numero di requisiti la cui valutazione è ancora in corso per l'asset visualizzato
     ],
     
     trigger:none,

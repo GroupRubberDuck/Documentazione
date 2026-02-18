@@ -16,13 +16,13 @@
     scenario-principale:[
         + Per ogni requisito associato all'asset
             + L'utente visualizza le informazioni generiche del requisito
-            + L'utente visualizza lo stato della verifica
+            + L'utente visualizza lo stato della valutazione
 
     ],
     
     pre-condizioni:[
         - Il sistema è attivo 
-        - Il sistema ha avviato il processo di verifica di un dispositivo
+        - Il sistema ha avviato il processo di valutazione di un dispositivo
         - L'utente è autenticato
         - Il sistema ha in memoria le informazioni dell'asset
     ],

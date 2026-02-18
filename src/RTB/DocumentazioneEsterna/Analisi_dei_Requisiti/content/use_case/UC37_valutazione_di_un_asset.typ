@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Valutazione di un asset"
 #let depth=1
 #use-case-template(
     
@@ -14,20 +14,25 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Per ogni requisito applicabile associato all'asset
+            + Il sistema valuta la conformità al requisito
+        + Il sistema aggrega gli stati di vallutazione @nota-aggregazione
+        + L'utente visualizza lo stato aggregato
+        
+
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
-    
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente sta visualizzando un'asset
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente visualizza lo stato aggregato della valutazione dell'asset
+    ],
+    
+    trigger:[
+        L'utente seleziona la funzionalità di valutazione di un'asset
+    ],
     
     scenari-alternativi:none,
     

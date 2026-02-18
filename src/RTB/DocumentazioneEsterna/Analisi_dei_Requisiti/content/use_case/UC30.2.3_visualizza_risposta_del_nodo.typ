@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Modifica percorso dell'esecuzione"
-#let depth=1
+#let use-case-nome="Visualizza risposta del nodo"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,21 +14,22 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente cambia la valutazione del nodo
+        + L'utente visualizza la risposta associata al nodo
     ],
     
     pre-condizioni:[
-        - L'utente sta navigando un DT
+        - L'utente sta visualizzando un nodo del decision tree
     ],
     
     post-condizioni:[
-        - Il sistema registra la modifica
-        - Il sistema verifica il nuovo path
+        + L'utente visualizza la risposta associata al nodo
     ],
     
     trigger:none,
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Nessuna risposta inserita
+    ],
     
     inclusioni:none,
     

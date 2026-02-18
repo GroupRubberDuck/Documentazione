@@ -14,23 +14,23 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente visualizza il numero di asset verificati con esito positivo
-        + L'utente visualizza gli asset verificati con esito positivo
-        + L'utente visualizza il numero di asset verificati con esito negativo
-        + L'utente visualizza gli asset verificati con esito negativo
-        + L'utente visualizza il numero di asset la cui verifica è sospesa
-        + L'utente visualizza gli asset la cui verifica è sospesa
+        + L'utente visualizza il numero di asset valutati con esito positivo
+        + L'utente visualizza gli asset valutati con esito positivo
+        + L'utente visualizza il numero di asset valutati con esito negativo
+        + L'utente visualizza gli asset valutati con esito negativo
+        + L'utente visualizza il numero di asset la cui valutati è sospesa
+        + L'utente visualizza gli asset la cui valutati è sospesa
     ],
     
     pre-condizioni:[
         - L'utente è autenticato
         - Il sistema è attivo
-        - Il sistema ha caricato in memoria un dispositivo da verificare
-        - L'utente ha eseguito una verifica
+        - Il sistema ha caricato in memoria un dispositivo da valutare
+        - L'utente ha eseguito una valutazione
     ],
     
     post-condizioni:[
-        - L'utente visualizza un riepilogo dei risultati della verifica effettuata sul dispositivo 
+        - L'utente visualizza un riepilogo dei risultati della valutazione effettuata sul dispositivo 
     ],
     
     trigger:[

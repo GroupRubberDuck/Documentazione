@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Creazione di un nuovo dispositivo per la verifica"
+#let use-case-nome="Creazione di un nuovo dispositivo per la valutazione"
 #let depth=2
 #use-case-template(
     
@@ -18,7 +18,7 @@
         + L'Utente compila i campi relativi ai dati identificativi del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Inserimento dati dispositivo")
         + L'Utente conferma l'operazione
         + Il Sistema registra le informazioni del dispositivo
-        + Il Sistema avvia il processo di verifica
+        + Il Sistema avvia il processo di valutazione
     ],
     
     pre-condizioni:[

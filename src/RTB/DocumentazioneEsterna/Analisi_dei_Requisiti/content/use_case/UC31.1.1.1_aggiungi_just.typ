@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Esegui decision tree"
-#let depth=1
+#let use-case-nome="Aggiungi just"
+#let depth=4
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,16 +14,15 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema esegue il decision tree
-        + L'utente vede il risultato dell'elaborazione
+        + L'utente inserisce l'evidenza di tipo just da associare al nodo
     ],
     
     pre-condizioni:[
-        - L'utente sta navigando il decision tree
+        - L'utente sta compilando il nodo
     ],
     
     post-condizioni:[
-        L'utente vede il risultato del decision tree
+        - L'utente inserisce l'evidenza di tipo just da associare al nodo
     ],
     
     trigger:none,

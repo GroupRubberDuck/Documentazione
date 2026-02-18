@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Aggiungi giustificazione al nodo"
-#let depth=1
+#let use-case-nome="Visualizza l'asset di appartenenza"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,15 +14,16 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente inserisce una giustificazione del percorso scelto in quel nodo
+        + L'utente visualizza il codice dell'asset di appartenenza
+        + L'utente visualizza il nome dell'asset di appartenenza
     ],
     
     pre-condizioni:[
-        - L'utente sta modificando un nodo
+        - L'utente sta visualizzando un requisito
     ],
     
     post-condizioni:[
-        - Il sistema ha associato la giustificazione inserita al nodo
+        - L'utente visualizza le informazioni dell'asset
     ],
     
     trigger:none,

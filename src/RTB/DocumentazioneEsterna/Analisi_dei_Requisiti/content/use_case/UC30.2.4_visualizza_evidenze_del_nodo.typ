@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
-#let depth=1
+#let use-case-nome="Visualizza evidenze del nodo"
+#let depth=3
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,28 +14,31 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + L'utente visualizza l'evidenza associata al nodo
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
+        - L'utente sta visualizzando un nodo del decision tree
+    ],
     
     post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente visualizza l'evidenza associata al nodo
     ],
     
     trigger:none,
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Nessuna evidenza inserita
+    ],
     
     inclusioni:none,
     
     estensioni:none,
     
-    generalizzazioni:none,
+    generalizzazioni:[
+        - #use-case-label(nome-etichetta: "visualizza info")
+        - #use-case-label(nome-etichetta: "visualizza just")
+    ],
     
     path-immagine-diagramma:none,
     

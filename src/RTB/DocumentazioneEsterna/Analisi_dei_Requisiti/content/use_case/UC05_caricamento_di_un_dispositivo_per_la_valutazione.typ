@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Caricamento di un dispositivo per la verifica"
+#let use-case-nome="Caricamento di un dispositivo per la valutazione"
 #let depth=2
 #use-case-template(
     

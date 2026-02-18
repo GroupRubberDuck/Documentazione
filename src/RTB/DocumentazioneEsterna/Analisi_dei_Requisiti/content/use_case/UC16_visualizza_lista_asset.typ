@@ -21,7 +21,7 @@
     
     pre-condizioni:[
         - Il sistema è attivo 
-        - Il sistema ha avviato il processo di verifica di un dispositivo
+        - Il sistema ha avviato il processo di valutazione di un dispositivo
         - L'utente è autenticato
         ],
     

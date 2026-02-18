@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
-#let depth=1
+#let use-case-nome="Visualizza contesto di una assessment unit"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,17 +14,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Il sistema ricostruisce il contesto gerarchico all'interno dell'asset
+        + L'utente visualizza il codice del requisito che sta analizzando #use-case-label(nome-etichetta: "visualizza codice del requisito")
+        + L'utente visualizza il nome del requisito che sta analizzando #use-case-label(nome-etichetta: "visualizza nome del requisito")
+
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
+        - L'utente sta visualizzando un'assessment unit
+    ],
     
     post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        -  L'utente visualizza il contesto dell'assessment unit
     ],
     
     trigger:none,
@@ -41,3 +42,6 @@
     
     figure-caption:none,
 )
+
+
+

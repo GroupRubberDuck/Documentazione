@@ -21,7 +21,7 @@
     pre-condizioni:[
         - L'utente è autenticato
         - Il sistema è attivo
-        - Il sistema ha avviato una sessione di verifica
+        - Il sistema ha avviato una sessione di valutazione
         - L'utente sta visualizzando un asset
     ],
     

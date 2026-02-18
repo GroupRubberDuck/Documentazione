@@ -22,13 +22,13 @@
     
     pre-condizioni:[
         - L'utente è autenticato
-        - Il sistema ha avviato la sessione di verifica su un dispositivo
+        - Il sistema ha avviato la sessione di valutazione su un dispositivo
     ],
     
     post-condizioni:[
         - Il sistema ha registrato il nuovo asset
         - L'utente può inserire un altro asset
-        - L'utente può iniziare la verifica dell'asset
+        - L'utente può iniziare la valutazione dell'asset
     ],
     
     trigger:none,

@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza nodo decision tree"
+#let use-case-nome="Selezione della risposta del nodo"
 #let depth=1
 #use-case-template(
     
@@ -11,17 +11,28 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente seleziona l'opzione di uscita del nodo, ovvero la risposta
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente sta compilando il nodo
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - Il sistema associa la nuova risposta al nodo
+    ],
     
-    trigger:none,
+    trigger:[
+        - L'utente seleziona l'opzione di modifica della risposta del DT
+    ],
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Annullamento della modifica
+        - Nessuna opzione selezionata
+    ],
     
     inclusioni:none,
     

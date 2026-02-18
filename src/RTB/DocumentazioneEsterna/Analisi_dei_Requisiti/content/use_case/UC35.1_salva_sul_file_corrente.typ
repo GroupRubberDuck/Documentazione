@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Esporta risultato dell'esecuzione"
-#let depth=1
+#let use-case-nome="Salva sul file corrente"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,16 +14,24 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema genera un report sui risultati
+        + Il sistema sovrascrive le informazioni precedenti
     ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente ha inserito un dispositivo da verificare
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente può vedere il file sul suo file system locale
+    ],
     
-    trigger:none,
+    trigger:[
+        L'utente seleziona la funzione di salvataggio sul file corrente 
+    ],
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Non è stato specificato un percorso sul file system locale
+    ],
     
     inclusioni:none,
     

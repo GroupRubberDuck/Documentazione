@@ -1,8 +1,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
-#let depth=1
+#let use-case-nome="Visualizza stato aggregato del requisito"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,
@@ -14,17 +14,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
-    ],
-    
-    pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
+            + Il sistema controlla i decision tree associati al requisito
+            + Il sistema aggrega gli stati dei decision tree
+            + L'utente visualizza lo stato aggregato
         ],
     
+    pre-condizioni:[
+        - L'utente sta visualizzando un requisito
+
+    ],
+    
     post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente visualizza lo stato aggregato del requisito
     ],
     
     trigger:none,

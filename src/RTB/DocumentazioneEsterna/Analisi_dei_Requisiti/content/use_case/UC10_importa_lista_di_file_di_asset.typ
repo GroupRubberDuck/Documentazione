@@ -21,7 +21,7 @@
     ],
     pre-condizioni:[
     - Il sistema è online.
-    - Il sistema ha in memoria un dispositivo su cui eseguire le verifiche.
+    - Il sistema ha in memoria un dispositivo su cui eseguire le valutazioni.
     ],
     post-condizioni:[
         - Gli asset validi contenuti nei file sono caricati nella memoria del sistema.

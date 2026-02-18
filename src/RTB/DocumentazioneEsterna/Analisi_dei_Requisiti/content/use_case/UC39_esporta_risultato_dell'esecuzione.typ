@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Sospendi inserimento dei dati"
+#let use-case-nome="Esporta risultato dell'esecuzione"
 #let depth=1
 #use-case-template(
     
@@ -14,20 +14,21 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema salva le informazioni inserite fino a quel momento
+        + Il sistema genera un report sui risultati
+        + L'utente scarica il report sul suo file system locale
     ],
     
     pre-condizioni:[
-        - L'utente ha apportato modifiche all'asset
-        - Il sistema rileva dati incompleti o non validi 
-        ],
-    
-    post-condizioni:[
-        - Il sistema mantiene le modifiche apportate
-        - Il sistema associa all'asset lo stato valutazione in sospeso
+        - L'utente ha eseguito una valutazione del dispositivo
     ],
     
-    trigger:none,
+    post-condizioni:[
+        - L'utente può visualizzare il report sul suo file system locale
+    ],
+    
+    trigger:[
+        L'utente seleziona la funzionalità di esportazione dei risultati
+    ],
     
     scenari-alternativi:none,
     

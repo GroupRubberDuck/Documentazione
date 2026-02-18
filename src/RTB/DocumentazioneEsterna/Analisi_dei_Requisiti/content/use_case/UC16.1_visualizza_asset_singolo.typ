@@ -16,7 +16,7 @@
     scenario-principale:[
         - L'utente visualizza il tipo di asset 
         - L'utente visualizza i requisiti associati
-        - L'utente visualizza lo stato della verifica degli asset
+        - L'utente visualizza lo stato della valutazione degli asset
         - L'utente visualizza il nome dell'asset
         - L'utente visualizza il tipo dell'asset (security, network)
         - L'utente visualizza la descrizione dell'asset
@@ -24,7 +24,7 @@
     
     pre-condizioni:[
         - Il sistema è attivo 
-        - Il sistema ha avviato il processo di verifica di un dispositivo
+        - Il sistema ha avviato il processo di valutazione di un dispositivo
         - L'utente è autenticato
         - Il sistema ha in memoria le informazioni dell'asset
     ],
