@@ -22,6 +22,7 @@
             - Versione firmware #sym.arrow #use-case-label(nome-etichetta: "Visualizza versione firmware dispositivo")
             - Funzionalità #sym.arrow #use-case-label(nome-etichetta: "Visualizza funzionalita dispositivo")
             - Descrizione #sym.arrow #use-case-label(nome-etichetta: "Visualizza descrizione dispositivo")
+            - Versione dello standard #sym.arrow #use-case-label(nome-etichetta: "Visualizza versione dello standard")
     ],
     pre-condizioni:[
         - L'utente ha creato o caricato un dispositivo nel sistema.
@@ -44,6 +45,7 @@
         - #use-case-label(nome-etichetta: "Visualizza versione firmware dispositivo")
         - #use-case-label(nome-etichetta: "Visualizza funzionalita dispositivo")
         - #use-case-label(nome-etichetta: "Visualizza descrizione dispositivo")
+        - #use-case-label(nome-etichetta: "Visualizza versione dello standard")
     ],
     
     estensioni:none,

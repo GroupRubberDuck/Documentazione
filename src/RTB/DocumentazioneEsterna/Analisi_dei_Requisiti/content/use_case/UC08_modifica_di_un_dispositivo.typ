@@ -7,36 +7,62 @@
     nome: use-case-nome,
     livello-intestazione:depth+2,
     codice:get-use-case-code(nome-etichetta: use-case-nome),
-    attore-principale:"Utente",
+   attore-principale:"Utente",
+    
     scenario-principale:[
-        + L'utente seleziona la funzionalità di modifica dei dati del dispositivo.
-        + Il sistema mostra l'interfaccia con i dati attuali del dispositivo (Scheda tecnica e Versione dello standard).
-        + L'utente modifica le informazioni desiderate.
+        + L'utente seleziona la funzionalità di modifica dei dati di un dispositivo esistente.
+        + Il sistema recupera e mostra i dati attuali nelle caselle di testo modificabili.
+        + L'utente aggiorna una o più informazioni del dispositivo:
+            - Nome #sym.arrow #use-case-label(nome-etichetta: "Modifica nome dispositivo")
+            - Sistema Operativo #sym.arrow #use-case-label(nome-etichetta: "Modifica sistema operativo dispositivo")
+            - Versione Firmware #sym.arrow #use-case-label(nome-etichetta: "Modifica versione firmware dispositivo")
+            - Funzionalità prevista #sym.arrow #use-case-label(nome-etichetta: "Modifica funzionalita dispositivo")
+            - Ambiente operativo #sym.arrow #use-case-label(nome-etichetta: "Modifica ambiente operativo")
+            - Versione dello standard #sym.arrow #use-case-label(nome-etichetta: "Modifica versione dello standard")
+            - Descrizione #sym.arrow #use-case-label(nome-etichetta: "Modifica descrizione dispositivo")
         + L'utente conferma le modifiche.
-        + Il sistema aggiorna le informazioni del dispositivo.
-        + Il sistema conferma l'avvenuto aggiornamento all'utente.
+        + Il sistema valida i nuovi dati inseriti.
     ],
+    
     pre-condizioni:[
         - Il sistema è attivo.
         - Esiste almeno un dispositivo registrato nel sistema.
         - L'utente ha selezionato il dispositivo di cui vuole modificare i dati.
     ],
+    
     post-condizioni:[
-        - Le informazioni aggiornate del dispositivo sono registrate nel sistema.
-        - La permanenza dei dati è aggiornata.
+        - Le informazioni aggiornate del dispositivo sono registrate nel sistema di permanenza.
     ],
+    
     trigger:[
-       L'utente seleziona la funzionalità di modifica del dispositivo
+       L'utente preme il pulsante di modifica nella scheda di dettaglio del dispositivo.
     ],
+    
     scenari-alternativi:[
-        - *Cambio versione standard*: Se l'utente modifica la versione dello standard, il sistema richiede una conferma esplicita
-        - *Dati non validi*: L'utente inserisce dati errati o incompleti 
+       - *Annullamento:* L'utente decide di non salvare le modifiche #sym.arrow #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
+        - *Dati non validi:* L'utente inserisce dati errati o incompleti #sym.arrow #use-case-label(nome-etichetta: "Inserimento dati non validi")
+        - *Cambio versione standard:* L'utente modifica la versione dello standard, richiedendo una conferma esplicita #sym.arrow #use-case-label(nome-etichetta: "Avviso cambio versione standard")
     ],
-    inclusioni:none,
+    
+    inclusioni:[
+        - #use-case-label(nome-etichetta: "Modifica nome dispositivo")
+        - #use-case-label(nome-etichetta: "Modifica sistema operativo dispositivo")
+        - #use-case-label(nome-etichetta: "Modifica versione firmware dispositivo")
+        - #use-case-label(nome-etichetta: "Modifica funzionalita dispositivo")
+        - #use-case-label(nome-etichetta: "Modifica ambiente operativo")
+        - #use-case-label(nome-etichetta: "Modifica versione dello standard")
+        - #use-case-label(nome-etichetta: "Modifica descrizione dispositivo")
+    ],
+    
     estensioni:[
-       
+        - #use-case-label(nome-etichetta: "Inserimento dati non validi")
+        - #use-case-label(nome-etichetta: "Avviso cambio versione standard")
+        - #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
     ],
+    
     generalizzazioni:none,
-    path-immagine-diagramma:none,
-    figure-caption:none,
+    
+     path-immagine-diagramma:"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/immagini/UC08.drawio.png",
+    
+    figure-caption:get-use-case-code(nome-etichetta: use-case-nome),
 )

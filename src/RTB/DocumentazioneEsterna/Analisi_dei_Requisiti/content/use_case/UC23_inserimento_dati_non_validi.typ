@@ -20,12 +20,12 @@
     pre-condizioni:[
         - L'Utente sta interagendo con un form di inserimento o modifica.
         - L'Utente ha tentato di salvare dati che violano i vincoli di validazione.
+        - L'interfaccia di inserimento rimane aperta permettendo la correzione.
     ],
     
     post-condizioni:[
         - Le modifiche o i nuovi dati non sono stati salvati nel sistema.
-        - Il Sistema visualizza un messaggio di errore esplicativo.
-        - L'interfaccia di inserimento rimane aperta permettendo la correzione.
+        - L'utente visualizza un messaggio di errore esplicativo.
     ],
     
     trigger:none,

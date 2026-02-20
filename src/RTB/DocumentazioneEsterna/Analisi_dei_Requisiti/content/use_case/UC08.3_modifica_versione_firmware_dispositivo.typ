@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza sistema operativo dispositivo"
+#let use-case-nome="Modifica versione firmware dispositivo"
 #let depth=2
 #use-case-template(
     
@@ -11,15 +11,14 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"Utente",
-    
-    scenario-principale:[
-        + Il sistema recupera l'informazione sul sistema operativo
-        +  L'utente visualizza il sistema operativo del dispositivo
+   attore-principale:"Utente",
+     scenario-principale:[
+        + L'Utente aggiorna la stringa della versione firmware
+        + Il Sistema memorizza il nuovo valore
     ],
-    pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
-        - Il dispositivo è attualmente selezionato],
-    post-condizioni:[Il sistema operativo è visibile all'utente],
+    pre-condizioni:[- Il Sistema mostra la versione firmware attuale nel campo modificabile
+    - La procedura di modifica dati del dispositivo è attiva],
+    post-condizioni:[La versione firmware è aggiornata localmente],
     trigger:none,
     scenari-alternativi:none,
     inclusioni:none,

@@ -15,7 +15,7 @@
     
   scenario-principale:[
         + Il sistema recupera le funzionalità principali descritte per il dispositivo
-        + Viene visualizzata la funzionalità del dispositivo
+        +  L'utente visualizza la funzionalità del dispositivo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],

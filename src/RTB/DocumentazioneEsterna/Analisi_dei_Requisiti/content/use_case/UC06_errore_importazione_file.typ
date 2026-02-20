@@ -11,26 +11,28 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"Sistema", 
+    attore-principale:"Utente", 
     
     scenario-principale:[
-        + Il Sistema rileva un'anomalia nel file selezionato dall'utente durante la fase di validazione preliminare o di parsing
-        + Il Sistema interrompe immediatamente la procedura di caricamento
-        + Il Sistema scarta i dati parzialmente letti (se presenti)
-        + Il Sistema mostra un messaggio di errore specifico all'utente indicando la natura del problema
+        + L'utente seleziona e tenta di caricare un file (Dispositivo o Asset) che presenta anomalie di struttura o contenuto.
+        + Il Sistema rileva l'errore durante la validazione preliminare o di parsing e interrompe immediatamente il processo di caricamento.
+        + Il Sistema scarta eventuali dati parzialmente letti.
+        + L'utente visualizza un messaggio di errore specifico mostrato dal Sistema che indica la natura del problema.
     ],
     
     pre-condizioni:[
-        - L'utente ha avviato il caricamento di un file (Dispositivo o Asset).
-        - Il file selezionato non rispetta i vincoli di sistema.
+        - L'utente ha selezionato la funzionalità che prevede il caricamento di un file esterno.
+        - L'utente ha selezionato un file che non rispetta i vincoli del sistema.
     ],
     
     post-condizioni:[
-        - Nessun dato è stato importato nel sistema.
-        - Viene visualizzato l'errore bloccante.
+        - L'utente riceve e visualizza l'errore bloccante.
+        - Nessun dato è stato importato o salvato nel sistema a seguito dell'azione dell'utente.
     ],
     
-    trigger:none,
+    trigger:[
+        - L'utente cerca di caricare un file non valido.
+    ],
     
     scenari-alternativi:none,
     

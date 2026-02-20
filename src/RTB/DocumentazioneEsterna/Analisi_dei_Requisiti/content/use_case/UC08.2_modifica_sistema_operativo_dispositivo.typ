@@ -1,7 +1,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-template, use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza sistema operativo dispositivo"
+#let use-case-nome="Modifica sistema operativo dispositivo"
 #let depth=2
 #use-case-template(
     
@@ -11,15 +11,13 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"Utente",
-    
+  attore-principale:"Utente",
     scenario-principale:[
-        + Il sistema recupera l'informazione sul sistema operativo
-        +  L'utente visualizza il sistema operativo del dispositivo
+        + L'Utente seleziona il nuovo sistema operativo
+        + Il Sistema memorizza il nuovo valore
     ],
-    pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
-        - Il dispositivo è attualmente selezionato],
-    post-condizioni:[Il sistema operativo è visibile all'utente],
+    pre-condizioni:[- Il Sistema carica il sistema operativo precedentemente inserito nel rispettivo campo La procedura di modifica dati del dispositivo è attiva],
+    post-condizioni:[Il sistema operativo è aggiornato localmente],
     trigger:none,
     scenari-alternativi:none,
     inclusioni:none,

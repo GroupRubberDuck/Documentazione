@@ -15,7 +15,7 @@
     
    scenario-principale:[
         + Il sistema recupera la stringa identificativa del nome dal modello dati
-        + Viene visualizzato il nome del dispositivo nell'apposito campo
+        + L'utente visualizza il nome del dispositivo nell'apposito campo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],

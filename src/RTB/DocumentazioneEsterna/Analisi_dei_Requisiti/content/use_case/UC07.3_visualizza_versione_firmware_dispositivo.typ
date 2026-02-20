@@ -15,7 +15,7 @@
     
      scenario-principale:[
         + Il sistema recupera la versione del firmware associata
-        + Viene visualizzata la versione del firmware del dispositivo
+        +  L'utente visualizza la versione del firmware del dispositivo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],

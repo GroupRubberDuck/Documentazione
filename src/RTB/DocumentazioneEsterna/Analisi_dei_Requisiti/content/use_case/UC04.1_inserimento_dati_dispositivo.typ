@@ -20,6 +20,7 @@
             - Versione del firmware #sym.arrow  #use-case-label(nome-etichetta: "Inserimento versione firmware dispositivo")
             - Funzionalità #sym.arrow  #use-case-label(nome-etichetta: "Inserimento funzionalita dispositivo")
             - Descrizione #sym.arrow #use-case-label(nome-etichetta: "Inserimento descrizione dispositivo")
+            - Versione dello standard #sym.arrow #use-case-label(nome-etichetta: "Inserimento versione dello standard")
     ],
     
     pre-condizioni:[
@@ -42,6 +43,7 @@
         - #use-case-label(nome-etichetta: "Inserimento versione firmware dispositivo")
         - #use-case-label(nome-etichetta: "Inserimento funzionalita dispositivo")
         - #use-case-label(nome-etichetta: "Inserimento descrizione dispositivo")
+        - #use-case-label(nome-etichetta: "Inserimento versione dello standard")
     ],
     
     estensioni:[

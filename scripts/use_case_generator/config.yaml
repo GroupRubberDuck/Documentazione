@@ -34,6 +34,7 @@ structure:
                   - Inserimento versione firmware dispositivo
                   - Inserimento funzionalita dispositivo
                   - Inserimento descrizione dispositivo
+                  - Inserimento versione dello standard
       - Caricamento di un dispositivo per la verifica:
             - Selezione file sorgente:
                   - Selezione file JSON
@@ -46,8 +47,17 @@ structure:
             - Visualizza versione firmware dispositivo
             - Visualizza funzionalita dispositivo
             - Visualizza descrizione dispositivo
+            - Visualizza versione dello standard
 
       - Modifica di un dispositivo:
+            - Modifica nome dispositivo
+            - Modifica sistema operativo dispositivo
+            - Modifica versione firmware dispositivo
+            - Modifica funzionalita dispositivo
+            - Modifica ambiente operativo
+            - Modifica descrizione dispositivo
+            - Modifica versione dello standard
+
 
       - Chiusura sessione di verifica attuale:
             - Errore durante il salvataggio automatico
@@ -113,6 +123,8 @@ structure:
       - Visualizza cronologia dei dispositivi verificati
       - Elimina dispositivo:
       - Annullamento creazione dispositivo:
+      - Annullamento modifica dati dispositivo:
+      - Avviso cambio versione standard: 
       # - Importa file test di conformità
       # - Errore nell'importaizone dei test
       # - Visualizza lista test di conformità:
