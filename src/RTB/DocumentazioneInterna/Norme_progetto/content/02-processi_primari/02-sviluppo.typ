@@ -138,8 +138,7 @@ Per lo sviluppo del software, il gruppo utilizza strumenti mirati a garantire qu
 
 - *Versionamento del codice*: Git/GitHub per gestione dei repository, branch, commit, issue e pull request.
 
-- *Formattazione e controllo del codice*: /*strumenti di formattazione automatica (ad esempio black) e linters (pylint, flake8) per verifiche preliminari della qualità del codice; configurazioni da definire e integrare nel workflow di sviluppo e nelle pipeline di CI/CD.*/ 
-//da definire
+- *Formattazione e controllo del codice*: Il progetto adotta controlli automatici di qualità del codice e della documentazione tramite pipeline CI, includendo formattazione, verifica di leggibilità (indice Gulpease) e generazione automatica della documentazione e dei controlli in Typst.
 
 - *Gestione attività e tracciamento*: GitHub Issues per assegnazione, monitoraggio e gestione delle modifiche.
 

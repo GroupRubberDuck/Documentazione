@@ -35,31 +35,10 @@ Le attività del processo di miglioramento si inseriscono all’interno del cicl
   image("../images/PDCA.jpg", width: 30%),
 )
 
-==== Retrospettiva
+
+
+===== Guida alla Retrospettiva 
 Il nostro gruppo ha ritenuto fondamentale l’uso della *retrospettiva*, soprattutto nell’ambito della pianificazione e del monitoraggio delle attività descritte nel #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Progetto].
-
-Per raggiungere una retrospettiva soddisfacente sono stati studiati diversi metodi, ciascuno con vantaggi e limiti specifici. 
-+ *Significant events* – Creare una timeline con eventi chiave: rilasci, successi, insuccessi, cambi di team.
-
-+ *Start, Stop, Continue* – Identificare cosa iniziare, smettere o continuare a fare.
-
-+ *4Ls (Liked, Loathed, Lacked, Learned)* – Analizzare cosa è piaciuto, cosa non è piaciuto, cosa è mancato e cosa si è imparato.
-
-+ *Mad, Sad, Glad* – Riflessione sulle emozioni: frustrazione, delusione, soddisfazione.
-
-+ *Five Whys* – Individuare la causa radice di un problema ponendo cinque volte “Perché?”.
-
-+ *Sailboat* – Visualizzare il progetto come una barca: ostacoli (rocks), problemi (anchors), fattori di progresso (wind), obiettivo finale (land).
-
-+ *What, So What, Now What* – Analisi futura: cosa è successo, conseguenze, prossimi passi.
-
-+ *Energy Levels* – Identificare attività che energizzano o prosciugano il team.
-
-+ *Dot Voting* – Votazione delle idee per decidere le priorità di miglioramento.
-
-Dall’analisi dei diversi metodi, il gruppo ha deciso di adottare una *retrospettiva più semplice*, ritenuta più pratica ed efficace in relazione al tempo disponibile per il progetto.
-
-===== Retrospettiva semplificata 
 
 + A turno, ogni membro del gruppo condivide le attività svolte e segnala eventuali problemi riscontrati.
 + Si discutono le criticità o i dubbi emersi durante le attività.

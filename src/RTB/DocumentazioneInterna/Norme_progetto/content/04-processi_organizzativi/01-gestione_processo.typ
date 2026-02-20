@@ -180,7 +180,7 @@ Ogni nuova issue deve includere le seguenti informazioni:
   Il membro del gruppo incaricato di svolgere l’issue.
 
 + *Verificatore* \
-  Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella *Definition of Done (DoD)*.
+  Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella @DOD  *Definition of Done (DoD)*.
   Salvo eccezioni motivate, il verificatore deve essere una persona diversa dall’autore.
 
 + *Label (ambito/destinazione)*  #footnote()[

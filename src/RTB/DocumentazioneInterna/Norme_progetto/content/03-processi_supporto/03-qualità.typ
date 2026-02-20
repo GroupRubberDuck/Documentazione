@@ -70,12 +70,10 @@ git commit --amend
 
 - *Automazioni* → script e workflow per calcolare metriche di qualità, generare report automatici, notificare approvazioni.
 
-//aggiornare quando facciamo con che strumenti
 
 === Metriche
 
-Le metriche relative all’Accertamento Qualità sono riportate nella sezione “Metriche di Qualità”  del documento, con valori accettabili e ottimali. 
+Le metriche relative all’Accertamento Qualità sono riportate nella sezione @qualità1 “Metriche di Qualità”  del documento, con valori accettabili e ottimali. 
 
-//mettere link alla sezione nel documento
 
 Oppure consultare il seguente documento per approfondimenti : #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.1.0.pdf")[Piano di Qualifica (PdQ)]

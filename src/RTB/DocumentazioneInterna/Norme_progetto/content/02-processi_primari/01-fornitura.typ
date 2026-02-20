@@ -26,7 +26,7 @@ Gli obiettivi principali includono:
 + *Inizializzazione* \ Analisi delle richieste della proponente, identificazione dei requisiti contrattuali e valutazione dei vincoli organizzativi.
 
 
-+ *Preparazione delle risposte* \ Realizzazione di eventuali contro-proposte basate Analisi dei Requisiti (AdR).
++ *Preparazione delle risposte* \ Realizzazione di eventuali contro-proposte basate sull'Analisi dei Requisiti (AdR).
 
 
 + *Contrattazione* \ Confronto con la proponente per formalizzare requisiti, scadenze e modalità di lavoro.
