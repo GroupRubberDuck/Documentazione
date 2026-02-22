@@ -48,7 +48,8 @@ structure:
             - Visualizza descrizione dispositivo
 
       - Modifica di un dispositivo:
-
+      - Elimina dispositivo:
+      - Annullamento creazione dispositivo:
       - Chiusura sessione di valutazione attuale:
             - Errore durante il salvataggio automatico
 
@@ -136,21 +137,82 @@ structure:
 
 
       - Esporta risultato dell'esecuzione
-      - Modifica della struttura del decision tree:
-            - Modifica con editor grafico:
-                  - Modifica testo di una domanda
-                  - Modifica connessione tra i nodi
-                  - Aggiungi nodo: 
-                        - Aggiungi nodo di decisione 
-                        - Aggiungi nodo foglia
-                  - Rimozione nodo 
-            - Importazione nuova struttura 
+
+
+
+      # - Gestione dell'architettura normativa:
+      - Crea nuovo modello
+      - Importa nuovo modello
+      - Avvia sessione di modifica su modello esistente
+      - Salva modifiche sul modello
+      - Salva come nuovo modello
+      - Scarta modifiche sul modello
+      - Rimuovi modello
+
+      - Inserisci nome del modello
+      - Visualizza nome del modello
+      - Inserisci codice del modello
+      - Visualizza codice del modello
+
+      - Modifica anagrafica del modello
+      # - Definizione del Metamodello Asset:
+      - Aggiungi classe di asset:
+            - Inserisci nome di una classe di asset
+            - Inserisci codice di una classe di asset
+            - Inserisci descrizione di una classe di asset
+      - Rimuovi classe di asset
+      - Avvia modifica classe di asset:
+            - Modifica anagrafica
+            - Definisci attributo della classe
+      - Conferma modifica alla classe asset
+      - Annulla modifica alla classe asset
+
+
+      - Aggiungi nuovo requisito:
+            - Inserisci anagrafica del requisito:
+                  - Inserisci codice:
+                        - Errore codice duplicato
+                  - Inserisci nome del requisito 
+                  - Inserisci descrizione normativa del requisito
+                  - Inserisci razionale del requisito
+                  - Inserisci linea guida
+            - Inserimento target del requisito
+      
+
+      - Aggiungi dipendenza
+      - Rimuovi dipendenza
+      - Errore dipendenza circolare
+      - Avvia modifica di un requisito
+      - Salva inserimenti del requisito
+      - Scarta inserimenti del requisito
+
+      - Rimuovi requisito
+
+
+      - Avvia gestione del decision tree:
+            - Aggiungi nodo:
+                  - Aggiungi nodo foglia:
+                        - Aggiungi nodo PASS
+                        - Aggiungi nodo FAIL
+                        - Aggiungi nodo NOT APPLICABLE
+                  - Aggiungi nodo di decisione
+            - Rimuovi nodo
+            - Modifica nodo:
+                  - Inserisci testo di una domanda
+                  - Inserisci descrizione dell'evidenza richiesta
+      - Salva inserimenti al decision tree
+      - Scarta inserimenti al decision tree
+
+
+
+      
+
+
+
       - Struttura non valida dopo la modifica
       - Salvataggio modifiche alla struttura dei DT
       - Errore nel salvataggio della struttura del decision tree
       - Visualizza cronologia dei dispositivi valutati
-      - Elimina dispositivo:
-      - Annullamento creazione dispositivo:
       # - Importa file test di conformità
       # - Errore nell'importaizone dei test
       # - Visualizza lista test di conformità:

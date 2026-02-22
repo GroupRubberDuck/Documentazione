@@ -1,5 +1,11 @@
-#import "/src/config.typ":he,slugify
+#import "/src/config.typ":he,slugify, 
 #import "use-case-id-handler.typ":format-code,get-use-case-code
+
+
+#let Sudo="Responsabile tecnico"
+#let sudo="responsabile tecnico"
+
+
 #let use-case-template(
     livello-intestazione:int,
     codice:str,

@@ -15,7 +15,6 @@
 
 #let flagMarcaturaAutoamticaTerminiGlossario=false
 
-
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)
