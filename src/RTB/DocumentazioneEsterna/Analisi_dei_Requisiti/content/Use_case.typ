@@ -774,7 +774,7 @@ caption: [Aggiunta giustificazione a un risultato]
     #v(-0.5em)
     + *UC33*: Authenticator non modificabile;
   ]
-=== UC32.1: Configurazione Password
+==== UC32.1: Configurazione Password
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha selezionato "Password" come metodo di autenticazione;
 - *Postcondizioni*: La Password è configurata e validata;
@@ -788,7 +788,7 @@ caption: [Aggiunta giustificazione a un risultato]
   + Il sistema memorizza la nuova password;
   + Il sistema completa la configurazione;
 ]
-=== UC32.2: Configurazione Certificato
+==== UC32.2: Configurazione Certificato
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha selezionato "Certificato" come metodo di autenticazione;
 - *Postcondizioni*: Il certificato è configurato e validato;
@@ -800,7 +800,7 @@ caption: [Aggiunta giustificazione a un risultato]
   + Il sistema verifica la validità del certificato;
   + Il sistema completa la configurazione;
 ]
-=== UC32.3: Configurazione Biometrica
+==== UC32.3: Configurazione Biometrica
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha selezionato "Biometrico" come metodo di autenticazione;
 - *Postcondizioni*: Il dato biometrico è configurato e validato;
@@ -814,7 +814,7 @@ caption: [Aggiunta giustificazione a un risultato]
   + Il sistema memorizza il campione biometrico;
   + Il sistema completa la configurazione;
 ]
-=== UC32.4: Configurazione Token
+==== UC32.4: Configurazione Token
 - *Attore Principale*: Utente;
 - *Precondizioni*: L'utente ha selezionato "Token" come metodo di autenticazione;
 - *Postcondizioni*: Il token è associato all'asset;
