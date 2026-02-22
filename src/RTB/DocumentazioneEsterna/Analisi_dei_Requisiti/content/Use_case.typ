@@ -742,3 +742,100 @@ caption: [Aggiunta giustificazione a un risultato]
     + Il sistema visualizza un messaggio di errore descrittivo;
     + L'utente viene riportato alla schermata di selezione.
   ]
+
+=== UC32: Modifica del metodo di Autenticazione
+- *Attore Principale*: Utente / Responsabile tecnico;
+- *Precondizioni*: L'utente si è autenticato nel sistema (UC1);\ È stato selezionato un asset con metodo di autenticazione associato; \ L'utente ha i privilegi necessari per modificare l'autenticazione dell'asset;
+- *Postcondizioni*: Viene aggiornato il metodo di Autenticazione; \ Il vecchio metodo di autenticazione viene disabilitato;
+- *Trigger*: L'utente seleziona l'opzione di modifica del metodo di autenticazione dell'asset;
+- *Scenario Principale*:#pad(left: 1em)[
+    #v(-0.5em)
+    + L'utente accede alla pagina di gestione degli asset;
+    + L'utente seleziona l'opzione "Modifica metodo di autenticazione";
+    + Il sistema verifica che sia possibile modificare l'authenticator;
+    + Il sistema presenta all'utente le opzioni di autenticazione possibili per l'asset scelto;
+    + L'utente seleziona il nuovo metodo di autenticazione tra le opzioni disponibili;
+    + Il sistema richiede la configurazione del nuovo metodo;
+    + L'utente configura il nuovo metodo;
+    + Il sistema verifica il nuovo metodo;
+    + Il sistema applica il nuovo metodo;
+    + Il sistema rimuove il vecchio metodo;
+    + Il sistema comunica all'utente il successo dell'operazione;
+    + Il sistema aggiorna la dashboard dei requisiti;
+  ]
+  - *Sottocasi d'uso*:#pad(left: 1em)[
+    #v(-0.5em)
+    - *UC32.1*: Configurazione password;
+    - *UC32.1*: Configurazione certificato;
+    - *UC32.1*: Configurazione biometrica;
+    - *UC32.1*: Configurazione token;
+  ]
+- *Scenari Alternativi*:#pad(left: 1em)[
+    #v(-0.5em)
+    + *UC33*: Authenticator non modificabile;
+  ]
+=== UC32.1: Configurazione Password
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha selezionato "Password" come metodo di autenticazione;
+- *Postcondizioni*: La Password è configurata e validata;
+- *Trigger*: Il sistema richiede la configurazione della password;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+  + Il sistema richiede l'inserimento della nuova password;
+  + Il sistema richiede la conferma della password (tramite reinserimento);
+  + Il sistema verifica che le due password coincidano;
+  + Il sistema valuta la password secondo criteri di complessità (lunghezza, caratteri, ecc.);
+  + Il sistema memorizza la nuova password;
+  + Il sistema completa la configurazione;
+]
+=== UC32.2: Configurazione Certificato
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha selezionato "Certificato" come metodo di autenticazione;
+- *Postcondizioni*: Il certificato è configurato e validato;
+- *Trigger*: Il sistema richiede la configurazione del certificato;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+  + Il sistema richiede il caricamento del file del certificato;
+  + L'utente carica il certificato ( file formato .crt/.csr/.key/.pem);
+  + Il sistema verifica la validità del certificato;
+  + Il sistema completa la configurazione;
+]
+=== UC32.3: Configurazione Biometrica
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha selezionato "Biometrico" come metodo di autenticazione;
+- *Postcondizioni*: Il dato biometrico è configurato e validato;
+- *Trigger*: Il sistema richiede la configurazione del dato biometrico;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+  + Il sistema attiva il sensore biometrico;
+  + Il sistema guida l'utente nell'acquisizione del campione biometrico;
+  + L'utente fornisce campione (es. impronta digitale);
+  + Il sistema verifica la qualità del campione;
+  + Il sistema memorizza il campione biometrico;
+  + Il sistema completa la configurazione;
+]
+=== UC32.4: Configurazione Token
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha selezionato "Token" come metodo di autenticazione;
+- *Postcondizioni*: Il token è associato all'asset;
+- *Trigger*: Il sistema richiede la configurazione del token;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+  + Il sistema richiede la connessione del token (es. NFC);
+  + L'utente collega il token al dispositivo;
+  + Il sistema riconosce il token;
+  + Il sistema associa il token all'asset;
+  + Il sistema completa la configurazione;
+]
+=== UC33: Authenticator non modificabile
+- *Attore Principale*: Utente;
+- *Precondizioni*: L'utente ha tentato di modificare un authenticator;
+- *Postcondizioni*: Il sisema manda un messaggio di errore e l'operazione viene annullata;
+- *Trigger*: Il sistema rrileva che l'autenticator non è modificabile;
+- *Scenario Principale*:#pad(left: 1em)[
+  #v(-0.5em)
+  + Il sistema verifica la modificabilità dell'authenticator;
+  + Il sistema rileva che l'authenticator non è modificabile (es. obbiettivi di sicurezza in conflitto);
+  + Il sistema interrompe la procedura di modifica;
+  + Il sistema mostra un messaggio di errore con la giustificazione delle ragioni di annullamento dell'operazione;
+]
