@@ -66,6 +66,3 @@
 
   return result
 }
-
-#csv("../data/mockup-multi.csv")
-#parse-csv-to-columns("../data/mockup-multi.csv") 

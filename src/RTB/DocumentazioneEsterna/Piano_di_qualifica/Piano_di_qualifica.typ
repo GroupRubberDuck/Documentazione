@@ -21,18 +21,18 @@
 }
 
 
-// 
-//Info del documento 
-// 
+//
+//Info del documento
+//
 #let doc = "Piano di qualifica"
 
-#let currentVersion=(
-  major:0,
-  minor:2,
-  patch:0,
+#let currentVersion = (
+  major: 0,
+  minor: 2,
+  patch: 0,
 )
 //converte dizionario in stringa
-#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
 #metadata(versionNumber)<versionNumber>
 
 
@@ -53,10 +53,35 @@
 
 
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
-  #let modifiche = ( 
-    ([0.0.1], [2025-12-15], [Felician Mario Necsulescu ], [Davide Testolin], [Creazione del documento e stesura iniziale.]),    
-    ([0.1.0], [2025-12-18], [Felician Mario Necsulescu], [Davide Testolin], [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.]),    
-    ([0.2.0], [2026-02-06], [Davide Lorenzon], [], [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index]),    
+  #let modifiche = (
+    (
+      [0.0.1],
+      [2025-12-15],
+      [Felician Mario Necsulescu ],
+      [Davide Testolin],
+      [Creazione del documento e stesura iniziale.],
+    ),
+    (
+      [0.1.0],
+      [2025-12-18],
+      [Felician Mario Necsulescu],
+      [Davide Testolin],
+      [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.],
+    ),
+    (
+      [0.2.0],
+      [2026-02-06],
+      [Davide Lorenzon],
+      [],
+      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index],
+    ),
+    (
+      [0.3.0],
+      [2026-02-23],
+      [Davide Testolin],
+      [],
+      [Aggiunti i grafici per alcune metriche]
+    ),
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
@@ -68,17 +93,17 @@
   #outline(title: "Indice")
 
 ]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
-#outline(
-  title: [Lista delle tabelle],
-  target: figure.where(kind: table),
-)
+  #outline(
+    title: [Lista delle tabelle],
+    target: figure.where(kind: table),
+  )
 
 ]
 #insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
-#outline(
-  title: [Lista delle immagini],
-  target: figure.where(kind: image),
-)
+  #outline(
+    title: [Lista delle immagini],
+    target: figure.where(kind: image),
+  )
 ]
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
@@ -86,25 +111,25 @@
   #include "content/01-introduzione/index.typ"
 
 
-  
+
 ]#insertArabicNumberedPagesSenzaData(PageTitle: "Qualità di processo", documentType: doc)[
   = Qualità di processo <processo>
 
-#include "content/02-qualita_processo/index.typ"
+  #include "content/02-qualita_processo/index.typ"
 
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Qualità di prodotto", documentType: doc)[
 
-= Qualità di prodotto <prodotto>
-#include "content/03-qualita_prodotto/index.typ"
+  = Qualità di prodotto <prodotto>
+  #include "content/03-qualita_prodotto/index.typ"
 
 
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Strategie di testing", documentType: doc)[
-= Strategie di testing
-#include "content/04-strategie_testing/index.typ"
+  = Strategie di testing
+  #include "content/04-strategie_testing/index.typ"
 
 
 
@@ -117,15 +142,15 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Cruscotto di valutazione", documentType: doc)[
-= Cruscotto di valutazione
-#include "content/05-cruscotto_valutazione/index.typ"
+  = Cruscotto di valutazione
+  #include "content/05-cruscotto_valutazione/index.typ"
 
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
-#he(body: "Appendice")
-#set heading(numbering: "1.A.1)")
-#include "content/appendice/index.typ"
+  #he(body: "Appendice")
+  #set heading(numbering: "1.A.1)")
+  #include "content/appendice/index.typ"
 
 
 

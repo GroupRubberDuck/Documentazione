@@ -62,14 +62,14 @@ def update_metrics():
         cum_ac += s_ac
         
         print(f"  TOTALE SPRINT {i}: PV = {s_pv}€ | AC = {s_ac}€")
-        data_points.append({'s': f"Sprint {i}", 'pv': cum_pv, 'ac': cum_ac})
+        data_points.append({'s': f"Sprint {i}", 'PV': cum_pv, 'AC': cum_ac})
 
     # 4. Scrittura CSV (Aggiorna i file nella stessa cartella)
-    for name, key in [('01-planned_value.csv', 'pv'), ('03-actual_cost.csv', 'ac')]:
+    for name, key in [('01-planned_value.csv', 'PV'), ('03-actual_cost.csv', 'AC')]:
         # Salvataggio diretto senza creare sottocartelle
         with open(name, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
-            writer.writerow(['Sprint', 'Valore'])
+            writer.writerow(['Sprint', key])
             for d in data_points:
                 writer.writerow([d['s'], d[key]])
         print(f"💾 Aggiornato: {name}")
