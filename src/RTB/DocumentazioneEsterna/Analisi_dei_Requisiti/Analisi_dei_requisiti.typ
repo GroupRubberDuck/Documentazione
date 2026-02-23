@@ -73,6 +73,7 @@
   ([0.9.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili]),
   ([0.10.0], [2026-01-08], [Aldo Bettega], persone.FELIX, [Aggiunti requisiti di sicurezza e tabella riassuntiva]),
   ([0.10.0], [2026-01-12], persone.FELIX, persone.ALDO, [Rivista organizzazione degli use cases e delle funzionalità, refactoring generale con aggiunta di use cases]),
+  ([0.11.0], [2026-02-22], persone.FILIPPO,[], [Rivisti use case, Aggiunti nuovi use case (32/33) relativi a AUM-4]),
 )
 
 #registroModifiche(modifiche)
