@@ -11,7 +11,7 @@ Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali -
 #tabella-requisiti((
   "ROF1", "Obbligatorio", "Il sistema deve permettere l'importazione di documenti tecnici", "UC3",
 
-  "ROF2", "Obbligatorio", "Il sistema deve trovare ed estrarre la lista degli asset presenti nei documenti importati", "UC3",
+  "ROF2", "Obbligatorio", "Il sistema deve trovare ed estrarre la lista degli asset presenti nei documenti importati e permettere all'utente di mappare i dati grezzi alle proprietà strutturate degli asset", "UC3",
 
   "ROF3", "Obbligatorio", "Il sistema deve notificare l'utente di errori nell'importazione (file vuoto, troppo grande o parsing fallito)", "UC4, UC5, UC6",
 
@@ -35,7 +35,10 @@ Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali -
 
   "ROF13", "Obbligatorio", "Il sistema deve riconoscere il completamento di tutti i requisiti di un asset e fornire un resoconto finale all'utente", "UC14",
 
-  "ROF14", "Obbligatorio", "Il sistema deve permettere di specificare il tipo di asset e di interfaccia (es. Rete o Utente) all'inserimento", "UC21",
+  "ROF14", "Obbligatorio", "Il sistema deve permettere di specificare il tipo di asset e di interfaccia (es. Rete o Utente) all'inserimento", "UC21", 
+
+  "ROF15", "Obbligatorio", "Per i test di Sufficienza Funzionale, il sistema deve presentare all'utente le specifiche Assessment Unit basate sulla Categoria di Implementazione selezionata per l'asset", "AUM-3/6 Standard", 
+  
 
   "RDF1", "Desiderabile", "Il sistema deve gestire l'autenticazione di un responsabile tecnico", "UC1",
 
@@ -83,7 +86,7 @@ I requisiti di qualità definiscono le caratteristiche che deve rispettare il si
 Questa sezione definisce le restrizioni tecniche, normative e implementative che limitano le scelte progettuali nello sviluppo del sistema. Tali vincoli impongono condizioni obbligatorie, come l'uso di specifiche tecnologie e standard di compatibilità che il prodotto finale deve soddisfare.
 
 #tabella-requisiti((
-  "ROV1", "Obbligatorio" , "Il sistema deve rispettare rigorosamente la logica e i contenuti (terminologia tecnica in particolare) descritti sullo standard EVS-EN 18031-1:2024", "Capitolato",
+  "ROV1", "Obbligatorio" , "Il sistema deve rispettare rigorosamente la logica, i contenuti (terminologia tecnica in particolare) e la struttura di valutazione (completezza, sufficienza) descritti sullo standard EVS-EN 18031-1:2024", "Capitolato",
 
   "ROV2", "Obbligatorio", "La struttura dei decision tree deve essere importata/salvata da file di configurazione esterni in un formato strutturato (es. XML/JSON)", "UC15",
 
