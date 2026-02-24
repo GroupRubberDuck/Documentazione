@@ -1,10 +1,11 @@
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
-#let {{TITOLO}} =(
+#import "deps.typ"
+#let data =(
+  nome:"{{TITOLO}}",
   rilevanza:"Desiderabile",
   descrizione:[
 
   ],
   fonti:[
-
+    
   ]
 )

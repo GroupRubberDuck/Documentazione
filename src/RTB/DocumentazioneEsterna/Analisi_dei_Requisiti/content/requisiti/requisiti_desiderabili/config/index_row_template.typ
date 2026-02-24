@@ -1,0 +1,1 @@
+#import "{{FILE_PATH}}": data as {{FILE_NAME_CLEAN}}

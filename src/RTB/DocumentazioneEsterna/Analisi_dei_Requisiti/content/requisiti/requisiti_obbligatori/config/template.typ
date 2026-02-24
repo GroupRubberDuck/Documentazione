@@ -1,6 +1,7 @@
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
-#let {{TITOLO}} =(
-  rilevanza:"Obbligatoria",
+#import "deps.typ"
+#let data =(
+  nome:"{{TITOLO}}",
+  rilevanza:"Obbligatorio",
   descrizione:[
 
   ],

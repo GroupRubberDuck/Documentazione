@@ -7,7 +7,7 @@ settings:
       index_file: "_index.typ"
 
       # Il prefisso non può contenere il carattere di title separator
-      prefix: "ROpz"
+      prefix: "ROpz-"
       # Estensione dei file generati
       extension: ".typ"
 
@@ -20,6 +20,19 @@ settings:
 
       # (Opzionale) File template da copiare per i nuovi file
       template_path: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/config/template.typ"
-
+      # Percorsi ai template dell'indice (opzionali)
+      # Se omessi, Python farà il classico file con gli #include
+      index_header_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/config/index_header_template.typ"
+      index_row_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/config/index_row_template.typ"
+      index_footer_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/config/index_footer_template.typ"
 # La struttura gerarchica
 structure:
+- requisitoA
+- B
+- C
+- D
+- Q
+- W
+- E
+- R
+- T

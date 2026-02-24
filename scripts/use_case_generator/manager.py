@@ -4,13 +4,35 @@ import re
 import argparse
 import shutil # Serve per copiare il template
 
+
+class Colors:
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    CYAN = '\033[96m'
+    RED = '\033[91m'
+    RESET = '\033[0m'
 # come usare
 # simulazione
 # python3 scripts/use_case_generator/manager.py scripts/use_case_generator/config.yaml
 # creazione e renaming
 # python3 scripts/use_case_generator/manager.py scripts/use_case_generator/config.yaml --force
 
-
+def get_safe_variable_name(filepath):
+    """
+    Estrae il nome del file dal percorso e lo pulisce per renderlo 
+    un nome di variabile Typst valido (senza estensioni, punti o trattini).
+    Es: 'cartella/01.1-login.typ' -> '01_1_login'
+    """
+    # 1. Isola il nome del file
+    base_name = os.path.basename(filepath)
+    
+    # 2. Rimuove l'estensione
+    name_no_ext = os.path.splitext(base_name)[0]
+    
+    # 3. Pulisce i caratteri non ammessi nelle variabili
+    safe_name = name_no_ext.replace('.', '_').replace('-', '_')
+    
+    return safe_name
 
 # --- FUNZIONI DI UTILITÀ ---
 def create_file_from_template(target_path, title, level, settings):
@@ -34,7 +56,7 @@ def create_file_from_template(target_path, title, level, settings):
         content = content.replace("{{LIVELLO}}", str(level))
         
     else:
-        print(f"⚠️  Template non trovato in '{template_path}', uso contenuto base.")
+        print(f"{Colors.YELLOW}⚠️  Template non trovato in '{template_path}', uso contenuto base.")
 
     # Scrittura del file finale
     with open(target_path, 'w', encoding='utf-8') as f:
@@ -43,7 +65,7 @@ def create_file_from_template(target_path, title, level, settings):
 def load_config(path):
     """Carica il file YAML e imposta i valori di default se mancano."""
     if not os.path.exists(path):
-        print(f"❌ Errore: Config file '{path}' non trovato.")
+        print(f"{Colors.RED}❌ Errore: Config file '{path}' non trovato.{Colors.RESET}")
         return None
     
     with open(path, 'r') as f:
@@ -121,25 +143,57 @@ def flatten_structure(items, parent_code=[]):
     return flat_list
 
 def generate_index_file(file_list, settings, dry_run):
-    """Crea il file master _index.typ con tutti gli include."""
-    index_name = settings['index_file']
+    """Crea il file master _index.typ aggregando i file tramite template esterni."""
+    index_name = settings.get('index_file', '_index.typ')
     if not index_name: return
 
-    out_dir = settings['output_dir']
+    out_dir = settings.get('output_dir', '.')
     path = os.path.join(out_dir, index_name)
-    
-    content = f"// FILE GENERATO AUTOMATICAMENTE - NON MODIFICARE\n// Lista dei file inclusi in ordine\n\n"
-    for filename in file_list:
-        content += f'#include "{filename}"\n'
 
+    # 1. DEFAULT (Comportamento storico di base)
+    header = "// FILE GENERATO AUTOMATICAMENTE - NON MODIFICARE\n\n"
+    row_template = '#include "{{FILE_PATH}}"\n'
+    footer = ""
+
+    # 2. CARICAMENTO TEMPLATE ESTERNI (Override)
+    h_path = settings.get('index_header_template')
+    r_path = settings.get('index_row_template')
+    f_path = settings.get('index_footer_template')
+
+    if h_path and os.path.exists(h_path):
+        with open(h_path, 'r', encoding='utf-8') as f: header = f.read()
+    if r_path and os.path.exists(r_path):
+        with open(r_path, 'r', encoding='utf-8') as f: row_template = f.read()
+    if f_path and os.path.exists(f_path):
+        with open(f_path, 'r', encoding='utf-8') as f: footer = f.read()
+
+    # 3. ASSEMBLAGGIO
+    content = header
+    array_items_str = ""
+
+    for i, filename in enumerate(file_list):
+        # Es: da "01_auth/01.1_login.typ" a "01_1_login"
+        clean_name = get_safe_variable_name(filename)        
+        # Sostituzioni sulla singola riga
+        row = row_template.replace("{{FILE_PATH}}", filename)
+        row = row.replace("{{FILE_NAME_CLEAN}}", clean_name)
+        row = row.replace("{{INDEX}}", str(i))
+        
+        content += row + "\n" # Aggiungiamo un a capo per sicurezza
+        
+        array_items_str += f"  item_{i},\n"
+
+    # Sostituzioni sul footer
+    footer = footer.replace("{{ARRAY_ITEMS}}", array_items_str)
+    content += footer
+
+    # 4. SCRITTURA
     if dry_run:
-        print(f"📝 [SIM] Aggiornerei l'indice '{index_name}' con {len(file_list)} file.")
+        print(f"{Colors.CYAN}📝 [SIM] Aggiornerei l'indice '{index_name}' usando template esterni.{Colors.RESET}")
     else:
-        with open(path, 'w') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"📝 Indice '{index_name}' generato con successo.")
-
-# --- CORE LOGIC ---
+        print(f"{Colors.CYAN}📝 Indice '{index_name}' generato con successo.{Colors.RESET}")
 
 def sync_files(config, dry_run):
     settings = config['settings']
@@ -174,7 +228,7 @@ def sync_files(config, dry_run):
                     # ma per ora assumiamo che l'utente non cambi stile (snake/kebab) ogni giorno.
 
     # 3. Iterazione e Sincronizzazione
-    print(f"--- Sincronizzazione in corso (Dry Run: {dry_run}) ---")
+    print(f"{Colors.GREEN}--- Sincronizzazione in corso (Dry Run: {dry_run}) ---")
     
     for item in desired_items:
         # Calcola il nome file IDEALE
@@ -198,10 +252,10 @@ def sync_files(config, dry_run):
                 # RINOMINA
                 src = os.path.join(out_dir, current_filename)
                 if os.path.exists(target_path):
-                     print(f"⚠️ [SKIP] {target_filename} esiste già (conflitto).")
+                     print(f"{Colors.YELLOW}⚠️ [SKIP] {target_filename} esiste già (conflitto).")
                 else:
                     action = "🔄 [SIM] Rinomino" if dry_run else "🔄 Rinomino"
-                    print(f"{action}: {current_filename} -> {target_filename}")
+                    print(f"{Colors.CYAN}{action}: {current_filename} -> {target_filename}")
                     if not dry_run: os.rename(src, target_path)
             else:
                 # FILE OK
@@ -210,7 +264,7 @@ def sync_files(config, dry_run):
         else:
             # NUOVO FILE
             action = "✨ [SIM] Creo" if dry_run else "✨ Creo"
-            print(f"{action}: {target_filename}")
+            print(f"{Colors.CYAN}{action}: {target_filename}")
             
             if not dry_run:
                 # Calcoliamo titolo "bello" e livello
