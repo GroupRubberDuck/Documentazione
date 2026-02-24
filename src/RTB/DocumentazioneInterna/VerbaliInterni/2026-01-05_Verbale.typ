@@ -20,9 +20,9 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
+  major:1,
   minor:0,
-  patch:1,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -34,8 +34,8 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
-    versione: "0.0.1",
+    stato: "Approvato",
+    versione: "1.0.0",
     autori: ("Felician Mario Necsulescu",),
     verificatori: ("Ana Maria Draghici",),
     uso: "Interno",

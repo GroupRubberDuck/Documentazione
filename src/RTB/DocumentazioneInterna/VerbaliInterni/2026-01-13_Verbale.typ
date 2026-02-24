@@ -87,6 +87,7 @@
 ]
 
 
+
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della riunione
   La riunione è stata svolta per discutere dell'incontro fatto poco prima con BlueWind. Gli argomenti principali sono stati:
@@ -133,12 +134,6 @@
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Redazione verbale esterno 2026-01-13],
       [Avere il verbale esterno disponibile per tutti],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Redazione verbale interno 2026-01-13],
-      [Avere il verbale interno disponibile per tutti],
       [-],
     ),
     (
