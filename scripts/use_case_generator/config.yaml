@@ -30,41 +30,40 @@ structure:
       - Registrazione
       - Inserimento di un nuovo dispositivo:
       - Creazione di un nuovo dispositivo per la valutazione:
-            - Inserimento dati dispositivo: 
-                  - Inserimento nome dispositivo
-                  - Inserimento sistema operativo dispositivo
-                  - Inserimento versione firmware dispositivo
-                  - Inserimento funzionalita dispositivo
-                  - Inserimento descrizione dispositivo
+              - Inserimento dati dispositivo:
+                      - Inserimento nome dispositivo
+                      - Inserimento sistema operativo dispositivo
+                      - Inserimento versione firmware dispositivo
+                      - Inserimento funzionalita dispositivo
+                      - Inserimento descrizione dispositivo
       - Caricamento di un dispositivo per la valutazione:
-            - Selezione file sorgente:
-                  - Selezione file JSON
-                  - Selezione file XML
-                  - Selezione file CSV
-      - Errore importazione file :  
-      - Visualizza dati del dispositivo: 
-            - Visualizza nome dispositivo
-            - Visualizza sistema operativo dispositivo
-            - Visualizza versione firmware dispositivo
-            - Visualizza funzionalita dispositivo
-            - Visualizza descrizione dispositivo
-            - Visualizza versione dello standard
+              - Selezione file sorgente:
+                      - Selezione file JSON
+                      - Selezione file XML
+                      - Selezione file CSV
+      - Errore importazione file:
+      - Visualizza dati del dispositivo:
+              - Visualizza nome dispositivo
+              - Visualizza sistema operativo dispositivo
+              - Visualizza versione firmware dispositivo
+              - Visualizza funzionalita dispositivo
+              - Visualizza descrizione dispositivo
+              - Visualizza versione dello standard
 
       - Modifica di un dispositivo:
-            - Modifica nome dispositivo
-            - Modifica sistema operativo dispositivo
-            - Modifica versione firmware dispositivo
-            - Modifica funzionalita dispositivo
-            - Modifica ambiente operativo
-            - Modifica descrizione dispositivo
-            - Modifica versione dello standard
+              - Modifica nome dispositivo
+              - Modifica sistema operativo dispositivo
+              - Modifica versione firmware dispositivo
+              - Modifica funzionalita dispositivo
+              - Modifica ambiente operativo
+              - Modifica descrizione dispositivo
+              - Modifica versione dello standard
       - Elimina dispositivo:
       - Annullamento creazione dispositivo:
       - Chiusura sessione di valutazione attuale:
 
-
       - Chiusura sessione di verifica attuale:
-            - Errore durante il salvataggio automatico
+              - Errore durante il salvataggio automatico
 
       # - Seleziona file:
       #       - Selezione di un file tramite finestra
@@ -75,19 +74,19 @@ structure:
       - Importa lista di file di asset
       - Importa file asset singolo:
       - Errore importazione file asset:
-            - Importazione di asset appartenenti a uno standard diverso
-            - Errore struttura di alcuni asset non valida
+              - Importazione di asset appartenenti a uno standard diverso
+              - Errore struttura di alcuni asset non valida
       - Visualizza riepilogo di importazione
       - Errore conflitto merge asset
       - Risoluzione conflitto di merge
       - Visualizza lista asset:
-            - Visualizza asset singolo
-            - Visualizza riepilogo requisiti:
-                  - Vedi numero PASS
-                  - Vedi numero FAIL
-                  - Vedi numero NOT APPLICABLE
+              - Visualizza asset singolo
+              - Visualizza riepilogo requisiti:
+                      - Vedi numero PASS
+                      - Vedi numero FAIL
+                      - Vedi numero NOT APPLICABLE
       - Visualizza riepilogo risultati:
-            - Vedi numero di asset in sospeso
+              - Vedi numero di asset in sospeso
       - Aggiunta asset tramite interfaccia
       - Eliminazione di un asset
       - Modifica asset
@@ -95,63 +94,60 @@ structure:
       - Salva modifica asset
       - Inserimento dati non validi:
       - Esporta lista asset:
-            - Esporta lista asset .xml
-            - Esporta lista asset .json
-            - Esporta lista asset .csv
-            - Esporta lista asset .pdf
+              - Esporta lista asset .xml
+              - Esporta lista asset .json
+              - Esporta lista asset .csv
+              - Esporta lista asset .pdf
       - Errore nell'esportazione
       - Errore nel salvataggio dei dati degli asset
       - Consultazione requisito normativo:
-            - Visualizza descrizione del requisito
-            - Visualizza razionale del requisito
-            - Visualizza guida
+              - Visualizza descrizione del requisito
+              - Visualizza razionale del requisito
+              - Visualizza guida
       - Visualizza requisito:
-            - Visualizza l'asset di appartenenza
-            - Visualizza codice del requisito
-            - Visualizza nome del requisito
-            - Visualizza stato aggregato del requisito
-            - Visualizza lista di assessment unit :
-                  - Visualizza elemento della lista di assessment unit
+              - Visualizza l'asset di appartenenza
+              - Visualizza codice del requisito
+              - Visualizza nome del requisito
+              - Visualizza stato aggregato del requisito
+              - Visualizza lista di assessment unit:
+                      - Visualizza elemento della lista di assessment unit
       - Visualizza assessment unit:
-                  - Visualizza contesto di una assessment unit
-                  - Visualizza codice di una assessment unit
-                  - Visualizza tipo di una assessment unit
-                  - Visualizza nome di una assessment unit
-                  - Visualizza stato della valutazione assessment unit
+              - Visualizza contesto di una assessment unit
+              - Visualizza codice di una assessment unit
+              - Visualizza tipo di una assessment unit
+              - Visualizza nome di una assessment unit
+              - Visualizza stato della valutazione assessment unit
       - Visualizza decision tree:
-            - Visualizza decision tree graficamente
-            - Visualizza nodo decision tree:
-                  - Visualizza codice del nodo
-                  - Visualizza domanda del nodo
-                  - Visualizza risposta del nodo
-                  - Visualizza evidenze del nodo:
-                        - Visualizza info
-                        - Visualizza just
+              - Visualizza decision tree graficamente
+              - Visualizza nodo decision tree:
+                      - Visualizza codice del nodo
+                      - Visualizza domanda del nodo
+                      - Visualizza risposta del nodo
+                      - Visualizza evidenze del nodo:
+                              - Visualizza info
+                              - Visualizza just
       - Gestione della valutazione del DT:
-            - Compilazione nodo:
-                  - Aggiungi evidenze:
-                        - Aggiungi just
-                        - Aggiungi info
-                  - Selezione della risposta del nodo
+              - Compilazione nodo:
+                      - Aggiungi evidenze:
+                              - Aggiungi just
+                              - Aggiungi info
+                      - Selezione della risposta del nodo
       - Esegui decision tree
       - Decision tree non completo
       - Navigazione del decision tree:
-            - Vai al nodo precedente:
-                  - Nodo root
-            - Vai al nodo successivo:
-                  - Nodo foglia
-                  - Nodo senza risposta
+              - Vai al nodo precedente:
+                      - Nodo root
+              - Vai al nodo successivo:
+                      - Nodo foglia
+                      - Nodo senza risposta
       - Salva valutazione:
-            - Salva sul file corrente
-            - Salva come nuovo file
+              - Salva sul file corrente
+              - Salva come nuovo file
       - Valutazione del dispositivo
       - Valutazione di un asset
       - Valutazione di un requisito
 
-
       - Esporta risultato dell'esecuzione
-
-
 
       # - Gestione dell'architettura normativa:
       - Crea nuovo modello
@@ -170,27 +166,25 @@ structure:
       - Modifica anagrafica del modello
       # - Definizione del Metamodello Asset:
       - Aggiungi classe di asset:
-            - Inserisci nome di una classe di asset
-            - Inserisci codice di una classe di asset
-            - Inserisci descrizione di una classe di asset
+              - Inserisci nome di una classe di asset
+              - Inserisci codice di una classe di asset
+              - Inserisci descrizione di una classe di asset
       - Rimuovi classe di asset
       - Avvia modifica classe di asset:
-            - Modifica anagrafica
-            - Definisci attributo della classe
+              - Modifica anagrafica
+              - Definisci attributo della classe
       - Conferma modifica alla classe asset
       - Annulla modifica alla classe asset
 
-
       - Aggiungi nuovo requisito:
-            - Inserisci anagrafica del requisito:
-                  - Inserisci codice:
-                        - Errore codice duplicato
-                  - Inserisci nome del requisito 
-                  - Inserisci descrizione normativa del requisito
-                  - Inserisci razionale del requisito
-                  - Inserisci linea guida
-            - Inserimento target del requisito
-      
+              - Inserisci anagrafica del requisito:
+                      - Inserisci codice:
+                              - Errore codice duplicato
+                      - Inserisci nome del requisito
+                      - Inserisci descrizione normativa del requisito
+                      - Inserisci razionale del requisito
+                      - Inserisci linea guida
+              - Inserimento target del requisito
 
       - Aggiungi dipendenza
       - Rimuovi dipendenza
@@ -201,26 +195,19 @@ structure:
 
       - Rimuovi requisito
 
-
       - Avvia gestione del decision tree:
-            - Aggiungi nodo:
-                  - Aggiungi nodo foglia:
-                        - Aggiungi nodo PASS
-                        - Aggiungi nodo FAIL
-                        - Aggiungi nodo NOT APPLICABLE
-                  - Aggiungi nodo di decisione
-            - Rimuovi nodo
-            - Modifica nodo:
-                  - Inserisci testo di una domanda
-                  - Inserisci descrizione dell'evidenza richiesta
+              - Aggiungi nodo:
+                      - Aggiungi nodo foglia:
+                              - Aggiungi nodo PASS
+                              - Aggiungi nodo FAIL
+                              - Aggiungi nodo NOT APPLICABLE
+                      - Aggiungi nodo di decisione
+              - Rimuovi nodo
+              - Modifica nodo:
+                      - Inserisci testo di una domanda
+                      - Inserisci descrizione dell'evidenza richiesta
       - Salva inserimenti al decision tree
       - Scarta inserimenti al decision tree
-
-
-
-      
-
-
 
       - Struttura non valida dopo la modifica
       - Salvataggio modifiche alla struttura dei DT
@@ -237,5 +224,3 @@ structure:
       # - Errore nell'eliminazione
       # - Modifica test di conformità
       # - Errore nella modifica
-
-

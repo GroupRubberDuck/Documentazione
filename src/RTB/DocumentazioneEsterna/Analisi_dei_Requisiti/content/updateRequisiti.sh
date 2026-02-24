@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Interrompe lo script se uno dei comandi fallisce (sicurezza)
-set -e 
+# set -e 
 
 MANAGER="python3 scripts/use_case_generator/manager.py"
 BASE_DIR="src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti"
