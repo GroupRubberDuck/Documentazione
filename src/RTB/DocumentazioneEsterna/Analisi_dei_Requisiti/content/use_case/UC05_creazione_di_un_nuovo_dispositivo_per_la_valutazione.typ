@@ -24,7 +24,7 @@
     
     pre-condizioni:[
         - L'utente è autenticato.
-        - Il sistema si trova nell'area di gestione dispositivi.
+        - L'utente si trova nell'area personale di creazione di un nuovo dispositivo.
     ],
     
     post-condizioni:[

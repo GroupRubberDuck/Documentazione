@@ -16,7 +16,7 @@
     
     scenario-principale:[
         + Il sistema recupera l'informazione sul sistema operativo
-        + Viene visualizzato il sistema operativo del dispositivo
+        +  L'utente visualizza il sistema operativo del dispositivo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],

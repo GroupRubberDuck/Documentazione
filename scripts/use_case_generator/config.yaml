@@ -26,6 +26,7 @@ structure:
               - Inserimento username
               - Inserimento password
       - Errore autenticazione
+      - Registrazione
       - Inserimento di un nuovo dispositivo:
       - Creazione di un nuovo dispositivo per la valutazione:
             - Inserimento dati dispositivo: 
@@ -46,11 +47,22 @@ structure:
             - Visualizza versione firmware dispositivo
             - Visualizza funzionalita dispositivo
             - Visualizza descrizione dispositivo
+            - Visualizza versione dello standard
 
       - Modifica di un dispositivo:
+            - Modifica nome dispositivo
+            - Modifica sistema operativo dispositivo
+            - Modifica versione firmware dispositivo
+            - Modifica funzionalita dispositivo
+            - Modifica ambiente operativo
+            - Modifica descrizione dispositivo
+            - Modifica versione dello standard
       - Elimina dispositivo:
       - Annullamento creazione dispositivo:
       - Chiusura sessione di valutazione attuale:
+
+
+      - Chiusura sessione di verifica attuale:
             - Errore durante il salvataggio automatico
 
       # - Seleziona file:

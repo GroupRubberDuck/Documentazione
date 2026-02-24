@@ -2,7 +2,7 @@
 
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza nome dispositivo"
+#let use-case-nome="Visualizza funzionalita dispositivo"
 #let depth=2
 #use-case-template(
     
@@ -14,13 +14,13 @@
     
     attore-principale:"Utente",
     
-   scenario-principale:[
-        + Il sistema recupera la stringa identificativa del nome dal modello dati
-        + Viene visualizzato il nome del dispositivo nell'apposito campo
+  scenario-principale:[
+        + Il sistema recupera le funzionalità principali descritte per il dispositivo
+        +  L'utente visualizza la funzionalità del dispositivo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],
-    post-condizioni:[Il nome è visibile all'utente],
+    post-condizioni:[Le funzionalità sono visibili all'utente],
     trigger:none,
     scenari-alternativi:none,
     inclusioni:none,

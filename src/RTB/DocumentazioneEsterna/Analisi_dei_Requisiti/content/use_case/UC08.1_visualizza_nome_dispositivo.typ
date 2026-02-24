@@ -2,7 +2,7 @@
 
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
-#let use-case-nome="Visualizza versione firmware dispositivo"
+#let use-case-nome="Visualizza nome dispositivo"
 #let depth=2
 #use-case-template(
     
@@ -14,13 +14,13 @@
     
     attore-principale:"Utente",
     
-     scenario-principale:[
-        + Il sistema recupera la versione del firmware associata
-        + Viene visualizzata la versione del firmware del dispositivo
+   scenario-principale:[
+        + Il sistema recupera la stringa identificativa del nome dal modello dati
+        + L'utente visualizza il nome del dispositivo nell'apposito campo
     ],
     pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],
-    post-condizioni:[La versione firmware è visibile all'utente],
+    post-condizioni:[Il nome è visibile all'utente],
     trigger:none,
     scenari-alternativi:none,
     inclusioni:none,

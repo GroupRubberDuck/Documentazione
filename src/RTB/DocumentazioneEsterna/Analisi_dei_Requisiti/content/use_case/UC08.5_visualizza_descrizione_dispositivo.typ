@@ -16,9 +16,9 @@
     
     scenario-principale:[
         + Il sistema recupera la descrizione testuale del dispositivo
-        + Viene visualizzata la descrizione completa del dispositivo
+        +  L'utente visualizza  la descrizione completa del dispositivo
     ],
-    pre-condizioni: [L'utente ha creato o caricato un dispositivo nel sistema.
+    pre-condizioni: [- L'utente ha creato o caricato un dispositivo nel sistema.
         - Il dispositivo è attualmente selezionato],
     post-condizioni:[La descrizione è visibile all'utente],
     trigger:none,
