@@ -40,9 +40,9 @@
     ],
     
     scenari-alternativi:[
-       - *Annullamento:* L'utente decide di non salvare le modifiche #sym.arrow #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
+    //    - *Annullamento:* L'utente decide di non salvare le modifiche #sym.arrow #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
         - *Dati non validi:* L'utente inserisce dati errati o incompleti #sym.arrow #use-case-label(nome-etichetta: "Inserimento dati non validi")
-        - *Cambio versione standard:* L'utente modifica la versione dello standard, richiedendo una conferma esplicita #sym.arrow #use-case-label(nome-etichetta: "Avviso cambio versione standard")
+        // - *Cambio versione standard:* L'utente modifica la versione dello standard, richiedendo una conferma esplicita #sym.arrow #use-case-label(nome-etichetta: "Avviso cambio versione standard")
     ],
     
     inclusioni:[
@@ -57,8 +57,8 @@
     
     estensioni:[
         - #use-case-label(nome-etichetta: "Inserimento dati non validi")
-        - #use-case-label(nome-etichetta: "Avviso cambio versione standard")
-        - #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
+        // - #use-case-label(nome-etichetta: "Avviso cambio versione standard")
+        // - #use-case-label(nome-etichetta: "Annullamento modifica dati dispositivo")
     ],
     
     generalizzazioni:none,
