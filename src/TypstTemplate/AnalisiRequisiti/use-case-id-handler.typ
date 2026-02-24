@@ -95,3 +95,4 @@
 #let get-use-case-code(nome-etichetta:str)={
   format-code(mappa.at(slugify(nome-etichetta))).slice(0,-1)
 }
+
