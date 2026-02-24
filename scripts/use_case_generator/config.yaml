@@ -1,3 +1,4 @@
+# Configurazione dei casi d'uso
 settings:
       # Percorso dove creare i file (relativo allo script)
       output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
