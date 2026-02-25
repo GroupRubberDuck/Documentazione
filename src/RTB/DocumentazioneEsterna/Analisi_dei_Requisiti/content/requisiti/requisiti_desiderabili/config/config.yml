@@ -16,10 +16,12 @@ settings:
             separator: "." # Separatore numeri: "1.1" vs "1-1"
             title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
             filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
-
+      index_header_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/config/index_header_template.typ"
+      index_row_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/config/index_row_template.typ"
+      index_footer_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/config/index_footer_template.typ"
       # (Opzionale) File template da copiare per i nuovi file
       template_path: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/config/template.typ"
 
 # La struttura gerarchica
 structure:
-      -  
+      -  prova

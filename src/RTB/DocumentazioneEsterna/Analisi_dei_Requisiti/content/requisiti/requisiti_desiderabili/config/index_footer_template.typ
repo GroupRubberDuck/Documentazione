@@ -8,14 +8,9 @@
 // Esempio di utilizzo nel tuo main.typ:
 // #import "percorso/a/_index.typ": all_data
 // 
-// #for item in all_data [
-//   == #item.title
-//   #item.content
-// ]
-// ============================================================================
-
-// #let all_data = (
-// {{ARRAY_ITEMS}}
-// )
+#deps.tabella-requisiti(
+  ..(table-cells.map(it=>{
+  it.values()
+}).flatten()))
 
 // --- Fine del file generato ---

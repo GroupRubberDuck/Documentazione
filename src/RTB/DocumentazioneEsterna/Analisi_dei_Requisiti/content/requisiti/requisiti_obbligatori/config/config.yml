@@ -19,7 +19,9 @@ settings:
 
       # (Opzionale) File template da copiare per i nuovi file
       template_path: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/template.typ"
-
+      index_header_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/index_header_template.typ"
+      index_row_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/index_row_template.typ"
+      index_footer_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/index_footer_template.typ"
 # La struttura gerarchica
 structure:
-      - 
+      - prova

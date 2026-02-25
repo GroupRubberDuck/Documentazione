@@ -1,3 +1,4 @@
+#import "config/deps.typ"
 // ============================================================================
 // ⚠️ ATTENZIONE: FILE GENERATO AUTOMATICAMENTE ⚠️
 // ============================================================================
@@ -14,17 +15,44 @@
 //
 // ============================================================================
 
+#let table-cells=()
+#import "ROpz-01_requisitoa.typ": data as item_0
+
+#table-cells.push( item_0)
+
+#import "ROpz-02_b.typ": data as item_1
+
+#table-cells.push( item_1)
+
+#import "ROpz-03_c.typ": data as item_2
+
+#table-cells.push( item_2)
+
+#import "ROpz-04_d.typ": data as item_3
+
+#table-cells.push( item_3)
+
+#import "ROpz-05_q.typ": data as item_4
+
+#table-cells.push( item_4)
+
+#import "ROpz-06_w.typ": data as item_5
+
+#table-cells.push( item_5)
+
+#import "ROpz-07_e.typ": data as item_6
+
+#table-cells.push( item_6)
+
+#import "ROpz-08_r.typ": data as item_7
+
+#table-cells.push( item_7)
+
+#import "ROpz-09_t.typ": data as item_8
+
+#table-cells.push( item_8)
 
 
-#import "ROpz-01_requisitoa.typ": data as ROpz_01_requisitoa
-#import "ROpz-02_b.typ": data as ROpz_02_b
-#import "ROpz-03_c.typ": data as ROpz_03_c
-#import "ROpz-04_d.typ": data as ROpz_04_d
-#import "ROpz-05_q.typ": data as ROpz_05_q
-#import "ROpz-06_w.typ": data as ROpz_06_w
-#import "ROpz-07_e.typ": data as ROpz_07_e
-#import "ROpz-08_r.typ": data as ROpz_08_r
-#import "ROpz-09_t.typ": data as ROpz_09_t
 
 // ============================================================================
 // 📦 ESPORTAZIONE DATI (API DEL MODULO)
@@ -34,22 +62,10 @@
 // Esempio di utilizzo nel tuo main.typ:
 // #import "percorso/a/_index.typ": all_data
 // 
-// #for item in all_data [
-//   == #item.title
-//   #item.content
-// ]
-// ============================================================================
+#deps.tabella-requisiti(
+  ..(table-cells.map(it=>{
+  it.values()
+}).flatten()))
 
-#let all_data = (
-ROpz_02_b,
-ROpz_03_c,
-ROpz_04_d,
-ROpz_05_q,
-ROpz_06_w,
-ROpz_07_e,
-ROpz_08_r,
-ROpz_09_t,
-
-)
 
 // --- Fine del file generato ---

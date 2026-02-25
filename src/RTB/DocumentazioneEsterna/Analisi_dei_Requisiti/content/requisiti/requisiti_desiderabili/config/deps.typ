@@ -1,5 +1,6 @@
+#import "/src/config.typ":slugify
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map
-
+// #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisiti
 
 #let config=yaml("config.yml")
 
@@ -53,6 +54,26 @@
   format-code(mappa.at(slugify(nome-etichetta))).slice(0,-1)
 }
 
-#let use-req-label(nome-etichetta)={
+#let get-req-label(nome-etichetta)={
   ref(label(slugify(nome-etichetta)),supplement: get-req-code(nome-etichetta:nome-etichetta)+" ,§")
+}
+
+#let header-color = rgb("#008080b0")
+
+#let tabella-requisiti(..contenuto) = {
+  table(
+    columns: (auto, 1fr, 1fr),
+    stroke: 0.5pt + black,
+    inset: 8pt,
+    align: left + horizon,
+    fill: (col, row) => if row == 0 { header-color } else { none },
+
+    table.header(
+      strong("Codice"),
+      strong("Descrizione"),
+      strong("Fonti"),
+    ),
+
+    ..contenuto
+  )
 }

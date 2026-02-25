@@ -1,7 +1,7 @@
-#import "deps.typ"
+#import "config/deps.typ" as deps
 #let data =(
-  nome:"{{TITOLO}}",
-  rilevanza:"Obbligatorio",
+  codice:deps.get-req-code(nome-etichetta: "{{TITOLO}}"),
+
   descrizione:[
 
   ],

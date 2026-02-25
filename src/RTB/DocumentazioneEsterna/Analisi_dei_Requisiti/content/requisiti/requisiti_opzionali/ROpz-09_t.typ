@@ -1,9 +1,9 @@
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
+#import "config/deps.typ" as deps
 #let data =(
-  nome:"T",
-  rilevanza:"Opzionale",
-  descrizione:[
+  codice:deps.get-req-code(nome-etichetta: "T"),
 
+  descrizione:[
+    
   ],
   fonti:[
     
