@@ -4,7 +4,8 @@ import re, json, csv, os
 FILE_SPRINT = "../../../Piano_di_Progetto/content/04-pianificazione_breve_periodo/01-RTB.typ"
 TARIFFA_FILE = "costi_ruoli.json" 
 OUTPUT_DIR = "." 
-BAC_FISSO = 11610  # Il totale preventivato di usare al max
+BAC_FISSO = 11610  # Budget totale preventivato
+SETTIMANE_PIANIFICATE = 8  # Esempio: 4 sprint da 2 settimane
 
 def update_metrics():
     # 1. Caricamento tariffe
@@ -32,11 +33,11 @@ def update_metrics():
     
     data_points = []
     cum_pv, cum_ac, cum_ev = 0, 0, 0
-
-    print(f"💰 Analisi avviata con BAC fisso: {BAC_FISSO}€")
+    cum_ore_prev, cum_ore_eff = 0, 0
 
     for i, block in enumerate(blocks, 1):
         s_pv, s_ac, s_ev = 0, 0, 0
+        s_ore_prev, s_ore_eff = 0, 0
         
         entries = re.findall(r"\((.*?)\)", block)
         for entry in entries:
@@ -54,60 +55,68 @@ def update_metrics():
                 s_pv += prev * costo
                 s_ac += eff * costo
                 s_ev += min(prev, eff) * costo
+                
+                s_ore_prev += prev
+                s_ore_eff += eff
 
         cum_pv += s_pv
         cum_ac += s_ac
         cum_ev += s_ev
+        cum_ore_prev += s_ore_prev
+        cum_ore_eff += s_ore_eff
         
-        # --- CALCOLO METRICHE DI PERFORMANCE ---
-        # CPI = EV / AC (Efficienza dei costi)
+        # --- CALCOLO METRICHE ---
         cpi = cum_ev / cum_ac if cum_ac > 0 else 1.0
-        
-        # SPI = EV / PV (Efficienza dei tempi)
         spi = cum_ev / cum_pv if cum_pv > 0 else 1.0
         
-        # EAC = BAC / CPI
+        # EAC e ETC (Economici)
         eac = BAC_FISSO / cpi if cpi > 0 else BAC_FISSO
-        
-        # ETC = (BAC - EV) / CPI
-        etc = (BAC_FISSO - cum_ev) / cpi if cpi > 0 else (BAC_FISSO - cum_ev)
+        etc = eac - cum_ac
+
+        # TCPI (To Complete Performance Index)
+        tcpi = (BAC_FISSO - cum_ev) / (BAC_FISSO - cum_ac) if (BAC_FISSO - cum_ac) > 0 else 1.0
+
+        # Temporali
+        time_eac = SETTIMANE_PIANIFICATE / spi if spi > 0 else SETTIMANE_PIANIFICATE
+        time_efficiency = cum_ore_prev / cum_ore_eff if cum_ore_eff > 0 else 1.0
 
         data_points.append({
-            's': f"Sprint {i}", 
+            'Sprint': f"Sprint {i}", 
             'PV': cum_pv, 
             'AC': cum_ac, 
             'EV': cum_ev,
+            'OrePrev': cum_ore_prev,
+            'OreEff': cum_ore_eff,
             'SPI': round(spi, 3),
             'CPI': round(cpi, 3),
+            'EAC': round(eac, 2),
             'ETC': round(max(0, etc), 2),
-            'EAC': round(eac, 2)
+            'TCPI': round(tcpi, 3),
+            'TimeEAC': round(time_eac, 2),
+            'TimeEfficiency': round(time_efficiency, 3)
         })
 
-    # 4. Scrittura CSV (Inclusi SPI e CPI)
-    csv_configs = [
+    # 4. Esportazione CSV per ogni metrica
+    csv_map = [
         ('01-planned_value.csv', 'PV'), 
         ('02-earned_value.csv', 'EV'),
         ('03-actual_cost.csv', 'AC'),
         ('04-schedule_performance_index.csv', 'SPI'),
         ('05-cost_performance_index.csv', 'CPI'),
         ('06-estimate_at_completion.csv', 'EAC'),
-        ('08-estimate_to_complete.csv', 'ETC')
+        ('07-to_complete_performance_index.csv', 'TCPI'),
+        ('08-estimate_to_complete.csv', 'ETC'),
+        ('15-process_lead_time.csv', 'TimeEAC'),
+        ('16-task_completion_on_time.csv', 'TimeEfficiency')
     ]
 
-    for name, key in csv_configs:
-        path = os.path.join(OUTPUT_DIR, name)
-        with open(path, 'w', newline='', encoding='utf-8') as f:
+    for filename, key in csv_map:
+        with open(os.path.join(OUTPUT_DIR, filename), 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(['Sprint', key])
             for d in data_points:
-                writer.writerow([d['s'], d[key]])
-        print(f"💾 Aggiornato: {name}")
-    
-    # Riassunto finale a terminale
-    ultimo = data_points[-1]
-    print(f"\n📊 Situazione all'ultimo Sprint:")
-    print(f"   CPI: {ultimo['CPI']} | SPI: {ultimo['SPI']}")
-    print(f"   EAC previsto: {ultimo['EAC']}€ (Sforamento: {round(ultimo['EAC'] - BAC_FISSO, 2)}€)")
+                writer.writerow([d['Sprint'], d[key]])
+        print(f"💾 Aggiornato: {filename}")
 
 if __name__ == "__main__":
     update_metrics()

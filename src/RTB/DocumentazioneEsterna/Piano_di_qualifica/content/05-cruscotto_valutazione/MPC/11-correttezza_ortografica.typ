@@ -1,0 +1,1 @@
+Percentuale di errori ortografici presenti nei documenti. Serve a garantire la qualità formale della documentazione. Ottimale: 0 errori.
