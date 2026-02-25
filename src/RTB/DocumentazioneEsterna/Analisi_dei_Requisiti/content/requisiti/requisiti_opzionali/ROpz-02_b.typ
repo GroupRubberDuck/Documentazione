@@ -1,9 +1,12 @@
 #import "config/deps.typ" as deps
 #let data =(
-  codice:deps.get-req-code(nome-etichetta: "B"),
+  codice:[
+    #deps.get-req-code(nome-etichetta: "B")
+    #label(deps.slugify("B"))
+    ],
 
   descrizione:[
-    
+
   ],
   fonti:[
     

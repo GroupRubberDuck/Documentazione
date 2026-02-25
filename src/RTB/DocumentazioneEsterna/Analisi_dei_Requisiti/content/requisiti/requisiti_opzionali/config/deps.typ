@@ -55,7 +55,7 @@
 }
 
 #let get-req-label(nome-etichetta)={
-  ref(label(slugify(nome-etichetta)),supplement: get-req-code(nome-etichetta:nome-etichetta)+" ,§")
+  link(label(slugify(nome-etichetta)), get-req-code(nome-etichetta:nome-etichetta))
 }
 
 #let header-color = rgb("#008080b0")

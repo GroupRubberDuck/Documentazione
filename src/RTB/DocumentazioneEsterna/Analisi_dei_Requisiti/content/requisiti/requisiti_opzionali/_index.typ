@@ -69,3 +69,9 @@
 
 
 // --- Fine del file generato ---
+
+
+
+#deps.get-req-label("requisitoa")
+#deps.get-req-label("b")
+#deps.get-req-label("t")
