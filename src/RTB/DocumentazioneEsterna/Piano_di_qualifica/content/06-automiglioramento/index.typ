@@ -3,7 +3,8 @@
 
 == Automiglioramento sull'organizzazione
 
-typst#utilityTable(
+#utilityTable(
+  caption: [Automiglioramento: Organizzazione],
   header: ([*Problema Riscontrato*], [*Soluzione Adottata*]),
   columns: (1fr, 1fr),
   (
@@ -44,16 +45,13 @@ typst#utilityTable(
 
 == Automiglioramento sulla gestione dei Ruoli
 #utilityTable(
+  caption: [Automiglioramento: Ruoli],
   header: ([*Problema Riscontrato*], [*Soluzione Adottata*]),
   columns: (1fr, 1fr),
   (
     (
       [Assegnare un unico ruolo fisso per l'intera durata dello sprint risulta poco flessibile e può lasciare alcuni membri, in particolare i verificatori, senza attività produttive da svolgere],
       [Ogni membro può svolgere task appartenenti a un secondo ruolo oltre al proprio, purché dichiarato esplicitamente e documentato nel Piano di Progetto, permettendo di sfruttare al meglio le ore produttive e concentrarsi sulle attività più rilevanti],
-    ),
-    (
-      [La sovrapposizione tra il ruolo di verificatore e quello di redattore del verbale può compromettere l'obiettività della verifica],
-      [Viene mantenuta la regola per cui il verificatore non può coincidere con lo scriba, garantendo una separazione netta tra chi produce e chi controlla],
     ),
     (
       [La gestione informale delle modifiche a documentazione e versionamento può introdurre inconsistenze e abbassare la qualità complessiva del progetto],
@@ -65,6 +63,7 @@ typst#utilityTable(
 == Automiglioramento sulla gestione degli strumenti 
 
 #utilityTable(
+  caption: [Automiglioramento: Strumenti],
   header: ([*Problema Riscontrato*], [*Soluzione Adottata*]),
   columns: (1fr, 1fr),
   (

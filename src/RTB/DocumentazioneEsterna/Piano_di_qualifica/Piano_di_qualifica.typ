@@ -153,6 +153,11 @@
   #include "content/05-cruscotto_valutazione/index.typ"
 
 ]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
+  = Cruscotto di valutazione
+  #include "content/06-automiglioramento/index.typ"
+
+]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
   #he(body: "Appendice")
