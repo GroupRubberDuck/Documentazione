@@ -1,0 +1,80 @@
+Sprint 2 
+Totale errori: 67
+
+
+
+Sprint 3 
+AdR -> 8 errori/anomalie  (02/16/2026)
+1- "sisema", perché manca la lettera "t".
+2- "rrileva", perché c'è una "r" di troppo.
+3- "autenticator", perché manca la "h" del termine inglese corretto.
+4- Nota a piè di pagina 2, perché manca il punto fermo alla fine della frase.
+5-  "use cases", perché le parole straniere inserite in testi italiani dovrebbero rimanere invariate al plurale.
+6-  Frase "Da chiedere all’azienda..." (Sezione 4.5), perché è un appunto interno (To-Do) dimenticato nella stesura finale.
+7- "1. UC: Visualizzazione errore..." (Sezione 3.3.23 / UC23), perché è stato omesso il numero identificativo del caso d'uso.
+8-  "3.3.26.1 UC27", perché c'è un'incoerenza gerarchica: essendo un sottoparagrafo di UC26, dovrebbe chiamarsi UC26.1 e non UC27.
+
+PdP -> 7 errori rilevati/anomalie (02/16/2026)
+1- "aggiunto per completezza alcuni punti", perché c'è un errore grammaticale di concordanza (dovrebbe essere "aggiunti"). 
+2- Spazio anomalo prima dei due punti (es. "Identificazione dei rischi :" o "Rischi di progetto :"), perché la punteggiatura italiana non prevede lo spazio prima dei due punti.
+3- "si potrebbe ricorre", perché c'è un errore di battitura nel verbo all'infinito (dovrebbe essere "ricorrere"). 
+4- "di di" (ripetuto tre volte nella Tabella 4), perché è una ripetizione accidentale della preposizione.
+5- "Compleato" (nella Tabella 4), perché manca la lettera "t" (dovrebbe essere "Completato").
+6- Paragrafo "5.1.3.1 Attività da svolgere" vuoto, perché il titolo del paragrafo è privo di contenuto. 
+7- Frase "renderne verificabile l’utilizzo" (nella Sezione 5.1.3.6), perché manca il punto fermo alla fine del capoverso
+
+PdQ -> 8 errori rilevati/anomalie (02/16/2026)
+1- "automatizazione" (Tabella versioni, v 0.4.0), perché c'è un errore ortografico in quanto manca una "z" (dovrebbe essere "automatizzazione").
+ 2- "accettabili,di" (Tabella versioni, v 0.2.0), perché manca lo spazio dopo la virgola. 
+ 3- "5.1 Planned Value (PL)", perché c'è un errore nell'acronimo del titolo (dovrebbe essere PV, non PL). 
+ 4- "5.2 Actual Cost (AV)", perché c'è un errore nell'acronimo del titolo (dovrebbe essere AC, non AV). 
+ 5- "TODO" lasciati nella Tabella 8 (MPD-08), perché sono campi vuoti o appunti temporanei dimenticati nella versione finale. 
+ 6- "il CPI misura..." (Sezione 5.3), perché la frase inizia con la lettera minuscola al posto della maiuscola. 
+ 7- Paragrafi da 5.10 a 5.28 completamente vuoti, perché sono presenti i titoli ma è stato omesso tutto il testo descrittivo.
+8- Titolo della Sezione 6 "Cruscotto di valutazione", perché è un copia-incolla errato del titolo della Sezione 5, mentre il contenuto del capitolo 6 riguarda in realtà l'"Automiglioramento".
+
+NdP ->  10 errori rilevati/anomalie (02/16/2026)
+
+1- "Rivisto processi" (nella Tabella delle versioni, v 0.10.0), perché c'è un errore di concordanza grammaticale al plurale (dovrebbe essere "Rivisti processi").
+2- "Aggiunto scrittura" (nella Tabella delle versioni, v 0.7.0), perché c'è un errore di concordanza grammaticale al femminile (dovrebbe essere "Aggiunta scrittura"). 
+3- Spazio anomalo prima dei due punti (es. "Whatsapp :" o "Ordine del giorno :"), perché la punteggiatura italiana non prevede lo spazio prima dei due punti. 
+4- "standard Standard" (nella Sezione 2.3.1), perché c'è una ripetizione accidentale della stessa parola. 
+5- "TurboScribe AI:Per" (nella Sezione 3.2.7), perché manca lo spazio obbligatorio dopo i due punti. 
+6- "L’’uso della retrospettiva" (nella Sezione 4.2.4.4), perché è stato digitato un doppio apostrofo consecutivo per errore. 
+7- Parentesi vuote "()" (nella Sezione 4.4.3.1), perché compaiono parentesi prive di contenuto alla fine di diverse voci dell'elenco, indicando riferimenti omessi o non compilati. 
+8- Spazio anomalo prima del punto (nella frase "dividere il task tra i membri7 ."), perché il punto fermo deve essere attaccato alla parola o al numero precedente. 
+9- Punti elenco che terminano in ")," (nella Sezione 5.1), perché la parentesi chiusa seguita da virgola non ha senso sintattico senza una parentesi aperta precedente nel testo.
+10- Campi "TODO" non compilati (nella Tabella 9 e nel paragrafo della metrica MPD-08), perché sono stati dimenticati degli appunti provvisori nella versione finale del documento
+
+Glossario -> 7 errori rilevati/anomalie (02/16/2026)
+1- "Dash-board,CSV" (nella Tabella versioni, v 0.3), perché manca lo spazio obbligatorio dopo la virgola.
+2- "RED (2014/53/UE),Automated" e "report,applicazione" (nella Tabella versioni, v 0.2), perché mancano gli spazi obbligatori dopo le virgole. 
+3- "un’interfaccia macchina.." (nella definizione 5.6 Communication Mechanism), perché c'è un errore di punteggiatura con la digitazione di un doppio punto fermo consecutivo. 
+4- "aggregata e visuale.." (nella definizione 6.2 Dashboard), perché c'è un errore di punteggiatura con la digitazione di un doppio punto fermo consecutivo. 
+5- "nterfaccia esterna" (nella definizione 11.4 Interfaccia Macchina), perché manca la lettera iniziale maiuscola "I" (c'è un refuso, dovrebbe essere "Interfaccia"). 
+6- "obiettivi di qualità" (nella definizione 16.1 Piano di qualifica), perché manca il punto fermo alla fine del periodo. 
+7- "per rispondere a un’aspettativa," (nella definizione 17.1 Requisito), perché la frase termina con una virgola sospesa al posto del punto fermo conclusivo.
+
+Verbali interni -> 9 errori rilevati/anomalie (02/16/2026)
+1- "Metriche di controllo della, inizio del piano di qualifica;" (Verbale 2025-12-09, Ordine del giorno), perché la frase è troncata o presenta una virgola anomala, mancando chiaramente una parola dopo "della". 
+2- "materiale complessivo, pari a circa 27 pagine complessive" (Verbale 2025-12-09, Sezione 3.1), perché c'è un errore stilistico di ripetizione ridondante dello stesso aggettivo. 
+3- "V.I.9.3" e "V.I.9.5" (Verbale 2025-12-09, Tabella TODO), perché c'è un errore di battitura nella sigla identificativa della decisione (la sintassi corretta usata nel resto del documento è "VI." e non "V.I."). 
+4- "Stabilite misure per gestire gli impegni personali" (Verbale 2025-12-15, Tabella Decisioni), perché manca il punto fermo conclusivo, a differenza di tutte le altre descrizioni della stessa tabella. 
+5- Data "2026-12-24" (Verbale 2025-12-23, Tabella delle versioni), perché c'è un errore evidente nell'anno (essendo la riunione di fine 2025, la data di approvazione corretta è 2025-12-24). 
+6- Paragrafo "5.4) Difficoltà nella stima dei preventivi" (Verbale 2025-12-23), perché è un errore strutturale di copia-incolla, essendo il testo un duplicato esatto e ridondante del paragrafo "5.2) Difficoltà nei preventivi". 
+7- "Pylant" (Verbale 2026-01-05, Sezione 3.5), perché è un refuso ortografico (il nome corretto dello strumento citato insieme a FastAPI è "Pylint"). 
+8- Data "2026-01-05" (Verbale 2026-01-13, Titolo e Informazioni generali), perché è un errore di dimenticanza/copia-incolla dal verbale precedente (il documento si riferisce alla riunione del 13 gennaio). 
+9- Campo "Verificatori" vuoto (Verbale 2026-02-24, Intestazione e Tabella versioni), perché è stato dimenticato l'inserimento del nome di chi ha eseguito la verifica del documento.
+
+Verbali Esterni -> 6 errori rilevati/anomalie (02/16/2026)
+1- "forniti? per capire" (Verbale 2025-11-18, Sezione 2.1), perché la parola successiva al punto interrogativo inizia erroneamente con la lettera minuscola. 
+2- "la redazione di un documento [...] sarà svolto" (Verbale 2025-11-18, Sezione 5), perché c'è un errore di concordanza di genere (il participio dovrebbe essere "svolta" al femminile).
+3- Spazio anomalo prima dei due punti (es. "L’azienda chiarisce che :" o "BlueWind conferma che :", Verbale 2025-12-02), perché la punteggiatura italiana non prevede lo spazio vuoto prima dei due punti. 
+4- "La riorganizzazione [...] e il miglioramento [...] non è stato classificato" (Verbale 2025-12-02, Sezione 5), perché avendo un soggetto multiplo, la forma verbale dovrebbe essere concordata al plurale ("non sono stati classificati"). 
+5- Mancata chiusura della parentesi tonda (nella frase "(completezza funzionale e sufficienza funzionale,...", Verbale 2025-12-16, Sezione 3), perché la parentesi aperta non viene mai chiusa nel prosieguo del periodo. 
+6- Campo "Assegnatari" compilato con "-" (Verbale 2026-01-13, Tabella TODO, task TD.16.1), perché l'attività da svolgere è stata inserita senza che le sia stato assegnato alcun responsabile.
+
+✅ Totale: 55 errori
+
+
+

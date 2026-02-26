@@ -33,3 +33,4 @@
 )
 
 Confronto tra quanto già speso (AC) e quanto si stima di spendere per completare il progetto (ETC). Serve a valutare se le risorse rimanenti sono sufficienti o se si sta andando fuori budget. Ottimale: ETC decrescente nel tempo, AC ≤ budget pianificato.
+cviaone 
