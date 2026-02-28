@@ -62,13 +62,13 @@ echo "Scaricamento completato: $NUM_ISSUE issue totali elaborate."
 # Standardizzazione nomi utente
 python3 "$SCRIPT_DIR/normalizza_nomi.py" "$TEMP_ALL"
 
-# Filtraggio per date sprint
-awk -F'|' -v OFS='|' -v start="$DATA_INIZIO" -v end="$DATA_FINE" '{
+# Filtraggio per date sprint e Ordinamento per numero Issue
+awk -F'|' -v start="$DATA_INIZIO" -v end="$DATA_FINE" '{
     if ($5 <= end && ($6 == "-" || $6 >= start)) {
-        print $0
+        n=split($2, arr, "/");
+        print arr[n] "|" $0
     }
-}' "$TEMP_ALL" > "$TEMP_FILTERED"
-
+}' "$TEMP_ALL" | sort -t'|' -k1,1n | cut -d'|' -f2- > "$TEMP_FILTERED"
 
 NUM_FILTRATE=$(wc -l < "$TEMP_FILTERED")
 echo "Di queste, $NUM_FILTRATE risultano attive nello $NOME_SPRINT."
