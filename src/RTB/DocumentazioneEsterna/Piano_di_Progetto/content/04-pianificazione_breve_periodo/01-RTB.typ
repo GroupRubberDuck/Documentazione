@@ -65,11 +65,11 @@
 
 
 #let oreProduttive = (
-  (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 3, oreEffettive: 4),
+  (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
   (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
-  (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
-  (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
-  (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
+  (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
+  (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
+  (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 4),
   (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
 )
 
@@ -174,12 +174,12 @@
 
   ]
   oreProduttive = (
-    (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 4),
-    (persona: persone.ALDO, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.ANA, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.ALDO, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.ANA, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 8, oreEffettive: 8),
+    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 7),
+    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
   )
 
   retrospettiva = [
@@ -262,12 +262,12 @@
   ]
 
   oreProduttive = (
-    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 4),
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 3, oreEffettive: 3),
+    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 7),
+    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 6, oreEffettive: 6),
   )
 
   retrospettiva = [
@@ -365,8 +365,8 @@
     (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 1, oreEffettive: 4),
     (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 1, oreEffettive: 1),
-    (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 1, oreEffettive: 1),
-    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 1, oreEffettive: 1),
+    (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 6, oreEffettive: 6),
   )
 
   retrospettiva = [
