@@ -361,12 +361,12 @@
       - *Azione*: si è deciso di procedere per gradi creando prima un "esempio giocattolo" per validare le scelte tecniche senza bloccare l'intero sviluppo
   ]
   oreProduttive = (
-    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 1, oreEffettive: 4),
-    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 1, oreEffettive: 1),
+    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 3, oreEffettive: 3),
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
   )
 
   retrospettiva = [
@@ -397,24 +397,50 @@
 )
 
 
+//
+// Sprint 5
+// 
+#{
+  date = (
+    inizio: datetime(year: 2026, month: 02, day: 05),
+    finePrevista: datetime(year: 2026, month: 02, day: 18),
+    fineEffettiva: datetime(year: 2026, month: 02, day: 18),
+  )
 
 
+  TODO = [
+
+  ]
+  rischiAttesi = [
+
+  ]
+  rischiEffettivi = [
+  ]
+
+  retrospettiva = [
+
+  ]
+}
+#sprint(
+  numeroSprint: "5",
+  timeline: date,
+  TODO: TODO,
+  rischiAttesi: rischiAttesi,
+  rischiEffettivi: rischiEffettivi,
+  oreProduttive: oreProduttive,
+  retrospettiva: retrospettiva,
+  usaMatrice: true,
+)
 
 
+#let sprintResiduo = aggiornaResiduo(
+  old: sprintResiduo.new,
+  oreProduttive: oreProduttive,
+)
+#displayResiduo(
+  residuo: sprintResiduo.new,
+  oreConsumate: sprintResiduo.oreConsumate,
+  numeroSprint: "5",
+)
 
 
-
-/*
-Perplessità:
-- giorni di ritardo tolto?
-- riscrittura di rischi attesi e rischi veri
-- tracciamento dei rischi ROAM-> Resolved, Owned, Accepted, Mitigated
-
-
-Miglioramenti:
-- identificazione soluzioni a problemi-> specificarle
-- individuazione aree di miglioramento -> dove porre l'attenzione
-- action items -> definizione contromisure concrete per sprint successivo
-
-
-*/
