@@ -24,6 +24,8 @@ Per generare il csv con le informazioni di *issue dello sprint*, far andare lo s
 
 E ripetere l'operazione di importazione sul foglio, selezionando la cella H10.
 
+Risulta necessario aggiungere la colonna Tipo nella colonna O inserendo P per un'attività produttiva e NP per un'attività di palestra non produttiva.
+
 IMPORTANTE
 Va verificata la consistenza dei dati in modo attento, verificando soprattutto nelle issue riga per riga che gli autori delle attività e la loro size corrisponda con la realtà.
 
