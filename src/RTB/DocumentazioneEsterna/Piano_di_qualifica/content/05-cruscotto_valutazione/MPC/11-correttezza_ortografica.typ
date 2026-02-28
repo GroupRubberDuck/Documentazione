@@ -27,7 +27,15 @@
   "Andamento Correttezza ortografica",
   y-label: "Errori",
   x-label: "Sprint",
+  y-min: 0,
+  y-max: calc.max(..values-co),
 )
 
-
-Percentuale di errori ortografici presenti nei documenti. Serve a garantire la qualità formale della documentazione. Ottimale: 0 errori.
+Il team ha introdotto il monitoraggio della correttezza ortografica a partire dallo
+Sprint 3, in risposta a una criticità emersa nelle revisioni della documentazione:
+la verifica grammaticale era stata identificata come area di miglioramento. \ 
+Il grafico mostra un trend positivo: gli errori scendono da 64 nello Sprint 3 a 55
+nello Sprint 4, evidenziando un miglioramento concreto grazie all'adozione di processi
+di verifica più sistematici. \
+Il dato è parziale (solo due sprint) poiché la metrica
+è stata introdotta in corso d'opera; il monitoraggio continuerà nelle fasi successive.

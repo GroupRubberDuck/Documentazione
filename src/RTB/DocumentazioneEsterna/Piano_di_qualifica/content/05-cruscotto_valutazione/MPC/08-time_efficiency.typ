@@ -22,7 +22,15 @@
   "Efficienza Temporale",
   y-label: "Indice",
   x-label: "Sprint",
+  y-min: 0,
+  y-max: 1,
 )
 
-
-Rapporto tra il tempo stimato e il tempo effettivamente impiegato per completare le attività. Serve a valutare la precisione della pianificazione e la produttività del team. Ottimale: ≥ 1 (si impiega meno o uguale al previsto).
+Il team ha mantenuto una Time Efficiency costantemente vicina a 1 per tutti gli sprint,
+con valori compresi tra 0.90 e 0.95. Questo indica che le ore effettivamente impiegate
+sono state leggermente superiori a quelle stimate.
+Il calo nello Sprint 4 è coerente con la riduzione di produttività dovuta alla sessione
+esami. 
+\ Complessivamente il team ha dimostrato una buona capacità di rispettare le
+stime temporali, con margini di miglioramento nella precisione della pianificazione
+delle ore per attività.

@@ -27,7 +27,11 @@
   "Andamento To Complete Performance Index (TCPI)",
   y-label: "Indice",
   x-label: "Sprint",
+  y-min: 1,
+  y-max: 1.2,
 )
 
-Misura l'efficienza che bisogna mantenere da ora in poi per completare il progetto entro il budget originale (BAC). Confronta il lavoro rimanente da fare con le risorse rimanenti disponibili. Serve a capire se l'obiettivo di budget è ancora realisticamente raggiungibile.
-Ottimale: ≤ 1 (più è vicino a 1, più l'obiettivo è sostenibile).
+Il TCPI parte da 1.0 nello Sprint 1 e cresce gradualmente fino a 1.02 nello Sprint 4,
+mantenendosi sempre molto vicino alla soglia ottimale. Questo indica che per completare
+il progetto entro il BAC il team dovrà essere leggermente più efficiente di quanto
+fatto finora, ma lo sforzo richiesto è contenuto e realisticamente raggiungibile.

@@ -73,7 +73,7 @@
       [2026-02-06],
       [Davide Lorenzon],
       [Ana Maria Draghici],
-      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index],
+      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
       [0.3.0],

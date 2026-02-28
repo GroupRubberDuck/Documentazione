@@ -1,6 +1,8 @@
 #import "/src/config.typ": template_dir, inserisciLink
 #import "../../../../../TypstTemplate/utilityTable.typ": utilityTable
 
+
+
 == Automiglioramento sull'organizzazione
 
 #utilityTable(
@@ -12,10 +14,6 @@
       [L'assenza di un sistema strutturato per il monitoraggio delle attività ostacola la produttività e rende difficoltosa la pianificazione],
       [Adozione di un sistema di issue tracking su GitHub per centralizzare la gestione e il controllo dello stato di avanzamento del lavoro],
     ),
-   (
-  [La possibilità di modificare direttamente il branch principale espone il progetto a rischi di regressione e degrado della qualità del codice],
-  [Configurazione di GitHub Actions per eseguire controlli automatici su ogni pull request, garantendo che solo codice verificato e approvato venga integrato nel branch principale],
-),
     (
       [La lentezza nell'integrazione del lavoro sul branch principale compromette la disponibilità di dati aggiornati per monitorare l'avanzamento],
       [Adozione di branch feature dedicati che vengono integrati sul main solo dopo approvazione, riducendo i conflitti e mantenendo la base di codice stabile],
@@ -37,8 +35,8 @@
       [Sviluppo di script di automazione che rielaborano i dati e aggiornano tutte le metriche e i relativi grafici in modo automatico a ogni esecuzione],
     ),
     (
-      [L'inserimento di nuovi casi d'uso o requisiti nell'analisi dei requisiti sfaldava la numerazione dei codici esistenti; inoltre la gestione delle immagini, dei casi alternativi e delle inclusioni poteva generare errori di compilazione e riferimenti errati tra casi d'uso e requisiti],
-      [Sviluppo di uno script che mappa automaticamente i codici e suddivide i casi d'uso in file separati, ciascuno autonomo, che vengono poi uniti in un unico file finale, semplificando la gestione dei collegamenti e riducendo il rischio di errori],
+      [L'inserimento di nuovi casi d'uso o requisiti nell'analisi dei requisiti sfaldava la numerazione dei codici esistenti; ],
+      [Sviluppo di uno script che mappa automaticamente i codici e suddivide i casi d'uso in file separati, semplificando la gestione dei collegamenti e riducendo il rischio di errori],
     ),
   )
 )

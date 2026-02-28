@@ -7,7 +7,6 @@
 "Norme di progetto":"/src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ",
 "Piano di progetto":"/src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ",
 "Piano di qualifica":"/src/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ",
-"Analisi dei requisiti":"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ",
 )
 #let risultati=()
 
@@ -20,8 +19,8 @@
 
 
 #metadata(risultati)<risultati>
-// #let prova=include template_dir+"/indiceGulpease/Gulpease_info.typ"
+ #let prova=include template_dir+"/indiceGulpease/Gulpease_info.typ"
 
-// #display_gulpease(compute_gulpease(prova))
+ #display_gulpease(compute_gulpease(prova))
 
-// #show_smart_text(prova)
+ #show_smart_text(prova)
