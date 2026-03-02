@@ -9,7 +9,6 @@
   FILIPPO:"Filippo Guerra"
 )
 
-// AGGIUNTA DEL CAMPO "sigla" AI RUOLI
 #let ruoli=(
   Responsabile:(costo:30,oreTotali:66,nome:"Responsabile", sigla:"Re"),
   Amministratore:(costo:20,oreTotali:54,nome:"Amministratore", sigla:"Am"),
@@ -27,11 +26,9 @@
     align: (x, y) => if y == 0 { center+horizon } else if x > 0 { center } else { left },
     fill: (x,y) => if calc.odd(y) { luma(90%) }
   )
-  let membri = ()
-  for item in oreProduttive { if item.persona not in membri { membri.push(item.persona) } }
+  let membri = persone.values()
   let cols = (auto, ..ruoli.keys().map(x => 1fr), auto)
   
-  // ORA USA LA SIGLA INVECE DEL NOME COMPLETO
   let header = ([Persona], ..ruoli.values().map(r => r.sigla), [Totale])
   
   let righe = ()
@@ -49,12 +46,12 @@
         totale_persona += sum_prev
         totali_ruolo.at(i) += sum_prev
         totale_generale += sum_prev
-      } else { righe.push("-") }
+      } else { righe.push("0") }
     }
     righe.push([*#totale_persona*])
   }
   righe.push([*Totale*])
-  for sum_ruolo in totali_ruolo { if sum_ruolo > 0 { righe.push([*#sum_ruolo*]) } else { righe.push("-") } }
+  for sum_ruolo in totali_ruolo { if sum_ruolo > 0 { righe.push([*#sum_ruolo*]) } else { righe.push("0") } }
   righe.push([*#totale_generale*])
 
   show table.cell.where(y:0): strong
@@ -67,11 +64,9 @@
     align: (x, y) => if y == 0 { center+horizon } else if x > 0 { center } else { left },
     fill: (x,y) => if calc.odd(y) { luma(90%) }
   )
-  let membri = ()
-  for item in oreProduttive { if item.persona not in membri { membri.push(item.persona) } }
+  let membri = persone.values()
   let cols = (auto, ..ruoli.keys().map(x => 1fr), auto)
   
-  // ORA USA LA SIGLA INVECE DEL NOME COMPLETO
   let header = ([Persona], ..ruoli.values().map(r => r.sigla), [Totale])
   
   let righe = ()
@@ -99,7 +94,7 @@
         totali_ruolo_prev.at(i) += sum_prev
         totale_generale_eff += sum_eff
         totale_generale_prev += sum_prev
-      } else { righe.push("-") }
+      } else { righe.push("0") }
     }
     let diff_tot = totale_persona_eff - totale_persona_prev
     let diff_tot_text = if diff_tot > 0 { text(fill:red)[ (+#diff_tot)] } else if diff_tot < 0 { text(fill:blue)[ (#diff_tot)] } else { "" }
@@ -112,7 +107,7 @@
       let diff = sum_ruolo_eff - sum_ruolo_prev
       let diff_text = if diff > 0 { text(fill:red)[ (+#diff)] } else if diff < 0 { text(fill:blue)[ (#diff)] } else { "" }
       righe.push([*#sum_ruolo_eff#diff_text*])
-    } else { righe.push("-") }
+    } else { righe.push("0") }
   }
   let diff_gen = totale_generale_eff - totale_generale_prev
   let diff_gen_text = if diff_gen > 0 { text(fill:red)[ (+#diff_gen)] } else if diff_gen < 0 { text(fill:blue)[ (#diff_gen)] } else { "" }
