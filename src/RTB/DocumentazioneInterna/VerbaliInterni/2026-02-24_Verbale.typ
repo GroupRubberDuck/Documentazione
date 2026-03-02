@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ANA,),
     verificatori: (persone.ALDO,),
@@ -51,7 +51,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-02-24], persone.ANA, persone.ALDO,[Stesura del verbale]),
-    //([1.0.0], [2026-02-00], persone.DL, persone.DL,[Approvazione]),
+    ([1.0.0], [2026-03-02], persone.ANA, persone.ANA,[Approvazione]),
   )
 
   #registroModifiche(modifiche)
@@ -189,14 +189,14 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Amministratori],
+      [#persone.ANA],
       [Aggiungere i grafici delle metriche nel PdQ],
       [VI.15.5],
     ),
      
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Amministratori],
+      [#persone.ALDO],
       [Aggiornare il PdP],
       [VI.15.4],
     ),
