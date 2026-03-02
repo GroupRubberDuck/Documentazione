@@ -38,7 +38,8 @@
   shape: shapes.ellipse,
   fill: blue.lighten(85%),
   stroke: 1.5pt + blue.darken(30%),
-  inset: 1.8em
+  inset: 1.8em,
+  width:15em
 )
 
 #let style-actor = (
@@ -125,7 +126,9 @@
   shape: shape-uml-note, 
   fill: white,
   stroke: 1pt + gray.darken(30%),
-  inset: 1em // <-- IL FIX È QUI: Solo valori singoli, niente dizionari!
+  inset: 1em ,// <-- IL FIX È QUI: Solo valori singoli, niente dizionari!
+    width:15em
+
 )
 
 // ==========================================
@@ -182,8 +185,8 @@
 // 
 // Ora questa funzione gestisce sia il recinto che la linguetta in modo solidale
 #let style-box-expansion = (
-  fill: blue.lighten(95%),
-  stroke: (paint: blue.darken(30%), thickness: 1.5pt, dash: "dashed"),
+  fill: luma(95%),
+  stroke: (paint: black, thickness: 1.5pt),
   corner-radius: 10pt,
   inset: 25pt
 )

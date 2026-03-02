@@ -54,12 +54,13 @@
   let target-lbl = label("uc-" + slugify(target-uc))
   enclosed-labels.push(target-lbl)
 
-
-  elements.push(builder.build-use-case(uc-name: target-uc, uc-position: (2, 1)))
+  // FIX: Torniamo a usare target-x e target-y altrimenti il ventaglio non sa dov'è il centro!
+  elements.push(builder.build-use-case(uc-name: target-uc, uc-position: (target-x, target-y)))
 
   // -- Attori (Sinistra) --
   for (i, actor) in actors.enumerate() {
     let actor-lbl = label("actor-" + slugify(actor))
+    // Mantenuto il tuo offset di -6 per allontanare l'attore
     elements.push(builder.build-actor(actor-name: actor, actor-position: (x-act - 6, start-y-act + i)))
     elements.push(builder.build-assoc-arrow(actor-lbl, target-lbl))
   }
@@ -80,7 +81,7 @@
     enclosed-labels.push(inc-lbl)
   }
 
-  // // -- Extends (Basso) --
+  // -- Extends (Basso) --
   for (i, (ext-name, ext-cond)) in ext-list.enumerate() {
     let ext-lbl = label("uc-" + slugify(ext-name))
     let x-pos = start-x-ext + i
@@ -89,11 +90,17 @@
     elements.push(builder.build-extend-arrow(ext-lbl, target-lbl))
     enclosed-labels.push(ext-lbl)
 
-    // Note condizione
+    // Note condizione con logica a Ventaglio
     if ext-cond != none and ext-cond != "" {
       let note-lbl = label("note-ext-" + str(i)) 
       enclosed-labels.push(note-lbl) // <-- Inclusa nella scatola!
-      elements.push(builder.build-note(description: ext-cond, note-position: (x-pos + 0.6, y-ext + 0.5), note-lbl: note-lbl))
+      
+      // LOGICA A VENTAGLIO
+      let is-left = x-pos < target-x
+      let note-x = x-pos + if is-left { -0.8 } else { 0.8 }
+      let note-y = y-ext + 0.5 
+      
+      elements.push(builder.build-note(description: ext-cond, note-position: (note-x, note-y), note-lbl: note-lbl))
       elements.push(builder.build-note-arrow(note-lbl, ext-lbl, target-lbl))
     }
   }
