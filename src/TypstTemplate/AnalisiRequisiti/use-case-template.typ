@@ -91,6 +91,19 @@ let elementi-lista-opzionali=(
   ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" ,§")
 }
 
+#let use-case-link-label(codice:"", nome-etichetta:str)={
+  link(label(slugify(nome-etichetta)),get-use-case-code(nome-etichetta:nome-etichetta))
+}
+
+#let use-case-link-extended-label(codice:"", nome-etichetta:str)={
+  link(label(slugify(nome-etichetta)))[
+    *
+    #get-use-case-code(nome-etichetta:nome-etichetta) \
+    #nome-etichetta
+    *
+  ]
+}
+
 // #use-case-template(
 //   codice: "UC31",
 //   nome:"Visualizzazione errore nel caricamento del test",

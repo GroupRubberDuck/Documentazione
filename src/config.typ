@@ -43,7 +43,7 @@
 
 
 #let slugify(text) = {
-  lower(text).replace(" ", "-")
+  lower(text.trim()).replace(" ", "-")
 }
 
 // Funzione wrapper per creare header con label automatica
