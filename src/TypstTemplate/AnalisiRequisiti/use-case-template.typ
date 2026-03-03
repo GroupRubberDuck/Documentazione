@@ -28,7 +28,13 @@
   if path-immagine-diagramma != none {
 
     figure(caption:figure-caption)[
-      #image(path-immagine-diagramma)
+    #if type(path-immagine-diagramma) == type(""){
+      image(path-immagine-diagramma)
+    }
+    #if type(path-immagine-diagramma) == type([]){
+      path-immagine-diagramma
+    }
+    
     ]
   }
 

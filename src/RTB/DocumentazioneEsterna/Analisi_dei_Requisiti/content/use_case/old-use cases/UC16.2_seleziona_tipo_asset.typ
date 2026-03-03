@@ -2,25 +2,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="{{TITOLO}}"
-#let depth={{LIVELLO}}
-
-#let diagram-type=deps.draw-uc-diagram
-
-#let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
-  target-uc: "",
-  actors: ("Utente",),
-  includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
-)
-
-
-
-
+#let use-case-nome="Seleziona tipo asset"
+#let depth=2
 #use-case-template(
     
     nome: use-case-nome,

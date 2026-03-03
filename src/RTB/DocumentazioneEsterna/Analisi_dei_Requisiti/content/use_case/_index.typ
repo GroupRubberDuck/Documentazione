@@ -1,173 +1,222 @@
 // FILE GENERATO AUTOMATICAMENTE - NON MODIFICARE
-// Lista dei file inclusi in ordine
 
-#include "UC01_autenticazione.typ"
-#include "UC01.1_inserimento_username.typ"
-#include "UC01.2_inserimento_password.typ"
-#include "UC02_errore_autenticazione.typ"
-#include "UC03_registrazione.typ"
-#include "UC04_inserimento_di_un_nuovo_dispositivo.typ"
-#include "UC05_creazione_di_un_nuovo_dispositivo_per_la_valutazione.typ"
-#include "UC05.1_inserimento_dati_dispositivo.typ"
-#include "UC05.1.1_inserimento_nome_dispositivo.typ"
-#include "UC05.1.2_inserimento_sistema_operativo_dispositivo.typ"
-#include "UC05.1.3_inserimento_versione_firmware_dispositivo.typ"
-#include "UC05.1.4_inserimento_funzionalita_dispositivo.typ"
-#include "UC05.1.5_inserimento_descrizione_dispositivo.typ"
-#include "UC06_caricamento_di_un_dispositivo_per_la_valutazione.typ"
-#include "UC06.1_selezione_file_sorgente.typ"
-#include "UC06.1.1_selezione_file_json.typ"
-#include "UC06.1.2_selezione_file_xml.typ"
-#include "UC06.1.3_selezione_file_csv.typ"
-#include "UC07_errore_importazione_file.typ"
-#include "UC08_visualizza_dati_del_dispositivo.typ"
-#include "UC08.1_visualizza_nome_dispositivo.typ"
-#include "UC08.2_visualizza_sistema_operativo_dispositivo.typ"
-#include "UC08.3_visualizza_versione_firmware_dispositivo.typ"
-#include "UC08.4_visualizza_funzionalita_dispositivo.typ"
-#include "UC08.5_visualizza_descrizione_dispositivo.typ"
-#include "UC08.6_visualizza_versione_dello_standard.typ"
-#include "UC09_modifica_di_un_dispositivo.typ"
-#include "UC09.1_modifica_nome_dispositivo.typ"
-#include "UC09.2_modifica_sistema_operativo_dispositivo.typ"
-#include "UC09.3_modifica_versione_firmware_dispositivo.typ"
-#include "UC09.4_modifica_funzionalita_dispositivo.typ"
-#include "UC09.5_modifica_ambiente_operativo.typ"
-#include "UC09.6_modifica_descrizione_dispositivo.typ"
-#include "UC09.7_modifica_versione_dello_standard.typ"
-#include "UC10_elimina_dispositivo.typ"
-#include "UC11_annullamento_creazione_dispositivo.typ"
-#include "UC12_chiusura_sessione_di_valutazione_attuale.typ"
-#include "UC13_chiusura_sessione_di_verifica_attuale.typ"
-#include "UC13.1_errore_durante_il_salvataggio_automatico.typ"
-#include "UC14_importa_lista_di_file_di_asset.typ"
-#include "UC15_importa_file_asset_singolo.typ"
-#include "UC16_errore_importazione_file_asset.typ"
-#include "UC16.1_importazione_di_asset_appartenenti_a_uno_standard_diverso.typ"
-#include "UC16.2_errore_struttura_di_alcuni_asset_non_valida.typ"
-#include "UC17_visualizza_riepilogo_di_importazione.typ"
-#include "UC18_errore_conflitto_merge_asset.typ"
-#include "UC19_risoluzione_conflitto_di_merge.typ"
-#include "UC20_visualizza_lista_asset.typ"
-#include "UC20.1_visualizza_asset_singolo.typ"
-#include "UC20.2_visualizza_riepilogo_requisiti.typ"
-#include "UC20.2.1_vedi_numero_pass.typ"
-#include "UC20.2.2_vedi_numero_fail.typ"
-#include "UC20.2.3_vedi_numero_not_applicable.typ"
-#include "UC21_visualizza_riepilogo_risultati.typ"
-#include "UC21.1_vedi_numero_di_asset_in_sospeso.typ"
-#include "UC22_aggiunta_asset_tramite_interfaccia.typ"
-#include "UC23_eliminazione_di_un_asset.typ"
-#include "UC24_modifica_asset.typ"
-#include "UC25_cerca_asset.typ"
-#include "UC26_salva_modifica_asset.typ"
-#include "UC27_inserimento_dati_non_validi.typ"
-#include "UC28_esporta_lista_asset.typ"
-#include "UC28.1_esporta_lista_asset_.xml.typ"
-#include "UC28.2_esporta_lista_asset_.json.typ"
-#include "UC28.3_esporta_lista_asset_.csv.typ"
-#include "UC28.4_esporta_lista_asset_.pdf.typ"
-#include "UC29_errore_nell'esportazione.typ"
-#include "UC30_errore_nel_salvataggio_dei_dati_degli_asset.typ"
-#include "UC31_consultazione_requisito_normativo.typ"
-#include "UC31.1_visualizza_descrizione_del_requisito.typ"
-#include "UC31.2_visualizza_razionale_del_requisito.typ"
-#include "UC31.3_visualizza_guida.typ"
-#include "UC32_visualizza_requisito.typ"
-#include "UC32.1_visualizza_l'asset_di_appartenenza.typ"
-#include "UC32.2_visualizza_codice_del_requisito.typ"
-#include "UC32.3_visualizza_nome_del_requisito.typ"
-#include "UC32.4_visualizza_stato_aggregato_del_requisito.typ"
-#include "UC32.5_visualizza_lista_di_assessment_unit.typ"
-#include "UC32.5.1_visualizza_elemento_della_lista_di_assessment_unit.typ"
-#include "UC33_visualizza_assessment_unit.typ"
-#include "UC33.1_visualizza_contesto_di_una_assessment_unit.typ"
-#include "UC33.2_visualizza_codice_di_una_assessment_unit.typ"
-#include "UC33.3_visualizza_tipo_di_una_assessment_unit.typ"
-#include "UC33.4_visualizza_nome_di_una_assessment_unit.typ"
-#include "UC33.5_visualizza_stato_della_valutazione_assessment_unit.typ"
-#include "UC34_visualizza_decision_tree.typ"
-#include "UC34.1_visualizza_decision_tree_graficamente.typ"
-#include "UC34.2_visualizza_nodo_decision_tree.typ"
-#include "UC34.2.1_visualizza_codice_del_nodo.typ"
-#include "UC34.2.2_visualizza_domanda_del_nodo.typ"
-#include "UC34.2.3_visualizza_risposta_del_nodo.typ"
-#include "UC34.2.4_visualizza_evidenze_del_nodo.typ"
-#include "UC34.2.4.1_visualizza_info.typ"
-#include "UC34.2.4.2_visualizza_just.typ"
-#include "UC35_gestione_della_valutazione_del_dt.typ"
-#include "UC35.1_compilazione_nodo.typ"
-#include "UC35.1.1_aggiungi_evidenze.typ"
-#include "UC35.1.1.1_aggiungi_just.typ"
-#include "UC35.1.1.2_aggiungi_info.typ"
-#include "UC35.1.2_selezione_della_risposta_del_nodo.typ"
-#include "UC36_esegui_decision_tree.typ"
-#include "UC37_decision_tree_non_completo.typ"
-#include "UC38_navigazione_del_decision_tree.typ"
-#include "UC38.1_vai_al_nodo_precedente.typ"
-#include "UC38.1.1_nodo_root.typ"
-#include "UC38.2_vai_al_nodo_successivo.typ"
-#include "UC38.2.1_nodo_foglia.typ"
-#include "UC38.2.2_nodo_senza_risposta.typ"
-#include "UC39_salva_valutazione.typ"
-#include "UC39.1_salva_sul_file_corrente.typ"
-#include "UC39.2_salva_come_nuovo_file.typ"
-#include "UC40_valutazione_del_dispositivo.typ"
-#include "UC41_valutazione_di_un_asset.typ"
-#include "UC42_valutazione_di_un_requisito.typ"
-#include "UC43_esporta_risultato_dell'esecuzione.typ"
-#include "UC44_crea_nuovo_modello.typ"
-#include "UC45_importa_nuovo_modello.typ"
-#include "UC46_avvia_sessione_di_modifica_su_modello_esistente.typ"
-#include "UC47_salva_modifiche_sul_modello.typ"
-#include "UC48_salva_come_nuovo_modello.typ"
-#include "UC49_scarta_modifiche_sul_modello.typ"
-#include "UC50_rimuovi_modello.typ"
-#include "UC51_inserisci_nome_del_modello.typ"
-#include "UC52_visualizza_nome_del_modello.typ"
-#include "UC53_inserisci_codice_del_modello.typ"
-#include "UC54_visualizza_codice_del_modello.typ"
-#include "UC55_modifica_anagrafica_del_modello.typ"
-#include "UC56_aggiungi_classe_di_asset.typ"
-#include "UC56.1_inserisci_nome_di_una_classe_di_asset.typ"
-#include "UC56.2_inserisci_codice_di_una_classe_di_asset.typ"
-#include "UC56.3_inserisci_descrizione_di_una_classe_di_asset.typ"
-#include "UC57_rimuovi_classe_di_asset.typ"
-#include "UC58_avvia_modifica_classe_di_asset.typ"
-#include "UC58.1_modifica_anagrafica.typ"
-#include "UC58.2_definisci_attributo_della_classe.typ"
-#include "UC59_conferma_modifica_alla_classe_asset.typ"
-#include "UC60_annulla_modifica_alla_classe_asset.typ"
-#include "UC61_aggiungi_nuovo_requisito.typ"
-#include "UC61.1_inserisci_anagrafica_del_requisito.typ"
-#include "UC61.1.1_inserisci_codice.typ"
-#include "UC61.1.1.1_errore_codice_duplicato.typ"
-#include "UC61.1.2_inserisci_nome_del_requisito.typ"
-#include "UC61.1.3_inserisci_descrizione_normativa_del_requisito.typ"
-#include "UC61.1.4_inserisci_razionale_del_requisito.typ"
-#include "UC61.1.5_inserisci_linea_guida.typ"
-#include "UC61.2_inserimento_target_del_requisito.typ"
-#include "UC62_aggiungi_dipendenza.typ"
-#include "UC63_rimuovi_dipendenza.typ"
-#include "UC64_errore_dipendenza_circolare.typ"
-#include "UC65_avvia_modifica_di_un_requisito.typ"
-#include "UC66_salva_inserimenti_del_requisito.typ"
-#include "UC67_scarta_inserimenti_del_requisito.typ"
-#include "UC68_rimuovi_requisito.typ"
-#include "UC69_avvia_gestione_del_decision_tree.typ"
-#include "UC69.1_aggiungi_nodo.typ"
-#include "UC69.1.1_aggiungi_nodo_foglia.typ"
-#include "UC69.1.1.1_aggiungi_nodo_pass.typ"
-#include "UC69.1.1.2_aggiungi_nodo_fail.typ"
-#include "UC69.1.1.3_aggiungi_nodo_not_applicable.typ"
-#include "UC69.1.2_aggiungi_nodo_di_decisione.typ"
-#include "UC69.2_rimuovi_nodo.typ"
-#include "UC69.3_modifica_nodo.typ"
-#include "UC69.3.1_inserisci_testo_di_una_domanda.typ"
-#include "UC69.3.2_inserisci_descrizione_dell'evidenza_richiesta.typ"
-#include "UC70_salva_inserimenti_al_decision_tree.typ"
-#include "UC71_scarta_inserimenti_al_decision_tree.typ"
-#include "UC72_struttura_non_valida_dopo_la_modifica.typ"
-#include "UC73_salvataggio_modifiche_alla_struttura_dei_dt.typ"
-#include "UC74_errore_nel_salvataggio_della_struttura_del_decision_tree.typ"
-#include "UC75_visualizza_cronologia_dei_dispositivi_valutati.typ"
+#include "UC01_inserimento_nuovo_dispositivo.typ"
+
+#include "UC02_creazione_di_un_nuovo_dispositivo_per_la_valutazione.typ"
+
+#include "UC02.1_inserimento_nome_dispositivo.typ"
+
+#include "UC02.2_inserimento_sistema_operativo_dispositivo.typ"
+
+#include "UC02.3_inserimento_descrizione_dispositivo.typ"
+
+#include "UC03_annullamento_creazione_dispositivo.typ"
+
+#include "UC04_caricamento_dispositivo_per_la_valutazione.typ"
+
+#include "UC04.1_selezione_file_sorgente.typ"
+
+#include "UC04.1.1_selezione_file_json.typ"
+
+#include "UC04.1.2_selezione_file_xml.typ"
+
+#include "UC04.1.3_selezione_file_csv.typ"
+
+#include "UC05_errore_nella_lettura_del_file.typ"
+
+#include "UC06_errore_nella_struttura_del_file.typ"
+
+#include "UC07_visualizza_dati_dispositivo.typ"
+
+#include "UC07.1_visualizza_nome_dispositivo.typ"
+
+#include "UC07.2_visualizza_sistema_operativo_dispositivo.typ"
+
+#include "UC07.3_visualizza_descrizione_dispositivo.typ"
+
+#include "UC08_modifica_dispositivo.typ"
+
+#include "UC09_elimina_dispositivo.typ"
+
+#include "UC10_salva_valutazione.typ"
+
+#include "UC10.1_salva_in_xml.typ"
+
+#include "UC10.2_salva_in_csv.typ"
+
+#include "UC10.3_salva_in_json.typ"
+
+#include "UC11_errore_durante_il_salvataggio.typ"
+
+#include "UC12_aggiunta_asset_tramite_interfaccia.typ"
+
+#include "UC12.1_inserimento_dati_non_validi.typ"
+
+#include "UC13_annulla_aggiunta.typ"
+
+#include "UC14_visualizza_riepilogo_importazione.typ"
+
+#include "UC15_elimina_asset.typ"
+
+#include "UC16_modifica_asset.typ"
+
+#include "UC16.1_inserisci_nome_asset.typ"
+
+#include "UC16.2_seleziona_tipo_asset.typ"
+
+#include "UC16.3_inserisci_descrizione_asset.typ"
+
+#include "UC17_annulla_modifica_asset.typ"
+
+#include "UC18_cerca_asset.typ"
+
+#include "UC19_esporta_informazioni_dispositivo.typ"
+
+#include "UC19.1_esporta_in_.xml.typ"
+
+#include "UC19.2_esporta_in_.json.typ"
+
+#include "UC19.3_esporta_in_.csv.typ"
+
+#include "UC20_visualizza_dashboard_dispositivo.typ"
+
+#include "UC20.1_visualizza_stato_aggregato_dispositivo.typ"
+
+#include "UC20.2_visualizza_lista_asset.typ"
+
+#include "UC20.2.1_visualizzazione_singolo_elemento_della_lista_di_asset.typ"
+
+#include "UC20.2.1.1_visualizza_nome.typ"
+
+#include "UC20.2.1.2_visualizza_tipo.typ"
+
+#include "UC20.2.1.3_visualizza_stato_aggregato_asset.typ"
+
+#include "UC21_visualizza_dettaglio_asset.typ"
+
+#include "UC21.1_visualizza_descrizione_asset.typ"
+
+#include "UC21.2_visualizza_lista_requisiti_asset.typ"
+
+#include "UC21.2.1_visualizzazione_generale_requisito.typ"
+
+#include "UC21.2.1.1_visualizza_nome_requisito.typ"
+
+#include "UC21.2.1.2_visualizza_stato_valutazione.typ"
+
+#include "UC21.2.2_visualizzazione_in_dettaglio_requisito.typ"
+
+#include "UC21.2.2.1_visualizza_codice_requisito.typ"
+
+#include "UC21.2.2.2_visualizza_descrizione_normativa.typ"
+
+#include "UC21.2.2.3_visualizza_dipendenze_requisito.typ"
+
+#include "UC21.2.2.4_visualizza_decision_tree.typ"
+
+#include "UC21.2.2.4.1_visualizza_generale_nodo_decision_tree.typ"
+
+#include "UC21.2.2.4.1.1_visualizza_codice_nodo.typ"
+
+#include "UC21.2.2.4.1.2_visualizza_domanda_nodo.typ"
+
+#include "UC21.2.2.4.1.3_visualizza_risposta_nodo.typ"
+
+#include "UC21.2.2.4.2_visualizza_dettaglio_nodo_decision_tree.typ"
+
+#include "UC21.2.2.4.2.1_visualizza_evidenze_del_nodo.typ"
+
+#include "UC21.2.2.4.2.1.1_visualizza_info.typ"
+
+#include "UC21.2.2.4.2.1.2_visualizza_just.typ"
+
+#include "UC22_compila_decision_tree.typ"
+
+#include "UC22.1_compilazione_nodo.typ"
+
+#include "UC22.1.1_selezione_risposta_del_nodo.typ"
+
+#include "UC22.1.1.1_seleziona_yes.typ"
+
+#include "UC22.1.1.2_seleziona_no.typ"
+
+#include "UC22.1.2_inserisci_evidenze.typ"
+
+#include "UC22.1.2.1_inserisci_info.typ"
+
+#include "UC22.1.2.2_inserisci_just.typ"
+
+#include "UC22.2_navigazione_del_dt.typ"
+
+#include "UC22.2.1_vai_al_nodo_successivo.typ"
+
+#include "UC22.2.2_errore_nodo_senza_risposta_selezionata.typ"
+
+#include "UC22.2.3_vai_al_nodo_precedente.typ"
+
+#include "UC22.2.4_errore_nodo_corrente_è_root.typ"
+
+#include "UC22.3_inserisci_justification.typ"
+
+#include "UC23_esporta_report_di_conformità.typ"
+
+#include "UC23.1_esporta_report_in_pdf.typ"
+
+#include "UC24_modifica_requisito.typ"
+
+#include "UC24.1_modifica_anagrafica_del_requisito.typ"
+
+#include "UC24.1.1_modifica_nome_del_requisito.typ"
+
+#include "UC24.1.2_modifica_descrizione_normativa_del_requisito.typ"
+
+#include "UC24.2_modifica_dipendenze.typ"
+
+#include "UC24.2.1_aggiungi_dipendenza.typ"
+
+#include "UC24.2.2_rimuovi_dipendenza.typ"
+
+#include "UC24.2.3_errore_dipendenza_circolare.typ"
+
+#include "UC24.3_modifica_decision_tree.typ"
+
+#include "UC24.3.1_aggiungi_nodo.typ"
+
+#include "UC24.3.1.1_inserimento_codice_univoco_nodo.typ"
+
+#include "UC24.3.1.2_inserimento_testo_domanda_nodo.typ"
+
+#include "UC24.3.1.3_aggiungi_nodo_foglia.typ"
+
+#include "UC24.3.1.3.1_aggiungi_nodo_pass.typ"
+
+#include "UC24.3.1.3.2_aggiungi_nodo_fail.typ"
+
+#include "UC24.3.1.3.3_aggiungi_nodo_not_applicable.typ"
+
+#include "UC24.3.1.4_aggiungi_nodo_di_decisione.typ"
+
+#include "UC24.3.2_rimuovi_nodo.typ"
+
+#include "UC24.3.2.1_tentativo_eliminazione_nodo_root.typ"
+
+#include "UC24.3.2.2_nodo_ha_figli_collegati.typ"
+
+#include "UC24.3.3_modifica_nodo.typ"
+
+#include "UC24.3.3.1_modifica_testo_di_una_domanda.typ"
+
+#include "UC24.3.3.2_modifica_descrizione_evidenza_richiesta.typ"
+
+#include "UC24.3.3.3_modifica_destinazione_collegamento.typ"
+
+#include "UC24.3.4_salva_modifiche_dt.typ"
+
+#include "UC24.3.4.1_struttura_dt_non_valida.typ"
+
+#include "UC25_annulla_modifiche_requisito.typ"
+
+#include "UC26_salva_modifiche_requisito.typ"
+
+#include "UC27_esporta_decision_tree.typ"
+

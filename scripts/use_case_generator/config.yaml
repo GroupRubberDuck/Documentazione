@@ -1,226 +1,204 @@
 # Configurazione dei casi d'uso
 settings:
-      # Percorso dove creare i file (relativo allo script)
-      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
+  # Percorso dove creare i file (relativo allo script)
+  output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
 
-      # Nome del file aggregatore (se lasciato vuoto, non lo crea)
-      index_file: "_index.typ"
+  # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+  index_file: "_index.typ"
 
-      # Il prefisso non può contenere il carattere di title separator
-      prefix: "UC"
-      # Estensione dei file generati
-      extension: ".typ"
+  # Il prefisso non può contenere il carattere di title separator
+  prefix: "UC"
+  # Estensione dei file generati
+  extension: ".typ"
 
-      # Regole di numerazione e stile
-      formatting:
-            padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
-            separator: "." # Separatore numeri: "1.1" vs "1-1"
-            title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
-            filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+  # Regole di numerazione e stile
+  formatting:
+    padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
+    separator: "." # Separatore numeri: "1.1" vs "1-1"
+    title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
+    filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
 
-      # (Opzionale) File template da copiare per i nuovi file
-      template_path: "scripts/use_case_generator/template.typ"
+  # (Opzionale) File template da copiare per i nuovi file
+  template_path: "scripts/use_case_generator/template.typ"
 
 # La struttura gerarchica
 structure:
-      - Autenticazione:
-              - Inserimento username
-              - Inserimento password
-      - Errore autenticazione
-      - Registrazione
-      - Inserimento di un nuovo dispositivo:
-      - Creazione di un nuovo dispositivo per la valutazione:
-              - Inserimento dati dispositivo:
-                      - Inserimento nome dispositivo
-                      - Inserimento sistema operativo dispositivo
-                      - Inserimento versione firmware dispositivo
-                      - Inserimento funzionalita dispositivo
-                      - Inserimento descrizione dispositivo
-      - Caricamento di un dispositivo per la valutazione:
-              - Selezione file sorgente:
-                      - Selezione file JSON
-                      - Selezione file XML
-                      - Selezione file CSV
-      - Errore importazione file:
-      - Visualizza dati del dispositivo:
-              - Visualizza nome dispositivo
-              - Visualizza sistema operativo dispositivo
-              - Visualizza versione firmware dispositivo
-              - Visualizza funzionalita dispositivo
-              - Visualizza descrizione dispositivo
-              - Visualizza versione dello standard
-
-      - Modifica di un dispositivo:
-              - Modifica nome dispositivo
-              - Modifica sistema operativo dispositivo
-              - Modifica versione firmware dispositivo
-              - Modifica funzionalita dispositivo
-              - Modifica ambiente operativo
-              - Modifica descrizione dispositivo
-              - Modifica versione dello standard
-      - Elimina dispositivo:
-      - Annullamento creazione dispositivo:
-      - Chiusura sessione di valutazione attuale:
-
-      - Chiusura sessione di verifica attuale:
-              - Errore durante il salvataggio automatico
-
-      # - Seleziona file:
-      #       - Selezione di un file tramite finestra
-      #       - Selezione con drag and drop:
-      #             - Drag and drop fuori dalla drop zone
-      # - Annulla selezione
-      # - Errore nella selezione
-      - Importa lista di file di asset
-      - Importa file asset singolo:
-      - Errore importazione file asset:
-              - Importazione di asset appartenenti a uno standard diverso
-              - Errore struttura di alcuni asset non valida
-      - Visualizza riepilogo di importazione
-      - Errore conflitto merge asset
-      - Risoluzione conflitto di merge
-      - Visualizza lista asset:
-              - Visualizza asset singolo
-              - Visualizza riepilogo requisiti:
-                      - Vedi numero PASS
-                      - Vedi numero FAIL
-                      - Vedi numero NOT APPLICABLE
-      - Visualizza riepilogo risultati:
-              - Vedi numero di asset in sospeso
-      - Aggiunta asset tramite interfaccia
-      - Eliminazione di un asset
-      - Modifica asset
-      - Cerca asset
-      - Salva modifica asset
-      - Inserimento dati non validi:
-      - Esporta lista asset:
-              - Esporta lista asset .xml
-              - Esporta lista asset .json
-              - Esporta lista asset .csv
-              - Esporta lista asset .pdf
-      - Errore nell'esportazione
-      - Errore nel salvataggio dei dati degli asset
-      - Consultazione requisito normativo:
-              - Visualizza descrizione del requisito
-              - Visualizza razionale del requisito
-              - Visualizza guida
-      - Visualizza requisito:
-              - Visualizza l'asset di appartenenza
-              - Visualizza codice del requisito
-              - Visualizza nome del requisito
-              - Visualizza stato aggregato del requisito
-              - Visualizza lista di assessment unit:
-                      - Visualizza elemento della lista di assessment unit
-      - Visualizza assessment unit:
-              - Visualizza contesto di una assessment unit
-              - Visualizza codice di una assessment unit
-              - Visualizza tipo di una assessment unit
-              - Visualizza nome di una assessment unit
-              - Visualizza stato della valutazione assessment unit
-      - Visualizza decision tree:
-              - Visualizza decision tree graficamente
-              - Visualizza nodo decision tree:
-                      - Visualizza codice del nodo
-                      - Visualizza domanda del nodo
-                      - Visualizza risposta del nodo
-                      - Visualizza evidenze del nodo:
-                              - Visualizza info
-                              - Visualizza just
-      - Gestione della valutazione del DT:
-              - Compilazione nodo:
-                      - Aggiungi evidenze:
-                              - Aggiungi just
-                              - Aggiungi info
-                      - Selezione della risposta del nodo
-      - Esegui decision tree
-      - Decision tree non completo
-      - Navigazione del decision tree:
-              - Vai al nodo precedente:
-                      - Nodo root
-              - Vai al nodo successivo:
-                      - Nodo foglia
-                      - Nodo senza risposta
-      - Salva valutazione:
-              - Salva sul file corrente
-              - Salva come nuovo file
-      - Valutazione del dispositivo
-      - Valutazione di un asset
-      - Valutazione di un requisito
-
-      - Esporta risultato dell'esecuzione
-
-      # - Gestione dell'architettura normativa:
-      - Crea nuovo modello
-      - Importa nuovo modello
-      - Avvia sessione di modifica su modello esistente
-      - Salva modifiche sul modello
-      - Salva come nuovo modello
-      - Scarta modifiche sul modello
-      - Rimuovi modello
-
-      - Inserisci nome del modello
-      - Visualizza nome del modello
-      - Inserisci codice del modello
-      - Visualizza codice del modello
-
-      - Modifica anagrafica del modello
-      # - Definizione del Metamodello Asset:
-      - Aggiungi classe di asset:
-              - Inserisci nome di una classe di asset
-              - Inserisci codice di una classe di asset
-              - Inserisci descrizione di una classe di asset
-      - Rimuovi classe di asset
-      - Avvia modifica classe di asset:
-              - Modifica anagrafica
-              - Definisci attributo della classe
-      - Conferma modifica alla classe asset
-      - Annulla modifica alla classe asset
-
-      - Aggiungi nuovo requisito:
-              - Inserisci anagrafica del requisito:
-                      - Inserisci codice:
-                              - Errore codice duplicato
-                      - Inserisci nome del requisito
-                      - Inserisci descrizione normativa del requisito
-                      - Inserisci razionale del requisito
-                      - Inserisci linea guida
-              - Inserimento target del requisito
-
-      - Aggiungi dipendenza
-      - Rimuovi dipendenza
-      - Errore dipendenza circolare
-      - Avvia modifica di un requisito
-      - Salva inserimenti del requisito
-      - Scarta inserimenti del requisito
-
-      - Rimuovi requisito
-
-      - Avvia gestione del decision tree:
-              - Aggiungi nodo:
-                      - Aggiungi nodo foglia:
-                              - Aggiungi nodo PASS
-                              - Aggiungi nodo FAIL
-                              - Aggiungi nodo NOT APPLICABLE
-                      - Aggiungi nodo di decisione
-              - Rimuovi nodo
-              - Modifica nodo:
-                      - Inserisci testo di una domanda
-                      - Inserisci descrizione dell'evidenza richiesta
-      - Salva inserimenti al decision tree
-      - Scarta inserimenti al decision tree
-
-      - Struttura non valida dopo la modifica
-      - Salvataggio modifiche alla struttura dei DT
-      - Errore nel salvataggio della struttura del decision tree
-      - Visualizza cronologia dei dispositivi valutati
-      # - Importa file test di conformità
-      # - Errore nell'importaizone dei test
-      # - Visualizza lista test di conformità:
-      #       - Visualizza test di conformità
-      # - Lista dei test vuota
-      # - Aggiungi test di conformità
-      # - Errore nell'aggiunta
-      # - Elimina test di conformità
-      # - Errore nell'eliminazione
-      # - Modifica test di conformità
-      # - Errore nella modifica
+    - Inserimento nuovo dispositivo:
+      #generalizzazione
+    - Creazione di un nuovo dispositivo per la valutazione:
+        - Inserimento nome dispositivo
+        - Inserimento sistema operativo dispositivo
+        - Inserimento descrizione dispositivo
+    #extends
+    - Annullamento creazione dispositivo:
+    #generalizzazione
+    - Caricamento dispositivo per la valutazione:
+        #include
+        - Selezione file sorgente:
+            #generalizzazione
+            - Selezione file JSON
+            - Selezione file XML
+            - Selezione file CSV
+    #extends
+    - Errore nella lettura del file
+    - Errore nella struttura del file
+    - Visualizza dati dispositivo:
+        #include
+        - Visualizza nome dispositivo
+        - Visualizza sistema operativo dispositivo
+        - Visualizza descrizione dispositivo
+    - Modifica dispositivo:
+        #include
+        # - Inserimento nome dispositivo
+        # - Inserimento sistema operativo dispositivo
+        # - Inserimento versione firmware dispositivo
+        # - Inserimento funzionalita dispositivo
+        # - Inserimento descrizione dispositivo
+    - Elimina dispositivo:
+    - Salva valutazione:
+        - Salva in XML
+        - Salva in CSV
+        - Salva in JSON
+      #extends
+    - Errore durante il salvataggio
+    - Aggiunta asset tramite interfaccia:
+        #- Inserisci nome asset
+        #- Seleziona tipo asset
+        #- Inserisci descrizione asset
+        #extends
+        - Inserimento dati non validi
+      #extends
+    - Annulla aggiunta
+    - Visualizza riepilogo importazione
+    - Elimina asset
+    - Modifica asset:
+        - Inserisci nome asset
+        - Seleziona tipo asset
+        - Inserisci descrizione asset
+        #extends
+        #- Inserimento dati non validi
+    #extends
+    - Annulla modifica asset
+    - Cerca asset
+    - Esporta informazioni dispositivo:
+        - Esporta in .xml
+        - Esporta in .json
+        - Esporta in .csv
+    - Visualizza dashboard dispositivo:
+        #include
+        # - Visualizza dati dispositivo
+        #include
+        - Visualizza stato aggregato dispositivo
+        #include
+        - Visualizza lista asset:
+            - Visualizzazione singolo elemento della lista di asset:
+                - Visualizza nome
+                - Visualizza tipo
+                - Visualizza stato aggregato asset
+            #- Visualizzazione in dettaglio asset
+    #include
+    - Visualizza dettaglio asset:
+        #include
+        #- Visualizza nome asset
+        #- Visualizza tipo asset
+        - Visualizza descrizione asset
+          #include
+        - Visualizza lista requisiti asset:
+            #include
+            - Visualizzazione generale requisito:
+                - Visualizza nome requisito
+                - Visualizza stato valutazione
+            - Visualizzazione in dettaglio requisito:
+                #include
+                - Visualizza codice requisito
+                #- Visualizza nome del requisito
+                - Visualizza descrizione normativa
+                #- Visualizza stato valutazione (Pass / Fail / NA / In sospeso)
+                - Visualizza dipendenze requisito
+                #include
+                - Visualizza decision tree:
+                    #include
+                    - Visualizza generale nodo decision tree:
+                        #include
+                        - Visualizza codice nodo
+                        - Visualizza domanda nodo
+                        - Visualizza risposta nodo
+                    - Visualizza dettaglio nodo decision tree:
+                        #include
+                        #- Visualizza codice del nodo
+                        #- Visualizza domanda del nodo
+                        #- Visualizza risposta del nodo
+                        - Visualizza evidenze del nodo:
+                            - Visualizza info
+                            - Visualizza just
+    - Compila decision tree:
+        #include
+        - Compilazione nodo:
+            #include
+            - Selezione risposta del nodo:
+                #include
+                - Seleziona Yes
+                - Seleziona No
+            #include
+            - Inserisci evidenze:
+                #include
+                - Inserisci info
+                - Inserisci just
+        #include
+        - Navigazione del DT:
+            - Vai al nodo successivo
+            - Errore nodo senza risposta selezionata
+            - Vai al nodo precedente
+            - Errore Nodo corrente è root
+        #extends con condition: esito = NA
+        - Inserisci justification:
+    - Esporta report di conformità:
+        #generalizzazioni
+        - Esporta report in PDF
+        #- Esporta report in JSON
+        #- Esporta report in XML
+        #- Esporta report in CSV
+    - Modifica requisito:
+        #include
+        - Modifica anagrafica del requisito:
+            - Modifica nome del requisito
+            - Modifica descrizione normativa del requisito
+        - Modifica dipendenze:
+            #generalizzazioni
+            - Aggiungi dipendenza
+            - Rimuovi dipendenza
+            #extends
+            - Errore dipendenza circolare
+        - Modifica decision tree:
+            #include
+            - Aggiungi nodo:
+                #include
+                - Inserimento codice univoco nodo
+                - Inserimento testo domanda nodo
+                #genralizzazione
+                - Aggiungi nodo foglia:
+                    #generalizzazione
+                    - Aggiungi nodo PASS
+                    - Aggiungi nodo FAIL
+                    - Aggiungi nodo NOT APPLICABLE
+                - Aggiungi nodo di decisione
+            - Rimuovi nodo:
+                #extends
+                - Tentativo eliminazione nodo root
+                - Nodo ha figli collegati
+            - Modifica nodo:
+                #inlude
+                - Modifica testo di una domanda
+                - Modifica descrizione evidenza richiesta
+                - Modifica destinazione collegamento
+            - Salva modifiche DT:
+                #extends
+                - Struttura DT non valida
+    #extends
+    - Annulla modifiche requisito
+    #extends
+    - Salva modifiche requisito
+    - Esporta decision tree:
+        #generalizzazioni uguali a esporta asset
+        #- Esporta in .xml
+        #- Esporta in .json
