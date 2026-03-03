@@ -132,7 +132,7 @@
   == POC (Proof of Concept)
 
   Il Proof of Concept ha l’obiettivo di dimostrare che il team è in grado di integrare le tecnologie principali e gestire la comunicazione tra i vari moduli del progetto. In particolare, il POC permetterà di verificare la lettura e l’unificazione dei file di input, la comunicazione dal core logic alla view, la possibilità di modificare i file in modo dinamico e l’implementazione di logiche di decision tree.
-  Sono stati discussi i principali strumenti tecnologici da integrare: FastAPI per il backend, React e React Flow per il frontend, sistemi di gestione degli eventi come Blinker per processi singoli e Kafka se sarà necessario gestire eventi concorrenti. È stato sottolineato che non è necessario testare la compatibilità di strumenti già nativamente integrati, come FastAPI e Pylant, mentre è fondamentale verificare l’integrazione tra componenti diverse e la gestione dei plugin.
+  Sono stati discussi i principali strumenti tecnologici da integrare: FastAPI per il backend, React e React Flow per il frontend, sistemi di gestione degli eventi come Blinker per processi singoli e Kafka se sarà necessario gestire eventi concorrenti. È stato sottolineato che non è necessario testare la compatibilità di strumenti già nativamente integrati, come FastAPI e Pylint, mentre è fondamentale verificare l’integrazione tra componenti diverse e la gestione dei plugin.
 ]
 
 #insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
@@ -185,6 +185,13 @@ I TODO sorti da questa riunione sono i seguenti:
   [Ana Maria Draghici],
   [Completare la sezione processi nel documento norme di progetto.],
   [VI.12.1],
+),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
+  [Responsabile],
+  [Stesura di questo verbale],
+  [-],
 ),
 
   )
