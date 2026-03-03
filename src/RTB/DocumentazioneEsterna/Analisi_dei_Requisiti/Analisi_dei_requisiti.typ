@@ -219,6 +219,32 @@ Questo esempio permette di testare l’applicazione in un contesto operativo con
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Casi d'uso", documentType: doc)[
+  = Casi d'uso
+
+== Scopo
+
+Lo scopo di questa sezione è descrivere in dettaglio i casi d’uso individuati dal gruppo, al fine di rappresentare le funzionalità principali del sistema di verifica della conformità allo standard EN 18031. Per garantire una rappresentazione formale e comprensibile a tutti gli stakeholder del progetto, il documento adotta la notazione UML per la descrizione dei casi d'uso, ognuno dei quali è descritto seguendo una struttura logica rigorosa che comprende:
+
+#pad(left: 1em)[
+  - *Nominativo*: identificativo univoco e descrittivo del caso d'uso;\
+  - *Attori Principali*: soggetti (umani o sistemi esterni) che interagiscono con il sistema;\
+  - *Precondizioni*: stato del sistema prima dell'esecuzione del caso d'uso;\
+  - *Trigger*: identifichiamo l'evento specifico o l'azione dell'attore che avvia l'esecuzione del caso d'uso.\
+  - *Postcondizioni*: stato del sistema al termine dell'esecuzione del caso d'uso;\
+  - *Scenario principale*: si mostra passo dopo passo la sequenza di interazioni tra attori e sistema che caratterizza il flusso di esecuzione normale, mostrando come si passa dalle condizioni iniziali al risultato finale;\
+  - *Scenari alternativi*: documentiamo i percorsi di esecuzione che si discostano dal flusso normale e le situazioni in cui l'esecuzione regolare viene interrotta a causa di condizioni anomale o scelte diverse dell'utente;\
+  - *Estensioni*: comportamenti alternativi che possono verificarsi durante l'esecuzione del caso d'uso, tipicamente in risposta a condizioni particolari; 
+  - *Inclusioni*: funzionalità che fanno parte del caso d'uso, descrivendo le operazioni che lo compongono;\
+  - *Generalizzazioni*: eventuali casi d'uso figli che specializzano il caso d'uso corrente, ereditandone le caratteristiche di base e aggiungendone di specifiche.
+]
+
+== Attori
+
+L'applicazione prevede la presenza di un Attore principale:
+
+- *Utente*: Persona che utilizza l'applicazione per effettuare  la verifica della conformità dei dispositivi radio allo standard 
+EN 18031. L'utente interagisce direttamente con il sistema attraverso l'interfaccia grafica, inserisce o carica i dati del dispositivo e degli asset, compila i decision tree associati ai requisiti, visualizza i risultati nella dashboard, gestisce il salvataggio e l'esportazione della valutazione e, se necessario, modifica i decision tree e le dipendenze tra requisiti.
+
   #include "content/Use_case.new.typ"
 
 ]
