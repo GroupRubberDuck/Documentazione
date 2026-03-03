@@ -2,8 +2,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="{{TITOLO}}"
-#let depth={{LIVELLO}}
+#let use-case-nome="Valutazione dispositivo in corso"
+#let depth=1
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,13 +29,20 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + Il sistema mostra un messaggio di errore
+
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+
+    ],
     
     trigger:none,
     

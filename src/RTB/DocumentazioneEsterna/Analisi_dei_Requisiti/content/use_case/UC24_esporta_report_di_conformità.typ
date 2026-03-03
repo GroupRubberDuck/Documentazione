@@ -2,8 +2,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="{{TITOLO}}"
-#let depth={{LIVELLO}}
+#let use-case-nome="Esporta report di conformità"
+#let depth=1
 
 #let diagram-type=deps.draw-uc-diagram
 

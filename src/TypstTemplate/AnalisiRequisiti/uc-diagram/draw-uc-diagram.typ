@@ -89,8 +89,8 @@
       
       // Logica a ventaglio: spinge le note verso l'esterno per evitare collisioni
       let is-left = x-pos < target-x
-      let note-x = x-pos + if is-left { -0.8 } else { - 0.3 } 
-      let note-y = y-ext + if is-left { -0.6 } else {  0.8 } 
+      let note-x = x-pos + if is-left { -2 } else {  2 } 
+      let note-y = y-ext + if is-left { -0.6 } else { - 0.6 } 
       
       elements.push(builder.build-note(description: ext-cond, note-position: (note-x, note-y), note-lbl: note-lbl))
       elements.push(builder.build-note-arrow(note-lbl, ext-lbl, target-lbl))

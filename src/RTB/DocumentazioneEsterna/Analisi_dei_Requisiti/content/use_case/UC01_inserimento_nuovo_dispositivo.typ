@@ -9,13 +9,15 @@
 
 #let diagram=diagram-type(
       system-name: "Sistema",  // Il nome che va nell'angolo del recinto
-  target-uc: "",
+  target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  extends: ("Valutazione dispositivo in corso":[Nel sistema è già in corso la valutazine di un dispositivo],
+  "Annullamento inserimento dispositivo":[L'utente annulla l'inserimento del dispositivo]
+  ),
+  generalizations: ("Crea nuovo dispositivo","Importa dispositivo"),
+  spacing: (0.3cm, 0.8cm), 
+  diagram-scale: 70%
 )
 
 
@@ -29,25 +31,49 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce un dispositivo
+        + Il sistema carica in memoria le informazioni del dispositivo
+        + Il sistema avvia la sessione di valutazione del dispositivo
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - Nel sistema è attiva una sessione di valutazione del dispositivo
+    ],
     
-    trigger:none,
+    trigger:[
+        L'utente seleziona la funzionalità per l'inserimento di un dispositivo
+    ],
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Nel sistema è già attiva una sessione di valutazione del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Valutazione dispositivo in corso")
+        - L'utente annulla l'inserimento del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Annullamento inserimento dispositivo")
+    ],
     
     inclusioni:none,
     
-    estensioni:none,
+    estensioni:[
+        - #use-case-label(nome-etichetta: "Valutazione dispositivo in corso")
+        - #use-case-label(nome-etichetta: "Annullamento inserimento dispositivo")
+    ],
     
-    generalizzazioni:none,
+    generalizzazioni:[
+        - #use-case-label(nome-etichetta: "Crea nuovo dispositivo")
+        - #use-case-label(nome-etichetta: "Importa dispositivo")
+    ],
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:[
+        #diagram
+    ],
     
-    figure-caption:none,
+    figure-caption:[
+        #use-case-label(nome-etichetta: use-case-nome)
+    ],
 )

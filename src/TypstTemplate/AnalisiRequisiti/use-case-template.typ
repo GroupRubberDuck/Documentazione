@@ -66,7 +66,7 @@ let elementi-lista-opzionali=(
       } else {none},
       if generalizzazioni != none{
       [
-        *Generalizzazioni*: \
+        *Specializzazioni*: \
         #pad(left: 1em,top:-0.5em)[ #generalizzazioni ]
       ]
       } else {none},

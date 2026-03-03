@@ -24,15 +24,16 @@ settings:
 # La struttura gerarchica
 structure:
     - Inserimento nuovo dispositivo:
+    - Valutazione dispositivo in corso
+    - Annullamento inserimento dispositivo:
       #generalizzazione
-    - Creazione di un nuovo dispositivo per la valutazione:
+    - Crea nuovo dispositivo:
         - Inserimento nome dispositivo
         - Inserimento sistema operativo dispositivo
         - Inserimento descrizione dispositivo
     #extends
-    - Annullamento creazione dispositivo:
     #generalizzazione
-    - Caricamento dispositivo per la valutazione:
+    - Importa dispositivo:
         #include
         - Selezione file sorgente:
             #generalizzazione
