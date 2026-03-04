@@ -241,7 +241,7 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
       "Redazione dell'introduzione",
       [_Sprint 1_],
       "Completato",
-      "Definizione dei casi d'uso: requisiti obbligatori",
+      "Prima definizione dei casi d'uso",
       [_Sprint 2_],
       "Completato",
       "Definizione dei casi d'uso: requisiti non obbligatori;",
@@ -288,22 +288,15 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
   #let attivitaPP=(
       "Studio della struttura del documento",
       [_Sprint 1_],
-      "Completato", 
+      "Completato",
+
       "Redazione dell'introduzione",
       [_Sprint 3_],
-      "In corso",
-      "Soglie delle misurazioni",
+      "Completato",
+
+      "Stesura delle metriche per la qualità del prodotto e del processo",
       [_Sprint 3_],
-      "In corso",
-      "Automiglioramento",
-      [_Sprint 1_],
-      "Da definire",
-      "Metodi di testing",
-      [_Sprint 1_],
-      "Da definire",
-      "Cruscotto di valutazione",
-      [_Sprint 1_],
-      "Da definire",
+      "Completato",
   ) 
 #figure(caption:"RTB-Piano di Qualifica")[
 #tabellaAtt(titolo:"Piano di Qualifica",attivita:attivitaPP)
