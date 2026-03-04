@@ -361,15 +361,27 @@
     "Redazione dell'introduzione",
     [_Sprint 1_],
     "Completato",
-    "Studio dei processi di ciclo di vita primari",
-    [_Sprint 3_],
-    "In corso",
     "Studio dei processi di ciclo di vita di supporto",
     [_Sprint 2_],
     "Compleato",
     "Studio dei processi di ciclo di vita organizzativi",
     [_Sprint 2_],
     "Completato",
+    "Stesura dei processi di ciclo di vita organizzativi",
+    [_Sprint 3_],
+    "Completato",
+    
+
+    "Studio dei processi di ciclo di vita primari",
+    [_Sprint 2, Sprint 3_],
+    "Completato",
+    "Stesura dei processi di ciclo di vita primari",
+    [_Sprint 4_],
+    "Completato",
+    "Stesura dei processi di ciclo di vita di supporto",
+    [_Sprint 4_],
+    "Compleato",
+
     "Studio delle best practices o altro materiale ritenuto importante",
     [_Tutti sprint_],
     "In corso",
@@ -382,6 +394,9 @@
     "Aggiornamento del glossario",
     [_Tutti gli sprint_],
     "In corso",
+    "Integrazione glossario web",
+    [_Sprint 3_],
+    "Completato"
   )
   #figure(caption: "RTB-Glossario")[
     #tabellaAtt(titolo: "Glossario", attivita: attivitaGL)
@@ -389,6 +404,7 @@
 
 
   #let attivitaPoC = (
+    // studio, setup repo, design e codifica forse
     "Python 3x",
     [_Sprint 1_],
     "Da definire",
