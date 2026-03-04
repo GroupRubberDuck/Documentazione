@@ -11,7 +11,10 @@
   extends: (:),
   generalizations: (),
   spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+  actor-offset: 5,
+  note-offset:(2,0.6)
+
 ) = {
   
   let num-gen = generalizations.len()
@@ -54,7 +57,7 @@
   // -- Attori (Esterni al sistema) --
   for (i, actor) in actors.enumerate() {
     let actor-lbl = label("actor-" + slugify(actor))
-    elements.push(builder.build-actor(actor-name: actor, actor-position: (x-act - 5, start-y-act + i)))
+    elements.push(builder.build-actor(actor-name: actor, actor-position: (x-act - actor-offset, start-y-act + i)))
     elements.push(builder.build-assoc-arrow(actor-lbl, target-lbl))
   }
 
@@ -89,8 +92,8 @@
       
       // Logica a ventaglio: spinge le note verso l'esterno per evitare collisioni
       let is-left = x-pos < target-x
-      let note-x = x-pos + if is-left { -2 } else {  2 } 
-      let note-y = y-ext + if is-left { -0.6 } else { - 0.6 } 
+      let note-x = x-pos + if is-left { - note-offset.at(0) } else { note-offset.at(0)  } 
+      let note-y = y-ext + if is-left { - note-offset.at(1) } else { - note-offset.at(1) } 
       
       elements.push(builder.build-note(description: ext-cond, note-position: (note-x, note-y), note-lbl: note-lbl))
       elements.push(builder.build-note-arrow(note-lbl, ext-lbl, target-lbl))

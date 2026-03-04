@@ -32,16 +32,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Il sistema mostra un messaggio di errore
+        + L'utente visualizza un messaggio di avviso
 
     ],
     
     pre-condizioni:[
-
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+        - Nel sistema è già in corso la valutazione di un dispositivo
     ],
     
     post-condizioni:[
-
+        - L'utente visualizza un messaggio di avviso
     ],
     
     trigger:none,

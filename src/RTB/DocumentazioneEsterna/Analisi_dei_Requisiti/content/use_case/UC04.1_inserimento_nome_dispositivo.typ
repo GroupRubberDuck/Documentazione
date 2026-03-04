@@ -29,13 +29,22 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce il nome del dispositivo
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+        - L'utente ha selezionato la funzionalità di creazione di un nuovo
+    ],
     
-    post-condizioni:none,
+    
+    post-condizioni:[
+        - L'utente ha inserito il nome del dispositivo
+    ],
     
     trigger:none,
     

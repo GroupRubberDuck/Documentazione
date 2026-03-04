@@ -150,25 +150,26 @@
   )
 }
 
-#let build-exp-box(enclosed-lbl: (), parent-uc-name: "") = {
+#let build-exp-box(
+  enclosed-lbl: (), 
+  parent-uc-name: "", 
+  tab-offset: (-25pt, -25pt) // <-- NUOVO PARAMETRO (dx, dy)
+) = {
   (
     // 1. Il recinto tratteggiato
     node(
       enclose: enclosed-lbl, 
       name: <expansion-box>, 
-      ..st.style-box-expansion
+      ..st.style-box-expansion,
     ),
-    // 2. Il Nodo Fantasma per allineare la linguetta custom (shape-exp-tab)
+    // 2. Il Nodo Fantasma per allineare la linguetta custom
     node(
       enclose: enclosed-lbl, 
       stroke: none, 
-      // IMPORTANTE: Metti qui lo stesso valore di inset che hai in style-box-expansion
-      // per far combaciare perfettamente i bordi invisibili!
       inset: 25pt, 
       align(top + right)[
-        // Spostiamo la linguetta per appoggiarla sullo spigolo
-        #place(dx: -25pt, dy: -25pt)[
-          // Invochiamo un mini-diagramma per renderizzare la forma CeTZ!
+        // Usiamo le coordinate passate dal parametro!
+        #place(dx: tab-offset.at(0), dy: tab-offset.at(1))[
           #diagram(
             node(
               (0,0), 

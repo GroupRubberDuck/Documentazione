@@ -12,12 +12,21 @@
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
+  extends: (
+    "Errore nella lettura del file":[Il file non può essere letto],
+    "Errore nella struttura del file":[Il file contiene dati non coerenti con la struttura del modello dello standard],
+    ),
+  generalizations: (
+    "Selezione file JSON",
+    "Selezione file XML",
+    "Selezione file CSV",
+    ),
+  spacing: (0.5cm, 2cm), 
+  note-offset: (0.6,0.6),
   diagram-scale: 80%
 )
-
+// Errore nella lettura del file
+// Errore nella struttura del file
 
 
 
@@ -29,25 +38,51 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente seleziona un file da importare
+        + Il sistema legge le informazioni del dispositivo
+        + Il sistema importa la lista degli asset
+        + Il sistema importa le informazioni per la valutazione già salvate sul file
+        + Il sistema avvia la sessione di valutazione del dispositivo
+
+    ],
+    pre-condizioni:[
+                - Il sistema è attivo
+                        - Nel sistema non sono attive sessioni di modifica del modello
+                    ],
+
     
-    pre-condizioni:none,
+    post-condizioni:[
+        - Nel sistema è attiva una sessione di valutazione del dispositivo
+    ],
     
-    post-condizioni:none,
+    trigger:[
+        L'utente seleziona la funzionalità di inserimento del dispositivo tramite importazione di un file
+    ],
     
-    trigger:none,
-    
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - Errore nella lettura del file #sym.arrow #use-case-label(nome-etichetta: "Errore nella lettura del file")
+        - Errore struttura file non valida #sym.arrow #use-case-label(nome-etichetta: "Errore nella struttura del file")
+    ],
     
     inclusioni:none,
     
-    estensioni:none,
+    estensioni:[
+    - #use-case-label(nome-etichetta: "Errore nella lettura del file")
+    - #use-case-label(nome-etichetta: "Errore nella struttura del file")
+    ],
     
-    generalizzazioni:none,
+    generalizzazioni:[
+        - #use-case-label(nome-etichetta:"Selezione file JSON",)
+        - #use-case-label(nome-etichetta:"Selezione file XML",)
+        - #use-case-label(nome-etichetta:"Selezione file CSV",)
+    ],
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:[
+        #diagram
+    ],
     
     figure-caption:none,
 )

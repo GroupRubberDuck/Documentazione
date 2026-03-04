@@ -29,13 +29,20 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente seleziona la funzionalità di annullamento dell'inserimento
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'inserimento del dispositivo è stato annullato 
+    ],
     
     trigger:none,
     

@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.5.8": diagram
+#import "@preview/fletcher:0.5.8": diagram,node
 #import "utils/components-builder.typ" as builder
 #import "/src/config.typ": slugify 
 
@@ -10,7 +10,12 @@
   extends: (:),
   generalizations: (),
   spacing: (0.5cm, 3cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+  actor-offset: 6,
+    note-offset:(1,0.6),
+    tab-offset: (-25pt, -25pt),
+    top-padding: 0.1,
+
 ) = {
   
   let num-gen = generalizations.len()
@@ -48,9 +53,19 @@
   // ==========================================
   // 2. ASSEMBLAGGIO (Senza dizionari intermedi)
   // ==========================================
+
+
   let elements = ()
   let enclosed-labels = ()
   
+if top-padding > 0 {
+    let ghost-lbl = <ghost-top>
+    // Piazziamo un nodo completamente invisibile sopra a tutto
+    elements.push(node((target-x, y-gen - top-padding), "", name: ghost-lbl, stroke: none, fill: none))
+    enclosed-labels.push(ghost-lbl) // Diciamo alla scatola di avvolgerlo!
+  }
+
+
   let target-lbl = label("uc-" + slugify(target-uc))
   enclosed-labels.push(target-lbl)
 
@@ -61,7 +76,7 @@
   for (i, actor) in actors.enumerate() {
     let actor-lbl = label("actor-" + slugify(actor))
     // Mantenuto il tuo offset di -6 per allontanare l'attore
-    elements.push(builder.build-actor(actor-name: actor, actor-position: (x-act - 6, start-y-act + i)))
+    elements.push(builder.build-actor(actor-name: actor, actor-position: (x-act - actor-offset, start-y-act + i)))
     elements.push(builder.build-assoc-arrow(actor-lbl, target-lbl))
   }
 
@@ -97,8 +112,8 @@
       
       // LOGICA A VENTAGLIO
       let is-left = x-pos < target-x
-      let note-x = x-pos + if is-left { -0.8 } else { 0.8 }
-      let note-y = y-ext + 0.5 
+      let note-x = x-pos + if is-left { - note-offset.at(0) } else { note-offset.at(0) }
+      let note-y = y-ext - note-offset.at(1)
       
       elements.push(builder.build-note(description: ext-cond, note-position: (note-x, note-y), note-lbl: note-lbl))
       elements.push(builder.build-note-arrow(note-lbl, ext-lbl, target-lbl))
@@ -106,8 +121,12 @@
   }
 
   // -- Box di Espansione --
-  if enclosed-labels.len() > 0 {
-    elements += builder.build-exp-box(enclosed-lbl: enclosed-labels, parent-uc-name: parent-uc)
+if enclosed-labels.len() > 0 {
+    elements += builder.build-exp-box(
+      enclosed-lbl: enclosed-labels, 
+      parent-uc-name: parent-uc,
+      tab-offset: tab-offset // <-- Lo passiamo al builder!
+    )
   }
 
   // ==========================================
