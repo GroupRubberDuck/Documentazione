@@ -333,21 +333,18 @@
     "Studio della struttura del documento",
     [_Sprint 1_],
     "Completato",
+
     "Redazione dell'introduzione",
     [_Sprint 3_],
-    "In corso",
-    "Soglie delle misurazioni",
+    "Completato",
+
+    "Stesura delle metriche per la qualità del prodotto e del processo",
     [_Sprint 3_],
-    "In corso",
-    "Automiglioramento",
-    [_Sprint 3_],
-    "Da definire",
-    "Metodi di testing",
-    [_Sprint 3_],
-    "Da definire",
+    "Completato",
+
     "Cruscotto di valutazione",
-    [_Sprint 3_],
-    "Da definire",
+    [_Sprint 5_],
+    "Completato",
   )
   #figure(caption: "RTB-Piano di Qualifica")[
     #tabellaAtt(titolo: "Piano di Qualifica", attivita: attivitaPdQ)
@@ -358,29 +355,38 @@
     "Studio della struttura del documento",
     [_Sprint 1_],
     "Completato",
+
     "Redazione dell'introduzione",
     [_Sprint 1_],
     "Completato",
+
     "Studio dei processi di ciclo di vita di supporto",
     [_Sprint 2_],
     "Compleato",
+
     "Studio dei processi di ciclo di vita organizzativi",
     [_Sprint 2_],
     "Completato",
+
     "Stesura dei processi di ciclo di vita organizzativi",
     [_Sprint 3_],
     "Completato",
-    
 
     "Studio dei processi di ciclo di vita primari",
     [_Sprint 2, Sprint 3_],
     "Completato",
+
     "Stesura dei processi di ciclo di vita primari",
     [_Sprint 4_],
     "Completato",
+
     "Stesura dei processi di ciclo di vita di supporto",
     [_Sprint 4_],
     "Compleato",
+
+    "Stesura delle metriche",
+    [_Sprint 4_],
+    "Completato",
 
     "Studio delle best practices o altro materiale ritenuto importante",
     [_Tutti sprint_],
