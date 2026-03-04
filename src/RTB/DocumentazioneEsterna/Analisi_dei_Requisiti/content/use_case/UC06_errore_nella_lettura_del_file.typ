@@ -29,9 +29,11 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce un file che non rispetta i requisiti necessari
+    ],
     
     pre-condizioni:none,
     

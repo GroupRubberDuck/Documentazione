@@ -29,13 +29,23 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente seleziona il file csv da importare dal suo filesystem locale
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+        - L'utente ha selezionato la funzionalità di inserimento del dispositivo tramite file
+        - Il formato csv è supportato dal sistema
+
+    ],
+    post-condizioni:[
+        - Il sistema memorizza un riferimento al file csv selezionato dall'utente 
+    ],
     
-    post-condizioni:none,
     
     trigger:none,
     

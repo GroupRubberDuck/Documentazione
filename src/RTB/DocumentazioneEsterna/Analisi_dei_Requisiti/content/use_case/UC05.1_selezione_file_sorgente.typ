@@ -12,10 +12,7 @@
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (
-    "Errore nella lettura del file":[Il file non può essere letto],
-    "Errore nella struttura del file":[Il file contiene dati non coerenti con la struttura del modello dello standard],
-    ),
+  extends: (:),
   generalizations: (
     "Selezione file JSON",
     "Selezione file XML",
@@ -49,15 +46,12 @@
         - L'utente ha selezionato la funzionalità di inserimento del dispositivo tramite file
     ],
     post-condizioni:[
-        - Le informazioni contenute nel file vengono interpretate e salvate nel sistema
+        - Il sistema memorizza un riferimento al file selezionato dall'utente 
     ],
     
     trigger:none,
     
-    scenari-alternativi:[
-        - Errore nella lettura del file #sym.arrow #use-case-label(nome-etichetta: "Errore nella lettura del file")
-        - Errore struttura file non valida #sym.arrow #use-case-label(nome-etichetta: "Errore nella struttura del file")
-    ],
+    scenari-alternativi:none,
     
     inclusioni:none,
     

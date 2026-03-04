@@ -11,17 +11,13 @@
       system-name: "Sistema",  // Il nome che va nell'angolo del recinto
   target-uc: use-case-nome,
   actors: ("Utente",),
-  includes: (),
-  extends: (
-    "Errore nella lettura del file":[Il file non può essere letto],
-    "Errore nella struttura del file":[Il file contiene dati non coerenti con la struttura del modello dello standard],
-    ),
-  generalizations: (
-    "Selezione file JSON",
-    "Selezione file XML",
-    "Selezione file CSV",
-    ),
-  spacing: (0.5cm, 2cm), 
+  includes: ("Selezione file sorgente",),
+  extends: ("Errore nella lettura del file":[
+    L'utente ha selezionato un file con formato, dimensioni o struttura non validi
+  ]),
+  generalizations: (),
+  actor-offset: 0,
+  spacing: (4.5cm, 4cm), 
   note-offset: (0.6,0.6),
   diagram-scale: 80%
 )
@@ -41,7 +37,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente seleziona un file da importare
+        + L'utente seleziona un file da importare #sym.arrow #use-case-label(nome-etichetta: "Selezione file sorgente")
         + Il sistema legge le informazioni del dispositivo
         + Il sistema importa la lista degli asset
         + Il sistema importa le informazioni per la valutazione già salvate sul file
@@ -50,7 +46,7 @@
     ],
     pre-condizioni:[
                 - Il sistema è attivo
-                        - Nel sistema non sono attive sessioni di modifica del modello
+                - Nel sistema non sono attive sessioni di modifica del modello
                     ],
 
     
@@ -64,21 +60,15 @@
     
     scenari-alternativi:[
         - Errore nella lettura del file #sym.arrow #use-case-label(nome-etichetta: "Errore nella lettura del file")
-        - Errore struttura file non valida #sym.arrow #use-case-label(nome-etichetta: "Errore nella struttura del file")
     ],
     
-    inclusioni:none,
-    
-    estensioni:[
-    - #use-case-label(nome-etichetta: "Errore nella lettura del file")
-    - #use-case-label(nome-etichetta: "Errore nella struttura del file")
+    inclusioni:[
+        - #use-case-label(nome-etichetta: "Selezione file sorgente")
     ],
     
-    generalizzazioni:[
-        - #use-case-label(nome-etichetta:"Selezione file JSON",)
-        - #use-case-label(nome-etichetta:"Selezione file XML",)
-        - #use-case-label(nome-etichetta:"Selezione file CSV",)
-    ],
+    estensioni:none,
+    
+    generalizzazioni:none,
     
     path-immagine-diagramma:[
         #diagram

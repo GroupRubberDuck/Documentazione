@@ -42,7 +42,6 @@ structure:
             - Selezione file CSV
     #extends
     - Errore nella lettura del file
-    - Errore nella struttura del file
     - Visualizza dati dispositivo:
         #include
         - Visualizza nome dispositivo
