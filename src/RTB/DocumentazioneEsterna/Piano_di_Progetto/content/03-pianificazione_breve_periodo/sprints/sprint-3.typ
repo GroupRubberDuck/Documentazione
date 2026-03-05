@@ -24,8 +24,8 @@
   ],
   rischiEffettivi: [
     - *R.P.1 – Disponibilità variabile dei membri*:
-    - *Classificazione*: *Mitigated*.
-    - *Azione*: Adozione di gestione flessibile delle issue e formalizzazione della pausa natalizia.
+      - *Classificazione*: *Mitigated*.
+      - *Azione*: Adozione di gestione flessibile delle issue e formalizzazione della pausa natalizia.
 
     - *R.T.1 – Comprensione errata della norma EN 18031*:
       - *Classificazione*: *Resolved*.

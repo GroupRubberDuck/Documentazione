@@ -91,10 +91,24 @@
     (
       [0.5.0],
       [2026-02-17],
-      [Aldo Bettega],
-      [/],
+      [#persone.ALDO],
+      [-],
       [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi],
     ),
+    (
+      [0.6.0],
+      [2026-03-04],
+      [#persone.ALDO],
+      [-],
+      [Corrette e aggiornate le tabelle delle attività dei documenti]
+    ),
+    (
+      [0.7.0],
+      [2026-03-05],
+      [#persone.ALDO],
+      [-],
+      [Aggiunto @ROAM di classicazione e gestione rischi ROAM]
+    )
   )
   #registroModifiche(modifiche)
   // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
