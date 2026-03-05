@@ -1,6 +1,3 @@
-// 
-// Piano di Progetto - sezione 5 Pianificazione di breve periodo 
-// 
 == Requirements and Technology Baseline
 
 In questa sezione vengono elencati nel dettaglio gli sprint, analizzandoli con la seguente struttura:
