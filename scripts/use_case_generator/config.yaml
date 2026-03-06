@@ -92,8 +92,8 @@ structure:
         #include
         - Visualizza lista asset:
             - Visualizzazione singolo elemento della lista di asset:
-                - Visualizza nome
-                - Visualizza tipo
+                - Visualizza nome asset
+                - Visualizza tipo asset
                 - Visualizza stato aggregato asset
             #- Visualizzazione in dettaglio asset
     #include
@@ -108,7 +108,8 @@ structure:
             - Visualizzazione generale requisito:
                 - Visualizza nome requisito
                 - Visualizza stato valutazione
-            - Visualizzazione in dettaglio requisito:
+
+    - Visualizzazione in dettaglio requisito:
                 #include
                 - Visualizza codice requisito
                 #- Visualizza nome del requisito
@@ -123,7 +124,8 @@ structure:
                         - Visualizza codice nodo
                         - Visualizza domanda nodo
                         - Visualizza risposta nodo
-                    - Visualizza dettaglio nodo decision tree:
+
+    - Visualizza dettaglio nodo decision tree:
                         #include
                         #- Visualizza codice del nodo
                         #- Visualizza domanda del nodo
@@ -151,7 +153,7 @@ structure:
             - Vai al nodo precedente
             - Errore Nodo corrente è root
         #extends con condition: esito = NA
-        - Inserisci justification:
+        - Errore giustificazione mancante:
     - Esporta report di conformità:
         #generalizzazioni
         - Esporta report in PDF

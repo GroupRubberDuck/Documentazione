@@ -24,24 +24,31 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema recupera le dipendenze del requisito.
+        + Il sistema mostra la lista con i nomi dei requisiti da cui dipende il requisito corrente.
+    ],
+    pre-condizioni: [
+        - L'utente ha selezionato un requisito dalla lista #sym.arrow  #use-case-label(nome-etichetta: "Visualizzazione in dettaglio requisito").
+    ],
+    post-condizioni: [
+        - Le dipendenze del requisito sono visualizzate.
+    ],
     
     trigger:none,
     
     scenari-alternativi:none,
     
-    inclusioni:none,
+    inclusioni:[
+        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
+    ],
     
     estensioni:none,
     

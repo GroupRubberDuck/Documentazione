@@ -24,18 +24,24 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra il codice del requisito.
+    ],
+
+    pre-condizioni: [
+        - L'utente ha selezionato un requisito dalla lista #sym.arrow #use-case-label(nome-etichetta: "Visualizzazione in dettaglio requisito").
+    ],
+
+    post-condizioni: [
+        - Il codice del requisito è visualizzato.
+    ],
     
     trigger:none,
     

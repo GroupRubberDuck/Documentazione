@@ -24,18 +24,24 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra la giustificazione inserita per il nodo corrente.
+    ],
+
+    pre-condizioni: [
+        - L'utente sta visualizzando le evidenze del nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza evidenze nodo").
+    ],
+
+    post-condizioni: [
+        - La giustificazione del nodo è visualizzata.
+    ],
     
     trigger:none,
     

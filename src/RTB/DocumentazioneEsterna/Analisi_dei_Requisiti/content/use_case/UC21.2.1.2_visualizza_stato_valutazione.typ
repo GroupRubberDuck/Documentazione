@@ -25,17 +25,23 @@
     
     nome: use-case-nome,
     
-    livello-intestazione:depth+2,
+    livello-intestazione: depth+2,
     
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale: [Utente],
     
-    scenario-principale:none,
+    scenario-principale: [
+        + Il sistema mostra lo stato di valutazione del requisito (Pass, Fail, NA o In sospeso).
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni: [
+        - La lista dei requisiti dell'asset è stata caricata dal sistema.
+    ],
     
-    post-condizioni:none,
+    post-condizioni: [
+        - Lo stato di valutazione del requisito è visualizzato.
+    ],
     
     trigger:none,
     

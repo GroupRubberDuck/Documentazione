@@ -25,19 +25,25 @@
     
     nome: use-case-nome,
     
-    livello-intestazione:depth+2,
+    livello-intestazione: depth+2,
     
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale: [Utente],
     
-    scenario-principale:none,
+    scenario-principale: [
+        + Il sistema mostra il nome del requisito.
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni: [
+        - La lista dei requisiti dell'asset è stata caricata dal sistema.
+    ],
     
-    post-condizioni:none,
+    post-condizioni: [
+        - Il nome del requisito è visualizzato.
+    ],
     
-    trigger:none,
+    trigger: none,
     
     scenari-alternativi:none,
     

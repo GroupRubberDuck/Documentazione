@@ -8,46 +8,59 @@
 #let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
-  target-uc: use-case-nome,
-  actors: ("Utente",),
-  includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+    system-name: "Sistema",
+    target-uc: "",
+    actors: ("Utente",),
+    includes: (),
+    extends: (
+        "Errore nodo senza risposta selezionata": [L'utente tenta di procedere al nodo successivo senza aver selezionato una risposta],
+    ),
+    generalizations: (),
+    spacing: (2.5cm, 2cm),
+    diagram-scale: 80%
 )
-
 
 
 
 #use-case-template(
     
     nome: use-case-nome,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + L'utente seleziona l'opzione per procedere al nodo successivo.
+    ],
+
+    pre-condizioni: [
+        - L'utente sta navigando il decision tree: #use-case-label(nome-etichetta: "Navigazione del DT").
+    ],
+
+    post-condizioni: [
+        - Il sistema mostra il nodo successivo del decision tree.
+    ],
+
+    trigger: none,
+
+    scenari-alternativi: [
+    + L'utente tenta di procedere senza aver selezionato una risposta per il nodo corrente: #use-case-label(nome-etichetta: "Errore nodo senza risposta selezionata").
+    ],
+
+    inclusioni: none,
+
+    estensioni: [
+        - #use-case-label(nome-etichetta: "Errore nodo senza risposta selezionata")
+    ],
+
+    generalizzazioni: none,
     
-    livello-intestazione:depth+2,
+    path-immagine-diagramma:[
+        #diagram
+    ],
     
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
-    
-    trigger:none,
-    
-    scenari-alternativi:none,
-    
-    inclusioni:none,
-    
-    estensioni:none,
-    
-    generalizzazioni:none,
-    
-    path-immagine-diagramma:none,
-    
-    figure-caption:none,
+    figure-caption: use-case-label(nome-etichetta: use-case-nome),
 )

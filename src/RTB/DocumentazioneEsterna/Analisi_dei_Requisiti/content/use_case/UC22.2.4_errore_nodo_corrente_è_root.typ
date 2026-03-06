@@ -24,18 +24,25 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra un messaggio di errore.
+    ],
+
+    pre-condizioni: [
+        - L'utente sta navigando il decision tree: #use-case-label(nome-etichetta: "Vai al nodo precedente").
+        - Il nodo corrente è il nodo radice.
+    ],
+
+    post-condizioni: [
+        - Il sistema rimane sul nodo radice.
+    ],
     
     trigger:none,
     

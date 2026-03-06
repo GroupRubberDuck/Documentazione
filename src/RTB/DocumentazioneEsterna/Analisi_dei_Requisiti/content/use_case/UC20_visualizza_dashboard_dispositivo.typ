@@ -8,46 +8,61 @@
 #let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
-  target-uc: use-case-nome,
-  actors: ("Utente",),
-  includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+    system-name: "Sistema",
+    target-uc: "",
+    actors: ("Utente",),
+    includes: ("Visualizza dati dispositivo", "Visualizza stato aggregato dispositivo", "Visualizza lista asset"),
+    extends: (:),
+    generalizations: (),
+    spacing: (2.5cm, 2cm),
+    diagram-scale: 80%
 )
-
-
 
 
 #use-case-template(
     
     nome: use-case-nome,
     
-    livello-intestazione:depth+2,
+    livello-intestazione: depth+2,
     
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale: [Utente],
     
-    scenario-principale:none,
+    scenario-principale: [
+        + L'utente ha caricato o creato un dispositivo.
+        + Il sistema recupera e mostra i dati del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dati dispositivo").
+        + Il sistema calcola e mostra lo stato di conformità aggregato del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato aggregato dispositivo").
+        + Il sistema recupera e mostra la lista degli asset associati al dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista asset").
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni: [
+        - Un dispositivo è stato creato o caricato nel sistema.
+    ],
     
-    post-condizioni:none,
+    post-condizioni: [
+        - La dashboard del dispositivo è visualizzata correttamente con i dati aggiornati.
+    ],
     
-    trigger:none,
+    trigger: [
+        L'utente ha completato il caricamento o la creazione di un dispositivo e vuole vederne le informazioni.
+    ],
     
-    scenari-alternativi:none,
+    scenari-alternativi: none,
     
-    inclusioni:none,
+    inclusioni: [
+        - #use-case-label(nome-etichetta: "Visualizza dati dispositivo")
+        - #use-case-label(nome-etichetta: "Visualizza stato aggregato dispositivo")
+        - #use-case-label(nome-etichetta: "Visualizza lista asset")
+    ],
     
-    estensioni:none,
+    estensioni: none,
     
-    generalizzazioni:none,
+    generalizzazioni: none,
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:[
+        #diagram
+    ],
     
-    figure-caption:none,
+    figure-caption:use-case-label(nome-etichetta:use-case-nome),
 )

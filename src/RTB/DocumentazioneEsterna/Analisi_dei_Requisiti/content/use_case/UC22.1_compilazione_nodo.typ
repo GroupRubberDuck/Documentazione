@@ -8,46 +8,56 @@
 #let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
-  target-uc: use-case-nome,
-  actors: ("Utente",),
-  includes: (),
-  extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+    system-name: "Sistema",
+    target-uc: "",
+    actors: ("Utente",),
+    includes: ("Selezione risposta del nodo", "Inserisci evidenze"),
+    extends: (:),
+    generalizations: (),
+    spacing: (2.5cm, 2cm),
+    diagram-scale: 80%
 )
 
-
-
-
 #use-case-template(
-    
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
-    
-    trigger:none,
-    
-    scenari-alternativi:none,
-    
-    inclusioni:none,
-    
-    estensioni:none,
-    
-    generalizzazioni:none,
-    
-    path-immagine-diagramma:none,
-    
-    figure-caption:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra il nodo corrente del decision tree.
+        + L'utente seleziona una risposta per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Selezione risposta del nodo").
+        + L'utente inserisce facoltativamente le evidenze per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Inserisci evidenze").
+    ],
+
+    pre-condizioni: [
+        - L'utente sta compilando il decision tree #sym.arrow #use-case-label(nome-etichetta: "Compila decision tree").
+    ],
+
+    post-condizioni: [
+        - La risposta al nodo corrente è stata registrata.
+        - Le eventuali evidenze inserite dall'utente sono state registrate.
+    ],
+
+    trigger: none,
+
+    scenari-alternativi: none,
+
+    inclusioni: [
+        - #use-case-label(nome-etichetta: "Selezione risposta del nodo")
+        - #use-case-label(nome-etichetta: "Inserisci evidenze")
+    ],
+
+    estensioni: none,
+
+    generalizzazioni: none,
+
+    path-immagine-diagramma:[
+        #diagram
+    ],
+
+    figure-caption: use-case-label(nome-etichetta: use-case-nome),
 )

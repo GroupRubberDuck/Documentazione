@@ -30,8 +30,8 @@
         - Il dispositivo è attualmente selezionato.
     ],
     
-    post-condizioni:[
-        - Il sistema mostra i dati completi del dispositivo in modalità lettura.
+    post-condizioni: [
+    - La dashboard del dispositivo è visualizzata correttamente con i dati aggiornati.
     ],
     
     trigger:[
