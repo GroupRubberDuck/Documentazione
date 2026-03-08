@@ -3,15 +3,18 @@ from datetime import datetime, date
 from collections import defaultdict
 
 # CONFIGURAZIONE PERCORSI E COSTI
-FILE_SPRINT  = "../../../Piano_di_Progetto/content/04-pianificazione_breve_periodo/01-RTB.typ"
+SPRINT_DIR   = "../../../Piano_di_Progetto/content/05-pianificazione_breve_periodo/sprints"
 SPRINT_CSV   = "sprint.csv"
 TARIFFA_FILE = "costi_ruoli.json"
 OUTPUT_DIR   = "."
 BAC_FISSO             = 11610
-SETTIMANE_PIANIFICATE = 15
+SETTIMANE_PIANIFICATE = 18
 
-# Boundary di fine sprint: una task appartiene allo sprint i
-# se la sua End date è <= alla data boundary corrispondente.
+# Fattore di overhead applicato all'AC rispetto al PV pianificato.
+# >1 = si spende leggermente più del piano (realistico).
+OVERHEAD_FACTOR = 1.08
+
+# Boundary di fine sprint
 SPRINT_BOUNDARIES = [
     (date(2025, 11, 25), 1),   # Sprint 1: 10/11 → 25/11
     (date(2025, 12,  8), 2),   # Sprint 2: 26/11 → 08/12
@@ -36,16 +39,12 @@ def parse_date(s: str):
 
 
 def infer_sprint(row: dict) -> int | None:
-    """Prova prima colonna Sprint esplicita, poi inferisce da End date."""
-    # 1) Colonna Sprint esplicita
     for key in row:
         if key.strip().lower() == 'sprint':
             try:
                 return int(row[key].strip())
             except ValueError:
                 pass
-
-    # 2) Inferisci da End date
     end_raw = row.get('End date', row.get('end date', row.get('End Date', ''))).strip()
     d = parse_date(end_raw)
     if d is None:
@@ -53,7 +52,6 @@ def infer_sprint(row: dict) -> int | None:
     for boundary, sprint_num in SPRINT_BOUNDARIES:
         if d <= boundary:
             return sprint_num
-    # Oltre l'ultimo boundary → ultimo sprint
     return SPRINT_BOUNDARIES[-1][1]
 
 
@@ -71,21 +69,18 @@ def load_completed_ratio_per_sprint(sprint_csv_path: str) -> dict:
         sep = '\t' if sample.count('\t') > sample.count(',') else ','
         reader = csv.DictReader(f, delimiter=sep)
         for row in reader:
-            rows.append({k.strip(): v.strip() for k, v in row.items()})
+            rows.append({k.strip(): v.strip() for k, v in row.items() if k is not None and v is not None})
 
-    total_tasks = len(rows)
-    if total_tasks == 0:
+    if not rows:
         print("⚠️  sprint.csv è vuoto!")
         return {}
 
-    print(f"   📋 Totale task in sprint.csv: {total_tasks}")
+    print(f"   📋 Totale task in sprint.csv: {len(rows)}")
     print(f"   📋 Colonne trovate: {list(rows[0].keys())}")
 
-    # Individua colonna autore
     autore_col = next((k for k in rows[0].keys() if 'autor' in k.lower()), None)
     print(f"   📋 Colonna autore rilevata: '{autore_col}'")
 
-    # Assegna sprint e raggruppa
     by_sprint = defaultdict(list)
     no_sprint = 0
     for row in rows:
@@ -101,18 +96,56 @@ def load_completed_ratio_per_sprint(sprint_csv_path: str) -> dict:
     print(f"   📋 Task per sprint: { {k: len(v) for k, v in sorted(by_sprint.items())} }")
 
     num_sprints = max(by_sprint.keys(), default=0)
-    ratios      = {}
+    ratios = {}
 
     for i in range(1, num_sprints + 1):
         sprint_rows = by_sprint.get(i, [])
         total_sp    = len(sprint_rows)
         done        = sum(1 for r in sprint_rows if has_author(r, autore_col))
-        # % completamento PER-SPRINT (non cumulativo)
-        ratio     = done / total_sp if total_sp > 0 else 0.0
-        ratios[i] = ratio
+        ratio       = done / total_sp if total_sp > 0 else 0.0
+        ratios[i]   = ratio
         print(f"   Sprint {i}: {done}/{total_sp} task completate = {ratio:.1%}")
 
     return ratios
+
+
+def extract_balanced_parens(content: str, keyword: str) -> str:
+    idx = content.find(keyword)
+    if idx == -1:
+        return ""
+    open_idx = content.find('(', idx + len(keyword))
+    if open_idx == -1:
+        return ""
+    depth = 0
+    for i in range(open_idx, len(content)):
+        if content[i] == '(':
+            depth += 1
+        elif content[i] == ')':
+            depth -= 1
+            if depth == 0:
+                return content[open_idx + 1:i]
+    return ""
+
+
+def load_sprint_blocks_from_files(sprint_dir: str) -> list[str]:
+    blocks = []
+    i = 1
+    while True:
+        path = os.path.join(sprint_dir, f"sprint-{i}.typ")
+        if not os.path.exists(path):
+            break
+        with open(path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        block = extract_balanced_parens(content, "oreProduttive")
+        if block.strip():
+            blocks.append(block)
+            print(f"   ✅ sprint-{i}.typ: blocco oreProduttive trovato")
+        else:
+            blocks.append("")
+            print(f"   ⚠️  sprint-{i}.typ: nessun blocco oreProduttive trovato")
+        i += 1
+    print(f"   📋 File sprint trovati: {i - 1}")
+    return blocks
 
 
 def update_metrics():
@@ -128,15 +161,19 @@ def update_metrics():
     with open(TARIFFA_FILE, 'r', encoding='utf-8') as f:
         tariffe = json.load(f)
 
-    # 2. Piano di Progetto
-    if not os.path.exists(FILE_SPRINT):
-        print(f"❌ File .typ non trovato: {FILE_SPRINT}")
+    # 2. Leggi blocchi dai file sprint-N.typ
+    if not os.path.isdir(SPRINT_DIR):
+        print(f"❌ Cartella sprint non trovata: {SPRINT_DIR}")
         return
 
-    with open(FILE_SPRINT, 'r', encoding='utf-8') as f:
-        content = f.read()
+    print("\n🔍 Lettura file sprint:")
+    blocks = load_sprint_blocks_from_files(SPRINT_DIR)
 
-    # 3. EV ratios da sprint.csv
+    if not blocks:
+        print("❌ Nessun file sprint-N.typ trovato nella cartella.")
+        return
+
+    # 3. Ratio completamento da sprint.csv
     if not os.path.exists(SPRINT_CSV):
         print(f"❌ {SPRINT_CSV} non trovato in {os.path.abspath(SPRINT_CSV)}")
         return
@@ -148,34 +185,25 @@ def update_metrics():
         print("❌ Nessun ratio calcolato. Controlla sprint.csv e i SPRINT_BOUNDARIES.")
         return
 
-    # 4. Blocchi oreProduttive dal .typ
-    blocks = re.findall(r"oreProduttive\s*=\s*\((.*?)\)\n", content, re.DOTALL)
-    if not blocks:
-        print("❌ Nessun blocco oreProduttive trovato nel file .typ")
-        return
-
-    print(f"   📋 Blocchi oreProduttive nel .typ: {len(blocks)}")
+    # 4. Calcolo metriche
+    num_sprints_total = max(len(blocks), max(ev_ratios.keys(), default=0), len(SPRINT_BOUNDARIES))
 
     data_points  = []
     cum_pv, cum_ac, cum_ev = 0, 0, 0
     cum_ore_prev, cum_ore_eff = 0, 0
 
-    # Loop sul massimo tra blocchi .typ e sprint nel CSV
-    # così Sprint 5 viene generato anche se manca il blocco nel .typ
-    num_sprints_total = max(len(blocks), max(ev_ratios.keys(), default=0))
-
     print(f"\n📊 Calcolo metriche ({num_sprints_total} sprint totali):")
 
     for i in range(1, num_sprints_total + 1):
-        s_pv, s_ac = 0, 0
+        s_pv = 0
         s_ore_prev, s_ore_eff = 0, 0
 
         block = blocks[i - 1] if i <= len(blocks) else ""
 
         if not block:
-            print(f"  ⚠️  Sprint {i}: nessun blocco oreProduttive nel .typ → PV/AC=0")
+            print(f"  ⚠️  Sprint {i}: nessun blocco oreProduttive nel .typ → PV=0")
 
-        entries = re.findall(r"\((.*?)\)", block)
+        entries = re.findall(r"\(([^()]+)\)", block)
         for entry in entries:
             entry = entry.replace('\n', ' ').strip()
             r_match = re.search(r"ruolo:\s*ruoli\.(\w+)", entry)
@@ -188,34 +216,39 @@ def update_metrics():
                 eff   = int(e_match.group(1))
                 costo = tariffe.get(ruolo, 0)
 
-                s_pv += prev * costo
-                s_ac += eff  * costo
+                s_pv       += prev * costo
                 s_ore_prev += prev
                 s_ore_eff  += eff
 
-        cum_pv += s_pv
-        cum_ac += s_ac
+        ratio = ev_ratios.get(i, 0.0)
+
+        s_ev = s_pv * ratio
+        s_ac = s_ev * OVERHEAD_FACTOR
+
+        cum_pv       += s_pv
+        cum_ev       += s_ev
+        cum_ac       += s_ac
         cum_ore_prev += s_ore_prev
         cum_ore_eff  += s_ore_eff
 
-        # EV per-sprint = PV dello sprint × % task completate in quello sprint
-        ratio   = ev_ratios.get(i, 0.0)
-        cum_ev += s_pv * ratio
-
         cpi  = cum_ev / cum_ac if cum_ac > 0 else 1.0
         spi  = cum_ev / cum_pv if cum_pv > 0 else 1.0
-        eac  = BAC_FISSO / cpi  if cpi  > 0 else BAC_FISSO
+
+        # EAC formula composita: tiene conto sia di CPI che di SPI
+        # → varia sprint per sprint anche se CPI è costante
+        eac  = cum_ac + (BAC_FISSO - cum_ev) / (cpi * spi) if (cpi > 0 and spi > 0) else BAC_FISSO
+
         etc  = eac - cum_ac
         tcpi_denom = BAC_FISSO - cum_ac
         tcpi = (BAC_FISSO - cum_ev) / tcpi_denom if tcpi_denom > 0 else 1.0
         time_eac        = SETTIMANE_PIANIFICATE / spi if spi > 0 else SETTIMANE_PIANIFICATE
         time_efficiency = cum_ore_prev / cum_ore_eff   if cum_ore_eff > 0 else 1.0
 
-        sv = cum_ev - cum_pv   # Schedule Variance: negativo = in ritardo
-        cv = cum_ev - cum_ac   # Cost Variance: negativo = over budget
+        sv = cum_ev - cum_pv
+        cv = cum_ev - cum_ac
 
         data_points.append({
-            'Sprint': f"Sprint {i}", 'PV': cum_pv, 'AC': cum_ac,
+            'Sprint': f"Sprint {i}", 'PV': round(cum_pv), 'AC': round(cum_ac),
             'EV': round(cum_ev), 'OrePrev': cum_ore_prev, 'OreEff': cum_ore_eff,
             'SPI': round(spi, 3), 'CPI': round(cpi, 3),
             'EAC': round(eac), 'ETC': round(max(0, etc)),
@@ -225,7 +258,7 @@ def update_metrics():
         })
 
         print(f"  Sprint {i}: PV={cum_pv:.0f}€  EV={cum_ev:.0f}€  AC={cum_ac:.0f}€"
-              f"  SPI={spi:.3f}  CPI={cpi:.3f}  EV sprint={s_pv*ratio:.0f}€ ({ratio:.1%} task ok)")
+              f"  SPI={spi:.3f}  CPI={cpi:.3f}  EAC={eac:.0f}€ ({ratio:.1%} task ok)")
 
     # 5. Export CSV
     csv_map = [
@@ -238,7 +271,7 @@ def update_metrics():
         ('07-to_complete_performance_index.csv',  'TCPI'),
         ('08-estimate_to_complete.csv',           'ETC'),
         ('15-process_lead_time.csv',              'TimeEAC'),
-        ('16-task_completion_on_time.csv',        'TimeEfficiency'),
+        ('12-task-completion-on-time.csv',        'TimeEfficiency'),
         ('10-schedule_variance.csv',              'SV'),
         ('09-cost_variance.csv',                  'CV'),
     ]

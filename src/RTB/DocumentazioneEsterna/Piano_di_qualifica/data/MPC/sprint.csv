@@ -1,8 +1,8 @@
 Title,URL,Autore,Verificatore,Start date,End date,Size
-Diario di bordo 1,https://github.com/GroupRubberDuck/Documentazione/issues/1,Aldo,-,2025-10-25,,XS
+Diario di bordo 1,https://github.com/GroupRubberDuck/Documentazione/issues/1,Aldo,-,2025-10-25,2025-11-25,XS
 Verbale riunione con M31,https://github.com/GroupRubberDuck/Documentazione/issues/2,Testolin,Filippo,2025-10-25,2025-10-28,S
-Verbale riunione con Bluewind,https://github.com/GroupRubberDuck/Documentazione/issues/3,Felix,Testolin,2025-10-23,-,S
-Verbale riunione con eggon,https://github.com/GroupRubberDuck/Documentazione/issues/4,Filippo,Testolin,2025-10-30,-,S
+Verbale riunione con Bluewind,https://github.com/GroupRubberDuck/Documentazione/issues/3,Felix,Testolin,2025-10-23,2025-11-25,S
+Verbale riunione con eggon,https://github.com/GroupRubberDuck/Documentazione/issues/4,Filippo,Testolin,2025-10-30,2025-11-25,S
 Lettera di presentazione,https://github.com/GroupRubberDuck/Documentazione/issues/5,Ana,Testolin,2025-10-28,2025-10-28,S
 Setup sito web,-,Testolin,-,2025-10-24,2025-11-11,L
 Valutazione dei capitolati,https://github.com/GroupRubberDuck/Documentazione/issues/6,"Aldo, Lorenzon, Felix",Testolin,2025-10-25,2025-10-31,M
@@ -11,9 +11,9 @@ Migliorare la struttura dei documenti,https://github.com/GroupRubberDuck/Documen
 Registro delle modifiche,https://github.com/GroupRubberDuck/Documentazione/issues/9,Lorenzon,-,2025-10-25,2025-10-31,M
 riassunto dello stato del documento,https://github.com/GroupRubberDuck/Documentazione/issues/10,Lorenzon,-,2025-10-25,2025-10-31,XS
 Sistema di riferimento per decisioni e TODO,https://github.com/GroupRubberDuck/Documentazione/issues/11,Lorenzon,-,2025-10-25,2025-10-31,S
-Verbale smart order C8,https://github.com/GroupRubberDuck/Documentazione/issues/12,"Aldo, Lorenzon",Filippo,2025-10-20,-,S
+Verbale smart order C8,https://github.com/GroupRubberDuck/Documentazione/issues/12,"Aldo, Lorenzon",Filippo,2025-10-20,2025-11-25,S
 Creazione di un template apposito per i diari di bordo,https://github.com/GroupRubberDuck/Documentazione/issues/13,Aldo,-,2025-10-29,2025-10-31,S
-Verbale riunione interna 28/10,https://github.com/GroupRubberDuck/Documentazione/issues/14,Felix,Aldo,2025-10-29,-,S
+Verbale riunione interna 28/10,https://github.com/GroupRubberDuck/Documentazione/issues/14,Felix,Aldo,2025-10-29,2025-11-25,S
 Aggiornamento della lettera di presentazione,https://github.com/GroupRubberDuck/Documentazione/issues/16,Ana,Aldo,2025-11-04,2025-11-04,XS
 Aggiornare la valutazione dei capitolati,https://github.com/GroupRubberDuck/Documentazione/issues/17,"Ana, Felix",Aldo,2025-11-04,2025-11-04,S
 Aggiornamento del preventivo,https://github.com/GroupRubberDuck/Documentazione/issues/18,Lorenzon,Testolin,2025-11-04,2025-11-04,XS
@@ -52,8 +52,8 @@ Implementare variabile per il tracciamento automatico della versione,https://git
 Continuare analisi dei rischi,https://github.com/GroupRubberDuck/Documentazione/issues/67,Felix,Ana,2025-12-09,2025-12-12,M
 Aggiornare glossario e introdurre sezione abbreviazioni,https://github.com/GroupRubberDuck/Documentazione/issues/68,Filippo,Testolin,2025-12-09,2025-12-17,S
 Ricerche metriche di qualità,https://github.com/GroupRubberDuck/Documentazione/issues/69,Felix,Lorenzon,2025-12-15,2025-12-18,M
-Ricerche tecniche di preventivo,https://github.com/GroupRubberDuck/Documentazione/issues/70,"Testolin, Filippo",Ana,2025-12-09,2025-01-16,M
-Ricerca tecniche di pianificazione,https://github.com/GroupRubberDuck/Documentazione/issues/71,Ana,Testolin,2025-12-09,2025-01-16,M
+Ricerche tecniche di preventivo,https://github.com/GroupRubberDuck/Documentazione/issues/70,"Testolin, Filippo",Ana,2025-12-09,2026-01-16,M
+Ricerca tecniche di pianificazione,https://github.com/GroupRubberDuck/Documentazione/issues/71,Ana,Testolin,2025-12-09,2026-01-16,M
 Riassumere ACM-1,https://github.com/GroupRubberDuck/Documentazione/issues/72,Aldo,-,2025-12-09,2025-12-10,S
 Riassumere ACM-2,https://github.com/GroupRubberDuck/Documentazione/issues/73,Aldo,-,2025-12-09,2025-12-10,S
 Riassumere AUM-2,https://github.com/GroupRubberDuck/Documentazione/issues/74,Felix,-,2025-12-09,2025-12-16,S
@@ -76,15 +76,9 @@ Sezione processi primari,https://github.com/GroupRubberDuck/Documentazione/issue
 Sezione relativa ai processi di supporto,https://github.com/GroupRubberDuck/Documentazione/issues/94,Ana,Lorenzon,2026-01-05,2026-01-10,L
 Scrittura verbale esterno 2026-01-13,https://github.com/GroupRubberDuck/Documentazione/issues/96,Aldo,Filippo,2026-01-13,2026-01-14,M
 Scrittura verbale interno 2026-01-13,https://github.com/GroupRubberDuck/Documentazione/issues/97,Aldo,Felix,2026-01-13,2026-01-15,M
-Ricerca e definizione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/98,"Testolin, Filippo",,"Jan 14, 2026",2026-02-04,M
-Ricerca tecnologie di sviluppo e deploy,https://github.com/GroupRubberDuck/Documentazione/issues/99,,,"Jan 14, 2026",2026-02-04,M
-Ricerca tecnologie di backend,https://github.com/GroupRubberDuck/Documentazione/issues/100,,,"Jan 14, 2026",2026-02-04,M
-Verificare Norme Progetto,https://github.com/GroupRubberDuck/Documentazione/issues/101,,,,,S
-Redazione dei diagrammi dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issues/102,,,,,M
-Scrittura verbale interno 2026-02-09,https://github.com/GroupRubberDuck/Documentazione/issues/103,,,2026-02-09,2026-02-13,S
-Ricerca e definizione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/98,"Testolin, Filippo",,2026-01-14,-,M
-Ricerca tecnologie di sviluppo e deploy,https://github.com/GroupRubberDuck/Documentazione/issues/99,"Testolin, Filippo",,2026-01-14,-,M
-Ricerca tecnologie di backend,https://github.com/GroupRubberDuck/Documentazione/issues/100,"Testolin, Filippo",,2026-01-14,-,M
-Verificare Norme Progetto,https://github.com/GroupRubberDuck/Documentazione/issues/101,,,2026-01-16,-,S
-Redazione dei diagrammi dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issues/102,Lorenzon,,2026-02-06,-,-
-Scrittura verbale interno 2026-02-09,https://github.com/GroupRubberDuck/Documentazione/issues/103,Lorenzon,Felix,2026-02-09,2026-02-24,S
+Ricerca e definizione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/98,"Testolin, Filippo",,2026-01-14,2026-02-04,M
+Ricerca tecnologie di sviluppo e deploy,https://github.com/GroupRubberDuck/Documentazione/issues/99,"Testolin, Filippo",,2026-01-14,2026-02-04,M
+Ricerca tecnologie di backend,https://github.com/GroupRubberDuck/Documentazione/issues/100,"Testolin, Filippo",,2026-01-14,2026-02-04,M
+Verificare Norme Progetto,https://github.com/GroupRubberDuck/Documentazione/issues/101,,,2026-01-16,2026-02-04,S
+Redazione dei diagrammi dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issues/102,Lorenzon,,2026-02-06,2026-02-18,M
+Scrittura verbale interno 2026-02-09,https://github.com/GroupRubberDuck/Documentazione/issues/103,Lorenzon,Felix,2026-02-09,2026-02-18,S
