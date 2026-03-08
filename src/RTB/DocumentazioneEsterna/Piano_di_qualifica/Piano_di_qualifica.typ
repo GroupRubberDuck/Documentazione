@@ -87,7 +87,14 @@
       [2026-02-24],
       [Ana Maria Draghici],
       [],
-      [Aggiunto automatizazione calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
+    ),
+    (
+      [0.5.0],
+      [2026-03-08],
+      [Ana Maria Draghici],
+      [],
+      [Aggiornato @testing in seguito a Sprint 5]
     ),
   )
   #registroModifiche(modifiche)
@@ -135,7 +142,7 @@
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Strategie di testing", documentType: doc)[
-  = Strategie di testing
+  = Strategie di testing <testing>
   #include "content/04-strategie_testing/index.typ"
 
 
