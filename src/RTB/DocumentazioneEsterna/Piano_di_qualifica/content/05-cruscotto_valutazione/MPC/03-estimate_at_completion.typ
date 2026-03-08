@@ -36,12 +36,4 @@
   y-max: 15000,
 )
 
-L'EAC si mantiene costantemente sopra il BAC (11610€) per tutti gli sprint, con uno
-scostamento che si amplia nello Sprint 4 raggiungendo circa 13400€. Questo risultato
-è direttamente conseguente al CPI < 1 già discusso: se ogni euro speso produce meno
-valore del previsto, la proiezione a fine progetto supera il budget. Tuttavia il team
-monitora il budget reale in modo puntuale e consapevole: lo sforamento proiettato
-dall'EAC è da ricondurre principalmente a imprecisioni nelle stime iniziali delle ore
-per ruolo, non a una reale perdita di controllo della spesa. Il consuntivo effettivo
-resta ampiamente sotto il BAC, come documentato nel
-#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto] e nella sezione  @budget-progress-bar contenente  il "Budget Progress Bar". 
+L'EAC si mantiene costantemente sopra il BAC (11610€) per tutti e cinque gli sprint, con uno scostamento che si amplia progressivamente raggiungendo il picco nello Sprint 4 con circa 13400€, per poi stabilizzarsi attorno a 12600€ negli Sprint 5. Questo andamento riflette l'effetto combinato di CPI e SPI: nella fase centrale del progetto, il rallentamento dovuto alla sessione esami ha gonfiato la stima a completamento, mentre il recupero parziale del ritmo nello Sprint 5 ha riportato l'EAC verso valori più contenuti. \ Lo sforamento proiettato è da ricondurre principalmente a imprecisioni nelle stime iniziali delle ore per ruolo, non a una reale perdita di controllo della spesa. Il consuntivo effettivo resta ampiamente sotto il BAC, come documentato nel  #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto] e nella sezione  @budget-progress-bar contenente  il "Budget Progress Bar". 

@@ -3,7 +3,7 @@
 #import "/src/TypstTemplate/charts/KPI-chart.typ": grafico-multi-linea
 
 // Caricamento dati 
-#let data-eT = csv("../../../data/MPC/12-task_completion_on_time.csv").slice(1)
+#let data-eT = csv("../../../data/MPC/12-task-completion-on-time.csv").slice(1)
 #let values-eT = data-eT.map(row => float(row.at(1)))
 
 // Estrazione etichette
@@ -22,15 +22,8 @@
   "Efficienza Temporale",
   y-label: "Indice",
   x-label: "Sprint",
-  y-min: 0,
-  y-max: 1,
+  y-min: 0.5,
+  y-max: 1.5,
 )
 
-Il team ha mantenuto una Time Efficiency costantemente vicina a 1 per tutti gli sprint,
-con valori compresi tra 0.90 e 0.95. Questo indica che le ore effettivamente impiegate
-sono state leggermente superiori a quelle stimate.
-Il calo nello Sprint 4 è coerente con la riduzione di produttività dovuta alla sessione
-esami. 
-\ Complessivamente il team ha dimostrato una buona capacità di rispettare le
-stime temporali, con margini di miglioramento nella precisione della pianificazione
-delle ore per attività.
+Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti e cinque gli sprint, dimostrando che i compiti assegnati vengono portati a termine nei tempi previsti. Il valore va tuttavia confrontato con la qualità del lavoro prodotto e con l'accuratezza delle stime di tempo e costo, per ottenere una valutazione completa dell'efficienza del team.

@@ -30,9 +30,4 @@
 )
 
 
-CPI e SPI si mantengono vicini a 1 nei primi tre sprint, con un lieve peggioramento
-nello Sprint 4: SPI scende a 0.958 a causa della sessione esami che ha ridotto
-la disponibilità del team, mentre CPI cala a 0.871 per il progressivo accumulo di
-costi superiori alle stime. La soglia ottimale non viene mai raggiunta, confermando
-lo scostamento strutturale già evidenziato nel grafico PV/EV/AC, documentato nel
-#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+CPI e SPI si mantengono vicini a 1 nei primi tre sprint, con un lieve peggioramento nello Sprint 4: SPI scende a 0.958 a causa della sessione esami che ha ridotto la disponibilità del team, mentre CPI cala progressivamente per l'accumulo di costi superiori alle stime. Nello Sprint 5 entrambi gli indici si stabilizzano, con SPI che si assesta intorno a 0.98 e CPI che rimane costante rispetto allo sprint precedente, segnale che il ritmo di lavoro del team si è normalizzato. La soglia ottimale non viene mai raggiunta, confermando lo scostamento strutturale già evidenziato nel grafico PV/EV/AC, e documentato nel  #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].

@@ -7,8 +7,8 @@
 
 #let values-time-eac = data-time-eac.map(row => float(row.at(1)))
 
-// Soglia: durata pianificata (8 settimane)
-#let threshold = data-time-eac.map(row => 8.0)
+// Soglia: durata pianificata (18 settimane)
+#let threshold = data-time-eac.map(row => 18.0)
 
 // Estrazione etichette
 #let x-labels = data-time-eac.map(row => row.at(0))
@@ -27,12 +27,8 @@
   "Stima Durata Finale del Progetto (Time EAC)",
   y-label: "Settimane",
   x-label: "Sprint",
-  y-min: 4,
-  y-max: 10,
+  y-min: 10,
+  y-max: 25,
 )
 
-Il TimeEAC si mantiene costantemente allineato per tutti
-gli sprint, con uno scostamento  nello Sprint 4. Questo
-conferma che, nonostante il CPI leggermente sotto 1, il team ha rispettato
-sostanzialmente la schedulazione temporale prevista. Il lieve aumento finale è
-riconducibile alla sessione esami dello Sprint 4 che ha ridotto la produttività.
+Il TimeEAC si mantiene costantemente allineato al pianificato per tutti e cinque gli sprint, con uno scostamento massimo nello Sprint 4 dovuto alla sessione esami. Nello Sprint 5 il TimeEAC si riduce leggermente rispetto al picco precedente, segnale che il team ha recuperato parte del ritmo perduto e la stima temporale a completamento si sta riavvicinando alle 18 settimane pianificate.

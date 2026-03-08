@@ -30,14 +30,7 @@
   y-label: "Valore (€)",
   x-label: "Sprint",
   y-min: 400,
-  y-max: 1600
+  y-max: 4000
 )
 
-Il team ha mantenuto un ritmo di avanzamento coerente con la pianificazione, con EV e PV
-che viaggiano molto vicini per tutti e quattro gli sprint. Tuttavia l'AC supera
-costantemente entrambi fin dallo Sprint 1, evidenziando una tendenza strutturale a
-spendere più di quanto pianificato. Questo scostamento è attribuibile alla natura
-del progetto: trattandosi della prima esperienza del team con un progetto di questa
-tipologia, le stime iniziali delle ore necessarie per ciascun ruolo hanno risentito
-della mancanza di riferimenti storici. Le cause e le contromisure adottate sono
-dettagliatamente documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+Il team ha mantenuto un ritmo di avanzamento coerente con la pianificazione, con EV e PV che viaggiano molto vicini per tutti e cinque gli sprint. Tuttavia l'AC supera costantemente entrambi fin dallo Sprint 1, evidenziando una tendenza strutturale a spendere più di quanto pianificato. A partire dallo Sprint 5 si osserva una leggera stabilizzazione dello scostamento, segno che il team sta acquisendo maggiore controllo sui costi effettivi. Lo scostamento complessivo è attribuibile alla natura del progetto: trattandosi della prima esperienza del team con un progetto di questa tipologia, le stime iniziali delle ore necessarie per ciascun ruolo hanno risentito della mancanza di riferimenti storici. Le cause e le contromisure adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
