@@ -8,16 +8,16 @@ SPRINT_CSV   = "sprint.csv"
 TARIFFA_FILE = "costi_ruoli.json"
 OUTPUT_DIR   = "."
 BAC_FISSO             = 11610
-SETTIMANE_PIANIFICATE = 8
+SETTIMANE_PIANIFICATE = 15
 
 # Boundary di fine sprint: una task appartiene allo sprint i
 # se la sua End date è <= alla data boundary corrispondente.
-# Adatta queste date ai tuoi sprint reali.
 SPRINT_BOUNDARIES = [
     (date(2025, 11, 25), 1),   # Sprint 1: 10/11 → 25/11
     (date(2025, 12,  8), 2),   # Sprint 2: 26/11 → 08/12
     (date(2025, 12, 23), 3),   # Sprint 3: 09/12 → 23/12
     (date(2026,  2,  4), 4),   # Sprint 4: 05/01 → 04/02
+    (date(2026,  2, 18), 5),   # Sprint 5: 05/02 → 18/02
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']
@@ -108,7 +108,7 @@ def load_completed_ratio_per_sprint(sprint_csv_path: str) -> dict:
         total_sp    = len(sprint_rows)
         done        = sum(1 for r in sprint_rows if has_author(r, autore_col))
         # % completamento PER-SPRINT (non cumulativo)
-        ratio    = done / total_sp if total_sp > 0 else 0.0
+        ratio     = done / total_sp if total_sp > 0 else 0.0
         ratios[i] = ratio
         print(f"   Sprint {i}: {done}/{total_sp} task completate = {ratio:.1%}")
 
@@ -154,15 +154,26 @@ def update_metrics():
         print("❌ Nessun blocco oreProduttive trovato nel file .typ")
         return
 
+    print(f"   📋 Blocchi oreProduttive nel .typ: {len(blocks)}")
+
     data_points  = []
     cum_pv, cum_ac, cum_ev = 0, 0, 0
     cum_ore_prev, cum_ore_eff = 0, 0
 
-    print(f"\n📊 Calcolo metriche ({len(blocks)} sprint dal .typ):")
+    # Loop sul massimo tra blocchi .typ e sprint nel CSV
+    # così Sprint 5 viene generato anche se manca il blocco nel .typ
+    num_sprints_total = max(len(blocks), max(ev_ratios.keys(), default=0))
 
-    for i, block in enumerate(blocks, 1):
+    print(f"\n📊 Calcolo metriche ({num_sprints_total} sprint totali):")
+
+    for i in range(1, num_sprints_total + 1):
         s_pv, s_ac = 0, 0
         s_ore_prev, s_ore_eff = 0, 0
+
+        block = blocks[i - 1] if i <= len(blocks) else ""
+
+        if not block:
+            print(f"  ⚠️  Sprint {i}: nessun blocco oreProduttive nel .typ → PV/AC=0")
 
         entries = re.findall(r"\((.*?)\)", block)
         for entry in entries:
@@ -188,7 +199,6 @@ def update_metrics():
         cum_ore_eff  += s_ore_eff
 
         # EV per-sprint = PV dello sprint × % task completate in quello sprint
-        # Poi si cumula come PV e AC
         ratio   = ev_ratios.get(i, 0.0)
         cum_ev += s_pv * ratio
 
@@ -219,16 +229,16 @@ def update_metrics():
 
     # 5. Export CSV
     csv_map = [
-        ('01-planned_value.csv',                'PV'),
-        ('02-earned_value.csv',                 'EV'),
-        ('03-actual_cost.csv',                  'AC'),
-        ('04-schedule_performance_index.csv',   'SPI'),
-        ('05-cost_performance_index.csv',        'CPI'),
-        ('06-estimate_at_completion.csv',        'EAC'),
-        ('07-to_complete_performance_index.csv', 'TCPI'),
-        ('08-estimate_to_complete.csv',          'ETC'),
-        ('15-process_lead_time.csv',             'TimeEAC'),
-        ('16-task_completion_on_time.csv',       'TimeEfficiency'),
+        ('01-planned_value.csv',                 'PV'),
+        ('02-earned_value.csv',                  'EV'),
+        ('03-actual_cost.csv',                   'AC'),
+        ('04-schedule_performance_index.csv',    'SPI'),
+        ('05-cost_performance_index.csv',         'CPI'),
+        ('06-estimate_at_completion.csv',         'EAC'),
+        ('07-to_complete_performance_index.csv',  'TCPI'),
+        ('08-estimate_to_complete.csv',           'ETC'),
+        ('15-process_lead_time.csv',              'TimeEAC'),
+        ('16-task_completion_on_time.csv',        'TimeEfficiency'),
         ('10-schedule_variance.csv',              'SV'),
         ('09-cost_variance.csv',                  'CV'),
     ]
