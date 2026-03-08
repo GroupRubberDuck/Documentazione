@@ -63,7 +63,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 
 // -------- TIMELINE VISIVA --------
 #align(center)[
-  *Fasi di progetto*\
+  *Avanzamento del progetto*\
   #v(6pt)
   #sym.bar.h ● *Analisi* #sym.arrow.r ● *Progettazione* #sym.arrow.r ● *Implementazione* #sym.arrow.r ● *Verifica*
   #{
