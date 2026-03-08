@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 4,
+  minor: 6,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -57,14 +57,14 @@
     (
       [0.0.1],
       [2025-12-15],
-      [Felician Mario Necsulescu ],
+      [Felician Mario \ Necsulescu ],
       [Davide Testolin],
       [Creazione del documento e stesura iniziale.],
     ),
     (
       [0.1.0],
       [2025-12-18],
-      [Felician Mario Necsulescu],
+      [Felician Mario \ Necsulescu],
       [Davide Testolin],
       [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.],
     ),
@@ -72,20 +72,20 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [Ana Maria Draghici],
+      [Ana Maria \ Draghici],
       [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
       [0.3.0],
       [2026-02-23],
       [Davide Testolin],
-      [Ana Maria Draghici],
+      [Ana Maria\  Draghici],
       [Aggiunti i grafici per alcune metriche]
     ),
     (
       [0.4.0],
       [2026-02-24],
-      [Ana Maria Draghici],
+      [Ana Maria \ Draghici],
       [],
       [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
     ),
@@ -94,7 +94,14 @@
       [2026-03-08],
       [Ana Maria Draghici],
       [],
-      [Aggiornato @testing in seguito a Sprint 5]
+      [Aggiornata @valutazione in seguito a Sprint 5]
+    ),
+    (
+      [0.6.0],
+      [2026-03-08],
+      [Ana Maria Draghici],
+      [],
+      [Aggiunta @testing]
     ),
   )
   #registroModifiche(modifiche)
@@ -156,7 +163,7 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Cruscotto di valutazione", documentType: doc)[
-  = Cruscotto di valutazione
+  = Cruscotto di valutazione <valutazione>
   #include "content/05-cruscotto_valutazione/index.typ"
 
 ]

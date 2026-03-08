@@ -31,11 +31,4 @@
   y-max: calc.max(..values-co),
 )
 
-Il team ha introdotto il monitoraggio della correttezza ortografica a partire dallo
-Sprint 3, in risposta a una criticità emersa nelle revisioni della documentazione:
-la verifica grammaticale era stata identificata come area di miglioramento. \ 
-Il grafico mostra un trend positivo: gli errori scendono da 64 nello Sprint 3 a 55
-nello Sprint 4, evidenziando un miglioramento concreto grazie all'adozione di processi
-di verifica più sistematici. \
-Il dato è parziale (solo due sprint) poiché la metrica
-è stata introdotta in corso d'opera; il monitoraggio continuerà nelle fasi successive.
+Il team ha introdotto il monitoraggio della correttezza ortografica a partire dallo Sprint 3, in risposta a una criticità emersa nelle revisioni della documentazione. Il grafico mostra un trend fortemente positivo: gli errori scendono da 64 nello Sprint 3 a 55 nello Sprint 4, fino a circa 9 nello Sprint 5, evidenziando un miglioramento netto grazie all'adozione di processi di verifica più sistematici.
