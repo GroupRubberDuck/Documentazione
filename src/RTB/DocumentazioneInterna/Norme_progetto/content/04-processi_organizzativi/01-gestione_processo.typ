@@ -155,7 +155,7 @@ Inoltre, il sistema di gestione delle issue prevede:
 
 - La *definizione delle milestone*, utilizzate per raggruppare attività e monitorare il raggiungimento degli obiettivi intermedi;
 
-- L'’*uso della retrospettiva*, al termine di iterazioni o sprint, per analizzare le attività completate, individuare criticità e definire azioni di miglioramento per le fasi successive.
+- L’*uso della retrospettiva*, al termine di iterazioni o sprint, per analizzare le attività completate, individuare criticità e definire azioni di miglioramento per le fasi successive.
 
 Questo approccio consente una gestione strutturata, trasparente e verificabile dell’intero ciclo di vita delle attività di progetto.
 

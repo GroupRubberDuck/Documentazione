@@ -12,8 +12,8 @@
   ]
   In coerenza con tali riferimenti, il progetto distingue due categorie principali di rischio non mutualmente esclusive:
   #pad(left: 1em)[ 
-  - *Rischi di progetto* : Questi rischi possono influire sulla tabella di marcia o sulle risorse disponibili per il progetto. 
-  - *Rischi di prodotto* : Questi rischi possono influire sulla qualità o sulle funzionalità del prodotto.
+  - *Rischi di progetto*: Questi rischi possono influire sulla tabella di marcia o sulle risorse disponibili per il progetto. 
+  - *Rischi di prodotto*: Questi rischi possono influire sulla qualità o sulle funzionalità del prodotto.
 
 === Struttura delle tabelle dei rischi 
 
@@ -62,7 +62,7 @@ O = organizzativo
     tipo: "Rischio di progetto + Rischio di prodotto",
     descrizione: [L’utilizzo di tecnologie nuove o poco conosciute può rallentare significativamente il progetto, poiché richiede tempo per lo studio e la sperimentazione.],
     prevenzione: [Per prevenirlo si prevedono momenti iniziali di studio e la creazione di piccoli prototipi per acquisire familiarità. Il team può inoltre condividere materiali o esperienze per velocizzare l’apprendimento.],
-    mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorre al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
+    mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorrere al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
     frequenza: "Alta",
     pericolo: "Alta",
   )

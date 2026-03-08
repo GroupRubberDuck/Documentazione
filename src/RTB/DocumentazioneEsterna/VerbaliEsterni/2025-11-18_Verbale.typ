@@ -116,7 +116,7 @@
 
   + Volevamo chiedervi: noi abbiamo provato già a vedere dei possibili metodi per gestirci fra di noi, però data ancora l’inesperienza non sappiamo bene verso che tecnologie orientarci, anche per questione di coordinamento interno, avete delle dritte che potete darci? Dalle vostre esperienze quali ritenete siano gli aspetti fondamentali su cui concentrarsi per lavorare in team in modo efficiente? Noi comunque abbiamo iniziato a lavorare sulla varia documentazione creando una repository github che se serve condividiamo.
 
-  + Per la questione caso di studio machinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
+  + Per la questione caso di studio machinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? Per capire qual è la struttura e familiarizzarci.  
 
   + Sarà fornita della documentazione riguardante le normative che dovremo usare, cioè l’Access Control Mechanism e l’Authentication Mechanism?
 ]
@@ -262,7 +262,7 @@ I TODO sorti da questa riunione sono i seguenti:
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
 
-Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolto successivamente e ad opera di un singolo membro del gruppo.
+Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolta successivamente e ad opera di un singolo membro del gruppo.
 ]
 
 #insertArabicNumberedPages("Approvazione esterna ","Verbale esterno",giornoRiunione )[

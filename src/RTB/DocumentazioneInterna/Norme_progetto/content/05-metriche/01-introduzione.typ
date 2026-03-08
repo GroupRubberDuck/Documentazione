@@ -8,19 +8,19 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
     Valuta la capacità del software di fornire correttamente le funzionalità richieste dai requisiti, assicurando completezza e coerenza rispetto alle specifiche definite.
     In particolare sono considerate:
 
-        - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere]),
-        - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti]),
-        - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti]),
-        - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio]),
-        - *Sicurezza*:#[ \ Non vi sono falle di sicurezza che espongono dati sensibili degli utenti]),
+        - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere]
+        - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti]
+        - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti]
+        - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio]
+        - *Sicurezza*:#[ \ Non vi sono falle di sicurezza che espongono dati sensibili degli utenti]
       
   ]),
   ([*Affidabilità*],[
     Misura la capacità del software di operare senza guasti in condizioni previste, garantendo comportamenti consistenti e riducendo al minimo malfunzionamenti.
-      - * Maturità *:\ #[Capacità di evitare blocchi della applicazione a seguito di errori nel software]),
-      - *Tolleranza agli errori*: \ #[Capacità di mantenere determinati livelli di prestazione in caso di errori]),
-      - *Recuperabilità*: \ #[Capacità di ripristinare livelli di prestazione predeterminati e di recuperare i dati seguito di errori]),
-      - * Aderenza *: \ #[Capacità di aderire a standard di affi]),
+      - * Maturità *:\ #[Capacità di evitare blocchi della applicazione a seguito di errori nel software]
+      - *Tolleranza agli errori*: \ #[Capacità di mantenere determinati livelli di prestazione in caso di errori]
+      - *Recuperabilità*: \ #[Capacità di ripristinare livelli di prestazione predeterminati e di recuperare i dati seguito di errori]
+      - * Aderenza *: \ #[Capacità di aderire a standard di affi]
   ]),
   ([*Efficienza*],[
     Indica l’ottimizzazione delle risorse e la rapidità di risposta del software alle richieste, valutando tempi di esecuzione, throughput e utilizzo delle risorse disponibili.

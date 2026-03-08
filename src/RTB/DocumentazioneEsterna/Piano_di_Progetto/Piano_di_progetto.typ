@@ -63,7 +63,7 @@
     Pianificazione di breve e lungo periodo promosse a sezioni.]),    
     ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
     ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
-    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
+    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunti per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
     ([0.5.0], [2026-02-17], [Aldo Bettega], [/], [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi])
   )
   #registroModifiche(modifiche)
