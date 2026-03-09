@@ -3,7 +3,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
 #let use-case-nome="Inserimento descrizione dispositivo"
-#let depth=3
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 #use-case-template(
     
     nome: use-case-nome,

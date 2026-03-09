@@ -3,7 +3,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 
 #let use-case-nome="Visualizzazione singolo elemento della lista di asset"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 #use-case-template(
     
     nome: use-case-nome,

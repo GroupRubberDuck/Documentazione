@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Cerca asset"
-#let depth=1
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,15 +29,24 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce il nome dell'asset 
+        + Il sistema mostra una lista di asset corrispondenti ai criteri di ricerca
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Nel sistema è attiva una sessione della modifica del modello
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente visualizza la lista di asset corrispondenti ai criteri di ricerca
+    ],
     
-    trigger:none,
+    trigger:[
+        L'utente seleziona la funzione di ricerca degli asset
+    ],
     
     scenari-alternativi:none,
     

@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Visualizza stato aggregato dispositivo"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,13 +29,21 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + Il sistema aggrega gli stati degli asset del dispositivo
+        + L'utente visualizza lo stato aggregato della valutazione de dispositivo
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Nel sistema è attiva una sessione di valutazione di un dispositivo
+        - L'utente ha selezionata la visualizzazione del dispositivo
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        L'utente visualizza la dashboard riassuntiva dello stato del dispositivo
+    ],
     
     trigger:none,
     

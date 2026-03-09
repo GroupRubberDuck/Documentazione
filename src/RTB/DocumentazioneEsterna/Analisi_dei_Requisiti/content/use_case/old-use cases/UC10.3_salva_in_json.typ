@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Salva in json"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 #use-case-template(
     
     nome: use-case-nome,

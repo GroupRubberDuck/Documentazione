@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Seleziona yes"
-#let depth=4
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 

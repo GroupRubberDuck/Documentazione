@@ -37,7 +37,7 @@
   let lbl = label("uc-" + slugify(uc-name))
   node(
     uc-position, 
-    align(center)[#use-case-link-extended-label(nome-etichetta: uc-name)], 
+    align(center)[#use-case-link-extended-label(nome-etichetta: uc-name,br:true)], 
     name: lbl, 
     ..st.style-uc
   )
@@ -143,7 +143,7 @@
   node(
     tab-position, 
     align(center)[
-      #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name))#h(0.5em)
+      #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name,br:true))#h(0.5em)
     ], 
     name: lbl, 
     ..st.style-exp-tab
@@ -174,7 +174,7 @@
             node(
               (0,0), 
               align(center)[
-                #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name))#h(0.5em)
+                #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name,br:true))#h(0.5em)
               ], 
               name: <tab-node>,
               ..st.style-exp-tab

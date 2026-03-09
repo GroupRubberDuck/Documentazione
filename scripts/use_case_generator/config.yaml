@@ -23,8 +23,10 @@ settings:
 
 # La struttura gerarchica
 structure:
+    - Visualizza lista dispositivi:
+        - Visualizza elemento lista dispositivi
+    - Valuta dispositivo
     - Inserimento nuovo dispositivo:
-    - Valutazione dispositivo in corso
     - Annullamento inserimento dispositivo:
       #generalizzazione
     - Crea nuovo dispositivo:
@@ -40,6 +42,7 @@ structure:
             - Selezione file JSON
             - Selezione file XML
             - Selezione file CSV
+        - Visualizza riepilogo importazione
     #extends
     - Errore nella lettura del file
     - Visualizza dati dispositivo:
@@ -54,26 +57,30 @@ structure:
         # - Inserimento versione firmware dispositivo
         # - Inserimento funzionalita dispositivo
         # - Inserimento descrizione dispositivo
-    - Elimina dispositivo:
+        - Annulla modifiche dispositivo
+    - Scarta modifiche valutazione:
+        - Annulla scarto modifiche
     - Salva valutazione:
-        - Salva in XML
-        - Salva in CSV
-        - Salva in JSON
+        # - Salva in XML
+        # - Salva in CSV
+        # - Salva in JSON
       #extends
-    - Errore durante il salvataggio
+    - Errore salvataggio valutazione:
     - Aggiunta asset tramite interfaccia:
         #- Inserisci nome asset
         #- Seleziona tipo asset
         #- Inserisci descrizione asset
         #extends
-        - Inserimento dati non validi
       #extends
-    - Annulla aggiunta
-    - Visualizza riepilogo importazione
+    - Annulla aggiunta asset
+
     - Elimina asset
     - Modifica asset:
-        - Inserisci nome asset
-        - Seleziona tipo asset
+        - Inserisci nome asset:
+            - Errore nome asset non valido
+        - Seleziona tipo asset:
+            - Seleziona security asset
+            - Seleziona network asset
         - Inserisci descrizione asset
         #extends
         #- Inserimento dati non validi
@@ -81,9 +88,9 @@ structure:
     - Annulla modifica asset
     - Cerca asset
     - Esporta informazioni dispositivo:
-        - Esporta in .xml
-        - Esporta in .json
-        - Esporta in .csv
+        - Esporta in xml
+        - Esporta in json
+        - Esporta in csv
     - Visualizza dashboard dispositivo:
         #include
         # - Visualizza dati dispositivo
@@ -158,44 +165,46 @@ structure:
         #- Esporta report in JSON
         #- Esporta report in XML
         #- Esporta report in CSV
-    - Modifica requisito:
-        #include
-        - Modifica anagrafica del requisito:
-            - Modifica nome del requisito
-            - Modifica descrizione normativa del requisito
-        - Modifica dipendenze:
-            #generalizzazioni
-            - Aggiungi dipendenza
-            - Rimuovi dipendenza
-            #extends
-            - Errore dipendenza circolare
-        - Modifica decision tree:
-            #include
-            - Aggiungi nodo:
-                #include
-                - Inserimento codice univoco nodo
-                - Inserimento testo domanda nodo
-                #genralizzazione
-                - Aggiungi nodo foglia:
-                    #generalizzazione
-                    - Aggiungi nodo PASS
-                    - Aggiungi nodo FAIL
-                    - Aggiungi nodo NOT APPLICABLE
-                - Aggiungi nodo di decisione
-            - Rimuovi nodo:
-                #extends
-                - Tentativo eliminazione nodo root
-                - Nodo ha figli collegati
-            - Modifica nodo:
-                #inlude
-                - Modifica testo di una domanda
-                - Modifica descrizione evidenza richiesta
-                - Modifica destinazione collegamento
-            - Salva modifiche DT:
-                #extends
-                - Struttura DT non valida
-    #extends
-    - Annulla modifiche requisito
+    - Avvia modifica requisito
+    - Conferma modifica requisito
+    - Annulla modifica requisito
+
+    - Modifica anagrafica requisito:
+        - Inserisci codice requisito: 
+            - Errore codice requisito lunghezza non valida
+            - Errore codice requisito duplicato
+        - Inserisci nome requisito:
+            - Errore nome requisito non valido
+        - Inserisci descrizione requisito:
+            - Errore descrizione non valida
+    - Visualizza lista dipendenze:
+        - Visualizza elemento lista dipendenze
+    - Visualizza lista non dipendenze:
+        - Visualizza elemento lista non dipendenze
+    - Aggiungi dipendenza:
+        - Errore dipendenza circolare
+        - Visualizza grafo dipendenze
+    - Rimuovi dipendenza
+    - Avvia modifica decision tree:
+    - Conferma modifica decision tree:
+    - Annulla modifica decision tree:
+    - Aggiungi nodo figlio:
+        - Aggiungi nodo figlio sinistro
+        - Aggiungi nodo figlio destro
+    - Aggiungi nodo:
+        - Aggiungi nodo foglia:
+            - Aggiungi nodo PASS
+            - Aggiungi nodo FAIL
+            - Aggiungi nodo NA
+        - Aggiungi nodo di decisione:
+            - Inserisci codice nodo decision tree:
+                - Errore codice nodo già esistente
+            - Inserisci domanda decision tree
+    - Modifica nodo
+    - Rimuovi nodo
+    - Errore nodo root
+
+
     #extends
     - Salva modifiche requisito
     - Esporta decision tree:

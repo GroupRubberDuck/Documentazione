@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Esporta informazioni dispositivo"
-#let depth=1
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -13,9 +13,14 @@
   actors: ("Utente",),
   includes: (),
   extends: (:),
-  generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  generalizations: (
+    "Esporta in xml",
+    "Esporta in json",
+    "Esporta in csv",
+    ),
+  spacing: (0.5cm, 2cm), 
+  diagram-scale: 80%,
+  actor-offset: 2
 )
 
 
@@ -29,15 +34,21 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente scarica il file contente le informazioni del dispositivo
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente ha scaricato il file sul suo file system locale 
+    ],
     
-    trigger:none,
+    trigger:[L'utente seleziona un dispositivo per l'esportazione],
     
     scenari-alternativi:none,
     
@@ -45,9 +56,13 @@
     
     estensioni:none,
     
-    generalizzazioni:none,
+    generalizzazioni:[
+        - #use-case-label(nome-etichetta: "Esporta in xml")
+        - #use-case-label(nome-etichetta: "Esporta in json")
+        - #use-case-label(nome-etichetta: "Esporta in csv")
+    ],
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:diagram,
     
-    figure-caption:none,
+    figure-caption:deps.use-case-link-extended-label(nome-etichetta: use-case-nome),
 )

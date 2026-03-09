@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Esporta report in pdf"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,13 +29,20 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + Il sistema legge le informazioni del dispositivo
+        + L'utente scarica il report in formato pdf della valutazione sul proprio file system 
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente ha selezionato un dispositivo
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente ha scaricato il report in formato pdf sul proprio file system locale
+    ],
     
     trigger:none,
     

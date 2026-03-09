@@ -27,7 +27,7 @@
 
   if path-immagine-diagramma != none {
 
-    figure(caption:figure-caption)[
+    figure(caption:figure-caption,kind:image)[
     #if type(path-immagine-diagramma) == type(""){
       image(path-immagine-diagramma)
     }
@@ -101,14 +101,15 @@ let elementi-lista-opzionali=(
   link(label(slugify(nome-etichetta)),get-use-case-code(nome-etichetta:nome-etichetta))
 }
 
-#let use-case-link-extended-label(codice:"", nome-etichetta:str)={
+#let use-case-link-extended-label(nome-etichetta:str, br:false)={
   link(label(slugify(nome-etichetta)))[
-    *
-    #get-use-case-code(nome-etichetta:nome-etichetta) \
+    #get-use-case-code(nome-etichetta:nome-etichetta) 
+    #if br { [ \ ] } else {[-]}
     #nome-etichetta
-    *
   ]
 }
+
+
 
 // #use-case-template(
 //   codice: "UC31",

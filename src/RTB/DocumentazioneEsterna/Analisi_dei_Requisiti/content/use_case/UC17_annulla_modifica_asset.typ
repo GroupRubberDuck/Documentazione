@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Annulla modifica asset"
-#let depth=1
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,13 +29,21 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente seleziona la funzione di annullamento della modifica
+        + Il sistema chiude l'interfaccia di modifica
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente ha selezionato l'opzione di aggiunta o modifica di un asset
+    ],
     
-    post-condizioni:none,
+
+    post-condizioni: [
+        - Il sistema scarta le modifiche inserite
+    ],
     
     trigger:none,
     

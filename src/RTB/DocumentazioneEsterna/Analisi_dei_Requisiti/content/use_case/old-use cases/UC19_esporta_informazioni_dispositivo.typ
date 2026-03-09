@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Esporta informazioni dispositivo"
-#let depth=1
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 #use-case-template(
     
     nome: use-case-nome,

@@ -2,7 +2,9 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/uc-diagram/draw-uc-diagram.typ":draw-uc-diagram
 #import "/src/TypstTemplate/AnalisiRequisiti/uc-diagram/draw-uc-expansion.typ":draw-uc-expansion
 
-#outline()
+#outline(title: "Indice")
+
+#outline(target: figure.where(kind:image),title:"Elenco figure")
 
 #include "use_case/_index.typ"
 

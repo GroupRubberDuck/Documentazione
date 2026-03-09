@@ -96,3 +96,14 @@
   format-code(mappa.at(slugify(nome-etichetta))).slice(0,-1)
 }
 
+#let get-uc-depth(nome-etichetta: str) = {
+  let key = slugify(nome-etichetta)
+  
+  // Controllo di sicurezza: se esiste nella mappa, restituisce la lunghezza dell'array
+  if key in mappa {
+    return mappa.at(key).len()
+  } else {
+    // Se non lo trova, puoi restituire 0 o generare un errore custom
+    return 0 
+  }
+}

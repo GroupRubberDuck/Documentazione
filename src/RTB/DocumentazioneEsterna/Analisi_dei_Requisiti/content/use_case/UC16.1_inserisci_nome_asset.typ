@@ -3,19 +3,21 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Inserisci nome asset"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
-#let diagram-type=deps.draw-uc-diagram
+#let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (:),
+  extends: ("Errore nome asset non valido":[
+    L'utente ha inserisce un nome vuoto
+  ]),
   generalizations: (),
   spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+  actor-offset: 0
 )
 
 
@@ -29,25 +31,35 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce il nome dell'asset
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente ha selezionato l'opzione di aggiunta o modifica di un asset
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente ha inserito il nome dell'asset
+    ],
     
     trigger:none,
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - L'utente inserisce un nome vuoto
+    ],
     
     inclusioni:none,
     
-    estensioni:none,
+    estensioni:[
+        #use-case-label(nome-etichetta: "Errore nome asset non valido")
+    ],
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:diagram,
     
-    figure-caption:none,
+    figure-caption:deps.use-case-link-extended-label(nome-etichetta: use-case-nome,br:false),
 )

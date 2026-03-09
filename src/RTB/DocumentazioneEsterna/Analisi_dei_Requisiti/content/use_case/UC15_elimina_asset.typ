@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Elimina asset"
-#let depth=1
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -15,7 +15,9 @@
   extends: (:),
   generalizations: (),
   spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+  actor-offset: 0
+
 )
 
 
@@ -29,15 +31,25 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + Il sistema mostra un avviso
+        + L'utente conferma l'eliminazione dell'asset
+        + Il sistema elimina l'asset dalla bozza operativa
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Nel sistema è attiva una sessione di valutazione del dispositivo
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - Il sistema ha rimosso l'asset dalla bozza operativa
+    ],
     
-    trigger:none,
+    trigger:[
+        L'utente seleziona un asset per l'eliminazione
+    ],
     
     scenari-alternativi:none,
     
@@ -47,7 +59,9 @@
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:[
+        #diagram
+    ],
     
-    figure-caption:none,
+    figure-caption:deps.use-case-link-extended-label(nome-etichetta: use-case-nome,br:false),
 )

@@ -3,7 +3,7 @@
 #import "/src/config.typ": slugify 
 
 #let draw-uc-expansion(
-  parent-uc: "",
+  parent-uc:none,
   target-uc: "",
   actors: ("Utente",),
   includes: (),
@@ -17,7 +17,9 @@
     top-padding: 0.1,
 
 ) = {
-  
+  if parent-uc == none {
+    parent-uc =target-uc
+  }
   let num-gen = generalizations.len()
   let num-inc = includes.len()
   let num-act = actors.len()

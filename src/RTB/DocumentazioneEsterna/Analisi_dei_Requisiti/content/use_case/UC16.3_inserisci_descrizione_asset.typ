@@ -3,7 +3,7 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="Inserisci descrizione asset"
-#let depth=2
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
@@ -29,13 +29,20 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
-    scenario-principale:none,
+    scenario-principale:[
+        + L'utente inserisce la descrizione dell'asset
+    ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - L'utente ha selezionato l'opzione di aggiunta o modifica di un asset
+    ],
     
-    post-condizioni:none,
+    
+    post-condizioni:[
+        - L'utente ha inserito la descrizione dell'asset
+    ],
     
     trigger:none,
     
