@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Inserisci evidenze"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,7 +11,7 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
+    includes: ("Inserisci info", "Inserisci just"),
     extends: (:),
     generalizations: (),
     spacing: (2.5cm, 2cm),
@@ -20,24 +20,17 @@
 
 #use-case-template(
     nome: use-case-nome,
-
     livello-intestazione: depth+2,
-
     codice: get-use-case-code(nome-etichetta: use-case-nome),
-
     attore-principale: [Utente],
-
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + L'utente inserisce facoltativamente evidenze aggiuntive per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Inserisci info"), #use-case-label(nome-etichetta: "Inserisci just").
     ],
-
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta compilando il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Compilazione nodo").
     ],
-
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - Le eventuali evidenze inserite dall'utente sono state registrate.
     ],
 
     trigger: none,
@@ -45,8 +38,8 @@
     scenari-alternativi: none,
 
     inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
+        - #use-case-label(nome-etichetta: "Inserisci info")
+        - #use-case-label(nome-etichetta: "Inserisci just")
     ],
 
     estensioni: none,
@@ -56,6 +49,6 @@
     path-immagine-diagramma:[
         #diagram
     ],
-
+    
     figure-caption: use-case-label(nome-etichetta: use-case-nome),
 )

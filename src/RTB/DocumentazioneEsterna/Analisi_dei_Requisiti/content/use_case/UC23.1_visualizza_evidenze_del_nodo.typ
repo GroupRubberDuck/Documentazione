@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Visualizza evidenze del nodo"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,7 +11,7 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
+    includes: ("Visualizza info", "Visualizza just"),
     extends: (:),
     generalizations: (),
     spacing: (2.5cm, 2cm),
@@ -28,16 +28,15 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + Il sistema mostra le evidenze associate al nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza info"), #use-case-label(nome-etichetta: "Visualizza just").
     ],
 
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta visualizzando il dettaglio del nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decision tree").
     ],
 
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - Le evidenze del nodo sono visualizzate.
     ],
 
     trigger: none,
@@ -45,8 +44,8 @@
     scenari-alternativi: none,
 
     inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
+        - #use-case-label(nome-etichetta: "Visualizza info")
+        - #use-case-label(nome-etichetta: "Visualizza just")
     ],
 
     estensioni: none,

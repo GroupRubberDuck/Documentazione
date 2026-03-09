@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Selezione risposta del nodo"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,9 +11,9 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
+    includes: (),
     extends: (:),
-    generalizations: (),
+    generalizations: ("Seleziona Yes", "Seleziona No"),
     spacing: (2.5cm, 2cm),
     diagram-scale: 80%
 )
@@ -28,30 +28,30 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + Il sistema mostra le opzioni di risposta per il nodo corrente.
+        + L'utente seleziona una risposta per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Seleziona Yes") oppure #use-case-label(nome-etichetta: "Seleziona No").
     ],
 
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta compilando il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Compilazione nodo").
     ],
 
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - La risposta selezionata dall'utente è stata registrata.
     ],
 
     trigger: none,
 
     scenari-alternativi: none,
 
-    inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
-    ],
+    inclusioni: none,
 
     estensioni: none,
 
-    generalizzazioni: none,
+    generalizzazioni: [
+    - #use-case-label(nome-etichetta: "Seleziona Yes")
+    - #use-case-label(nome-etichetta: "Seleziona No")
+    ],
 
     path-immagine-diagramma:[
         #diagram

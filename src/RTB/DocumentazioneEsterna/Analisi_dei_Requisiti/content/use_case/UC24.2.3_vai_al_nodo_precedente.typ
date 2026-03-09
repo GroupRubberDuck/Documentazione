@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Vai al nodo precedente"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,14 +11,20 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
-    extends: (:),
+    includes: (),
+    extends: (
+        "Errore nodo corrente è root": [L'utente tenta di tornare indietro dal nodo radice],
+    ),
     generalizations: (),
     spacing: (2.5cm, 2cm),
     diagram-scale: 80%
 )
 
+
+
+
 #use-case-template(
+    
     nome: use-case-nome,
 
     livello-intestazione: depth+2,
@@ -28,31 +34,31 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + L'utente seleziona l'opzione per tornare al nodo precedente.
     ],
 
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta navigando il decision tree:#use-case-label(nome-etichetta: "Navigazione del DT").
     ],
 
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - Il sistema mostra il nodo precedente del decision tree.
     ],
 
     trigger: none,
 
-    scenari-alternativi: none,
-
-    inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
+    scenari-alternativi:[
+    + L'utente tenta di tornare indietro dal nodo radice: #use-case-label(nome-etichetta: "Errore nodo corrente è root").
     ],
 
-    estensioni: none,
+    inclusioni: none,
 
-    generalizzazioni: none,
-
+    estensioni: [
+        - #use-case-label(nome-etichetta: "Errore nodo corrente è root")
+    ],
+    
+    generalizzazioni:none,
+    
     path-immagine-diagramma:[
         #diagram
     ],

@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Compilazione nodo"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,7 +11,7 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
+    includes: ("Selezione risposta del nodo", "Inserisci evidenze"),
     extends: (:),
     generalizations: (),
     spacing: (2.5cm, 2cm),
@@ -28,16 +28,18 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + Il sistema mostra il nodo corrente del decision tree.
+        + L'utente seleziona una risposta per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Selezione risposta del nodo").
+        + L'utente inserisce facoltativamente le evidenze per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Inserisci evidenze").
     ],
 
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta compilando il decision tree #sym.arrow #use-case-label(nome-etichetta: "Compila decision tree").
     ],
 
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - La risposta al nodo corrente è stata registrata.
+        - Le eventuali evidenze inserite dall'utente sono state registrate.
     ],
 
     trigger: none,
@@ -45,8 +47,8 @@
     scenari-alternativi: none,
 
     inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
+        - #use-case-label(nome-etichetta: "Selezione risposta del nodo")
+        - #use-case-label(nome-etichetta: "Inserisci evidenze")
     ],
 
     estensioni: none,

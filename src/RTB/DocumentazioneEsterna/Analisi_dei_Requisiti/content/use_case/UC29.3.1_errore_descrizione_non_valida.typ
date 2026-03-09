@@ -2,8 +2,8 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizza domanda nodo"
-#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
+#let use-case-nome="Errore descrizione non valida"
+#let depth=3
 
 #let diagram-type=deps.draw-uc-diagram
 

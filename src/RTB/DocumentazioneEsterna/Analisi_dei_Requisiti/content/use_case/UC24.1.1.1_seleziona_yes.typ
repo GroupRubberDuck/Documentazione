@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizza descrizione normativa"
+#let use-case-nome="Seleziona yes"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -24,18 +24,24 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + L'utente seleziona "Yes" come risposta per il nodo corrente.
+    ],
+
+    pre-condizioni: [
+        - L'utente sta selezionando una risposta per il nodo corrente #sym.arrow #use-case-label(nome-etichetta: "Selezione risposta del nodo").
+    ],
+
+    post-condizioni: [
+        - La risposta "Yes" è stata registrata per il nodo corrente.
+    ],
     
     trigger:none,
     

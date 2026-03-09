@@ -25,10 +25,11 @@
     
     nome: use-case-nome,
     
-    livello-intestazione:depth+2,
+    livello-intestazione: depth+2,
     
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
     
+<<<<<<< HEAD
     attore-principale:"Utente",
     
     scenario-principale:[
@@ -43,17 +44,36 @@
     
     post-condizioni:[
         L'utente visualizza la dashboard riassuntiva dello stato del dispositivo
+=======
+    attore-principale: [Utente],
+    
+    scenario-principale: [
+        + Il sistema verifica lo stato di valutazione di tutti i requisiti degli asset del dispositivo.
+        + Il sistema calcola lo stato aggregato del dispositivo:
+          - Conforme: tutti gli asset sono conformi allop standard.
+          - Non conforme: almeno un asset non è conforme.
+          - In corso: almeno un asset non è ancora stato valutato.
+        + Il sistema mostra lo stato aggregato all'utente.
     ],
     
-    trigger:none,
+    pre-condizioni: [
+        - L'utente sta visualizzando la dashboard del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dashboard dispositivo").
+    ],
     
-    scenari-alternativi:none,
+    post-condizioni: [
+        - Lo stato di conformità aggregato del dispositivo è visualizzato.
+>>>>>>> e72271b8386d7312aa100be667ee32eba6646742
+    ],
     
-    inclusioni:none,
+    trigger: none,
     
-    estensioni:none,
+    scenari-alternativi: none,
     
-    generalizzazioni:none,
+    inclusioni: none,
+    
+    estensioni: none,
+    
+    generalizzazioni: none,
     
     path-immagine-diagramma:none,
     

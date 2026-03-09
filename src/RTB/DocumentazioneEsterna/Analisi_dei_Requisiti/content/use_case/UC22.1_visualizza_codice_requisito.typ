@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Errore nodo senza risposta selezionata"
+#let use-case-nome="Visualizza codice requisito"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -24,18 +24,24 @@
 #use-case-template(
     
     nome: use-case-nome,
-    
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra il codice del requisito.
+    ],
+
+    pre-condizioni: [
+        - L'utente ha selezionato un requisito dalla lista #sym.arrow #use-case-label(nome-etichetta: "Visualizzazione in dettaglio requisito").
+    ],
+
+    post-condizioni: [
+        - Il codice del requisito è visualizzato.
+    ],
     
     trigger:none,
     

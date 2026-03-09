@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Visualizzazione generale requisito"
+#let use-case-nome="Vai al nodo successivo"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -11,14 +11,19 @@
     system-name: "Sistema",
     target-uc: "",
     actors: ("Utente",),
-    includes: ("Visualizza nome requisito", "Visualizza stato di valutazione"),
-    extends: (:),
+    includes: (),
+    extends: (
+        "Errore nodo senza risposta selezionata": [L'utente tenta di procedere al nodo successivo senza aver selezionato una risposta],
+    ),
     generalizations: (),
     spacing: (2.5cm, 2cm),
     diagram-scale: 80%
 )
 
+
+
 #use-case-template(
+    
     nome: use-case-nome,
 
     livello-intestazione: depth+2,
@@ -28,34 +33,34 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + Il sistema mostra il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome requisito").
-        + Il sistema mostra lo stato di valutazione del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato di valutazione").
+        + L'utente seleziona l'opzione per procedere al nodo successivo.
     ],
 
     pre-condizioni: [
-        - L'utente sta visualizzando la lista dei requisiti dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
+        - L'utente sta navigando il decision tree: #use-case-label(nome-etichetta: "Navigazione del DT").
     ],
 
     post-condizioni: [
-        - Le informazioni generali del requisito sono visualizzate nella lista.
+        - Il sistema mostra il nodo successivo del decision tree.
     ],
 
     trigger: none,
 
-    scenari-alternativi: none,
-
-    inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome requisito")
-        - #use-case-label(nome-etichetta: "Visualizza stato di valutazione")
+    scenari-alternativi: [
+    + L'utente tenta di procedere senza aver selezionato una risposta per il nodo corrente: #use-case-label(nome-etichetta: "Errore nodo senza risposta selezionata").
     ],
 
-    estensioni: none,
+    inclusioni: none,
+
+    estensioni: [
+        - #use-case-label(nome-etichetta: "Errore nodo senza risposta selezionata")
+    ],
 
     generalizzazioni: none,
-
+    
     path-immagine-diagramma:[
         #diagram
     ],
-
+    
     figure-caption: use-case-label(nome-etichetta: use-case-nome),
 )

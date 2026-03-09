@@ -19,35 +19,39 @@
 )
 
 
-
-
 #use-case-template(
-    
     nome: use-case-nome,
+
+    livello-intestazione: depth+2,
+
+    codice: get-use-case-code(nome-etichetta: use-case-nome),
+
+    attore-principale: [Utente],
+
+    scenario-principale: [
+        + Il sistema mostra il tipo dell'asset.
+    ],
+
+    pre-condizioni: [
+        - La lista degli asset è stata caricata dal sistema.
+    ],
     
-    livello-intestazione:depth+2,
-    
-    codice:get-use-case-code(nome-etichetta: use-case-nome),
-    
-    attore-principale:none,
-    
-    scenario-principale:none,
-    
-    pre-condizioni:none,
-    
-    post-condizioni:none,
-    
-    trigger:none,
-    
-    scenari-alternativi:none,
-    
-    inclusioni:none,
-    
-    estensioni:none,
-    
-    generalizzazioni:none,
-    
+    post-condizioni: [
+        - Il tipo dell'asset è visualizzato.
+    ],
+
+    trigger: none,
+
+    scenari-alternativi: none,
+
+    inclusioni: none,
+
+    estensioni: none,
+
+    generalizzazioni: none,
+
     path-immagine-diagramma:none,
     
     figure-caption:none,
 )
+   

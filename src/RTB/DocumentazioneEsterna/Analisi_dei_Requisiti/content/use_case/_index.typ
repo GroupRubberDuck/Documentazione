@@ -92,9 +92,9 @@
 
 #include "UC20.2.1_visualizzazione_singolo_elemento_della_lista_di_asset.typ"
 
-#include "UC20.2.1.1_visualizza_nome.typ"
+#include "UC20.2.1.1_visualizza_nome_asset.typ"
 
-#include "UC20.2.1.2_visualizza_tipo.typ"
+#include "UC20.2.1.2_visualizza_tipo_asset.typ"
 
 #include "UC20.2.1.3_visualizza_stato_aggregato_asset.typ"
 
@@ -110,145 +110,139 @@
 
 #include "UC21.2.1.2_visualizza_stato_valutazione.typ"
 
-#include "UC21.2.2_visualizzazione_in_dettaglio_requisito.typ"
+#include "UC22_visualizzazione_in_dettaglio_requisito.typ"
 
-#include "UC21.2.2.1_visualizza_codice_requisito.typ"
+#include "UC22.1_visualizza_codice_requisito.typ"
 
-#include "UC21.2.2.2_visualizza_descrizione_normativa.typ"
+#include "UC22.2_visualizza_descrizione_normativa.typ"
 
-#include "UC21.2.2.3_visualizza_dipendenze_requisito.typ"
+#include "UC22.3_visualizza_dipendenze_requisito.typ"
 
-#include "UC21.2.2.4_visualizza_decision_tree.typ"
+#include "UC22.4_visualizza_decision_tree.typ"
 
-#include "UC21.2.2.4.1_visualizza_generale_nodo_decision_tree.typ"
+#include "UC22.4.1_visualizza_generale_nodo_decision_tree.typ"
 
-#include "UC21.2.2.4.1.1_visualizza_codice_nodo.typ"
+#include "UC22.4.1.1_visualizza_codice_nodo.typ"
 
-#include "UC21.2.2.4.1.2_visualizza_domanda_nodo.typ"
+#include "UC22.4.1.2_visualizza_domanda_nodo.typ"
 
-#include "UC21.2.2.4.1.3_visualizza_risposta_nodo.typ"
+#include "UC22.4.1.3_visualizza_risposta_nodo.typ"
 
-#include "UC21.2.2.4.2_visualizza_dettaglio_nodo_decision_tree.typ"
+#include "UC23_visualizza_dettaglio_nodo_decision_tree.typ"
 
-#include "UC21.2.2.4.2.1_visualizza_evidenze_del_nodo.typ"
+#include "UC23.1_visualizza_evidenze_del_nodo.typ"
 
-#include "UC21.2.2.4.2.1.1_visualizza_info.typ"
+#include "UC23.1.1_visualizza_info.typ"
 
-#include "UC21.2.2.4.2.1.2_visualizza_just.typ"
+#include "UC23.1.2_visualizza_just.typ"
 
-#include "UC22_compila_decision_tree.typ"
+#include "UC24_compila_decision_tree.typ"
 
-#include "UC22.1_compilazione_nodo.typ"
+#include "UC24.1_compilazione_nodo.typ"
 
-#include "UC22.1.1_selezione_risposta_del_nodo.typ"
+#include "UC24.1.1_selezione_risposta_del_nodo.typ"
 
-#include "UC22.1.1.1_seleziona_yes.typ"
+#include "UC24.1.1.1_seleziona_yes.typ"
 
-#include "UC22.1.1.2_seleziona_no.typ"
+#include "UC24.1.1.2_seleziona_no.typ"
 
-#include "UC22.1.2_inserisci_evidenze.typ"
+#include "UC24.1.2_inserisci_evidenze.typ"
 
-#include "UC22.1.2.1_inserisci_info.typ"
+#include "UC24.1.2.1_inserisci_info.typ"
 
-#include "UC22.1.2.2_inserisci_just.typ"
+#include "UC24.1.2.2_inserisci_just.typ"
 
-#include "UC22.2_navigazione_del_dt.typ"
+#include "UC24.2_navigazione_del_dt.typ"
 
-#include "UC22.2.1_vai_al_nodo_successivo.typ"
+#include "UC24.2.1_vai_al_nodo_successivo.typ"
 
-#include "UC22.2.2_errore_nodo_senza_risposta_selezionata.typ"
+#include "UC24.2.2_errore_nodo_senza_risposta_selezionata.typ"
 
-#include "UC22.2.3_vai_al_nodo_precedente.typ"
+#include "UC24.2.3_vai_al_nodo_precedente.typ"
 
-#include "UC22.2.4_errore_nodo_corrente_è_root.typ"
+#include "UC24.2.4_errore_nodo_corrente_è_root.typ"
 
-#include "UC22.3_inserisci_justification.typ"
+#include "UC24.3_errore_giustificazione_mancante.typ"
 
-#include "UC23_esporta_report_di_conformità.typ"
+#include "UC25_esporta_report_di_conformità.typ"
 
-#include "UC23.1_esporta_report_in_pdf.typ"
+#include "UC25.1_esporta_report_in_pdf.typ"
 
-#include "UC24_avvia_modifica_requisito.typ"
+#include "UC26_avvia_modifica_requisito.typ"
 
-#include "UC25_salva_modifica_requisito.typ"
+#include "UC27_conferma_modifica_requisito.typ"
 
-#include "UC26_annulla_modifica_requisito.typ"
+#include "UC28_annulla_modifica_requisito.typ"
 
-#include "UC27_modifica_anagrafica_requisito.typ"
+#include "UC29_modifica_anagrafica_requisito.typ"
 
-#include "UC27.1_inserisci_codice_requisito.typ"
+#include "UC29.1_inserisci_codice_requisito.typ"
 
-#include "UC27.1.1_errore_codice_requisito_lunghezza_non_valida.typ"
+#include "UC29.1.1_errore_codice_requisito_lunghezza_non_valida.typ"
 
-#include "UC27.1.2_errore_codice_requisito_duplicato.typ"
+#include "UC29.1.2_errore_codice_requisito_duplicato.typ"
 
-#include "UC27.2_inserisci_nome_requisito.typ"
+#include "UC29.2_inserisci_nome_requisito.typ"
 
-#include "UC27.2.1_errore_nome_requisito_non_valido.typ"
+#include "UC29.2.1_errore_nome_requisito_non_valido.typ"
 
-#include "UC27.3_inserisci_descrizione_requisito.typ"
+#include "UC29.3_inserisci_descrizione_requisito.typ"
 
-#include "UC28_visualizza_lista_dipendenze.typ"
+#include "UC29.3.1_errore_descrizione_non_valida.typ"
 
-#include "UC28.1_visualizza_elemento_lista_dipendenze.typ"
+#include "UC30_visualizza_lista_dipendenze.typ"
 
-#include "UC29_visualizza_lista_non_dipendenze.typ"
+#include "UC30.1_visualizza_elemento_lista_dipendenze.typ"
 
-#include "UC29.1_visualizza_elemento_lista_non_dipendenze.typ"
+#include "UC31_visualizza_lista_non_dipendenze.typ"
 
-#include "UC30_aggiungi_dipendenza.typ"
+#include "UC31.1_visualizza_elemento_lista_non_dipendenze.typ"
 
-#include "UC30.1_errore_dipendenza_circolare.typ"
+#include "UC32_aggiungi_dipendenza.typ"
 
-#include "UC30.2_visualizza_grafo_dipendenze.typ"
+#include "UC32.1_errore_dipendenza_circolare.typ"
 
-#include "UC31_rimuovi_dipendenza.typ"
+#include "UC32.2_visualizza_grafo_dipendenze.typ"
 
-#include "UC32_avvia_modifica_decision_tree.typ"
+#include "UC33_rimuovi_dipendenza.typ"
 
-#include "UC33_salva_modifica_decision_tree.typ"
+#include "UC34_avvia_modifica_decision_tree.typ"
 
-#include "UC34_annulla_modifica_decision_tree.typ"
+#include "UC35_conferma_modifica_decision_tree.typ"
 
-#include "UC35_aggiungi_nodo_figlio.typ"
+#include "UC36_annulla_modifica_decision_tree.typ"
 
-#include "UC35.1_aggiungi_nodo_figlio_sinistro.typ"
+#include "UC37_aggiungi_nodo_figlio.typ"
 
-#include "UC35.2_aggiungi_nodo_figlio_destro.typ"
+#include "UC37.1_aggiungi_nodo_figlio_sinistro.typ"
 
-#include "UC36_aggiungi_nodo.typ"
+#include "UC37.2_aggiungi_nodo_figlio_destro.typ"
 
-#include "UC36.1_aggiungi_nodo_foglia.typ"
+#include "UC38_aggiungi_nodo.typ"
 
-#include "UC36.1.1_aggiungi_nodo_pass.typ"
+#include "UC38.1_aggiungi_nodo_foglia.typ"
 
-#include "UC36.1.2_aggiungi_nodo_fail.typ"
+#include "UC38.1.1_aggiungi_nodo_pass.typ"
 
-#include "UC36.1.3_aggiungi_nodo_na.typ"
+#include "UC38.1.2_aggiungi_nodo_fail.typ"
 
-#include "UC36.2_aggiungi_nodo_di_decisione.typ"
+#include "UC38.1.3_aggiungi_nodo_na.typ"
 
-#include "UC36.2.1_inserisci_codice_nodo_decision_tree.typ"
+#include "UC38.2_aggiungi_nodo_di_decisione.typ"
 
-#include "UC36.2.1.1_errore_codice_nodo_già_esistente.typ"
+#include "UC38.2.1_inserisci_codice_nodo_decision_tree.typ"
 
-#include "UC36.2.2_inserisci_domanda_decision_tree.typ"
+#include "UC38.2.1.1_errore_codice_nodo_già_esistente.typ"
 
-#include "UC36.2.3_seleziona_tipo_evidenza.typ"
+#include "UC38.2.2_inserisci_domanda_decision_tree.typ"
 
-#include "UC36.2.3.1_seleziona_just.typ"
+#include "UC39_modifica_nodo.typ"
 
-#include "UC36.2.3.2_seleziona_info.typ"
+#include "UC40_rimuovi_nodo.typ"
 
-#include "UC37_modifica_nodo.typ"
+#include "UC41_errore_nodo_root.typ"
 
-#include "UC38_rimuovi_nodo.typ"
+#include "UC42_salva_modifiche_requisito.typ"
 
-#include "UC39_errore_nodo_root.typ"
-
-#include "UC40_errore_nodo_con_discendenti.typ"
-
-#include "UC41_salva_modifiche_requisito.typ"
-
-#include "UC42_esporta_decision_tree.typ"
+#include "UC43_esporta_decision_tree.typ"
 
