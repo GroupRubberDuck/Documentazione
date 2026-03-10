@@ -10,17 +10,12 @@ OUTPUT_DIR   = "."
 BAC_FISSO             = 11610
 SETTIMANE_PIANIFICATE = 18
 
-# Fattore di overhead applicato all'AC rispetto al PV pianificato.
-# >1 = si spende leggermente più del piano (realistico).
-OVERHEAD_FACTOR = 1.08
-
-# Boundary di fine sprint
 SPRINT_BOUNDARIES = [
-    (date(2025, 11, 25), 1),   # Sprint 1: 10/11 → 25/11
-    (date(2025, 12,  8), 2),   # Sprint 2: 26/11 → 08/12
-    (date(2025, 12, 23), 3),   # Sprint 3: 09/12 → 23/12
-    (date(2026,  2,  4), 4),   # Sprint 4: 05/01 → 04/02
-    (date(2026,  2, 18), 5),   # Sprint 5: 05/02 → 18/02
+    (date(2025, 11, 25), 1),
+    (date(2025, 12,  8), 2),
+    (date(2025, 12, 23), 3),
+    (date(2026,  2,  4), 4),
+    (date(2026,  2, 18), 5),
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']
@@ -38,7 +33,7 @@ def parse_date(s: str):
     return None
 
 
-def infer_sprint(row: dict) -> int | None:
+def infer_sprint(row: dict):
     for key in row:
         if key.strip().lower() == 'sprint':
             try:
@@ -127,7 +122,7 @@ def extract_balanced_parens(content: str, keyword: str) -> str:
     return ""
 
 
-def load_sprint_blocks_from_files(sprint_dir: str) -> list[str]:
+def load_sprint_blocks_from_files(sprint_dir: str) -> list:
     blocks = []
     i = 1
     while True:
@@ -195,13 +190,13 @@ def update_metrics():
     print(f"\n📊 Calcolo metriche ({num_sprints_total} sprint totali):")
 
     for i in range(1, num_sprints_total + 1):
-        s_pv = 0
+        s_pv, s_ac = 0, 0
         s_ore_prev, s_ore_eff = 0, 0
 
         block = blocks[i - 1] if i <= len(blocks) else ""
 
         if not block:
-            print(f"  ⚠️  Sprint {i}: nessun blocco oreProduttive nel .typ → PV=0")
+            print(f"  ⚠️  Sprint {i}: nessun blocco oreProduttive → PV=0, AC=0")
 
         entries = re.findall(r"\(([^()]+)\)", block)
         for entry in entries:
@@ -216,28 +211,24 @@ def update_metrics():
                 eff   = int(e_match.group(1))
                 costo = tariffe.get(ruolo, 0)
 
-                s_pv       += prev * costo
+                s_pv       += prev * costo   # PV = ore previste × tariffa
+                s_ac       += eff  * costo   # AC = ore effettive × tariffa (REALE, non derivato da EV)
                 s_ore_prev += prev
                 s_ore_eff  += eff
 
-        ratio = ev_ratios.get(i, 0.0)
-
-        s_ev = s_pv * ratio
-        s_ac = s_ev * OVERHEAD_FACTOR
+        ratio  = ev_ratios.get(i, 0.0)
+        s_ev   = s_pv * ratio              # EV = PV sprint × % task completate
 
         cum_pv       += s_pv
-        cum_ev       += s_ev
         cum_ac       += s_ac
+        cum_ev       += s_ev
         cum_ore_prev += s_ore_prev
         cum_ore_eff  += s_ore_eff
 
         cpi  = cum_ev / cum_ac if cum_ac > 0 else 1.0
         spi  = cum_ev / cum_pv if cum_pv > 0 else 1.0
 
-        # EAC formula composita: tiene conto sia di CPI che di SPI
-        # → varia sprint per sprint anche se CPI è costante
-        eac  = cum_ac + (BAC_FISSO - cum_ev) / (cpi * spi) if (cpi > 0 and spi > 0) else BAC_FISSO
-
+        eac  = BAC_FISSO / cpi if cpi > 0 else BAC_FISSO
         etc  = eac - cum_ac
         tcpi_denom = BAC_FISSO - cum_ac
         tcpi = (BAC_FISSO - cum_ev) / tcpi_denom if tcpi_denom > 0 else 1.0
@@ -258,7 +249,7 @@ def update_metrics():
         })
 
         print(f"  Sprint {i}: PV={cum_pv:.0f}€  EV={cum_ev:.0f}€  AC={cum_ac:.0f}€"
-              f"  SPI={spi:.3f}  CPI={cpi:.3f}  EAC={eac:.0f}€ ({ratio:.1%} task ok)")
+              f"  SPI={spi:.3f}  CPI={cpi:.3f}  EAC={eac:.0f}€  ({ratio:.1%} task ok)")
 
     # 5. Export CSV
     csv_map = [

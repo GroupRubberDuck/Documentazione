@@ -31,4 +31,7 @@
   y-max: 1.2,
 )
 
-Il TCPI parte da 1.0 nello Sprint 1 e cresce gradualmente fino a 1.03 nello Sprint 5, mantenendosi sempre molto vicino alla soglia ottimale. Tuttavia lo scostamento rimane contenuto e il TCPI non supera mai 1.05, indicando che per completare il progetto entro il BAC il team dovrà essere solo leggermente più efficiente di quanto fatto finora — un obiettivo realisticamente raggiungibile.
+Il TCPI si mantiene costantemente sopra la soglia ottimale di 1.0 per tutti e sei
+gli sprint, con una leggera crescita. Sebbene
+lo scostamento sembri contenuto, un TCPI > 1 indica che il team dovrà sostenere
+un'efficienza superiore a quella media dimostrata finora per rientrare nel BAC.

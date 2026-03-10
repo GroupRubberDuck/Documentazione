@@ -25,9 +25,16 @@
   "Cost Performance Index e Schedule Performance Index",
   y-label: "Indice",
   x-label: "Sprint",
-  y-min: 0.5,
-  y-max: 1.2,
+  y-min: 0.8,
+  y-max: 1.05,
 )
 
 
-CPI e SPI si mantengono vicini a 1 nei primi tre sprint, con un lieve peggioramento nello Sprint 4: SPI scende a 0.958 a causa della sessione esami che ha ridotto la disponibilità del team, mentre CPI cala progressivamente per l'accumulo di costi superiori alle stime. Nello Sprint 5 entrambi gli indici si stabilizzano, con SPI che si assesta intorno a 0.98 e CPI che rimane costante rispetto allo sprint precedente, segnale che il ritmo di lavoro del team si è normalizzato. La soglia ottimale non viene mai raggiunta, confermando lo scostamento strutturale già evidenziato nel grafico PV/EV/AC, e documentato nel  #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+CPI e SPI si mantengono stabili e molto vicini tra loro per tutti e sei gli sprint,
+oscillando tra 0.96 e 0.98. Questo conferma che il team ha lavorato in modo consistente
+sia in termini di schedule che di costi, senza peggioramenti significativi nel tempo.
+Il calo nello Sprint 4 è riconducibile alla sessione esami, mentre la ripresa
+nello sprint 5 evidenzia un recupero. La soglia ottimale di 1
+non viene raggiunta, ma lo scostamento è contenuto e stabile. Le cause sono
+documentate nel
+#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].

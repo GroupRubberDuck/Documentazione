@@ -31,4 +31,4 @@
   y-max: 25,
 )
 
-Il TimeEAC si mantiene costantemente allineato al pianificato per tutti e cinque gli sprint, con uno scostamento massimo nello Sprint 4 dovuto alla sessione esami. Nello Sprint 5 il TimeEAC si riduce leggermente rispetto al picco precedente, segnale che il team ha recuperato parte del ritmo perduto e la stima temporale a completamento si sta riavvicinando alle 18 settimane pianificate.
+Il TimeEAC si mantiene costantemente allineato al pianificato per tutti gli sprint, con uno scostamento massimo nello Sprint 4 dovuto alla sessione esami. Nello Sprint 5 il TimeEAC si riduce leggermente rispetto al picco precedente, segnale che il team ha recuperato parte del ritmo perduto.
