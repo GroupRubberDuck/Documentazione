@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 2,
+  minor: 3,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -42,7 +42,7 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu",),
+    autori: ("Felician Mario Necsulescu","Davide Testolin", "Davide Lorenzon"),
     verificatori: ("Davide Testolin",),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -72,14 +72,14 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [],
+      [Felician Mario Necsulescu],
       [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili, di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index],
     ),
     (
       [0.3.0],
       [2026-02-23],
       [Davide Testolin],
-      [],
+      [Felician Mario Necsulescu],
       [Aggiunti i grafici per alcune metriche]
     ),
   )
