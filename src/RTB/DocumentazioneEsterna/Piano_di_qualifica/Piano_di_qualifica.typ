@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 3,
+  minor: 6,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -72,7 +72,7 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [Ana Maria \ Draghici],
+      [Ana Maria Draghici],
       [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
@@ -85,22 +85,22 @@
     (
       [0.4.0],
       [2026-02-24],
-      [Ana Maria \ Draghici],
-      [],
+      [Ana Maria Draghici],
+      [Felician Mario \ Necsulescu],
       [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
     ),
     (
       [0.5.0],
       [2026-03-08],
       [Ana Maria Draghici],
-      [],
+      [Felician Mario \ Necsulescu],
       [Aggiornata @valutazione in seguito a Sprint 5]
     ),
     (
       [0.6.0],
       [2026-03-08],
       [Ana Maria Draghici],
-      [],
+      [Felician Mario \ Necsulescu],
       [Aggiunta @testing]
     ),
   )
