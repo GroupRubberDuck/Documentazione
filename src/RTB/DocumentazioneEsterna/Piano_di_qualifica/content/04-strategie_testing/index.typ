@@ -13,7 +13,7 @@ I test di sistema verificano in modo granulare ogni funzionalità del sistema, a
     columns: (auto, 1fr, auto, auto),
     align: (center, left, center, center),
     table.header(
-      [*Codice Test*], [*Descrizione*], [*Caso d'Uso*], [*Stato*],
+      [*Codice Test*], [*Descrizione*], [*Caso d'Uso*], [*Stato*],  //anche se caso d'uso sarebbe meglio sostituire con requisiti
     ),
     [TS_001], [Verificare che il sistema gestisca l'Autenticazione], [UC01], [NI],
     [TS_002], [Verificare che il sistema permetta l'Inserimento username], [UC01.1], [NI],
@@ -193,26 +193,31 @@ I test di sistema verificano in modo granulare ogni funzionalità del sistema, a
 == Test di Accettazione (TA)
 I test di accettazione verificano che il sistema soddisfi i requisiti dal punto di vista dell'utente, raggruppando i casi d'uso in flussi operativi completi e significativi. Ogni test rappresenta uno scenario d'uso realistico. Il superamento di questi test costituisce la condizione necessaria per il rilascio del prodotto.
 #show figure.where(kind: table): set block(breakable: true)
+
+typst#show figure.where(kind: table): set block(breakable: true)
+
 #figure(
   caption: [Test di Accettazione],
   table(
-    columns: (auto, 1fr, auto, auto),
-    align: (center, left, center, center),
+    columns: (auto, 1fr, auto),
+    align: (center + horizon, left + horizon, center + horizon),
+
     table.header(
-      [*Codice Test*], [*Descrizione*], [*Casi d'Uso Principali*], [*Stato*],
+      [*Codice Test*], [*Descrizione*], [*Stato*]
     ),
-    [TA_01], [Verificare che l'Utente possa autenticarsi o registrarsi per accedere alla propria area personale.], [UC01, UC03], [NI],
-    [TA_02], [Verificare che l'Utente possa inserire a sistema un nuovo dispositivo da valutare, sia creandolo manualmente sia importandolo da file.], [UC04, UC05, UC06], [NI],
-    [TA_03], [Verificare che l'Utente possa gestire l'intero ciclo di vita di un dispositivo (visualizzarne i dettagli, modificarne i dati o eliminarlo).], [UC08, UC09, UC10], [NI],
-    [TA_04], [Verificare che l'Utente possa importare correttamente liste di asset nel sistema, gestendo eventuali conflitti di merge.], [UC14, UC15, UC19], [NI],
-    [TA_05], [Verificare che l'Utente possa consultare e gestire l'elenco degli asset e visualizzare il riepilogo del loro stato di valutazione.], [UC20, UC21, UC22, UC28], [NI],
-    [TA_06], [Verificare che l'Utente possa consultare la documentazione e i dettagli normativi associati a uno specifico requisito.], [UC31, UC32, UC33], [NI],
-    [TA_07], [Verificare che l'Utente possa eseguire e navigare il Decision Tree per valutare un'assessment unit, compilando i nodi con relative risposte ed evidenze.], [UC34, UC35, UC36, UC38], [NI],
-    [TA_08], [Verificare che l'Utente possa completare la sessione di valutazione di un dispositivo, salvarne lo stato ed esportare il report dei risultati.], [UC12, UC39, UC40, UC43], [NI],
-    [TA_09], [Verificare che l'Utente possa creare o importare un intero nuovo modello normativo standard nel sistema.], [UC44, UC45], [NI],
-    [TA_10], [Verificare che il Responsabile Tecnico possa avviare una sessione di modifica su un modello per alterarne l'anagrafica e salvare le modifiche.], [UC46, UC47, UC55], [NI],
-    [TA_11], [Verificare che l'Utente possa strutturare le classi di asset di un modello (aggiunta, modifica, eliminazione e definizione degli attributi).], [UC56, UC57, UC58], [NI],
-    [TA_12], [Verificare che l'Utente possa configurare i requisiti del modello, impostandone target e dipendenze.], [UC61, UC62, UC65], [NI],
-    [TA_13], [Verificare che l'Utente possa strutturare l'albero decisionale (Decision Tree) di un requisito, aggiungendo e modificando nodi decisionali e nodi foglia.], [UC69, UC70], [NI],
+
+    [TA\_01], [Verificare che l'Utente possa autenticarsi o registrarsi per accedere alla propria area personale.], [NI],
+    [TA\_02], [Verificare che l'Utente possa inserire a sistema un nuovo dispositivo da valutare, sia creandolo manualmente sia importandolo da file.], [NI],
+    [TA\_03], [Verificare che l'Utente possa gestire l'intero ciclo di vita di un dispositivo (visualizzarne i dettagli, modificarne i dati o eliminarlo).], [NI],
+    [TA\_04], [Verificare che l'Utente possa importare correttamente liste di asset nel sistema, gestendo eventuali conflitti di merge.], [NI],
+    [TA\_05], [Verificare che l'Utente possa consultare e gestire l'elenco degli asset e visualizzare il riepilogo del loro stato di valutazione.], [NI],
+    [TA\_06], [Verificare che l'Utente possa consultare la documentazione e i dettagli normativi associati a uno specifico requisito.], [NI],
+    [TA\_07], [Verificare che l'Utente possa eseguire e navigare il Decision Tree per valutare un'assessment unit, compilando i nodi con relative risposte ed evidenze.], [NI],
+    [TA\_08], [Verificare che l'Utente possa completare la sessione di valutazione di un dispositivo, salvarne lo stato ed esportare il report dei risultati.], [NI],
+    [TA\_09], [Verificare che l'Utente possa creare o importare un intero nuovo modello normativo standard nel sistema.], [NI],
+    [TA\_10], [Verificare che l'Utente possa avviare una sessione di modifica su un modello per alterarne l'anagrafica e salvare le modifiche.], [NI],
+    [TA\_11], [Verificare che l'Utente possa strutturare le classi di asset di un modello (aggiunta, modifica, eliminazione e definizione degli attributi).], [NI],
+    [TA\_12], [Verificare che l'Utente possa configurare i requisiti del modello, impostandone target e dipendenze.], [NI],
+    [TA\_13], [Verificare che l'Utente possa strutturare l'albero decisionale (Decision Tree) di un requisito, aggiungendo e modificando nodi decisionali e nodi foglia.], [NI],
   )
 )
