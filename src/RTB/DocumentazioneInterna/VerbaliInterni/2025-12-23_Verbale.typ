@@ -129,9 +129,6 @@ La discussione sulle scelte tecnologiche del Piano di Qualifica ha avuto caratte
 Separatamente, si è discusso dell’indice di Gulpease, per il quale è stato deciso di definire chiaramente le modalità di applicazione. Il Piano di Qualifica includerà una sezione dedicata e un’appendice che ne descriva l’utilizzo concreto nel contesto del progetto, al fine di rendere il processo di valutazione esplicito e verificabile.
 
 
-== Difficoltà nella stima dei preventivi
-Una parte significativa della riunione è stata dedicata alle difficoltà incontrate nella definizione dei preventivi e delle stime temporali. È emerso che molte delle tecniche di preventivo analizzate si basano fortemente sull’esperienza pregressa e su dati storici, elementi che il gruppo non possiede in questa fase del progetto. Questo rende complessa l’applicazione rigorosa di tali tecniche e aumenta il rischio di effettuare stime basate esclusivamente su sensazioni soggettive. Si è quindi chiarito che l’inesperienza del team deve essere considerata e dichiarata esplicitamente all’interno della documentazione. Nonostante ciò, si è deciso di adottare comunque una tecnica di stima, anche se approssimativa, al fine di dimostrare un approccio metodologico consapevole. Inoltre, è stato sottolineato che la retrospettiva non deve limitarsi all’analisi di ciò che è andato bene o male, ma deve includere anche una revisione del piano futuro, con un ricalcolo delle ore e delle attività sulla base dell’esperienza maturata negli sprint precedenti, in linea con le indicazioni fornite dal docente.
-
 ]
 
 #insertArabicNumberedPages("Decisioni","Verbale interno",giornoRiunione )[
@@ -197,31 +194,31 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Da definire],
   [Aggiornare lo script Python del glossario includendo abbreviazioni e nuovi path],
-  [Decisione aggiornamento glossario]
+  [VI.11.1]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Da definire],
   [Spostare i file HTML del sito nella cartella `docs` e verificare il corretto funzionamento dei link],
-  [Decisione riorganizzazione repository]
+  [VI.11.2]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Tutto il gruppo],
   [Studiare e valutare le tecnologie più adatte da adottare nel Piano di Qualifica],
-  [Decisione su scelte tecnologiche PoC]
+  [VI.11.3]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Da definire],
   [Completare la sezione sull’indice di Gulpease e l’appendice applicativa],
-  [Decisione su metriche di qualità]
+  [VI.11.4]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Da definire],
   [Definire una tecnica di preventivo e aggiornare il piano nelle retrospettive future],
-  [Decisione su preventivo]
+  [VI.11.5]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],

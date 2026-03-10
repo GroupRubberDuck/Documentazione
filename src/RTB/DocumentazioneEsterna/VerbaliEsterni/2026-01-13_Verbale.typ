@@ -105,7 +105,7 @@
   == Analisi dei requisiti
 
   === Editor di testo
-  Nella produzione dei requisiti è stata notata la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
+  Durante la stesura dei requisiti è emersa la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
   BlueWind ha rassicurato che questo secondo editor non dovrebbe presentare difficoltà implementative significative.
 
   === Requisiti di performance
@@ -113,12 +113,12 @@
   Infatti l'unica operazione che potrebbe avere necessità di tali requisiti è il caricamento degli alberi: per rendere la user experience più fluida è stato consigliato di caricare tutti gli alberi in un primo momento (aumentando il tempo di caricamento iniziale), per poi averli tutti a disposizione.
 
   == Tecnologie e architettura
-  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto ci sono a disposizione varie librerie python per quanto riguarda il backend.
+  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto che sono disponibili varie librerie Python per quanto riguarda il backend.
   Per quanto riguarda il database è necessario che sia relazionale.
   Per l'architettura di sistema ci sono due opzioni: layered architecture con strati MVC (semplice, efficace per il problema e conosciuta dai membri del gruppo) oppure architettura esagonale (più sofisticata ma difficile da implementare).
 
   == Come procedere
-  Nel prossimo periodo sarà necessario creare un "esempio giocattolo" esponibile all'azienda, affinchè si mostri di essere in grado di utilizzare le tecnologie scelte e si affrontino le problematiche trovate.
+  Nel prossimo periodo sarà necessario creare un prototipo dimostrativo esponibile all'azienda, affinché si mostri di essere in grado di utilizzare le tecnologie scelte e si affrontino le problematiche trovate.
   È stato consigliato di partire dal caricamento dell'albero e la sua navigazione.
 
 ]
@@ -133,7 +133,7 @@
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Creazione di esempio giocattolo],
+      [Creazione di prototipo dimostrativo],
       [Avere un esempio da mostrare e iniziare a trovare soluzioni a problemi di implementazione],
       [-],
     ),
@@ -154,8 +154,14 @@
   #let TODO = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [#persone.ALDO],
+      [Redazione di questo verbale],
+      [VE.4.1],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [-],
-      [Creazione di esempio giocattolo],
+      [Creazione di prototipo dimostrativo],
       [VE.4.1],
     ),
   )
