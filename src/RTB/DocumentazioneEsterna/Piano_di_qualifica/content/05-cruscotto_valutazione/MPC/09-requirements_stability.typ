@@ -1,0 +1,1 @@
+//Misura quanto i requisiti rimangono stabili nel tempo (rapporto tra requisiti invariati e totali). Serve a valutare la maturità dell'analisi e l'impatto dei cambiamenti sul progetto. Ottimale: RSI ≥ 0.80.

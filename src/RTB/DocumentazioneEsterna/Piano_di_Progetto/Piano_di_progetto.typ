@@ -3,7 +3,6 @@
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
-#import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
 #import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiPersonali
 #import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiOrganizzativi
@@ -11,8 +10,6 @@
 #import glossario: dict
 #set text(size: 13pt)
 #set par(justify: true)
-
-
 
 
 #set text(lang: "it")
@@ -23,21 +20,24 @@
   underline()[#body]
 }
 
+// ---------------------------------------------------------
+// Info del documento e Versione
+// ---------------------------------------------------------
 
-// 
-//Info del documento 
-// 
 #let doc = "Piano di progetto"
 
-#let currentVersion=(
-  major:0,
-  minor:4,
-  patch:1,
+#let currentVersion = (
+  major: 0,
+  minor: 7,
+  patch: 0,
 )
-//converte dizionario in stringa
-#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
 #metadata(versionNumber)<versionNumber>
 
+
+// ---------------------------------------------------------
+// Pagine Iniziali (Frontespizio, Stato, Modifiche, Indici)
+// ---------------------------------------------------------
 
 #frontPageSenzaData(doc)
 
@@ -53,115 +53,65 @@
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: doc)[
-
-
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
-    ([0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale e redazione Sprint 1]),    
-    ([0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo.]),    
-    ([0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \  
-    Pianificazione di breve e lungo periodo promosse a sezioni.]),    
-    ([0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ] ),   
-    ([0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2] ),
-    ([0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunti per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2] ),
-    ([0.5.0], [2026-02-17], [Aldo Bettega], [/], [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi])
+    ( [0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale e edazione Sprint 1], ),
+    ( [0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo.], ),
+    ( [0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.], ),
+    ( [0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ], ),
+    ( [0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2], ),
+    ( [0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2], ),
+    ( [0.5.0], [2026-02-17], [#persone.ALDO], [-], [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi], ),
+    ( [0.6.0], [2026-03-04], [#persone.ALDO], [-], [Corrette e aggiornate le tabelle delle attività dei documenti, aggiunto sprint 5], ),
+    ( [0.7.0], [2026-03-05], [#persone.ALDO], [-], [Aggiunto @ROAM di classicazione e gestione rischi ROAM], ),
   )
   #registroModifiche(modifiche)
-  // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
-
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
-
-]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
-#outline(
-  title: [Lista delle tabelle],
-  target: figure.where(kind: table),
-)
-
 ]
+
+#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
+  #outline(
+    title: [Lista delle tabelle],
+    target: figure.where(kind: table),
+  )
+]
+
 #insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
-#outline(
-  title: [Lista delle immagini],
-  target: figure.where(kind: image),
-)
+  #outline(
+    title: [Lista delle immagini],
+    target: figure.where(kind: image),
+  )
 ]
+
+// ---------------------------------------------------------
+// Contenuto del Documento
+// ---------------------------------------------------------
 #context counter(page).update(1)
+
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
-  #include("content/01-introduzione/index.typ")
+  #include "content/01-introduzione/index.typ"
 ]
-
-
-// #insertArabicNumberedPagesSenzaData(PageTitle: "Organizzazione del progetto", documentType: doc)[
-
-
-// ]
-
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Analisi dei rischi", documentType: doc)[
   = Analisi dei rischi <Analisi-dei-rischi>
-#include "content/02-analisi_rischi/index.typ"
+  #include "content/02-analisi_rischi/index.typ"
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Suddivisione del lavoro", documentType: doc)[
-
+#insertArabicNumberedPagesSenzaData(PageTitle: "Metodologia di pianificazione", documentType: doc)[
+  = Metodologia di pianificazione <Pianificazione>
+  #include "content/03-metodologia_pianificazione/index.typ"
 ]
 
- 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo", documentType: doc)[
-
-
-
-  // == Scomposizione del lavoro
-
-  // Scomposizione delle attività di progetto e identificazione degli input e degli output di ogni attività.
-  // Eventualmente separandole per "scope", processi primari, di supporto, organizzativi.
-   #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione", documentType: doc)[
-  = Pianificazione <Pianificazione>
-
-  La pianificazione del progetto si basa su un modello *iterativo*, ispirato ai principi dell'approccio *Agile*, con l'obiettivo di garantire un monitoraggio continuo dell'avanzamento e una gestione efficace delle attività.
-  
-  Il lavoro del gruppo è organizzato in *sprint di durata bisettimanale*, scelti come compromesso ottimale tra capacità di pianificazione realistica e frequenza di verifica dei risultati ottenuti.
-
-  Ogni sprint ha inizio con un *incontro di pianificazione*, durante il quale vengono definite le attività da svolgere, gli obiettivi da raggiungere e le priorità associate.
-  Nel corso dello sprint è previsto inoltre un *incontro settimanale di allineamento* ("punto della situazione"), finalizzato a verificare lo stato delle attività in corso, individuare eventuali criticità e, se necessario, ricalibrare il carico di lavoro.
-  
-  Al termine di ogni sprint viene svolta una *retrospettiva*, che consente al gruppo di valutare il lavoro svolto, analizzare le difficoltà incontrate e individuare possibili miglioramenti del processo organizzativo.
-  Contestualmente,  i ruoli vengono ruotati a ogni sprint, al fine di permettere a tutti i membri del gruppo di acquisire esperienza nelle diverse responsabilità previste e di individuare una distribuzione dei ruoli efficace e sostenibile nel tempo.
-  
-  Questo approccio iterativo consente di mantenere una visione chiara delle priorità, favorire l’adattamento continuo alle esigenze del progetto e assicurare una progressione costante e controllata verso il raggiungimento degli obiettivi prefissati, permettendo di correggere e modificare il lavoro già svolto quando necessario.
-
-]
-  #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di lungo periodo ", documentType: doc)[
   = Pianificazione di lungo periodo <Pianificazione_di_lungo_periodo>
-  == Organizzazione del progetto <orgProgetto>
-  === Ruoli
-  #align(center)[
-  #{
-  show table.cell: set text(size: 11pt)
-  table(
-    columns: 3,
-    align: horizon,
-    table.header([*Ruolo*],[*Compiti*],[*Presenza*]),
-
-    [Responsabile], "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti", [Tutto il progetto],
-
-    [Amministratore], "- Garanzia efficienza strumenti\n- Gestione tecnologie di supporto\n- Verifica procedure secondo norme", [Tutto il progetto],
-
-    [Verificatore], "- Testing e validazione\n- Controllo qualità deliverable\n- Conformità ai requisiti", [Tutto il progetto],
-
-    [Analista], "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali", [Fase iniziale],
-
-    [Progettista], "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica", [Dopo analisi],
-
-    [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
-  )
-}]
+  #include "content/04-pianificazione_lungo_periodo/index.typ"
 ]
 
+<<<<<<< HEAD
 
 === Preventivo <Preventivo>
 Il gruppo di lavoro prevede di completare il progetto entro e non oltre il *30 aprile 2026*, nel rispetto di un  *budget complessivo pari a 11610€*.
@@ -368,5 +318,10 @@ La redazione di questo paragrafo sarà effettuata in seguito al superamento dell
 #insertArabicNumberedPagesSenzaData(PageTitle: "Pianificazione di breve periodo", documentType: doc)[
   = Pianificazione di breve periodo
   #include "content/04-pianificazione_breve_periodo/index.typ"
+=======
+#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli Sprint", documentType: doc)[
+  = Pianificazione di breve periodo<Pianificazione_di_breve_periodo>
+  #include "content/05-pianificazione_breve_periodo/index.typ"
+>>>>>>> f/pdq
 ]
 

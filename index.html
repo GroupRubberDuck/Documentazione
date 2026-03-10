@@ -40,6 +40,10 @@
           }
         });
       });
+
+      window.addEventListener('scroll', function() {
+        document.getElementById('index-scrollTop').classList.toggle('visible', window.scrollY > 300);
+      });
     }
   </script>
   <header>
@@ -311,6 +315,10 @@
       </ul>
     </section>
   </main>
+
+  <button id="index-scrollTop" title="Torna in cima" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <footer class="bg-primary text-secondary">
     <div class="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">

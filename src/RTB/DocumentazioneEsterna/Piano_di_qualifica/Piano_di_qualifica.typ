@@ -57,14 +57,14 @@
     (
       [0.0.1],
       [2025-12-15],
-      [Felician Mario Necsulescu ],
+      [Felician Mario \ Necsulescu ],
       [Davide Testolin],
       [Creazione del documento e stesura iniziale.],
     ),
     (
       [0.1.0],
       [2025-12-18],
-      [Felician Mario Necsulescu],
+      [Felician Mario \ Necsulescu],
       [Davide Testolin],
       [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.],
     ),
@@ -72,15 +72,36 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [Felician Mario Necsulescu],
-      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili, di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index],
+      [Ana Maria \ Draghici],
+      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
       [0.3.0],
       [2026-02-23],
       [Davide Testolin],
-      [Felician Mario Necsulescu],
+      [Ana Maria\  Draghici],
       [Aggiunti i grafici per alcune metriche]
+    ),
+    (
+      [0.4.0],
+      [2026-02-24],
+      [Ana Maria \ Draghici],
+      [],
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
+    ),
+    (
+      [0.5.0],
+      [2026-03-08],
+      [Ana Maria Draghici],
+      [],
+      [Aggiornata @valutazione in seguito a Sprint 5]
+    ),
+    (
+      [0.6.0],
+      [2026-03-08],
+      [Ana Maria Draghici],
+      [],
+      [Aggiunta @testing]
     ),
   )
   #registroModifiche(modifiche)
@@ -128,7 +149,7 @@
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Strategie di testing", documentType: doc)[
-  = Strategie di testing
+  = Strategie di testing <testing>
   #include "content/04-strategie_testing/index.typ"
 
 
@@ -142,8 +163,13 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Cruscotto di valutazione", documentType: doc)[
-  = Cruscotto di valutazione
+  = Cruscotto di valutazione <valutazione>
   #include "content/05-cruscotto_valutazione/index.typ"
+
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
+  = Cruscotto di valutazione
+  #include "content/06-automiglioramento/index.typ"
 
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[

@@ -1,260 +1,260 @@
-#let dict=(
-  Requisito:[
-    - Lato bisogno, capacità necessaria all'utente per raggiungere un obiettivo.
-    - Lato soluzione, la capacità necessaria a un sistema per rispondere a un'aspettativa, ] ,
+#let dict = (
 
-  End-user:[Utilizzatore finale del prodotto software.],
+  Requisito:[
+    Rappresenta un'esigenza che il sistema deve soddisfare. Dal lato utente, è ciò di cui ha bisogno per raggiungere un obiettivo; dal lato tecnico, è una capacità che il sistema deve implementare per rispondere a tale esigenza. Può essere funzionale (cosa fa il sistema) o non funzionale (come lo fa).
+  ],
+
+  End-user:[
+    L'utilizzatore finale del prodotto software, ovvero la persona che interagisce direttamente con il sistema nel contesto reale d'uso, distinta dal committente o dallo sviluppatore.
+  ],
 
   Verifica:[
-    Controllo che assicura che lo sviluppo non introduca errori rispetto alle specifiche.
+    Processo di controllo interno che assicura che il prodotto sia stato costruito correttamente rispetto alle specifiche definite. Risponde alla domanda: Stiamo costruendo il sistema nel modo giusto?
   ],
 
-  Validazione:[Controllo che assicura che il prodotto rispetti le esigenze dell’utente finale.],
-  
-  "Piano di qualifica":[Dire come verranno svolte le attività di verifica e validazione e con quali obiettivi di qualità],
-  "Analisi dei requisiti":[Processo di raccolta, definizione e organizzazione dei requisiti necessari allo sviluppo del sistema.
+  Validazione:[
+    Processo che assicura che il prodotto costruito corrisponda alle reali esigenze dell'utente finale. Risponde alla domanda: Stiamo costruendo il sistema giusto?
   ],
+
+  "Piano di Qualifica":[
+    Documento ufficiale che descrive le strategie, i criteri, le metriche e gli strumenti adottati dal team per svolgere le attività di verifica e validazione durante tutto il ciclo di vita del progetto.
+  ],
+
+  "Analisi dei Requisiti":[
+    Processo strutturato di raccolta, analisi, classificazione e documentazione dei requisiti. Include interviste, casi d'uso e modellazione, con l'obiettivo di definire con precisione cosa il sistema deve fare prima di iniziare lo sviluppo.
+  ],
+
   Attore:[
-    Entità (persona o sistema) che interagisce con il software in un caso d’uso.
+    Entità esterna (persona fisica, ruolo organizzativo o sistema esterno) che interagisce con il software in almeno un caso d'uso. Non fa parte del sistema, ma vi si interfaccia per raggiungere un obiettivo.
   ],
+
   UML:[
-    Linguaggio di modellazione unificato (Unified Modeling Language) utilizzato per rappresentare graficamente strutture statiche e comportamenti dinamici di un sistema software.
+    Linguaggio di modellazione standardizzato (Unified Modeling Language) usato per rappresentare visualmente strutture, comportamenti e interazioni di un sistema software tramite diagrammi come casi d'uso, classi, sequenze e altri.
   ],
-  "Caso d’uso":[
-    Descrizione di un'interazione tra un attore e il sistema per raggiungere un obiettivo specifico.
+
+  "Caso d'uso":[
+    Descrizione formale di un'interazione tra uno o più attori e il sistema, finalizzata al raggiungimento di un obiettivo specifico. Include precondizioni, scenario principale, scenari alternativi e postcondizioni.
   ],
-  
+
   "Scenario principale":[
-    Sequenza di passi che descrive il comportamento previsto e senza deviazioni di un caso d’uso.
+    La sequenza di passi ideale di un caso d'uso, quella che si verifica quando tutto va come previsto, senza errori o deviazioni dal flusso atteso.
   ],
+
   "Scenario secondario":[
-   Sequenza di passi che rappresenta variazioni, eccezioni o percorsi secondari rispetto allo scenario principale di un caso d’uso.
-  ],
-   "Ciclo di vita del progetto":[
-    Insieme delle fasi che compongono la realizzazione, il rilascio e la manutenzione di un prodotto software.
-  ],
-  BT:[
-   BlueTooth, tecnologia di comunicazione wireless a corto raggio che permette lo scambio di dati tra dispositivi elettronici senza l’uso di cavi
-  ],
-  Conformità:[
-    Aderenza del sistema a norme, requisiti tecnici o regolatori stabiliti da enti ufficiali.
-  ],
-  "Valutazione di conformità":[
-  Processo che verifica se un prodotto o sistema soddisfa le norme tecniche o regolamentari applicabili.
-],
-  "Protezione della rete":[
-  Insieme di misure tecniche e procedurali per prevenire accessi non autorizzati, attacchi o compromissioni della rete secondo gli standard della EN 18031.
- ],
- "Protezione dei dati personali":[
-  Applicazione di misure e criteri per garantire la tutela delle informazioni personali trattate dal sistema, come previsto dalla EN 18031 e dalle normative vigenti.
- ],
- "Prevenzione delle frodi":[
-  Misure tecniche e organizzative previste dalla norma EN 18031 per impedire manipolazioni, falsificazioni o utilizzi impropri del dispositivo o del servizio.
- ],
- 
-  "RED":[
-  Per esteso RED 2014/53/UE
-  Direttiva europea che definisce i requisiti essenziali di sicurezza, compatibilità elettromagnetica ed efficienza spettrale dei dispositivi radio.
-  ],
-  "Decision tree":[
-    Modello di decisione rappresentato tramite una struttura ad albero, in cui ogni nodo interno rappresenta una scelta o condizione e ogni foglia una decisione finale.
-  ],
-  Dashboard:[
-   Interfaccia riassuntiva che mostra dati, indicatori e funzionalità rilevanti in forma aggregata e visuale..
-  ],
- 
-  CSV:[
-   Formato di file basato su testo in cui i dati sono rappresentati come valori separati da virgole.
-  ],
-  XML:[
-    Linguaggio di markup utilizzato per rappresentare dati strutturati tramite tag annidati e gerarchie.
- ],
-  JSON:[
-    Formato leggero per la rappresentazione e lo scambio di dati strutturati basato su coppie chiave/valore.
- ],
-  PDF:[
-    Formato di documento digitale che preserva impaginazione e contenuto indipendentemente da piattaforma o dispositivo di visualizzazione.
- ],
-  "Dispositivo radio":[
-    Apparecchiatura elettronica in grado di trasmettere e ricevere dati tramite tecnologie wireless, come Wi-Fi, Bluetooth Low Energy (BLE) o LTE, per comunicare con altri sistemi o reti.
-  ],
-  
-  Importazione:[
-    Operazione mediante la quale l’utente inserisce nel sistema file contenenti dati tecnici, configurazioni o decision tree per la valutazione dei requisiti.
+    Sequenza alternativa che si attiva in caso di eccezioni, errori o condizioni particolari rispetto allo scenario principale. Definisce il comportamento del sistema nei casi non ordinari.
   ],
 
-  Interfaccia:[
-    Punto di accesso attraverso cui un dispositivo comunica con reti o altri sistemi.
-  ],
-  "Norma armonizzata":[
-    Standard europeo che garantisce la presunzione di conformità ai requisiti essenziali di una direttiva UE.
-  ],
-  "Automated EN18031 Compliance Verification":[
-   Processo automatizzato che verifica se un dispositivo soddisfa i requisiti tecnici della norma EN 18031 tramite controlli e regole software.
-  ],
-  Pass:[
-    Esito che indica che un requisito è soddisfatto.
-  ],
-  Fail:[
-    Esito che indica che un requisito non è soddisfatto.
-  ],
-  "Not Applicable":[
-    Esito che indica che un requisito non si applica al caso valutato.
-  ],
-  "N.A.":[
-    Abbreviazione di Not Applicable. \
-    Esito che indica che un requisito non si applica al caso valutato.
+  "Ciclo di vita del progetto":[
+    L'insieme ordinato delle fasi che scandiscono l'intero sviluppo di un prodotto software: dall'analisi iniziale alla progettazione, implementazione, test, rilascio e manutenzione.
   ],
 
-  "Requisito funzionale":[
-    Specifica un comportamento o una funzionalità che il sistema deve fornire.
+  Backlog:[
+    Lista ordinata di tutte le attività pianificate e non ancora avviate. Viene aggiornato continuamente durante il progetto e costituisce la fonte da cui si attingono i task per ogni sprint.
   ],
-   "Requisito non funzionale":[
-    Specifica vincoli o qualità del sistema, come prestazioni, sicurezza, usabilità o interoperabilità
+
+  Sprint:[
+    Iterazione di sviluppo a durata fissa (nel progetto, bisettimanale) al termine della quale si produce un incremento verificabile del prodotto. È l'unità base del metodo Scrum.
   ],
-  "Applicazione desktop":[
-    Programma software eseguito direttamente su un computer locale (Windows, macOS, Linux), che offre funzionalità complete senza richiedere necessariamente una connessione internet, a differenza di applicazioni web-based.
+
+  "Retrospettiva di Sprint":[
+    Riunione che si svolge al termine di ogni sprint. Il team analizza cosa ha funzionato, cosa ha creato problemi e quali azioni intraprendere per migliorare nel ciclo successivo.
   ],
-  "Soluzione web-based":[
-    Applicazione accessibile tramite un browser web, eseguita su server remoti, senza necessità di installazione locale sul dispositivo dell’utente.
+
+  Issue:[
+    Unità atomica di lavoro tracciata nel sistema di versionamento. Può rappresentare un'attività, un bug, una feature o una modifica documentale, con stato, assegnatario e priorità associati.
   ],
-  "Report":[
-    Documento che raccoglie, sintetizza e presenta informazioni, dati o risultati di valutazioni in modo strutturato, utile per analisi, tracciabilità e decisioni operative.
+
+  "Issue Tracking System":[
+    Strumento digitale (come GitHub Issues) usato per pianificare, assegnare, monitorare e storicizzare le attività del progetto, mantenendo traccia dello stato di avanzamento di ciascuna issue.
   ],
-  Stakeholder:[
-    Soggetto che ha interesse o influenza sullo sviluppo del progetto.
+
+  Milestone:[
+    Punto di controllo significativo nella pianificazione del progetto, che segna il completamento di una fase o il raggiungimento di un obiettivo intermedio rilevante, come RTB o Product Baseline.
   ],
-   Cybersecurity:[
-    Insieme di pratiche, tecnologie e processi volti a proteggere sistemi, reti e dati da accessi non autorizzati, attacchi e danni informatici.
+
+  "Ciclo PDCA":[
+    Modello iterativo di miglioramento continuo articolato in quattro fasi: Plan (pianifica gli obiettivi), Do (esegui le attività), Check (verifica i risultati ottenuti), Act (applica le correzioni e riparte dal piano).
   ],
-  Manutenzione:[
-    Insieme delle attività necessarie per correggere difetti, migliorare prestazioni o adattare il software a nuovi contesti operativi.
+
+  Branch:[
+    Ramificazione indipendente del repository Git usata per isolare lo sviluppo. Nel progetto si usano branch distinti per produzione (Main), sviluppo integrato (Develop) e singole funzionalità (Feature).
   ],
-  "Editor grafico":[
-   Strumento software che permette la creazione o modifica di contenuti attraverso un’interfaccia visuale, senza necessità di editarne direttamente il codice testuale.
+
+  "Pull Request":[
+    Richiesta formale di integrare le modifiche sviluppate su un branch secondario nel branch principale. Prevede revisione e approvazione da parte di uno o più membri del team prima che il merge venga eseguito.
   ],
-  Wi-Fi:[
-  Tecnologia di rete wireless che consente la connessione di dispositivi a Internet o tra loro tramite onde radio su bande specifiche.
-],
 
-LTE:[
-  Standard di comunicazione wireless per reti mobili di quarta generazione (4G), che garantisce trasmissione dati ad alta velocità.
-],
+  Merge:[
+    Operazione che unisce il codice di un branch secondario approvato nel branch di destinazione, rendendo effettive le modifiche nel progetto principale.
+  ],
 
-"IoT":[
-  Internet of Things.
-  Insieme di dispositivi fisici connessi a Internet, capaci di raccogliere, scambiare e analizzare dati automaticamente, senza intervento umano diretto.
-],
-  
-"Best practices":[Procedura di cui è dimostrata la capacità di fornire sicurezza, consistenza e qualità per il corrispondente caso d'uso.
-],
-"Asset":[
-  Gli assets sono gli elementi critici (di sicurezza e di rete) che devono essere protetti. 
-  
-  La norma stabilisce un metodo rigoroso per:
+  "Workflow documentale":[
+    Modello a stati che governa il ciclo di vita di ogni documento: Backlog → In lavorazione → In verifica → In validazione → Done, garantendo un processo controllato e tracciabile per ogni prodotto documentale.
+  ],
 
-  - documentarli,
+  "Definition of Done":[
+    Insieme di criteri verificabili e condivisi dal team che determinano quando un'attività può essere considerata formalmente completata, evitando ambiguità sul concetto di finito.
+  ],
 
-  - giustificare le scelte di protezione,
+  "Proof of Concept":[
+    Prototipo sperimentale sviluppato per validare la fattibilità di una tecnologia, un'integrazione o un approccio architetturale, prima di procedere con lo sviluppo completo del sistema.
+  ],
 
-  - verificarne la completezza,
+  "Requirement and Technology Baseline":[
+    Prima milestone formale del progetto, che comprende il completamento dell'Analisi dei Requisiti, la definizione delle tecnologie adottate e le attività di prototipazione (PoC).
+  ],
 
-  - testarne l’efficacia.
+  "Product Baseline":[
+    Milestone che segna il completamento della progettazione architetturale e della codifica del prodotto, includendo test, documentazione tecnica e tutto il necessario per il rilascio finale.
+  ],
 
-Questo approccio garantisce che ogni dispositivo radio connesso a Internet sia valutato in modo sistematico e coerente, riducendo i rischi di vulnerabilità.
-],
-  
-equipment:[
-  Indica l’apparecchiatura radio connessa a Internet che è oggetto dei requisiti di sicurezza.
-  Ad esempio un router wifi domestico.
-],
+  "Responsabile Tecnico":[
+    Ruolo con permessi avanzati all'interno del sistema, abilitato alla gestione, modifica e supervisione dei decision tree e delle configurazioni di sistema non accessibili agli utenti standard.
+  ],
 
-"Factory Default State":[Stato definito in cui le impostazioni e la configurazione dell'apparecchiatura sono impostate sui valori iniziali.],
+  "Tracciamento automatico":[
+    Meccanismo che collega sistematicamente i casi d'uso ai requisiti corrispondenti tramite script dedicati, garantendo coerenza e completezza tra le specifiche e la documentazione prodotta.
+  ],
 
-"Access Control Mechanism":[ Funzionalità dell'apparecchiatura per concedere, limitare o negare l'accesso a risorse specifiche.],
+  Docker:[
+    Piattaforma di containerizzazione che consente di creare ambienti di esecuzione isolati e riproducibili, garantendo che il software si comporti in modo identico su qualsiasi macchina o sistema operativo.
+  ],
 
-"Authentication Mechanism":[Funzionalità dell'apparecchiatura per verificare che un'entità sia chi o cosa dichiara di essere.],
+  Poetry:[
+    Strumento per la gestione delle dipendenze e degli ambienti virtuali in Python, che semplifica la dichiarazione, l'installazione e la risoluzione dei pacchetti necessari al progetto.
+  ],
 
-"Hard-coded":[Pratica di sviluppo software di incorporare dati direttamente nel codice sorgente di un programma o altro oggetto eseguibile.],
+  MyPy:[
+    Strumento di analisi statica per Python che verifica la correttezza dei tipi dichiarati nel codice senza eseguirlo, rilevando potenziali errori in fase di sviluppo.
+  ],
 
-"Assessment Objective":[Dichiarazione che definisce le ragioni per eseguire una valutazione.],
+  BearType:[
+    Libreria Python che esegue il controllo dei tipi a runtime, verificando che i valori passati alle funzioni rispettino le annotazioni dichiarate durante l'effettiva esecuzione del programma.
+  ],
 
-"Attacco Brute Force":[ Attacco a un sistema crittografico che impiega una ricerca per tentativi di un insieme di chiavi, password o altri dati.],
+  Ruff:[
+    Linter e formatter per codice Python ad alte prestazioni, utilizzato per rilevare errori stilistici, violazioni di convenzioni e per formattare automaticamente il codice in modo uniforme.
+  ],
 
-Giustificazione:[Informazione documentata che fornisce evidenza di un'affermazione.],
+  Typst:[
+    Linguaggio di markup moderno utilizzato per la composizione tipografica dei documenti del progetto, pensato come alternativa a LaTeX con sintassi più semplice e compilazione più rapida.
+  ],
 
-"Communication Mechanism":[ Funzionalità dell'apparecchiatura che consente la comunicazione tramite un'interfaccia macchina..],
+  "GitHub Actions":[
+    Sistema di integrazione e distribuzione continua (CI/CD) integrato in GitHub, utilizzato per automatizzare build, esecuzione di test e pubblicazione dei documenti ad ogni modifica del repository.
+  ],
 
-"Confidential Cryptographic Key":[(Chiave crittografica riservata).\ Parametro di sicurezza riservato, escluse le password, utilizzato nell'operazione di un algoritmo o protocollo crittografico.],
+  "TurboScribe AI":[
+    Strumento basato su intelligenza artificiale utilizzato per la trascrizione automatica delle riunioni, producendo verbali testuali a partire da registrazioni audio o video.
+  ],
 
-"Interfaccia Macchina":[nterfaccia esterna tra l'apparecchiatura e un servizio/dispositivo.],
+  "Indice di Gulpease":[
+    Metrica italiana di leggibilità del testo che valuta la comprensibilità di un documento in base alla lunghezza media delle parole e delle frasi. Valori più alti indicano testi più leggibili.
+  ],
 
-"Confidential Network Function Configuration":[(Configurazione riservata della funzione di rete).\ Configurazione della funzione di rete la cui divulgazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
+  "Requirements Stability Index":[
+    Metrica che misura quanto i requisiti rimangono stabili nel tempo, calcolando il rapporto tra requisiti modificati o eliminati e il totale dei requisiti definiti. Un valore alto indica buona stabilità.
+  ],
 
-"Denial of Service":[Prevenzione o interruzione dell'accesso autorizzato a una risorsa dell'apparecchiatura o ritardo delle operazioni e funzioni dell'apparecchiatura.],
+  "Time Efficiency":[
+    Metrica che misura l'efficienza temporale del team, calcolata come rapporto tra il tempo stimato per un'attività e il tempo effettivamente impiegato per completarla.
+  ],
 
-Entità:[Utente, dispositivo, apparecchiatura o servizio.],
+  "Earned Value":[
+    Valore economico del lavoro effettivamente completato in un dato momento, espresso in termini di budget pianificato. Usato per misurare l'avanzamento reale del progetto.
+  ],
 
-"Interfaccia esterna":[Interfaccia di un'apparecchiatura accessibile dall'esterno dell'apparecchiatura (device).],
+  "Planned Value":[
+    Valore economico del lavoro che avrebbe dovuto essere completato entro un dato momento secondo la pianificazione iniziale. Costituisce il riferimento temporale del progetto.
+  ],
 
-"Network Asset":[Configurazione sensibile della funzione di rete, configurazione riservata della funzione di rete o funzioni di rete. ],
+  "Actual Cost":[
+    Costo reale sostenuto per completare il lavoro svolto fino a un determinato momento, indipendentemente da quanto era stato pianificato o dal valore prodotto.
+  ],
 
-"Network Equipment":[Apparecchiatura che scambia dati tra reti diverse utilizzata per connettere permanentemente direttamente altri dispositivi a Internet.],
+  "Estimate at Completion":[
+    Stima aggiornata del costo totale del progetto al suo completamento, ricalcolata tenendo conto delle performance attuali e dei costi già sostenuti.
+  ],
 
-"Network Function Configuration":[(Configurazione della funzione di rete).\ Dati elaborati dall'apparecchiatura che definiscono il comportamento della funzione di rete dell'apparecchiatura.],
+  "Estimate to Complete":[
+    Stima dei costi ancora necessari per completare il lavoro rimanente del progetto, calcolata a partire dallo stato attuale di avanzamento.
+  ],
 
-"Stato operativo":[Stato in cui l'apparecchiatura funziona normalmente secondo la funzionalità prevista e all'interno del suo ambiente operativo previsto.],
+  "Cost Performance Index":[
+    Indice di efficienza economica calcolato come rapporto EV/AC. Un valore maggiore di 1 indica che si sta producendo più valore di quanto si stia spendendo.
+  ],
 
-"Security Asset":[(Risorsa di sicurezza).\ Parametro di sicurezza sensibile e riservato o funzione di sicurezza.],
+  "Schedule Performance Index":[
+    Indice di rispetto delle tempistiche calcolato come rapporto EV/PV. Un valore maggiore di 1 indica che il progetto è in anticipo rispetto alla pianificazione.
+  ],
 
-Vulnerabilità:[Debolezza, errore di progettazione o implementazione che può portare a un evento imprevisto e indesiderato che compromette la sicurezza dell'apparecchiatura, della rete, dell'applicazione o del protocollo coinvolto.],
+  "To Complete Performance Index":[
+    Indice che indica il livello di efficienza economica necessario per completare il progetto rispettando il budget residuo disponibile.
+  ],
 
-"Sensitive Network Function Configuration ":[(Configurazione sensibile della funzione di rete).\ Configurazione della funzione di rete la cui manipolazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
+  "Code Smells":[
+    Caratteristiche del codice sorgente che, pur non causando errori diretti, indicano possibili problemi strutturali o di manutenibilità e suggeriscono la necessità di un refactoring.
+  ],
 
-"Sensitive Security Parameter":[(Parametro di sicurezza sensibile).\ Parametro di sicurezza la cui manipolazione può danneggiare la rete o il suo funzionamento o portare a un uso improprio delle risorse di rete.],
-  
+  "Cyclomatic Complexity":[
+    Metrica che misura la complessità logica di un modulo software contando il numero di percorsi indipendenti nel flusso di controllo. Valori elevati indicano codice difficile da testare e manutenere.
+  ],
+
+  "Instability Index":[
+    Indice compreso tra 0 e 1 che misura la stabilità di un modulo software in base al rapporto tra dipendenze in uscita e totale delle dipendenze. Valori vicini a 1 indicano alta instabilità.
+  ],
+
+  "Coefficient of Coupling":[
+    Misura del grado di interdipendenza tra moduli software. Un accoppiamento elevato rende il sistema più rigido e difficile da modificare, testare o riutilizzare in modo indipendente.
+  ],
+
+  "Statement Coverage":[
+    Metrica di copertura del codice che indica la percentuale di istruzioni eseguite durante i test automatici. Un valore alto riduce la probabilità che comportamenti non testati nascondano difetti.
+  ],
+
+  MVC:[
+    Modello architetturale che separa un'applicazione in tre componenti: Model (dati e logica di business), View (interfaccia utente) e Controller (gestione delle interazioni tra i due).
+  ],
+
+  "Layered Architecture":[
+    Architettura software che organizza il sistema in livelli funzionali distinti e sovrapposti (es. presentazione, logica applicativa, accesso ai dati), dove ogni livello interagisce solo con quello adiacente.
+  ]
 
 )
 
-#metadata(dict)<dizionario>
+#metadata(dict) <dizionario>
 
-)
 
 #let abbr = (
 
-  ACM:"Access Control Mechanism",
-  AUM:"Authentication Mechanism",
-  CCK:"Confidential Cryptographic Key",
-  CRY:"Criptography",
-  CSP:"Confidential Security Parameter",
-  CWE:"Common Weakness Enumeration",
-  DHCP:"Dynamic Host Configuration Protocol",
-  DN:"Decision Node",
-  DoS:"Denial of Service",
-  DT:"Decision Tree",
-  E:"Evidence",
-  "E.Info":"Evidence.Info",
-  "E.Just":"Evidence.Justification",
-  GEC:"General Equipment Capabilities",
-  IC:"Implementation Category",
-  ICMP:"Internet Control Message Protocol",
-  IP:"Internet Protocol",
-  LAN:"Local Area Network",
-  MitM:"Man in the Middle",
-  NMM:"Network Monitoring Mechanism",
-  OS:"Operating System",
-  PIN:"Personal Identification Number",
-  PKI:"Public Key Infrastructure",
-  RLM:"Resilience Mechanism",
-  SCM:"Secure Communication Mechanism",
-  SDO:"Standards Developing Organization",
-  SQL:"Structured Query Language",
-  SSM:"Secure Storage Mechanism",
-  SSP:"Sensitive Security Parameter",
-  SUM:"Secure Update Mechanism",
-  TCM:"Traffic Control Mechanism",
-  USB:"Universal Serial Bus",
-  WLAN:"Wireless Local Area Network",
-  KLOC:"Kilo Lines Of Code",
+  AdR:"Analisi dei Requisiti",
+  NdP:"Norme di Progetto",
+  PdP:"Piano di Progetto",
+  PdQ:"Piano di Qualifica",
+  MU:"Manuale Utente",
+  DoD:"Definition of Done",
+  PBI:"Product Backlog Item",
+  PoC:"Proof of Concept",
+  RTB:"Requirement and Technology Baseline",
+  PB:"Product Baseline",
+  ROF:"Requisito Obbligatorio Funzionale",
+  RDF:"Requisito Desiderabile Funzionale",
+  ROQ:"Requisito Obbligatorio di Qualità",
+  ROV:"Requisito Obbligatorio di Vincolo",
+  MPC:"Metrica di Qualità del Processo",
+  MPD:"Metrica di Qualità del Prodotto",
+
+  PV:"Planned Value",
+  EV:"Earned Value",
+  AC:"Actual Cost",
+  SPI:"Schedule Performance Index",
+  CPI:"Cost Performance Index",
+  EAC:"Estimate at Completion",
+  ETC:"Estimate to Complete",
+  TCPI:"To Complete Performance Index",
+  RSI:"Requirements Stability Index",
+  BAC:"Budget at Completion"
+
 )
-#metadata(abbr)<abbreviazioni>
+
+#metadata(abbr) <abbreviazioni>
