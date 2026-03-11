@@ -143,7 +143,7 @@
   - *nodi orfani*,
   - *percorsi interrotti*,
   - *foglie finali mancanti*,
-  - *altre incoerenze logiche*.//cosa è un'incoerenza logica
+  - *altre incoerenze logiche*.
   
 
   === Gestione dei requisiti Not Applicable e giustificazioni <gestioneNA>
