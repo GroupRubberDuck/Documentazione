@@ -40,7 +40,7 @@
   ),
   retrospettiva: [
     - *Stato di avanzamento:*
-      La fase di modellazione dei casi d'uso è stata portata a termine e si è dato avvio alla classificazione strutturata dei requisiti funzionali. Sul fronte tecnico, il PoC ha raggiunto risultati concreti: l'esportazione PDF è stata verificata con successo e la discussione sull'architettura dati ha portato a preferire MongoDB, che si adatta meglio alla struttura ad albero nidificata dei Decision Tree senza richiedere complesse query JOIN.
+      La fase di modellazione dei casi d'uso è stata portata a termine e si è dato avvio alla classificazione strutturata dei requisiti funzionali. Sul fronte tecnico, il principale risultato concreto è stata la definizione del design delle pagine del PoC. Parallelamente, è stata condotta un'analisi delle librerie disponibili per l'esportazione PDF e si è avviata una valutazione architetturale sul database, con orientamento verso MongoDB per la sua compatibilità nativa con strutture dati ad albero in formato BSON.
 
     - *Aspetti positivi:*
       Il workflow di verifica ridefinito a fine Sprint 5 ha trovato piena applicazione. In precedenza tutti i documenti dovevano passare per una fase di approvazione esplicita prima di essere pubblicati sul branch develop, generando rallentamenti. Con la nuova distinzione, i verbali continuano a richiedere un'approvazione formale prima della pubblicazione, mentre piccole modifiche (minor) ad altri documenti — come PdP, PdQ e Norme — possono essere spostate direttamente in "done" dal verificatore senza attendere un'approvazione aggiuntiva. Questo ha ridotto i tempi di integrazione e reso il flusso di lavoro più fluido.
