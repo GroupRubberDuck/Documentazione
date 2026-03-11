@@ -39,3 +39,4 @@ Il calo dello Sprint 4 è riconducibile alla sessione esami. \ Il team dovrà mi
 le stime iniziali per avvicinarsi alla soglia ottimale nei prossimi sprint. Le cause
 degli scostamenti sono documentate nel
 #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+#pagebreak()

@@ -41,3 +41,4 @@ principalmente a imprecisioni nelle stime iniziali delle ore per ruolo. Il consu
 effettivo resta sotto il BAC, come documentato nel
 #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto]
 e nella sezione @budget-progress-bar.
+#pagebreak()

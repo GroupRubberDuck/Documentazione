@@ -42,8 +42,8 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu",),
-    verificatori: ("Davide Testolin",),
+    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT),
+    verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -85,15 +85,15 @@
     (
       [0.4.0],
       [2026-02-24],
-      [Ana Maria \ Draghici],
-      [],
+      [Ana Maria Draghici],
+      [Felician Mario \ Necsulescu],
       [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
     ),
     (
       [0.5.0],
       [2026-03-11],
       [Ana Maria Draghici],
-      [],
+      [Felician Mario \ Necsulescu],
       [Aggiornata @valutazione in seguito avanzamento degli sprint]
     ),
   )
