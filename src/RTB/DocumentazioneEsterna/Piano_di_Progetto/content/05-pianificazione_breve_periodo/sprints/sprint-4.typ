@@ -3,7 +3,7 @@
 
 #let sprint_data = (
   numero: "4",
-  usaMatrice: false,
+  usaMatrice: true,
   timeline: (
     inizio: datetime(year: 2026, month: 01, day: 05),
     finePrevista: datetime(year: 2026, month: 02, day: 04),
@@ -32,9 +32,11 @@
   ],
   oreProduttive: (
     (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.ALDO, ruolo: ruoli.Responsabile, orePreviste: 2, oreEffettive: 2),
     (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 3, oreEffettive: 3),
+    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
     (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
   ),
@@ -52,5 +54,6 @@
       Per risolvere questi blocchi, il gruppo ha deciso di:
       - Progettare un nuovo workflow di approvazione con un livello di dettaglio maggiore, in modo da poter validare e pubblicare singoli incrementi indipendentemente dagli altri.
       - Concentrare immediatamente le risorse sulle attività più urgenti per la RTB: il raffinamento dei casi d'uso e l'avanzamento pratico del PoC
+      - Al fine di ottimizzare la gestione delle risorse, si è deciso di adottare un modello di ruoli più flessibile. Sebbene a ogni membro venga assegnato un ruolo di cui deve garantire l'adempimento delle task principali, è consentito svolgere ore lavorative anche in ruoli differenti.
   ],
 )
