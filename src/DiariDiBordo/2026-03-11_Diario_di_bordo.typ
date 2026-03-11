@@ -19,7 +19,7 @@
 = Attività da completare
 #set list(marker: image(clessidra_icon, width: 0.7em))
 - Integrazione del database e finalizzazione delle funzionalità del PoC
-- Aggiornamento dei graficimall'interno del Piano di Qualifica
+- Aggiornamento dei grafici all'interno del Piano di Qualifica
 
 = Difficoltà incontrate
 #set list(marker: image(danger_icon, width: 1em))
