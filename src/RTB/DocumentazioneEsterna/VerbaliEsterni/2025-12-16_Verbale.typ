@@ -108,7 +108,7 @@
 #insertArabicNumberedPages("Riassunto della riunione","Verbale esterno",giornoRiunione )[
   = Riassunto della riunione
   La riunione è stata dedicata all’analisi e al chiarimento di alcune tematiche rilevanti emerse durante l'attività di analisi dei requisiti, con particolare riferimento alla gestione delle valutazioni nei decision tree, all’organizzazione delle informazioni a supporto dell’utente e alle modalità di trattamento degli input. L’incontro ha consentito di allineare le interpretazioni condivise e di definire indicazioni utili per la prosecuzione delle attività.
-  #upper("è") stato anche delimitato lo scope del progetto al solo ambito di valutazione concettuale, escludendo le altre valutazioni definite nello standard (completezza funzionale e sufficienza funzionale, in quanto meno adatte all'automazione e con criteri meno oggettivi.
+  #upper("è") stato anche delimitato lo scope del progetto al solo ambito di valutazione concettuale, escludendo le altre valutazioni definite nello standard (completezza funzionale e sufficienza funzionale), in quanto meno adatte all'automazione e con criteri meno oggettivi.
 
   == Gestione dello stato dei decision tree <stato>
  Uno dei temi affrontati riguarda la *possibilità di salvare lo stato di avanzamento* durante l’esecuzione degli alberi decisionali. Si discute se il salvataggio debba avvenire esclusivamente al termine dell’albero oppure anche *in modo intermedio*. Viene condivisa l’idea che il salvataggio a metà percorso sia sensato, ad esempio nel caso in cui l’utente debba interrompere l’analisi per mancanza di tempo o preferisca rimandare una decisione. Questa funzionalità permetterebbe di riprendere il lavoro esattamente dal punto in cui era stato lasciato.
@@ -138,10 +138,10 @@
   Per quanto riguarda la *sicurezza* (file malevoli, doppie estensioni), si riconosce che tali controlli *non sono prioritari*, dato che l’applicazione è destinata ad un *uso interno*.
  
 == Giustificazioni per i verdetti “pass” <giustificazione>
-  Si affronta il tema delle giustificazioni richieste dalla norma per alcuni verdetti “pass” nei decision tree. Si concorda che la possibilità di inserire una *giustificazione testuale* a fine esecuzione dell’albero sia *rilevante*, soprattutto a fini documentali, e che tale giustificazione possa essere allegata al report finale. Questa funzionalità viene considerata accessoria e *non necessaria per il proof of concept*, né è prevista una validazione formale della giustificazione stessa.
+  Si affronta il tema delle giustificazioni richieste dalla norma per alcuni verdetti “pass” nei decision tree. Si concorda che la possibilità di inserire una *giustificazione testuale* a fine esecuzione dell’albero sia *rilevante*, soprattutto a fini documentali, e che tale giustificazione possa essere allegata al report finale. Questa funzionalità viene considerata accessoria e *non necessaria per il Proof of Concept*, né è prevista una validazione formale della giustificazione stessa.
 
 == Prossimi passi consigliati <passi>
-  Come primo passo concreto per la proof of concept, viene suggerito di definire chiaramente la struttura degli alberi e di implementarne l’esecuzione, mostrando *dinamicamente* le domande e il percorso seguito in base alle risposte. Questo permetterà di validare il funzionamento di un singolo requisito. La scelta se partire dal motore logico o dall’interfaccia grafica viene lasciata al gruppo.
+  Come primo passo concreto per il Proof of Concept, viene suggerito di definire chiaramente la struttura degli alberi e di implementarne l’esecuzione, mostrando *dinamicamente* le domande e il percorso seguito in base alle risposte. Questo permetterà di validare il funzionamento di un singolo requisito. La scelta se partire dal motore logico o dall’interfaccia grafica viene lasciata al gruppo.
 
 
 ]
@@ -202,7 +202,7 @@ I TODO sorti da questa riunione sono i seguenti:
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Aldo Bettega, Filippo Guerra ],
-  [Aggiornare il documento analisi dei requisiti con tutte le precisazioni ricevute.],
+  [Aggiornare il documento Analisi dei Requisiti con tutte le precisazioni ricevute.],
   [VE.3.1-VE.3.4],
 ), 
 (

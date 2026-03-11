@@ -132,12 +132,6 @@
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Redazione verbale esterno 2026-01-13],
-      [Avere il verbale esterno disponibile per tutti],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Fare ricerca sulle tecnologie presenti nella lista aggiornata],
       [Avere familiarità con esse],
       [@poc],
@@ -162,20 +156,14 @@
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
-      [Redazione verbale esterno 2026-01-13],
-      [VI.13.1],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [#persone.ALDO],
-      [Redazione verbale interno 2026-01-13],
-      [VI.13.2],
+      [Redazione di questo verbale],
+      [-],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [Tutto il gruppo],
       [Fare ricerca in ambito tecnologico],
-      [VI.13.3],
+      [VI.13.1],
     ),
   )
   #utilityTable(

@@ -444,7 +444,7 @@ Per *favorire la tracciabilità e la consultazione immediata*, all’interno dei
 
 ]
 
-*TurboScribe AI*:Per velocizzare il processo di documentazione, il gruppo utilizza il tool di intelligenza artificiale #link("https://turboscribe.ai/it")[TurboScribe], che consente di trascrivere registrazioni audio in formato testuale. 
+*TurboScribe AI*: Per velocizzare il processo di documentazione, il gruppo utilizza il tool di intelligenza artificiale #link("https://turboscribe.ai/it")[TurboScribe], che consente di trascrivere registrazioni audio in formato testuale. 
 Lo strumento è utilizzato in particolare per il supporto alla redazione dei verbali, permettendo il riascolto rapido di momenti specifici delle riunioni tramite selezione testuale.
 
 

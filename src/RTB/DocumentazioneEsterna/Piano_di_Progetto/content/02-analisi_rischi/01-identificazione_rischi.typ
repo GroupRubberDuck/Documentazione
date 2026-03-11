@@ -5,11 +5,11 @@ La norma ISO 21502:2020, dedicata alla gestione dei progetti, specifica che la g
 #pad(left: 1em)[
   - gli obiettivi del progetto, in termini di tempi, costi, risorse e qualità dei processi;
   - gli output del progetto, quindi il prodotto/servizio realizzato e la sua capacità di soddisfare i requisiti.
-]
-In coerenza con tali riferimenti, il progetto distingue due categorie principali di rischio non mutualmente esclusive:
-#pad(left: 1em)[
-  - *Rischi di progetto* : Questi rischi possono influire sulla tabella di marcia o sulle risorse disponibili per il progetto.
-  - *Rischi di prodotto* : Questi rischi possono influire sulla qualità o sulle funzionalità del prodotto.
+  ]
+  In coerenza con tali riferimenti, il progetto distingue due categorie principali di rischio non mutualmente esclusive:
+  #pad(left: 1em)[ 
+  - *Rischi di progetto*: Questi rischi possono influire sulla tabella di marcia o sulle risorse disponibili per il progetto. 
+  - *Rischi di prodotto*: Questi rischi possono influire sulla qualità o sulle funzionalità del prodotto.
 
   === Struttura delle tabelle dei rischi
 

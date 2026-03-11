@@ -23,7 +23,7 @@ Non sempre un programma di apprendimento rigoroso riesce a rispondere in modo ef
 Perciò, il processo prevede la possibilità di *formazione autonoma*, lasciando libertà ai membri del gruppo di approfondire tematiche o strumenti specifici secondo le proprie necessità.
 
 ==== Apprendimento in gruppo 
-Poiché alcuni processi possono essere molto complessi e richiedere tempi lunghi, il gruppo può decidere di *riunirsi in sottogruppi* o dividere il task tra i membri #footnote[Ad esempio, questa opzione è stata utilizzata per studiare il materiale fornito dall'azienda] .
+Poiché alcuni processi possono essere molto complessi e richiedere tempi lunghi, il gruppo può decidere di *riunirsi in sottogruppi* o dividere il task tra i membri. #footnote[Ad esempio, questa opzione è stata utilizzata per studiare il materiale fornito dall'azienda] .
 
 
 Questi sottogruppi possono essere impiegati anche per:

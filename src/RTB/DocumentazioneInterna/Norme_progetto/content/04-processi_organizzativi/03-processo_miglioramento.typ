@@ -23,10 +23,10 @@ Tali attività sono eseguite ciclicamente durante l’intero svolgimento del pro
 ==== Ciclo PDCA
 Le attività del processo di miglioramento si inseriscono all’interno del ciclo di miglioramento continuo *PDCA (Plan–Do–Check–Act)*:
 
-- *Plan*: definizione delle procedure e degli standard ();
+- *Plan*: definizione delle procedure e degli standard;
 - *Do*: applicazione operativa dei processi all’interno dei progetti attivi;
-- *Check*: misurazione delle performance e svolgimento di audit ();
-- *Act*: aggiornamento delle *Norme di Progetto* e ottimizzazione delle procedure ().
+- *Check*: misurazione delle performance e svolgimento di audit;
+- *Act*: aggiornamento delle *Norme di Progetto* e ottimizzazione delle procedure.
 
 #figure(
   caption: [Rappresentazione del ciclo PDCA applicato ai processi organizzativi],

@@ -118,7 +118,7 @@ Per svolgere le attività del processo di fornitura, il gruppo utilizza strument
 
 - *Google Calendar*: gestione appuntamenti e scadenze;
 
-- *Discord / Whatsapp* : coordinamento interno e riunioni del gruppo.
+- *Discord / Whatsapp*: coordinamento interno e riunioni del gruppo.
 
 
 *Strumenti verso la proponente*
@@ -127,5 +127,5 @@ Per svolgere le attività del processo di fornitura, il gruppo utilizza strument
 
 - *Zoom*: riunioni sincrone remote.
 
-- *Telegram* : indicata dalla proponente per chiarimenti rapidi.
+- *Telegram*: indicata dalla proponente per chiarimenti rapidi.
 

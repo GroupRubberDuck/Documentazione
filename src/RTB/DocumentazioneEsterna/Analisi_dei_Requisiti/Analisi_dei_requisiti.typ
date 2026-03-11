@@ -106,7 +106,7 @@ I casi d’uso sono documentati secondo la notazione UML  e comprendono nome, at
 
 Gli obiettivi principali di questo documento sono:
 #pad(left: 1em)[
-- Fornire una descrizione chiara e dettagliata dei *requisiti funzionali* #footnote()[#dict.at("Requisito funzionale")] *e non funzionali* #footnote()[#dict.at("Requisito non funzionale")] del sistema;
+- Fornire una descrizione chiara e dettagliata dei *requisiti funzionali*  *e non funzionali* del sistema;
 - Presentare i *casi d’uso principali*  , con indicazione degli attori coinvolti, scenari principali e scenari alternativi;
 - Consentire la *tracciabilità dei requisiti*  rispetto ai casi d’uso e alle possibili estensioni future del sistema;
 - Fornire un *riferimento* per sviluppatori, tester e manutentori per comprendere le funzionalità del sistema e le condizioni operative;
