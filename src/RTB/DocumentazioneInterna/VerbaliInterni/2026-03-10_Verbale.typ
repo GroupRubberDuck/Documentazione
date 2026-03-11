@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -37,10 +37,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In approvazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ANA,),
-    verificatori: ("",),
+    verificatori: (persone.FELIX,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -49,7 +49,8 @@
 #insertRomanNumberedPages("Registro Modifiche", doctype, giornoRiunione)[
 
   #let modifiche = (
-    ([0.1.0], [2026-03-10], persone.ANA, [],[]),
+    ([0.1.0], [2026-03-10], persone.ANA, persone.FELIX,[Stesura del verbale]),
+    ([1.0.0], [2026-03-11], persone.ANA, persone.ANA,[Approvazione]),
   )
 
   #registroModifiche(modifiche)
@@ -66,7 +67,7 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Interno
-  - *Motivazione*: Riunione interna programmata
+  - *Motivazione*: Riunione di fine sprint
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 15:00
@@ -95,13 +96,13 @@
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della riunione
-  Durante la riunione si è fatto il punto sullo stato dei documenti e sul workflow di verifica, si è pianificato il nuovo sprint assegnando i ruoli, si è discusso dell'avanzamento del POC con particolare attenzione alla scelta del database, e si sono definite le strategie di testing per il Piano di Qualifica.
+  Durante la riunione si è fatto il punto sullo stato dei documenti e sul workflow di verifica, si è pianificato il nuovo sprint assegnando i ruoli, si è discusso dell'avanzamento del PoC con particolare attenzione alla scelta del database, e si sono definite le strategie di testing per il Piano di Qualifica.
 
   == Gestione Documenti e Workflow di Verifica <documentazione>
   Si è discusso di come gestire i branch separati, le pull request e i merge sul branch `main` e `develop`. È stato chiarito che i verbali, una volta scritti, necessitano della linea di approvazione per essere pubblicati sul develop. Le modifiche agli altri documenti (Piano di Progetto, Piano di Qualifica e Norme) possono invece essere spostate direttamente in "done" dal verificatore, senza passare per la colonna di approvazione esplicita. Il gruppo si è suddiviso i documenti da aggiornare e verificare.
 
   == Pianificazione dello Sprint <sprint>
-  Davide Testolin ricoprirà il ruolo di responsabile. Felician (Felix) agirà come amministratore e si occuperà di creare le issue sulla project board. Le issue di questo sprint riguarderanno principalmente il completamento dei casi d'uso, l'inizio della stesura dei requisiti e il completamento del POC. Si è discusso inoltre del conteggio delle ore e dell'assegnazione delle ore da programmatore (per il POC) e da progettista. Le vecchie issue relative alla ricerca tecnologica e allo sviluppo/deploy verranno assegnate e spostate direttamente in "done", poiché la fase di studio è da considerarsi conclusa.
+  Davide Testolin ricoprirà il ruolo di responsabile. Felician  agirà come amministratore e si occuperà di creare le issue sulla project board. Le issue di questo sprint riguarderanno principalmente il completamento dei casi d'uso, l'inizio della stesura dei requisiti e il completamento del PoC. Si è discusso inoltre del conteggio delle ore e dell'assegnazione delle ore da programmatore (per il POC) e da progettista. Le vecchie issue relative alla ricerca tecnologica e allo sviluppo/deploy verranno assegnate e spostate direttamente in "done", poiché la fase di studio è da considerarsi conclusa.
 
   == Avanzamento POC e Architettura Dati <POC>
   Il team si è diviso le pagine da sviluppare (Import, Decision Tree, Report) e ha testato con successo l'esportazione dei PDF. La discussione principale si è concentrata sulla scelta del database: si sta valutando il passaggio da SQLite a MongoDB. MongoDB risulta vantaggioso in quanto salva i dati in formato BSON (simil-JSON) nativamente, adattandosi perfettamente alla struttura ad albero nidificata dei dati del progetto, senza richiedere traduttori o complesse query JOIN tipiche dei database relazionali. Il passaggio è considerato favorevole a condizione che semplifichi effettivamente il lavoro e permetta un agevole scarico dei file JSON, liberando la RAM durante le query.
@@ -173,7 +174,7 @@
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [#persone.FELIX,\  #persone.DT],
+      [#persone.FELIX,\  #persone.FILIPPO],
       [Verificare i documenti pronti sul branch `develop`  e spostare le issue in "done"],
       [VI.17.4],
     ),

@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -37,10 +37,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In approvazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ANA,),
-    verificatori: ("",),
+    verificatori: (persone.FELIX,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -50,7 +50,8 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-03-02], persone.ANA, [],[]),
+    ([0.1.0], [2026-03-02], persone.ANA, persone.FELIX,[Stesura del verbale]),
+    ([1.0.0], [2026-03-03], persone.ANA, persone.ANA,[Approvazione]),
     
   )
 
@@ -91,7 +92,7 @@
 - Rendicontazione ore e tracciamento issue/commit.
 - Stato di stesura dei documenti (Piano di Qualifica, Glossario, Verbali passati).
 - Avanzamento nell'analisi dei requisiti e dei casi d'uso.
-- Architettura, scelte tecnologiche e sviluppo del POC (Backend e Frontend).
+- Architettura, scelte tecnologiche e sviluppo del PoC (Backend e Frontend).
 ]
 
 
@@ -109,8 +110,8 @@ Il Glossario è stato aggiornato inserendo la barra di ricerca e navigazione per
 == POC (Proof of Concept)  <POC>
 L'ambiente di sviluppo Docker con Poetry è funzionante e le dipendenze base sono risolte. Sono stati discussi vari aspetti tecnici: \ 
 Backend: Utilizzo di SQLite come database per la gestione dello stato e della memoria. I controlli sui tipi e la formattazione del codice in Python saranno gestiti tramite Mypy e Ruff, che andranno eseguiti localmente dai membri del team prestando attenzione a tipizzare correttamente funzioni e argomenti. \ 
-Frontend: Si eviterà l'utilizzo di React puro se non giustificato da apposite librerie. Verranno valutate alternative per la visualizzazione dell'albero di decisione, come HTML/JS vanilla o Cytoscape. \ 
-Gestione File: Il parsing dei file (JSON, XML e CSV) sarà gestito implementando lo Strategy Pattern (o Template Method) per separare le validazioni dalle interfacce di input
+Frontend: Si eviterà l'utilizzo di React puro se non giustificato da apposite librerie. Verranno valutate soluzioni alternative per la visualizzazione dell’albero decisionale, come implementazioni in HTML e JavaScript vanilla o librerie dedicate come Cytoscape \ 
+Gestione File: Il parsing dei file (JSON, XML e CSV) sarà gestito implementando lo Strategy Pattern per separare le validazioni dalle interfacce di input.
 ]
 
 #insertArabicNumberedPages("Decisioni", "Verbale interno", giornoRiunione)[
