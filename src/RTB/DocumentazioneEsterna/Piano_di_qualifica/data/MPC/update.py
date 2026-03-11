@@ -19,13 +19,13 @@ SETTIMANE_PIANIFICATE = 18
 RSI_DATA: dict = {
     # Esempio: 1: (0, 50),   # sprint 1: 0 modifiche su 50 requisiti totali
 }
-
 SPRINT_BOUNDARIES = [
     (date(2025, 11, 25), 1),
     (date(2025, 12,  8), 2),
     (date(2025, 12, 23), 3),
     (date(2026,  2,  4), 4),
     (date(2026,  2, 18), 5),
+    (date(2026,  3, 10), 6),
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']

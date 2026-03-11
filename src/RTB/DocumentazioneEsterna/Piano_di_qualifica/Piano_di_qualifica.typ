@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 6,
+  minor: 5,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -87,21 +87,14 @@
       [2026-02-24],
       [Ana Maria \ Draghici],
       [],
-      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
     ),
     (
       [0.5.0],
-      [2026-03-08],
+      [2026-03-11],
       [Ana Maria Draghici],
       [],
-      [Aggiornata @valutazione in seguito a Sprint 5]
-    ),
-    (
-      [0.6.0],
-      [2026-03-08],
-      [Ana Maria Draghici],
-      [],
-      [Aggiunta @testing]
+      [Aggiornata @valutazione in seguito avanzamento degli sprint]
     ),
   )
   #registroModifiche(modifiche)
@@ -168,7 +161,7 @@
 
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
-  = Cruscotto di valutazione
+  = Cruscotto di valutazione <miglioramento>
   #include "content/06-automiglioramento/index.typ"
 
 ]
