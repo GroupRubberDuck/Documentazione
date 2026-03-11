@@ -200,6 +200,13 @@ I TODO sorti da questa riunione sono i seguenti:
   [VI.10.2],
 ),
 
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
+  [Responsabile],
+  [Stesura di questo verbale.],
+  [-],
+), 
+
   )
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
