@@ -53,6 +53,6 @@
       Nella seconda metà del periodo sono riprese le attività tecniche. È stata creata una repository dedicata esclusivamente al PoC (separata dalla documentazione) per mantenere il codice di test isolato. Inoltre, è stato completato il setup di un ambiente di sviluppo containerizzato e riproducibile, adottando tecnologie come Docker, Poetry, MyPy/BearType e Ruff.
     
     - *Integrazione Documentale:* 
-      È stato aggiornato il Piano di Progetto (PdP) e il Piano di Qualifica (PdQ) ha visto un importante avanzamento pratico con l'inserimento dei primi grafici delle metriche raccolte
+      È stato aggiornato il Piano di Progetto (PdP) e il Piano di Qualifica (PdQ) ha visto un importante avanzamento pratico con l'inserimento dei primi grafici delle metriche raccolte.
   ],
 )
