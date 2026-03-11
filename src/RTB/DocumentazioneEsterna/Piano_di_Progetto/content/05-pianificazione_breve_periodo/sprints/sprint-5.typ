@@ -22,7 +22,7 @@
     - *R.O.1 – Pianificazione ottimistica*: Rischio di sovrastimare la capacità produttiva del gruppo nel periodo della sessione esami.
   ],
   rischiEffettivi: [
-    Durante lo Sprint 4 si sono concretizzati i seguenti rischi:
+    Durante lo Sprint 5 si sono concretizzati i seguenti rischi:
 
     - *R.P.1 – Disponibilità variabile dei membri*:
       - *Classificazione*: *Accepted*.

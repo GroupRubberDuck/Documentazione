@@ -27,7 +27,7 @@
   tipo: "Rischio di progetto + Rischio di prodotto",
   descrizione: [L’utilizzo di tecnologie nuove o poco conosciute può rallentare significativamente il progetto, poiché richiede tempo per lo studio e la sperimentazione.],
   prevenzione: [Per prevenirlo si prevedono momenti iniziali di studio e la creazione di piccoli prototipi per acquisire familiarità. Il team può inoltre condividere materiali o esperienze per velocizzare l’apprendimento.],
-  mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorre al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
+  mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorrere al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
   frequenza: "Alta",
   pericolo: "Alta",
 )
