@@ -5,9 +5,9 @@
   numero: "6",
   usaMatrice: true,
   timeline: (
-    inizio: datetime(year: 2026, month: 02, day: 19),
-    finePrevista: datetime(year: 2026, month: 03, day: 04),
-    fineEffettiva: datetime(year: 2026, month: 03, day: 04),
+    inizio: datetime(year: 2026, month: 02, day: 25),
+    finePrevista: datetime(year: 2026, month: 03, day: 9),
+    fineEffettiva: datetime(year: 2026, month: 03, day: 9),
   ),
   TODO: [
     Le attività dello sprint hanno interessato tre ambiti distinti, sviluppati in modo coordinato:
