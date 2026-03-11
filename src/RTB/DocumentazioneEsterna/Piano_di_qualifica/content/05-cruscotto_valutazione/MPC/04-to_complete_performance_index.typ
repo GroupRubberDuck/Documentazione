@@ -28,10 +28,11 @@
   y-label: "Indice",
   x-label: "Sprint",
   y-min: 1,
-  y-max: 1.2,
+  y-max: 1.05,
 )
 
 Il TCPI si mantiene costantemente sopra la soglia ottimale di 1.0 per tutti e sei
 gli sprint, con una leggera crescita. Sebbene
 lo scostamento sembri contenuto, un TCPI > 1 indica che il team dovrà sostenere
 un'efficienza superiore a quella media dimostrata finora per rientrare nel BAC.
+#pagebreak()

@@ -1,26 +1,17 @@
 #import "/src/config.typ": template_dir
-#import template_dir + "/indiceGulpease/indiceGulpease.typ": compute_gulpease, display_gulpease
-#import template_dir + "/indiceGulpease/textExtractor.typ": show_smart_text
+#import template_dir + "/indiceGulpease/indiceGulpease.typ": display_gulpease
 
-// Dizionario nome documento: percorso
-#let listaDocumenti = (
-  "Norme di progetto": "/src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ",
-  "Piano di progetto": "/src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ",
+//gulpease si trova ed è incluso in PDQ, se inserisco solo il calcolo mostra in loop, perchè calcolo PDQ che però a sua volta è incluso in PDQ, la soluzione è calcolare in modo automatico furoi e mostrare in PDQ aggiornando manualmente
+
+#let gulpease_data = (
+  ("Norme di progetto",     62, 9703, 1122, 59786),
+  ("Piano di progetto",     59, 3997,  386, 23702),
+  ("Piano di qualifica",    54, 1740,  133, 10069),
+  ("Analisi dei Requisiti", 62, 6122,  703, 37689),
 )
 
-#let risultati = ()
-
-#for key in listaDocumenti.keys() {
-  let risultato = compute_gulpease(include listaDocumenti.at(key))
-  display_gulpease(risultato, nomeDocumento: key)
-  risultati.push((nomeDocumento: risultato.valore))
+#for (nome, valore, parole, frasi, lettere) in gulpease_data {
+  display_gulpease((valore: valore, parole: parole, lettere: lettere, frasi: frasi), nomeDocumento: nome)
 }
-
-#metadata(risultati)<risultati>
-
-
-
-
-
-Misura la leggibilità dei documenti prodotti in base a lunghezza delle frasi e delle parole. Serve a garantire che la documentazione sia comprensibile per il pubblico di riferimento. Ottimale: > 60 per lettori con diploma, > 80 per lettori con licenza media.
-
+L'indice è stato calcolato sui documenti con struttura narrativa più estesa, ovvero *Norme di Progetto, Piano di Progetto, Piano di Qualifica e Analisi dei Requisiti*. \ Sono stati esclusi documenti come verbali e glossario, la cui natura sintetica e a impatto immediato non si presta a una valutazione significativa della leggibilità.\ \ I valori ottenuti si attestano nella fascia accettabile per documentazione tecnica: la presenza di terminologia specialistica abbassa il punteggio rispetto a testi divulgativi. Le *Norme di Progetto* e *l'Analisi dei Requisiti* raggiungono il valore più alto, grazie a uno stile più discorsivo.
+#pagebreak()

@@ -3,7 +3,7 @@
 #import "/src/TypstTemplate/charts/KPI-chart.typ": grafico-multi-linea
 
 // Caricamento dati 
-#let data-eT = csv("../../../data/MPC/12-task-completion-on-time.csv").slice(1)
+#let data-eT = csv("../../../data/MPC/14-time_efficiency.csv").slice(1)
 #let values-eT = data-eT.map(row => float(row.at(1)))
 
 // Estrazione etichette
@@ -26,4 +26,5 @@
   y-max: 1.5,
 )
 
-Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti e cinque gli sprint, dimostrando che i compiti assegnati vengono portati a termine nei tempi previsti. Il valore va tuttavia confrontato con la qualità del lavoro prodotto e con l'accuratezza delle stime di tempo e costo, per ottenere una valutazione completa dell'efficienza del team.
+Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti gli sprint, dimostrando che i compiti assegnati vengono portati a termine nei tempi previsti. Il valore va tuttavia confrontato con la qualità del lavoro prodotto e con l'accuratezza delle stime di tempo e costo, per ottenere una valutazione completa dell'efficienza del team.
+#pagebreak()

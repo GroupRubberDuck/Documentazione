@@ -2,7 +2,7 @@
 
 #import "/src/TypstTemplate/charts/KPI-chart.typ": grafico-multi-linea
 
-// Caricamento dati
+// Caricamento dati -> i dati vanno caricati manualmente per questi valori
 #let data-co = csv("../../../data/MPC/12-correttezza_ortografica.csv").slice(1)
 
 #let values-co = data-co.map(row => float(row.at(1)))

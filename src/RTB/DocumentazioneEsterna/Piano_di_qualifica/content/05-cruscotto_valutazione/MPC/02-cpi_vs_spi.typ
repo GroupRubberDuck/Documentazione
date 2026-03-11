@@ -10,14 +10,17 @@
 #let values-cpi = data-cpi.map(row => float(row.at(1)))
 #let values-spi = data-spi.map(row => float(row.at(1)))
 #let threshold = data-cpi.map(row => 1.0)
+#let threshold-ottimo = data-cpi.map(row => 1.0)
+#let threshold-accettabile = data-cpi.map(row => 0.9)
 
 #grafico-multi-linea(
   (
     x-labels: x-labels,
     CPI: values-cpi,
     SPI: values-spi,
-    Soglia: threshold,
-    series-names: ("CPI", "SPI", "Soglia"),
+    Ottimo: threshold-ottimo,
+    Accettabile: threshold-accettabile,
+    series-names: ("CPI", "SPI", "Ottimo", "Accettabile"),
     show-labels: true,
     label-size: 7pt,
     grid-opacity: 10%,
@@ -30,11 +33,10 @@
 )
 
 
-CPI e SPI si mantengono stabili e molto vicini tra loro per tutti e sei gli sprint,
-oscillando tra 0.96 e 0.98. Questo conferma che il team ha lavorato in modo consistente
-sia in termini di schedule che di costi, senza peggioramenti significativi nel tempo.
-Il calo nello Sprint 4 è riconducibile alla sessione esami, mentre la ripresa
-nello sprint 5 evidenzia un recupero. La soglia ottimale di 1
-non viene raggiunta, ma lo scostamento è contenuto e stabile. Le cause sono
-documentate nel
+CPI e SPI si mantengono stabili e vicini tra loro per tutti gli sprint, con valori
+inferiori alla soglia ottimale ma contenuti. 
+Il calo dello Sprint 4 è riconducibile alla sessione esami. \ Il team dovrà migliorare
+le stime iniziali per avvicinarsi alla soglia ottimale nei prossimi sprint. Le cause
+degli scostamenti sono documentate nel
 #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+#pagebreak()

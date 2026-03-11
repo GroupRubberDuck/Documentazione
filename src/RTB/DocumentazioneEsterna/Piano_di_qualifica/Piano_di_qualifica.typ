@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 6,
+  minor: 5,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -42,8 +42,8 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu","Davide Testolin", "Davide Lorenzon"),
-    verificatori: ("Davide Testolin",),
+    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT),
+    verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -72,7 +72,7 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [Ana Maria Draghici],
+      [Ana Maria \ Draghici],
       [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
@@ -87,21 +87,14 @@
       [2026-02-24],
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
-      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici e sezione automiglioramento]
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
     ),
     (
       [0.5.0],
-      [2026-03-08],
+      [2026-03-11],
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
-      [Aggiornata @valutazione in seguito a Sprint 5]
-    ),
-    (
-      [0.6.0],
-      [2026-03-08],
-      [Ana Maria Draghici],
-      [Felician Mario \ Necsulescu],
-      [Aggiunta @testing]
+      [Aggiornata @valutazione in seguito avanzamento degli sprint]
     ),
   )
   #registroModifiche(modifiche)
@@ -168,7 +161,7 @@
 
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
-  = Cruscotto di valutazione
+  = Cruscotto di valutazione <miglioramento>
   #include "content/06-automiglioramento/index.typ"
 
 ]

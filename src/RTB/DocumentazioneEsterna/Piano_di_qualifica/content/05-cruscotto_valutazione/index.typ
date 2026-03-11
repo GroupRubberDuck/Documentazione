@@ -25,9 +25,6 @@
 #he(body: "Time Efficiency", level: 2)
 #include "MPC/08-time_efficiency.typ"
 
-//#he(body: "Requirements Stability", level: 2)
-#include "MPC/09-requirements_stability.typ"
-
 #he(body: "Correttezza Ortografica", level: 2)
 #include "MPC/11-correttezza_ortografica.typ"
 
