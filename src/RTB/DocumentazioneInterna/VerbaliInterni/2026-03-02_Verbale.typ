@@ -110,7 +110,7 @@ Il Glossario è stato aggiornato inserendo la barra di ricerca e navigazione per
 == POC (Proof of Concept)  <POC>
 L'ambiente di sviluppo Docker con Poetry è funzionante e le dipendenze base sono risolte. Sono stati discussi vari aspetti tecnici: \ 
 Backend: Utilizzo di SQLite come database per la gestione dello stato e della memoria. I controlli sui tipi e la formattazione del codice in Python saranno gestiti tramite Mypy e Ruff, che andranno eseguiti localmente dai membri del team prestando attenzione a tipizzare correttamente funzioni e argomenti. \ 
-Frontend: Si eviterà l'utilizzo di React puro se non giustificato da apposite librerie. Verranno valutate soluzioni alternative per la visualizzazione dell’albero decisionale, come implementazioni in HTML e JavaScript vanilla o librerie dedicate come Cytoscape \ 
+Frontend: Si eviterà l'utilizzo di React puro se non giustificato da apposite librerie. Verranno valutate soluzioni alternative per la visualizzazione dell’albero decisionale, come implementazioni in HTML e JavaScript vanilla o librerie dedicate come Cytoscape. \ 
 Gestione File: Il parsing dei file (JSON, XML e CSV) sarà gestito implementando lo Strategy Pattern per separare le validazioni dalle interfacce di input.
 ]
 
