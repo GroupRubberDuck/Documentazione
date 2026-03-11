@@ -28,7 +28,7 @@
   y-label: "Indice",
   x-label: "Sprint",
   y-min: 1,
-  y-max: 1.2,
+  y-max: 1.05,
 )
 
 Il TCPI si mantiene costantemente sopra la soglia ottimale di 1.0 per tutti e sei

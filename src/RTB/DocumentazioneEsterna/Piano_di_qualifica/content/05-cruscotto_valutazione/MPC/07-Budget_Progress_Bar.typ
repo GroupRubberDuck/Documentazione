@@ -26,4 +26,4 @@
 ]
 
  Il budget consumato si riferisce alla sola fase RTB sul totale.
-Il progetto completo prevede fasi successive (PB) non ancora avviate.
+Il progetto completo prevede momenti successivi (PB) non ancora avviati.

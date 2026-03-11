@@ -3,7 +3,7 @@
 #import "/src/TypstTemplate/charts/KPI-chart.typ": grafico-multi-linea
 
 // Caricamento dati 
-#let data-eT = csv("../../../data/MPC/12-task-completion-on-time.csv").slice(1)
+#let data-eT = csv("../../../data/MPC/14-time_efficiency.csv").slice(1)
 #let values-eT = data-eT.map(row => float(row.at(1)))
 
 // Estrazione etichette
