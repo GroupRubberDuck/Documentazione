@@ -129,7 +129,7 @@ Ruoli:
   table(
     columns: 7,
     align: horizon,
-    table.header([*Documento*], [*RESP*], [*AMM*], [*ANL*], [*PRG*], [*PRGmm*], [*VRF*]),
+    table.header([*Documento*], [*RESP*], [*AMM*], [*ANL*], [*PRG*], [*PGRmm*], [*VRF*]),
     [Norme di Progetto (NdP)], [R/A], [R], [-], [-], [-], [V],
     [Analisi dei Requisiti (AdR)], [A], [-], [R], [-], [-], [V],
     [Piano di Progetto (PdP)], [R/A], [-], [C (supporto rischi)], [-], [-], [V],
