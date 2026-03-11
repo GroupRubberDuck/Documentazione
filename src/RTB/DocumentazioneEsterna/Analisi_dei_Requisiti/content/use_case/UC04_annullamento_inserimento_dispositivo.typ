@@ -32,18 +32,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente seleziona la funzionalità di annullamento dell'inserimento
+        + L'utente seleziona la funzionalità di annullamento dell'inserimento del dispositivo
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di valutazione
         - Nel sistema non sono attive sessioni di modifica del modello
-        - L'utente ha selezionato l'inserimento di un dispositivo per la valutazione
+        - L'utente sta inserendo un nuovo dispositivo
     ],
     
     post-condizioni:[
         - L'inserimento del dispositivo è stato annullato 
-        - Il sistema non attiva la sessione di valutazione del dispositivo
     ],
     
     trigger:none,

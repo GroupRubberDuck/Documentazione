@@ -38,7 +38,7 @@
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
-        - L'utente ha selezionato la funzionalità di inserimento del dispositivo tramite file
+        - L'utente sta inserendo un dispositivo tramite importazione di un file esterno
         - Il formato csv è supportato dal sistema
 
     ],

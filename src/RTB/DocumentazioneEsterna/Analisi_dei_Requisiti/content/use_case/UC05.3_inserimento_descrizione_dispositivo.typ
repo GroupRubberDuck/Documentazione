@@ -38,7 +38,7 @@
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
-        - L'utente ha selezionato la funzionalità di creazione di un nuovo
+        - L'utente sta creando un nuovo dispositivo
     ],
     
     

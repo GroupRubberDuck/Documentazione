@@ -36,8 +36,7 @@
     ],
     
     pre-condizioni:[
-        - Il sistema attivo
-        - L'utente sta visualizzando un dispositivo
+        - L'utente sta visualizzando i dati di uno specifico dispositivo
     ],
     
     post-condizioni:[

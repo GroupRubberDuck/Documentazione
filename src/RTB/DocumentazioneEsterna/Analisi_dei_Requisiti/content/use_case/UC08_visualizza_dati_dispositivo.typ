@@ -35,20 +35,25 @@
     attore-principale:"Utente",
     
     scenario-principale:[
+        + L'utente seleziona un dispositivo dalla lista dei dispositivi
         + L'utente visualizza il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome dispositivo")
         + L'utente visualizza il sistema operativo del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza sistema operativo dispositivo")
         + L'utente visualizza la descrizione del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza descrizione dispositivo")
+        + Visualizza modello associato al dispositivo
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
+        - L'utente sta visualizzando la lista dei dispositivi
     ],
     
     post-condizioni:[
         - L'utente ha visualizzato le informazioni del dispositivo
     ],
     
-    trigger:[L'utente ha selezionato un dispositivo per la visualizzazione delle informazioni],
+    trigger:[
+        L'utente vuole visualizzare le informazioni generali di un dispositivo
+        ],
     
     scenari-alternativi:none,
     

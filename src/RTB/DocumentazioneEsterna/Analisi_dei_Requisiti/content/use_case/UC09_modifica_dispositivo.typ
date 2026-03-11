@@ -38,17 +38,19 @@
     attore-principale:"Utente",
     
     scenario-principale:[
+        + L'utente seleziona la funzionalità di modifica del dispositivo attualmente selezionato
         + L'utente può inserire il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Inserimento nome dispositivo")
         + L'utente può inserire il sistema operativo del dispositivo #sym.arrow          #use-case-label(nome-etichetta: "Inserimento sistema operativo dispositivo")
         + L'utente può inserire la descrizione del dispositivo #sym.arrow        #use-case-label(nome-etichetta: "Inserimento descrizione dispositivo")
         + L'utente conferma la modifica
+        + Il sistema applica le modifiche ai dati
 
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
-        - L'utente ha selezionato la modifica delle informazioni del dispositivo
+        - L'utente sta visualizzando uno specifico dispositivo
     ],
     
     post-condizioni:[
@@ -57,7 +59,7 @@
     
     
     trigger:[
-        L'utente ha selezionato la funzionalità di modifica delle informazioni di un dispositivo
+        L'utente vuole modificare le informazioni del dispositivo
     ],
     
     scenari-alternativi:[

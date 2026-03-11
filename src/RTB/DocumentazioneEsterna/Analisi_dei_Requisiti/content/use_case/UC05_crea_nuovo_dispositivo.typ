@@ -38,7 +38,7 @@
         + L'utente inserisce il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Inserimento nome dispositivo")
         + L'utente inserisce il sistema operativo del dispositivo #sym.arrow          #use-case-label(nome-etichetta: "Inserimento sistema operativo dispositivo")
         + L'utente inserisce la descrizione del dispositivo #sym.arrow        #use-case-label(nome-etichetta: "Inserimento descrizione dispositivo")
-        + Il sistema avvia la sessione di valutazione del dispositivo
+        + Il sistema associa al dispositivo il modello di standard di default
 
     ],
     
@@ -46,16 +46,18 @@
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
         - Nel sistema non sono attive sessioni di valutazione
+        - Esiste un modello di standard di default
     ],
     
     post-condizioni:[
-        - Il sistema ha aggiunto il dispositivo alla lista dei dispositivi
+        - Il sistema ha registrato il nuovo dispositivo
+        - Il sistema ha associato il nuovo dispositivo al modello di default
+        - Il sistema ha aggiunto il nuovo dispositivo alla lista dei dispositivi
     ],
     
     
-    
     trigger:[
-        L'utente seleziona la funzionalità di creazione di un nuovo dispositivo 
+        L'utente seleziona la funzionalità di creazione manuale di un nuovo dispositivo 
     ],
     
     scenari-alternativi:none,

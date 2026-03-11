@@ -33,13 +33,14 @@
     
     scenario-principale:[
         + L'utente visualizza il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome dispositivo")
+        + L'utente visualizza lo stato aggregato della valutazione del dispositivo
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
         - Non sono attive sessioni di modifica del modello
         - Non sono attive sessioni di valutazione
-        - L'utente sta visualizzando una lista di dispositivi
+        - L'utente sta visualizzando la lista di dispositivi
     ],
     
     post-condizioni:[

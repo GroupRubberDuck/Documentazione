@@ -14,7 +14,7 @@
     "Visualizza nome dispositivo",
 "Visualizza sistema operativo dispositivo",
 "Visualizza descrizione dispositivo",
-"Visualizza lista asset"
+"Visualizza lista asset importati"
   ),
   extends: (:),
   generalizations: (),
@@ -40,10 +40,11 @@
         + L'utente visualizza il nome del dispositivo
         + L'utente visualizza il sistema operativo del dispositivo
         + L'utente visualizza la descrizione del dispositivo
-        + L'utente visualizza una lista di asset
+        + L'utente visualizza la lista degli asset importati
     ],
     
     pre-condizioni:[
+        - L'utente sta inserendo un nuovo dispositivo tramite importazione di un file
         - L'utente ha selezionato un file valido per l'importazione
     ],
     

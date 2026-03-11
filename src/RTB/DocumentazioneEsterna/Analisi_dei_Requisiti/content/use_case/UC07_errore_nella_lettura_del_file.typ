@@ -33,11 +33,20 @@
     
     scenario-principale:[
         + L'utente inserisce un file che non rispetta i requisiti necessari
+        + Il sistema mostra un messaggio di errore esplicativo
     ],
     
-    pre-condizioni:none,
+    pre-condizioni:[
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di modifica del modello
+        - Nel sistema non sono attive sessioni di valutazione
+        - Il sistema non riesce a leggere il file selezionato dall'utente
+    ],
     
-    post-condizioni:none,
+    post-condizioni:[
+        - L'utente visualizza un messaggio di errore esplicativo
+    ]
+    ,
     
     trigger:none,
     

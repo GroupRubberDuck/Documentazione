@@ -24,13 +24,15 @@ settings:
 # La struttura gerarchica
 structure:
     - Visualizza lista dispositivi:
-        - Visualizza elemento lista dispositivi
-    - Valuta dispositivo
+        - Visualizza elemento lista dispositivi:
+            - Visualizza nome dispositivo su lista dispositivi
+    - Lista dispositivi vuota
     - Inserimento nuovo dispositivo:
     - Annullamento inserimento dispositivo:
       #generalizzazione
     - Crea nuovo dispositivo:
-        - Inserimento nome dispositivo
+        - Inserimento nome dispositivo:
+            - Errore nome dispositivo non valido
         - Inserimento sistema operativo dispositivo
         - Inserimento descrizione dispositivo
     #extends
@@ -42,7 +44,9 @@ structure:
             - Selezione file JSON
             - Selezione file XML
             - Selezione file CSV
-        - Visualizza riepilogo importazione
+        - Visualizza riepilogo importazione:
+            - Visualizza lista asset importati:
+                - Visualizza elemento lista asset importati 
     #extends
     - Errore nella lettura del file
     - Visualizza dati dispositivo:
@@ -50,30 +54,57 @@ structure:
         - Visualizza nome dispositivo
         - Visualizza sistema operativo dispositivo
         - Visualizza descrizione dispositivo
+        - Visualizza modello associato al dispositivo
     - Modifica dispositivo:
         #include
         # - Inserimento nome dispositivo
         # - Inserimento sistema operativo dispositivo
-        # - Inserimento versione firmware dispositivo
-        # - Inserimento funzionalita dispositivo
         # - Inserimento descrizione dispositivo
         - Annulla modifiche dispositivo
+    - Elimina dispositivo:
+        - Elimina dispositivo direttamente
+        - Elimina dispositivo con back-up:
+            - Elimina dispositivo con back-up json
+            - Elimina dispositivo con back-up xml
+            - Elimina dispositivo con back-up csv
+    - Avvia valutazione dispositivo
     - Scarta modifiche valutazione:
-        - Annulla scarto modifiche
     - Salva valutazione:
+        - Salva e chiudi valutazione dispositivo
+        - Salva e continua valutazione dispositivo
         # - Salva in XML
         # - Salva in CSV
         # - Salva in JSON
       #extends
     - Errore salvataggio valutazione:
-    - Aggiunta asset tramite interfaccia:
+    - Aggiunta asset:
         #- Inserisci nome asset
         #- Seleziona tipo asset
         #- Inserisci descrizione asset
         #extends
       #extends
     - Annulla aggiunta asset
-
+    - Visualizza dashboard dispositivo:
+        #include
+        - Visualizza dati dispositivo su dashboard:
+            - Visualizza nome dispositivo su dashboard
+            - Visualizza sistema operativo dispositivo su dashboard
+            - Visualizza descrizione dispositivo su dashboard
+        #include
+        - Visualizza stato aggregato dispositivo:
+        - Visualizza lista asset:
+            - Visualizza singolo elemento lista asset:
+                - Visualizza nome asset lista asset 
+                - Visualizza tipo asset lista asset
+                - Visualizza stato aggregato asset lista asset
+            #- Visualizzazione in dettaglio asset
+    - Visualizza dettaglio asset:
+        #include
+        - Visualizza nome asset
+        - Visualizza tipo asset
+        - Visualizza stato aggregato asset
+        - Visualizza descrizione asset
+          #include
     - Elimina asset
     - Modifica asset:
         - Inserisci nome asset:
@@ -86,90 +117,125 @@ structure:
         #- Inserimento dati non validi
     #extends
     - Annulla modifica asset
-    - Cerca asset
     - Esporta informazioni dispositivo:
         - Esporta in xml
         - Esporta in json
         - Esporta in csv
-    - Visualizza dashboard dispositivo:
-        #include
-        # - Visualizza dati dispositivo
-        #include
-        - Visualizza stato aggregato dispositivo
-        #include
-        - Visualizza lista asset:
-            - Visualizzazione singolo elemento della lista di asset:
-                - Visualizza nome asset
-                - Visualizza tipo asset
-                - Visualizza stato aggregato asset
-            #- Visualizzazione in dettaglio asset
-    #include
-    - Visualizza dettaglio asset:
-        #include
-        #- Visualizza nome asset
-        #- Visualizza tipo asset
-        - Visualizza descrizione asset
-          #include
-        - Visualizza lista requisiti asset:
-            #include
-            - Visualizzazione generale requisito:
-                - Visualizza nome requisito
-                - Visualizza stato valutazione
+    - Visualizza lista requisiti asset:
+       #include
+       - Visualizza elemento lista requisiti asset:
+           - Visualizza codice requisito da lista requisiti
+           - Visualizza stato valutazione requisito da lista requisiti
 
-    - Visualizzazione in dettaglio requisito:
+    - Visualizza in dettaglio requisito:
                 #include
                 - Visualizza codice requisito
-                #- Visualizza nome del requisito
+                - Visualizza nome del requisito
                 - Visualizza descrizione normativa
-                #- Visualizza stato valutazione (Pass / Fail / NA / In sospeso)
-                - Visualizza dipendenze requisito
+                - Visualizza stato valutazione requisito:
+                    - Visualizza stato PASS requisito
+                    - Visualizza stato FAIL requisito
+                    - Visualizza stato NA requisito
+                    - Visualizza stato In corso requisito
+                    - Visualizza stato Sospeso requisito
+
+                - Visualizza lista dipendenze requisito:
+                    - Visualizza sintesi dipendenza:
+                        - Visualizza codice dipendenza
+                        - Visualizza stato dipendenza
                 #include
                 - Visualizza decision tree:
                     #include
-                    - Visualizza generale nodo decision tree:
-                        #include
-                        - Visualizza codice nodo
-                        - Visualizza domanda nodo
-                        - Visualizza risposta nodo
-
-    - Visualizza dettaglio nodo decision tree:
-                        #include
-                        #- Visualizza codice del nodo
-                        #- Visualizza domanda del nodo
-                        #- Visualizza risposta del nodo
-                        - Visualizza evidenze del nodo:
-                            - Visualizza info
-                            - Visualizza just
-    - Compila decision tree:
-        #include
-        - Compilazione nodo:
-            #include
-            - Selezione risposta del nodo:
-                #include
-                - Seleziona Yes
-                - Seleziona No
-            #include
-            - Inserisci evidenze:
-                #include
-                - Inserisci info
-                - Inserisci just
-        #include
-        - Navigazione del DT:
-            - Vai al nodo successivo
-            - Errore nodo senza risposta selezionata
-            - Vai al nodo precedente
-            - Errore Nodo corrente è root
+                    - Visualizza nodo decision tree:
+                        - Visualizza stato attività
+                        - Visualizza nodo di decisione:
+                            #include
+                            - Visualizza codice requisito DT
+                            - Visualizza codice nodo
+                            - Visualizza domanda nodo
+                            - Visualizza risposta nodo:
+                                - Nessuna risposta associata
+                        - Visualizza nodo foglia:
+                            - Visualizza valore nodo foglia
+                - Visualizza giustificazione decision tree
+    - Visualizza dettaglio nodo decisionale:
+        - Visualizza codice requisito a dettaglio
+        - Visualizza codice nodo a dettaglio
+        - Visualizza domanda nodo a dettaglio
+        - Visualizza risposta nodo a dettaglio:
+            - Mostra assenza di risposta a dettaglio
+    - Valuta nodo di decisione:
+        - Inserisci risposta nodo decision tree:
+            - Seleziona Yes
+            - Seleziona No
+    - Vai al nodo successivo:
+        - Nodo senza risposta selezionata
+        - Nodo successore foglia
+    - Vai al nodo precedente:
+        - Nodo corrente root
         #extends con condition: esito = NA
-        - Errore giustificazione mancante:
+    - Inserisci giustificazione decision tree
     - Esporta report di conformità:
         #generalizzazioni
         - Esporta report in PDF
         #- Esporta report in JSON
         #- Esporta report in XML
         #- Esporta report in CSV
-    - Avvia modifica requisito
-    - Conferma modifica requisito
-    - Annulla modifica requisito
+
+    - Visualizza lista modelli:
+        - Visualizza elemento lista modelli:
+            - Visualizza nome modello da lista modelli
+            - Visualizza versione modello da lista modelli
+    - Visualizza dettaglio modello:
+        - Visualizza ID modello
+        - Visualizza nome modello
+        - Visualizza versione modello
+    - Inserisci nuovo modello:
+        - Crea nuovo modello
+        - Importa nuovo modello:
+            - Errore modello esistente nella lista
+        - Importa modello file xml
+        - Importa modello file json
+    - Modifica anagrafica modello:
+        - Inserisci nome modello
+    
+    - Avvia modifica modello
+    - Salva modifica modello:
+        - Errore struttura non valida per il salvataggio
+    - Scarta modifica modello
+    - Elimina modello
+
+    - Visualizza lista requisiti modello:
+        -  Visualizza singolo elemento lista requisiti modello:
+            - Visualizza codice requisito da lista requisiti modello
+            - Visualizza nome requisito da lista requisiti modello
+    - Visualizza dettaglio requisito modello:
+        - Visualizza anagrafica requisito modello:
+            - Visualizza codice requisito modello
+            - Visualizza nome del requisito modello
+            - Visualizza descrizione modello
+        - Visualizza lista dipendenze:
+            - Visualizza codice dipendenze
+        - Visualizza lista non dipendenze:
+            - Visualizza codice non dipendenze
+        - Visualizza decision tree requisito modello:
+            - Visualizza nodo decision tree modello:
+                - Visualizza nodo decisione modello:
+                    - Visualizza codice requisito padre modello
+                    - Visualizza codice nodo modello
+                    - Visualizza domanda nodo modello
+                - Visualizza nodo foglia modello
+    
+    - Visualizza dettaglio nodo modello decision tree:
+        - Visualizza dettaglio nodo decisione modello:
+            - Visualizza dettaglio codice requisito padre modello
+            - Visualizza dettaglio codice nodo modello
+            - Visualizza dettaglio domanda nodo modello
+        - Visualizza dettaglio nodo foglia modello
+
+
+    - Aggiungi requisito
+    - Elimina requisito
 
     - Modifica anagrafica requisito:
         - Inserisci codice requisito: 
@@ -179,17 +245,10 @@ structure:
             - Errore nome requisito non valido
         - Inserisci descrizione requisito:
             - Errore descrizione non valida
-    - Visualizza lista dipendenze:
-        - Visualizza elemento lista dipendenze
-    - Visualizza lista non dipendenze:
-        - Visualizza elemento lista non dipendenze
     - Aggiungi dipendenza:
         - Errore dipendenza circolare
         - Visualizza grafo dipendenze
     - Rimuovi dipendenza
-    - Avvia modifica decision tree:
-    - Conferma modifica decision tree:
-    - Annulla modifica decision tree:
     - Aggiungi nodo figlio:
         - Aggiungi nodo figlio sinistro
         - Aggiungi nodo figlio destro
@@ -208,8 +267,7 @@ structure:
 
 
     #extends
-    - Salva modifiche requisito
-    - Esporta decision tree:
-        #generalizzazioni uguali a esporta asset
-        #- Esporta in .xml
-        #- Esporta in .json
+    - Esporta modello:
+        # generalizzazioni uguali a importa
+        - Esporta in .xml
+        - Esporta in .json

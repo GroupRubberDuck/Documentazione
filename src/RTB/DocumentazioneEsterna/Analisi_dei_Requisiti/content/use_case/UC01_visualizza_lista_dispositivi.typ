@@ -49,16 +49,21 @@
     ],
     
     trigger:[
-        L'utente seleziona la funzionalità di visualizzazione della lista dei dispositivi registrati
+        L'utente vuole vedere la lista dei dispositivi caricati
     ],
     
-    scenari-alternativi:none,
+    scenari-alternativi:[
+        - La lista dei dispositivi è vuota
+    ],
     
     inclusioni:[
         #use-case-label(nome-etichetta: "Visualizza elemento lista dispositivi")
     ],
     
-    estensioni:none,
+    estensioni:[
+        #use-case-label(nome-etichetta: "Lista dispositivi vuota")
+
+    ],
     
     generalizzazioni:none,
     

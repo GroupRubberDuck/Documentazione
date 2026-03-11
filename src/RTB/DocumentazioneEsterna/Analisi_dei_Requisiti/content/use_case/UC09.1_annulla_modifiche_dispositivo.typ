@@ -32,17 +32,18 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente seleziona la funzionalità di annullamento della modifica dei dati del dispositivo
+        + L'utente annulla la modifica dei dati
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
+        - L'utente sta modificando i dati del dispositivo
     ],
     
     post-condizioni:[
         - La modifica delle informazioni del dispositivo è stato annullata
-        - 
+
     ],
     trigger:none,
     

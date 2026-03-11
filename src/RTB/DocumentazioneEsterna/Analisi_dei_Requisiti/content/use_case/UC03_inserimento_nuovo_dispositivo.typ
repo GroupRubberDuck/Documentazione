@@ -34,7 +34,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente inserisce un dispositivo
+        + L'utente inserisce i dati del dispositivo
         + Il sistema carica in memoria le informazioni del dispositivo
     ],
     
@@ -45,11 +45,12 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha aggiunto il dispositivo alla lista dei dispositivi
+        - Il sistema ha registrato il nuovo dispositivo
+        - Il sistema ha aggiunto il nuovo dispositivo alla lista dei dispositivi
     ],
     
     trigger:[
-        L'utente seleziona la funzionalità per l'inserimento di un dispositivo
+        L'utente vuole aggiungere un nuovo dispositivo
     ],
     
     scenari-alternativi:[
