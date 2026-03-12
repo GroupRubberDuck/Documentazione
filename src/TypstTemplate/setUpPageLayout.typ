@@ -22,7 +22,7 @@
     ]),
     numbering: numbering,
   )
-
+set text(lang: "IT")
 show ref: riferimento=>{
   underline(strong(riferimento))
 }
@@ -69,7 +69,7 @@ insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,doc)
 
 
 #let insertArabicNumberedPagesSenzaData(PageTitle:"Titolo della pagina", documentType:"Tipo di documento", doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1" ,doc)
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1 " ,doc)
 }
 
 

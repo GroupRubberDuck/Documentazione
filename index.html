@@ -40,6 +40,10 @@
           }
         });
       });
+
+      window.addEventListener('scroll', function() {
+        document.getElementById('index-scrollTop').classList.toggle('visible', window.scrollY > 300);
+      });
     }
   </script>
   <header>
@@ -149,7 +153,8 @@
           </ul>
           <h4>Verbali Interni</h4>
           <ul class="docs-list">
-            <!--%BEGIN_RTB_VERBALI_INTERNI%-->        <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-02_Verbale-v1.0.0.pdf" target="_blank">2025-12-02</a> - <span class="file-version">v1.0.0</span></li>
+            <!--%BEGIN_RTB_VERBALI_INTERNI%-->        <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-09_Verbale-v0.0.1.pdf" target="_blank">2025-12-09</a> - <span class="file-version">v0.0.1</span></li>
+        <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-02_Verbale-v1.0.0.pdf" target="_blank">2025-12-02</a> - <span class="file-version">v1.0.0</span></li>
         <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-25_Verbale-v1.0.0.pdf" target="_blank">2025-11-25</a> - <span class="file-version">v1.0.0</span></li>
         <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-18_Verbale-v1.0.0.pdf" target="_blank">2025-11-18</a> - <span class="file-version">v1.0.0</span></li>
         <li><a href="https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-10_Verbale-v1.0.0.pdf" target="_blank">2025-11-10</a> - <span class="file-version">v1.0.0</span></li>
@@ -310,6 +315,10 @@
       </ul>
     </section>
   </main>
+
+  <button id="index-scrollTop" title="Torna in cima" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <footer class="bg-primary text-secondary">
     <div class="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
