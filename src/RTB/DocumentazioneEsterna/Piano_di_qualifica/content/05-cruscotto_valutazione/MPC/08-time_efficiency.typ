@@ -26,4 +26,7 @@
   y-max: 1.5,
 )
 
-Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti e cinque gli sprint, dimostrando che i compiti assegnati vengono portati a termine nei tempi previsti. Il valore va tuttavia confrontato con la qualità del lavoro prodotto e con l'accuratezza delle stime di tempo e costo, per ottenere una valutazione completa dell'efficienza del team.
+Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti e
+sette gli sprint, attestandosi leggermente al di sotto della soglia ottimale.
+Ciò indica che le ore effettivamente impiegate sono state in media superiori
+a quelle previste, pur rimanendo entro limiti accettabili.\ Il valore va tuttavia confrontato con la qualità del lavoro prodotto e con l'accuratezza delle stime di tempo e costo, per ottenere una valutazione completa dell'efficienza del team.

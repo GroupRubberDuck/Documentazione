@@ -27,8 +27,8 @@
   "Stima Durata Finale del Progetto (Time EAC)",
   y-label: "Settimane",
   x-label: "Sprint",
-  y-min: 10,
-  y-max: 25,
+  y-min: 15,
+  y-max: 20,
 )
 
 Il TimeEAC si mantiene costantemente allineato al pianificato per tutti gli sprint, con uno scostamento massimo nello Sprint 4 dovuto alla sessione esami. Nello Sprint 5 il TimeEAC si riduce leggermente rispetto al picco precedente, segnale che il team ha recuperato parte del ritmo perduto.
