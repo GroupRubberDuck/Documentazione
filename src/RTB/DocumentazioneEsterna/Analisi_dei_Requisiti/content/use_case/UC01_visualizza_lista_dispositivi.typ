@@ -8,7 +8,6 @@
 #let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: ("Visualizza elemento lista dispositivi",),
@@ -16,9 +15,9 @@
   generalizations: (),
   spacing: (3.5cm, 2cm), 
   diagram-scale: 80%,
-  actor-offset: 0
+  actor-offset: 0,
+  note-offset: (1,0.3)
 )
-
 
 
 
@@ -52,18 +51,13 @@
         L'utente vuole vedere la lista dei dispositivi caricati
     ],
     
-    scenari-alternativi:[
-        - La lista dei dispositivi è vuota
-    ],
+    scenari-alternativi:none,
     
     inclusioni:[
         #use-case-label(nome-etichetta: "Visualizza elemento lista dispositivi")
     ],
     
-    estensioni:[
-        #use-case-label(nome-etichetta: "Lista dispositivi vuota")
-
-    ],
+    estensioni:none,
     
     generalizzazioni:none,
     

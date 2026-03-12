@@ -26,7 +26,6 @@ structure:
     - Visualizza lista dispositivi:
         - Visualizza elemento lista dispositivi:
             - Visualizza nome dispositivo su lista dispositivi
-    - Lista dispositivi vuota
     - Inserimento nuovo dispositivo:
     - Annullamento inserimento dispositivo:
       #generalizzazione
@@ -44,22 +43,22 @@ structure:
             - Selezione file JSON
             - Selezione file XML
             - Selezione file CSV
-        - Visualizza riepilogo importazione:
-            - Visualizza lista asset importati:
-                - Visualizza elemento lista asset importati 
     #extends
-    - Errore nella lettura del file
+    - Errore file dispositivo non valido 
     - Visualizza dati dispositivo:
         #include
         - Visualizza nome dispositivo
         - Visualizza sistema operativo dispositivo
         - Visualizza descrizione dispositivo
-        - Visualizza modello associato al dispositivo
+        - Visualizza modello associato al dispositivo:
+            - Visualizza nome modello associato 
+            - Visualizza versione modello associato 
     - Modifica dispositivo:
         #include
-        # - Inserimento nome dispositivo
-        # - Inserimento sistema operativo dispositivo
-        # - Inserimento descrizione dispositivo
+        - Modifica nome dispositivo:
+            - Errore modifica nome dispositivo non valido
+        - Modifica sistema operativo dispositivo
+        - Modifica descrizione dispositivo
         - Annulla modifiche dispositivo
     - Elimina dispositivo:
         - Elimina dispositivo direttamente
@@ -78,10 +77,12 @@ structure:
       #extends
     - Errore salvataggio valutazione:
     - Aggiunta asset:
-        #- Inserisci nome asset
-        #- Seleziona tipo asset
-        #- Inserisci descrizione asset
-        #extends
+        - Inserisci nome asset:
+            - Errore nome asset non valido
+        - Seleziona tipo asset:
+            - Seleziona security asset
+            - Seleziona network asset
+        - Inserisci descrizione asset
       #extends
     - Annulla aggiunta asset
     - Visualizza dashboard dispositivo:
@@ -104,15 +105,19 @@ structure:
         - Visualizza tipo asset
         - Visualizza stato aggregato asset
         - Visualizza descrizione asset
-          #include
+        - Visualizza lista requisiti asset:
+           #include
+           - Visualizza elemento lista requisiti asset:
+               - Visualizza codice requisito da lista requisiti
+               - Visualizza stato valutazione requisito da lista requisiti
     - Elimina asset
     - Modifica asset:
-        - Inserisci nome asset:
-            - Errore nome asset non valido
-        - Seleziona tipo asset:
-            - Seleziona security asset
-            - Seleziona network asset
-        - Inserisci descrizione asset
+        - Modifica nome asset:
+            - Errore modifica nome asset non valido
+        - Modifica tipo asset:
+            - Seleziona nuovo tipo security asset
+            - Seleziona nuovo tipo network asset
+        - Modifica descrizione asset
         #extends
         #- Inserimento dati non validi
     #extends
@@ -121,13 +126,9 @@ structure:
         - Esporta in xml
         - Esporta in json
         - Esporta in csv
-    - Visualizza lista requisiti asset:
-       #include
-       - Visualizza elemento lista requisiti asset:
-           - Visualizza codice requisito da lista requisiti
-           - Visualizza stato valutazione requisito da lista requisiti
 
-    - Visualizza in dettaglio requisito:
+
+    - Visualizza dettaglio requisito:
                 #include
                 - Visualizza codice requisito
                 - Visualizza nome del requisito
@@ -148,14 +149,14 @@ structure:
                     #include
                     - Visualizza nodo decision tree:
                         - Visualizza stato attività
-                        - Visualizza nodo di decisione:
-                            #include
-                            - Visualizza codice requisito DT
-                            - Visualizza codice nodo
-                            - Visualizza domanda nodo
-                            - Visualizza risposta nodo:
-                                - Nessuna risposta associata
-                        - Visualizza nodo foglia:
+                    - Visualizza nodo di decisione:
+                        #include
+                        - Visualizza codice requisito DT
+                        - Visualizza codice nodo
+                        - Visualizza domanda nodo
+                        - Visualizza risposta nodo:
+                            - Nessuna risposta associata
+                    - Visualizza nodo foglia:
                             - Visualizza valore nodo foglia
                 - Visualizza giustificazione decision tree
     - Visualizza dettaglio nodo decisionale:
@@ -190,14 +191,23 @@ structure:
         - Visualizza ID modello
         - Visualizza nome modello
         - Visualizza versione modello
+        - Visualizza lista requisiti modello:
+            -  Visualizza singolo elemento lista requisiti modello:
+                - Visualizza codice requisito da lista requisiti modello
+                - Visualizza nome requisito da lista requisiti modello
     - Inserisci nuovo modello:
-        - Crea nuovo modello
+        - Crea nuovo modello:
+            - Inserisci nome modello:
+                - Errore nome nuovo modello non valido
         - Importa nuovo modello:
-            - Errore modello esistente nella lista
+            - Errore modello esistente
         - Importa modello file xml
         - Importa modello file json
+    - Annulla inserimento modello
     - Modifica anagrafica modello:
-        - Inserisci nome modello
+        - Modifica nome modello:
+            - Errore modifica nome modello
+    # - Annulla modifica angarafica modello TODO
     
     - Avvia modifica modello
     - Salva modifica modello:
@@ -205,10 +215,6 @@ structure:
     - Scarta modifica modello
     - Elimina modello
 
-    - Visualizza lista requisiti modello:
-        -  Visualizza singolo elemento lista requisiti modello:
-            - Visualizza codice requisito da lista requisiti modello
-            - Visualizza nome requisito da lista requisiti modello
     - Visualizza dettaglio requisito modello:
         - Visualizza anagrafica requisito modello:
             - Visualizza codice requisito modello
@@ -234,20 +240,27 @@ structure:
         - Visualizza dettaglio nodo foglia modello
 
 
-    - Aggiungi requisito
-    - Elimina requisito
-
-    - Modifica anagrafica requisito:
+    - Aggiungi requisito:
         - Inserisci codice requisito: 
             - Errore codice requisito lunghezza non valida
             - Errore codice requisito duplicato
         - Inserisci nome requisito:
             - Errore nome requisito non valido
-        - Inserisci descrizione requisito:
-            - Errore descrizione non valida
+        - Inserisci descrizione requisito
+    # - Annulla aggiunta requisito TODO
+    - Elimina requisito
+
+    - Modifica anagrafica requisito:
+        - Modifica codice requisito: 
+            - Errore modifica codice requisito lunghezza non valida
+            - Errore modifica codice requisito duplicato
+        - Modifica nome requisito:
+            - Errore modifica nome requisito non valido
+        - Modifica descrizione requisito:
+        # - Annulla modifica anagrafica requisito TODO
     - Aggiungi dipendenza:
-        - Errore dipendenza circolare
-        - Visualizza grafo dipendenze
+        - Errore dipendenza circolare:
+            - Visualizza grafo dipendenze
     - Rimuovi dipendenza
     - Aggiungi nodo figlio:
         - Aggiungi nodo figlio sinistro
@@ -259,9 +272,19 @@ structure:
             - Aggiungi nodo NA
         - Aggiungi nodo di decisione:
             - Inserisci codice nodo decision tree:
+                - Errore codice nodo non valido
                 - Errore codice nodo già esistente
-            - Inserisci domanda decision tree
-    - Modifica nodo
+            - Inserisci domanda nodo decision tree:
+                - Errore domanda vuota
+    # - Annulla aggiunta nodo
+
+    - Modifica nodo:
+        - Modifica codice nodo decision tree:
+                - Errore modifica codice nodo non valido
+                - Errore modifica codice nodo già esistente
+        - Modifica domanda nodo decision tree:
+            - Errore modifica domanda vuota
+    # - Annulla modifica nodo TODO
     - Rimuovi nodo
     - Errore nodo root
 
@@ -269,5 +292,5 @@ structure:
     #extends
     - Esporta modello:
         # generalizzazioni uguali a importa
-        - Esporta in .xml
-        - Esporta in .json
+        - Esporta modello in xml
+        - Esporta modello in json

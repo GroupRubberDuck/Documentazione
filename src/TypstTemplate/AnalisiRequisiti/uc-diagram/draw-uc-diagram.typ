@@ -4,7 +4,7 @@
 #import "/src/config.typ": slugify 
 
 #let draw-uc-diagram(
-  system-name: "Sistema",  // Il nome che va nell'angolo del recinto
+  system-name: "Sistema - Frontend",  // Il nome che va nell'angolo del recinto
   target-uc: "",
   actors: ("Utente",),
   includes: (),
