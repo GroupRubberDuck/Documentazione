@@ -36,12 +36,12 @@
       - *Azione*: assegnazione di task specifici di ricerca a singoli membri (ricerca metriche, ricerca tecnologie) per colmare le lacune.
   ],
   oreProduttive: (
-    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 7),
+    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 3),
+    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 7),
     (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
     (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 5, oreEffettive: 5),
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 6),
   ),
   retrospettiva: [
     - *Avanzamento Analisi dei Requisiti (AdR)*:

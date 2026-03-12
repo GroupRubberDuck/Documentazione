@@ -23,7 +23,7 @@ Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo 
 - Team di sviluppo: in caso di ambiguità o necessità di chiarimenti tecnici
 - Azienda proponente: per integrazioni o modifiche ai requisiti
 
-Le modifiche sostanziali ai requisiti comportano l'incremento della versione principale (es. da 1.0.0 a 2.0.0), mentre chiarimenti incrementano la versione secondaria (es. da 1.0.0 a 1.1.0). La correzione ortografica o di parti errate relative ad una versione secondaria incrementerà la versione terziaria (es. da 1.1.0 a 1.1.1).\
+Le modifiche sostanziali ai requisiti comportano l'incremento della versione principale (es. da 1.0.0 a 2.0.0), mentre chiarimenti incrementano la versione secondaria (es. da 1.0.0 a 1.1.0). La correzione ortografica o di parti errate relative a una versione secondaria incrementerà la versione terziaria (es. da 1.1.0 a 1.1.1).\
 
 
 == Riferimenti

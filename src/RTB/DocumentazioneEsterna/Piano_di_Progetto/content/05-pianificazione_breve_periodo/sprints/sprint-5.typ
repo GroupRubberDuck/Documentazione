@@ -22,7 +22,7 @@
     - *R.O.1 – Pianificazione ottimistica*: Rischio di sovrastimare la capacità produttiva del gruppo nel periodo della sessione esami.
   ],
   rischiEffettivi: [
-    Durante lo Sprint 4 si sono concretizzati i seguenti rischi:
+    Durante lo Sprint 5 si sono concretizzati i seguenti rischi:
 
     - *R.P.1 – Disponibilità variabile dei membri*:
       - *Classificazione*: *Accepted*.
@@ -31,8 +31,8 @@
   oreProduttive: (
     (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
     (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
-    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 10, oreEffettive: 10),
+    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 0, oreEffettive: 1),
+    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 10),
     (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 1, oreEffettive: 1),
     (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
@@ -53,6 +53,6 @@
       Nella seconda metà del periodo sono riprese le attività tecniche. È stata creata una repository dedicata esclusivamente al PoC (separata dalla documentazione) per mantenere il codice di test isolato. Inoltre, è stato completato il setup di un ambiente di sviluppo containerizzato e riproducibile, adottando tecnologie come Docker, Poetry, MyPy/BearType e Ruff.
     
     - *Integrazione Documentale:* 
-      È stato aggiornato il Piano di Progetto (PdP) e il Piano di Qualifica (PdQ) ha visto un importante avanzamento pratico con l'inserimento dei primi grafici delle metriche raccolte
+      È stato aggiornato il Piano di Progetto (PdP) e il Piano di Qualifica (PdQ) ha visto un importante avanzamento pratico con l'inserimento dei primi grafici delle metriche raccolte.
   ],
 )
