@@ -11,7 +11,7 @@ I test di sistema verificano in modo granulare ogni funzionalità del sistema, a
   caption: [Test di Sistema],
   table(
     columns: (auto, 1fr, auto, auto),
-    align: (center, left, center, center),6
+    align: (center, left, center, center),
     table.header(
       [*Codice Test*], [*Descrizione*], [*Caso d'Uso*], [*Stato*],  //anche se caso d'uso sarebbe meglio sostituire con requisiti
     ),
