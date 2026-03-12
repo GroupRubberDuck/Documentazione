@@ -27,15 +27,15 @@
     Nel corso dello Sprint 6 nessuno dei rischi attesi si è manifestato in modo rilevante. Il ripristino della piena operatività del gruppo ha consentito di recuperare le attività in sospeso e di mantenere un ritmo di avanzamento regolare su tutti i fronti.
   ],
   oreProduttive: (
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 3),
     (persona: persone.ALDO, ruolo: ruoli.Verificatore, orePreviste: 1, oreEffettive: 1),
     (persona: persone.ANA, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
     (persona: persone.ANA, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 3, oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 7),
-    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 3, oreEffettive: 3),
+    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 7),
+    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 2, oreEffettive: 3),
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
   ),
   retrospettiva: [
