@@ -34,7 +34,7 @@
 
 
 Il CPI si mantiene costantemente al di sotto della soglia accettabile per tutti
-gli sprint, attestandosi intorno a 0.86, a indicare un utilizzo del
+gli sprint, a indicare un utilizzo del
 budget superiore al previsto. L'SPI invece rimane prossimo a 1, dimostrando
 che il team ha rispettato la pianificazione temporale. Il miglioramento del CPI
 osservato a partire dallo Sprint 4 è parzialmente riconducibile a una

@@ -14,3 +14,4 @@
   display_gulpease((valore: valore, parole: parole, lettere: lettere, frasi: frasi), nomeDocumento: nome)
 }
 L'indice è stato calcolato sui documenti con struttura narrativa più estesa, ovvero *Norme di Progetto, Piano di Progetto, Piano di Qualifica e Analisi dei Requisiti*. \ Sono stati esclusi documenti come verbali e glossario, la cui natura sintetica e a impatto immediato non si presta a una valutazione significativa della leggibilità.\ \ I valori ottenuti si attestano nella fascia accettabile per documentazione tecnica: la presenza di terminologia specialistica abbassa il punteggio rispetto a testi divulgativi. Le *Norme di Progetto* e *l'Analisi dei Requisiti* raggiungono il valore più alto, grazie a uno stile più discorsivo.
+#pagebreak()
