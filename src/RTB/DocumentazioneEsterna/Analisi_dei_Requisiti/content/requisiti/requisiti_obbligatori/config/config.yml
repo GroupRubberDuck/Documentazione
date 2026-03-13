@@ -24,4 +24,101 @@ settings:
       index_footer_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/index_footer_template.typ"
 # La struttura gerarchica
 structure:
-      - prova
+
+- Visualizzazione lista dispositivi
+- Viualizzazione elemento lista dispositivi
+- Visualizzazione nome dispositivo in lista
+- Inserimento nuovo dispositivo
+- Creazione manuale dispositivo
+- Inserimento nome dispositivo
+- Inserimento sistema operativo dispositivo
+- Inserimento descrizione dispositivo
+- Errore nome dispositivo non valido
+- Annullamento inserimento dispositivo
+- Importazione dispositivo da file
+- Selezione file sorgente JSON
+- Selezione file sorgente XML
+- Selezione file sorgente CSV
+- Errore file dispositivo non valido
+- Visualizzazione dati dispositivo
+- Visualizzazione nome dispositivo
+- Visualizzazione sistema operativo dispositivo
+- Visualizzazione descrizione dispositivo
+- Visualizzazione modello associato al dispositivo
+- Visualizzazione nome modello associato 
+- Visualizzazione versione modello associato
+- Eliminazione dispositivo
+- Eliminazione dispositivo diretta
+- Avvio sessione di valutazione
+- Scarto modifiche valutazione
+- Salvataggio valutazione
+- Salvataggio e chiusura sessione di valutazione
+- Salvataggio e continuazione sessione di valutazione
+- Errore salvataggio valutazione
+- Visualizzazione dashboard dispositivo
+- Visualizzazione stato aggregato dispositivo
+- Esportazione informazioni dispositivo
+- Esportazione informazioni dispositivo in XML
+- Esportazione informazioni dispositivo in JSON
+- Esportazione informazioni dispositivo in CSV
+
+- Aggiunta asset
+- Inserimento nome asset
+- Selezione tipo asset
+- Selezione security asset
+- Selezione network asset
+- Inserimento descrizione asset
+- Errore nome asset non valido
+- Annullamento aggiunta asset
+- Visualizzazione lista asset
+- Visualizzazione nome asset
+- Visualizzazione tipo asset
+- Visualizzazione stato aggregato asset
+- Visualizzazione dettaglio asset
+- Visualizzazione descrizione asset
+- Eliminazione asset
+
+- Visualizzazione lista requisiti asset
+- Visualizzazione elemento lista requisiti asset
+- Visualizzazione codice requisito
+- Visualizzazione stato valutazione requisito
+- Visualizzazione dettaglio requisito
+- Visualizzazione nome requisito
+- Visualizzazione descrizione normativa requisito
+- Visualizzazione stato pass requisito
+- Visualizzazione stato fail requisito
+- Visualizzazione stato na requisito
+- Visualizzazione stato in corso requisito
+- Visualizzazione stato sospeso requisito
+- Visualizzazione lista dipendenze requisito
+- Visualizzazione sintesi dipendenza
+- Visualizzazione codice dipendenza
+- Visualizzazione stato dipendenza
+
+- Visualizzazione decision tree
+- Visualizzazione nodo decision tree
+- Visualizzazione stato attività nodo
+- Visualizzazione nodo di decisione
+- Visualizzazione codice requisito nodo
+- Visualizzazione codice nodo
+- Visualizzazione domanda nodo
+- Visualizzazione risposta nodo
+- Nessuna risposta associata a nodo
+- Visualizzazione nodo foglia
+- Visualizzazione valore nodo foglia
+- Visualizzazione giustificazione decision tree
+- Visualizzazione dettaglio nodo decisionale
+- Visualizzazione codice requisito a dettaglio
+- Visualizzazione codice nodo a dettaglio
+- Visualizzazione domanda nodo a dettaglio
+- Visualizzazione risposta nodo a dettaglio
+- Assenza risposta a dettaglio
+- Valutazione nodo di decisione
+- Selezione risposta Yes
+- Selezione risposta No
+- Navigazione nodo successivo
+- Errore nodo senza risposta selezionata
+- Raggiungimento nodo foglia
+- Navigazione nodo precedente
+- Reindirizzamento da nodo root
+- Inserimento giustificazione decision tree
