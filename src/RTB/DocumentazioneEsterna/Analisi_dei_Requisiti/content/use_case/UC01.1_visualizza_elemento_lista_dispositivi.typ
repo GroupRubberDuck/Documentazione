@@ -10,10 +10,10 @@
 #let diagram=diagram-type(
   target-uc: use-case-nome,
   actors: ("Utente",),
-  includes: ("Visualizza nome dispositivo",),
+  includes: ("Visualizza nome dispositivo su lista dispositivi",),
   extends: (:),
   generalizations: (),
-  spacing: (2.5cm, 2cm), 
+  spacing: (3.5cm, 2cm), 
   diagram-scale: 80%,
     actor-offset: 0,
 )
@@ -32,15 +32,14 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente visualizza il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome dispositivo")
-        + L'utente visualizza lo stato aggregato della valutazione del dispositivo
+        + L'utente visualizza il nome del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome dispositivo su lista dispositivi")
     ],
     
     pre-condizioni:[
         - Il sistema è attivo
         - Non sono attive sessioni di modifica del modello
         - Non sono attive sessioni di valutazione
-        - L'utente sta visualizzando la lista di dispositivi
+        - L'utente sta visualizzando la lista dei dispositivi #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista dispositivi")
     ],
     
     post-condizioni:[
@@ -51,7 +50,7 @@
     scenari-alternativi:none,
     
     inclusioni:[
-        #use-case-label(nome-etichetta: "Visualizza nome dispositivo")
+        #use-case-label(nome-etichetta: "Visualizza nome dispositivo su lista dispositivi")
     ],
     
     estensioni:none,

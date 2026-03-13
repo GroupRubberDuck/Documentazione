@@ -7,6 +7,8 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
 #import "../../DocumentazioneInterna/Glossario.typ" : dict
+#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ": use-case-label
+
 #set text(size: 13pt)
 
 #set heading(numbering: "1.1) ")
@@ -33,8 +35,8 @@
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
   major:0,
-  minor:10,
-  patch:0,
+  minor:11,
+  patch:8,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -61,24 +63,41 @@
 
   
   ([0.1.0],[2025-11-11],[Aldo Bettega],[Davide Lorenzon],[Creazione del documento]),
-  ([0.2.0],[2025-11-12],[Felician Necsulescu],[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
-  ([0.3.0],[2025-11-13],[Felician Necsulescu],[Davide Lorenzon],[Scrittura del primo caso d'uso UC1]),
+  ([0.2.0],[2025-11-12],persone.FELIX,[Ana Maria Draghici],[Stesura sezione introduzione e descrizione generale]),
+  ([0.3.0],[2025-11-13],persone.FELIX,[Davide Lorenzon],[Scrittura del primo caso d'uso UC1]),
   ([0.4.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta @sec-scopo-doc  @sec-contesto, @sec-caso_studio , e modificata introduzione/descrizione generale]),
   ([0.5.0],[2025-11-18],[Ana Maria Draghici],[Davide Lorenzon],[Modificate le sezioni riguardanti utenti e piattaforma: @sec-utenti e @sec-piattaforma in seguito all’incontro esterno con Bluewind]),
-  ([0.6.0],[2025-11-28],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
-  ([0.6.1],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
-  ([0.7.0],[2025-12-6],[Felician Mario Necsulescu],[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
+  ([0.6.0],[2025-11-28],persone.FELIX,[Davide Lorenzon],[Scrittura dei casi d'uso: UC1.1, UC2, UC2.1, UC3, UC3.1, UC4, UC5, UC6, UC7]),
+  ([0.6.1],[2025-12-6],persone.FELIX,[Davide Lorenzon],[Modifica dei casi d'uso in seguito alla riunione con Bluewind]),
+  ([0.7.0],[2025-12-6],persone.FELIX,[Davide Lorenzon],[Scrittura dei casi d'uso: UC8, UC9, UC10]),
   ([0.7.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Aggiunto editing degli asset ai documenti tecnici ai casi d'uso.]),
   ([0.8.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Riscrittura e riordinazione di diversi UC, aggiunti altri UC]),
   ([0.9.0], [2025-12-18], [Aldo Bettega], [Davide Testolin], [Prima stesura della parte di requisiti, scritti gran parte di requisiti obbligatori e desiderabili]),
   ([0.10.0], [2026-01-08], [Aldo Bettega], persone.FELIX, [Aggiunti requisiti di sicurezza e tabella riassuntiva]),
   ([0.10.0], [2026-01-12], persone.FELIX, persone.ALDO, [Rivista organizzazione degli use cases e delle funzionalità, refactoring generale con aggiunta di use cases]),
   ([0.11.0], [2026-02-22], persone.FILIPPO,[], [Rivisti use case, Aggiunti nuovi use case (32/33) relativi a AUM-4]),
-)
+  ([0.11.1], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, creazione, eliminazione dispositivo da #use-case-label(nome-etichetta: "Visualizza lista dispositivi")  a #use-case-label(nome-etichetta: "Elimina dispositivo") 
+    ]),
+  ([0.11.2], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla valutazione del dispositivo da #use-case-label(nome-etichetta: "Avvia valutazione dispositivo")  a #use-case-label(nome-etichetta: "Salva valutazione") ]),
+  ([0.11.3], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione,creazione, modifica ed eliminazione da #use-case-label(nome-etichetta: "Aggiunta asset")  a #use-case-label(nome-etichetta: "Modifica asset") ]),
+  ([0.11.4], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla esportazioni #use-case-label(nome-etichetta: "Esporta informazioni dispositivo")]),
+  ([0.11.5], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")]),
+  ([0.11.6], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla compilazione dei decision tree da #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decisionale") 
+  a #use-case-label(nome-etichetta: "Inserisci giustificazione decision tree") ]),
+  ([0.11.7], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla generazione dei report #use-case-label(nome-etichetta: "Esporta report di conformità") ]),
+  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, inserimento dei modelli da #use-case-label(nome-etichetta: "Visualizza lista modelli") a #use-case-label(nome-etichetta: "Inserisci nuovo modello")]),
+  ([0.11.9], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla modifica anagrafica dei modelli #use-case-label(nome-etichetta: "Modifica anagrafica modello")]),
+  ([0.11.10], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla modifica strutturale dei modelli da #use-case-label(nome-etichetta: "Avvia modifica modello") a #use-case-label(nome-etichetta: "Scarta modifica modello")]),
+  ([0.11.11], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla eliminazione dei modelli #use-case-label(nome-etichetta: "Elimina modello")]),
+  ([0.11.12], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
+  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei nodi del decision tree in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio nodo modello decision tree")]),
+  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla aggiunta, modifica, eliminazione dei requisiti da #use-case-label(nome-etichetta: "Aggiungi requisito") a #use-case-label(nome-etichetta: "Errore nodo root")]),
+  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
+  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
+  )
 
 #registroModifiche(modifiche)
 // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
 
 
 
@@ -88,6 +107,15 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
 ]
+
+#insertRomanNumberedPagesSenzaData(PageTitle: "Elenco delle Figure", documentType: doc)[
+  #outline(title: "Elenco delle Figure",target:figure.where(kind:image))
+]
+#insertRomanNumberedPagesSenzaData(PageTitle: "Elenco delle Tabelle", documentType: doc)[
+  #outline(title: "Elenco delle Tabelle",target:figure.where(kind:table))
+]
+
+
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
 = Introduzione <sec-intro>
@@ -235,7 +263,7 @@ Lo scopo di questa sezione è descrivere in dettaglio i casi d’uso individuati
   - *Scenari alternativi*: documentiamo i percorsi di esecuzione che si discostano dal flusso normale e le situazioni in cui l'esecuzione regolare viene interrotta a causa di condizioni anomale o scelte diverse dell'utente;\
   - *Estensioni*: comportamenti alternativi che possono verificarsi durante l'esecuzione del caso d'uso, tipicamente in risposta a condizioni particolari; 
   - *Inclusioni*: funzionalità che fanno parte del caso d'uso, descrivendo le operazioni che lo compongono;\
-  - *Generalizzazioni*: eventuali casi d'uso figli che specializzano il caso d'uso corrente, ereditandone le caratteristiche di base e aggiungendone di specifiche.
+  - *Specializzazioni*: eventuali casi d'uso figli che specializzano il caso d'uso corrente, ereditandone le caratteristiche di base e aggiungendone di specifiche.
 ]
 
 == Attori
@@ -245,7 +273,7 @@ L'applicazione prevede la presenza di un Attore principale:
 - *Utente*: Persona che utilizza l'applicazione per effettuare  la verifica della conformità dei dispositivi radio allo standard 
 EN 18031. L'utente interagisce direttamente con il sistema attraverso l'interfaccia grafica, inserisce o carica i dati del dispositivo e degli asset, compila i decision tree associati ai requisiti, visualizza i risultati nella dashboard, gestisce il salvataggio e l'esportazione della valutazione e, se necessario, modifica i decision tree e le dipendenze tra requisiti.
 
-  #include "content/Use_case.new.typ"
+  #include "content/use_case/_index.typ"
 
 ]
 

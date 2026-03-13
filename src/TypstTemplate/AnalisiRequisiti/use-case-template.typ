@@ -6,11 +6,33 @@
 #let sudo="responsabile tecnico"
 
 
+// codice è non serve più, rimane per retrocompatibilità
+#let use-case-label(codice:"", nome-etichetta:str)={
+  ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" ,§")
+}
+
+#let use-case-link-label(codice:"", nome-etichetta:str)={
+  link(label(slugify(nome-etichetta)),get-use-case-code(nome-etichetta:nome-etichetta))
+}
+
+#let use-case-link-extended-label(nome-etichetta:str, br:false)={
+  link(label(slugify(nome-etichetta)))[
+    #get-use-case-code(nome-etichetta:nome-etichetta) 
+    #if br { [ \ ] } else {[-]}
+    #nome-etichetta
+  ]
+}
+
+
+
+
+
+
 #let use-case-template(
     livello-intestazione:int,
     codice:str,
     nome:str,
-    attore-principale:str,
+    attore-principale:"Utente",
     scenario-principale:content,
     pre-condizioni:content,
     post-condizioni:content,
@@ -23,10 +45,14 @@
     figure-caption:none,
 
 )={
+
+
   [#heading(codice+":"+nome,level: livello-intestazione) #label(slugify( nome))]
 
   if path-immagine-diagramma != none {
-
+    if figure-caption == none {
+      figure-caption=use-case-link-extended-label(nome-etichetta: nome)
+    }
     figure(caption:figure-caption,kind:image)[
     #if type(path-immagine-diagramma) == type(""){
       image(path-immagine-diagramma)
@@ -41,6 +67,8 @@
 
 let elementi-lista-opzionali=(
       if scenario-principale != none{
+      set enum(full: true)
+
       [
         *Scenario principale*: \ 
         #pad(left: 1em,top:-0.5em)[ #scenario-principale ]
@@ -92,22 +120,6 @@ let elementi-lista-opzionali=(
 
 }
 
-// codice è non serve più, rimane per retrocompatibilità
-#let use-case-label(codice:"", nome-etichetta:str)={
-  ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" ,§")
-}
-
-#let use-case-link-label(codice:"", nome-etichetta:str)={
-  link(label(slugify(nome-etichetta)),get-use-case-code(nome-etichetta:nome-etichetta))
-}
-
-#let use-case-link-extended-label(nome-etichetta:str, br:false)={
-  link(label(slugify(nome-etichetta)))[
-    #get-use-case-code(nome-etichetta:nome-etichetta) 
-    #if br { [ \ ] } else {[-]}
-    #nome-etichetta
-  ]
-}
 
 
 

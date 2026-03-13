@@ -3,19 +3,19 @@
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
 #let use-case-nome="{{TITOLO}}"
-#let depth={{LIVELLO}}
+#let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
-      system-name: "Sistema",  // Il nome che va nell'angolo del recinto
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
   extends: (:),
   generalizations: (),
   spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+  actor-offset:0
 )
 
 

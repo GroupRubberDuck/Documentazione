@@ -1,0 +1,24 @@
+@startuml
+title Processo di Login
+start
+:Inserimento Email e Password;
+if (Email valida?) then (no)
+  #Pink:Errore formato;
+  detach
+else (sì)
+  :Interroga Database;
+  if (Credenziali corrette?) then (sì)
+    :Genera Token Sessione;
+    :Redirect Dashboard;
+    stop
+  else (no)
+    :Incrementa tentativi falliti;
+    if (Tentativi > 3?) then (sì)
+      :Blocca Account;
+    else (no)
+      :Riprova;
+    endif
+    stop
+  endif
+endif
+@enduml
