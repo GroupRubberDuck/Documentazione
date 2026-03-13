@@ -13,7 +13,7 @@
   includes: ("Visualizza nome dispositivo su lista dispositivi",),
   extends: (:),
   generalizations: (),
-  spacing: (2.5cm, 2cm), 
+  spacing: (3.5cm, 2cm), 
   diagram-scale: 80%,
     actor-offset: 0,
 )

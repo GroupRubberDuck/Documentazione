@@ -142,7 +142,9 @@
   let lbl = label("tab-" + slugify(parent-uc-name))
   node(
     tab-position, 
-    align(center)[
+   
+  
+  align(center)[
       #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name,br:true))#h(0.5em)
     ], 
     name: lbl, 
@@ -153,7 +155,8 @@
 #let build-exp-box(
   enclosed-lbl: (), 
   parent-uc-name: "", 
-  tab-offset: (-25pt, -25pt) // <-- NUOVO PARAMETRO (dx, dy)
+  tab-offset: (-25pt, -25pt), // <-- NUOVO PARAMETRO (dx, dy)
+  system-name:"Sistema-Frontend"
 ) = {
   (
     // 1. Il recinto tratteggiato
@@ -172,10 +175,19 @@
         #place(dx: tab-offset.at(0), dy: tab-offset.at(1))[
           #diagram(
             node(
-              (0,0), 
-              align(center)[
+              (0,0),
+              [
+                #place(dx: 20pt, dy: -35pt)[
+                    #box( width:20em,text(size: 1.85em)[
+  #strong(system-name)
+  ]) 
+                ]
+
+                #v(0.2em)
+
+              #align(center)[
                 #strong(use-case-link-extended-label(nome-etichetta: parent-uc-name,br:true))#h(0.5em)
-              ], 
+              ]], 
               name: <tab-node>,
               ..st.style-exp-tab
             )

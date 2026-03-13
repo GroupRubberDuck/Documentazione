@@ -37,7 +37,7 @@
   DT:"Davide Testolin",
   ANA:"Ana Maria Draghici",
   ALDO:"Aldo Bettega",
-  FELIX:"Felician Mario Necsulescu",
+  FELIX:[Felician Mario \ Necsulescu],
   FILIPPO:"Filippo Guerra"
 )
 
