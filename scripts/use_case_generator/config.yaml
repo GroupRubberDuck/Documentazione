@@ -66,14 +66,14 @@ structure:
             - Elimina dispositivo con back-up json
             - Elimina dispositivo con back-up xml
             - Elimina dispositivo con back-up csv
+
+
     - Avvia valutazione dispositivo
     - Scarta modifiche valutazione:
     - Salva valutazione:
         - Salva e chiudi valutazione dispositivo
         - Salva e continua valutazione dispositivo
-        # - Salva in XML
-        # - Salva in CSV
-        # - Salva in JSON
+
       #extends
     - Errore salvataggio valutazione:
     - Aggiunta asset:

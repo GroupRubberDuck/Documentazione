@@ -1,24 +1,22 @@
 @startuml
-title Processo di Login
 start
-:Inserimento Email e Password;
-if (Email valida?) then (no)
-  #Pink:Errore formato;
-  detach
-else (sì)
-  :Interroga Database;
-  if (Credenziali corrette?) then (sì)
-    :Genera Token Sessione;
-    :Redirect Dashboard;
-    stop
-  else (no)
-    :Incrementa tentativi falliti;
-    if (Tentativi > 3?) then (sì)
-      :Blocca Account;
-    else (no)
-      :Riprova;
-    endif
-    stop
-  endif
-endif
+
+:Utente seleziona elemento dalla lista;
+
+' Nodo Oggetto (Output Pin "esploso")
+:Oggetto Selezionato (Intero)]
+
+' Nota applicata per indicare la trasformazione (UML: <<transformation>>)
+note right
+  **Trasformazione:**
+  Estrai solo l'ID univoco
+  dall'oggetto
+end note
+
+' Nodo Oggetto (Input Pin "esploso")
+:ID Elemento]
+
+:Elabora i dettagli dell'elemento;
+
+stop
 @enduml
