@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il codice inserito per il nodo non è valido.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Errore codice nodo non valido")
   ]
 )

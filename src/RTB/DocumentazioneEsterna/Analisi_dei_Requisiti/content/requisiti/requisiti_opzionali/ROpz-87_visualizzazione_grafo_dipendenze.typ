@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter visualizzare il grafo delle dipendenze del requisito quando si verifica una dipendenza circolare.
   ],
   fonti:[
-    
-  ]
+  #use-case-label(nome-etichetta:"Visualizza grafo dipendenze")
+  ] 
 )

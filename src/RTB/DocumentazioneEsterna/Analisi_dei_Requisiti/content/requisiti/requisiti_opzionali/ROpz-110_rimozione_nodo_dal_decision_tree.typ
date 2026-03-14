@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter rimuovere un nodo dal decision tree durante una sessione di modifica del modello.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Rimuovi nodo")
   ]
 )

@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter modificare le informazioni di un nodo di decisione esistente nel decision tree.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Modifica nodo")
   ]
 )

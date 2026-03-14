@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter inserire il codice del nodo durante l'aggiunta di un nodo di decisione al decision tree.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Inserisci codice nodo decision tree")
   ]
 )

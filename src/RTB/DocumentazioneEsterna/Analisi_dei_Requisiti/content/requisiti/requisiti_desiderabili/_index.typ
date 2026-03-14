@@ -17,9 +17,21 @@
 
 
 #let table-cells=()
-#import "RDes01_prova.typ": data as item_0
+#import "RDes01_eliminazione_dispositivo_con_backup.typ": data as item_0
 
 #table-cells.push( item_0)
+
+#import "RDes02_eliminazione_dispositivo_con_backup_json.typ": data as item_1
+
+#table-cells.push( item_1)
+
+#import "RDes03_eliminazione_dispositivo_con_backup_xml.typ": data as item_2
+
+#table-cells.push( item_2)
+
+#import "RDes04_eliminazione_dispositivo_con_backup_csv.typ": data as item_3
+
+#table-cells.push( item_3)
 
 
 

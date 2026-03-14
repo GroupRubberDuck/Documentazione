@@ -6,9 +6,10 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter aggiungere un nodo foglia al decision tree durante una sessione di modifica del modello.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Aggiungi nodo foglia")
   ]
+
 )

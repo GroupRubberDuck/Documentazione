@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando tenta di eliminare il nodo root del decision tree.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Errore nodo root")
   ]
 )

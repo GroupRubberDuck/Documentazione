@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter rimuovere una dipendenza tra requisiti del modello durante una sessione di modifica.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Rimuovi dipendenza")
   ]
 )

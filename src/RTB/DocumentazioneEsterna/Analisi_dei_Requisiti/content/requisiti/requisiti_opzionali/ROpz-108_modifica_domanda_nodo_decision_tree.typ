@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter modificare la domanda associata a un nodo di decisione esistente nel decision tree.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Modifica domanda nodo decision tree")
   ]
 )

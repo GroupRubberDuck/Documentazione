@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter inserire la domanda associata al nodo durante l'aggiunta di un nodo di decisione al decision tree.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Inserisci domanda nodo decision tree")
   ]
 )

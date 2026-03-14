@@ -6,9 +6,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per il requisito non è valido.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Errore modifica nome requisito non valido")
   ]
 )

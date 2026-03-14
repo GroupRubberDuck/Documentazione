@@ -6,9 +6,10 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter modificare la descrizione di un requisito esistente nel modello.
   ],
   fonti:[
-    
+  #use-case-label(nome-etichetta:"Modifica descrizione requisito")
   ]
+
 )
