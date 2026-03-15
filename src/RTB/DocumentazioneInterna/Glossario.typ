@@ -61,7 +61,7 @@
   ([0.2],[2025-11-15],[Ana Maria Draghici],[Ana Maria Draghici],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML]),
   ([0.3],[2025-11-16],[Ana Maria Draghici],[Ana Maria Draghici],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
   ([0.4],[2025-12-16],[Filippo Guerra],[Ana Maria Draghici],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
-  ([0.5],[2026-02-26],[Ana Maria Draghici],[-],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
+  ([0.5],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
   
 )
 
@@ -152,4 +152,3 @@ insertArabicNumberedPagesSenzaData(PageTitle:upper(lettera) , documentType: doc)
 ]
 
 }
-

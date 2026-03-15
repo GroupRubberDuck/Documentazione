@@ -218,7 +218,105 @@
 
   "Layered Architecture":[
     Architettura software che organizza il sistema in livelli funzionali distinti e sovrapposti (es. presentazione, logica applicativa, accesso ai dati), dove ogni livello interagisce solo con quello adiacente.
-  ]
+  ],
+  "Test di Sistema":[
+    Verifica che il sistema nel suo complesso soddisfi i requisiti funzionali e non funzionali specificati, simulando scenari d'uso reali sull'applicazione integrata.
+  ],
+  "Test di Accettazione":[
+    Verifica che il sistema soddisfi le aspettative dell'utente finale, validando i flussi operativi completi secondo scenari concordati con la proponente.
+  ],
+  "Test di Integrazione": [
+  Verifica la corretta interazione tra componenti o moduli distinti del sistema, assicurandosi che le interfacce tra le parti si comportino come previsto.
+],
+"Test di Unità": [
+  Verifica il comportamento di singole unità di codice in isolamento, come funzioni o classi, garantendo la correttezza della logica implementata.
+],
+"Decision Tree": [
+  Struttura ad albero utilizzata per guidare la valutazione di un requisito normativo attraverso una sequenza di domande e risposte, fino a determinare un esito (pass, fail o not applicable).
+],
+
+"Nodo": [
+  Elemento costitutivo del Decision Tree. Può essere un nodo di decisione, che contiene una domanda a cui l'utente deve rispondere, oppure un nodo foglia, che rappresenta l'esito finale della valutazione.
+],
+
+"Nodo foglia": [
+  Nodo terminale del Decision Tree che non ha successori. Rappresenta l'esito finale della valutazione di un percorso: pass, fail o not applicable.
+],
+
+"Nodo di decisione": [
+  Nodo intermedio del Decision Tree che contiene una domanda a cui l'utente deve rispondere per determinare il percorso successivo nella valutazione.
+],
+
+"Asset": [
+  Risorsa o componente di un dispositivo soggetta a valutazione normativa. Ogni asset appartiene a una classe di asset definita dal modello normativo e contiene un insieme di requisiti da verificare.
+],
+
+"Modello normativo": [
+  Struttura configurabile che definisce le classi di asset, i requisiti normativi e i relativi Decision Tree per uno specifico standard. Costituisce il riferimento su cui si basa la valutazione di un dispositivo.
+],
+
+"Sessione di valutazione": [
+  Sessione di lavoro in cui un utente valuta un dispositivo rispetto a un modello normativo, compilando i Decision Tree associati ai requisiti e registrando evidenze e risposte.
+],
+
+"Standard normativo": [
+  Insieme di regole e requisiti tecnici definiti da un ente regolatore (es. ISO, IEC) a cui un dispositivo deve conformarsi. Nel sistema viene rappresentato tramite un modello normativo configurabile.
+],
+
+"Classe di asset": [
+  Categoria che raggruppa asset con caratteristiche comuni all'interno di un modello normativo. Definisce gli attributi condivisi dagli asset che vi appartengono.
+],
+
+"Evidenza": [
+  Dato, documento o giustificazione fornita dall'utente a supporto della risposta assegnata a un nodo del Decision Tree durante la sessione di valutazione.
+],
+
+"Dipendenza": [
+  Relazione tra requisiti che vincola l'ordine o la condizione di valutazione, indicando che un requisito dipende dall'esito o dalla presenza di un altro requisito.
+],
+"Conformità normativa": [
+  Aderenza di un dispositivo ai requisiti definiti da uno standard normativo. Un dispositivo è conforme quando supera con esito positivo la valutazione di tutti i requisiti obbligatori previsti dal modello normativo di riferimento.
+],
+
+"Valutazione": [
+  Processo di verifica della conformità di un dispositivo rispetto a un modello normativo, condotto compilando i Decision Tree associati a ciascun requisito e registrando evidenze a supporto delle risposte fornite.
+],
+
+"Dispositivo": [
+  Oggetto fisico o sistema software sottoposto a valutazione normativa. Nel sistema è identificato da un insieme di attributi descrittivi quali nome, sistema operativo e descrizione.
+],
+
+"Firmware": [
+  Software a basso livello integrato direttamente nell'hardware di un dispositivo, che ne controlla il funzionamento di base e le interazioni con i componenti fisici.
+],
+
+"Report di valutazione": [
+  Documento generato al termine di una sessione di valutazione che riassume i risultati ottenuti, includendo lo stato di ciascun requisito valutato e le evidenze associate.
+],
+
+"Pass": [
+  Esito positivo della valutazione di un requisito o di un nodo del Decision Tree, che indica che il dispositivo soddisfa pienamente il criterio verificato.
+],
+
+"Fail": [
+  Esito negativo della valutazione di un requisito o di un nodo del Decision Tree, che indica che il dispositivo non soddisfa il criterio verificato.
+],
+
+"Not Applicable": [
+  Esito che indica che un requisito o un nodo del Decision Tree non è applicabile al dispositivo in esame, in quanto le condizioni necessarie per la sua valutazione non sono presenti.
+],
+
+"Importazione": [
+  Operazione che consente di caricare nel sistema dati strutturati provenienti da file esterni, come liste di asset in formato JSON, XML o CSV.
+],
+
+"Esportazione": [
+  Operazione che consente di salvare i dati presenti nel sistema in un file esterno in uno dei formati supportati (JSON, XML, CSV, PDF), per condivisione o archiviazione.
+],
+
+"Versionamento dello standard": [
+  Gestione delle versioni successive di un modello normativo nel tempo, che consente di tracciare le modifiche apportate allo standard e mantenere la compatibilità con le valutazioni precedenti.
+]
 
 )
 
@@ -253,7 +351,19 @@
   ETC:"Estimate to Complete",
   TCPI:"To Complete Performance Index",
   RSI:"Requirements Stability Index",
-  BAC:"Budget at Completion"
+  BAC:"Budget at Completion",
+  TS: "Test di Sistema",
+  TA: "Test di Accettazione",
+  TI: "Test di Integrazione",
+  TU: "Test di Unità",
+  NI: "Non Implementato",
+  DT: "Decision Tree",
+  JSON: "JavaScript Object Notation",
+  XML: "eXtensible Markup Language",
+  CSV: "Comma-Separated Values",
+  AU: "Assessment Unit",
+  DN: "Decision Node",
+UML: "Unified Modeling Language"
 
 )
 
