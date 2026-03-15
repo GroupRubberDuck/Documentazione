@@ -29,7 +29,7 @@ Assicurare che il lavoro del team sia:
 === Procedure operative
 
 ==== Scrittura dei commit  <commit>
- I commit dovrebbero avere un *tipo* ed una *descrizione*:
+ I commit devono avere un *tipo* ed una *descrizione*:
 - Il *tipo* indica qual è l’obiettivo del commit (ad esempio `feat`, `fix`, `docs`, ecc.); 
  
 - La *descrizione* aiuta il lettore a comprendere meglio quali cambiamenti sono stati effettuati.

@@ -8,11 +8,19 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
     Valuta la capacità del software di fornire correttamente le funzionalità richieste dai requisiti, assicurando completezza e coerenza rispetto alle specifiche definite.
     In particolare sono considerate:
 
+<<<<<<< HEAD
+        - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere],
+        - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti],
+        - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti],
+        - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio],
+        - *Sicurezza*:#[ \ Non vi sono falle di sicurezza che espongono dati sensibili degli utenti],
+=======
         - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere]
         - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti]
         - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti]
         - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio]
         - *Sicurezza*:#[ \ Non vi sono falle di sicurezza che espongono dati sensibili degli utenti]
+>>>>>>> 496ba95fa220cd4ee68393820405a3c4ea2b57ba
       
   ]),
   ([*Affidabilità*],[

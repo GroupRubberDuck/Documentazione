@@ -34,7 +34,7 @@ Per facilitare il lavoro del gruppo, in particolare la comunicazione asincrona e
 
 *Typst* – Linguaggio di markup per la redazione dei documenti, con compilazione automatizzata tramite script.
 
-*Tinymist Typst* – Estensione di Visual Studio Code per supporto sintattico e live preview.
+*Tinymist Typst* – Estensione di Visual Studio Code per il supporto sintattico e la live preview.
 
 *Script bash* – Automazioni eseguite tramite GitHub Actions.
 

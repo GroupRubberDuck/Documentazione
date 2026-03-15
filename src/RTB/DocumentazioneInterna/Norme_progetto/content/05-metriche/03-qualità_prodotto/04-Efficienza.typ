@@ -18,7 +18,7 @@
     preferibile: $<= 1,5 "GB"$
   ),
 ),[Metriche efficienza del prodotto #footnote()[
-  Qualsiasi metrica percentuale interna a questa sezione ha un termine di paragone assoluto.
+  I valori soglia di questa sezione sono espressi in termini assoluti, non come percentuali relative.
 
   // L'utilizzo di percentuali senza un riferimento in questa sezione è paragonare al condividere un sito web girando il link localhost:8080
 ]])

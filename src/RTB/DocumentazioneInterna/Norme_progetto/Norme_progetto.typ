@@ -35,8 +35,8 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
+    autori: ("Davide Lorenzon", "Aldo Bettega", " Filippo Guerra", "Ana Maria Draghici"),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega", "Filippo Guerra" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -65,6 +65,7 @@
   ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processo di supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
   ([0.12.0],[2026-02-05],[Davide Lorenzon],[],[Aggiunte descrizioni delle metriche di qualità]),
+  ([0.12.1],[2026-03-11],[-],[Filippo Guerra],[Verifica del documento]),
   
 )
 #registroModifiche(modifiche)
