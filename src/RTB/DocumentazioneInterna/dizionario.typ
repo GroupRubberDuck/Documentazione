@@ -234,9 +234,7 @@
 "Decision Tree": [
   Struttura ad albero utilizzata per guidare la valutazione di un requisito normativo attraverso una sequenza di domande e risposte, fino a determinare un esito (pass, fail o not applicable).
 ],
-"Assessment Unit": [
-  Unità atomica di valutazione associata a un requisito normativo, che rappresenta un aspetto specifico da verificare tramite il relativo Decision Tree.
-],
+
 "Nodo": [
   Elemento costitutivo del Decision Tree. Può essere un nodo di decisione, che contiene una domanda a cui l'utente deve rispondere, oppure un nodo foglia, che rappresenta l'esito finale della valutazione.
 ],
@@ -247,10 +245,6 @@
 
 "Nodo di decisione": [
   Nodo intermedio del Decision Tree che contiene una domanda a cui l'utente deve rispondere per determinare il percorso successivo nella valutazione.
-],
-
-"Merge conflict": [
-  Conflitto che si verifica durante l'importazione di asset quando i dati in ingresso risultano incompatibili con quelli già presenti nel sistema, richiedendo una risoluzione manuale da parte dell'utente.
 ],
 
 "Asset": [
@@ -289,7 +283,7 @@
 ],
 
 "Dispositivo": [
-  Oggetto fisico o sistema software sottoposto a valutazione normativa. Nel sistema è identificato da un insieme di attributi descrittivi quali nome, sistema operativo, versione firmware e funzionalità.
+  Oggetto fisico o sistema software sottoposto a valutazione normativa. Nel sistema è identificato da un insieme di attributi descrittivi quali nome, sistema operativo e descrizione.
 ],
 
 "Firmware": [
@@ -318,10 +312,6 @@
 
 "Esportazione": [
   Operazione che consente di salvare i dati presenti nel sistema in un file esterno in uno dei formati supportati (JSON, XML, CSV, PDF), per condivisione o archiviazione.
-],
-
-"Cronologia": [
-  Registro storico delle sessioni di valutazione effettuate su un dispositivo, che consente di consultare i risultati ottenuti nel tempo e monitorare l'evoluzione della conformità.
 ],
 
 "Versionamento dello standard": [
