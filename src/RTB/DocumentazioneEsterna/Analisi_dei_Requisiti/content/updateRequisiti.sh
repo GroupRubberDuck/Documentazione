@@ -15,4 +15,10 @@ $MANAGER $BASE_DIR/requisiti_desiderabili/config/config.yml "$@"
 echo "🚀 Generazione Requisiti Opzionali..."
 $MANAGER $BASE_DIR/requisiti_opzionali/config/config.yml "$@"
 
+echo "🚀 Generazione Requisiti di Qualità..."
+$MANAGER $BASE_DIR/requisiti_qualita/config/config.yml "$@"
+
+echo "🚀 Generazione Requisiti Vincolo..."
+$MANAGER $BASE_DIR/requisiti_vincolo/config/config.yml "$@"
+
 echo "✅ Tutti i requisiti sono stati processati con successo!"
