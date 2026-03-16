@@ -70,7 +70,7 @@
 #let req-transf-link=if is-test-mode{
   req-transf
 }else{
-req=>get-req-label(nome-etichetta: req)
+get-req-label
 }
 
 

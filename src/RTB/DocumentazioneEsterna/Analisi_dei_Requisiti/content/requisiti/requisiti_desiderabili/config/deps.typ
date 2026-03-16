@@ -56,7 +56,9 @@
 
 #let get-req-code(nome-etichetta:str)={
   format-code(mappa.at(slugify(nome-etichetta))).slice(0,-1)
+
 }
+
 
 #let get-req-label(nome-etichetta)={
   link(label(get-req-code(nome-etichetta: nome-etichetta)), get-req-code(nome-etichetta:nome-etichetta))
