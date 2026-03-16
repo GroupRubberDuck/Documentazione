@@ -18,26 +18,12 @@
 
 
 #let table-cells=()
-#let req-uc-dict=(:)
 
 
-#import "RDes001_prova.typ": data as item_0, req-name as req-0
 
-#req-uc-dict.insert(
-  req-0
-  ,
-  item_0.fonti
-  )
-
-
-#{
-item_0.fonti=utils.format-array(item_0.fonti,transf:uc-transformation-con-link)
-
-}
+#import "RQ-Obb001_prova.typ": data as item_0, req-name as req-0
 
 #table-cells.push( item_0)
-
-
 
 
 

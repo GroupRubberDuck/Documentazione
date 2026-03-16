@@ -1,15 +1,16 @@
 #import "config/deps.typ" as deps
+#let req-name="Eliminazione dispositivo con backup"
+
 #let data =(
   codice:[
-    #deps.get-req-code(nome-etichetta: "Eliminazione dispositivo con backup")
-    #label(deps.slugify("Eliminazione dispositivo con backup"))
+    #deps.get-req-code(nome-etichetta: req-name)
+    #label(deps.get-req-code(nome-etichetta:req-name))
     ],
 
   descrizione:[
   L'Utente deve poter eliminare un dispositivo scaricando un file di backup con i relativi dati.
   ],
-  fonti:[
-  #use-case-label(nome-etichetta:"Elimina dispositivo con back up")
-  ]
+  fonti:(
+    "Elimina dispositivo con back up",)
  
 )

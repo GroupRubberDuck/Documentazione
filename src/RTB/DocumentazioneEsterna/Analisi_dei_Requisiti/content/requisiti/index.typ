@@ -2,7 +2,7 @@
 #import "/src/config.typ": is-test-mode
 #import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":use-case-label,get-use-case-code,uc-transformation-senza-link,uc-transformation-con-link
 #import "/src/TypstTemplate/AnalisiRequisiti/utils/style-theme.typ":req-table-style
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":mappa
+#import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":mappa,slugify
 
 #show figure: set block(breakable: true)
 
@@ -113,7 +113,11 @@
   uc-dict,
   key-transf:uc-transformation-con-link,
   val-transf: format-array,
-  sort: nome=>{mappa.at(slugify(nome))
+  sort: nome=>{
+    mappa.at(
+      slugify(nome.first()
+      )
+      )
 
   }
 

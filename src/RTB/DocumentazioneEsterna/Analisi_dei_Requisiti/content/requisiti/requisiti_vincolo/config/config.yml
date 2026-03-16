@@ -1,6 +1,6 @@
 settings:
       # Percorso dove creare i file (relativo allo script)
-      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili"
+      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_vincolo"
 
       # Nome del file aggregatore (se lasciato vuoto, non lo crea)
       index_file: "_index.typ"
