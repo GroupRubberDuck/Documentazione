@@ -47,7 +47,10 @@
 )={
 
 
-  [#heading(codice+":"+nome,level: livello-intestazione) #label(slugify( nome))]
+  [
+    #heading(codice+":"+nome,level: livello-intestazione) #label(slugify( nome))
+    #v(1em)
+  ]
 
   if path-immagine-diagramma != none {
     if figure-caption == none {

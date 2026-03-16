@@ -49,7 +49,7 @@
     
     pre-condizioni:[
         - Nel sistema è attiva una sessione di valutazione del dispositivo
-        - L'utente sta visualizzando il dettaglio del dispositivo
+        - L'utente sta visualizzando il dettaglio dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio asset")
 
     ],
     

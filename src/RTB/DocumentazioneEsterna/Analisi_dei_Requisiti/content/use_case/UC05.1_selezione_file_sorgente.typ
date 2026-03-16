@@ -19,7 +19,7 @@
     ),
   spacing: (0.3cm, 3cm), 
   diagram-scale: 70%,
-  top-padding:0.5
+  top-padding:1
   )
 
 
@@ -65,10 +65,5 @@
         #diagram
     ],
     
-    figure-caption:[
-        Specializzazioni di #deps.use-case-link-extended-label(nome-etichetta: use-case-nome,br:false) : 
-        - #deps.use-case-link-extended-label(nome-etichetta: "Selezione file JSON",br:false)
-        - #deps.use-case-link-extended-label(nome-etichetta: "Selezione file XML",br:false)
-        - #deps.use-case-link-extended-label(nome-etichetta: "Selezione file CSV",br:false)
-    ],
+    figure-caption:none,
 )

@@ -76,24 +76,25 @@
   ([0.10.0], [2026-01-08], [Aldo Bettega], persone.FELIX, [Aggiunti requisiti di sicurezza e tabella riassuntiva]),
   ([0.10.0], [2026-01-12], persone.FELIX, persone.ALDO, [Rivista organizzazione degli use cases e delle funzionalità, refactoring generale con aggiunta di use cases]),
   ([0.11.0], [2026-02-22], persone.FILIPPO,[], [Rivisti use case, Aggiunti nuovi use case (32/33) relativi a AUM-4]),
-  ([0.11.1], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, creazione, eliminazione dispositivo da #use-case-label(nome-etichetta: "Visualizza lista dispositivi")  a #use-case-label(nome-etichetta: "Elimina dispositivo") 
+  ([0.11.1], [2026-02-23], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, creazione, eliminazione dispositivo da #use-case-label(nome-etichetta: "Visualizza lista dispositivi")  a #use-case-label(nome-etichetta: "Elimina dispositivo") 
     ]),
-  ([0.11.2], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla valutazione del dispositivo da #use-case-label(nome-etichetta: "Avvia valutazione dispositivo")  a #use-case-label(nome-etichetta: "Salva valutazione") ]),
-  ([0.11.3], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione,creazione, modifica ed eliminazione da #use-case-label(nome-etichetta: "Aggiunta asset")  a #use-case-label(nome-etichetta: "Modifica asset") ]),
-  ([0.11.4], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla esportazioni #use-case-label(nome-etichetta: "Esporta informazioni dispositivo")]),
-  ([0.11.5], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")]),
-  ([0.11.6], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla compilazione dei decision tree da #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decisionale") 
+  ([0.11.2], [2026-02-24], persone.DL,[], [Raffinati casi d'uso relativi alla valutazione del dispositivo da #use-case-label(nome-etichetta: "Avvia valutazione dispositivo")  a #use-case-label(nome-etichetta: "Salva valutazione") ]),
+  ([0.11.3], [2026-02-25], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione,creazione, modifica ed eliminazione da #use-case-label(nome-etichetta: "Aggiunta asset")  a #use-case-label(nome-etichetta: "Modifica asset") ]),
+  ([0.11.4], [2026-02-26], persone.DL,[], [Raffinati casi d'uso relativi alla esportazioni #use-case-label(nome-etichetta: "Esporta informazioni dispositivo")]),
+  ([0.11.5], [2026-02-27], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")]),
+  ([0.11.6], [2026-02-28], persone.DL,[], [Raffinati casi d'uso relativi alla compilazione dei decision tree da #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decisionale") 
   a #use-case-label(nome-etichetta: "Inserisci giustificazione decision tree") ]),
-  ([0.11.7], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla generazione dei report #use-case-label(nome-etichetta: "Esporta report di conformità") ]),
-  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, inserimento dei modelli da #use-case-label(nome-etichetta: "Visualizza lista modelli") a #use-case-label(nome-etichetta: "Inserisci nuovo modello")]),
-  ([0.11.9], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla modifica anagrafica dei modelli #use-case-label(nome-etichetta: "Modifica anagrafica modello")]),
-  ([0.11.10], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla modifica strutturale dei modelli da #use-case-label(nome-etichetta: "Avvia modifica modello") a #use-case-label(nome-etichetta: "Scarta modifica modello")]),
-  ([0.11.11], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla eliminazione dei modelli #use-case-label(nome-etichetta: "Elimina modello")]),
-  ([0.11.12], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
-  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei nodi del decision tree in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio nodo modello decision tree")]),
-  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla aggiunta, modifica, eliminazione dei requisiti da #use-case-label(nome-etichetta: "Aggiungi requisito") a #use-case-label(nome-etichetta: "Errore nodo root")]),
-  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
-  ([0.11.8], [2026-02-22], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
+  ([0.11.7], [2026-03-01], persone.DL,[], [Raffinati casi d'uso relativi alla generazione dei report #use-case-label(nome-etichetta: "Esporta report di conformità") ]),
+  ([0.11.8], [2026-03-03], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione, inserimento dei modelli da #use-case-label(nome-etichetta: "Visualizza lista modelli") a #use-case-label(nome-etichetta: "Inserisci nuovo modello")]),
+  ([0.11.9], [2026-03-05], persone.DL,[], [Raffinati casi d'uso relativi alla modifica anagrafica dei modelli #use-case-label(nome-etichetta: "Modifica anagrafica modello")]),
+  ([0.11.10], [2026-03-05], persone.DL,[], [Raffinati casi d'uso relativi alla modifica strutturale dei modelli da #use-case-label(nome-etichetta: "Modifica modello") a #use-case-label(nome-etichetta: "Scarta modifica modello")]),
+  ([0.11.11], [2026-03-05], persone.DL,[], [Raffinati casi d'uso relativi alla eliminazione dei modelli #use-case-label(nome-etichetta: "Elimina modello")]),
+  ([0.11.12], [2026-03-07], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
+  ([0.11.8], [2026-03-08], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei nodi del decision tree in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio nodo modello decision tree")]),
+  ([0.11.8], [2026-03-08], persone.DL,[], [Raffinati casi d'uso relativi alla aggiunta, modifica, eliminazione dei requisiti da #use-case-label(nome-etichetta: "Aggiungi requisito") a #use-case-label(nome-etichetta: "Errore nodo root")]),
+  ([0.11.8], [2026-03-09], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
+  ([0.11.8], [2026-03-10], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
+  ([0.11.9], [2026-03-13], persone.DL,[], [Aggiunti diagrammi di attività, rivisti #use-case-label(nome-etichetta: "avvia valutazione dispositivo") #use-case-label(nome-etichetta: "Modifica modello"), aggiunto #use-case-label(nome-etichetta: "Valuta asset"),#use-case-label(nome-etichetta: "Salva modifica MAJOR"), #use-case-label(nome-etichetta: "Salva modifica MINOR")]),
   )
 
 #registroModifiche(modifiche)

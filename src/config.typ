@@ -3,6 +3,12 @@
 #let images_dir = src_dir + "/assets/Images"
 #let glossario = "/src/RTB/DocumentazioneInterna/dizionario.typ"
 
+
+
+#let is-test-mode=false
+
+
+
 #let front_page_file = template_dir + "/frontPage.typ"
 #let setup_layout_file = template_dir + "/setUpPageLayout.typ"
 
@@ -14,7 +20,6 @@
 #let question_mark_icon = images_dir + "/question_mark_icon.png"
 
 #let flagMarcaturaAutoamticaTerminiGlossario=false
-
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)

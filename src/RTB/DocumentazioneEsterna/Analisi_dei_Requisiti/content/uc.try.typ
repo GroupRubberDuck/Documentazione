@@ -36,3 +36,5 @@
 //   diagram-scale: 50%
 // )
 // geges
+
+#include "/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/index.typ"

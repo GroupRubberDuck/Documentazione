@@ -1,4 +1,5 @@
-#import "config/deps.typ"
+#import "config/deps.typ" as deps
+#import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ" as utils:uc-transformation-con-link
 // ============================================================================
 // ⚠️ ATTENZIONE: FILE GENERATO AUTOMATICAMENTE ⚠️
 // ============================================================================
@@ -15,4 +16,8 @@
 //
 // ============================================================================
 
+
 #let table-cells=()
+#let req-uc-dict=(:)
+
+

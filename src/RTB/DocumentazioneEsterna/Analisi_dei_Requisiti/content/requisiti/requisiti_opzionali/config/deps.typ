@@ -1,5 +1,9 @@
-#import "/src/config.typ":slugify
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map
+#import "/src/config.typ":slugify,is-test-mode
+#import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map,get-use-case-code
+#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
+#import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":format-array-as-table,format-array
+
+
 // #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisiti
 
 #let config=yaml("config.yml")
@@ -55,8 +59,23 @@
 }
 
 #let get-req-label(nome-etichetta)={
-  link(label(slugify(nome-etichetta)), get-req-code(nome-etichetta:nome-etichetta))
+  link(label(get-req-code(nome-etichetta: nome-etichetta)), get-req-code(nome-etichetta:nome-etichetta))
 }
+
+
+
+
+#let req-transf=req=>get-req-code(nome-etichetta: req)
+
+#let req-transf-link=if is-test-mode{
+  req-transf
+}else{
+get-req-label
+}
+
+
+
+
 
 #let header-color = rgb("#008080b0")
 
@@ -77,3 +96,24 @@
     ..contenuto
   )
 }
+
+// #let tabella-requisiti-track(diz) = {
+//   format-array-as-table(
+//     table-modifiers:(
+//       stroke: 0.5pt + black,
+//       inset: 8pt,
+//       align: left + horizon,
+//       fill: (col, row) => if row == 0 { header-color } else { none },
+//     ),
+//     columns: (1fr, 1fr),
+//     header: (
+//       strong("Requisito"),
+//       strong("Casi d'uso"),
+
+//     ),
+//     key-transf: req-transf,
+//     val-transf: format-array.with(transf: uc-transform-link),
+//     diz
+//   )
+// }
+

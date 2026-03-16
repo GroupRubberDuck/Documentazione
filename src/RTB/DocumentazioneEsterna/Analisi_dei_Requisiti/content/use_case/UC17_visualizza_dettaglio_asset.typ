@@ -63,5 +63,5 @@
         #diagram
     ],
 
-    figure-caption: use-case-label(nome-etichetta: use-case-nome),
+    figure-caption: none,
 )

@@ -21,7 +21,7 @@
   ]),
   generalizations: (),
   spacing: (2cm, 2cm), 
-  diagram-scale: 75%,
+  diagram-scale: 70%,
   actor-offset: 1,
   note-offset: (-1,0.5)
 )
@@ -37,7 +37,7 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:"utente",
+    attore-principale:"Utente",
     
     scenario-principale:[
         + L'utente inserisce il nome dell'asset #sym.arrow #use-case-label(nome-etichetta: "Inserisci nome asset")

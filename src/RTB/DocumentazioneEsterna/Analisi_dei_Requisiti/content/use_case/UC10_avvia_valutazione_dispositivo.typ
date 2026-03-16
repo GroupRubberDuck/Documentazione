@@ -35,8 +35,17 @@
     scenario-principale:[
         + L'utente seleziona la funzionalità di avvio della sessione di valutazione
         + Il sistema avvia la sessione di valutazione del dispositivo selezionato
+        + L'utente visualizza la dashboard di valutazione del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dashboard dispositivo")
+        + L'utente può aggiungere nuovi asset #sym.arrow #use-case-label(nome-etichetta: "Aggiunta asset")
+        + L'utente può selezionare un asset da visualizzare nel dettaglio
+        + Durante la visualizzazione in dettaglio di un asset #sym.arrow #use-case-label(nome-etichetta:  "Visualizza dettaglio asset")
+          + L'utente può eliminare l'asset #sym.arrow #use-case-label(nome-etichetta: "Elimina asset")
+          + L'utente può modificare l'asset #sym.arrow #use-case-label(nome-etichetta: "Modifica asset")
+          + L'utente può valutare l'asset #sym.arrow #use-case-label(nome-etichetta: "Valuta asset")
+        + L'utente può esportare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Esporta informazioni dispositivo")
+        + L'utente può salvare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Salva valutazione")
+        + L'utente può salvare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Scarta modifiche valutazione")
     ],
-    
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di valutazione del dispositivo attive
@@ -47,7 +56,7 @@
     ],
     
     post-condizioni:[
-        - Nel sistema è stata avviata la sessione di valutazione del dispositivo
+        - L'utente ha completato la valutazione del dispositivo
     ],
     
     trigger:[
@@ -62,7 +71,7 @@
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:diagram,
+    path-immagine-diagramma:"/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case/diagrammi-attivita/images/valuta-dispositivo.drawio.png",
     
     figure-caption:deps.use-case-link-extended-label(nome-etichetta: use-case-nome),
 )

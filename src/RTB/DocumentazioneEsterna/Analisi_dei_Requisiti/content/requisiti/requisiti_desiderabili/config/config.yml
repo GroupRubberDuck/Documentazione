@@ -12,7 +12,7 @@ settings:
 
       # Regole di numerazione e stile
       formatting:
-            padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
+            padding: 3 # Zeri iniziali: 2 -> "01", 3 -> "001"
             separator: "." # Separatore numeri: "1.1" vs "1-1"
             title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
             filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
@@ -25,3 +25,6 @@ settings:
 # La struttura gerarchica
 structure:
       -  prova
+      - prova2
+      - prova4
+      - prova6

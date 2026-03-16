@@ -67,7 +67,6 @@ structure:
             - Elimina dispositivo con back-up xml
             - Elimina dispositivo con back-up csv
 
-
     - Avvia valutazione dispositivo
     - Scarta modifiche valutazione:
     - Salva valutazione:
@@ -123,10 +122,10 @@ structure:
     #extends
     - Annulla modifica asset
     - Esporta informazioni dispositivo:
-        - Esporta in xml
         - Esporta in json
+        - Esporta in xml
         - Esporta in csv
-
+    - Valuta asset
 
     - Visualizza dettaglio requisito:
                 #include
@@ -165,6 +164,8 @@ structure:
         - Visualizza domanda nodo a dettaglio
         - Visualizza risposta nodo a dettaglio:
             - Mostra assenza di risposta a dettaglio
+
+
     - Valuta nodo di decisione:
         - Inserisci risposta nodo decision tree:
             - Seleziona Yes
@@ -201,16 +202,17 @@ structure:
                 - Errore nome nuovo modello non valido
         - Importa nuovo modello:
             - Errore modello esistente
-        - Importa modello file xml
         - Importa modello file json
+        - Importa modello file xml
     - Annulla inserimento modello
     - Modifica anagrafica modello:
         - Modifica nome modello:
             - Errore modifica nome modello
     # - Annulla modifica angarafica modello TODO
-    
-    - Avvia modifica modello
+    - Modifica modello
     - Salva modifica modello:
+        - Salva modifica MAJOR
+        - Salva modifica MINOR
         - Errore struttura non valida per il salvataggio
     - Scarta modifica modello
     - Elimina modello
@@ -292,5 +294,5 @@ structure:
     #extends
     - Esporta modello:
         # generalizzazioni uguali a importa
-        - Esporta modello in xml
         - Esporta modello in json
+        - Esporta modello in xml

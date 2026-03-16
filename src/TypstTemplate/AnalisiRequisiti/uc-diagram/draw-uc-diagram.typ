@@ -109,8 +109,8 @@
   // ==========================================
   // 3. RENDERING FINALE
   // ==========================================
-  align(center)[
-    #scale(diagram-scale)[
+  scale(diagram-scale,reflow: true)[
+    #align(center)[
       #diagram(
         spacing: spacing, 
         ..elements
