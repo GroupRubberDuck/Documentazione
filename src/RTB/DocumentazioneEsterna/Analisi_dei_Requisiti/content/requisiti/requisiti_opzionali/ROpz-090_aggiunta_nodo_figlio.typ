@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter aggiungere un nodo figlio a un nodo del decision tree durante una sessione di modifica del modello.
 
   ],
   fonti:(
-    
+    "Aggiungi nodo figlio",
   )
 )

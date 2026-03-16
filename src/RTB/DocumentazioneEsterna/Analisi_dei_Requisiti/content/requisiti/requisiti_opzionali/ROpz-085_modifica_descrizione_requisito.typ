@@ -8,9 +8,9 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter modificare la descrizione di un requisito esistente nel modello.
   ],
   fonti:(
-    
+    "Modifica descrizione requisito",
   )
 )

@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter visualizzare il grafo delle dipendenze del requisito quando si verifica una dipendenza circolare.
 
   ],
   fonti:(
-    
+    "Visualizza grafo dipendenze",
   )
 )

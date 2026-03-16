@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter aggiungere una dipendenza tra requisiti del modello durante una sessione di modifica.
 
   ],
   fonti:(
-    
+    "Aggiungi dipendenza",
   )
 )

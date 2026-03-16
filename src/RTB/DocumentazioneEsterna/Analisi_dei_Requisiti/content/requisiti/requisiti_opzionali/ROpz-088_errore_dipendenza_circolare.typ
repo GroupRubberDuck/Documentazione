@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando l'aggiunta di una dipendenza causa una dipendenza circolare.
 
   ],
   fonti:(
-    
+    "Errore dipendenza circolare",
   )
 )

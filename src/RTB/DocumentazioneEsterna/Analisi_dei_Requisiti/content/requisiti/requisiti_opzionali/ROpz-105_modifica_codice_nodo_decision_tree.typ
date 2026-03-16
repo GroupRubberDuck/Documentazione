@@ -8,11 +8,11 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter modificare il codice di un nodo di decisione esistente nel decision tree.
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:(
-    
+    "Modifica codice nodo decision tree",
     )
 )

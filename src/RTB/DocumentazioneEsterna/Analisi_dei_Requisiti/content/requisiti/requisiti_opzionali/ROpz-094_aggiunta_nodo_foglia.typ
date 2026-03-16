@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter aggiungere un nodo foglia al decision tree durante una sessione di modifica del modello.
 
   ],
   fonti:(
-    
+    "Aggiungi nodo foglia",
   )
 )

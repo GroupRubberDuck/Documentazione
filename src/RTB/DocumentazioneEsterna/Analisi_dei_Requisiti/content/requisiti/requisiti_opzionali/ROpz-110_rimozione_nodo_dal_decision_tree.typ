@@ -8,11 +8,11 @@
     ],
 
   descrizione:[
-
+  L'Utente deve poter rimuovere un nodo dal decision tree durante una sessione di modifica del modello.
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:(
-    
+    "Rimuovi nodo",
     )
 )

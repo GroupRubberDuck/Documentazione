@@ -24,4 +24,7 @@ settings:
 
 # La struttura gerarchica
 structure:
-      - prova
+- Eliminazione dispositivo con backup
+- Eliminazione dispositivo con backup JSON
+- Eliminazione dispositivo con backup XML
+- Eliminazione dispositivo con backup CSV

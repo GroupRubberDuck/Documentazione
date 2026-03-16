@@ -8,9 +8,10 @@
     ],
 
   descrizione:[
+  L'Utente deve poter inserire il codice del nodo durante l'aggiunta di un nodo di decisione al decision tree.
 
   ],
   fonti:(
-    
+    "Inserisci codice nodo decision tree",
   )
 )
