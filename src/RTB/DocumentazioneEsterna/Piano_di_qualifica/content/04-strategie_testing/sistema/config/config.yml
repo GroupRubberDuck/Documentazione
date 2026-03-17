@@ -1,0 +1,27 @@
+settings:
+      # Percorso dove creare i file (relativo allo script)
+      output_dir: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/sistema"
+
+      # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+      index_file: "_index.typ"
+
+      # Il prefisso non può contenere il carattere di title separator
+      prefix: "TS"
+      # Estensione dei file generati
+      extension: ".typ"
+
+      # Regole di numerazione e stile
+      formatting:
+            padding: 3 # Zeri iniziali: 2 -> "01", 3 -> "001"
+            separator: "." # Separatore numeri: "1.1" vs "1-1"
+            title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
+            filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+
+      # (Opzionale) File template da copiare per i nuovi file
+      template_path: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/sistema/config/template.typ"
+      index_header_template: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/sistema/config/header.typ"
+      index_row_template: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/sistema/config/row.typ"
+      index_footer_template: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/sistema/config/footer.typ"
+# La struttura gerarchica
+structure:
+      - prova 
