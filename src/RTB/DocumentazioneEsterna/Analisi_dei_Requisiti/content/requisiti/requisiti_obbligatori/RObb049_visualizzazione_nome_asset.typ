@@ -9,7 +9,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare il nome dell'asset sia nella lista che nel dettaglio.
+  L'Utente deve poter visualizzare il nome dell'asset sia nella lista che nel vista in dettaglio dell'asset.
   ],
   fonti:(
     "Visualizza nome asset lista asset",

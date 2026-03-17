@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il codice inserito per il requisito ha una lunghezza non valida.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il codice inserito per il requisito ha una lunghezza non compresa tra 4 e 10 caratteri.
   ],
   fonti:(
     "Errore codice requisito lunghezza non valida",

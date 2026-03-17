@@ -8,10 +8,12 @@
     ],
 
   descrizione:[
+  L'Utente deve poter visualizzare le informazioni generali dei dispositivi dalla lista di tutti i dispositivi registrati.
 
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:(
+    "Visualizza elemento lista dispositivi",
   )
 )

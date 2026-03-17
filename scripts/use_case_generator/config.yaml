@@ -265,8 +265,8 @@ structure:
             - Visualizza grafo dipendenze
     - Rimuovi dipendenza
     - Aggiungi nodo figlio:
-        - Aggiungi nodo figlio sinistro
-        - Aggiungi nodo figlio destro
+        - Aggiungi nodo figlio YES
+        - Aggiungi nodo figlio NO
     - Aggiungi nodo:
         - Aggiungi nodo foglia:
             - Aggiungi nodo PASS

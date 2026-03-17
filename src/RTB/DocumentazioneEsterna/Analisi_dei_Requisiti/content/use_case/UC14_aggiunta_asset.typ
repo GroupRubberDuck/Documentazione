@@ -20,8 +20,8 @@
     L'utente seleziona l'annullamento dell'operazione di aggiunta
   ]),
   generalizations: (),
-  spacing: (2cm, 2cm), 
-  diagram-scale: 70%,
+  spacing: (3.5cm, 2cm), 
+  diagram-scale: 60%,
   actor-offset: 1,
   note-offset: (-1,0.5)
 )
@@ -74,9 +74,7 @@
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:[
-        #diagram
-    ],
+    path-immagine-diagramma:diagram,
     
     figure-caption:deps.use-case-link-extended-label(nome-etichetta: use-case-nome,br:false),
 )

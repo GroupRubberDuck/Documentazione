@@ -95,6 +95,9 @@
   ([0.11.8], [2026-03-09], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
   ([0.11.8], [2026-03-10], persone.DL,[], [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
   ([0.11.9], [2026-03-13], persone.DL,[], [Aggiunti diagrammi di attività, rivisti #use-case-label(nome-etichetta: "avvia valutazione dispositivo") #use-case-label(nome-etichetta: "Modifica modello"), aggiunto #use-case-label(nome-etichetta: "Valuta asset"),#use-case-label(nome-etichetta: "Salva modifica MAJOR"), #use-case-label(nome-etichetta: "Salva modifica MINOR")]),
+  ([0.11.10], [2026-03-13], persone.FELIX,[], [Raffinati i requisiti obbligatori @funzionali-obbligatori]),
+  ([0.11.11], [2026-03-14], persone.FELIX,[], [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
+  ([0.11.12], [2026-03-15], persone.FELIX,[], [Raffinati i requisiti opzionali @funzionali-opzionali]),
   )
 
 #registroModifiche(modifiche)
@@ -106,7 +109,16 @@
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
-  #outline(title: "Indice")
+  #outline(
+    title: "Indice",
+    indent: livello => {
+    if livello <= 3 {
+      return livello * 1em // Indentazione normale per i primi 3
+    } else {
+      return 3em // Dal livello 4 in poi, restano tutti allineati sotto il 3!
+    }
+  }
+    )
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Elenco delle Figure", documentType: doc)[
@@ -279,6 +291,6 @@ EN 18031. L'utente interagisce direttamente con il sistema attraverso l'interfac
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Requisiti", documentType: doc)[
-  #include "content/Requisiti.typ"
+  #include "content/requisiti/index.typ"
 
 ]

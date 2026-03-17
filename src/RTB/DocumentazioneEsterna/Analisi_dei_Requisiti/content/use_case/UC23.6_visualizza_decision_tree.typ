@@ -7,9 +7,6 @@
 
 #let diagram-type=deps.draw-uc-diagram
 
-Mostra altro
-12:42
-typst
 #let diagram=diagram-type(
     target-uc: use-case-nome,
     actors: ("Utente",),

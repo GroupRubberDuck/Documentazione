@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter aggiungere un nodo di decisione al decision tree durante una sessione di modifica del modello.
+  L'Utente deve poter aggiungere un nodo di decisione allo scheletro del decision tree durante una sessione di modifica del modello.
 
   ],
   fonti:(

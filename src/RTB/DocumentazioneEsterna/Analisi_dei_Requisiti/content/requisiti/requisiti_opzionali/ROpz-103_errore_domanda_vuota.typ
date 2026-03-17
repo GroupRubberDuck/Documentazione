@@ -13,6 +13,6 @@
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:(
-    
+    "Errore domanda vuota",
     )
 )

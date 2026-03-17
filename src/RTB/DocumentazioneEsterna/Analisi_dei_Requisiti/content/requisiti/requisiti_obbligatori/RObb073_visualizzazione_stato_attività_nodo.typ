@@ -9,7 +9,16 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare lo stato di attività di ogni nodo del decision tree (attivo, non attivo).
+  L'Utente deve poter visualizzare lo stato di attività di ogni nodo del decision tree.
+  #list(
+    [
+      Attivo: \ Il nodo fa parte del cammino principale del decision tree
+    ],
+    [
+      Non attivo: \ Il nodo non fa parte del cammino principale del decision tree
+    ],
+  )
+
   ],
   fonti:(
     "Visualizza stato attività",

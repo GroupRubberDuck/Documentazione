@@ -7,7 +7,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo se inserisce un nome non valido per il dispositivo.
+    L'utente deve poter visualizzare un messagio di errore se in fase di creazione di un dispositivo inserisce un nome di lunghezza non compresa tra 1 e 64 caratteri.
   ],
   fonti:("Errore nome dispositivo non valido",)
 )

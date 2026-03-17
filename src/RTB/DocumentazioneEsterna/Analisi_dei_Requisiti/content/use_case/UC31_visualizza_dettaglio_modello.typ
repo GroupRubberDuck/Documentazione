@@ -46,15 +46,15 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando la lista dei dispositivi
+        - L'utente sta visualizzando la lista dei modelli
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato le informazioni di uno specifico dispositivo
+        - L'utente ha visualizzato le informazioni di uno specifico modello
     ],
     
     trigger:[
-        L'utente vuole visualizzare le informazioni di uno specifico dispositivo
+        L'utente vuole visualizzare le informazioni di uno specifico modello
     ],
     
     scenari-alternativi:none,

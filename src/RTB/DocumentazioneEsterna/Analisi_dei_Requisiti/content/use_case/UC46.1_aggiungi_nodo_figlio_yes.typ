@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Aggiungi nodo figlio destro"
+#let use-case-nome="Aggiungi nodo figlio YES"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -30,30 +30,29 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-
+    
     attore-principale:"Utente",
     
     scenario-principale:[
         + L'utente aggiunge un nodo
-        + Il sistema crea la relazione parent-right_child tra nodo selezionato e nodo aggiunto
+        + Il sistema crea la relazione bivio logico YES tra nodo selezionato e nodo aggiunto
     ],
     
     pre-condizioni:[
-        - L'utente ha selezionato un nodo per la modifica
-        - Il nodo selezionato non ha un figlio destro
+        - L'utente sta visualizzando il dettaglio di un nodo
+        - Il nodo selezionato non ha un figlio associato alla risposta YES
         - Nel sistema è attiva una sessione di modifica della struttura del modello
 
     ],
     
     
     post-condizioni:[
-        - Il nodo selezionato ha un figlio destro
+        - Il nodo selezionato ha un figlio associato alla risposta YES
     ],
     
     trigger:[
-        L'utente vuole aggiungere un nodo figlio destro
+        L'utente vuole aggiungere un nodo figlio associato alla risposta YES
     ],
-    
     
     scenari-alternativi:none,
     

@@ -18,9 +18,9 @@
     "Errore modifica codice nodo già esistente":[L'utente inserisce un codice già associato ad un altro nodo del DT],
     ),
   generalizations: (),
-  spacing: (1.5cm, 2cm), 
-  diagram-scale: 70%,
-  note-offset: (-1.5,0.5),
+  spacing: (0.5cm, 2cm), 
+  diagram-scale: 60%,
+  note-offset: (1.5,0.5),
   actor-offset: 1
 )
 

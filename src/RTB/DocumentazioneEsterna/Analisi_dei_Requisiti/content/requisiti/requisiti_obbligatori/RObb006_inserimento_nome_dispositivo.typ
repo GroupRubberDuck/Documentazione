@@ -8,6 +8,8 @@
 
   descrizione:[
   L'Utente deve poter inserire il nome del dispositivo durante la creazione manuale.
+
+  La lunghezza del nome deve essere compresa tra 1 e 64 caratteri.
   ],
   fonti:(
     "Inserimento nome dispositivo",

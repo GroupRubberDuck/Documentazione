@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato la domanda asssociata al nodo di decisione
+        - L'utente ha visualizzato la domanda associata al nodo di decisione
     ],
     
     trigger:none,

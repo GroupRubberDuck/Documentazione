@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter inserire un nuovo dispositivo importando i dati da un file esterno.
+  L'Utente deve poter inserire un nuovo dispositivo importando i dati tramite l'importazione di un file esterno.
   ],
   fonti:(
     "Importa dispositivo",

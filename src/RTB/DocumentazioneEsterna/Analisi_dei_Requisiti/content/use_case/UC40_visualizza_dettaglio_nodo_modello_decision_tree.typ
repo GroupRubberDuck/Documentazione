@@ -41,7 +41,7 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando il decision tree
+        - L'utente sta visualizzando il modello del decision tree
     ],
     
     post-condizioni:[

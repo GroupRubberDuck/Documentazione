@@ -1,7 +1,7 @@
 #import "/src/config.typ":slugify,is-test-mode
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map,get-use-case-code
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
-#import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":format-array-as-table,format-array
+#import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":format-dict-as-table,format-array
 
 
 // #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisiti
@@ -98,7 +98,7 @@ get-req-label
 }
 
 // #let tabella-requisiti-track(diz) = {
-//   format-array-as-table(
+//   format-dict-as-table(
 //     table-modifiers:(
 //       stroke: 0.5pt + black,
 //       inset: 8pt,

@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per il dispositivo non è valido.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per il dispositivo non ha una lunghezza compresa tra 1 e 64 caratteri.
   ],
   fonti:(
     "Errore modifica nome dispositivo non valido",

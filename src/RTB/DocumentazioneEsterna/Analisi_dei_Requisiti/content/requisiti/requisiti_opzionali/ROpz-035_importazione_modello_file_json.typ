@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter importare un modello da un file in formato JSON.
+  L'Utente deve poter importare un modello tramite un file in formato JSON.
   ],
   fonti:(
     "Importa modello file JSON",

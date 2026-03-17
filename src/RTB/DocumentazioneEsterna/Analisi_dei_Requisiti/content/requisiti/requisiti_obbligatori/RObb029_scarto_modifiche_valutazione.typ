@@ -9,7 +9,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter scartare tutte le modifiche apportate durante la sessione di valutazione e chiudere la sessione senza salvare.
+  L'Utente deve poter scartare tutte le modifiche apportate dall'ultimo salvataggio effettuato e chiudere la sessione senza salvare.
   ],
   fonti:(
     "Scarta modifiche valutazione",

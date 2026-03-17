@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare la struttura del decision tree associato a un requisito del modello.
+  L'Utente deve poter visualizzare lo scheletro del decision tree associato a un requisito del modello.
   ],
   fonti:(
     "Visualizza decision tree requisito modello",

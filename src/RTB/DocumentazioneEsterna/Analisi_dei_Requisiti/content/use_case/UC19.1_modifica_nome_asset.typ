@@ -48,7 +48,7 @@
     trigger:none,
     
     scenari-alternativi:[
-        - L'utente inserisce un nome non valido non valido
+        - L'utente inserisce un nome non valido
     ],
     
     inclusioni:none,

@@ -9,6 +9,7 @@
 
   descrizione:[
   L'Utente deve poter inserire il nome del modello durante la creazione di un nuovo modello.
+  Il nome del modello deve essere compreso tra 1 e 32 caratteri
   ],
   fonti:(
     "Inserisci nome modello",

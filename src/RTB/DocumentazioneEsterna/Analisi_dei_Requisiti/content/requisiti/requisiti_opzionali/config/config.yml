@@ -72,7 +72,9 @@ structure:
 - Modifica nome modello
 - Errore modifica nome modello
 - Avvio modifica struttura modello
-- Salvataggio modifiche modello
+- Salvataggio modifiche modello:
+      - Salvataggio modifica MAJOR
+      - Salvataggio modifica MINOR
 - Errore struttura modello non valida
 - Scarto modifiche modello
 - Eliminazione modello
@@ -123,8 +125,8 @@ structure:
 - Rimozione dipendenza tra requisiti
 
 - Aggiunta nodo figlio
-- Aggiunta nodo figlio sinistro
-- Aggiunta nodo figlio destro
+- Aggiunta nodo figlio YES
+- Aggiunta nodo figlio NO
 - Aggiunta nodo
 - Aggiunta nodo foglia
 - Aggiunta nodo foglia PASS

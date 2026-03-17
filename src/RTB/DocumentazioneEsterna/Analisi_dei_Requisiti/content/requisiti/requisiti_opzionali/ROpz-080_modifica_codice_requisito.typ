@@ -9,6 +9,7 @@
 
   descrizione:[
   L'Utente deve poter modificare il codice di un requisito esistente nel modello.
+  Il nuovo nome del requisito deve avere una lunghezza compresa tra 4 e 10 caratteri e non deve già appartenere a un'altro requisito
   ],
   fonti:(
     "Modifica codice requisito",

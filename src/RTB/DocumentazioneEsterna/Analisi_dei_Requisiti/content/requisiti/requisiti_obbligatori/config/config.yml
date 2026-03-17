@@ -31,15 +31,18 @@ structure:
 - Inserimento nuovo dispositivo
 - Creazione manuale dispositivo
 - Inserimento nome dispositivo
+- Errore nome dispositivo non valido
 - Inserimento sistema operativo dispositivo
 - Inserimento descrizione dispositivo
-- Errore nome dispositivo non valido
 - Annullamento inserimento dispositivo
 - Importazione dispositivo da file
+- Selezione file da importare
 - Selezione file sorgente JSON
 - Selezione file sorgente XML
 - Selezione file sorgente CSV
-- Errore file dispositivo non valido
+- Errore file dispositivo non valido estensione
+- Errore file dispositivo non valido struttura
+- Errore file dispositivo non valido metadati
 - Visualizzazione dati dispositivo
 - Visualizzazione nome dispositivo
 - Visualizzazione sistema operativo dispositivo
@@ -70,11 +73,13 @@ structure:
 - Inserimento descrizione asset
 - Errore nome asset non valido
 - Annullamento aggiunta asset
-- Visualizzazione lista asset
+- Visualizzazione lista asset:
+      - visualizzazione elemento lista asset
 - Visualizzazione nome asset
 - Visualizzazione tipo asset
 - Visualizzazione stato aggregato asset
-- Visualizzazione dettaglio asset
+- Visualizzazione dettaglio asset:
+      - Valuta asset
 - Visualizzazione descrizione asset
 - Eliminazione asset
 
@@ -113,7 +118,8 @@ structure:
 - Visualizzazione domanda nodo a dettaglio
 - Visualizzazione risposta nodo a dettaglio
 - Assenza risposta a dettaglio
-- Valutazione nodo di decisione
+- Valutazione nodo di decisione:
+      - Seleziona risposta nodo
 - Selezione risposta Yes
 - Selezione risposta No
 - Navigazione nodo successivo

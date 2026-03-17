@@ -400,9 +400,9 @@
 
 #include "UC46_aggiungi_nodo_figlio.typ"
 
-#include "UC46.1_aggiungi_nodo_figlio_sinistro.typ"
+#include "UC46.1_aggiungi_nodo_figlio_yes.typ"
 
-#include "UC46.2_aggiungi_nodo_figlio_destro.typ"
+#include "UC46.2_aggiungi_nodo_figlio_no.typ"
 
 #include "UC47_aggiungi_nodo.typ"
 

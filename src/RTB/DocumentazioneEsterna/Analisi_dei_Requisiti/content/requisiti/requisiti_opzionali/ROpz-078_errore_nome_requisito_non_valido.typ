@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nome inserito per il requisito non è valido.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nome inserito per il requisito non ha una lunghezza compresa tra 1 e 64 caratteri.
   ],
   fonti:(
     "Errore nome requisito non valido",

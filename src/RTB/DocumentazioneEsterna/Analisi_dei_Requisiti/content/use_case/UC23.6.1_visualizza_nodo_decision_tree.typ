@@ -35,7 +35,7 @@
     attore-principale: [Utente],
     
     scenario-principale: [
-        + L'utente lo stato di attività del nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato attività")
+        + L'utente visualizza lo stato di attività del nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato attività")
         + L'utente visualizza le informazioni legate al nodo
     ],
     

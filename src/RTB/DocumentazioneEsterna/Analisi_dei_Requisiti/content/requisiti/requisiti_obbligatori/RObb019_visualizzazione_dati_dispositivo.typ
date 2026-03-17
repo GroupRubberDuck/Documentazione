@@ -9,10 +9,11 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare le informazioni generali di un dispositivo selezionandolo dalla lista.
+  L'Utente deve poter visualizzare i dati del dispositivo nella vista dati e nella dashboard.
   ],
   fonti:(
     "Visualizza dati dispositivo",
+    "Visualizza dati dispositivo su dashboard",
   )
 
 )

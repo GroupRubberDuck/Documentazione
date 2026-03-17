@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare lo stato FAIL per la valutazione del requisito quando applicabile.
+  L'Utente deve poter visualizzare lo stato FAIL per la valutazione del requisito quando questa è completa e il risultato è FAIL.
   ],
   fonti:(
     "Visualizza stato fail requisito",

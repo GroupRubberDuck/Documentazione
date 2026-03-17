@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore se inserisce un nome non valido per l'asset.
+  L'Utente deve poter visualizzare un messaggio di errore se inserisce un nome per l'asset di lunghezza non compresa tra 1 e 32 caratteri .
   ],
   fonti:("Errore nome asset non valido",)
 )

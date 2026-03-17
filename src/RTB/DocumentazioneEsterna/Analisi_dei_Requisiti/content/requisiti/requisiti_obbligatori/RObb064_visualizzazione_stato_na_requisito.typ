@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare lo stato NOT APPLICABLE per la valutazione del requisito quando applicabile.
+  L'Utente deve poter visualizzare lo stato NA per la valutazione del requisito quando questa è completa e il risultato è NA.
   ],
   fonti:(
     "Visualizza stato na requisito",

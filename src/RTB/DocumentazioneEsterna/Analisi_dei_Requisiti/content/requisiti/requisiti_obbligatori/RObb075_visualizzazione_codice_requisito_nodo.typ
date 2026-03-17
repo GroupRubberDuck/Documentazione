@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare il codice del requisito a cui è associato il decision tree nel nodo di decisione.
+  L'Utente deve poter visualizzare il codice del requisito a cui è associato il decision tree di cui fa parte il nodo di decisione.
   ],
   fonti:(
     "Visualizza codice requisito dt",

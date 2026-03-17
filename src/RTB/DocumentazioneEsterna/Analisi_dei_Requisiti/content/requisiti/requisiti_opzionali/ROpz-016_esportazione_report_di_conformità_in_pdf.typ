@@ -8,6 +8,7 @@
     ],
 
   descrizione:[
+  L'Utente deve poter esportare un report in formato pdf rappresentativo della valutazione del dispositivo.
 
   ],
   fonti:(

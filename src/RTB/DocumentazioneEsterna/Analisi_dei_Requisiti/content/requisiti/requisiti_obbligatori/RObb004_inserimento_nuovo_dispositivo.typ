@@ -10,7 +10,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter avviare la procedura di inserimento di un nuovo dispositivo nel sistema.
+  L'Utente deve poter inserire e registrare nuovi dispositivi nel sistema.
   ],
   fonti:(
     "Inserimento nuovo dispositivo",

@@ -11,7 +11,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo se il salvataggio della valutazione non va a buon fine, mantenendo attiva la sessione.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo se il salvataggio della valutazione non va a buon fine a causa di un errore imprevisto, mantenendo attiva la sessione.
   ],
   fonti:(
 

@@ -8,8 +8,8 @@
     ],
 
   descrizione:[
-  L'Utente deve poter inserire il codice del nodo durante l'aggiunta di un nodo di decisione al decision tree.
-
+  L'Utente deve poter inserire il codice del nodo durante l'aggiunta di un nodo di decisione allo scheletro del decision tree.
+  Il codice deve essere univoco e di lunghezza compresa tra 4 e 10 caratteri.
   ],
   fonti:(
     "Inserisci codice nodo decision tree",

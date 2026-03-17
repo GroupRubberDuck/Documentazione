@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter inserire il nome del requisito durante la creazione di un nuovo requisito.
+  L'Utente deve poter inserire un nome di lunghezza compresa tra 1 e 64 caratteri da associare al requisito durante la creazione di un nuovo requisito.
   ],
   fonti:(
     "Inserisci nome requisito",

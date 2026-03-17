@@ -8,9 +8,9 @@
     ],
 
   descrizione:[
-  L'Utente deve poter annullare le modifiche apportate ai dati del dispositivo durante la fase di modifica.
+  L'Utente deve poter modificare il nome associato al dispositivo con un nuovo nome di lunghezza compresa tra 1 e 64 caratteri
   ],
   fonti:(
-    "Annulla modifiche dispositivo",
+    "Modifica nome dispositivo",
     )
 )

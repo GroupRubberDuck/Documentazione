@@ -83,7 +83,7 @@
 
 /// Prende un dizionario e lo stampa in una tabella a due colonne.
 /// Applica in automatico il flatten() necessario per la funzione table().
-#let format-array-as-table(
+#let format-dict-as-table(
   diz, 
   header:(),
   key-transf: k => k, 

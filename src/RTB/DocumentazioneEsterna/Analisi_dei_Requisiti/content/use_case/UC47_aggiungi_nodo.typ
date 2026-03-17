@@ -45,7 +45,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo
+        - L'utente ha aggiunto un nodo allo scheletro del decision tree associato al modello
     ],
     
     trigger:none,

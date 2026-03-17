@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter importare un nuovo modello da file.
+  L'Utente deve poter importare un nuovo modello tramite file.
   ],
   fonti:(
     "Importa nuovo modello",

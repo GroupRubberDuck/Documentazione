@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare lo stato PASS per la valutazione del requisito quando applicabile.
+  L'Utente deve poter visualizzare lo stato PASS per la valutazione del requisito quando questa è completa e il risultato è PASS.
   ],
   fonti:(
     "Visualizza stato pass requisito",

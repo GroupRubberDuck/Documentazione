@@ -5,7 +5,7 @@
 #let use-case-nome="Elimina dispositivo con back up"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
-#let diagram-type=deps.draw-uc-diagram
+#let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
 
@@ -72,7 +72,7 @@
         - #use-case-label(nome-etichetta: "Elimina dispositivo con back up JSON")
     ],
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:diagram,
     
     figure-caption:none,
 )

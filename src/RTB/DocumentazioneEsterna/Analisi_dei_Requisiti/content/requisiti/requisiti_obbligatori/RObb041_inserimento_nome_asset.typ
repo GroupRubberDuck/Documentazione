@@ -10,6 +10,7 @@
 
   descrizione:[
   L'Utente deve poter inserire il nome dell'asset durante l'aggiunta.
+  Il nome dell'asset deve essere compreso tra 1 e 32 caratteri.
   ],
   fonti:(
 

@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter inserire il codice del requisito durante la creazione di un nuovo requisito.
+  L'Utente deve poter inserire un codice univoco e di lunghezza compresa tra 4 e 10 cartteri dqa associare al requisito durante la creazione di un nuovo requisito.
   ],
   fonti:(
     "Inserisci codice requisito",

@@ -14,8 +14,8 @@
   includes: ("Aggiungi nodo",),
   extends: (:),
   generalizations: (
-    "Aggiungi nodo figlio sinistro",
-"Aggiungi nodo figlio destro",
+    "Aggiungi nodo figlio YES",
+"Aggiungi nodo figlio NO",
   ),
   spacing: (0.5cm, 2cm), 
   diagram-scale: 80%,
@@ -37,7 +37,7 @@
     
     scenario-principale:[
         + L'utente aggiunge un nodo #sym.arrow #use-case-label(nome-etichetta: "Aggiungi nodo figlio")
-        + Il sistema crea la relazione parent-child tra i nodi 
+        + Il sistema crea la relazione di bivio logico tra i nodi 
     ],
     
     pre-condizioni:[
@@ -47,11 +47,11 @@
     ],
     
     post-condizioni:[
-        - Il sistema aggiunge in nodo alla struttura del decision tree
+        - Il sistema aggiunge un nodo allo scheletro del decision tree
     ],
     
     trigger:[
-        L'utente vuole aggiungere un nodo figlio a un nodo del decision tree
+        L'utente vuole aggiungere un nodo figlio a un nodo nello scheletro del decision tree
     ],
     
     scenari-alternativi:none,
@@ -63,8 +63,8 @@
     estensioni:none,
     
     generalizzazioni:[
-        - #use-case-label(nome-etichetta: "Aggiungi nodo figlio sinistro")
-        - #use-case-label(nome-etichetta: "Aggiungi nodo figlio destro")
+        - #use-case-label(nome-etichetta: "Aggiungi nodo figlio YES")
+        - #use-case-label(nome-etichetta: "Aggiungi nodo figlio NO")
     ],
     
     path-immagine-diagramma:diagram,
