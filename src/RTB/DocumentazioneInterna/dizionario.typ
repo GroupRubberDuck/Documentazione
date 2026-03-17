@@ -316,7 +316,20 @@
 
 "Versionamento dello standard": [
   Gestione delle versioni successive di un modello normativo nel tempo, che consente di tracciare le modifiche apportate allo standard e mantenere la compatibilità con le valutazioni precedenti.
+],
+
+"Modello di standard di default":[
+  Indica il modello che l'applicazione deve associare a un dispositivo quando il dispositivo viene creato internamente
+],
+
+"Scheletro di decision tree":[
+  Questo termine è usato per rendere più facile distinguere tra i decision tree nel contesto di editing rispetto al contesto di valutazione 
+],
+
+"Bivio decisionale":[
+  Indica il rapporto tra un nodo di un decisione tree e i suoi figli
 ]
+
 
 )
 
