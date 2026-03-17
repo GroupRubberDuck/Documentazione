@@ -273,7 +273,7 @@ item_13.fonti=utils.format-array(item_13.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-015_esportazione_report_di_conformità.typ": data as item_14, req-name as req-14
+#import "ROpz-015_esportazione_report_di_conformitã .typ": data as item_14, req-name as req-14
 
 #req-uc-dict.insert(
   req-14
@@ -291,7 +291,7 @@ item_14.fonti=utils.format-array(item_14.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-016_esportazione_report_di_conformità_in_pdf.typ": data as item_15, req-name as req-15
+#import "ROpz-016_esportazione_report_di_conformitã _in_pdf.typ": data as item_15, req-name as req-15
 
 #req-uc-dict.insert(
   req-15
@@ -1821,7 +1821,7 @@ item_99.fonti=utils.format-array(item_99.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-101_errore_codice_nodo_già_esistente.typ": data as item_100, req-name as req-100
+#import "ROpz-101_errore_codice_nodo_giã _esistente.typ": data as item_100, req-name as req-100
 
 #req-uc-dict.insert(
   req-100
@@ -1929,7 +1929,7 @@ item_105.fonti=utils.format-array(item_105.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-107_errore_modifica_codice_nodo_già_esistente.typ": data as item_106, req-name as req-106
+#import "ROpz-107_errore_modifica_codice_nodo_giã _esistente.typ": data as item_106, req-name as req-106
 
 #req-uc-dict.insert(
   req-106

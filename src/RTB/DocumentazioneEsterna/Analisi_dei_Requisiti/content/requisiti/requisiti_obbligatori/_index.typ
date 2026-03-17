@@ -1263,7 +1263,7 @@ item_68.fonti=utils.format-array(item_68.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb070_visualizzazione_stato_attività_nodo.typ": data as item_69, req-name as req-69
+#import "RObb070_visualizzazione_stato_attivitã _nodo.typ": data as item_69, req-name as req-69
 
 #req-uc-dict.insert(
   req-69

@@ -1,6 +1,6 @@
 settings:
       # Percorso dove creare i file (relativo allo script)
-      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili"
+      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita"
 
       # Nome del file aggregatore (se lasciato vuoto, non lo crea)
       index_file: "_index.typ"
@@ -24,4 +24,8 @@ settings:
 
 # La struttura gerarchica
 structure:
-      - prova
+- Metriche di qualità
+- Norme di progetto
+- Manuale utente
+- Documentazione su repository GitHub
+- Codice sorgente su repository GitHub
