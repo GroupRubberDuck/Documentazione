@@ -159,6 +159,7 @@
   = Cruscotto di valutazione <valutazione>
   #include "content/05-cruscotto_valutazione/index.typ"
 
+
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
   = Cruscotto di valutazione <miglioramento>

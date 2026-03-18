@@ -6,7 +6,7 @@ Questo processo definisce, realizza e mantiene l’insieme delle infrastrutture 
 === Scopo del processo
 Esso ha lo scopo di garantire un ambiente di lavoro affidabile, coerente e condiviso, che consenta lo svolgimento efficace delle attività di pianificazione, sviluppo, verifica e gestione.
 L’adozione e la manutenzione controllata degli strumenti assicurano disponibilità, aggiornamento continuo e conformità agli standard di progetto, riducendo il rischio di inefficienze operative e problemi organizzativi.
-=== Attività del processo
+=== Attività del processo <attività-infrastruttura>
 Questa sezione descrive le macro-attività del processo di infrastruttura, indipendentemente dagli strumenti specifici.
 
 Il processo di infrastruttura comprende le seguenti attività principali:
