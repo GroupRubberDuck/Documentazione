@@ -31,4 +31,6 @@
   y-max: 26,
 )
 
-Il TimeEAC si mantiene generalmente allineato al pianificato, con scostamenti contenuti riconducibili a rallentamenti puntuali come la sessione esami, seguiti da parziali recuperi negli sprint successivi. Il dato va tuttavia letto con cautela: il completamento delle task nei tempi previsti non riflette necessariamente la qualità del lavoro svolto. Task chiuse parzialmente hanno generato attività correttive negli sprint successivi, contribuendo a un ritardo reale non completamente catturato dalla metrica, come evidenziato dall'andamento del consuntivo superiore al preventivo.
+Il TimeEAC si mantiene generalmente allineato al pianificato, con scostamenti contenuti riconducibili a rallentamenti puntuali come la sessione esami, seguiti da parziali recuperi negli sprint successivi. Il dato va tuttavia letto con cautela: il completamento delle task nei tempi previsti non riflette necessariamente la qualità del lavoro svolto. Task chiuse parzialmente hanno generato attività correttive negli sprint successivi (vedi @issue-per-sprint), contribuendo a un ritardo reale non completamente catturato dalla metrica, come evidenziato anche dall'andamento del consuntivo superiore al preventivo documentato nel
+#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+#pagebreak()
