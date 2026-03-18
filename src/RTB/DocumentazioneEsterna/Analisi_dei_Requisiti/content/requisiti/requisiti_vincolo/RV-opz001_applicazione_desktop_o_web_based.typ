@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-    Il sistema deve essere sviluppato come applicazione desktop o web-based, senza vincoli specifici sulla suddivisione backend/frontend.
+    Il sistema deve essere sviluppato come applicazione desktop o web-based, non vengono posti vincoli sulla suddivisione backend/frontend.
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva

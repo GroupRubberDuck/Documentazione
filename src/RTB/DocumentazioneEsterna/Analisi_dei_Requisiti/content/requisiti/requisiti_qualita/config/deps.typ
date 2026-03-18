@@ -1,6 +1,5 @@
 #import "/src/config.typ":slugify,is-test-mode
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map,get-use-case-code
-#import "/src/TypstTemplate/AnalisiRequisiti/use-case-template.typ":use-case-label
 #import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":format-dict-as-table,format-array
 
 
