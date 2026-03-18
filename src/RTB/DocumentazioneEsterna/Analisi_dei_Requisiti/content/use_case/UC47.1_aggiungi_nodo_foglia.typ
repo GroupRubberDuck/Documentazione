@@ -46,7 +46,7 @@ parent-uc: "Aggiungi nodo",
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo foglia
+        - Il sistema ha aggiunto un nodo foglia
     ],
     
     trigger:none,

@@ -39,12 +39,12 @@
     pre-condizioni:[
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
-        - L'utente sta modificando dispositivo #sym.arrow #use-case-label(nome-etichetta: "Modifica dispositivo")
+        - L'utente sta modificando il dispositivo #sym.arrow #use-case-label(nome-etichetta: "Modifica dispositivo")
     ],
     
     
     post-condizioni:[
-        - L'utente ha modificato correttamente il nome del dispositivo inserito correttamente
+        - Il sistema ha registrato correttamente la modifica del dispositivo
     ],
     
     trigger:none,

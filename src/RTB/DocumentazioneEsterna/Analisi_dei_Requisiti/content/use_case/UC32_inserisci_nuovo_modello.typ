@@ -49,7 +49,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha inserito un nuovo modello
+        - Il sistema ha inserito un nuovo modello
     ],
     
     trigger:none,

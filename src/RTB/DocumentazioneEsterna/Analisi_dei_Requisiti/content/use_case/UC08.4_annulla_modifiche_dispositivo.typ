@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - La modifica delle informazioni del dispositivo è stato annullata
+        - Il sistema ha annullato la modifica delle informazioni del dispositivo
 
     ],
     trigger:none,

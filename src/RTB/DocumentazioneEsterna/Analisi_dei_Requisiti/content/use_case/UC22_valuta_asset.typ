@@ -50,7 +50,7 @@
     ],
     
     post-condizioni:[
-      - L'utente ha valutato l'asset
+      - Il sistema ha registrato la valutazione dell'asset
     ],
     
     trigger:[

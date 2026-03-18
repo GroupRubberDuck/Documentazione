@@ -38,7 +38,7 @@
     ],
 
     post-condizioni: [
-        - L'utente visualizza le informazioni associate allo specifico asset selezionato
+        - L'utente ha visualizzato le informazioni associate allo specifico asset selezionato
     ],
 
     trigger: [

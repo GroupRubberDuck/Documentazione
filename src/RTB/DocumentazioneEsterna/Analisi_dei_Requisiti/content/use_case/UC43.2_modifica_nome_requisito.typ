@@ -44,7 +44,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il nome del requisito 
+        - Il sistema ha registrato la modifica del nome del requisito
     ],
     trigger:[
       L'utente vuole modificare il nome del requisito

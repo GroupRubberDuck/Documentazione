@@ -46,7 +46,7 @@
         - L'utente sta inserendo un dispositivo tramite importazione di un file esterno #sym.arrow #use-case-label(nome-etichetta: "Importa dispositivo")
     ],
     post-condizioni:[
-        - Il sistema memorizza un riferimento al file selezionato dall'utente 
+        - Il sistema ha memorizzato un riferimento al file selezionato dall'utente 
     ],
     
     trigger:none,

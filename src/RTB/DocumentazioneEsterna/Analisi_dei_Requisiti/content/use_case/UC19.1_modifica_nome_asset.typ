@@ -35,7 +35,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente modificato il nome dell'asset
+        + L'utente modifica il nome dell'asset
     ],
     
     pre-condizioni:[
@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il nome dell'asset
+        - Il sistema ha registrato la modifica del nome dell'asset
     ],
     
     trigger:none,

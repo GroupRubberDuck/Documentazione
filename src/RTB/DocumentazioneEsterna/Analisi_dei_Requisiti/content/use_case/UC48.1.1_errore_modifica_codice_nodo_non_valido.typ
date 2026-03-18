@@ -37,8 +37,8 @@
     ],
     
     post-condizioni:[
-        - Il nodo non viene modificato
-        - Il sistema visualizza un messaggio di errore
+        - Il nodo non è stato modificato
+        - Il sistema ha fatto visualizzare un messaggio di errore
         - L'utente può ritentare l'inserimento
     ],
     

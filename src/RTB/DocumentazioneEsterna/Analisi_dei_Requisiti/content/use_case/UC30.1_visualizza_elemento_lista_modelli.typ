@@ -45,7 +45,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza i dati generali relativi al singolo modello 
+        - L'utente ha visualizzato i dati generali relativi al singolo modello 
     ],
     
     trigger:none,

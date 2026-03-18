@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza l'assenza di risposta per il nodo selezionato    
+        - L'utente ha visualizzato l'assenza di risposta per il nodo selezionato    
         ],
     
     

@@ -51,7 +51,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza le informazioni legate allo specifico requisito
+        - L'utente ha visualizzato le informazioni legate allo specifico requisito
     ],
     
     trigger:none,

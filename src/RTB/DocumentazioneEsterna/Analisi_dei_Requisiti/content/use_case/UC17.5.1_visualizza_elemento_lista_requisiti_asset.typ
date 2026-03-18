@@ -40,7 +40,7 @@
     ],
 
     post-condizioni: [
-        - L'utente visualizza le informazioni generali legate al singolo requisito nel contesto dell'asset
+        - L'utente ha visualizzato le informazioni generali legate al singolo requisito nel contesto dell'asset
     ],
 
     trigger: none,

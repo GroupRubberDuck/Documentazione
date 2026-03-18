@@ -45,7 +45,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il tipo dell'asset
+        - Il sistema ha registrato la modifica del tipo dell'asset
     ],
     
     

@@ -44,7 +44,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza le informazioni del singolo elemento della lista di dispositivi
+        - L'utente ha visualizzato le informazioni del singolo elemento della lista di dispositivi
     ],
     trigger:none,
     

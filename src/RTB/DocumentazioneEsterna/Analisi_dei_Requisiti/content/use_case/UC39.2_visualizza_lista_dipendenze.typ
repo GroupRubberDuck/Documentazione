@@ -43,7 +43,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     ],
     
     post-condizioni:[
-        - L'utente visualizza la lista delle dipendenze
+        - L'utente h visualizzato la lista delle dipendenze
     ],
     
     trigger:[

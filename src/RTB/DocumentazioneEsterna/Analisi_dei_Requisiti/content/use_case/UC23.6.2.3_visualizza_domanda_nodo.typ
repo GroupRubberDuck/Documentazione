@@ -33,7 +33,7 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + L'utente viasualizza la domanda associata al nodo
+        + L'utente visualizza la domanda associata al nodo
     ],
     
     pre-condizioni: [

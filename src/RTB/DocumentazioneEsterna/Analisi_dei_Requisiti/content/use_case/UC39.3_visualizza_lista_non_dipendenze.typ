@@ -45,7 +45,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     ],
     
     post-condizioni:[
-        - L'utente visualizza la lista dei requisiti da cui non dipende il requisito
+        - L'utente ha visualizzato la lista dei requisiti da cui non dipende il requisito
     ],
     
     trigger:[

@@ -45,7 +45,7 @@ parent-uc: "Visualizza dati dispositivo",
     ],
     
     post-condizioni:[
-        - L'utente visualizza le informazioni del modello associato
+        - L'utente ha visualizzato le informazioni del modello associato
     ],
     
     trigger:none,

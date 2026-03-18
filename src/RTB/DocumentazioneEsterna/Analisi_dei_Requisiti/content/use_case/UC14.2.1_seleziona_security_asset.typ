@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha selezionato il tipo security asset
+        - Il sistema ha registrato la selezione di tipo security asset
     ],
     
     

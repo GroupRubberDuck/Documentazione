@@ -46,7 +46,7 @@
     
 
     post-condizioni: [
-        - L'utente visualizza il nodo di decisione successore all'interno del decision tree #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decisionale")
+        - L'utente ha visualizzato il nodo di decisione successore all'interno del decision tree #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio nodo decisionale")
     ],
 
     trigger: [

@@ -44,7 +44,7 @@
     
     
     post-condizioni:[
-        - L'utente ha inserito il sistema operativo del dispositivo
+        - Il sistema ha registrato l'inserimento del sistema operativo del dispositivo
     ],
     
     

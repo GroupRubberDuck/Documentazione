@@ -51,7 +51,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza il dettaglio specifico del nodo selezionato
+        - L'utente ha visualizzato il dettaglio specifico del nodo selezionato
     ],
     
     trigger:[

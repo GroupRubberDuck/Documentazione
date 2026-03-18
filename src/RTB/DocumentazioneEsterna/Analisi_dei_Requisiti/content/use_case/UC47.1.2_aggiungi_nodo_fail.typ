@@ -39,7 +39,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo foglia con valore FAIL
+        - Il sistema ha aggiunto un nodo foglia con valore FAIL
     ],
     
     trigger:none,

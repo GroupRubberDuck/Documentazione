@@ -41,7 +41,7 @@
     
     
     post-condizioni:[
-        - L'utente ha inserito la descrizione del requisito
+        - Il sistema ha registrato l'inserimento della descrizione del requisito
     ],
     trigger:none,
     

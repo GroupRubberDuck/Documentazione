@@ -44,7 +44,7 @@
           + L'utente può valutare l'asset #sym.arrow #use-case-label(nome-etichetta: "Valuta asset")
         + L'utente può esportare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Esporta informazioni dispositivo")
         + L'utente può salvare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Salva valutazione")
-        + L'utente può salvare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Scarta modifiche valutazione")
+        + L'utente può scartare la valutazione #sym.arrow #use-case-label(nome-etichetta: "Scarta modifiche valutazione")
     ],
     pre-condizioni:[
         - Il sistema è attivo

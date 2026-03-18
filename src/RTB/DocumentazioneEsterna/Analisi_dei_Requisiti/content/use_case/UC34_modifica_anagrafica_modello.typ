@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato l'anagrafica del modello
+        - Il sistema ha registrato la modifica dell'anagrafica del modello
     ],
     
     trigger:[

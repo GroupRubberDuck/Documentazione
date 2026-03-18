@@ -40,7 +40,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo foglia con valore PASS
+        - Il sistema ha aggiunto un nodo foglia con valore PASS
     ],
     
     trigger:none,

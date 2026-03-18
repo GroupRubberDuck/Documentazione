@@ -35,7 +35,7 @@ parent-uc: "Visualizza nodo di decisione",
     attore-principale: [Utente],
 
     scenario-principale: [
-        + L'utente viasualizza la risposta associata al nodo
+        + L'utente visualizza la risposta associata al nodo
     ],
     
     pre-condizioni: [

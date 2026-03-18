@@ -42,8 +42,8 @@
     ],
     
     post-condizioni:[
-      - Il sistema interrompe l'importazione del modello
-      - L'utente visualizza un messagio di errore esplicativo
+      - Il sistema ha interrotto l'importazione del modello
+      - L'utente ha visualizzato un messagio di errore esplicativo
     ],
     
     trigger:none,

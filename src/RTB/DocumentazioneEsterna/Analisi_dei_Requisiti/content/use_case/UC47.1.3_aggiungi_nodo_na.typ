@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo foglia con valore NOT APPLICABLE
+        - Il sistema ha aggiunto un nodo foglia con valore NOT APPLICABLE
     ],
     trigger:none,
     
