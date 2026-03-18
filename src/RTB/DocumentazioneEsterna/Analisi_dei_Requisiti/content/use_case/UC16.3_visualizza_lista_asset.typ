@@ -43,7 +43,7 @@
     ],
     
     post-condizioni: [
-        - L'utente visualizza la lista degli asset
+        - L'utente ha visualizzato la lista degli asset
     ],
     
     trigger: none,

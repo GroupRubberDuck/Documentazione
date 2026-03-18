@@ -53,7 +53,7 @@ parent-uc: "Crea nuovo dispositivo",
     trigger:none,
     
     scenari-alternativi:[
-        - L'utente ha inserito un nome del dispositivo non valido
+        - L'utente inserisce un nome del dispositivo non valido
     ],
     
     inclusioni:none,

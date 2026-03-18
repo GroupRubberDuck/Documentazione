@@ -43,7 +43,7 @@
     
     
     post-condizioni:[
-        - L'utente ha inserito la descrizione dell'asset
+        - Il sistema ha registrato l'inserimento della descrizione dell'asset
     ],
     
     trigger:none,

@@ -39,7 +39,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato la descrizione del requisito 
+        - Il sistema ha registrato la modifica di descrizione del requisito
     ],
     trigger:[
       L'utente vuole modificare la descrizione del requisito

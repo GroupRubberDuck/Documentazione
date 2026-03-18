@@ -44,7 +44,7 @@
     
     post-condizioni:[
         - Il sistema ha salvato le modifiche sul sistema di permanenza
-        - La sessione di valutazione del dispositivo rimane aperta
+        - La sessione di valutazione del dispositivo è rimasta aperta
 
     ],
     trigger:[

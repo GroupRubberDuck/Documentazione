@@ -48,7 +48,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha inserito il codice del requisito
+        - Il sistema ha registrato l'inserimento del codice del requisito
     ],
     trigger:none,
     

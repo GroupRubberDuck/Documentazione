@@ -40,7 +40,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il tipo dell'asset inserendo il tipo security asset
+        - Il sistema ha registrato la modifica del tipo dell'asset in security asset.
     ],
     
     trigger:none,

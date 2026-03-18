@@ -43,7 +43,7 @@ parent-uc: "Crea nuovo modello",
     ],
     
     post-condizioni:[
-        - L'utente ha inserito un nome del modello
+        - Il sistema ha inserito un nome del modello
     ],
     
     trigger:none,

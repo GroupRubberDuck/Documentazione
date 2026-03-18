@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        L'utente ha visualizzato le informazioni associate a un nodo foglia
+        - L'utente ha visualizzato le informazioni associate a un nodo foglia
     ],
     
     trigger:none,

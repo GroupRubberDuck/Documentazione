@@ -44,7 +44,7 @@
     
     
     post-condizioni:[
-        - L'utente ha selezionato il tipo dell'asset
+        - Il sistema ha registrato la selezione del tipo dell'asset
     ],
     
     scenari-alternativi:none,

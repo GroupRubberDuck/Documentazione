@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Esporta report in pdf"
+#let use-case-nome="Esporta report in PDF"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -42,11 +42,11 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il report in formato pdf sul proprio file system locale
+        - L'utente ha scaricato il report in formato PDF sul proprio file system locale
     ],
     
     trigger:[
-        L'utente vuole generare un report in formato pdf rappresentativo della valutazione del dispositivo
+        L'utente vuole generare un report in formato PDF rappresentativo della valutazione del dispositivo
     ],
     
     

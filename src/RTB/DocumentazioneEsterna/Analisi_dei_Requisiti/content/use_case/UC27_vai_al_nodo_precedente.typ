@@ -46,7 +46,7 @@ attore-principale: "Utente",
     ],
 
     post-condizioni: [
-        - L'utente visualizza correttamente il dettaglio del nodo predecessore
+        - L'utente ha visualizzato correttamente il dettaglio del nodo predecessore
     ],
     
     trigger: [

@@ -45,7 +45,7 @@
     
 
     post-condizioni: [
-        - Il sistema scarta le modifiche inserite
+        - Il sistema ha scartato le modifiche inserite
     ],
     
     trigger:none,

@@ -42,7 +42,7 @@
     ],
 
     post-condizioni: [
-        - L'utente visualizza la giustificazione associata alle risposte inserite nel decision tree
+        - L'utente ha visualizzato la giustificazione associata alle risposte inserite nel decision tree
     ],
     
     trigger:none,

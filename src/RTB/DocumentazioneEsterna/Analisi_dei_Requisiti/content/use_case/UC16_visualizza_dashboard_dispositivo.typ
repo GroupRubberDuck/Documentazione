@@ -45,7 +45,7 @@
     ],
     
     post-condizioni: [
-        - L'utente visualizza la dashboard riepilogativa della valutazione 
+        - L'utente ha visualizzato la dashboard riepilogativa della valutazione 
     ],
     
     trigger: [

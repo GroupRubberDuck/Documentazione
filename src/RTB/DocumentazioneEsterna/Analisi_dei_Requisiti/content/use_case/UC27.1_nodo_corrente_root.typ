@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza il dettaglio del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")
+        - L'utente ha visualizzato il dettaglio del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")
     ],
     
     trigger:none,

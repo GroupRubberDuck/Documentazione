@@ -38,7 +38,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il nome dell'asset
+        - Il sistema ha registrato la modifica del nome dell'asset.
     ],
     
     trigger:none,

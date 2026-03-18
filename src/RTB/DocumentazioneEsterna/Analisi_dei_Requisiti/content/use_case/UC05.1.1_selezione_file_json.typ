@@ -43,7 +43,7 @@
         - Il formato JSONè supportato dal sistema
     ],
     post-condizioni:[
-        - Il sistema memorizza un riferimento al file JSONselezionato dall'utente 
+        - Il sistema ha memorizza un riferimento al file JSON selezionato dall'utente 
     ],
     
     trigger:none,

@@ -47,7 +47,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema aggiunge un nodo allo scheletro del decision tree
+        - Il sistema ha aggiungeto un nodo alla struttura del decision tree
     ],
     
     trigger:[

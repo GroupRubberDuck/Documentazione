@@ -44,7 +44,7 @@
     
     post-condizioni:[
         - L'operazione è stata bloccata
-        - Il sistema visualizza un messaggio di errore
+        - Il sistema ha fatto visualizzare un messaggio di errore
     ],
     
     

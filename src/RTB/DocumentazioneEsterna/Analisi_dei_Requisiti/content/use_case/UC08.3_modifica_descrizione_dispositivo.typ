@@ -44,7 +44,7 @@
     
     
     post-condizioni:[
-        - L'utente ha modificato il sistema operativo del dispositivo
+        - Il sistema ha registrato la modifica del sistema operativo del dispositivo
     ],
     
     trigger:none,

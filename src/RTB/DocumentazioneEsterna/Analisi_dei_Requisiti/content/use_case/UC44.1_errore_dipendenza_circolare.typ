@@ -44,7 +44,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema blocca l'aggiunta alle dipendenze
+        - Il sistema ha bloccato l'aggiunta alle dipendenze
     ],
     
     trigger:[

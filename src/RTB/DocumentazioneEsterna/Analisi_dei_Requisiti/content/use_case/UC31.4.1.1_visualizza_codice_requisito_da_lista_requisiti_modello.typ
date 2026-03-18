@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        L'utente ha visualizzato il codice del requisito
+        - L'utente ha visualizzato il codice del requisito
     ],
     
     trigger:none,

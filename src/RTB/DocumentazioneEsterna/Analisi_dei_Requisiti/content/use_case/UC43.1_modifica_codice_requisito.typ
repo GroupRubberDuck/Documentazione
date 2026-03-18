@@ -49,7 +49,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il codice del requisito 
+        - Il sistema ha registrato la modifica del codice del requisito 
     ],
     trigger:[
       L'utente vuole modificare il codice del requisito

@@ -44,7 +44,7 @@
 
     ],
     post-condizioni:[
-        - Il sistema memorizza un riferimento al file XML selezionato dall'utente 
+        - Il sistema ha memorizzato un riferimento al file XML selezionato dall'utente 
     ],
     
     trigger:none,

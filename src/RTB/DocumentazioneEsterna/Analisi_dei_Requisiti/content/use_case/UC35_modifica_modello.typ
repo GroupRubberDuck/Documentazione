@@ -52,7 +52,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato la struttura del modello
+        -Il sistema ha registrato la modifica della struttura del modello
     ],
     
     trigger:[

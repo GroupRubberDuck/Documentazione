@@ -44,7 +44,7 @@ parent-uc: "Aggiungi nodo",
     ],
     
     post-condizioni:[
-        - L'utente ha aggiunto un nodo di decisione
+        - Il sistema ha aggiunto un nodo di decisione
     ],
     
     trigger:none,

@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha inserito la domanda relativa al nodo
+        - Il sistema ha registriato l'inserimento della domanda relativa al nodo
     ],
     
     trigger:none,

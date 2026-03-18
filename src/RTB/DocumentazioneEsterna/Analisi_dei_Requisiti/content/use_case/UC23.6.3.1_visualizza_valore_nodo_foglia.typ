@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza il valore associato al nodo foglia
+        - L'utente ha visualizzato il valore associato al nodo foglia
     ],
     
     trigger:none,

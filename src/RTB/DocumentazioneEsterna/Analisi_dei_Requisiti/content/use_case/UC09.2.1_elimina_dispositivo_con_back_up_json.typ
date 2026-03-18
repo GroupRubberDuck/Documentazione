@@ -36,7 +36,7 @@
     scenario-principale:[
         + L'utente seleziona la funzione di eliminazione del dispositivo
         + Il sistema mostra un messaggio di avviso
-        + L'utente scarica un file JSONcontente i dati del dispositivo sul proprio file system
+        + L'utente scarica un file JSON contente i dati del dispositivo sul proprio file system
         + L'utente conferma l'eliminazione
         + Il sistema elimina il dispositivo dal sistema di permanenza interno
     ],
@@ -48,7 +48,7 @@
     
     post-condizioni:[
         - Il sistema ha rimosso il dispositivo dal proprio sistema di permanenza interno
-        - L'utente ha scaricato un file JSONcontente i dati del dispositivo
+        - L'utente ha scaricato un file JSON contente i dati del dispositivo
     ],
     
     trigger:none,

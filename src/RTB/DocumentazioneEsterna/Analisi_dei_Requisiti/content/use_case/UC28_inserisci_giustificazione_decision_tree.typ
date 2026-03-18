@@ -43,7 +43,7 @@ attore-principale: "Utente",
     ],
     
     post-condizioni: [
-        - Il sistema memorizza la giustificazione sulla bozza operativa
+        - Il sistema ha memorizzato la giustificazione sulla bozza operativa
         - Lo stato di valutazione del requisito è stato aggiornato sulla bozza operativa
     ],
     

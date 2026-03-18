@@ -41,7 +41,7 @@
     ],
 
     post-condizioni: [
-        - L'utente visualizza la lista dei requisiti nel contesto dello specifico asset
+        - L'utente ha visualizzato la lista dei requisiti nel contesto dello specifico asset
     ],
 
     trigger: none,

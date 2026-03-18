@@ -47,7 +47,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza la lista dei modelli 
+        - L'utente ha visualizzato la lista dei modelli 
     ],
     
     trigger:[

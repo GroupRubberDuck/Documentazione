@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha inserito il nome dell'asset
+        - Il sistema ha registrato l'inserimento del nome dell'asset
     ],
     
     trigger:none,

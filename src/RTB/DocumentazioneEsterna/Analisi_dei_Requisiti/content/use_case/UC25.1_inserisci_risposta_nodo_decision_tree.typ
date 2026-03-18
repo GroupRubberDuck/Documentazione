@@ -46,7 +46,7 @@
 
     post-condizioni: [
         - La risposta selezionata dall'utente è stata associata al nodo
-        - Il sistema salva la risposta al nodo sulla bozza operativa
+        - Il sistema ha salvato la risposta al nodo sulla bozza operativa
     ],
 
     

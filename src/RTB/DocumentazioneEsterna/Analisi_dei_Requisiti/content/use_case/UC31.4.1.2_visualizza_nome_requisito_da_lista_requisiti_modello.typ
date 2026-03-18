@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        L'utente ha visualizzato il nome del requisito
+        - L'utente ha visualizzato il nome del requisito
     ],
     
     

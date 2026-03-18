@@ -44,7 +44,7 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza la lista dei dispositivi registrati
+        - L'utente ha visualizzato la lista dei dispositivi registrati
     ],
     
     trigger:[

@@ -42,8 +42,8 @@
     ],
     
     post-condizioni:[
-        - L'utente visualizza il grafico delle dipendenze
-        - L'utente visualizza il percorso che crea dipendenza
+        - L'utente ha visualizzato il grafico delle dipendenze
+        - L'utente ha visualizzato il percorso che crea dipendenza
     ],
     
     trigger:none,

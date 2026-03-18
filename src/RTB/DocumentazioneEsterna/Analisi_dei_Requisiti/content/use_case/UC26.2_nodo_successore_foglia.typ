@@ -45,7 +45,7 @@ attore-principale: "Utente",
     
     post-condizioni: [
         - L'utente ha ricevuto conferma visiva del raggiungimento dell'esito
-        - L'utente visualizza il requisito associato al DT di appartenenza del nodo
+        - L'utente ha visualizzato il requisito associato al DT di appartenenza del nodo
     ],
     
     trigger:none,

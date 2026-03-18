@@ -44,7 +44,7 @@
     
     
     post-condizioni:[
-        - L'utente ha inserito la descrizione del dispositivo
+        - Il sistema ha registrato l'inserimento della descrizione del dispositivo
     ],
     
     

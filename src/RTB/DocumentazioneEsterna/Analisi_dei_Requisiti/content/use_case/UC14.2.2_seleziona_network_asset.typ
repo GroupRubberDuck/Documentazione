@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha selezionato il tipo network asset
+        - Il sistema registra la selezione di tipo network asset
     ],
     trigger:none,
     

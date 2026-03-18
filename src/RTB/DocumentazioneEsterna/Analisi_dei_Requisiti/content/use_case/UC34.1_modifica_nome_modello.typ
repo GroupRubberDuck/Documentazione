@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha modificato il nome del modello
+        - Il sistema ha registrato la modifica del nome del modello
     ],
     
     trigger:none,

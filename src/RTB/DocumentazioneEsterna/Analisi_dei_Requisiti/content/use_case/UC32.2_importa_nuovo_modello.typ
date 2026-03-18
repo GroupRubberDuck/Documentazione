@@ -47,7 +47,7 @@ parent-uc: "Inserisci nuovo modello",
     ],
     
     post-condizioni:[
-        - L'utente ha importato un nuovo modello
+        - Il sistema ha importato un nuovo modello
     ],
     
     trigger:[
