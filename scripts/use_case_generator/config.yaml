@@ -44,7 +44,7 @@ structure:
             - Selezione file XML
             - Selezione file CSV
     #extends
-    - Errore file dispositivo non valido 
+    - Errore file dispositivo non valido
     - Visualizza dati dispositivo:
         #include
         - Visualizza nome dispositivo
@@ -59,7 +59,7 @@ structure:
             - Errore modifica nome dispositivo non valido
         - Modifica sistema operativo dispositivo
         - Modifica descrizione dispositivo
-        - Annulla modifiche dispositivo
+    - Annulla modifiche dispositivo
     - Elimina dispositivo:
         - Elimina dispositivo direttamente
         - Elimina dispositivo con back-up:
