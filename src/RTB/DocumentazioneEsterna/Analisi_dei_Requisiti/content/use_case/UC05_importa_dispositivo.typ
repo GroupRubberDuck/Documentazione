@@ -10,6 +10,7 @@
 #let diagram=diagram-type(
 
   target-uc: use-case-nome,
+  parent-uc: "Inserimento nuovo dispositivo",
   actors: ("Utente",),
   includes: ("Selezione file sorgente",),
   extends: ("Errore file dispositivo non valido":[
@@ -18,7 +19,7 @@
   generalizations: (),
   actor-offset: 0,
   spacing: (4.5cm, 4cm), 
-  note-offset: (0.6,0),
+  note-offset: (0.7,0),
   diagram-scale: 80%,
 )
 // Errore nella lettura del file

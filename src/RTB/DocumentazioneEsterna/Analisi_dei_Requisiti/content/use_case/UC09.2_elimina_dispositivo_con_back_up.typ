@@ -8,7 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
-
+parent-uc: "Elimina dispositivo",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
@@ -18,9 +18,10 @@
     "Elimina dispositivo con back up XML",
     "Elimina dispositivo con back up CSV",
   ),
-  spacing: (2.5cm, 2cm), 
+  spacing: (0.2cm, 2cm), 
   diagram-scale: 80%,
-  actor-offset: 0
+  actor-offset: 6,
+  top-padding: 1
 )
 
 

@@ -24,4 +24,8 @@ settings:
 
 # La struttura gerarchica
 structure:
-      - prova
+- Metriche di qualita
+- Norme di progetto
+- Manuale utente
+- Documentazione su repository GitHub
+- Codice sorgente su repository GitHub

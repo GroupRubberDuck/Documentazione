@@ -8,6 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+    parent-uc: "Modifica nodo",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (
@@ -20,8 +21,8 @@
   generalizations: (),
   spacing: (0.5cm, 2cm), 
   diagram-scale: 60%,
-  note-offset: (1.5,0.5),
-  actor-offset: 1
+  note-offset: (0.8,0.5),
+  actor-offset: 1.3
 )
 
 

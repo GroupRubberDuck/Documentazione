@@ -21,9 +21,29 @@
 
 
 
-#import "RQ-Obb001_prova.typ": data as item_0, req-name as req-0
+#import "RQ-Obb001_metriche_di_qualita.typ": data as item_0, req-name as req-0
 
 #table-cells.push( item_0)
+
+
+#import "RQ-Obb002_norme_di_progetto.typ": data as item_1, req-name as req-1
+
+#table-cells.push( item_1)
+
+
+#import "RQ-Obb003_manuale_utente.typ": data as item_2, req-name as req-2
+
+#table-cells.push( item_2)
+
+
+#import "RQ-Obb004_documentazione_su_repository_github.typ": data as item_3, req-name as req-3
+
+#table-cells.push( item_3)
+
+
+#import "RQ-Obb005_codice_sorgente_su_repository_github.typ": data as item_4, req-name as req-4
+
+#table-cells.push( item_4)
 
 
 

@@ -8,7 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
-
+parent-uc:"Visualizza dettaglio nodo modello decision tree" ,
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (

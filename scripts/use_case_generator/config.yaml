@@ -244,7 +244,7 @@ structure:
 
     - Aggiungi requisito:
         - Inserisci codice requisito: 
-            - Errore codice requisito lunghezza non valida
+            - Errore codice requisito non valido
             - Errore codice requisito duplicato
         - Inserisci nome requisito:
             - Errore nome requisito non valido
@@ -254,7 +254,7 @@ structure:
 
     - Modifica anagrafica requisito:
         - Modifica codice requisito: 
-            - Errore modifica codice requisito lunghezza non valida
+            - Errore modifica codice requisito non valido
             - Errore modifica codice requisito duplicato
         - Modifica nome requisito:
             - Errore modifica nome requisito non valido

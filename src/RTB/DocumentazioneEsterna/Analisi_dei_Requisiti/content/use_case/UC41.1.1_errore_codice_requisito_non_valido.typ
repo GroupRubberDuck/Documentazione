@@ -2,7 +2,7 @@
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":format-code,get-use-case-code
 #import "/scripts/use_case_generator/uc-deps.typ" as deps
 
-#let use-case-nome="Errore codice requisito lunghezza non valida"
+#let use-case-nome="Errore codice requisito non valido"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
 #let diagram-type=deps.draw-uc-diagram
@@ -34,7 +34,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente ha inserito un codice del requisito di lunghezza non valida
+        + L'utente ha inserito un codice del requisito non valido
         + L'utente visualizza un messaggio di errore
     ],
     

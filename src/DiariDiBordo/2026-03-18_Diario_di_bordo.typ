@@ -2,18 +2,19 @@
 #import "/src/config.typ": *
 
 #show: slides.with(
-  numero: 11,
+  numero: 10,
   data: "2026-03-18",
 )
 
 = Attività completate
 #set list(marker: image(check_icon, width: 0.8em))
 - Completato il POC
-- Completata l'analisi dei requisiti
+- Quasi completata l'analisi dei requisiti
 
 = Attività da completare
 #set list(marker: image(clessidra_icon, width: 0.7em))
 - Rifinitura e aggiornamento del piano di qualifica
+- Rifinitura dell'analisi dei requisiti
 - Fissare un incontro con il professor Cardin
 
 // = Difficoltà incontrate

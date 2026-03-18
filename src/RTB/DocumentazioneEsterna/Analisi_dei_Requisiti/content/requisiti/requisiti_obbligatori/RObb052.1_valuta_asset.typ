@@ -1,6 +1,8 @@
 #import "config/deps.typ" as deps
 
+
 #let req-name="Valuta asset"
+
 #let data =(
   codice:[
     #deps.get-req-code(nome-etichetta: req-name)
@@ -13,6 +15,6 @@
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:(
-    "valuta asset",
+    "Valuta asset",
   )
 )

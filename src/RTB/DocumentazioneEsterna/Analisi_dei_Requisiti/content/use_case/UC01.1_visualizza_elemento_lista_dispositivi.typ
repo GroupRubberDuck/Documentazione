@@ -8,6 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+    parent-uc:"Visualizza lista dispositivi", 
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: ("Visualizza nome dispositivo su lista dispositivi",),

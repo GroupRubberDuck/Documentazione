@@ -8,6 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+    parent-uc: "Aggiunta asset",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),

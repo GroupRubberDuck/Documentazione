@@ -8,13 +8,14 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+    parent-uc: "Aggiungi requisito",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
   extends: (
     "Errore codice requisito duplicato":[
     L'utente ha inserito un codice del requisito già esistente
-  ],    "Errore codice requisito lunghezza non valida":[
+  ],    "Errore codice requisito non valido":[
     L'utente ha inserito un codice del requisito vuoto
   ],
   ),
@@ -53,14 +54,14 @@
     
     scenari-alternativi:[
         - L'utente inserisce un codice del requisito già appartenente a un altro requisito #sym.arrow #use-case-label(nome-etichetta: "Errore codice requisito duplicato")
-        - L'utente ha inserito un codice del requisito di lunghezza non valida #sym.arrow #use-case-label(nome-etichetta: "Errore codice requisito lunghezza non valida")
+        - L'utente ha inserito un codice del requisito non valido #sym.arrow #use-case-label(nome-etichetta: "Errore codice requisito non valido")
     ],
     
     inclusioni:none,
     
     estensioni:[
         - #use-case-label(nome-etichetta: "Errore codice requisito duplicato")
-        - #use-case-label(nome-etichetta: "Errore codice requisito lunghezza non valida")
+        - #use-case-label(nome-etichetta: "Errore codice requisito non valido")
     ],
     
     generalizzazioni:none,

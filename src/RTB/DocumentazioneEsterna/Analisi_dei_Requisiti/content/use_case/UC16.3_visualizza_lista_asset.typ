@@ -8,6 +8,7 @@
 #let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+        parent-uc: "Visualizza dashboard dispositivo",
     target-uc: use-case-nome,
     actors: ("Utente",),
     includes: ("Visualizza singolo elemento lista asset",),

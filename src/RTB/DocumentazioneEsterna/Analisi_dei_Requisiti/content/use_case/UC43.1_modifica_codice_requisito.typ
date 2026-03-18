@@ -5,16 +5,26 @@
 #let use-case-nome="Modifica codice requisito"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
-#let diagram-type=deps.draw-uc-diagram
+#let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+    parent-uc: "Modifica anagrafica requisito",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (:),
+  extends: (
+    "Errore modifica codice requisito duplicato":[
+        L'utente ha inserito un codice già associato a un altro requisito
+    ],
+    "Errore modifica codice requisito non valido":[
+        L'utente ha inserito un codice non valido
+    ],
+  ),
   generalizations: (),
-  spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  spacing: (1.5cm, 2cm), 
+  diagram-scale: 80%,
+  actor-offset:1,
+  note-offset: (0.5,0.5)
 )
 
 
@@ -47,19 +57,19 @@
     
     scenari-alternativi:[
         - L'utente inserisce un codice del requisito già appartenente a un altro requisito #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito duplicato")
-        - L'utente ha inserito un codice del requisito di lunghezza non valida #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito lunghezza non valida")
+        - L'utente ha inserito un codice del requisito di valido #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito non valido")
     ],
     
     inclusioni:none,
     
     estensioni:[
         - #use-case-label(nome-etichetta: "Errore modifica codice requisito duplicato")
-        - #use-case-label(nome-etichetta: "Errore modifica codice requisito lunghezza non valida")
+        - #use-case-label(nome-etichetta: "Errore modifica codice requisito non valido")
     ],
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:diagram,
     
     figure-caption:none,
 )

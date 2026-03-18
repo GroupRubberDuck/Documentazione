@@ -11,6 +11,6 @@
   L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il codice modificato per il requisito ha una lunghezza non compresa tra 4 e 10 caratteri.
   ],
   fonti:(
-    "Errore modifica codice requisito lunghezza non valida",
+    "Errore modifica codice requisito non valido",
     )
 )

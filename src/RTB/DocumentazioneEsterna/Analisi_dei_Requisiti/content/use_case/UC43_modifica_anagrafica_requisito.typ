@@ -5,7 +5,7 @@
 #let use-case-nome="Modifica anagrafica requisito"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
-#let diagram-type=deps.draw-uc-expansion
+#let diagram-type=deps.draw-uc-diagram
 
 #let diagram=diagram-type(
   target-uc: use-case-nome,

@@ -364,7 +364,7 @@
 
 #include "UC41.1_inserisci_codice_requisito.typ"
 
-#include "UC41.1.1_errore_codice_requisito_lunghezza_non_valida.typ"
+#include "UC41.1.1_errore_codice_requisito_non_valido.typ"
 
 #include "UC41.1.2_errore_codice_requisito_duplicato.typ"
 
@@ -380,7 +380,7 @@
 
 #include "UC43.1_modifica_codice_requisito.typ"
 
-#include "UC43.1.1_errore_modifica_codice_requisito_lunghezza_non_valida.typ"
+#include "UC43.1.1_errore_modifica_codice_requisito_non_valido.typ"
 
 #include "UC43.1.2_errore_modifica_codice_requisito_duplicato.typ"
 

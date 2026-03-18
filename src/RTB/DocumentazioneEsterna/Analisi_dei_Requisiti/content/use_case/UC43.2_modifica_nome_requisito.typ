@@ -5,16 +5,21 @@
 #let use-case-nome="Modifica nome requisito"
 #let depth=deps.get-uc-depth(nome-etichetta: use-case-nome)
 
-#let diagram-type=deps.draw-uc-diagram
+#let diagram-type=deps.draw-uc-expansion
 
 #let diagram=diagram-type(
+  parent-uc: "Modifica anagrafica requisito",
   target-uc: use-case-nome,
   actors: ("Utente",),
   includes: (),
-  extends: (:),
+  extends: ("Errore modifica nome requisito non valido":[
+    L'utente ha inserito un nome non valido
+  ]),
   generalizations: (),
   spacing: (2.5cm, 2cm), 
-  diagram-scale: 80%
+  diagram-scale: 80%,
+    actor-offset:1,
+  note-offset: (1.5,0.5)
 )
 
 
@@ -58,7 +63,7 @@
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:none,
+    path-immagine-diagramma:diagram,
     
     figure-caption:none,
 )
