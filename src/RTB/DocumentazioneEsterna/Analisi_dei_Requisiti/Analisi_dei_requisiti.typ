@@ -36,7 +36,7 @@
 #let currentVersion=(
   major:0,
   minor:11,
-  patch:8,
+  patch:20,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -90,14 +90,14 @@
   ([0.11.10], [2026-03-05], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla modifica strutturale dei modelli da #use-case-label(nome-etichetta: "Modifica modello") a #use-case-label(nome-etichetta: "Scarta modifica modello")]),
   ([0.11.11], [2026-03-05], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla eliminazione dei modelli #use-case-label(nome-etichetta: "Elimina modello")]),
   ([0.11.12], [2026-03-07], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
-  ([0.11.8], [2026-03-08], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei nodi del decision tree in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio nodo modello decision tree")]),
-  ([0.11.8], [2026-03-08], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla aggiunta, modifica, eliminazione dei requisiti da #use-case-label(nome-etichetta: "Aggiungi requisito") a #use-case-label(nome-etichetta: "Errore nodo root")]),
-  ([0.11.8], [2026-03-09], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
-  ([0.11.8], [2026-03-10], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
-  ([0.11.9], [2026-03-13], persone.DL, persone.ALDO, [Aggiunti diagrammi di attività, rivisti #use-case-label(nome-etichetta: "avvia valutazione dispositivo") #use-case-label(nome-etichetta: "Modifica modello"), aggiunto #use-case-label(nome-etichetta: "Valuta asset"),#use-case-label(nome-etichetta: "Salva modifica MAJOR"), #use-case-label(nome-etichetta: "Salva modifica MINOR")]),
-  ([0.11.10], [2026-03-13], persone.FELIX,persone.DL, [Raffinati i requisiti obbligatori @funzionali-obbligatori]),
-  ([0.11.11], [2026-03-14], persone.FELIX,persone.DL, [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
-  ([0.11.12], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
+  ([0.11.13], [2026-03-08], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei nodi del decision tree in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio nodo modello decision tree")]),
+  ([0.11.14], [2026-03-08], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla aggiunta, modifica, eliminazione dei requisiti da #use-case-label(nome-etichetta: "Aggiungi requisito") a #use-case-label(nome-etichetta: "Errore nodo root")]),
+  ([0.11.15], [2026-03-09], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Visualizza dettaglio requisito modello")]),
+  ([0.11.16], [2026-03-10], persone.DL, persone.ALDO, [Raffinati casi d'uso relativi alla visualizzazione dei requisiti in fase di modifica del modello #use-case-label(nome-etichetta: "Esporta modello")]),
+  ([0.11.17], [2026-03-13], persone.DL, persone.ALDO, [Aggiunti diagrammi di attività, rivisti #use-case-label(nome-etichetta: "avvia valutazione dispositivo") #use-case-label(nome-etichetta: "Modifica modello"),  aggiunto #use-case-label(nome-etichetta: "Valuta asset"), #use-case-label(nome-etichetta: "Salva modifica MAJOR"), #use-case-label(nome-etichetta: "Salva modifica MINOR")]),
+  ([0.11.18], [2026-03-13], persone.FELIX,persone.DL, [Raffinati i requisiti obbligatori @funzionali-obbligatori]),
+  ([0.11.19], [2026-03-14], persone.FELIX,persone.DL, [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
+  ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
   )
 
 #registroModifiche(modifiche)
