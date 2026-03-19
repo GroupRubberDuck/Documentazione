@@ -118,7 +118,9 @@ test=>get-test-label(nome-etichetta: test)
       strong([Requisito di \ riferimento]),
       strong([Stato \ del test]),
       
-    ),    ..contenuto
+    ),
+
+    ..contenuto
   )
 }
 
