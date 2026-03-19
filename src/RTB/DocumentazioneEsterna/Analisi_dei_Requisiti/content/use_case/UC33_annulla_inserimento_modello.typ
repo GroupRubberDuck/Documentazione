@@ -37,7 +37,7 @@
     ],
     
     pre-condizioni:[
-      - L'utente sta inseriendo un nuovo dispositivo #sym.arrow #use-case-label(nome-etichetta: "Inserisci nuovo modello")
+      - L'utente sta inserendo un nuovo dispositivo #sym.arrow #use-case-label(nome-etichetta: "Inserisci nuovo modello")
     ],
     
     post-condizioni:[

@@ -6,5 +6,5 @@
 MANAGER="python3 scripts/use_case_generator/manager.py"
 BASE_DIR="src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing"
 
-echo "🚀 Generazione Requisiti Obbligatori..."
+echo "🚀 Generazione test di sitema..."
 $MANAGER $BASE_DIR/sistema/config/config.yml "$@"

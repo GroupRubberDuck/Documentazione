@@ -1,12 +1,35 @@
 #import "/src/config.typ":slugify,is-test-mode
 #import "/src/TypstTemplate/AnalisiRequisiti/use-case-id-handler.typ":build-map
 
+#import "/src/TypstTemplate/AnalisiRequisiti/utils/utils.typ":unisci-dizionari
+
+#import "/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/config/deps.typ" as deps-des : get-req-code as des 
+
+#import "/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/config/deps.typ" as deps-opz : get-req-code as opz
+
+#import "/src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_obbligatori/config/deps.typ" as deps-obb: get-req-code as obb
+
+#let requisiti=deps-obb.mappa.keys().map(
+    (it)=>{
+      (it,deps-obb.get-req-code(nome-etichetta:it))
+    }
+  ).to-dict() +   deps-des.mappa.keys().map(
+    (it)=>{
+      (it,deps-des.get-req-code(nome-etichetta:it))
+    }
+  ).to-dict() +  deps-opz.mappa.keys().map(
+    (it)=>{
+      (it,deps-opz.get-req-code(nome-etichetta:it))
+    }
+  ).to-dict()
 
 
+)
 
-
-
-// #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisitiù
+#let numero-duplicati=requisiti.len()-(deps-obb.mappa.len()+deps-des.mappa.len()+deps-opz.mappa.len())
+#numero-duplicati
+#requisiti
+// #import "/src/TypstTemplate/AnalisiRequisiti/tabellaRequisiti.typ": tabella-requisiti
 
 #let config=yaml("config.yml")
 
@@ -83,7 +106,7 @@ test=>get-test-label(nome-etichetta: test)
 
 #let tabella-test(..contenuto) = {
   table(
-    columns: (auto, 1fr, 1fr),
+    columns: (auto, 3fr, 1fr,1fr),
     stroke: 0.5pt + black,
     inset: 8pt,
     align: left + horizon,
@@ -94,6 +117,24 @@ test=>get-test-label(nome-etichetta: test)
       strong("Descrizione"),
       strong([Requisito di \ riferimento]),
       strong([Stato \ del test]),
+      
+    ),
+
+    ..contenuto
+  )
+}
+
+#let tabella-tracciamento(..contenuto) = {
+  table(
+    columns: (auto,auto),
+    stroke: 0.5pt + black,
+    inset: 8pt,
+    align: left + horizon,
+    fill: (col, row) => if row == 0 { header-color } else { none },
+
+    table.header(
+      strong("Codice Test"),
+      strong("Codice Requisito"),
       
     ),
 

@@ -1,15 +1,7 @@
 #import "config/deps.typ" as deps
 
-#let get-req-code= nome=>{
-  if nome.trim() != ""{
+#let get-req-code= nome=>{deps.requisiti.at(deps.slugify(nome))}
 
-    deps.req-obb(nome)
-  
-  }
-  else{
-    nome
-  }
-} 
 
 
 #let test-name="{{TITOLO}}"
@@ -23,7 +15,7 @@
   ],
 
   requisito-riferimento:get-req-code(
-    ""
+    test-name
   ),
 
   stato:"NI"

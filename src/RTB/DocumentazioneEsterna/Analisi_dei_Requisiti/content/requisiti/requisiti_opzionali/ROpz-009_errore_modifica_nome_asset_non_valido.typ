@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per l'asset non è valido.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per l'asset non è di lunghezza compresa tra 1 e 32 caratteri.
   ],
   fonti:(
     "Errore modifica nome asset non valido",

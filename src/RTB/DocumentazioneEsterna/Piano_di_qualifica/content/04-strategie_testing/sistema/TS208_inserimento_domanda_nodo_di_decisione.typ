@@ -1,18 +1,10 @@
 #import "config/deps.typ" as deps
 
-#let get-req-code= nome=>{
-  if nome.trim() != ""{
-
-    deps.req-obb(nome)
-  
-  }
-  else{
-    nome
-  }
-} 
+#let get-req-code= nome=>{deps.requisiti.at(deps.slugify(nome))}
 
 
-#let test-name="Prova"
+
+#let test-name="Inserimento domanda nodo di decisione"
 
 #let data=(
 
@@ -23,7 +15,7 @@
   ],
 
   requisito-riferimento:get-req-code(
-    ""
+    test-name
   ),
 
   stato:"NI"
