@@ -319,15 +319,15 @@
 ],
 
 "Modello di standard di default":[
-  Indica il modello che l'applicazione deve associare a un dispositivo quando il dispositivo viene creato internamente
+  Indica il modello che l'applicazione deve associare a un dispositivo al momento della sua creazione nel sistema.
 ],
 
 "Scheletro di decision tree":[
-  Questo termine è usato per rendere più facile distinguere tra i decision tree nel contesto di editing rispetto al contesto di valutazione 
+  Questo termine è usato per facilitare la distinzione tra i decision tree nel contesto di editing rispetto al contesto di valutazione. 
 ],
 
 "Bivio decisionale":[
-  Indica il rapporto tra un nodo di un decisione tree e i suoi figli
+  Relazione strutturale che collega un nodo di decisione del decision tree ai suoi nodi figli, definendo i possibili percorsi di valutazione a partire da una risposta data.
 ]
 
 

@@ -62,7 +62,7 @@
   ([0.3],[2025-11-16],[Ana Maria Draghici],[Ana Maria Draghici],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
   ([0.4],[2025-12-16],[Filippo Guerra],[Ana Maria Draghici],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
   ([0.5],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
-  ([0.5.1],[2026-02-26],[Davide Lorenzon],[],[Aggiunti termini di bassa importanza]),
+  ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
   
 )
 
