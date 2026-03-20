@@ -51,10 +51,10 @@
       - *Azione*: Sono state inserite maggiori ore di lavoro in questa attività per far fronte alla errata previsione precedente.
   ],
   oreProduttive: (
-    (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
+    (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 3, oreEffettive: 4),
+    (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 3),
+    (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 5),
+    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 5),
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 4),
     (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
   ),

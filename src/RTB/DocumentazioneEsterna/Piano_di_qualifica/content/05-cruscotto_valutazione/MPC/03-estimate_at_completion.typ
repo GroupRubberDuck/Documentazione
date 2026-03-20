@@ -23,7 +23,7 @@
     EAC: values-eac,
     BAC: values-bac,
     SogliaMax: threshold-eac-high,
-    series-names: ("EAC", "BAC", "SogliaMax"),
+    series-names: ("EAC", "BAC",),
     show-labels: true,
     label-size: 6pt,
     grid-opacity: 20%,
@@ -31,8 +31,8 @@
   "Stima al Completamento (EAC)",
   y-label: "Valore (€)",
   x-label: "Sprint",
-  y-min: 9000,
-  y-max: 15000,
+  y-min: 7000,
+  y-max: 18000,
 )
 
 L'EAC supera il BAC (11610€) per tutti gli sprint, con oscillazioni legate all'andamento

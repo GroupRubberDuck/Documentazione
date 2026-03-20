@@ -32,13 +32,13 @@
   ],
   oreProduttive: (
     (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 4),
     (persona: persone.ALDO, ruolo: ruoli.Responsabile, orePreviste: 2, oreEffettive: 2),
     (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 0, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
-    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 4, oreEffettive: 4),
+    (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 4),
   ),
   retrospettiva: [
     - *Avanzamento e Obiettivi (Baseline):*

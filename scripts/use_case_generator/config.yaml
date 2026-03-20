@@ -1,0 +1,298 @@
+# Configurazione dei casi d'uso
+settings:
+  # Percorso dove creare i file (relativo allo script)
+  output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
+
+  # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+  index_file: "_index.typ"
+
+  # Il prefisso non può contenere il carattere di title separator
+  prefix: "UC"
+  # Estensione dei file generati
+  extension: ".typ"
+
+  # Regole di numerazione e stile
+  formatting:
+    padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
+    separator: "." # Separatore numeri: "1.1" vs "1-1"
+    title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
+    filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+
+  # (Opzionale) File template da copiare per i nuovi file
+  template_path: "scripts/use_case_generator/template.typ"
+
+# La struttura gerarchica
+structure:
+    - Visualizza lista dispositivi:
+        - Visualizza elemento lista dispositivi:
+            - Visualizza nome dispositivo su lista dispositivi
+    - Inserimento nuovo dispositivo:
+    - Annullamento inserimento dispositivo:
+      #generalizzazione
+    - Crea nuovo dispositivo:
+        - Inserimento nome dispositivo:
+            - Errore nome dispositivo non valido
+        - Inserimento sistema operativo dispositivo
+        - Inserimento descrizione dispositivo
+    #extends
+    #generalizzazione
+    - Importa dispositivo:
+        #include
+        - Selezione file sorgente:
+            #generalizzazione
+            - Selezione file JSON
+            - Selezione file XML
+            - Selezione file CSV
+    #extends
+    - Errore file dispositivo non valido
+    - Visualizza dati dispositivo:
+        #include
+        - Visualizza nome dispositivo
+        - Visualizza sistema operativo dispositivo
+        - Visualizza descrizione dispositivo
+        - Visualizza modello associato al dispositivo:
+            - Visualizza nome modello associato 
+            - Visualizza versione modello associato 
+    - Modifica dispositivo:
+        #include
+        - Modifica nome dispositivo:
+            - Errore modifica nome dispositivo non valido
+        - Modifica sistema operativo dispositivo
+        - Modifica descrizione dispositivo
+    - Annulla modifiche dispositivo
+    - Elimina dispositivo:
+        - Elimina dispositivo direttamente
+        - Elimina dispositivo con back-up:
+            - Elimina dispositivo con back-up json
+            - Elimina dispositivo con back-up xml
+            - Elimina dispositivo con back-up csv
+
+    - Avvia valutazione dispositivo
+    - Scarta modifiche valutazione:
+    - Salva valutazione:
+        - Salva e chiudi valutazione dispositivo
+        - Salva e continua valutazione dispositivo
+
+      #extends
+    - Errore salvataggio valutazione:
+    - Aggiunta asset:
+        - Inserisci nome asset:
+            - Errore nome asset non valido
+        - Seleziona tipo asset:
+            - Seleziona security asset
+            - Seleziona network asset
+        - Inserisci descrizione asset
+      #extends
+    - Annulla aggiunta asset
+    - Visualizza dashboard dispositivo:
+        #include
+        - Visualizza dati dispositivo su dashboard:
+            - Visualizza nome dispositivo su dashboard
+            - Visualizza sistema operativo dispositivo su dashboard
+            - Visualizza descrizione dispositivo su dashboard
+        #include
+        - Visualizza stato aggregato dispositivo:
+        - Visualizza lista asset:
+            - Visualizza singolo elemento lista asset:
+                - Visualizza nome asset lista asset 
+                - Visualizza tipo asset lista asset
+                - Visualizza stato aggregato asset lista asset
+            #- Visualizzazione in dettaglio asset
+    - Visualizza dettaglio asset:
+        #include
+        - Visualizza nome asset
+        - Visualizza tipo asset
+        - Visualizza stato aggregato asset
+        - Visualizza descrizione asset
+        - Visualizza lista requisiti asset:
+           #include
+           - Visualizza elemento lista requisiti asset:
+               - Visualizza codice requisito da lista requisiti
+               - Visualizza stato valutazione requisito da lista requisiti
+    - Elimina asset
+    - Modifica asset:
+        - Modifica nome asset:
+            - Errore modifica nome asset non valido
+        - Modifica tipo asset:
+            - Seleziona nuovo tipo security asset
+            - Seleziona nuovo tipo network asset
+        - Modifica descrizione asset
+        #extends
+        #- Inserimento dati non validi
+    #extends
+    - Annulla modifica asset
+    - Esporta informazioni dispositivo:
+        - Esporta in json
+        - Esporta in xml
+        - Esporta in csv
+    - Valuta asset
+
+    - Visualizza dettaglio requisito:
+                #include
+                - Visualizza codice requisito
+                - Visualizza nome del requisito
+                - Visualizza descrizione normativa
+                - Visualizza stato valutazione requisito:
+                    - Visualizza stato PASS requisito
+                    - Visualizza stato FAIL requisito
+                    - Visualizza stato NA requisito
+                    - Visualizza stato In corso requisito
+                    - Visualizza stato Sospeso requisito
+
+                - Visualizza lista dipendenze requisito:
+                    - Visualizza sintesi dipendenza:
+                        - Visualizza codice dipendenza
+                        - Visualizza stato dipendenza
+                #include
+                - Visualizza decision tree:
+                    #include
+                    - Visualizza nodo decision tree:
+                        - Visualizza stato attività
+                    - Visualizza nodo di decisione:
+                        #include
+                        - Visualizza codice requisito DT
+                        - Visualizza codice nodo
+                        - Visualizza domanda nodo
+                        - Visualizza risposta nodo:
+                            - Nessuna risposta associata
+                    - Visualizza nodo foglia:
+                            - Visualizza valore nodo foglia
+                - Visualizza giustificazione decision tree
+    - Visualizza dettaglio nodo decisionale:
+        - Visualizza codice requisito a dettaglio
+        - Visualizza codice nodo a dettaglio
+        - Visualizza domanda nodo a dettaglio
+        - Visualizza risposta nodo a dettaglio:
+            - Mostra assenza di risposta a dettaglio
+
+
+    - Valuta nodo di decisione:
+        - Inserisci risposta nodo decision tree:
+            - Seleziona Yes
+            - Seleziona No
+    - Vai al nodo successivo:
+        - Nodo senza risposta selezionata
+        - Nodo successore foglia
+    - Vai al nodo precedente:
+        - Nodo corrente root
+        #extends con condition: esito = NA
+    - Inserisci giustificazione decision tree
+    - Esporta report di conformità:
+        #generalizzazioni
+        - Esporta report in PDF
+        #- Esporta report in JSON
+        #- Esporta report in XML
+        #- Esporta report in CSV
+
+    - Visualizza lista modelli:
+        - Visualizza elemento lista modelli:
+            - Visualizza nome modello da lista modelli
+            - Visualizza versione modello da lista modelli
+    - Visualizza dettaglio modello:
+        - Visualizza ID modello
+        - Visualizza nome modello
+        - Visualizza versione modello
+        - Visualizza lista requisiti modello:
+            -  Visualizza singolo elemento lista requisiti modello:
+                - Visualizza codice requisito da lista requisiti modello
+                - Visualizza nome requisito da lista requisiti modello
+    - Inserisci nuovo modello:
+        - Crea nuovo modello:
+            - Inserisci nome modello:
+                - Errore nome nuovo modello non valido
+        - Importa nuovo modello:
+            - Errore modello esistente
+        - Importa modello file json
+        - Importa modello file xml
+    - Annulla inserimento modello
+    - Modifica anagrafica modello:
+        - Modifica nome modello:
+            - Errore modifica nome modello
+    # - Annulla modifica angarafica modello TODO
+    - Modifica modello
+    - Salva modifica modello:
+        - Salva modifica MAJOR
+        - Salva modifica MINOR
+        - Errore struttura non valida per il salvataggio
+    - Scarta modifica modello
+    - Elimina modello
+
+    - Visualizza dettaglio requisito modello:
+        - Visualizza anagrafica requisito modello:
+            - Visualizza codice requisito modello
+            - Visualizza nome del requisito modello
+            - Visualizza descrizione modello
+        - Visualizza lista dipendenze:
+            - Visualizza codice dipendenze
+        - Visualizza lista non dipendenze:
+            - Visualizza codice non dipendenze
+        - Visualizza decision tree requisito modello:
+            - Visualizza nodo decision tree modello:
+                - Visualizza nodo decisione modello:
+                    - Visualizza codice requisito padre modello
+                    - Visualizza codice nodo modello
+                    - Visualizza domanda nodo modello
+                - Visualizza nodo foglia modello
+    
+    - Visualizza dettaglio nodo modello decision tree:
+        - Visualizza dettaglio nodo decisione modello:
+            - Visualizza dettaglio codice requisito padre modello
+            - Visualizza dettaglio codice nodo modello
+            - Visualizza dettaglio domanda nodo modello
+        - Visualizza dettaglio nodo foglia modello
+
+
+    - Aggiungi requisito:
+        - Inserisci codice requisito: 
+            - Errore codice requisito non valido
+            - Errore codice requisito duplicato
+        - Inserisci nome requisito:
+            - Errore nome requisito non valido
+        - Inserisci descrizione requisito
+    # - Annulla aggiunta requisito TODO
+    - Elimina requisito
+
+    - Modifica anagrafica requisito:
+        - Modifica codice requisito: 
+            - Errore modifica codice requisito non valido
+            - Errore modifica codice requisito duplicato
+        - Modifica nome requisito:
+            - Errore modifica nome requisito non valido
+        - Modifica descrizione requisito:
+        # - Annulla modifica anagrafica requisito TODO
+    - Aggiungi dipendenza:
+        - Errore dipendenza circolare:
+            - Visualizza grafo dipendenze
+    - Rimuovi dipendenza
+    - Aggiungi nodo figlio:
+        - Aggiungi nodo figlio YES
+        - Aggiungi nodo figlio NO
+    - Aggiungi nodo:
+        - Aggiungi nodo foglia:
+            - Aggiungi nodo PASS
+            - Aggiungi nodo FAIL
+            - Aggiungi nodo NA
+        - Aggiungi nodo di decisione:
+            - Inserisci codice nodo decision tree:
+                - Errore codice nodo non valido
+                - Errore codice nodo già esistente
+            - Inserisci domanda nodo decision tree:
+                - Errore domanda vuota
+    # - Annulla aggiunta nodo
+
+    - Modifica nodo:
+        - Modifica codice nodo decision tree:
+                - Errore modifica codice nodo non valido
+                - Errore modifica codice nodo già esistente
+        - Modifica domanda nodo decision tree:
+            - Errore modifica domanda vuota
+    # - Annulla modifica nodo TODO
+    - Rimuovi nodo
+    - Errore nodo root
+
+
+    #extends
+    - Esporta modello:
+        # generalizzazioni uguali a importa
+        - Esporta modello in json
+        - Esporta modello in xml

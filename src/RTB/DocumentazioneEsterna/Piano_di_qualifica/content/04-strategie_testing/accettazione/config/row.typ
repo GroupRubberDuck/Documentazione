@@ -1,0 +1,13 @@
+
+#import "{{FILE_PATH}}": data as item_{{INDEX}}
+
+
+#{
+  test-array.push((
+
+    deps.get-test-code(nome-etichetta:item_{{INDEX}}.nome),
+    item_{{INDEX}}.descrizione,
+    item_{{INDEX}}.stato,
+  )
+  )
+}

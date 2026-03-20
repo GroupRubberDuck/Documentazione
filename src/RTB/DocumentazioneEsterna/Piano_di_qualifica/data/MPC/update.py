@@ -8,7 +8,7 @@ SPRINT_CSV            = "sprint.csv"
 TARIFFA_FILE          = "costi_ruoli.json"
 OUTPUT_DIR            = "."
 BAC_FISSO             = 11610
-SETTIMANE_PIANIFICATE = 18
+SETTIMANE_PIANIFICATE = 24
 
 # MPC-09 RSI: aggiornare manualmente a ogni sprint se i requisiti cambiano.
 # Formato: { sprint_num: (NR, NTR) }
