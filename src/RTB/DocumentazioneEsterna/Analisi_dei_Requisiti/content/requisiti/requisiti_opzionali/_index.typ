@@ -777,7 +777,7 @@ item_41.fonti=utils.format-array(item_41.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-042.1_salvataggio_modifica_major.typ": data as item_42, req-name as req-42
+#import "ROpz-043_salvataggio_modifica_major.typ": data as item_42, req-name as req-42
 
 #req-uc-dict.insert(
   req-42
@@ -795,7 +795,7 @@ item_42.fonti=utils.format-array(item_42.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-042.2_salvataggio_modifica_minor.typ": data as item_43, req-name as req-43
+#import "ROpz-044_salvataggio_modifica_minor.typ": data as item_43, req-name as req-43
 
 #req-uc-dict.insert(
   req-43
@@ -813,7 +813,7 @@ item_43.fonti=utils.format-array(item_43.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-043_errore_struttura_modello_non_valida.typ": data as item_44, req-name as req-44
+#import "ROpz-045_errore_struttura_modello_non_valida.typ": data as item_44, req-name as req-44
 
 #req-uc-dict.insert(
   req-44
@@ -831,7 +831,7 @@ item_44.fonti=utils.format-array(item_44.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-044_scarto_modifiche_modello.typ": data as item_45, req-name as req-45
+#import "ROpz-046_scarto_modifiche_modello.typ": data as item_45, req-name as req-45
 
 #req-uc-dict.insert(
   req-45
@@ -849,7 +849,7 @@ item_45.fonti=utils.format-array(item_45.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-045_eliminazione_modello.typ": data as item_46, req-name as req-46
+#import "ROpz-047_eliminazione_modello.typ": data as item_46, req-name as req-46
 
 #req-uc-dict.insert(
   req-46
@@ -867,7 +867,7 @@ item_46.fonti=utils.format-array(item_46.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-046_esportazione_modello.typ": data as item_47, req-name as req-47
+#import "ROpz-048_esportazione_modello.typ": data as item_47, req-name as req-47
 
 #req-uc-dict.insert(
   req-47
@@ -885,7 +885,7 @@ item_47.fonti=utils.format-array(item_47.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-047_esportazione_modello_in_xml.typ": data as item_48, req-name as req-48
+#import "ROpz-049_esportazione_modello_in_xml.typ": data as item_48, req-name as req-48
 
 #req-uc-dict.insert(
   req-48
@@ -903,7 +903,7 @@ item_48.fonti=utils.format-array(item_48.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-048_esportazione_modello_in_json.typ": data as item_49, req-name as req-49
+#import "ROpz-050_esportazione_modello_in_json.typ": data as item_49, req-name as req-49
 
 #req-uc-dict.insert(
   req-49
@@ -921,7 +921,7 @@ item_49.fonti=utils.format-array(item_49.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-049_visualizzazione_dettaglio_requisito_modello.typ": data as item_50, req-name as req-50
+#import "ROpz-051_visualizzazione_dettaglio_requisito_modello.typ": data as item_50, req-name as req-50
 
 #req-uc-dict.insert(
   req-50
@@ -939,7 +939,7 @@ item_50.fonti=utils.format-array(item_50.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-050_visualizzazione_anagrafica_requisito_modello.typ": data as item_51, req-name as req-51
+#import "ROpz-052_visualizzazione_anagrafica_requisito_modello.typ": data as item_51, req-name as req-51
 
 #req-uc-dict.insert(
   req-51
@@ -957,7 +957,7 @@ item_51.fonti=utils.format-array(item_51.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-051_visualizzazione_codice_requisito_modello.typ": data as item_52, req-name as req-52
+#import "ROpz-053_visualizzazione_codice_requisito_modello.typ": data as item_52, req-name as req-52
 
 #req-uc-dict.insert(
   req-52
@@ -975,7 +975,7 @@ item_52.fonti=utils.format-array(item_52.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-052_visualizzazione_nome_del_requisito_modello.typ": data as item_53, req-name as req-53
+#import "ROpz-054_visualizzazione_nome_del_requisito_modello.typ": data as item_53, req-name as req-53
 
 #req-uc-dict.insert(
   req-53
@@ -993,7 +993,7 @@ item_53.fonti=utils.format-array(item_53.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-053_visualizzazione_descrizione_requisito_modello.typ": data as item_54, req-name as req-54
+#import "ROpz-055_visualizzazione_descrizione_requisito_modello.typ": data as item_54, req-name as req-54
 
 #req-uc-dict.insert(
   req-54
@@ -1011,7 +1011,7 @@ item_54.fonti=utils.format-array(item_54.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-054_visualizzazione_lista_dipendenze_requisito_modello.typ": data as item_55, req-name as req-55
+#import "ROpz-056_visualizzazione_lista_dipendenze_requisito_modello.typ": data as item_55, req-name as req-55
 
 #req-uc-dict.insert(
   req-55
@@ -1029,7 +1029,7 @@ item_55.fonti=utils.format-array(item_55.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-055_visualizzazione_codice_dipendenza_requisito_modello.typ": data as item_56, req-name as req-56
+#import "ROpz-057_visualizzazione_codice_dipendenza_requisito_modello.typ": data as item_56, req-name as req-56
 
 #req-uc-dict.insert(
   req-56
@@ -1047,7 +1047,7 @@ item_56.fonti=utils.format-array(item_56.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-056_visualizzazione_lista_non_dipendenze_requisito_modello.typ": data as item_57, req-name as req-57
+#import "ROpz-058_visualizzazione_lista_non_dipendenze_requisito_modello.typ": data as item_57, req-name as req-57
 
 #req-uc-dict.insert(
   req-57
@@ -1065,7 +1065,7 @@ item_57.fonti=utils.format-array(item_57.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-057_visualizzazione_codice_non_dipendenza_requisito_modello.typ": data as item_58, req-name as req-58
+#import "ROpz-059_visualizzazione_codice_non_dipendenza_requisito_modello.typ": data as item_58, req-name as req-58
 
 #req-uc-dict.insert(
   req-58
@@ -1083,7 +1083,7 @@ item_58.fonti=utils.format-array(item_58.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-058_visualizzazione_decision_tree_requisito_modello.typ": data as item_59, req-name as req-59
+#import "ROpz-060_visualizzazione_decision_tree_requisito_modello.typ": data as item_59, req-name as req-59
 
 #req-uc-dict.insert(
   req-59
@@ -1101,7 +1101,7 @@ item_59.fonti=utils.format-array(item_59.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-059_visualizzazione_nodo_decision_tree_modello.typ": data as item_60, req-name as req-60
+#import "ROpz-061_visualizzazione_nodo_decision_tree_modello.typ": data as item_60, req-name as req-60
 
 #req-uc-dict.insert(
   req-60
@@ -1119,7 +1119,7 @@ item_60.fonti=utils.format-array(item_60.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-060_visualizzazione_nodo_decisione_modello.typ": data as item_61, req-name as req-61
+#import "ROpz-062_visualizzazione_nodo_decisione_modello.typ": data as item_61, req-name as req-61
 
 #req-uc-dict.insert(
   req-61
@@ -1137,7 +1137,7 @@ item_61.fonti=utils.format-array(item_61.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-061_visualizzazione_codice_requisito_padre_modello.typ": data as item_62, req-name as req-62
+#import "ROpz-063_visualizzazione_codice_requisito_padre_modello.typ": data as item_62, req-name as req-62
 
 #req-uc-dict.insert(
   req-62
@@ -1155,7 +1155,7 @@ item_62.fonti=utils.format-array(item_62.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-062_visualizzazione_codice_nodo_modello.typ": data as item_63, req-name as req-63
+#import "ROpz-064_visualizzazione_codice_nodo_modello.typ": data as item_63, req-name as req-63
 
 #req-uc-dict.insert(
   req-63
@@ -1173,7 +1173,7 @@ item_63.fonti=utils.format-array(item_63.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-063_visualizzazione_domanda_nodo_modello.typ": data as item_64, req-name as req-64
+#import "ROpz-065_visualizzazione_domanda_nodo_modello.typ": data as item_64, req-name as req-64
 
 #req-uc-dict.insert(
   req-64
@@ -1191,7 +1191,7 @@ item_64.fonti=utils.format-array(item_64.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-064_visualizzazione_nodo_foglia_modello.typ": data as item_65, req-name as req-65
+#import "ROpz-066_visualizzazione_nodo_foglia_modello.typ": data as item_65, req-name as req-65
 
 #req-uc-dict.insert(
   req-65
@@ -1209,7 +1209,7 @@ item_65.fonti=utils.format-array(item_65.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-065_visualizzazione_dettaglio_nodo_modello.typ": data as item_66, req-name as req-66
+#import "ROpz-067_visualizzazione_dettaglio_nodo_modello.typ": data as item_66, req-name as req-66
 
 #req-uc-dict.insert(
   req-66
@@ -1227,7 +1227,7 @@ item_66.fonti=utils.format-array(item_66.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-066_visualizzazione_dettaglio_nodo_decisione_modello.typ": data as item_67, req-name as req-67
+#import "ROpz-068_visualizzazione_dettaglio_nodo_decisione_modello.typ": data as item_67, req-name as req-67
 
 #req-uc-dict.insert(
   req-67
@@ -1245,7 +1245,7 @@ item_67.fonti=utils.format-array(item_67.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-067_visualizzazione_dettaglio_codice_requisito_padre_modello.typ": data as item_68, req-name as req-68
+#import "ROpz-069_visualizzazione_dettaglio_codice_requisito_padre_modello.typ": data as item_68, req-name as req-68
 
 #req-uc-dict.insert(
   req-68
@@ -1263,7 +1263,7 @@ item_68.fonti=utils.format-array(item_68.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-068_visualizzazione_dettaglio_codice_nodo_modello.typ": data as item_69, req-name as req-69
+#import "ROpz-070_visualizzazione_dettaglio_codice_nodo_modello.typ": data as item_69, req-name as req-69
 
 #req-uc-dict.insert(
   req-69
@@ -1281,7 +1281,7 @@ item_69.fonti=utils.format-array(item_69.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-069_visualizzazione_dettaglio_domanda_nodo_modello.typ": data as item_70, req-name as req-70
+#import "ROpz-071_visualizzazione_dettaglio_domanda_nodo_modello.typ": data as item_70, req-name as req-70
 
 #req-uc-dict.insert(
   req-70
@@ -1299,7 +1299,7 @@ item_70.fonti=utils.format-array(item_70.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-070_visualizzazione_dettaglio_nodo_foglia_modello.typ": data as item_71, req-name as req-71
+#import "ROpz-072_visualizzazione_dettaglio_nodo_foglia_modello.typ": data as item_71, req-name as req-71
 
 #req-uc-dict.insert(
   req-71
@@ -1317,7 +1317,7 @@ item_71.fonti=utils.format-array(item_71.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-071_aggiunta_requisito_al_modello.typ": data as item_72, req-name as req-72
+#import "ROpz-073_aggiunta_requisito_al_modello.typ": data as item_72, req-name as req-72
 
 #req-uc-dict.insert(
   req-72
@@ -1335,7 +1335,7 @@ item_72.fonti=utils.format-array(item_72.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-072_eliminazione_requisito_dal_modello.typ": data as item_73, req-name as req-73
+#import "ROpz-074_eliminazione_requisito_dal_modello.typ": data as item_73, req-name as req-73
 
 #req-uc-dict.insert(
   req-73
@@ -1353,7 +1353,7 @@ item_73.fonti=utils.format-array(item_73.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-073_modifica_anagrafica_requisito.typ": data as item_74, req-name as req-74
+#import "ROpz-075_modifica_anagrafica_requisito.typ": data as item_74, req-name as req-74
 
 #req-uc-dict.insert(
   req-74
@@ -1371,7 +1371,7 @@ item_74.fonti=utils.format-array(item_74.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-074_inserimento_codice_requisito.typ": data as item_75, req-name as req-75
+#import "ROpz-076_inserimento_codice_requisito.typ": data as item_75, req-name as req-75
 
 #req-uc-dict.insert(
   req-75
@@ -1389,7 +1389,7 @@ item_75.fonti=utils.format-array(item_75.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-075_errore_codice_requisito_lunghezza_non_valida.typ": data as item_76, req-name as req-76
+#import "ROpz-077_errore_codice_requisito_lunghezza_non_valida.typ": data as item_76, req-name as req-76
 
 #req-uc-dict.insert(
   req-76
@@ -1407,7 +1407,7 @@ item_76.fonti=utils.format-array(item_76.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-076_errore_codice_requisito_duplicato.typ": data as item_77, req-name as req-77
+#import "ROpz-078_errore_codice_requisito_duplicato.typ": data as item_77, req-name as req-77
 
 #req-uc-dict.insert(
   req-77
@@ -1425,7 +1425,7 @@ item_77.fonti=utils.format-array(item_77.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-077_inserimento_nome_requisito.typ": data as item_78, req-name as req-78
+#import "ROpz-079_inserimento_nome_requisito.typ": data as item_78, req-name as req-78
 
 #req-uc-dict.insert(
   req-78
@@ -1443,7 +1443,7 @@ item_78.fonti=utils.format-array(item_78.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-078_errore_nome_requisito_non_valido.typ": data as item_79, req-name as req-79
+#import "ROpz-080_errore_nome_requisito_non_valido.typ": data as item_79, req-name as req-79
 
 #req-uc-dict.insert(
   req-79
@@ -1461,7 +1461,7 @@ item_79.fonti=utils.format-array(item_79.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-079_inserimento_descrizione_requisito.typ": data as item_80, req-name as req-80
+#import "ROpz-081_inserimento_descrizione_requisito.typ": data as item_80, req-name as req-80
 
 #req-uc-dict.insert(
   req-80
@@ -1479,7 +1479,7 @@ item_80.fonti=utils.format-array(item_80.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-080_modifica_codice_requisito.typ": data as item_81, req-name as req-81
+#import "ROpz-082_modifica_codice_requisito.typ": data as item_81, req-name as req-81
 
 #req-uc-dict.insert(
   req-81
@@ -1497,7 +1497,7 @@ item_81.fonti=utils.format-array(item_81.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-081_errore_modifica_codice_requisito_lunghezza_non_valida.typ": data as item_82, req-name as req-82
+#import "ROpz-083_errore_modifica_codice_requisito_lunghezza_non_valida.typ": data as item_82, req-name as req-82
 
 #req-uc-dict.insert(
   req-82
@@ -1515,7 +1515,7 @@ item_82.fonti=utils.format-array(item_82.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-082_errore_modifica_codice_requisito_duplicato.typ": data as item_83, req-name as req-83
+#import "ROpz-084_errore_modifica_codice_requisito_duplicato.typ": data as item_83, req-name as req-83
 
 #req-uc-dict.insert(
   req-83
@@ -1533,7 +1533,7 @@ item_83.fonti=utils.format-array(item_83.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-083_modifica_nome_requisito.typ": data as item_84, req-name as req-84
+#import "ROpz-085_modifica_nome_requisito.typ": data as item_84, req-name as req-84
 
 #req-uc-dict.insert(
   req-84
@@ -1551,7 +1551,7 @@ item_84.fonti=utils.format-array(item_84.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-084_errore_modifica_nome_requisito_non_valido.typ": data as item_85, req-name as req-85
+#import "ROpz-086_errore_modifica_nome_requisito_non_valido.typ": data as item_85, req-name as req-85
 
 #req-uc-dict.insert(
   req-85
@@ -1569,7 +1569,7 @@ item_85.fonti=utils.format-array(item_85.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-085_modifica_descrizione_requisito.typ": data as item_86, req-name as req-86
+#import "ROpz-087_modifica_descrizione_requisito.typ": data as item_86, req-name as req-86
 
 #req-uc-dict.insert(
   req-86
@@ -1587,7 +1587,7 @@ item_86.fonti=utils.format-array(item_86.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-086_aggiunta_dipendenza_tra_requisiti.typ": data as item_87, req-name as req-87
+#import "ROpz-088_aggiunta_dipendenza_tra_requisiti.typ": data as item_87, req-name as req-87
 
 #req-uc-dict.insert(
   req-87
@@ -1605,7 +1605,7 @@ item_87.fonti=utils.format-array(item_87.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-087_visualizzazione_grafo_dipendenze.typ": data as item_88, req-name as req-88
+#import "ROpz-089_visualizzazione_grafo_dipendenze.typ": data as item_88, req-name as req-88
 
 #req-uc-dict.insert(
   req-88
@@ -1623,7 +1623,7 @@ item_88.fonti=utils.format-array(item_88.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-088_errore_dipendenza_circolare.typ": data as item_89, req-name as req-89
+#import "ROpz-090_errore_dipendenza_circolare.typ": data as item_89, req-name as req-89
 
 #req-uc-dict.insert(
   req-89
@@ -1641,7 +1641,7 @@ item_89.fonti=utils.format-array(item_89.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-089_rimozione_dipendenza_tra_requisiti.typ": data as item_90, req-name as req-90
+#import "ROpz-091_rimozione_dipendenza_tra_requisiti.typ": data as item_90, req-name as req-90
 
 #req-uc-dict.insert(
   req-90
@@ -1659,7 +1659,7 @@ item_90.fonti=utils.format-array(item_90.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-090_aggiunta_nodo_figlio.typ": data as item_91, req-name as req-91
+#import "ROpz-092_aggiunta_nodo_figlio.typ": data as item_91, req-name as req-91
 
 #req-uc-dict.insert(
   req-91
@@ -1677,7 +1677,7 @@ item_91.fonti=utils.format-array(item_91.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-091_aggiunta_nodo_figlio_yes.typ": data as item_92, req-name as req-92
+#import "ROpz-093_aggiunta_nodo_figlio_yes.typ": data as item_92, req-name as req-92
 
 #req-uc-dict.insert(
   req-92
@@ -1695,7 +1695,7 @@ item_92.fonti=utils.format-array(item_92.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-092_aggiunta_nodo_figlio_no.typ": data as item_93, req-name as req-93
+#import "ROpz-094_aggiunta_nodo_figlio_no.typ": data as item_93, req-name as req-93
 
 #req-uc-dict.insert(
   req-93
@@ -1713,7 +1713,7 @@ item_93.fonti=utils.format-array(item_93.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-093_aggiunta_nodo.typ": data as item_94, req-name as req-94
+#import "ROpz-095_aggiunta_nodo.typ": data as item_94, req-name as req-94
 
 #req-uc-dict.insert(
   req-94
@@ -1731,7 +1731,7 @@ item_94.fonti=utils.format-array(item_94.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-094_aggiunta_nodo_foglia.typ": data as item_95, req-name as req-95
+#import "ROpz-096_aggiunta_nodo_foglia.typ": data as item_95, req-name as req-95
 
 #req-uc-dict.insert(
   req-95
@@ -1749,7 +1749,7 @@ item_95.fonti=utils.format-array(item_95.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-095_aggiunta_nodo_foglia_pass.typ": data as item_96, req-name as req-96
+#import "ROpz-097_aggiunta_nodo_foglia_pass.typ": data as item_96, req-name as req-96
 
 #req-uc-dict.insert(
   req-96
@@ -1767,7 +1767,7 @@ item_96.fonti=utils.format-array(item_96.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-096_aggiunta_nodo_foglia_fail.typ": data as item_97, req-name as req-97
+#import "ROpz-098_aggiunta_nodo_foglia_fail.typ": data as item_97, req-name as req-97
 
 #req-uc-dict.insert(
   req-97
@@ -1785,7 +1785,7 @@ item_97.fonti=utils.format-array(item_97.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-097_aggiunta_nodo_foglia_not_applicable.typ": data as item_98, req-name as req-98
+#import "ROpz-099_aggiunta_nodo_foglia_not_applicable.typ": data as item_98, req-name as req-98
 
 #req-uc-dict.insert(
   req-98
@@ -1803,7 +1803,7 @@ item_98.fonti=utils.format-array(item_98.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-098_aggiunta_nodo_di_decisione.typ": data as item_99, req-name as req-99
+#import "ROpz-100_aggiunta_nodo_di_decisione.typ": data as item_99, req-name as req-99
 
 #req-uc-dict.insert(
   req-99
@@ -1821,7 +1821,7 @@ item_99.fonti=utils.format-array(item_99.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-099_inserimento_codice_nodo_di_decisione.typ": data as item_100, req-name as req-100
+#import "ROpz-101_inserimento_codice_nodo_di_decisione.typ": data as item_100, req-name as req-100
 
 #req-uc-dict.insert(
   req-100
@@ -1839,7 +1839,7 @@ item_100.fonti=utils.format-array(item_100.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-100_errore_codice_nodo_non_valido.typ": data as item_101, req-name as req-101
+#import "ROpz-102_errore_codice_nodo_non_valido.typ": data as item_101, req-name as req-101
 
 #req-uc-dict.insert(
   req-101
@@ -1857,7 +1857,7 @@ item_101.fonti=utils.format-array(item_101.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-101_errore_codice_nodo_già_esistente.typ": data as item_102, req-name as req-102
+#import "ROpz-103_errore_codice_nodo_già_esistente.typ": data as item_102, req-name as req-102
 
 #req-uc-dict.insert(
   req-102
@@ -1875,7 +1875,7 @@ item_102.fonti=utils.format-array(item_102.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-102_inserimento_domanda_nodo_di_decisione.typ": data as item_103, req-name as req-103
+#import "ROpz-104_inserimento_domanda_nodo_di_decisione.typ": data as item_103, req-name as req-103
 
 #req-uc-dict.insert(
   req-103
@@ -1893,7 +1893,7 @@ item_103.fonti=utils.format-array(item_103.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-103_errore_domanda_vuota.typ": data as item_104, req-name as req-104
+#import "ROpz-105_errore_domanda_vuota.typ": data as item_104, req-name as req-104
 
 #req-uc-dict.insert(
   req-104
@@ -1911,7 +1911,7 @@ item_104.fonti=utils.format-array(item_104.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-104_modifica_nodo_di_decisione.typ": data as item_105, req-name as req-105
+#import "ROpz-106_modifica_nodo_di_decisione.typ": data as item_105, req-name as req-105
 
 #req-uc-dict.insert(
   req-105
@@ -1929,7 +1929,7 @@ item_105.fonti=utils.format-array(item_105.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-105_modifica_codice_nodo_decision_tree.typ": data as item_106, req-name as req-106
+#import "ROpz-107_modifica_codice_nodo_decision_tree.typ": data as item_106, req-name as req-106
 
 #req-uc-dict.insert(
   req-106
@@ -1947,7 +1947,7 @@ item_106.fonti=utils.format-array(item_106.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-106_errore_modifica_codice_nodo_non_valido.typ": data as item_107, req-name as req-107
+#import "ROpz-108_errore_modifica_codice_nodo_non_valido.typ": data as item_107, req-name as req-107
 
 #req-uc-dict.insert(
   req-107
@@ -1965,7 +1965,7 @@ item_107.fonti=utils.format-array(item_107.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-107_errore_modifica_codice_nodo_già_esistente.typ": data as item_108, req-name as req-108
+#import "ROpz-109_errore_modifica_codice_nodo_già_esistente.typ": data as item_108, req-name as req-108
 
 #req-uc-dict.insert(
   req-108
@@ -1983,7 +1983,7 @@ item_108.fonti=utils.format-array(item_108.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-108_modifica_domanda_nodo_decision_tree.typ": data as item_109, req-name as req-109
+#import "ROpz-110_modifica_domanda_nodo_decision_tree.typ": data as item_109, req-name as req-109
 
 #req-uc-dict.insert(
   req-109
@@ -2001,7 +2001,7 @@ item_109.fonti=utils.format-array(item_109.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-109_errore_modifica_domanda_vuota.typ": data as item_110, req-name as req-110
+#import "ROpz-111_errore_modifica_domanda_vuota.typ": data as item_110, req-name as req-110
 
 #req-uc-dict.insert(
   req-110
@@ -2019,7 +2019,7 @@ item_110.fonti=utils.format-array(item_110.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-110_rimozione_nodo_dal_decision_tree.typ": data as item_111, req-name as req-111
+#import "ROpz-112_rimozione_nodo_dal_decision_tree.typ": data as item_111, req-name as req-111
 
 #req-uc-dict.insert(
   req-111
@@ -2037,7 +2037,7 @@ item_111.fonti=utils.format-array(item_111.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-111_errore_eliminazione_nodo_root.typ": data as item_112, req-name as req-112
+#import "ROpz-113_errore_eliminazione_nodo_root.typ": data as item_112, req-name as req-112
 
 #req-uc-dict.insert(
   req-112

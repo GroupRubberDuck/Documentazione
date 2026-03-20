@@ -73,13 +73,13 @@ structure:
 - Inserimento descrizione asset
 - Errore nome asset non valido
 - Annullamento aggiunta asset
-- Visualizzazione lista asset:
-      - visualizzazione elemento lista asset
+- Visualizzazione lista asset
+- Visualizzazione elemento lista asset
 - Visualizzazione nome asset
 - Visualizzazione tipo asset
 - Visualizzazione stato aggregato asset
-- Visualizzazione dettaglio asset:
-      - Valuta asset
+- Visualizzazione dettaglio asset
+- Valuta asset
 - Visualizzazione descrizione asset
 - Eliminazione asset
 
@@ -118,8 +118,8 @@ structure:
 - Visualizzazione domanda nodo a dettaglio
 - Visualizzazione risposta nodo a dettaglio
 - Assenza risposta a dettaglio
-- Valutazione nodo di decisione:
-      - Seleziona risposta nodo
+- Valutazione nodo di decisione
+- Seleziona risposta nodo
 - Selezione risposta Yes
 - Selezione risposta No
 - Navigazione nodo successivo

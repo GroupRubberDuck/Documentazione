@@ -29,8 +29,27 @@
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    
+    /* Variabili personalizzate aggiunte */
+    --bg-primary: #001c29;
+    --bg-secondary: #012638;
+    --text-primary: #ffffff;
+    --text-secondary: #a5c7d4;
+    
+    /* Variabili per il glossario */
+    --surface: var(--bg-secondary);
+    --surface2: #023247;
+    --border: #1e3a4a;
+    --accent: #5b8dee;
+    --text: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --badge-abbr: rgba(91, 141, 238, 0.15);
+    --badge-abbr-text: #8bb0ff;
+    --badge-term: rgba(174, 66, 51, 0.327);
+    --badge-term-text: #d4b8a5;
   }
 }
+
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     box-sizing: border-box;
@@ -179,6 +198,7 @@
     display: none !important;
   }
 }
+
 @layer utilities {
   .sr-only {
     position: absolute;
@@ -497,12 +517,8 @@
     }
   }
 }
-:root {
-  --bg-primary: #001c29;
-  --bg-secondary: #012638;
-  --text-primary: #ffffff;
-  --text-secondary: #a5c7d4;
-}
+
+/* ===== STILI PERSONALIZZATI ===== */
 .bg-primary {
   background-color: var(--bg-primary);
 }
@@ -607,35 +623,294 @@ section.content {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-.title-glossario {
-  margin-inline: calc(var(--spacing) * 6);
-  margin-top: calc(var(--spacing) * 4);
-  font-size: var(--text-4xl);
-  line-height: var(--tw-leading, var(--text-4xl--line-height));
+/* ===== SCROLLBAR PERSONALIZZATA ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-.glossario h2 {
-  margin-bottom: calc(var(--spacing) * 4);
-  font-size: var(--text-3xl);
-  line-height: var(--tw-leading, var(--text-3xl--line-height));
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
 }
-.glossario {
-  padding: calc(var(--spacing) * 6);
+::-webkit-scrollbar-thumb {
+  background: var(--border, #1e3a4a);
+  border-radius: 4px;
 }
-.glossario dt {
-  font-size: var(--text-lg);
-  line-height: var(--tw-leading, var(--text-lg--line-height));
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent, #5b8dee);
 }
-.glossario dd {
-  margin-bottom: calc(var(--spacing) * 8);
-  margin-left: calc(var(--spacing) * 4);
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border, #1e3a4a) var(--bg-primary);
 }
-.glossario dd ul {
-  margin-bottom: calc(var(--spacing) * 4);
-  margin-left: calc(var(--spacing) * 4);
-  list-style-type: disc;
+
+/* ===== STILI GLOSSARIO ===== */
+
+/* --- Pagina glossario layout --- */
+.glossario-page {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
 }
+
+.glossario-header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 0.75rem;
+}
+
+
+/* --- Back link nel glossario --- */
+.glossario-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.glossario-back-link:hover { opacity: 1; }
+
+/* --- Search row --- */
+.glossario-search-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.glossario-search-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.glossario-search-wrap svg {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+input[type="search"] {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  padding: 0.6rem 0.9rem 0.6rem 2.4rem;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="search"]:focus { border-color: var(--accent); }
+input[type="search"]::placeholder { color: var(--text-secondary); }
+
+/* --- Type filters --- */
+.glossario-type-filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.glossario-type-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.glossario-type-btn:hover { border-color: var(--accent); color: var(--text); }
+.glossario-type-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.glossario-type-btn.active-abbr { background: var(--badge-abbr); border-color: var(--badge-abbr-text); color: var(--badge-abbr-text); }
+.glossario-type-btn.active-term { background: var(--badge-term); border-color: var(--badge-term-text); color: var(--badge-term-text); }
+
+/* --- Letter nav --- */
+.glossario-letter-nav {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.glossario-letter-btn {
+ 
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.glossario-letter-btn:hover:not(:disabled) { background: var(--surface2); color: var(--text); }
+.glossario-letter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.glossario-letter-btn:disabled { opacity: 0.2; cursor: default; }
+.glossario-letter-btn.clear-btn {
+  width: auto;
+  padding: 0 0.6rem;
+  font-size: 0.7rem;
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+/* --- Results bar --- */
+.glossario-results-bar {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0 0.25rem;
+  min-height: 1.25rem;
+}
+.glossario-results-bar b { color: var(--accent); }
+
+/* --- Main content area --- */
+.glossario-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* --- Sections --- */
+.glossario-section {
+  margin-bottom: 3rem;
+}
+
+.glossario-section-letter {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* --- Term cards --- */
+.glossario-term-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.glossario-term-card:hover { border-color: #2a4a60; transform: translateX(4px); }
+
+.glossario-term-card:hover::before { opacity: 1; }
+
+.glossario-term-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.glossario-term-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.glossario-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.glossario-badge-abbr {
+  background: var(--badge-abbr);
+  color: var(--badge-abbr-text);
+  border: 1px solid var(--badge-abbr-text);
+}
+.glossario-badge-term {
+  background: var(--badge-term);
+  color: var(--badge-term-text);
+  border: 1px solid var(--badge-term-text);
+}
+
+.glossario-term-def {
+  font-family: 'Lora', serif;
+  font-size: 0.925rem;
+  line-height: 1.7;
+  color: #b0b4c8;
+}
+.glossario-term-def ul { margin: 0.5rem 0 0 1.2rem; list-style: disc; }
+.glossario-term-def li { margin-bottom: 0.25rem; }
+.glossario-term-def mark {
+  background: rgba(91, 141, 238, 0.25);
+  color: #a5c0f7;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* --- No results --- */
+.glossario-no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  display: none;
+}
+.glossario-no-results.show { display: block; }
+.glossario-no-results span {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+/* --- Scroll to top button (glossario) --- */
+#glossario-scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 200;
+}
+#glossario-scrollTop.visible { opacity: 1; transform: translateY(0); }
+
 @property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
@@ -645,6 +920,7 @@ section.content {
   syntax: "*";
   inherits: false;
 }
+
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -653,3 +929,25 @@ section.content {
     }
   }
 }
+
+/* --- Scroll to top button (index) --- */
+#index-scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 200;
+}
+#index-scrollTop.visible { opacity: 1; transform: translateY(0); }

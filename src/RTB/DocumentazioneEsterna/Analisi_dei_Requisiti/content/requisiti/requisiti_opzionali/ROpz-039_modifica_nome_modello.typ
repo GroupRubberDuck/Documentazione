@@ -9,6 +9,8 @@
 
   descrizione:[
   L'Utente deve poter modificare il nome del modello durante la modifica dell'anagrafica.
+
+  Il nuovo nome deve avere una lunghezza compresa tra 1 e 32 caratteri
   ],
   fonti:(
     "Modifica nome modello",

@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per il modello non è valido.
+  L'Utente deve poter visualizzare un messaggio di errore esplicativo quando il nuovo nome inserito per il modello di lunghezza non compresa tra 1 e 32 caratteri.
   ],
   fonti:(
     "Errore modifica nome modello",

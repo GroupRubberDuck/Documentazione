@@ -40,7 +40,7 @@
     stato: "In verifica",
     versione: versionNumber,
     autori: (persone.ANA,),
-    verificatori: ("",),
+    verificatori: (persone.ALDO,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -50,7 +50,7 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-02-24], persone.ANA, [],[Stesura del verbale]),
+    ([0.1.0], [2026-02-24], persone.ANA, persone.ALDO,[Stesura del verbale]),
     //([1.0.0], [2026-02-00], persone.DL, persone.DL,[Approvazione]),
   )
 
@@ -133,7 +133,7 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Redazione verbale interno del 2026-02-24],
-      [Avere il verbale esterno disponibile per tutti],
+      [Avere il verbale interno disponibile per tutti],
       [-],
     ),
     (
@@ -202,7 +202,7 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Amministratori],
+      [#persone.ALDO],
       [Configurare e condividere con il team lo spreadsheet su Google Drive per il tracciamento delle ore.],
       [VI.15.2],
     ),

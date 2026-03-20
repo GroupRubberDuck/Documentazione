@@ -885,7 +885,7 @@ item_47.fonti=utils.format-array(item_47.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb048.1_visualizzazione_elemento_lista_asset.typ": data as item_48, req-name as req-48
+#import "RObb049_visualizzazione_elemento_lista_asset.typ": data as item_48, req-name as req-48
 
 #req-uc-dict.insert(
   req-48
@@ -903,7 +903,7 @@ item_48.fonti=utils.format-array(item_48.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb049_visualizzazione_nome_asset.typ": data as item_49, req-name as req-49
+#import "RObb050_visualizzazione_nome_asset.typ": data as item_49, req-name as req-49
 
 #req-uc-dict.insert(
   req-49
@@ -921,7 +921,7 @@ item_49.fonti=utils.format-array(item_49.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb050_visualizzazione_tipo_asset.typ": data as item_50, req-name as req-50
+#import "RObb051_visualizzazione_tipo_asset.typ": data as item_50, req-name as req-50
 
 #req-uc-dict.insert(
   req-50
@@ -939,7 +939,7 @@ item_50.fonti=utils.format-array(item_50.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb051_visualizzazione_stato_aggregato_asset.typ": data as item_51, req-name as req-51
+#import "RObb052_visualizzazione_stato_aggregato_asset.typ": data as item_51, req-name as req-51
 
 #req-uc-dict.insert(
   req-51
@@ -957,7 +957,7 @@ item_51.fonti=utils.format-array(item_51.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb052_visualizzazione_dettaglio_asset.typ": data as item_52, req-name as req-52
+#import "RObb053_visualizzazione_dettaglio_asset.typ": data as item_52, req-name as req-52
 
 #req-uc-dict.insert(
   req-52
@@ -975,7 +975,7 @@ item_52.fonti=utils.format-array(item_52.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb052.1_valuta_asset.typ": data as item_53, req-name as req-53
+#import "RObb054_valuta_asset.typ": data as item_53, req-name as req-53
 
 #req-uc-dict.insert(
   req-53
@@ -993,7 +993,7 @@ item_53.fonti=utils.format-array(item_53.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb053_visualizzazione_descrizione_asset.typ": data as item_54, req-name as req-54
+#import "RObb055_visualizzazione_descrizione_asset.typ": data as item_54, req-name as req-54
 
 #req-uc-dict.insert(
   req-54
@@ -1011,7 +1011,7 @@ item_54.fonti=utils.format-array(item_54.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb054_eliminazione_asset.typ": data as item_55, req-name as req-55
+#import "RObb056_eliminazione_asset.typ": data as item_55, req-name as req-55
 
 #req-uc-dict.insert(
   req-55
@@ -1029,7 +1029,7 @@ item_55.fonti=utils.format-array(item_55.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb055_visualizzazione_lista_requisiti_asset.typ": data as item_56, req-name as req-56
+#import "RObb057_visualizzazione_lista_requisiti_asset.typ": data as item_56, req-name as req-56
 
 #req-uc-dict.insert(
   req-56
@@ -1047,7 +1047,7 @@ item_56.fonti=utils.format-array(item_56.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb056_visualizzazione_elemento_lista_requisiti_asset.typ": data as item_57, req-name as req-57
+#import "RObb058_visualizzazione_elemento_lista_requisiti_asset.typ": data as item_57, req-name as req-57
 
 #req-uc-dict.insert(
   req-57
@@ -1065,7 +1065,7 @@ item_57.fonti=utils.format-array(item_57.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb057_visualizzazione_codice_requisito.typ": data as item_58, req-name as req-58
+#import "RObb059_visualizzazione_codice_requisito.typ": data as item_58, req-name as req-58
 
 #req-uc-dict.insert(
   req-58
@@ -1083,7 +1083,7 @@ item_58.fonti=utils.format-array(item_58.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb058_visualizzazione_stato_valutazione_requisito.typ": data as item_59, req-name as req-59
+#import "RObb060_visualizzazione_stato_valutazione_requisito.typ": data as item_59, req-name as req-59
 
 #req-uc-dict.insert(
   req-59
@@ -1101,7 +1101,7 @@ item_59.fonti=utils.format-array(item_59.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb059_visualizzazione_dettaglio_requisito.typ": data as item_60, req-name as req-60
+#import "RObb061_visualizzazione_dettaglio_requisito.typ": data as item_60, req-name as req-60
 
 #req-uc-dict.insert(
   req-60
@@ -1119,7 +1119,7 @@ item_60.fonti=utils.format-array(item_60.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb060_visualizzazione_nome_requisito.typ": data as item_61, req-name as req-61
+#import "RObb062_visualizzazione_nome_requisito.typ": data as item_61, req-name as req-61
 
 #req-uc-dict.insert(
   req-61
@@ -1137,7 +1137,7 @@ item_61.fonti=utils.format-array(item_61.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb061_visualizzazione_descrizione_normativa_requisito.typ": data as item_62, req-name as req-62
+#import "RObb063_visualizzazione_descrizione_normativa_requisito.typ": data as item_62, req-name as req-62
 
 #req-uc-dict.insert(
   req-62
@@ -1155,7 +1155,7 @@ item_62.fonti=utils.format-array(item_62.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb062_visualizzazione_stato_pass_requisito.typ": data as item_63, req-name as req-63
+#import "RObb064_visualizzazione_stato_pass_requisito.typ": data as item_63, req-name as req-63
 
 #req-uc-dict.insert(
   req-63
@@ -1173,7 +1173,7 @@ item_63.fonti=utils.format-array(item_63.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb063_visualizzazione_stato_fail_requisito.typ": data as item_64, req-name as req-64
+#import "RObb065_visualizzazione_stato_fail_requisito.typ": data as item_64, req-name as req-64
 
 #req-uc-dict.insert(
   req-64
@@ -1191,7 +1191,7 @@ item_64.fonti=utils.format-array(item_64.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb064_visualizzazione_stato_na_requisito.typ": data as item_65, req-name as req-65
+#import "RObb066_visualizzazione_stato_na_requisito.typ": data as item_65, req-name as req-65
 
 #req-uc-dict.insert(
   req-65
@@ -1209,7 +1209,7 @@ item_65.fonti=utils.format-array(item_65.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb065_visualizzazione_stato_in_corso_requisito.typ": data as item_66, req-name as req-66
+#import "RObb067_visualizzazione_stato_in_corso_requisito.typ": data as item_66, req-name as req-66
 
 #req-uc-dict.insert(
   req-66
@@ -1227,7 +1227,7 @@ item_66.fonti=utils.format-array(item_66.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb066_visualizzazione_stato_sospeso_requisito.typ": data as item_67, req-name as req-67
+#import "RObb068_visualizzazione_stato_sospeso_requisito.typ": data as item_67, req-name as req-67
 
 #req-uc-dict.insert(
   req-67
@@ -1245,7 +1245,7 @@ item_67.fonti=utils.format-array(item_67.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb067_visualizzazione_lista_dipendenze_requisito.typ": data as item_68, req-name as req-68
+#import "RObb069_visualizzazione_lista_dipendenze_requisito.typ": data as item_68, req-name as req-68
 
 #req-uc-dict.insert(
   req-68
@@ -1263,7 +1263,7 @@ item_68.fonti=utils.format-array(item_68.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb068_visualizzazione_sintesi_dipendenza.typ": data as item_69, req-name as req-69
+#import "RObb070_visualizzazione_sintesi_dipendenza.typ": data as item_69, req-name as req-69
 
 #req-uc-dict.insert(
   req-69
@@ -1281,7 +1281,7 @@ item_69.fonti=utils.format-array(item_69.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb069_visualizzazione_codice_dipendenza.typ": data as item_70, req-name as req-70
+#import "RObb071_visualizzazione_codice_dipendenza.typ": data as item_70, req-name as req-70
 
 #req-uc-dict.insert(
   req-70
@@ -1299,7 +1299,7 @@ item_70.fonti=utils.format-array(item_70.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb070_visualizzazione_stato_dipendenza.typ": data as item_71, req-name as req-71
+#import "RObb072_visualizzazione_stato_dipendenza.typ": data as item_71, req-name as req-71
 
 #req-uc-dict.insert(
   req-71
@@ -1317,7 +1317,7 @@ item_71.fonti=utils.format-array(item_71.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb071_visualizzazione_decision_tree.typ": data as item_72, req-name as req-72
+#import "RObb073_visualizzazione_decision_tree.typ": data as item_72, req-name as req-72
 
 #req-uc-dict.insert(
   req-72
@@ -1335,7 +1335,7 @@ item_72.fonti=utils.format-array(item_72.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb072_visualizzazione_nodo_decision_tree.typ": data as item_73, req-name as req-73
+#import "RObb074_visualizzazione_nodo_decision_tree.typ": data as item_73, req-name as req-73
 
 #req-uc-dict.insert(
   req-73
@@ -1353,7 +1353,7 @@ item_73.fonti=utils.format-array(item_73.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb073_visualizzazione_stato_attività_nodo.typ": data as item_74, req-name as req-74
+#import "RObb075_visualizzazione_stato_attività_nodo.typ": data as item_74, req-name as req-74
 
 #req-uc-dict.insert(
   req-74
@@ -1371,7 +1371,7 @@ item_74.fonti=utils.format-array(item_74.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb074_visualizzazione_nodo_di_decisione.typ": data as item_75, req-name as req-75
+#import "RObb076_visualizzazione_nodo_di_decisione.typ": data as item_75, req-name as req-75
 
 #req-uc-dict.insert(
   req-75
@@ -1389,7 +1389,7 @@ item_75.fonti=utils.format-array(item_75.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb075_visualizzazione_codice_requisito_nodo.typ": data as item_76, req-name as req-76
+#import "RObb077_visualizzazione_codice_requisito_nodo.typ": data as item_76, req-name as req-76
 
 #req-uc-dict.insert(
   req-76
@@ -1407,7 +1407,7 @@ item_76.fonti=utils.format-array(item_76.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb076_visualizzazione_codice_nodo.typ": data as item_77, req-name as req-77
+#import "RObb078_visualizzazione_codice_nodo.typ": data as item_77, req-name as req-77
 
 #req-uc-dict.insert(
   req-77
@@ -1425,7 +1425,7 @@ item_77.fonti=utils.format-array(item_77.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb077_visualizzazione_domanda_nodo.typ": data as item_78, req-name as req-78
+#import "RObb079_visualizzazione_domanda_nodo.typ": data as item_78, req-name as req-78
 
 #req-uc-dict.insert(
   req-78
@@ -1443,7 +1443,7 @@ item_78.fonti=utils.format-array(item_78.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb078_visualizzazione_risposta_nodo.typ": data as item_79, req-name as req-79
+#import "RObb080_visualizzazione_risposta_nodo.typ": data as item_79, req-name as req-79
 
 #req-uc-dict.insert(
   req-79
@@ -1461,7 +1461,7 @@ item_79.fonti=utils.format-array(item_79.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb079_nessuna_risposta_associata_a_nodo.typ": data as item_80, req-name as req-80
+#import "RObb081_nessuna_risposta_associata_a_nodo.typ": data as item_80, req-name as req-80
 
 #req-uc-dict.insert(
   req-80
@@ -1479,7 +1479,7 @@ item_80.fonti=utils.format-array(item_80.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb080_visualizzazione_nodo_foglia.typ": data as item_81, req-name as req-81
+#import "RObb082_visualizzazione_nodo_foglia.typ": data as item_81, req-name as req-81
 
 #req-uc-dict.insert(
   req-81
@@ -1497,7 +1497,7 @@ item_81.fonti=utils.format-array(item_81.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb081_visualizzazione_valore_nodo_foglia.typ": data as item_82, req-name as req-82
+#import "RObb083_visualizzazione_valore_nodo_foglia.typ": data as item_82, req-name as req-82
 
 #req-uc-dict.insert(
   req-82
@@ -1515,7 +1515,7 @@ item_82.fonti=utils.format-array(item_82.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb082_visualizzazione_giustificazione_decision_tree.typ": data as item_83, req-name as req-83
+#import "RObb084_visualizzazione_giustificazione_decision_tree.typ": data as item_83, req-name as req-83
 
 #req-uc-dict.insert(
   req-83
@@ -1533,7 +1533,7 @@ item_83.fonti=utils.format-array(item_83.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb083_visualizzazione_dettaglio_nodo_decisionale.typ": data as item_84, req-name as req-84
+#import "RObb085_visualizzazione_dettaglio_nodo_decisionale.typ": data as item_84, req-name as req-84
 
 #req-uc-dict.insert(
   req-84
@@ -1551,7 +1551,7 @@ item_84.fonti=utils.format-array(item_84.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb084_visualizzazione_codice_requisito_a_dettaglio.typ": data as item_85, req-name as req-85
+#import "RObb086_visualizzazione_codice_requisito_a_dettaglio.typ": data as item_85, req-name as req-85
 
 #req-uc-dict.insert(
   req-85
@@ -1569,7 +1569,7 @@ item_85.fonti=utils.format-array(item_85.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb085_visualizzazione_codice_nodo_a_dettaglio.typ": data as item_86, req-name as req-86
+#import "RObb087_visualizzazione_codice_nodo_a_dettaglio.typ": data as item_86, req-name as req-86
 
 #req-uc-dict.insert(
   req-86
@@ -1587,7 +1587,7 @@ item_86.fonti=utils.format-array(item_86.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb086_visualizzazione_domanda_nodo_a_dettaglio.typ": data as item_87, req-name as req-87
+#import "RObb088_visualizzazione_domanda_nodo_a_dettaglio.typ": data as item_87, req-name as req-87
 
 #req-uc-dict.insert(
   req-87
@@ -1605,7 +1605,7 @@ item_87.fonti=utils.format-array(item_87.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb087_visualizzazione_risposta_nodo_a_dettaglio.typ": data as item_88, req-name as req-88
+#import "RObb089_visualizzazione_risposta_nodo_a_dettaglio.typ": data as item_88, req-name as req-88
 
 #req-uc-dict.insert(
   req-88
@@ -1623,7 +1623,7 @@ item_88.fonti=utils.format-array(item_88.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb088_assenza_risposta_a_dettaglio.typ": data as item_89, req-name as req-89
+#import "RObb090_assenza_risposta_a_dettaglio.typ": data as item_89, req-name as req-89
 
 #req-uc-dict.insert(
   req-89
@@ -1641,7 +1641,7 @@ item_89.fonti=utils.format-array(item_89.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb089_valutazione_nodo_di_decisione.typ": data as item_90, req-name as req-90
+#import "RObb091_valutazione_nodo_di_decisione.typ": data as item_90, req-name as req-90
 
 #req-uc-dict.insert(
   req-90
@@ -1659,7 +1659,7 @@ item_90.fonti=utils.format-array(item_90.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb089.1_seleziona_risposta_nodo.typ": data as item_91, req-name as req-91
+#import "RObb092_seleziona_risposta_nodo.typ": data as item_91, req-name as req-91
 
 #req-uc-dict.insert(
   req-91
@@ -1677,7 +1677,7 @@ item_91.fonti=utils.format-array(item_91.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb090_selezione_risposta_yes.typ": data as item_92, req-name as req-92
+#import "RObb093_selezione_risposta_yes.typ": data as item_92, req-name as req-92
 
 #req-uc-dict.insert(
   req-92
@@ -1695,7 +1695,7 @@ item_92.fonti=utils.format-array(item_92.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb091_selezione_risposta_no.typ": data as item_93, req-name as req-93
+#import "RObb094_selezione_risposta_no.typ": data as item_93, req-name as req-93
 
 #req-uc-dict.insert(
   req-93
@@ -1713,7 +1713,7 @@ item_93.fonti=utils.format-array(item_93.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb092_navigazione_nodo_successivo.typ": data as item_94, req-name as req-94
+#import "RObb095_navigazione_nodo_successivo.typ": data as item_94, req-name as req-94
 
 #req-uc-dict.insert(
   req-94
@@ -1731,7 +1731,7 @@ item_94.fonti=utils.format-array(item_94.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb093_errore_nodo_senza_risposta_selezionata.typ": data as item_95, req-name as req-95
+#import "RObb096_errore_nodo_senza_risposta_selezionata.typ": data as item_95, req-name as req-95
 
 #req-uc-dict.insert(
   req-95
@@ -1749,7 +1749,7 @@ item_95.fonti=utils.format-array(item_95.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb094_raggiungimento_nodo_foglia.typ": data as item_96, req-name as req-96
+#import "RObb097_raggiungimento_nodo_foglia.typ": data as item_96, req-name as req-96
 
 #req-uc-dict.insert(
   req-96
@@ -1767,7 +1767,7 @@ item_96.fonti=utils.format-array(item_96.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb095_navigazione_nodo_precedente.typ": data as item_97, req-name as req-97
+#import "RObb098_navigazione_nodo_precedente.typ": data as item_97, req-name as req-97
 
 #req-uc-dict.insert(
   req-97
@@ -1785,7 +1785,7 @@ item_97.fonti=utils.format-array(item_97.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb096_reindirizzamento_da_nodo_root.typ": data as item_98, req-name as req-98
+#import "RObb099_reindirizzamento_da_nodo_root.typ": data as item_98, req-name as req-98
 
 #req-uc-dict.insert(
   req-98
@@ -1803,7 +1803,7 @@ item_98.fonti=utils.format-array(item_98.fonti,transf:uc-transformation-con-link
 
 
 
-#import "RObb097_inserimento_giustificazione_decision_tree.typ": data as item_99, req-name as req-99
+#import "RObb100_inserimento_giustificazione_decision_tree.typ": data as item_99, req-name as req-99
 
 #req-uc-dict.insert(
   req-99

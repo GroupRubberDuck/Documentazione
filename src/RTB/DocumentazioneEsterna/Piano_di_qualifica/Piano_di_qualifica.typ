@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 2,
+  minor: 7,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -42,8 +42,8 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu",),
-    verificatori: ("Davide Testolin",),
+    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT),
+    verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -57,14 +57,14 @@
     (
       [0.0.1],
       [2025-12-15],
-      [Felician Mario Necsulescu ],
+      [Felician Mario \ Necsulescu ],
       [Davide Testolin],
       [Creazione del documento e stesura iniziale.],
     ),
     (
       [0.1.0],
       [2025-12-18],
-      [Felician Mario Necsulescu],
+      [Felician Mario \ Necsulescu],
       [Davide Testolin],
       [Completamento sezione Introduzione @introduzione, Qualità del processo @processo, Qualità del prodotto @prodotto.],
     ),
@@ -72,15 +72,42 @@
       [0.2.0],
       [2026-02-06],
       [Davide Lorenzon],
-      [],
-      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index @instability-index],
+      [Ana Maria \ Draghici],
+      [Rimossa metrica *Copertura dei requisiti* perché ridondante, apportate modifiche ai valori ottimi e accettabili,di process lead time con Time efficiency @time-efficiency e di modularity index con instability index ],
     ),
     (
       [0.3.0],
       [2026-02-23],
       [Davide Testolin],
-      [],
+      [Ana Maria\  Draghici],
       [Aggiunti i grafici per alcune metriche]
+    ),
+    (
+      [0.4.0],
+      [2026-02-24],
+      [Ana Maria Draghici],
+      [Felician Mario \ Necsulescu],
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
+    ),
+    (
+      [0.5.0],
+      [2026-03-11],
+      [Ana Maria Draghici],
+      [Felician Mario \ Necsulescu],
+      [Aggiornata @valutazione in seguito avanzamento degli sprint]
+    ),    (
+      [0.6.0],
+      [2026-03-19],
+      [Davide Lorenzon],
+      [],
+      [Aggiunti test di sistema @test-sistema]
+    ),
+    (
+      [0.7.0],
+      [2026-03-19],
+      [Davide Lorenzon],
+      [],
+      [Aggiunti test di accettazione @test-accettazione]
     ),
   )
   #registroModifiche(modifiche)
@@ -128,7 +155,7 @@
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Strategie di testing", documentType: doc)[
-  = Strategie di testing
+  = Strategie di testing <testing>
   #include "content/04-strategie_testing/index.typ"
 
 
@@ -142,9 +169,14 @@
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Cruscotto di valutazione", documentType: doc)[
-  = Cruscotto di valutazione
+  = Cruscotto di valutazione <valutazione>
   #include "content/05-cruscotto_valutazione/index.typ"
 
+
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
+  = Automiglioramento <miglioramento>
+  #include "content/06-automiglioramento/index.typ"
 
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
