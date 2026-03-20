@@ -51,7 +51,7 @@
 
     ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
     ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura delle sezioni rimanenti]),
-    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione del documento]),
+    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione interna ed esterna del documento]),
 
     )
 

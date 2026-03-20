@@ -24,8 +24,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0, //manca approvazione bluewind
-  minor: 1,
+  major: 1, //manca approvazione bluewind
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -40,7 +40,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ALDO,),
     verificatori: ("Filippo Guerra",),
@@ -53,7 +53,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-01-14], persone.ALDO, [Filippo Guerra], [Stesura del verbale]),
-    ([1.0.0], [2026-01-14], persone.ALDO, persone.ALDO, [Approvazione]),
+    ([1.0.0], [2026-01-16], persone.ALDO, persone.ALDO, [Approvazione interna ed esterna del documento]),
   )
 
   #registroModifiche(modifiche)
@@ -133,7 +133,7 @@
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Creazione di prototipo dimostrativo],
+      [Scelta e studio delle tecnologie per la creazione di un prototipo dimostrativo],
       [Avere un esempio da mostrare e iniziare a trovare soluzioni a problemi di implementazione],
       [-],
     ),
@@ -156,12 +156,12 @@
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [Redazione di questo verbale],
-      [VE.4.1],
+      [-],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [-],
-      [Creazione di prototipo dimostrativo],
+      [Tutto il gruppo],
+      [Scegliere e studiare tecnologie adatte alla creazione di un prototipo dimostrativo],
       [VE.4.1],
     ),
   )
@@ -178,7 +178,7 @@
   Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
   Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
-  /*#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]*/
+  #place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
 
 ]
 

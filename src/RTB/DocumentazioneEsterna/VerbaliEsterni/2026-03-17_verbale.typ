@@ -22,8 +22,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -38,10 +38,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT,),
-    verificatori: (),
+    verificatori: (persone.FELIX,),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo", "BlueWind srl"),
   )
@@ -50,7 +50,8 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-01-14], persone.DT, [], [Stesura del verbale]),
+    ([0.1.0], [2026-03-18], persone.DT, persone.FELIX, [Stesura del verbale]),
+    ([1.0.0], [2026-03-20], persone.DT, persone.DT, [Approvazione interna ed esterna del documento]),
   )
 
   #registroModifiche(modifiche)
@@ -93,14 +94,14 @@
   = Ordine del giorno
   - Presentazione dello stato di avanzamento.
 
-  - Chiarimenti sull'analisi dei requisiti.
+  - Chiarimenti sull'Analisi dei Requisiti.
 
   - Presentazione del PoC.
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale esterno", giornoRiunione)[
   = Riassunto della riunione<intro>
-  La riunione si è svolta per presentare lo stato di avanzamento del gruppo durante il periodo a minore intensità di lavoro dovuto al sovrapporsi del periodo di esami ed altri impegni dei singoli membri del gruppo. Sono stati richiesti chiarimenti riguardo alcuni dubbi sull'analisi dei requisiti e successivamente è stato presentato il PoC. Infine si è concordato di riprendere le riunioni di allineamento periodico tra il gruppo e l'azienda
+  La riunione si è svolta per presentare lo stato di avanzamento del gruppo durante il periodo a minore intensità di lavoro dovuto al sovrapporsi del periodo di esami ed altri impegni dei singoli membri del gruppo. Sono stati richiesti chiarimenti riguardo alcuni dubbi sull' Analisi dei Requisiti e successivamente è stato presentato il PoC. Infine si è concordato di riprendere le riunioni di allineamento periodico tra il gruppo e l'azienda.
 
   == Rimozione del sistema multi-utente
   E' stata resa nota all'azienda la scelta del gruppo di semplificare la gestione degli utenti rimuovendo il sistema multi-utente e concentrandosi su un unico utente con accesso completo all'applicazione.
@@ -115,7 +116,7 @@
   E' stato chiarito che il contenuto del report generato in formato JSON e CSV può essere uguale al contenuto dell'esportazione del dispositivo nel medesimo formato.
 
   == Presentazione del Proof of Concept
-  Il gruppo ha presentato il Proof of Concept all'azienda proponente con una dimostrazione pratica, spiegando le tecnologie utilizzate (Flask, MongoDB e D3js).
+  Il gruppo ha presentato il Proof of Concept all'azienda proponente con una dimostrazione pratica, spiegando le principali tecnologie utilizzate (Flask, MongoDB e D3js).
 
 ]
 
@@ -153,7 +154,7 @@
 #insertArabicNumberedPages("TODO", "Verbale esterno", giornoRiunione)[
 
   = TODO
-  #let prefisso = "TD.16."
+  #let prefisso = "TD.22."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
   I TODO sorti da questa riunione sono i seguenti:
@@ -178,6 +179,6 @@
   Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
   Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
-  /*#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]*/
+  #place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
 
 ]
