@@ -12,7 +12,7 @@ settings:
 
       # Regole di numerazione e stile
       formatting:
-            padding: 3 # Zeri iniziali: 2 -> "01", 3 -> "001"
+            padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
             separator: "." # Separatore numeri: "1.1" vs "1-1"
             title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
             filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
@@ -24,3 +24,17 @@ settings:
       index_footer_template: "src/RTB/DocumentazioneEsterna/Piano_di_qualifica/content/04-strategie_testing/accettazione/config/footer.typ"
 # La struttura gerarchica
 structure:
+- Importazione documento dispositivo
+- Creazione documento dispositivo
+- Gestione informazioni dispositivo
+- Struttura dello standard definita esternamente
+- Esecuzione della valutazione
+- Rispetto delle gerarchia dello standard
+- Visualizzazione dashboard
+- Visualizzazione asset
+- Valuta asset
+- Visualizzazione requisiti
+- Compila decision tree
+- Output valutazione
+- Esportazione documento dispositivo
+- Esportazione report

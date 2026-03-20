@@ -13,7 +13,7 @@
   descrizione:[
 Verificare che l'utente possa inserire un nome valido da associare al modello durante la fase di creazione
 
-Il nome deve avere una lunghezza compresa tra i 
+Il nome deve avere una lunghezza compresa tra 1 e 32 caratteri
   ],
 
   requisito-riferimento:get-req-code(

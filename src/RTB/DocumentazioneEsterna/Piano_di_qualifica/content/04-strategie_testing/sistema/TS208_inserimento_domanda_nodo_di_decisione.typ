@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-
+    Verificare che l'Utente possa inserire una domanda da associare al nodo
   ],
 
   requisito-riferimento:get-req-code(

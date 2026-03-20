@@ -7,7 +7,6 @@
 
     deps.get-test-code(nome-etichetta:item_{{INDEX}}.nome),
     item_{{INDEX}}.descrizione,
-    item_{{INDEX}}.requisito-riferimento,
     item_{{INDEX}}.stato,
   )
   )

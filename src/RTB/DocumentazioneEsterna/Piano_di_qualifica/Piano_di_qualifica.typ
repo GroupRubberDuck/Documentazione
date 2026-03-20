@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 6,
+  minor: 7,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -100,7 +100,14 @@
       [2026-03-19],
       [Davide Lorenzon],
       [],
-      [Aggiunti test di sistema]
+      [Aggiunti test di sistema @test-sistema]
+    ),
+    (
+      [0.7.0],
+      [2026-03-19],
+      [Davide Lorenzon],
+      [],
+      [Aggiunti test di accettazione @test-accettazione]
     ),
   )
   #registroModifiche(modifiche)
