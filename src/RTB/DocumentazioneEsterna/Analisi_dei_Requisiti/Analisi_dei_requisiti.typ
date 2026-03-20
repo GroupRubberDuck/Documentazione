@@ -186,14 +186,14 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
  == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf")[Norme di Progetto v0.8.4 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf)];\ 
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.12.0.pdf")[Norme di Progetto v0.12.0 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.12.0.pdf)];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf)]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification (https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf)]; \
     - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031 (https://www.evs.ee/en/evs-en-18031-1-2024)]
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v0.3 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf)]; \
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v0.5 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf)]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[Diagrammi dei casi d'uso (https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf)];\
     - #inserisciLink(url:"https://drive.google.com/file/d/1irvFvrXyRsF3ELZAuNre4y3bLHFmszvz/view?usp=sharing")[Software Engineering, Sommerville, edizione X]
