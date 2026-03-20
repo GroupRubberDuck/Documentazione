@@ -15,13 +15,29 @@ Questo approccio permette di accelerare, standardizzare e rendere più affidabil
   // da definire
 == Riferimenti
 === Riferimenti normativi
-  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
-Compliance Verification di BlueWind]
-- #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
+
+- #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \
+  _Ultima consultazione: 11 novembre 2025_
+
+- #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \
+  _Ultima consultazione: 11 novembre 2025_
+
+- #link("https://www.iso.org/standard/63712.html")[Standard ISO/IEC/IEEE 12207:2017] \
+  _Ultima consultazione: 10 gennaio 2026_
+
 === Riferimenti informativi
-- #link("https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo]
+
+- #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville] \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- #link("https://en.wikipedia.org/wiki/ISO/IEC_9126")[Standard ISO/IEC 9126] \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[Standard ISO/IEC/IEEE 12207:1995] \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- #link("https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo GroupRubberDuck] \
+  _Ultima consultazione: 11 marzo 2026_
 
 
 
