@@ -23,7 +23,7 @@
 #let currentVersion=(
   major:0,
   minor:13,
-  patch:0,
+  patch:1,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -67,6 +67,13 @@
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
   ([0.12.0],[2026-02-05],[Davide Lorenzon],[Filippo Guerra],[Aggiunte descrizioni delle metriche di qualità]),
   ([0.13.0],[2026-03-20],[Ana Maria Draghici],[],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
+  ([0.13.1],[2026-03-20],[Davide Lorenzon],[],[Aggiornamento della sezione relativa alla gestione dell'infrastruttura  @gestione-infrastruttura
+  
+  - #link(label("auto-numbering"))[Numerazione automatica], 
+  - #link(label("auto-tracker"))[Tracciamento automatico],
+  - #link(label("use-case-dia"))[Plot diagrammi], 
+  - #link(label("python"))[Uso di script python], 
+  ]),
 )
 #registroModifiche(modifiche)
 

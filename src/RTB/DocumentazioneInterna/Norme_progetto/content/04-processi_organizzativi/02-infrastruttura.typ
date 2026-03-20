@@ -48,6 +48,8 @@ Per facilitare il lavoro del gruppo, in particolare la comunicazione asincrona e
 
 *Google Drive* – Sistema di file sharing per materiali di progetto.
 
+*Python* – Linguaggio di programmazione usato per gestire alcuni script di automazione.
+
 
 #he(body:"Creazione",level:4)
 In questa sezione viene descritto il processo di creazione e configurazione degli strumenti ritenuti significativi per il supporto alle attività di progetto.
@@ -70,6 +72,18 @@ In questa sezione viene descritto il processo di creazione e configurazione degl
     ([Sprint],[Automazione del riepilogo degli sprint, comprensiva dei calcoli necessari e del layout dedicato.]),
     ([Marcatura automatica dei termini del Glossario],[Funzionalità attivabile tramite un apposito flag booleano; se lasciata sempre attiva può impattare negativamente le prestazioni della live preview.]),
     ([Separazione tra contenuto e layout del glossario],[I termini e le definizioni del glossario sono mantenuti in un file separato sotto forma di dizionario, consentendo l’ordinamento automatico e la generazione di viste personalizzate in formato PDF e HTML.]),
+    ([Gestione automatica della numerazione <auto-numbering>],[#upper("è") stata implementata una gestione automatica della numerazione sia in fase di creazione sia in fase di referenziamento, anche tra documenti diversi. La referenziazione avviene tramite funzioni apposite che accettano in input una stringa rappresentante il nome dell'elemento target. 
+    
+    Gli elementi finora sottoposti a tale numerazione automatica sono :
+    - Casi d'uso
+    - Requisiti
+    - Test 
+    ]),
+    ([Tracciamento automatico <auto-tracker>],[Sono state predisposte apposite funzioni per la costruzione automatica delle tabelle di tracciamento seguenti:
+    - Tracciemento casi d'uso - requisiti funzionali
+    - Tracciamento test di sistema - requisiti funzionali 
+    ]),
+    ([Plot diagrammi dei casi d'uso <use-case-dia>],[#upper("è") stata predisposta una funzione per il plot dei diagrammi di attività in modo da poter applicare l'automazione già predisposta per gestire il numbering.]),
   )
   ],
 
@@ -82,7 +96,7 @@ Sono stati definiti due branch principali:
 #upper("è") stato inoltre predisposto un file `.gitignore` per evitare la pubblicazione di file indesiderati. 
 ],
  [GitHub],[],[
-#upper("è") stata creata una #link("https://github.com/GroupRubberDuck")[GitHub Organization] dedicata alle attività di progetto e un #link("https://github.com/GroupRubberDuck/Documentazione")[repository] specifico per la documentazione.
+#upper("è") stata creata una #link("https://github.com/GroupRubberDuck")[GitHub Organization (https://github.com/GroupRubberDuck)] dedicata alle attività di progetto e un #link("https://github.com/GroupRubberDuck/Documentazione")[repository (https://github.com/GroupRubberDuck/Documentazione)] specifico per la documentazione.
 
 #terms(
   separator:[: \ ], hanging-indent: 0em ,spacing:1.5em,
@@ -102,6 +116,7 @@ Google Drive e Google Docs non richiedono particolari operazioni di configurazio
 Google Sheets richiede invece operazioni più complesse per l’implementazione delle metriche e degli indicatori stabiliti.
 ],
 
+[Script python],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro, questo va a creare eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli contenuti]
 )
 
 ]
