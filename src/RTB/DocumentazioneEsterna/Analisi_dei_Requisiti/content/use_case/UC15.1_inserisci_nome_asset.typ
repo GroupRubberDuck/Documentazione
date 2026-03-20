@@ -49,7 +49,7 @@
     trigger:none,
     
     scenari-alternativi:[
-        - L'utente inserisce un nome non valido non valido
+        - L'utente inserisce un nome non valido #sym.arrow #use-case-label(nome-etichetta: "Errore nome asset non valido")
     ],
     
     inclusioni:none,

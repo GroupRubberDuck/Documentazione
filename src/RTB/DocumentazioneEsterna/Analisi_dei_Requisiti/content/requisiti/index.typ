@@ -161,3 +161,23 @@ format-dict-as-table(columns: 2,uc-non-tracciati.map(
 
 }
 
+#let header-color = rgb("#008080b0")
+
+#let req-table-style=(
+    stroke: 0.5pt + black,
+    inset: 8pt,
+    align: left + horizon,
+    fill: (col, row) => if row == 0 or col==0 { header-color } else { none },
+)
+
+
+#figure(caption: "Riepilogo dei Requisiti", )[
+  #table(
+    ..req-table-style,
+    columns: (auto,auto,auto,auto),
+    table.header("Tipologia","Obbligatori","Desiderabili","Opzionali"),
+    "Funzionali",[#r-obb.deps.mappa.len()],[#r-des.deps.mappa.len()],[#r-opz.deps.mappa.len()],
+    "Qualità",[5],[0],[0],
+    "Vincolo",[0],[0],[4],
+  )
+]

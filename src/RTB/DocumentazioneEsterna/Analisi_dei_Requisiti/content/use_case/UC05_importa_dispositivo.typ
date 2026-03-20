@@ -14,7 +14,7 @@
   actors: ("Utente",),
   includes: ("Selezione file sorgente",),
   extends: ("Errore file dispositivo non valido":[
-    L'utente ha selezionato un file con formato, dimensioni o modello associato inesistente sul sistema
+    L'utente ha selezionato un file con formato, dimensioni non validi o con un modello associato inesistente sul sistema
   ]),
   generalizations: (),
   actor-offset: 0,

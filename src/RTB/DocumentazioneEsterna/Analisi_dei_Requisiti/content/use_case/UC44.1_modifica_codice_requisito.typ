@@ -22,8 +22,8 @@
   ),
   generalizations: (),
   spacing: (1.5cm, 2cm), 
-  diagram-scale: 80%,
-  actor-offset:1,
+  diagram-scale: 70%,
+  actor-offset:0.8,
   note-offset: (0.5,0.5)
 )
 

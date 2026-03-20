@@ -20,10 +20,10 @@
     L'utente seleziona l'annullamento della modifica
   ]),
   generalizations: (),
-  spacing: (1.5cm, 2cm), 
+  spacing: (3.5cm, 2cm), 
   diagram-scale: 70%,
-  actor-offset: 2,
-  note-offset: (-1,0.5)
+  actor-offset: 0.5,
+  note-offset: (-0.8,0.5)
 )
 
 

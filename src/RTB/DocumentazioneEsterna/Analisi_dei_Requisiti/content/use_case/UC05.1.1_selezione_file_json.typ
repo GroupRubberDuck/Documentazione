@@ -40,7 +40,7 @@
         - Il sistema è attivo
         - Nel sistema non sono attive sessioni di modifica del modello
         - L'utente sta inserendo un dispositivo tramite importazione di un file esterno
-        - Il formato JSONè supportato dal sistema
+        - Il formato JSON è supportato dal sistema
     ],
     post-condizioni:[
         - Il sistema ha memorizza un riferimento al file JSON selezionato dall'utente 

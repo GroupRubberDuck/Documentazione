@@ -11,7 +11,7 @@
         parent-uc: "Visualizza lista asset",
     target-uc: use-case-nome,
     actors: ("Utente",),
-    includes: ("Visualizza nome asset", "Visualizza tipo asset", "Visualizza stato aggregato asset"),
+    includes: ("Visualizza nome asset lista asset", "Visualizza tipo asset lista asset", "Visualizza stato aggregato asset lista asset"),
     extends: (:),
     generalizations: (),
     spacing: (2.5cm, 2cm),
@@ -29,9 +29,9 @@
     attore-principale: [Utente],
 
     scenario-principale: [
-        + L'utente visualizza il nome dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome asset")
-        + L'utente visualizza il tipo dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza tipo asset")
-        + L'utente visualizza lo stato aggregato dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato aggregato asset")
+        + L'utente visualizza il nome dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome asset lista asset")
+        + L'utente visualizza il tipo dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza tipo asset lista asset")
+        + L'utente visualizza lo stato aggregato dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza stato aggregato asset lista asset")
     ],
 
     pre-condizioni: [
@@ -47,9 +47,9 @@
     scenari-alternativi: none,
 
     inclusioni: [
-        - #use-case-label(nome-etichetta: "Visualizza nome asset")
-        - #use-case-label(nome-etichetta: "Visualizza tipo asset")
-        - #use-case-label(nome-etichetta: "Visualizza stato aggregato asset")
+        - #use-case-label(nome-etichetta: "Visualizza nome asset lista asset")
+        - #use-case-label(nome-etichetta: "Visualizza tipo asset lista asset")
+        - #use-case-label(nome-etichetta: "Visualizza stato aggregato asset lista asset")
     ],
 
     estensioni: none,
