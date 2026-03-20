@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages( "Stato del documento", doctype,giornoRiunione)[
   #statusTab(
-    stato: "Approvazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
     verificatori: (persone.DT,),
@@ -51,7 +51,7 @@
   #let modifiche=(
 
     ([0.1.0],[2025-12-17],[Felician Mario Necsulescu],persone.DT,[Stesura del verbale]),
-    ([1.0.0],[2025-12-23],[Felician Mario Necsulescu],persone.FELIX,[Approvazione]),
+    ([1.0.0],[2025-12-23],[Felician Mario Necsulescu],persone.FELIX,[Approvazione interna ed esterna del documento]),
     
     )
     
@@ -222,7 +222,7 @@ La presente sezione documenta la conferma e la validazione del verbale da parte 
 Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
 Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
-/*#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]*/
+#place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
 
 ]
 

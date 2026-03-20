@@ -18,13 +18,11 @@
 #show heading.where(level: 2): set text(size: 16pt)
 
 
-
-
 //
 //Info del documento
 //
 #let currentVersion = (
-  major: 1, //manca approvazione bluewind
+  major: 1,
   minor: 0,
   patch: 0,
 )
@@ -32,7 +30,7 @@
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
 #metadata(versionNumber)<versionNumber>
 #let doctype = "Verbale esterno"
-#let giornoRiunione = datetime(year: 2026, month: 01, day: 13)
+#let giornoRiunione = datetime(year: 2026, month: 03, day: 17)
 
 
 
@@ -42,8 +40,8 @@
   #statusTab(
     stato: "Approvato",
     versione: versionNumber,
-    autori: (persone.ALDO,),
-    verificatori: ("Filippo Guerra",),
+    autori: (persone.DT,),
+    verificatori: (persone.FELIX,),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo", "BlueWind srl"),
   )
@@ -52,8 +50,8 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-01-14], persone.ALDO, [Filippo Guerra], [Stesura del verbale]),
-    ([1.0.0], [2026-01-16], persone.ALDO, persone.ALDO, [Approvazione interna ed esterna del documento]),
+    ([0.1.0], [2026-03-18], persone.DT, persone.FELIX, [Stesura del verbale]),
+    ([1.0.0], [2026-03-20], persone.DT, persone.DT, [Approvazione interna ed esterna del documento]),
   )
 
   #registroModifiche(modifiche)
@@ -73,9 +71,9 @@
   - *Motivazione*: Allineamento sui requisiti prodotti
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Zoom
-  - *Ora inizio*: 16:00
-  - *Ora fine*: 16:45
-  - *Scriba*: Aldo Bettega
+  - *Ora inizio*: 17:00
+  - *Ora fine*: 17:25
+  - *Scriba*: Davide Testolin
   - *Partecipanti*:#align(left)[
       #set list(marker: [--])
       - Filippo Guerra
@@ -94,48 +92,58 @@
 
 #insertArabicNumberedPages("Ordine del giorno", "Verbale esterno", giornoRiunione)[
   = Ordine del giorno
-  - Esposizione dubbi su specifici requisiti
-  - Esposizione di possibili soluzioni in ambito architetturale e di tecnologie utilizzabili
-  - Definizione delle modalità operative per le fasi successive
+  - Presentazione dello stato di avanzamento.
+
+  - Chiarimenti sull'Analisi dei Requisiti.
+
+  - Presentazione del PoC.
 ]
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale esterno", giornoRiunione)[
-  = Riassunto della riunione
+  = Riassunto della riunione<intro>
+  La riunione si è svolta per presentare lo stato di avanzamento del gruppo durante il periodo a minore intensità di lavoro dovuto al sovrapporsi del periodo di esami ed altri impegni dei singoli membri del gruppo. Sono stati richiesti chiarimenti riguardo alcuni dubbi sull' Analisi dei Requisiti e successivamente è stato presentato il PoC. Infine si è concordato di riprendere le riunioni di allineamento periodico tra il gruppo e l'azienda.
 
-  == Analisi dei requisiti
+  == Rimozione del sistema multi-utente
+  E' stata resa nota all'azienda la scelta del gruppo di semplificare la gestione degli utenti rimuovendo il sistema multi-utente e concentrandosi su un unico utente con accesso completo all'applicazione.
 
-  === Editor di testo
-  Durante la stesura dei requisiti è emersa la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
-  BlueWind ha rassicurato che questo secondo editor non dovrebbe presentare difficoltà implementative significative.
+  == Metodo di salvataggio<salvataggio>
+  Si è chiarito il metodo di salvataggio dell'applicazione, che utilizzerà una rappresentazione interna dei dati al posto di sovrascrivere il file importato dall'utente.
 
-  === Requisiti di performance
-  Si è discusso della loro necessità, arrivando alla conclusione che non sono di primaria importanza, data la natura del capitolato.
-  Infatti l'unica operazione che potrebbe avere necessità di tali requisiti è il caricamento degli alberi: per rendere la user experience più fluida è stato consigliato di caricare tutti gli alberi in un primo momento (aumentando il tempo di caricamento iniziale), per poi averli tutti a disposizione.
+  == Giustificazioni nel decision tree<giustificazioni>
+  E' stato chiarito che la giustificazione da parte dell'utente per la risposta ad un requisito del decision tree è obbligatoria solo nel caso in cui il risultato sia Not Applicable.
 
-  == Tecnologie e architettura
-  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto che sono disponibili varie librerie Python per quanto riguarda il backend.
-  Per quanto riguarda il database è necessario che sia relazionale.
-  Per l'architettura di sistema ci sono due opzioni: layered architecture con strati MVC (semplice, efficace per il problema e conosciuta dai membri del gruppo) oppure architettura esagonale (più sofisticata ma difficile da implementare).
+  == Formato di esportazione<esportazione>
+  E' stato chiarito che il contenuto del report generato in formato JSON e CSV può essere uguale al contenuto dell'esportazione del dispositivo nel medesimo formato.
 
-  == Come procedere
-  Nel prossimo periodo sarà necessario creare un prototipo dimostrativo esponibile all'azienda, affinché si mostri di essere in grado di utilizzare le tecnologie scelte e si affrontino le problematiche trovate.
-  È stato consigliato di partire dal caricamento dell'albero e la sua navigazione.
+  == Presentazione del Proof of Concept
+  Il gruppo ha presentato il Proof of Concept all'azienda proponente con una dimostrazione pratica, spiegando le principali tecnologie utilizzate (Flask, MongoDB e D3js).
 
 ]
-
 
 #insertArabicNumberedPages("Decisioni", "Verbale esterno", giornoRiunione)[
   = Decisioni
   #let contatoreDecisioni = counter("decisioni")
   #contatoreDecisioni.update(1)
-  #let prefisso = "VE.4."
+  #let prefisso = "VE.5."
 
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Scelta e studio delle tecnologie per la creazione di un prototipo dimostrativo],
-      [Avere un esempio da mostrare e iniziare a trovare soluzioni a problemi di implementazione],
-      [-],
+      [La generazione del report in formato JSON o CSV produce lo stesso risultato dell'esportazione del dispositivo nel medesimo formato.],
+      [Su suggerimento della proponente.],
+      [@esportazione],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [La giustificazione della risposta ad un requisito nel decision tree è obbligatoria solo se il risultato è Not Applicable.],
+      [Su suggerimento della proponente.],
+      [@giustificazioni],
+    ),
+     (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Riunioni bisettimanali tra gruppo ed azienda proponente.],
+      [Su richiesta del gruppo.],
+      [@intro],
     ),
   )
 
@@ -143,26 +151,19 @@
 
 ]
 
-
 #insertArabicNumberedPages("TODO", "Verbale esterno", giornoRiunione)[
 
   = TODO
-  #let prefisso = "TD.16."
+  #let prefisso = "TD.22."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
   I TODO sorti da questa riunione sono i seguenti:
   #let TODO = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [#persone.ALDO],
+      [#persone.DT],
       [Redazione di questo verbale],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Tutto il gruppo],
-      [Scegliere e studiare tecnologie adatte alla creazione di un prototipo dimostrativo],
-      [VE.4.1],
+      [VE.5.1],
     ),
   )
   #utilityTable(
@@ -181,4 +182,3 @@
   #place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
 
 ]
-

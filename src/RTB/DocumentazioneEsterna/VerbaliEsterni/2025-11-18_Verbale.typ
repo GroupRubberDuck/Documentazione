@@ -51,7 +51,7 @@
 
     ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
     ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura delle sezioni rimanenti]),
-    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione del documento]),
+    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione interna ed esterna del documento]),
 
     )
 
@@ -116,11 +116,7 @@
 
   + Volevamo chiedervi: noi abbiamo provato già a vedere dei possibili metodi per gestirci fra di noi, però data ancora l’inesperienza non sappiamo bene verso che tecnologie orientarci, anche per questione di coordinamento interno, avete delle dritte che potete darci? Dalle vostre esperienze quali ritenete siano gli aspetti fondamentali su cui concentrarsi per lavorare in team in modo efficiente? Noi comunque abbiamo iniziato a lavorare sulla varia documentazione creando una repository github che se serve condividiamo.
 
-<<<<<<< HEAD
-  + Per la questione caso di studio machinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? Per capire qual è la struttura e familiarizzarci.  
-=======
   + Per la questione caso di studio macchinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
->>>>>>> f/verbali
 
   + Sarà fornita della documentazione riguardante le normative che dovremo usare, cioè l’Access Control Mechanism e l’Authentication Mechanism?
 ]
