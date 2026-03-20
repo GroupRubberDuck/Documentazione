@@ -7,8 +7,9 @@
 #import "sprints/sprint-4.typ" as s4
 #import "sprints/sprint-5.typ" as s5
 #import "sprints/sprint-6.typ" as s6
+#import "sprints/sprint-7.typ" as s7
 
-#let tutti_gli_sprint = (s1.sprint_data, s2.sprint_data, s3.sprint_data, s4.sprint_data, s5.sprint_data, s6.sprint_data)
+#let tutti_gli_sprint = (s1.sprint_data, s2.sprint_data, s3.sprint_data, s4.sprint_data, s5.sprint_data, s6.sprint_data, s7.sprint_data)
 
 #let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
 
