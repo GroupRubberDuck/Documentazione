@@ -12,7 +12,7 @@
 
   descrizione:[
 
-    Verificare che l'Utente possa visualizzare un messagio di errore se il file selezionato in fase di importazione ha una struttura interna non interpretabile dal sistema
+    Verificare che l'Utente possa visualizzare un messaggio di errore se il file selezionato in fase di importazione ha una struttura interna non interpretabile dal sistema
   ],
 
   requisito-riferimento:get-req-code(

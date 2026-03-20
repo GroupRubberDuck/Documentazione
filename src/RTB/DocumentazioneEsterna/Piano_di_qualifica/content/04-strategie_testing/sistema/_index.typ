@@ -3060,8 +3060,7 @@
 
 
 === Tracciamento test di sistema
-
-
+La seguente tabella di tracciamento mette in relazione ciascun Test di Sistema con il corrispondente requisito software, consentendo di verificare che ogni requisito identificato sia coperto da almeno un test e di garantire la completezza della verifica.
 
 #figure(caption: "Tracciamento dei Test di Sistema")[#deps.tabella-tracciamento(..(test-array.map(
   it=>{

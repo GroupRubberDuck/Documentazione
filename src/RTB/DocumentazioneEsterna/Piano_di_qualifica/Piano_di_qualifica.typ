@@ -100,14 +100,14 @@
       [2026-03-19],
       [Davide Lorenzon],
       [],
-      [Aggiunti test di sistema @test-sistema]
+      [Aggiunti test di sistema @test-sistema e Aggiunti test di accettazione @test-accettazione] 
     ),
     (
       [0.7.0],
-      [2026-03-19],
-      [Davide Lorenzon],
+      [2026-03-20],
+      [Ana Maria Draghici],
       [],
-      [Aggiunti test di accettazione @test-accettazione]
+      [Aggiornata @testing con descrizione generale del testing, descrizioni brevi per ogni test e descrizioni dei test mancanti]
     ),
   )
   #registroModifiche(modifiche)
@@ -179,12 +179,9 @@
   #include "content/06-automiglioramento/index.typ"
 
 ]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
-
-  #he(body: "Appendice")
-  #set heading(numbering: "1.A.1)")
-  #include "content/appendice/index.typ"
+//#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
 
 
-]
+
+
