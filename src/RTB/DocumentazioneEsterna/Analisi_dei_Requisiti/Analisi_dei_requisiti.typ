@@ -186,7 +186,7 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
  == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.12.0.pdf")[Norme di Progetto v0.12.0 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.12.0.pdf)];\ 
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf")[Norme di Progetto v0.13.1 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf)];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf)]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification (https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf)]; \
     - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031 (https://www.evs.ee/en/evs-en-18031-1-2024)]
