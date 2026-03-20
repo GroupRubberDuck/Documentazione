@@ -5,6 +5,7 @@
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/statusTab.typ": statusTab
 #import "/src/RTB/DocumentazioneInterna/Glossario.typ" : dict
+#import glossario: dict
 #set text(size: 13pt)
 // #set par(justify: true)
 
@@ -21,7 +22,7 @@
 // 
 #let currentVersion=(
   major:0,
-  minor:12,
+  minor:13,
   patch:0,
 )
 //converte dizionario in stringa
@@ -64,9 +65,8 @@
   ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
   ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
-  ([0.12.0],[2026-02-05],[Davide Lorenzon],[],[Aggiunte descrizioni delle metriche di qualità]),
-  ([0.12.1],[2026-03-11],[-],[Filippo Guerra],[Verifica del documento]),
-  
+  ([0.12.0],[2026-02-05],[Davide Lorenzon],[Filippo Guerra],[Aggiunte descrizioni delle metriche di qualità]),
+  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
 )
 #registroModifiche(modifiche)
 
