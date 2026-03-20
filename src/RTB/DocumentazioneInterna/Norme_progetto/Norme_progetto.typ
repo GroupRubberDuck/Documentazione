@@ -66,7 +66,7 @@
   ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
   ([0.12.0],[2026-02-05],[Davide Lorenzon],[Filippo Guerra],[Aggiunte descrizioni delle metriche di qualità]),
-  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
+  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
 )
 #registroModifiche(modifiche)
 

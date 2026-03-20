@@ -1,8 +1,8 @@
 #import "@preview/cheq:0.3.0": checklist
 == *Processo di Qualifica (Verifica e Validazione)* <qualifica> 
 === Introduzione
-Il processo di Qualifica ha lo scopo di stabilire se un prodotto del progetto (documento, software o deliverable) possa essere considerato *concluso e idoneo al rilascio*.
-Esso rappresenta la fase finale di verifica e validazione, successiva alle attività di Accertamento Qualità.
+Il processo di Qualifica coincide con l'insieme delle attività di Verifica e Validazione (V&V) pianificate nel progetto. Il suo scopo è dimostrare, tramite evidenze oggettive e misurabili, che il prodotto sia conforme alle specifiche software (Verifica) e alle attese dell'utente (Validazione).
+In termini operativi, la Qualifica non è solo una fase finale, ma un processo continuo regolato dal Piano di Qualifica, che definisce gli obiettivi quantitativi, e monitorato attraverso un cruscotto di valutazione.
 
 === Scopo del processo
 
@@ -32,7 +32,7 @@ Il gruppo adotta due metodi di lettura a seconda del contesto:
 
 - *Walkthrough*: revisione libera e approfondita dell'intero artefatto, condotta senza una lista di controllo predefinita. Parte dall'ipotesi che esista un difetto, ma senza conoscerne la natura o la posizione. È indicata per revisioni critiche o per artefatti nuovi, dove non è ancora disponibile esperienza pregressa sugli errori tipici. A causa dell'elevato costo in termini di tempo e risorse, viene applicata selettivamente, ad esempio in occasione delle revisioni RTB e PB o per la prima stesura di documenti strutturali.
 
-- *Ispezione*: verifica guidata da una checklist predefinita, focalizzata su errori ricorrenti e criteri di qualità specifici. È meno approfondita del walkthrough, ma facilmente automatizzabile e ripetibile. Viene adottata come metodo principale per la verifica sistematica di documenti e codice, in particolare per verbali, analisi dei requisiti e sezioni già consolidate. Un esempio di checklist adottata è la @DOD (DOD)
+- *Ispezione*: verifica guidata da una checklist predefinita, focalizzata su errori ricorrenti e criteri di qualità specifici. È meno approfondita del walkthrough, ma facilmente automatizzabile e ripetibile. Viene adottata come metodo principale per la verifica sistematica di documenti e codice, in particolare per verbali, analisi dei requisiti e sezioni già consolidate. Un esempio di checklist adottata è la @DOD (DOD).
 
 ===== Checklist di ispezione
 
@@ -153,11 +153,12 @@ Quest'ultimo punto è fondamentale: una modifica apparentemente localizzata può
 ==== Validazione
 
 Il processo di validazione ha lo scopo di accertare che quanto realizzato soddisfi le esigenze di BlueWind Srl. Si distingue dalla verifica per il suo focus sul risultato finale: mentre la verifica accerta che il prodotto sia costruito correttamente (_"Are we building the system right?"_), la validazione accerta che sia stato costruito il prodotto corretto (_"Are we building the right system?"_).
+Dunque, pur avendo responsabilità diverse, la verifica prepara il successo della validazione. Sebbene la verifica si applichi ai singoli prodotti intermedi e la validazione al sistema nel suo complesso, la prima fornisce il supporto e l'evidenza oggettiva necessari per sostenere la successiva conclusione che il software sia validato e pienamente conforme alle attese del committente.
 
 
 ===== Attività di validazione
 
-La validazione si basa sull'analisi degli esiti dei test di accettazione e sul tracciamento dei requisiti definiti in accordo con BlueWind Srl. L'obiettivo è verificare che ogni requisito obbligatorio sia implementato e che il sistema si comporti correttamente in relazione a ciascuno di essi.
+La validazione si basa sull'analisi degli esiti dei test di accettazione e sul tracciamento dei requisiti definiti in accordo con BlueWind Srl. L'obiettivo è confermare che ogni requisito obbligatorio sia implementato e che il sistema si comporti correttamente in relazione a ciascuno di essi.
 
 
 ==== Definition of Done <DOD>
