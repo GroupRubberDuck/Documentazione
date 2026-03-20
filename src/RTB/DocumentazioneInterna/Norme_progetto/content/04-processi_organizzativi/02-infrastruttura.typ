@@ -116,7 +116,7 @@ Google Drive e Google Docs non richiedono particolari operazioni di configurazio
 Google Sheets richiede invece operazioni più complesse per l’implementazione delle metriche e degli indicatori stabiliti.
 ],
 
-[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro, questo va a creare eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli contenuti]
+[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Questo va a creare eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli contenuti.]
 )
 
 ]
