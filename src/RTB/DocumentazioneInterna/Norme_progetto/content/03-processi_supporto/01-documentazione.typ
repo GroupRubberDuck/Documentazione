@@ -82,7 +82,7 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
 
 
 ==== Workflow documentale <workflow>
-All'interno dell'ambito documentale è stato optato il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
+All'interno dell'ambito documentale si è optato per il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
 #image(images_dir+"/workflow.drawio.png" )
 
 ==== Stati del documento <Workflow>
@@ -107,7 +107,7 @@ All'interno dell'ambito documentale è stato optato il seguente modello per desc
 I documenti sono salvati sull'apposito repository.
 
 Il path relativo è ricavabile nel seguente modo:
- \ (Fanno eccezione i diari di bordo, in quanto fanno parte delle regole di progetto, ma non fanno supporto ad alcun processo primario, perciò sono salvati nella cartella *./\<Type\>src/DiariDiBordo*)
+ \ (Fanno eccezione i diari di bordo, in quanto fanno parte delle regole di progetto, ma non supportano alcun processo primario, perciò sono salvati nella cartella *./\<Type\>src/DiariDiBordo*)
 
 #align(center)[
 *./\<Type\>/\<Milestone\>/\<Destinatari\>/\<Cartella del Documento\>*
