@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 5,
+  minor: 7,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -95,6 +95,19 @@
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
       [Aggiornata @valutazione in seguito avanzamento degli sprint]
+    ),    (
+      [0.6.0],
+      [2026-03-19],
+      [Davide Lorenzon],
+      [],
+      [Aggiunti test di sistema @test-sistema]
+    ),
+    (
+      [0.7.0],
+      [2026-03-19],
+      [Davide Lorenzon],
+      [],
+      [Aggiunti test di accettazione @test-accettazione]
     ),
   )
   #registroModifiche(modifiche)
@@ -159,9 +172,10 @@
   = Cruscotto di valutazione <valutazione>
   #include "content/05-cruscotto_valutazione/index.typ"
 
+
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
-  = Cruscotto di valutazione <miglioramento>
+  = Automiglioramento <miglioramento>
   #include "content/06-automiglioramento/index.typ"
 
 ]

@@ -3,6 +3,12 @@
 #let images_dir = src_dir + "/assets/Images"
 #let glossario = "/src/RTB/DocumentazioneInterna/dizionario.typ"
 
+
+
+#let is-test-mode=false
+
+
+
 #let front_page_file = template_dir + "/frontPage.typ"
 #let setup_layout_file = template_dir + "/setUpPageLayout.typ"
 
@@ -14,8 +20,6 @@
 #let question_mark_icon = images_dir + "/question_mark_icon.png"
 
 #let flagMarcaturaAutoamticaTerminiGlossario=false
-
-
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)
@@ -38,13 +42,13 @@
   DT:"Davide Testolin",
   ANA:"Ana Maria Draghici",
   ALDO:"Aldo Bettega",
-  FELIX:"Felician Mario Necsulescu",
+  FELIX:[Felician Mario \ Necsulescu],
   FILIPPO:"Filippo Guerra"
 )
 
 
 #let slugify(text) = {
-  lower(text).replace(" ", "-")
+  lower(text.trim()).replace(" ", "-")
 }
 
 // Funzione wrapper per creare header con label automatica
