@@ -24,8 +24,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0, //manca approvazione bluewind
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -178,7 +178,7 @@
   Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
   Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
-  /*#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]*/
+  #place(right)[#image(images_dir+"/approvazione_Bluewind_TF.png")]
 
 ]
 
