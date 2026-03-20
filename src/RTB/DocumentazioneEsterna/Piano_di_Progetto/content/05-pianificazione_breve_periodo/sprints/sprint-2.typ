@@ -40,11 +40,11 @@
       - *Azione*: Utilizzo di automatizzazioni, tabelle ripetibili e scomposizione dei file dai membri più esperti.
   ],
   oreProduttive: (
-    (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 6),
     (persona: persone.ALDO, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
     (persona: persone.ANA, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 8, oreEffettive: 8),
-    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 7),
+    (persona: persone.FELIX, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 8),
+    (persona: persone.DT, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 7),
     (persona: persone.FILIPPO, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
   ),
   retrospettiva: [

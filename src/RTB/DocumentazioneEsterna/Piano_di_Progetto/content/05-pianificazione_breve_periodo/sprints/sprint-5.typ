@@ -31,8 +31,8 @@
   oreProduttive: (
     (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 5, oreEffettive: 5),
     (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 2, oreEffettive: 2),
-    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
-    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 10, oreEffettive: 10),
+    (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 0, oreEffettive: 1),
+    (persona: persone.DL, ruolo: ruoli.Analista, orePreviste: 7, oreEffettive: 10),
     (persona: persone.ALDO, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 1, oreEffettive: 1),
     (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
