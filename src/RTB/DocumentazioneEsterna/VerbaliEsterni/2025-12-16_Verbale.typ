@@ -51,7 +51,7 @@
   #let modifiche=(
 
     ([0.1.0],[2025-12-17],[Felician Mario Necsulescu],persone.DT,[Stesura del verbale]),
-    ([1.0.0],[2025-12-23],[Felician Mario Necsulescu],persone.FELIX,[Approvazione]),
+    ([1.0.0],[2025-12-23],[Felician Mario Necsulescu],persone.FELIX,[Approvazione interna ed esterna del documento]),
     
     )
     

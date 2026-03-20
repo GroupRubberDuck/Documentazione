@@ -52,7 +52,7 @@
 
     ([0.1.0],[2025-12-03],[Filippo Guerra],[Davide Lorenzon],[Stesura del verbale]),
     ([0.1.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Correzione dei contenuti del verbale]),
-    ([1.0.0],[2025-12-09],[Filippo Guerra],[Filippo Guerra],[Approvazione del documento]),
+    ([1.0.0],[2025-12-09],[Filippo Guerra],[Filippo Guerra],[Approvazione interna ed esterna del documento]),
     )
     
 
