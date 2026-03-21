@@ -69,7 +69,7 @@
   ],
 
   "Bozza operativa":[
-    Rappresentazione temporanea in memoria delle modifiche apportate durante una sessione attiva, sia di valutazione che di modifica del modello. Le modifiche nella bozza diventano permanenti solo dopo un salvataggio esplicito sul sistema di permanenza.
+    Rappresentazione temporanea in memoria delle modifiche apportate durante una sessione attiva, sia nelle sessioni di valutazione sia in quelle di modifica del modello. Le modifiche nella bozza diventano permanenti solo dopo un salvataggio esplicito sul sistema di permanenza.
   ],
 
   Anagrafica:[
@@ -77,7 +77,7 @@
   ],
 
   "Versionamento semantico":[
-    Convenzione per l'assegnazione dei numeri di versione strutturata in tre componenti: MAJOR (modifiche significative che invalidano valutazioni esistenti), MINOR (modifiche non significative a campi testuali). Applicata dal sistema al salvataggio delle modifiche al modello.
+    Convenzione per l'assegnazione dei numeri di versione strutturata in tre componenti: MAJOR (modifiche significative che invalidano valutazioni esistenti), MINOR (modifiche non significative a campi testuali) e PATCH (correzioni minori che non alterano la struttura né il contenuto del modello). Applicata dal sistema al salvataggio delle modifiche al modello.
   ],
 
   "Dipendenza circolare":[

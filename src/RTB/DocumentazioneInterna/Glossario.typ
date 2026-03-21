@@ -58,7 +58,7 @@
     stato: "Approvato",
     versione: "1.0.0",
     autori: ("Davide Lorenzon, Ana Maria Draghici, Filippo Guerra",),
-    verificatori: ("Ana Maria Draghici",),
+    verificatori: ("Ana Maria Draghici, Filippo Guerra",),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
   )
@@ -76,7 +76,7 @@
   ([0.4.0],[2025-12-16],[Filippo Guerra],[Ana Maria Draghici],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
   ([0.5.0],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
   ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
-  ([1.0.0],[2026-03-21],[Ana Maria Draghici],[-],[Approvazione documento]),
+  ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
 )
 
 #registroModifiche(modifiche)
