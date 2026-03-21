@@ -40,7 +40,7 @@ parent-uc: "Elimina dispositivo",
     scenario-principale:[
         + L'utente seleziona la funzione di eliminazione del dispositivo
         + Il sistema mostra un messaggio di avviso
-        + L'utente scarica un file contente i dati del dispositivo sul proprio file system
+        + L'utente scarica un file contenente i dati del dispositivo sul proprio file system
         + L'utente conferma l'eliminazione
         + Il sistema elimina il dispositivo dal sistema di permanenza interno
     ],
@@ -55,8 +55,8 @@ parent-uc: "Elimina dispositivo",
     ],
     
     trigger:[
-        - L'utente vuole eliminare le informazioni il dispositivo
-        - L'utente ha scaricato un file contente i dati del dispositivo
+        - L'utente vuole eliminare le informazioni sul dispositivo
+        - L'utente ha scaricato un file contenente i dati del dispositivo
 
 
     ],

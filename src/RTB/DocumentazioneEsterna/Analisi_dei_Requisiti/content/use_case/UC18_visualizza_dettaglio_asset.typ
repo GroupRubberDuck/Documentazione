@@ -28,7 +28,7 @@
         + L'utente seleziona un asset dalla lista.
         + L'utente visualizza il nome dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza nome asset")
         + L'utente visualizza il tipo dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza tipo asset")
-        + L'utente visualizza visualizza lo stato aggregato dell'asset #use-case-label(nome-etichetta: "Visualizza stato aggregato asset")
+        + L'utente visualizza lo stato aggregato dell'asset #use-case-label(nome-etichetta: "Visualizza stato aggregato asset")
         + Il sistema mostra la descrizione dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza descrizione asset")
         + Il sistema mostra la lista dei requisiti applicabili all'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista requisiti asset").
     ],

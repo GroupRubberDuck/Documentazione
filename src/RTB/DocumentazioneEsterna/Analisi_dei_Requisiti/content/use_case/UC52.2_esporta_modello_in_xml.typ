@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file XML contente i dati del dispositivo
+        - L'utente ha scaricato il file XML contenente i dati del dispositivo
     ],
     
     

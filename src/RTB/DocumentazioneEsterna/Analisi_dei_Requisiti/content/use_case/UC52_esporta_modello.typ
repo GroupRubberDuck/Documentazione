@@ -45,7 +45,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file contente i dati del dispositivo
+        - L'utente ha scaricato il file contenente i dati del dispositivo
     ],
     
     trigger:[L'utente vuole esportare il dispositivo],

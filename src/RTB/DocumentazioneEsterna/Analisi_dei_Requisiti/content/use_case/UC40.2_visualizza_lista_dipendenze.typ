@@ -34,7 +34,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     
     scenario-principale:[
         + Il sistema controlla le dipendenze del requisito
-        + Il sistema genera una lista contente gli altri requisiti da cui dipende il requisito corrente
+        + Il sistema genera una lista contenente gli altri requisiti da cui dipende il requisito corrente
             + Per ogni elemento della lista, l'utente visualizza il codice del singolo requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza codice dipendenze")
     ],
     

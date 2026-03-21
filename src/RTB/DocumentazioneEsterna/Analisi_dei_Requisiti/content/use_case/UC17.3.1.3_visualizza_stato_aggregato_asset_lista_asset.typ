@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato lo stato aggregato del dispositivo
+        - L'utente ha visualizzato lo stato aggregato dell'asset
     ],
     
     trigger:none,

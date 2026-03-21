@@ -38,7 +38,7 @@
     
     scenario-principale:[
         + L'utente richiede l'esportazione del dispositivo
-        + L'utente scarica il file contente le informazioni del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dashboard dispositivo")
+        + L'utente scarica il file contenente le informazioni del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dashboard dispositivo")
     ],
     
     pre-condizioni:[

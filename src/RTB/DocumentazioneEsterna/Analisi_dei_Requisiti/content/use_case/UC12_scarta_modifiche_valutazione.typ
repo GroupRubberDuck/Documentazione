@@ -51,7 +51,7 @@
     ],
     
     trigger:[
-        L'utente vuole scartare le modifiche scarto delle modifiche apportate
+        L'utente vuole scartare le modifiche apportate
     ],
     
     scenari-alternativi:none,
