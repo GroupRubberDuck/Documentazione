@@ -1,5 +1,104 @@
 #let dict = (
 
+"EN 18031":[
+    Standard tecnico europeo in tre parti che definisce i requisiti di sicurezza informatica per i dispositivi radio, associati agli articoli 3.3(d), 3.3(e) e 3.3(f) della Direttiva RED. Obbligatorio come norma armonizzata dal 1° agosto 2025.
+  ], 
+
+  RED:[
+    Direttiva europea 2014/53/UE (Radio Equipment Directive) che regola la messa in commercio dei dispositivi radio nell'Unione Europea. Con l'adozione di EN 18031 come norma armonizzata, impone la verifica della conformità ai requisiti di sicurezza informatica.
+  ],
+
+  CSV:[
+    Formato di file testuale (Comma-Separated Values) in cui i dati sono organizzati in righe e colonne separate da virgole. Utilizzato nel progetto come formato standard per l'importazione e l'esportazione di dati.
+  ],
+
+  XML:[
+    Formato di file basato su marcatori gerarchici (eXtensible Markup Language) utilizzato per rappresentare dati strutturati. Utilizzato nel progetto come formato standard per l'importazione e l'esportazione di dati e modelli.
+  ],
+
+  JSON:[
+    Formato di file testuale leggero (JavaScript Object Notation) basato su coppie chiave-valore e array. Utilizzato nel progetto come formato standard per l'importazione e l'esportazione di dati e modelli.
+  ],
+
+  PDF:[
+    Formato di documento digitale (Portable Document Format) indipendente dalla piattaforma, utilizzato nel progetto per l'esportazione del report di conformità finale.
+  ],
+
+  Dashboard:[
+    Interfaccia riepilogativa del sistema che mostra in modo aggregato lo stato di avanzamento della valutazione di un dispositivo, la lista degli asset associati e le informazioni generali del dispositivo in esame.
+  ],
+
+  Stakeholder:[
+    Soggetto portatore di interesse rispetto al progetto software, che può influenzarne le scelte o esserne influenzato. Include committenti, utenti finali, sviluppatori e responsabili della qualità.
+  ],
+
+  Trigger:[
+    Evento specifico o azione dell'attore che avvia l'esecuzione di un caso d'uso. Rappresenta la condizione che porta il sistema a entrare nel flusso descritto dallo scenario principale.
+  ],
+
+  Estensione:[
+    Relazione UML tra casi d'uso, indicata con «extend», che descrive un comportamento opzionale che può aggiungersi al caso d'uso base al verificarsi di una condizione particolare.
+  ],
+
+  Inclusione:[
+    Relazione UML tra casi d'uso, indicata con «include», che descrive una funzionalità obbligatoriamente eseguita come parte del caso d'uso che la include.
+  ],
+
+  Specializzazione:[
+    Relazione tra casi d'uso in cui un caso d'uso figlio eredita le caratteristiche del caso d'uso padre e le estende con comportamenti più specifici, seguendo il principio di generalizzazione UML.
+  ],
+
+  "Security Asset":[
+    Tipo di asset che rappresenta una risorsa del dispositivo rilevante per i requisiti di sicurezza informatica definiti dallo standard EN 18031, in particolare per gli aspetti di autenticazione e controllo degli accessi.
+  ],
+
+  "Network Asset":[
+    Tipo di asset che rappresenta una risorsa del dispositivo relativa alle interfacce e funzionalità di rete, soggetta ai requisiti normativi EN 18031 riguardanti la protezione della rete.
+  ],
+
+  "Stato aggregato":[
+    Valore sintetico calcolato dal sistema che rappresenta il risultato complessivo della valutazione di un dispositivo o di un asset, derivato dalla combinazione degli esiti dei singoli requisiti valutati.
+  ],
+
+  "In corso":[
+    Stato di valutazione di un requisito che indica che la compilazione del relativo decision tree è stata avviata ma non ancora completata.
+  ],
+
+  Sospeso:[
+    Stato di valutazione di un requisito che indica che la sua valutazione è bloccata perché almeno un requisito da cui dipende ha ottenuto l'esito Not Applicable.
+  ],
+
+  "Bozza operativa":[
+    Rappresentazione temporanea in memoria delle modifiche apportate durante una sessione attiva, sia di valutazione che di modifica del modello. Le modifiche nella bozza diventano permanenti solo dopo un salvataggio esplicito sul sistema di permanenza.
+  ],
+
+  Anagrafica:[
+    Insieme dei dati identificativi di base associati a un'entità del sistema, come nome, codice e descrizione. Utilizzata per dispositivi, asset, requisiti e modelli.
+  ],
+
+  "Versionamento semantico":[
+    Convenzione per l'assegnazione dei numeri di versione strutturata in tre componenti: MAJOR (modifiche significative che invalidano valutazioni esistenti), MINOR (modifiche non significative a campi testuali). Applicata dal sistema al salvataggio delle modifiche al modello.
+  ],
+
+  "Dipendenza circolare":[
+    Condizione di errore che si verifica quando l'aggiunta di una dipendenza tra requisiti crea un ciclo chiuso (es. A dipende da B e B dipende da A). Il sistema rileva e blocca automaticamente questa condizione, mostrando il grafo delle dipendenze per evidenziare il percorso che genera il ciclo.
+  ],
+
+  "Scheletro":[
+    Struttura del decision tree definita nel modello normativo, composta dall'insieme dei nodi e delle loro relazioni gerarchiche, indipendentemente dalle risposte inserite durante una sessione di valutazione. Uno scheletro è valido se ogni percorso termina in un nodo foglia.
+  ],
+
+  RObb:[
+    Sigla che identifica un Requisito Obbligatorio Funzionale, ovvero una funzionalità che deve essere necessariamente presente nel prodotto per soddisfare le richieste della proponente.
+  ],
+
+  RDes:[
+    Sigla che identifica un Requisito Desiderabile Funzionale, ovvero una funzionalità non obbligatoria ma che arricchisce il sistema con caratteristiche utili.
+  ],
+
+  ROpz:[
+    Sigla che identifica un Requisito Opzionale Funzionale, ovvero una funzionalità aggiuntiva la cui implementazione è subordinata al completamento dei requisiti obbligatori.
+  ],
   Requisito:[
     Rappresenta un'esigenza che il sistema deve soddisfare. Dal lato utente, è ciò di cui ha bisogno per raggiungere un obiettivo; dal lato tecnico, è una capacità che il sistema deve implementare per rispondere a tale esigenza. Può essere funzionale (cosa fa il sistema) o non funzionale (come lo fa).
   ],
@@ -322,14 +421,88 @@
   Indica il modello che l'applicazione deve associare a un dispositivo al momento della sua creazione nel sistema.
 ],
 
-"Scheletro di decision tree":[
-  Questo termine è usato per facilitare la distinzione tra i decision tree nel contesto di editing rispetto al contesto di valutazione. 
-],
-
 "Bivio decisionale":[
   Relazione strutturale che collega un nodo di decisione del decision tree ai suoi nodi figli, definendo i possibili percorsi di valutazione a partire da una risposta data.
-]
+],
+"Wi-Fi":[
+    Tecnologia di comunicazione wireless basata sullo standard IEEE 802.11 che consente la connessione a reti locali senza l'uso di cavi. Nel contesto del progetto, rappresenta una delle interfacce di rete soggette a valutazione normativa EN 18031.
+  ],
 
+  LTE:[
+    Standard di comunicazione mobile a banda larga (Long-Term Evolution) che consente la trasmissione dati ad alta velocità su reti cellulari. Può costituire un'interfaccia di rete soggetta a valutazione normativa.
+  ],
+
+  Bluetooth:[
+    Tecnologia di comunicazione wireless a corto raggio utilizzata per lo scambio di dati tra dispositivi. Nel contesto normativo EN 18031 può rappresentare un'interfaccia soggetta a valutazione.
+  ],
+
+  IoT:[
+    Paradigma tecnologico (Internet of Things) che descrive reti di dispositivi fisici connessi a internet, capaci di raccogliere e scambiare dati. I dispositivi IoT sono tra i principali soggetti a valutazione secondo lo standard EN 18031.
+  ],
+
+  "Dispositivo radio":[
+    Dispositivo elettronico che utilizza lo spettro radio per la comunicazione, soggetto alla Direttiva RED (2014/53/UE) e ai requisiti di sicurezza informatica definiti dallo standard EN 18031.
+  ],
+
+  "Norma armonizzata":[
+    Standard tecnico europeo riconosciuto dalla Commissione Europea come riferimento per soddisfare i requisiti essenziali di una direttiva. Il rispetto di una norma armonizzata conferisce presunzione di conformità alla direttiva corrispondente.
+  ],
+
+  "Protezione della rete":[
+    Dominio di sicurezza definito dall'articolo 3.3(d) della Direttiva RED, che richiede che i dispositivi radio non arrechino danno alle reti di comunicazione. Corrisponde alla prima parte dello standard EN 18031.
+  ],
+
+  "Protezione dei dati personali":[
+    Dominio di sicurezza definito dall'articolo 3.3(e) della Direttiva RED, che richiede misure per garantire la riservatezza e l'integrità dei dati personali trattati dai dispositivi radio. Corrisponde alla seconda parte dello standard EN 18031.
+  ],
+
+  "Prevenzione delle frodi":[
+    Dominio di sicurezza definito dall'articolo 3.3(f) della Direttiva RED, che richiede misure per ridurre il rischio di utilizzo fraudolento dei dispositivi radio. Corrisponde alla terza parte dello standard EN 18031.
+  ],
+
+  Conformità:[
+    Aderenza di un prodotto, processo o sistema ai requisiti definiti da uno standard, una norma o una specifica tecnica. Nel progetto si riferisce alla conformità dei dispositivi radio allo standard EN 18031.
+  ],
+
+  "Valutazione di conformità":[
+    Processo formale che verifica se un dispositivo soddisfa i requisiti normativi applicabili, producendo un esito documentato e tracciabile per ciascun requisito valutato.
+  ],
+
+  "Automated EN18031 Compliance Verification":[
+    Nome del capitolato di progetto. Indica il sistema software sviluppato dal team GroupRubberDuck per automatizzare il processo di valutazione della conformità allo standard EN 18031.
+  ],
+
+  Cybersecurity:[
+    Insieme di pratiche, tecnologie e processi volti a proteggere sistemi, reti e dati da accessi non autorizzati, attacchi informatici e danni. Lo standard EN 18031 definisce requisiti di cybersecurity specifici per i dispositivi radio.
+  ],
+
+  Interfaccia:[
+    Punto di interazione tra il dispositivo e l'ambiente esterno, come una connessione di rete, un protocollo di comunicazione o un'API. Nel contesto normativo, le interfacce del dispositivo sono soggette a valutazione secondo EN 18031.
+  ],
+
+  "Editor grafico":[
+    Componente dell'applicazione che consente la visualizzazione e la modifica interattiva della struttura dei decision tree tramite un'interfaccia grafica, senza richiedere la modifica diretta dei file sottostanti.
+  ],
+
+  Manutenzione:[
+    Fase del ciclo di vita del software che comprende le attività di correzione, adattamento e miglioramento del sistema dopo il suo rilascio, per garantirne il corretto funzionamento nel tempo.
+  ],
+
+  "Requisito funzionale":[
+    Requisito che descrive una funzione o un comportamento specifico che il sistema deve essere in grado di eseguire in risposta a determinati input o eventi.
+  ],
+
+  "Requisito non funzionale":[
+    Requisito che descrive una proprietà o un vincolo del sistema, come prestazioni, sicurezza, usabilità o manutenibilità, senza riferirsi a una funzione specifica.
+  ],
+
+  "Applicazione desktop":[
+    Software installato ed eseguito localmente sul sistema operativo di un computer, senza richiedere un browser o una connessione a server remoti per il suo funzionamento principale.
+  ],
+
+  "Soluzione web-based":[
+    Applicazione accessibile tramite browser web, che non richiede installazione locale e può essere utilizzata da qualsiasi dispositivo connesso a internet.
+  ],
 
 )
 
@@ -348,10 +521,6 @@
   PoC:"Proof of Concept",
   RTB:"Requirement and Technology Baseline",
   PB:"Product Baseline",
-  ROF:"Requisito Obbligatorio Funzionale",
-  RDF:"Requisito Desiderabile Funzionale",
-  ROQ:"Requisito Obbligatorio di Qualità",
-  ROV:"Requisito Obbligatorio di Vincolo",
   MPC:"Metrica di Qualità del Processo",
   MPD:"Metrica di Qualità del Prodotto",
 
@@ -376,7 +545,15 @@
   CSV: "Comma-Separated Values",
   AU: "Assessment Unit",
   DN: "Decision Node",
-UML: "Unified Modeling Language"
+UML: "Unified Modeling Language",
+RObb: "Requisito Obbligatorio Funzionale",
+RDes: "Requisito Desiderabile Funzionale",
+ROpz: "Requisito Opzionale Funzionale",
+PDF: "Portable Document Format",
+RED: "Radio Equipment Directive",
+BT: "Bluetooth",
+IoT: "Internet of Things",
+LTE: "Long-Term Evolution",
 
 )
 
