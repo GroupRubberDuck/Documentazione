@@ -5,7 +5,20 @@
 #import template_dir + "/statusTab.typ": statusTab
 #import glossario:dict
 #import glossario:abbr
-#set heading(numbering: "1.1)")
+#set heading(numbering: none)  
+#show heading.where(level: 1): it => [
+  #v(1em)
+  #text(size: 20pt, weight: "bold", fill: rgb("#2c3e50"))[#it.body]
+  #v(0.3em)
+  #line(length: 100%, stroke: 0.5pt + rgb("#2c3e50"))
+  #v(0.5em)
+]
+
+#show heading.where(level: 2): it => [
+  #v(0.5em)
+  #text(size: 11pt, weight: "bold")[#it.body]
+  #v(0.1em)
+]
 #show ref: body => underline()[*#body*]
 
 // Glossario di riferimento
@@ -42,10 +55,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
-    versione: "0.5",
+    stato: "Approvato",
+    versione: "1.0.0",
     autori: ("Davide Lorenzon, Ana Maria Draghici, Filippo Guerra",),
-    verificatori: ("-",),
+    verificatori: ("Ana Maria Draghici, Filippo Guerra",),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
   )
@@ -57,13 +70,13 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1],[2025-11-09],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale e scripting per l'ordinamento]),
-  ([0.2],[2025-11-15],[Ana Maria Draghici],[Ana Maria Draghici],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML]),
-  ([0.3],[2025-11-16],[Ana Maria Draghici],[Ana Maria Draghici],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
-  ([0.4],[2025-12-16],[Filippo Guerra],[Ana Maria Draghici],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
-  ([0.5],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
+  ([0.1.0],[2025-11-09],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale e scripting per l'ordinamento]),
+  ([0.2.0],[2025-11-15],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunti i termini: Attore, Caso d’uso, Scenario principale, Scenario secondario, Ciclo di vita del progetto, Conformità, Valutazione di conformità, Protezione della rete, Protezione dei dati personali, Prevenzione delle frodi (EN 18031), RED (2014/53/UE),Automated EN18031 Compliance Verification, cybersecurity, report,applicazione desktop, soluzione web-based, UML]),
+  ([0.3.0],[2025-11-16],[Ana Maria Draghici],[Filippo Guerra],[Aggiunti i termini: Decision tree, Dashboard,CSV, XML, JSON, PDF, Dispositivo radio, Importazione, Interfaccia, Norma armonizzata, Pass, Fail, Not Applicable (N.A.),  Requisito funzionale, Requisito non funzionale, Stakeholder, Manutenzione, Editor grafico, Wi-Fi, LTE, BT, IoT.]),
+  ([0.4.0],[2025-12-16],[Filippo Guerra],[Ana Maria Draghici],[Aggiornamento del glossario con tutti i termini di dominio presenti nei documenti del progetto forniti dall’azienda BlueWind. Aggiunta della sezione Abbreviazioni all'interno del documento.]),
+  ([0.5.0],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
   ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
-  
+  ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
 )
 
 #registroModifiche(modifiche)
