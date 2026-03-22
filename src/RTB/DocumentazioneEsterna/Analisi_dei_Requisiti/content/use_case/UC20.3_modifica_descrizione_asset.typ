@@ -30,7 +30,7 @@
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
     scenario-principale:[
-        + L'utente modificato il nome dell'asset
+        + L'utente modifica la descrizione dell'asset
     ],
     
     pre-condizioni:[
@@ -38,7 +38,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha registrato la modifica del nome dell'asset.
+        - Il sistema ha registrato la modifica della descrizione dell'asset.
     ],
     
     trigger:none,

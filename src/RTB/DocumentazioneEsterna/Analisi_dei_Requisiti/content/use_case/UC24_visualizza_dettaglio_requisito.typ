@@ -44,7 +44,7 @@
         + L'utente visualizza lo stato della valutazione del requisito #sym.arrow #use-case-label(nome-etichetta:"Visualizza stato valutazione requisito" )
         + L'utente visualizza le dipendenze del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista dipendenze requisito")
         + L'utente visualizza il decision tree associato al requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza decision tree")
-        + L'utente visualizza la giustificazione associata al nodo del decsion tree #sym.arrow #use-case-label(nome-etichetta: "Visualizza giustificazione decision tree")
+        + L'utente visualizza la giustificazione associata al decision tree #sym.arrow #use-case-label(nome-etichetta: "Visualizza giustificazione decision tree")
     ],
 
     pre-condizioni: [

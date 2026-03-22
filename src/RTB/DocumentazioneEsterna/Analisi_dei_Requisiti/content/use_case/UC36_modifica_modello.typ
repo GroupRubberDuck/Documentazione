@@ -36,13 +36,13 @@
         + L'utente attiva la funzione per la modifica del modello
         + Il sistema avvia la sessione di modifica della struttura del modello
         + L'utente può aggiungere requisiti #sym.arrow #use-case-label(nome-etichetta: "Aggiungi requisito")
-        + L'utente può può selezionare un requisito 
+        + L'utente può selezionare un requisito 
             + L'utente può modificare l'anagrafica del requisito #sym.arrow #use-case-label(nome-etichetta: "Modifica anagrafica requisito")
             + L'utente può aggiungere una dipendenza #sym.arrow #use-case-label(nome-etichetta: "Aggiungi dipendenza")
             + L'utente può rimuovere una dipendenza #sym.arrow #use-case-label(nome-etichetta: "Rimuovi dipendenza")
-            + L'utente può appendere un nodo al decision tree #sym.arrow #use-case-label(nome-etichetta: "Aggiungi nodo figlio")
-            + L'utente può modificare un nodo al decision tree #sym.arrow #use-case-label(nome-etichetta: "Modifica nodo")
-            + L'utente può rimuovere un nodo al decision tree #sym.arrow #use-case-label(nome-etichetta: "Rimuovi nodo")
+            + L'utente può appendere un nodo del decision tree #sym.arrow #use-case-label(nome-etichetta: "Aggiungi nodo figlio")
+            + L'utente può modificare un nodo del decision tree #sym.arrow #use-case-label(nome-etichetta: "Modifica nodo")
+            + L'utente può rimuovere un nodo del decision tree #sym.arrow #use-case-label(nome-etichetta: "Rimuovi nodo")
         + L'utente salva le modifiche alla struttura del modello #sym.arrow #use-case-label(nome-etichetta: "Salva modifica modello")
 
     ],

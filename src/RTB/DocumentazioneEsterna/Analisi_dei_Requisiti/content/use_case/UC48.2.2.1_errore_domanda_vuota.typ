@@ -36,11 +36,12 @@
     
     pre-condizioni:[
         - L'utente sta aggiungendo un nodo di decisione
+        - Il sistema mostra un messagio di errore esplicativo
     ],
     
     post-condizioni:[
         - Il nodo non è stato aggiunto
-        - Il sistema ha fatto visualizzare un messaggio di errore
+        - Il sistema ha mostrato un messaggio di errore
         - L'utente può ritentare l'inserimento
     ],
     

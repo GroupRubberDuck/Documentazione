@@ -35,7 +35,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente inserisce la domanda collegata al nodo di decisione
+        + L'utente modifica la domanda collegata al nodo di decisione
     ],
     
     pre-condizioni:[
@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha registriato l'inserimento della domanda relativa al nodo
+        - Il sistema ha registrato la modifica della domanda relativa al nodo
     ],
     
     trigger:none,

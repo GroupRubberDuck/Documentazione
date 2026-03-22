@@ -48,8 +48,8 @@
     ],
     pre-condizioni:[
         - Il sistema è attivo
-        - Nel sistema non sono attive sessioni di valutazione del dispositivo attive
-        - Nel sistema non sono attive sessioni di modifica del modello attive
+        - Nel sistema non sono attive sessioni di valutazione del dispositivo
+        - Nel sistema non sono attive sessioni di modifica del modello
         - L'utente sta visualizzando le informazioni di uno specifico dispositivo #use-case-label(nome-etichetta: "Visualizza dati dispositivo")
         - Nel sistema è registrato almeno un dispositivo
         - Il modello di riferimento esiste nel sistema

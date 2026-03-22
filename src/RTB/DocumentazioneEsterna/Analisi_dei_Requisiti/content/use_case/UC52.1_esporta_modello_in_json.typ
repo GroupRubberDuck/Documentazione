@@ -33,8 +33,8 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente selezionato la funzione di esportazione del modello dello standard in formato json
-        + L'utente scarica il file contenente le informazioni del dispositivo
+        + L'utente seleziona la funzione di esportazione del modello dello standard in formato json
+        + L'utente scarica il file contenente le informazioni del modello
         ],
     
     pre-condizioni:[
@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file JSON contente i dati del dispositivo
+        - L'utente ha scaricato il file JSON contenente i dati del modello
     ],
     
     trigger:none,

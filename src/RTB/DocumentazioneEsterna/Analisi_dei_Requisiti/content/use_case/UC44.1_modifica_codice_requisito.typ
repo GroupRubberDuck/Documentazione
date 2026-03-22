@@ -57,7 +57,7 @@
     
     scenari-alternativi:[
         - L'utente inserisce un codice del requisito già appartenente a un altro requisito #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito duplicato")
-        - L'utente ha inserito un codice del requisito di valido #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito non valido")
+        - L'utente ha inserito un codice del requisito valido #sym.arrow #use-case-label(nome-etichetta: "Errore modifica codice requisito non valido")
     ],
     
     inclusioni:none,

@@ -33,7 +33,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente seleziona il file JSONda importare dal suo filesystem locale
+        + L'utente seleziona il file JSON da importare dal suo filesystem locale
     ],
     
     pre-condizioni:[
@@ -43,7 +43,7 @@
         - Il formato JSON è supportato dal sistema
     ],
     post-condizioni:[
-        - Il sistema ha memorizza un riferimento al file JSON selezionato dall'utente 
+        - Il sistema ha memorizzato un riferimento al file JSON selezionato dall'utente 
     ],
     
     trigger:none,

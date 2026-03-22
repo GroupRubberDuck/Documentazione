@@ -40,7 +40,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha registrato la modifica del tipo dell'asset in network asset.
+        - Il sistema ha registrato la modifica del tipo dell'asset in network asset
     ],
     
     

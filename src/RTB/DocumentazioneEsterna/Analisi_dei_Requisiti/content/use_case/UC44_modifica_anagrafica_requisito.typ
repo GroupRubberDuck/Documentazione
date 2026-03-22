@@ -36,7 +36,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente attiva l'aggiunta di un nuovo requisito
+        + L'utente attiva la funzione di modifica di un nuovo requisito
         + L'utente modifica il codice del requisito #sym.arrow #use-case-label(nome-etichetta: "Modifica codice requisito")
         + L'utente modifica il nome del requisito #sym.arrow #use-case-label(nome-etichetta: "Modifica nome requisito")
         + L'utente modifica la descrizione del requisito #sym.arrow #use-case-label(nome-etichetta: "Modifica descrizione requisito")
@@ -47,7 +47,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha modificato l'anagrafica di un requisito vuoto
+        - Il sistema ha modificato l'anagrafica di un requisito
     ],
     
     trigger:none,

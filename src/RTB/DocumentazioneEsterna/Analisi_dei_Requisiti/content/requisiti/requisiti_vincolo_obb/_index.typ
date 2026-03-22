@@ -21,12 +21,12 @@
 
 
 
-#import "RV-opz001_backend_in_python.typ": data as item_0, req-name as req-0
+#import "RV-001_applicazione_desktop_o_web_based.typ": data as item_0, req-name as req-0
 
 #table-cells.push( item_0)
 
 
-#import "RV-opz002_database_relazionale.typ": data as item_1, req-name as req-1
+#import "RV-002_metodologia_agile.typ": data as item_1, req-name as req-1
 
 #table-cells.push( item_1)
 

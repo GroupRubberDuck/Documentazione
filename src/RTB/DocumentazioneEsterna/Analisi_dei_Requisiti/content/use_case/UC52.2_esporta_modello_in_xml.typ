@@ -33,8 +33,8 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente selezionato la funzione di esportazione del modello dello standard in formato xml
-        + L'utente scarica il file contenente le informazioni del dispositivo
+        + L'utente seleziona la funzione di esportazione del modello dello standard in formato xml
+        + L'utente scarica il file contenente le informazioni del modello
         ],
     
     pre-condizioni:[
@@ -42,7 +42,11 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file XML contente i dati del dispositivo
+<<<<<<< HEAD
+        - L'utente ha scaricato il file XML contenente i dati del modello
+=======
+        - L'utente ha scaricato il file XML contenente i dati del dispositivo
+>>>>>>> 716b4f5aa33ab6cc60bf253f8c0c0520005c2baf
     ],
     
     

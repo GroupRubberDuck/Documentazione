@@ -41,8 +41,8 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha eleminato il requisito
-        - Il sistema ha aggiornato le liste dei dipendenze che dipendono dal requisito
+        - Il sistema ha eliminato il requisito
+        - Il sistema ha aggiornato le liste delle dipendenze dei requisiti che dipendono dal requisito
     ],
     
     trigger:[

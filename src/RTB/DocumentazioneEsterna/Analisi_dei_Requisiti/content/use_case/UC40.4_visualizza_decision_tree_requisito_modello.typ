@@ -33,12 +33,12 @@ parent-uc: "Visualizza dettaglio requisito modello",
     attore-principale:"Utente",
     
     scenario-principale:[
-        + Per ogni nodo del decsion tree:
+        + Per ogni nodo del decision tree:
             + L'utente visualizza le informazioni associate al nodo #sym.arrow #use-case-label(nome-etichetta: "Visualizza nodo decision tree modello")
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando il dettaglio di un dispositivo
+        - L'utente sta visualizzando il dettaglio di un requisito
     ],
     
     post-condizioni:[

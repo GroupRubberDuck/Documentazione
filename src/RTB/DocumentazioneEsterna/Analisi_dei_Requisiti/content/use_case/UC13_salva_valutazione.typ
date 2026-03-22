@@ -13,7 +13,7 @@
   actors: ("Utente",),
   includes: (),
   extends: ("Errore salvataggio valutazione":[
-    Si verifica un errore nel salvataggio dei dati
+    Avviene un errore nel salvataggio dei dati
   ]),
   generalizations: (
     "Salva e chiudi valutazione dispositivo",

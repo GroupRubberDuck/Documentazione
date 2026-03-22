@@ -48,7 +48,7 @@
     ],
     
     trigger:[
-        L'utente ha aggiunto un una dipendenza che crea una dipendenza circolare
+        L'utente ha aggiunto una dipendenza che crea una dipendenza circolare
     ],
     
     scenari-alternativi:none,

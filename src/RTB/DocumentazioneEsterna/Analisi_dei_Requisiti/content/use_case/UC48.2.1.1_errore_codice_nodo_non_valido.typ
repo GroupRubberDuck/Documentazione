@@ -30,6 +30,7 @@
     
     scenario-principale:[
         + Il sistema blocca l'operazione
+        + Il sistema mostra un messagio di errore esplicativo
     ],
     
     pre-condizioni:[
@@ -38,7 +39,7 @@
     
     post-condizioni:[
         - Il nodo non è stato aggiunto
-        - Il sistema ha fatto visualizzare un messaggio di errore
+        - Il sistema ha mostrato un messaggio di errore
         - L'utente può ritentare l'inserimento
     ],
     

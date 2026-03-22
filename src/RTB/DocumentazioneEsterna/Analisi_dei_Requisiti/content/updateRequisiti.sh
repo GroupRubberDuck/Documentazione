@@ -21,4 +21,7 @@ $MANAGER $BASE_DIR/requisiti_qualita/config/config.yml "$@"
 echo "🚀 Generazione Requisiti Vincolo..."
 $MANAGER $BASE_DIR/requisiti_vincolo/config/config.yml "$@"
 
+echo "🚀 Generazione Requisiti Vincolo obbligatori..."
+$MANAGER $BASE_DIR/requisiti_vincolo_obb/config/config.yml "$@"
+
 echo "✅ Tutti i requisiti sono stati processati con successo!"

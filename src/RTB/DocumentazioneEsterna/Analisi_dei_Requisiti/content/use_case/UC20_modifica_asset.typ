@@ -58,7 +58,7 @@
     ],
     
     trigger:[
-        L'utente vuole modificare i dai di un asset
+        L'utente vuole modificare i dati di un asset
     ],
     
     scenari-alternativi:none,
