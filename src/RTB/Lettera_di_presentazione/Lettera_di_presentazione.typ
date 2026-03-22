@@ -9,7 +9,7 @@
 
 #frontPageSenzaData([Lettera di Presentazione])
 
-#insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione")[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione",gloss-flag:false)[
 #statusTab(
   stato:"In progress",
   versione:"0.1.0",
@@ -19,7 +19,7 @@
   destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione")[
+#insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione",gloss-flag:false)[
 
 #registroModifiche((
   ("0.1.0","2026-03-22","Aldo Bettega", "", "Stesura lettera di presentazione"),
@@ -27,7 +27,7 @@
 ]
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Lettera di presentazione",documentType:"Lettera di presentazione")[
+#insertArabicNumberedPagesSenzaData(PageTitle:"Lettera di presentazione",documentType:"Lettera di presentazione", gloss-flag:false)[
 
 #enfasi[Lettera di presentazione del gruppo RubberDuck]
 Egregi Professori Vardanega e Cardin,  \
@@ -40,24 +40,26 @@ Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi al
 ]
 
 proposto dall'azienda Bluewind Srl.
-La documentazione prodotta durante questa fase del progetto è consultabile all’interno della cartella ”src” la cui cartella è denominata ”RTB”, raggiungibile al seguente link:
 
-#inserisciLink(url:"https://github.com/GroupRubberDuck")[github.com/GroupRubberDuck]
+La documentazione prodotta durante questa fase del progetto è gestita tramite apposito repository : \ #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione")[https://github.com/GroupRubberDuck/Documentazione]
 
-All’interno di questa sezione, oltre a questa lettera di presentazione è possibile trovare:
+Per facilitare la consultazione, tali documenti sono resi disponibili anche tramite l'apposito sito web: \ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione")[https://grouprubberduck.github.io/Documentazione]
 
-- La cartella Documentazione Interna che contiene il documento Norme di Progetto, insieme alla sottocartella Verbali Interni che raccoglie i verbali redatti durante le riunioni interne del gruppo
+Tramite esso sono consultabili: 
+- Il Piano di Qualifica, 
+- Il Piano di Progetto, 
+- L’Analisi dei Requisiti \ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf")[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf]
+- Il Glossario. 
 
--  La cartella Documentazione Esterna che comprende il Piano di Qualifica, il
-Piano di Progetto, l’Analisi dei Requisiti e il Glossario. In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
+In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
 
 Per agevolare la consultazione dei documenti, il gruppo si è munito di un sito web:
 
-#inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/")[grouprubberduck.github.io]
 
-Viene inoltre reso disponibile il codice sorgente del Proof of Concept:
 
-#inserisciLink(url:"https://github.com/GroupRubberDuck/PoC")[PoC]
+Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito repository :
+
+#inserisciLink(url:"https://github.com/GroupRubberDuck/PoC")[https://github.com/GroupRubberDuck/PoC]
 
 
 #enfasi[Piano di lavoro]
