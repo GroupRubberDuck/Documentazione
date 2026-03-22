@@ -105,6 +105,7 @@
   ([0.11.18], [2026-03-13], persone.FELIX,persone.DL, [Raffinati i requisiti obbligatori @funzionali-obbligatori]),
   ([0.11.19], [2026-03-14], persone.FELIX,persone.DL, [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
   ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
+  ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
   )
 
 #registroModifiche(modifiche)
