@@ -106,7 +106,7 @@
   ([0.11.19], [2026-03-14], persone.FELIX,persone.DL, [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
   ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
-  ([1.0.0], [2026-03-22], persone.DT,persone.DT, [Approvazione]),
+  ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
   )
 
 #registroModifiche(modifiche)
