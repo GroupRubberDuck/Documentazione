@@ -25,7 +25,7 @@ In questa sezione sono presenti i requisiti nati dai casi d'uso trovati grazie a
 
 == Requisiti funzionali <requisiti-funzionali>
 I requisiti funzionali definiscono le funzioni, i comportamenti e le azioni specifiche che il software deve essere in grado di eseguire in risposta a determinati input o eventi.
-Questi sono stati divisi in obbligatori (ROF: Requisiti Obbligatori Funzionali - requisiti che devono essere presenti per soddisfare la richiesta della proponente) e desiderabili (RDF: Requisiti Desiderabili Funzionali - requisiti che arricchiscono il sistema con funzionalità utili).
+Questi sono stati divisi in obbligatori (RObb: Requisiti Obbligatori Funzionali - requisiti che devono essere presenti per soddisfare la richiesta della proponente), desiderabili (RDes: Requisiti Desiderabili Funzionali - requisiti che arricchiscono il sistema con funzionalità utili) e funzionali (ROpz: Requisiti Opzionali Funzionali - requisiti che arricchiscono il sistema con funzionalità gradite ma non essenziali).
 === Requisiti funzionali obbligatori <funzionali-obbligatori>
 #figure(caption:"Tabella requisiti obbligatori")[
 #include "requisiti_obbligatori/_index.typ"

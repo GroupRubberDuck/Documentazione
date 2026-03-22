@@ -34,7 +34,7 @@
     
     scenario-principale:[
         + L'utente selezionato la funzione di esportazione del modello dello standard in formato xml
-        + L'utente scarica il file contenente le informazioni del dispositivo
+        + L'utente scarica il file contenente le informazioni del modello
         ],
     
     pre-condizioni:[
@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file XML contente i dati del dispositivo
+        - L'utente ha scaricato il file XML contente i dati del modello
     ],
     
     

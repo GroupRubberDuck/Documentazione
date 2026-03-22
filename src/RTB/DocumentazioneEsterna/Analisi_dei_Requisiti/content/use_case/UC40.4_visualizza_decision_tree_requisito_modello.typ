@@ -38,7 +38,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando il dettaglio di un dispositivo
+        - L'utente sta visualizzando il dettaglio di un requisito
     ],
     
     post-condizioni:[

@@ -37,7 +37,7 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando l'anagrafica del dispositivo
+        - L'utente sta visualizzando l'anagrafica del requisito
     ],
     
     post-condizioni:[
