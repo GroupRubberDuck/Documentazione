@@ -37,7 +37,7 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando un la lista dei modelli
+        - L'utente sta visualizzando la lista dei modelli
     ],
     
     post-condizioni:[

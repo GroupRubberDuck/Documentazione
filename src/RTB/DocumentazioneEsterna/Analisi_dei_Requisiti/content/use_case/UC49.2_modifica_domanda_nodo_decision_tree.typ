@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - Il sistema ha registriato l'inserimento della domanda relativa al nodo
+        - Il sistema ha registrato l'inserimento della domanda relativa al nodo
     ],
     
     trigger:none,

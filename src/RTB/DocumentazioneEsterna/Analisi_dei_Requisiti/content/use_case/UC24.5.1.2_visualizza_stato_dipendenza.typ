@@ -42,7 +42,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato lo stato della dipendenza della dipendenza nel contesto dell'asset
+        - L'utente ha visualizzato lo stato della dipendenza nel contesto dell'asset
     ],
     
     

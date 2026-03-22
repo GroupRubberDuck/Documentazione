@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-  L'Utente deve poter salvare in le modifiche apportate alla struttura del modello.
+  L'Utente deve poter salvare le modifiche apportate alla struttura del modello.
 
     La struttura non è valida al momento del salvataggio se vi è almeno uno scheletro di decision tree con almeno un percorso che non termina in un nodo foglia.
   ],

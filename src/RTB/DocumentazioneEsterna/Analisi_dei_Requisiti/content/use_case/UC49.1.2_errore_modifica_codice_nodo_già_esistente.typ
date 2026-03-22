@@ -28,7 +28,7 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale: "Utente",
     
       scenario-principale:[
         + Il sistema blocca l'operazione
