@@ -37,7 +37,7 @@
     scenario-principale: [
         + L'utente visualizza i dati del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dati dispositivo su dashboard")
         + L'utente visualizza lo stato aggregato della valutazione del dispositivo  #sym.arrow #use-case-label(nome-etichetta: "Visualizza singolo elemento lista asset")
-        + L'utente visualizza la lista di asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista asset").
+        + L'utente visualizza la lista di asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista asset")
     ],
     
     pre-condizioni: [

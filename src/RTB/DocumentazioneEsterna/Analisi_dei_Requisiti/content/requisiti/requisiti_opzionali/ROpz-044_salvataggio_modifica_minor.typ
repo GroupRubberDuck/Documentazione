@@ -10,7 +10,7 @@
   descrizione:[
     L'utente deve poter salvare le modifiche non significative apportate alla struttura dello standard.
 
-    Le modifiche non significative comprendono modifiche a campi puramente testuali: qual descrizione dei requisiti, nomi dei requisiti, testo delle domande dei nodi decisionali dello scheletro del decision tree.
+    Le modifiche non significative comprendono modifiche a campi puramente testuali: quali descrizione dei requisiti, nomi dei requisiti, testo delle domande dei nodi decisionali dello scheletro del decision tree.
 
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome

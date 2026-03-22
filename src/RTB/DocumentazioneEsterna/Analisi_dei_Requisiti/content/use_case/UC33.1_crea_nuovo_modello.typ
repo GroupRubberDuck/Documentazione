@@ -41,7 +41,7 @@ parent-uc: "Inserisci nuovo modello",
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando la lista degli asset
+        - L'utente sta visualizzando la lista dei modelli
     ],
     
     post-condizioni:[

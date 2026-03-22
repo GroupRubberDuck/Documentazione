@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - Nel sistema rimane attiva la sessione di valutazione
+        - Nel sistema rimane attiva la sessione di modifica della struttura del modello
         - Il sistema non salva le modifiche apportate sul sistema di permanenza
         - Il sistema mantiene le modifiche sulla bozza operativa
     ],

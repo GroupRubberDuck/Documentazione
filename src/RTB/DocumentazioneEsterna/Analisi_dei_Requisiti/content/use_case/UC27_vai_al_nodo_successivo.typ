@@ -14,7 +14,7 @@
     extends: (
         "Nodo senza risposta selezionata": [L'utente tenta di procedere al nodo successivo senza aver selezionato una risposta],
         "Nodo successore foglia":[
-            L'utente tenta di procede al nodo di decisione successivo ma il nodo successore è un nodo foglia
+            L'utente tenta di procedere al nodo di decisione successivo ma il nodo successore è un nodo foglia
         ]
     ),
     generalizations: (),

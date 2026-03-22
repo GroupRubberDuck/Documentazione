@@ -34,8 +34,8 @@
     
     scenario-principale:[
         + Il sistema legge le informazioni associate alla valutazione dei requisiti
-        + Il sistema calcola lo stato aggregato dell'asset
-        + L'utente visualizza lo stato aggregato dell'asset
+        + Il sistema calcola lo stato aggregato della valutazione dell'asset
+        + L'utente visualizza lo stato aggregato della valutazione dell'asset
     ],
     
     pre-condizioni: [
@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato lo stato aggregato del dispositivo
+        - L'utente ha visualizzato lo stato aggregato della valutazione dell'asset
     ],
     
     trigger:none,

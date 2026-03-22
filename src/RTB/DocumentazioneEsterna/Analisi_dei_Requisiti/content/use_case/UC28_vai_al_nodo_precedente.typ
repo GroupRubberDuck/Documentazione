@@ -60,6 +60,7 @@ attore-principale: "Utente",
     inclusioni: none,
 
     estensioni: [
+        - #use-case-label(nome-etichetta: "nodo corrente root")
     ],
     
     generalizzazioni:none,

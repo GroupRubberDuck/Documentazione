@@ -25,7 +25,7 @@ In questa sezione sono presenti i requisiti nati dai casi d'uso trovati grazie a
 
 == Requisiti funzionali <requisiti-funzionali>
 I requisiti funzionali definiscono le funzioni, i comportamenti e le azioni specifiche che il software deve essere in grado di eseguire in risposta a determinati input o eventi.
-Questi sono stati divisi in obbligatori (RObb: Requisiti Obbligatori Funzionali - requisiti che devono essere presenti per soddisfare la richiesta della proponente), desiderabili (RDes: Requisiti Desiderabili Funzionali - requisiti che arricchiscono il sistema con funzionalità utili) e funzionali (ROpz: Requisiti Opzionali Funzionali - requisiti che arricchiscono il sistema con funzionalità gradite ma non essenziali).
+Questi sono stati divisi in obbligatori (RObb: Requisiti Obbligatori Funzionali - requisiti che devono essere presenti per soddisfare la richiesta della proponente), desiderabili (RDes: Requisiti Desiderabili Funzionali - requisiti che arricchiscono il sistema con funzionalità utili) e opzionali (ROpz: Requisiti Opzionali Funzionali - requisiti che arricchiscono il sistema con funzionalità gradite ma non essenziali).
 === Requisiti funzionali obbligatori <funzionali-obbligatori>
 #figure(caption:"Tabella requisiti obbligatori")[
 #include "requisiti_obbligatori/_index.typ"
@@ -42,12 +42,20 @@ Questi sono stati divisi in obbligatori (RObb: Requisiti Obbligatori Funzionali 
 #include "requisiti_opzionali/_index.typ"
 ]
 
-== Requisiti di vincolo <requisiti-vincolo>
+== Requisiti di vincolo obbligatori <requisiti-vincolo>
 Questa sezione definisce le restrizioni tecniche, normative e implementative che limitano le scelte progettuali nello sviluppo del sistema. Tali vincoli impongono condizioni obbligatorie, come l'uso di specifiche tecnologie e standard di compatibilità che il prodotto finale deve soddisfare.
 
-#figure(caption:"Tabella requisiti di vincolo")[
+#figure(caption:"Tabella requisiti di vincolo obbligatori")[
+#include "requisiti_vincolo_obb/_index.typ"
+]
+
+== Requisiti di vincolo opzionali
+Questa sezione definisce le restrizioni tecniche, normative e implementative che vanno preferite nelle scelte progettuali che guidano lo sviluppo del sistema. Tali vincoli non impongono condizioni obbligatorie, ma suggeriscono l'uso di tecnologie indicate dall'azienda o ritenute potenzialmente utili durante le fasi di progettazione e sviluppo.
+
+#figure(caption:"Tabella requisiti di vincolo opzionali")[
 #include "requisiti_vincolo/_index.typ"
 ]
+
 
 == Requisiti di qualità
 #figure(caption:"Tabella requisiti di qualità")[
@@ -171,13 +179,13 @@ format-dict-as-table(columns: 2,uc-non-tracciati.map(
 )
 
 
-#figure(caption: "Riepilogo dei Requisiti", )[
+#figure(caption: "Riepilogo dei requisiti", )[
   #table(
     ..req-table-style,
     columns: (auto,auto,auto,auto),
     table.header("Tipologia","Obbligatori","Desiderabili","Opzionali"),
     "Funzionali",[#r-obb.deps.mappa.len()],[#r-des.deps.mappa.len()],[#r-opz.deps.mappa.len()],
     "Qualità",[5],[0],[0],
-    "Vincolo",[0],[0],[4],
+    "Vincolo",[2],[0],[2],
   )
 ]

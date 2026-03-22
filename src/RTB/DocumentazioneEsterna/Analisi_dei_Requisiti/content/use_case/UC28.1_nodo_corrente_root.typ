@@ -43,7 +43,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato il dettaglio del requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")
+        - Il sistema ha reindirizzato l'utente alla visualizzazione in dettaglio del requisito
     ],
     
     trigger:none,

@@ -34,7 +34,7 @@
     attore-principale: [Utente],
     
     scenario-principale: [
-        + L'utente inserisce la risposta alla domanda del nodo #use-case-label(nome-etichetta:"Inserisci risposta nodo decision tree")
+        + L'utente inserisce la risposta alla domanda del nodo #sym.arrow #use-case-label(nome-etichetta:"Inserisci risposta nodo decision tree")
         + Il sistema aggiorna lo stato di attività dei nodi successori
     ],
     

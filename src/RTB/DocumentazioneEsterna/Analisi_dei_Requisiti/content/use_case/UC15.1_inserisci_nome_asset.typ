@@ -13,7 +13,7 @@
   actors: ("Utente",),
   includes: (),
   extends: ("Errore nome asset non valido":[
-    L'utente ha inserisce un nome vuoto
+    L'utente ha inserito un nome vuoto
   ]),
   generalizations: (),
   spacing: (2.5cm, 2cm), 

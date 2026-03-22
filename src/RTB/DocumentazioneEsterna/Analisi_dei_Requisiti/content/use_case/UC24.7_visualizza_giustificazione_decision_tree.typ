@@ -37,7 +37,7 @@
     ],
     
     pre-condizioni: [
-        - L'utente sta visualizzando il dettaglio del requisito nel contesto dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio requisito").
+        - L'utente sta visualizzando il dettaglio del requisito nel contesto dell'asset #sym.arrow #use-case-label(nome-etichetta: "Visualizza dettaglio requisito")
 
     ],
 

@@ -43,7 +43,7 @@
     
     post-condizioni:[
       - Il sistema ha interrotto l'importazione del modello
-      - L'utente ha visualizzato un messagio di errore esplicativo
+      - L'utente ha visualizzato un messaggio di errore esplicativo
     ],
     
     trigger:none,

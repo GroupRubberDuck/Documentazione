@@ -34,7 +34,7 @@
     
     scenario-principale:[
         + L'utente richiede l'esportazione del dispositivo in formato XML
-        + L'utente scarica il file XML contente le informazioni del dispositivo
+        + L'utente scarica il file XML contenente le informazioni del dispositivo
     ],
     
     pre-condizioni:[

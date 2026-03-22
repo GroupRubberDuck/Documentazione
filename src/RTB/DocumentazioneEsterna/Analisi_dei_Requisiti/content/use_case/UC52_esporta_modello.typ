@@ -36,7 +36,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente selezionato la funzione di esportazione del modello dello standard
+        + L'utente seleziona la funzione di esportazione del modello dello standard
         + L'utente scarica il file contenente le informazioni del modello
         ],
     
@@ -45,7 +45,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file contente i dati del modello
+        - L'utente ha scaricato il file contenente i dati del modello
     ],
     
     trigger:[L'utente vuole esportare il modello],

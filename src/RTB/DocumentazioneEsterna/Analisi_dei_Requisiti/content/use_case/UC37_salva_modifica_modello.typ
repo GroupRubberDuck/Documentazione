@@ -13,7 +13,7 @@
   actors: ("Utente",),
   includes: (),
   extends: ("Errore struttura non valida per il salvataggio":[
-    Il sistema rileva uno o più incoerenze logiche nella struttura del modello
+    Il sistema rileva una o più incoerenze logiche nella struttura del modello
   ]),
   generalizations: (
     "Salva modifica MAJOR",

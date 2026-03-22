@@ -8,7 +8,7 @@
     ],
 
   descrizione:[
-    Il sistema deve utilizzare un database di tipo relazionale, adatto a gestire le relazioni strutturate tra dispositivi, asset, requisiti e nodi dei decision tree.
+    Il sistema deve utilizzare un database di tipo relazionale o non relazionale, adatto a gestire le relazioni strutturate tra dispositivi, asset, requisiti e nodi dei decision tree.
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva

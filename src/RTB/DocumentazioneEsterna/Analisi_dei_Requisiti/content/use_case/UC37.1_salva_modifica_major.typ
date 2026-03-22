@@ -29,7 +29,7 @@
     
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
-    attore-principale:none,
+    attore-principale:"Utente",
     
 scenario-principale: [
         + L'utente richiede il salvataggio definitivo della bozza operativa

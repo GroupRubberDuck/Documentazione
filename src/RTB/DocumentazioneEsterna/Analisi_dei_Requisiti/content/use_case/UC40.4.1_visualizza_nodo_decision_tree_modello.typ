@@ -41,7 +41,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando il un decision tree sul modello  
+        - L'utente sta visualizzando un decision tree sul modello  
     ],
     
     post-condizioni:[
