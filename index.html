@@ -9,6 +9,9 @@
   <title>RubberDuck</title>
   <link rel="icon" href="website/images/logo.png" type="image/x-icon">
   <link href="website/style.css" rel="stylesheet">
+  <style>
+    #pb, #candidatura, #diariodibordo, #pb-nav-el, #cand-nav-el, #ddb-nav-el { display: none }
+  </style>
 </head>
 
 <body class="bg-container text-white" onload="loaded()">
@@ -67,19 +70,19 @@
             <li>
               <a href="#home" class="block py-2 px-3 md:p-0" aria-current="page">Home</a>
             </li>
-            <li>
+            <li id="rtb-nav-el">
               <a href="#rtb" class="block py-2 px-3 md:p-0">RTB</a>
             </li>
-            <li>
+            <li id="pb-nav-el">
               <a href="#pb" class="block py-2 px-3 md:p-0">PB</a>
             </li>
-            <li>
+            <li id="cand-nav-el">
               <a href="#candidatura" class="block py-2 px-3 md:p-0">Candidatura</a>
             </li>
-            <li>
+            <li id="gloss-nav-el">
               <a href="./glossario.html" class="block py-2 px-3 md:p-0">Glossario</a>
             </li>
-            <li>
+            <li id="ddb-nav-el">
               <a href="#diariodibordo" class="block py-2 px-3 md:p-0">Diario
                 di bordo</a>
             </li>
@@ -109,7 +112,7 @@
       </div>
     </section>
     <section id="rtb" class="docs">
-      <button class="collapsible">
+      <button class="collapsible active">
         <h2>
           RTB
         </h2>
@@ -119,7 +122,7 @@
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      <section class="content">
+      <section class="content" style="max-height: 1136px;">
         <div class="mb-10 mt-4">
           <h3>Documentazione Esterna</h3>
           <ul class="docs-list">
