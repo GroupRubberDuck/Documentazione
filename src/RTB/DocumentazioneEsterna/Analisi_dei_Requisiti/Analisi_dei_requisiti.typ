@@ -34,9 +34,9 @@
 // 
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
-  major:0,
-  minor:11,
-  patch:20,
+  major:1,
+  minor:0,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -46,9 +46,9 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
-    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega"),
+    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega", "Filippo Guerra"),
     verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
@@ -106,6 +106,7 @@
   ([0.11.19], [2026-03-14], persone.FELIX,persone.DL, [Raffinati i requisiti desiderabili @funzionali-desiderabili]),
   ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
+  ([1.0.0], [2026-03-22], persone.DT,persone.DT, [Approvazione]),
   )
 
 #registroModifiche(modifiche)
