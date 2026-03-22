@@ -33,7 +33,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente seleziona la funzione di scarto delle modifiche alla struttura del dispositivo
+        + L'utente seleziona la funzione di scarto delle modifiche alla struttura del modello
         + Il sistema scarta le modifiche apportate alla struttura del modello
     ],
     
