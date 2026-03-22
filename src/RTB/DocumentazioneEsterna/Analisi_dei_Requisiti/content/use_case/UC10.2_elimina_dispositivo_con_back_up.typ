@@ -55,7 +55,7 @@ parent-uc: "Elimina dispositivo",
     ],
     
     trigger:[
-        - L'utente vuole eliminare le informazioni il dispositivo
+        - L'utente vuole eliminare le informazioni sul dispositivo
         - L'utente ha scaricato un file contenente i dati del dispositivo
 
 

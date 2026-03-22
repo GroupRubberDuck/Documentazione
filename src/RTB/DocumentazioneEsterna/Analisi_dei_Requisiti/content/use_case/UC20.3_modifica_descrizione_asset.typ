@@ -30,7 +30,7 @@
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
     scenario-principale:[
-        + L'utente modificato la descrizione dell'asset
+        + L'utente modifica la descrizione dell'asset
     ],
     
     pre-condizioni:[

@@ -48,7 +48,7 @@
     ],
     
     trigger:[
-        - L'utente vuole eliminare permanentemente le informazioni del dispositivo
+        - L'utente vuole eliminare permanentemente le informazioni sul dispositivo
     ],
     
     scenari-alternativi:none,

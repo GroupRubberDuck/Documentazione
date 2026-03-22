@@ -10,7 +10,7 @@
   descrizione:[
   L'Utente deve poter modificare il nome dell'asset durante la fase di modifica.
 
-  Il nome nome dell'asset deve essere compreso tra 1 e 32 caratteri
+  Il nome dell'asset deve essere compreso tra 1 e 32 caratteri
   ],
   fonti:(
     "Modifica nome asset",

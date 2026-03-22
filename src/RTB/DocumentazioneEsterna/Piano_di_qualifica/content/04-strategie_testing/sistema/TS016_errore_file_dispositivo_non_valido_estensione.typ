@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente possa visualizzare un messagio di errore se il file selezionato in fase di importazione ha un formato non supportato dal sistema
+    Verificare che l'Utente possa visualizzare un messaggio di errore se il file selezionato in fase di importazione ha un formato non supportato dal sistema
   ],
 
   requisito-riferimento:get-req-code(

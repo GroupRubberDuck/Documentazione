@@ -47,7 +47,7 @@ parent-uc: "Crea nuovo dispositivo",
     
     
     post-condizioni:[
-        - L'utente ha inserito correttamente il nome del dispositivo
+        - Il sistema ha registrato il cambiamento del nome del dispositivo
     ],
     
     trigger:none,

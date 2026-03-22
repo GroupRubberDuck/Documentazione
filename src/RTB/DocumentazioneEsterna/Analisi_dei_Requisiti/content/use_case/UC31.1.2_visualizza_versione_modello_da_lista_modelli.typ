@@ -33,7 +33,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente visualizza il nome del modello
+        + L'utente visualizza la versione del modello
     ],
     
     pre-condizioni:[
@@ -41,7 +41,7 @@
     ],
 
     post-condizioni:[
-        - L'utente ha visualizzato il nome del modello
+        - L'utente ha visualizzato la versione del modello
 
     ],
     
