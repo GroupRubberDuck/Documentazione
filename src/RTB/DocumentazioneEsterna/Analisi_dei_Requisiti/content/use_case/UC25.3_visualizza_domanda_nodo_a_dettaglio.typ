@@ -40,7 +40,7 @@
     ],
     
     post-condizioni:[
-        + L'utente ha visualizzato la domanda associata al nodo
+        - L'utente ha visualizzato la domanda associata al nodo
     ],
     
     

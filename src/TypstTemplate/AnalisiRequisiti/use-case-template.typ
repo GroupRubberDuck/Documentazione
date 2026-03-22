@@ -8,7 +8,7 @@
 
 // codice è non serve più, rimane per retrocompatibilità
 #let use-case-label(codice:"", nome-etichetta:str)={
-  ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" ,§")
+  ref(label(slugify(nome-etichetta)),supplement: get-use-case-code(nome-etichetta:nome-etichetta)+" §")
 }
 
 #let use-case-link-label(codice:"", nome-etichetta:str)={
@@ -48,7 +48,7 @@
 
 
   [
-    #heading(codice+":"+nome,level: livello-intestazione) #label(slugify( nome))
+    #heading(codice+": "+nome,level: livello-intestazione) #label(slugify( nome))
     #v(1em)
   ]
 

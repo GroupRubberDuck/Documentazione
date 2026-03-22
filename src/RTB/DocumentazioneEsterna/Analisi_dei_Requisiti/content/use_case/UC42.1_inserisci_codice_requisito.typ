@@ -40,7 +40,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente inserisce il nome del requisito
+        + L'utente inserisce il codice del requisito
     ],
     
     pre-condizioni:[

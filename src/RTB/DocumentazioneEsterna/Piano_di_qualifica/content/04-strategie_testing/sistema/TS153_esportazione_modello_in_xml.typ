@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa scaricare un file in formato XML contente le informazioni strutturali del modello
+Verificare che l'utente possa scaricare un file in formato XML contenente le informazioni strutturali del modello
 
   ],
 

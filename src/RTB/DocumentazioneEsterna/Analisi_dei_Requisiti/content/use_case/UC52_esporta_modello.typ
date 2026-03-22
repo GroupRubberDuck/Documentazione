@@ -36,8 +36,8 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente selezionato la funzione di esportazione del modello dello standard
-        + L'utente scarica il file contenente le informazioni del dispositivo
+        + L'utente seleziona la funzione di esportazione del modello dello standard
+        + L'utente scarica il file contenente le informazioni del modello
         ],
     
     pre-condizioni:[
@@ -45,10 +45,10 @@
     ],
     
     post-condizioni:[
-        - L'utente ha scaricato il file contente i dati del dispositivo
+        - L'utente ha scaricato il file contenente i dati del modello
     ],
     
-    trigger:[L'utente vuole esportare il dispositivo],
+    trigger:[L'utente vuole esportare il modello],
     
     scenari-alternativi:none,
     

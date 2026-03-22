@@ -34,7 +34,7 @@
     
     scenario-principale:[
         + L'utente richiede l'esportazione del dispositivo in formato JSON
-        + L'utente scarica il file JSON contente le informazioni del dispositivo
+        + L'utente scarica il file JSON contenente le informazioni del dispositivo
     ],
     
     pre-condizioni:[

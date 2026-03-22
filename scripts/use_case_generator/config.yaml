@@ -168,8 +168,8 @@ structure:
 
     - Valuta nodo di decisione:
         - Inserisci risposta nodo decision tree:
-            - Seleziona Yes
-            - Seleziona No
+            - Seleziona YES
+            - Seleziona NO
     - Vai al nodo successivo:
         - Nodo senza risposta selezionata
         - Nodo successore foglia

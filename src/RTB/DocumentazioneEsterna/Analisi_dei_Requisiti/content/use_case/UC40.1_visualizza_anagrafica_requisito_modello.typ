@@ -47,7 +47,7 @@ parent-uc: "Visualizza dettaglio requisito modello",
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato l'anagrafica del dispositivo
+        - L'utente ha visualizzato l'anagrafica del requisito
     ],
     
     trigger:none,

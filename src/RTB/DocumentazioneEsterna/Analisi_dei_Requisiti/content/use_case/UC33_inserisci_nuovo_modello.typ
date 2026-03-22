@@ -45,7 +45,7 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando la lista dei dispositivi
+        - L'utente sta visualizzando la lista dei modelli
     ],
     
     post-condizioni:[

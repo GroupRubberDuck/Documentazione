@@ -34,7 +34,7 @@
     
     scenario-principale:[
         + L'utente richiede l'esportazione del dispositivo in formato CSV
-        + L'utente scarica il file CSV contente le informazioni del dispositivo
+        + L'utente scarica il file CSV contenente le informazioni del dispositivo
     ],
     
     pre-condizioni:[

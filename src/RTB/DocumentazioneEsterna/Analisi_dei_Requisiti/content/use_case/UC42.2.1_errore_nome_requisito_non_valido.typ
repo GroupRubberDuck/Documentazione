@@ -43,7 +43,7 @@
     ],
 
     post-condizioni:[
-        - L'utente ha visualizzato un messagio di errore esplicativo
+        - L'utente ha visualizzato un messaggio di errore esplicativo
         - L'utente può ritentare l'inserimento del nome del requisito
     ],
     

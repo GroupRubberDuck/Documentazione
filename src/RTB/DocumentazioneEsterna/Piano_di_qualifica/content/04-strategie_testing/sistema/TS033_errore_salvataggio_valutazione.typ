@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa vedere un messagio di avviso se durante il salvataggio dei dati si verificano problemi tecnici che impediscono il corretto salvataggio dei dati 
+Verificare che l'Utente possa vedere un messaggio di avviso se durante il salvataggio dei dati si verificano problemi tecnici che impediscono il corretto salvataggio dei dati 
   ],
 
   requisito-riferimento:get-req-code(
