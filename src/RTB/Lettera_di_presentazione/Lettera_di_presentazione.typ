@@ -11,10 +11,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione",gloss-flag:false)[
 #statusTab(
-  stato:"In progress",
-  versione:"0.1.0",
+  stato:"Approvato",
+  versione:"1.0.0",
   autori:("Aldo Bettega",), 
-  verificatori: (""),
+  verificatori: ("Davide Lorenzon",),
   uso:"Esterno",
   destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
 ]
@@ -23,7 +23,11 @@
 
 #registroModifiche((
   ("0.1.0","2026-03-22","Aldo Bettega", "", "Stesura lettera di presentazione"),
-))
+("1.0.0","Davide Testolin","Davide Lorenzon","Approvazione")
+
+),
+
+)
 ]
 
 
