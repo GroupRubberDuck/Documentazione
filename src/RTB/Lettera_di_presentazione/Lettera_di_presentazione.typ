@@ -22,8 +22,8 @@
 #insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione",gloss-flag:false)[
 
 #registroModifiche((
-  ("0.1.0","2026-03-22","Aldo Bettega", "", "Stesura lettera di presentazione"),
-("1.0.0","Davide Testolin","Davide Lorenzon","Approvazione")
+  ("0.1.0","2026-03-22","Aldo Bettega", "Davide Lorenzon", "Stesura lettera di presentazione"),
+("1.0.0","2026-03-22","Davide Testolin","Davide Lorenzon","Approvazione")
 
 ),
 
