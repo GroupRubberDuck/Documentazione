@@ -2,14 +2,14 @@
 #import "/src/config.typ": *
 
 #show: slides.with(
-  numero: 10,
+  numero: 11,
   data: "2026-03-25",
 )
 
 = Attività completate
 #set list(marker: image(check_icon, width: 0.8em))
 - PoC e documentazione necessaria alla RTB
-- Incontro con Cardin
+- Incontro con Cardin (siamo in attesa di valutazione)
 
 = Attività da completare
 #set list(marker: image(clessidra_icon, width: 0.7em))
