@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare nel dettaglio le informazioni collegate a uno specifico nodo foglia all'interno dello scheletro del decision tree in fase di modifica del modello
+Verificare che l'Utente possa visualizzare nel dettaglio le informazioni collegate a uno specifico nodo foglia all'interno dello scheletro del decision tree in fase di modifica del modello
 
   ],
 

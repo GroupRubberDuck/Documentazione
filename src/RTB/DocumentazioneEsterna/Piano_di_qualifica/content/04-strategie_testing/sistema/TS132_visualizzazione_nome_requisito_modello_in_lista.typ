@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare il nome associato a ogni elemento della lista dei requisiti previsti da uno specifico modello 
+Verificare che l'Utente possa visualizzare il nome associato a ogni elemento della lista dei requisiti previsti da uno specifico modello 
 
   ],
 

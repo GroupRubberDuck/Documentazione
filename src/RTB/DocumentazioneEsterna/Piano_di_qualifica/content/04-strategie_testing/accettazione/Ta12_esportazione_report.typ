@@ -10,7 +10,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente possa generare un report descrivente la valutazione effettuata
+    Verificare che l'Utente possa generare un report pdf che riassume la valutazione effettuata
   ],
 
 

@@ -10,7 +10,8 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che il sistema rispetti le dipendenze tra requisiti stabilite nello standard
+    Verificare che l'Utente, nel compilare il decision tree, rispetta le dipendenze tra requisiti stabilite dallo standard
+],
   ],
 
 

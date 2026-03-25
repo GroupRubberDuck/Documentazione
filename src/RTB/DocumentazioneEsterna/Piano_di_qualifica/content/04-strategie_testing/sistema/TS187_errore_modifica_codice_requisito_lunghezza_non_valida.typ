@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifica del codice associato al requisito e mostri un avviso se l'utente inserisce non inserisce un codice di lunghezza compresa tra 4 e 10 caratteri
+Verificare che il sistema blocchi l'operazione di modifica del codice associato al requisito e mostri un avviso se l'Utente inserisce non inserisce un codice di lunghezza compresa tra 4 e 10 caratteri
   ],
 
   requisito-riferimento:get-req-code(

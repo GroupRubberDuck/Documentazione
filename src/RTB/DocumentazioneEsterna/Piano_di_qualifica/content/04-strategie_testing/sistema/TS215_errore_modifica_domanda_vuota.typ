@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifica della domanda se l'utente cancella la domanda senza inserirne una nuova
+Verificare che il sistema blocchi l'operazione di modifica della domanda se l'Utente cancella la domanda senza inserirne una nuova
   ],
 
   requisito-riferimento:get-req-code(

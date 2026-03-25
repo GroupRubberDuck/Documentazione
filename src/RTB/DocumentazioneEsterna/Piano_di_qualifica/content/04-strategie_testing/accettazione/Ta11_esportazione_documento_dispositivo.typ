@@ -10,7 +10,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente possa esportare le informazioni descrittive del dispositivo e della valutazione tramite la creazione di un file
+    Verificare che l'Utente possa esportare le informazioni descrittive del dispositivo e della valutazione in formato strutturato 
   ],
 
 

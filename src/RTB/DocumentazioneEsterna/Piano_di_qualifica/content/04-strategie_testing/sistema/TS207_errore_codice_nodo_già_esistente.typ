@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema interrompa l'operazione di inserimento del codice del nodo di decisione se l'utente inserisce un codice già associato a un nodo esistente 
+Verificare che il sistema interrompa l'operazione di inserimento del codice del nodo di decisione se l'Utente inserisce un codice già associato a un nodo esistente 
 
   ],
 

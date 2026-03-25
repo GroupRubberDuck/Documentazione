@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa scaricare un file contente le informazioni strutturali del modello
+Verificare che l'Utente possa scaricare un file contente le informazioni strutturali del modello
   ],
 
   requisito-riferimento:get-req-code(

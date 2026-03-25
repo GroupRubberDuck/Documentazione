@@ -43,7 +43,7 @@
   )
 }
 
-#import "Ta04_struttura_dello_standard_definita_esternamente.typ": data as item_3
+#import "Ta04_esecuzione_della_valutazione.typ": data as item_3
 
 
 #{
@@ -56,7 +56,7 @@
   )
 }
 
-#import "Ta05_esecuzione_della_valutazione.typ": data as item_4
+#import "Ta05_rispetto_delle_gerarchia_dello_standard.typ": data as item_4
 
 
 #{
@@ -69,7 +69,7 @@
   )
 }
 
-#import "Ta06_rispetto_delle_gerarchia_dello_standard.typ": data as item_5
+#import "Ta06_visualizzazione_dashboard.typ": data as item_5
 
 
 #{
@@ -82,7 +82,7 @@
   )
 }
 
-#import "Ta07_visualizzazione_dashboard.typ": data as item_6
+#import "Ta07_visualizzazione_asset.typ": data as item_6
 
 
 #{
@@ -95,7 +95,7 @@
   )
 }
 
-#import "Ta08_visualizzazione_asset.typ": data as item_7
+#import "Ta08_valuta_asset.typ": data as item_7
 
 
 #{
@@ -108,7 +108,7 @@
   )
 }
 
-#import "Ta09_valuta_asset.typ": data as item_8
+#import "Ta09_visualizzazione_requisiti.typ": data as item_8
 
 
 #{
@@ -121,7 +121,7 @@
   )
 }
 
-#import "Ta10_visualizzazione_requisiti.typ": data as item_9
+#import "Ta10_compila_decision_tree.typ": data as item_9
 
 
 #{
@@ -134,7 +134,7 @@
   )
 }
 
-#import "Ta11_compila_decision_tree.typ": data as item_10
+#import "Ta11_esportazione_documento_dispositivo.typ": data as item_10
 
 
 #{
@@ -147,7 +147,7 @@
   )
 }
 
-#import "Ta12_output_valutazione.typ": data as item_11
+#import "Ta12_esportazione_report.typ": data as item_11
 
 
 #{
@@ -160,34 +160,8 @@
   )
 }
 
-#import "Ta13_esportazione_documento_dispositivo.typ": data as item_12
 
-
-#{
-  test-array.push((
-
-    deps.get-test-code(nome-etichetta:item_12.nome),
-    item_12.descrizione,
-    item_12.stato,
-  )
-  )
-}
-
-#import "Ta14_esportazione_report.typ": data as item_13
-
-
-#{
-  test-array.push((
-
-    deps.get-test-code(nome-etichetta:item_13.nome),
-    item_13.descrizione,
-    item_13.stato,
-  )
-  )
-}
-
-
-#figure(caption:" Test di Accettazione")[
+#figure(caption:" Test di Sistema")[
 #deps.tabella-test(..(test-array).flatten())
 
 ]

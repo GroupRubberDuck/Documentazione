@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa eliminare un modello dal sistema
+Verificare che l'Utente possa eliminare un modello dal sistema
   ],
 
   requisito-riferimento:get-req-code(

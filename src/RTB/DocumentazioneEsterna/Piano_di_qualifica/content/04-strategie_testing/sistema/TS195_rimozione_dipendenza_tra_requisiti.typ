@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'utente possa rimuovere una dipendenza dal requisito in fase di modifica del requisito
+    Verificare che l'Utente possa rimuovere una dipendenza dal requisito in fase di modifica del requisito
   ],
 
   requisito-riferimento:get-req-code(

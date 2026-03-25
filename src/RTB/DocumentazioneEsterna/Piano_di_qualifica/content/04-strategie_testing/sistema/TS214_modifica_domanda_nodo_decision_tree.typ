@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa modifcare e salvare una domanda
+Verificare che l'Utente possa modificare e salvare una domanda
   ],
 
   requisito-riferimento:get-req-code(

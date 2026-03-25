@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'utente possa eliminare un requisito dal modello in fase di modifica di esso
+    Verificare che l'Utente possa eliminare un requisito dal modello in fase di modifica di esso
   ],
 
   requisito-riferimento:get-req-code(

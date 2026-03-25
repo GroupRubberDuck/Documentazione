@@ -99,14 +99,14 @@
       [0.6.0],
       [2026-03-19],
       [Davide Lorenzon],
-      [],
+      [Felician Mario \ Necsulescu],
       [Aggiunti test di sistema @test-sistema e Aggiunti test di accettazione @test-accettazione] 
     ),
     (
       [0.7.0],
       [2026-03-20],
       [Ana Maria Draghici],
-      [],
+      [Felician Mario \ Necsulescu],
       [Aggiornata @testing con descrizione generale del testing, descrizioni brevi per ogni test e descrizioni dei test mancanti]
     ),
   )

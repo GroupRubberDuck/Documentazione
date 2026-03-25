@@ -27,7 +27,6 @@ structure:
 - Importazione documento dispositivo
 - Creazione documento dispositivo
 - Gestione informazioni dispositivo
-- Struttura dello standard definita esternamente
 - Esecuzione della valutazione
 - Rispetto delle gerarchia dello standard
 - Visualizzazione dashboard
@@ -35,6 +34,5 @@ structure:
 - Valuta asset
 - Visualizzazione requisiti
 - Compila decision tree
-- Output valutazione
 - Esportazione documento dispositivo
 - Esportazione report
