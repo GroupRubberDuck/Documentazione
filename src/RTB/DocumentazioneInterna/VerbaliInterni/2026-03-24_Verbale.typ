@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "In approvazione",
     versione: versionNumber,
     autori: (persone.DT,),
     verificatori: (),
@@ -49,7 +49,7 @@
 #insertRomanNumberedPages("Registro Modifiche", doctype, giornoRiunione)[
 
   #let modifiche = (
-    ([0.1.0], [2026-03-10], persone.DT, [], [Stesura del verbale]),
+    ([0.1.0], [2026-03-24], persone.DT, persone.FILIPPO, [Stesura del verbale]),
   )
 
   #registroModifiche(modifiche)
@@ -108,11 +108,11 @@
   = Argomenti principali
 
   == Confronto sulla presentazione RTB con il Prof. Cardin <cardin>
-  Sono stati analizzati i consigli dati dal Prof. Cardin durante la presentazione fatta della Requirement and Technology Baseline. Nello specifico è stato considerato di implementare altre tecnologie sia per il backend (fastapi in sostituzione a Flask), sia per il frontend (con framework come React o Svelte), in modo da migliorare l'architettura e rendere l'applicazione più mantenibile.
+  Sono stati analizzati i consigli dati dal Prof. Cardin durante la presentazione della Requirement and Technology Baseline. Nello specifico è stato considerato di implementare altre tecnologie sia per il backend (fastapi in sostituzione a Flask), sia per il frontend (con framework come React o Svelte), in modo da migliorare l'architettura e rendere l'applicazione più manutenibile.
   Alla fine è stato deciso di mantenere le tecnologie scelte, considerando anche il tempo rimanente in vista della data di consegna finale del progetto.
 
   == Pianificazione dello Sprint
-  Aldo Bettega è stato nominato responsabile del prossimo sprint. E' stato deciso inoltre di nominare due amministratori e due verificatori per far fronte agli ultimi documenti rimasti da verificare. Infine è stato nominato un solo analista che entrerà in funzione a seguito della risposta (semaforo verde o rosso) del Prof. Cardin.
+  Aldo Bettega è stato nominato responsabile del prossimo sprint. È stato deciso inoltre di nominare due amministratori e due verificatori per far fronte agli ultimi documenti rimasti da verificare. Infine è stato nominato un solo analista che entrerà in azione a seguito della risposta (semaforo verde o rosso) del Prof. Cardin.
 ]
 
 
