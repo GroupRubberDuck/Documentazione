@@ -12,7 +12,7 @@
   descrizione:[
     Verificare che l'Utente, nel compilare il decision tree, rispetta le dipendenze tra requisiti stabilite dallo standard
 ],
-  ],
+  
 
 
 
