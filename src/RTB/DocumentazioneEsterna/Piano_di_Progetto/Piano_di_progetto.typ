@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 7,
+  minor: 9,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -65,7 +65,7 @@
     ( [0.6.0], [2026-03-04], [#persone.ALDO], [-], [Corrette e aggiornate le tabelle delle attività dei documenti, aggiunto sprint 5], ),
     ( [0.7.0], [2026-03-05], [#persone.ALDO], [-], [Aggiunto @ROAM di classicazione e gestione rischi ROAM], ),
     ( [0.8.0], [2026-03-11], [#persone.FELIX], [-], [Scritto Sprint 6], ),
-    ( [0.9.0], [2026-03-20], [#persone.DT], [-], [Scritto Sprint 7], ),
+    ( [0.9.0], [2026-03-25], [#persone.DT], [-], [Scritto Sprint 7], ),
   )
   #registroModifiche(modifiche)
 ]
