@@ -16,9 +16,6 @@
 #he(body: "Estimate to Complete", level: 2)
 #include "MPC/05-estimate_to_complete.typ"
 
-#he(body: "Issue per sprint", level: 2) 
-#include "MPC/12-issue_per_sprint.typ"
-
 #he(body: "Indice di Gulpease", level: 2)
 #include "MPC/06-indice_gulpease.typ"
 

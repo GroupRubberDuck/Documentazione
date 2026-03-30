@@ -5,9 +5,9 @@
 
 #let gulpease_data = (
   ("Norme di progetto",     62, 9703, 1122, 59786),
-  ("Piano di progetto",     59, 3997,  386, 23702),
-  ("Piano di qualifica",    54, 1740,  133, 10069),
-  ("Analisi dei Requisiti", 62, 6122,  703, 37689),
+  ("Piano di progetto",     58, 3997,  386, 23702),
+  ("Piano di qualifica",    51, 1740,  133, 10069),
+  ("Analisi dei Requisiti", 89, 6122,  703, 37689),
 )
 
 #figure(

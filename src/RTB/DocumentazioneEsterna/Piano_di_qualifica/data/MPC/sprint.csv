@@ -76,11 +76,11 @@ Sezione processi primari,https://github.com/GroupRubberDuck/Documentazione/issue
 Sezione relativa ai processi di supporto,https://github.com/GroupRubberDuck/Documentazione/issues/94,Ana,Lorenzon,2026-01-05,2026-02-04,L
 Scrittura verbale esterno 2026-01-13,https://github.com/GroupRubberDuck/Documentazione/issues/96,Aldo,Filippo,2026-01-13,2026-02-04,M
 Scrittura verbale interno 2026-01-13,https://github.com/GroupRubberDuck/Documentazione/issues/97,Aldo,Felix,2026-01-13,2026-02-04,M
-Ricerca e definizione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/98,"Testolin, Filippo",,2026-01-14,2026-02-04,M
-Ricerca tecnologie di sviluppo e deploy,https://github.com/GroupRubberDuck/Documentazione/issues/99,"Testolin, Filippo",,2026-01-14,2026-02-04,M
-Ricerca tecnologie di backend,https://github.com/GroupRubberDuck/Documentazione/issues/100,"Testolin, Filippo",,2026-01-14,2026-02-04,M
+Ricerca e definizione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/98,"Testolin, Filippo",,2026-01-14,2026-03-10,M
+Ricerca tecnologie di sviluppo e deploy,https://github.com/GroupRubberDuck/Documentazione/issues/99,"Testolin, Filippo",,2026-01-14,2026-03-10,M
+Ricerca tecnologie di backend,https://github.com/GroupRubberDuck/Documentazione/issues/100,"Testolin, Filippo",,2026-01-14,2026-03-10,M
 Verificare Norme Progetto,https://github.com/GroupRubberDuck/Documentazione/issues/101,,,2026-01-16,2026-02-04,S
-Redazione dei diagrammi dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issues/102,Lorenzon,,2026-02-06,2026-02-18,M
+Redazione dei diagrammi dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issues/102,Lorenzon,Aldo,2026-02-06,2026-03-20,M
 Scrittura verbale interno 2026-02-09,https://github.com/GroupRubberDuck/Documentazione/issues/103,Lorenzon,Felix,2026-02-09,2026-02-18,S
 stesura verbale 2026-02-24,https://github.com/GroupRubberDuck/Documentazione/issues/104,Ana,Aldo,2026-02-24,2026-03-10,S
 aggiunta dei grafici nel pdq,https://github.com/GroupRubberDuck/Documentazione/issues/105,,,2026-02-24,2026-03-10,M
@@ -89,16 +89,30 @@ Previsione dei casi d'uso,https://github.com/GroupRubberDuck/Documentazione/issu
 Previsione dei requisiti,https://github.com/GroupRubberDuck/Documentazione/issues/108,"Felix, Lorenzon",,2026-02-24,2026-03-10,L
 Ricerca e test delle tecnologie,https://github.com/GroupRubberDuck/Documentazione/issues/109,"Filippo, Testolin",,2026-02-24,2026-03-10,L
 Configurare spreadsheet ore,https://github.com/GroupRubberDuck/Documentazione/issues/110,Aldo,,2026-02-26,2026-03-10,M
-Aggiornare glossario,https://github.com/GroupRubberDuck/Documentazione/issues/111,Ana,,2026-02-26,2026-03-10,S
+Aggiornare glossario,https://github.com/GroupRubberDuck/Documentazione/issues/111,Ana,Felix,2026-02-26,2026-03-15,S
 Stesura verbale 02/03/2026,https://github.com/GroupRubberDuck/Documentazione/issues/112,Ana,Felix,2026-03-03,2026-03-10,S
 Verifica verbali RTB,https://github.com/GroupRubberDuck/Documentazione/issues/113,Aldo,,2026-03-03,2026-03-10,S
-Aggiornare NdP,https://github.com/GroupRubberDuck/Documentazione/issues/114,Aldo,,2026-03-04,2026-03-10,XS
-casi d'uso inserimento dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/115,Lorenzon,Felix,2026-03-04,2026-03-10,
-stesura casi d'uso visualizza dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/116,Felix,Lorenzon,2026-03-04,2026-03-10,
-modifica ed eliminazione del dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/117,Lorenzon,Felix,2026-03-04,2026-03-10,
-Studio tecnologie,https://github.com/GroupRubberDuck/PoC/issues/2,"Aldo, Testolin, Filippo",,2026-03-06,2026-03-10,M
-pagina Decision Tree,https://github.com/GroupRubberDuck/PoC/issues/3,Testolin,,2026-03-06,2026-03-10,M
-Pagina di Report,https://github.com/GroupRubberDuck/PoC/issues/4,Filippo,,2026-03-06,2026-03-10,M
-Pagina di import,https://github.com/GroupRubberDuck/Documentazione/issues/118,Aldo,,2026-03-06,2026-03-10,M
-stesura verbale 2026-03-10,https://github.com/GroupRubberDuck/Documentazione/issues/119,Ana,Felix,2026-03-10,2026-03-10,
-Aggiornare sprint 6 in PdP,https://github.com/GroupRubberDuck/Documentazione/issues/120,"Aldo, Felix",,2026-03-10,2026-03-10,
+Aggiornare NdP,https://github.com/GroupRubberDuck/Documentazione/issues/114,Aldo,Filippo,2026-03-04,2026-03-12,XS
+casi d'uso inserimento dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/115,Lorenzon,"Felix, Aldo",2026-03-04,2026-03-20,S
+stesura casi d'uso visualizza dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/116,Felix,"Lorenzon, Aldo",2026-03-04,2026-03-20,M
+modifica ed eliminazione del dispositivo,https://github.com/GroupRubberDuck/Documentazione/issues/117,Lorenzon,Felix,2026-03-04,2026-03-20,M
+Studio tecnologie,https://github.com/GroupRubberDuck/PoC/issues/2,"Aldo, Testolin, Filippo",,2026-03-06,2026-03-13,M
+pagina Decision Tree,https://github.com/GroupRubberDuck/PoC/issues/3,Testolin,,2026-03-06,2026-03-12,M
+Pagina di Report,https://github.com/GroupRubberDuck/PoC/issues/4,Filippo,,2026-03-06,2026-03-13,M
+Pagina di import,https://github.com/GroupRubberDuck/Documentazione/issues/118,Aldo,,2026-03-06,2026-03-13,M
+stesura verbale 2026-03-10,https://github.com/GroupRubberDuck/Documentazione/issues/119,Ana,Felix,2026-03-10,2026-03-10,S
+Aggiornare sprint 6 in PdP,https://github.com/GroupRubberDuck/Documentazione/issues/120,"Aldo, Felix",Filippo,2026-03-10,2026-03-12,XS
+stesura dei requisiti,https://github.com/GroupRubberDuck/Documentazione/issues/121,Felix,Lorenzon,2026-03-10,2026-03-24,M
+DdB 11/03/2026,https://github.com/GroupRubberDuck/Documentazione/issues/123,Aldo,,2026-03-12,2026-03-12,XS
+Pagina di Dashboard,https://github.com/GroupRubberDuck/Documentazione/issues/124,Aldo,,2026-03-13,2026-03-13,S
+sezione test PdQ,https://github.com/GroupRubberDuck/Documentazione/issues/128,"Ana, Lorenzon",Felix,2026-03-17,2026-03-24,L
+Verbale esterno 17/03/2026,https://github.com/GroupRubberDuck/Documentazione/issues/129,Testolin,Felix,2026-03-17,2026-03-20,S
+Aggiornare glossario 2,https://github.com/GroupRubberDuck/Documentazione/issues/130,Lorenzon,Filippo,2026-03-17,2026-03-20,XS
+Presentazione del PoC,https://github.com/GroupRubberDuck/Documentazione/issues/131,Aldo,Felix,2026-03-17,2026-03-24,S
+Stilare domande Cardin,https://github.com/GroupRubberDuck/Documentazione/issues/132,Lorenzon,,2026-03-17,2026-03-18,XS
+Diario di Bordo 18/03,https://github.com/GroupRubberDuck/Documentazione/issues/133,Lorenzon,,2026-03-17,2026-03-18,XS
+Aggiornare PdP con sprint 7,https://github.com/GroupRubberDuck/Documentazione/issues/134,Testolin,Felix,2026-03-17,2026-03-24,S
+Aggiornare NdP con numbering,https://github.com/GroupRubberDuck/Documentazione/issues/135,Lorenzon,Filippo,2026-03-17,2026-03-24,XS
+testing & strictdoc,-,Testolin,-,2026-03-10,2026-03-24,M
+script sito 2,-,Testolin,-,2026-03-10,2026-03-24,S
+Verbale interno 24/03/2026,-,Testolin,-,2026-03-24,2026-03-24,S

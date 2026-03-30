@@ -27,12 +27,13 @@ SPRINT_BOUNDARIES = [
     (date(2026,  2,  4), 4),
     (date(2026,  2, 18), 5),
     (date(2026,  3, 10), 6),
+    (date(2026,  3, 24), 7),  # Sprint 7: 10/03/2026 – 24/03/2026
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']
 
 # Keyword per classificare task correttive (case-insensitive, match parziale)
-KEYWORD_CORRETTIVE = ['correz', 'verific', 'fix', 'modific', 'aggiorn']
+KEYWORD_CORRETTIVE = ['correz', 'verific', 'fix', 'modific']
 
 
 # ─── UTILITIES ────────────────────────────────────────────────────────────────
