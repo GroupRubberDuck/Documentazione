@@ -63,7 +63,7 @@
     ( [0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2], ),
     ( [0.5.0], [2026-02-17], [#persone.ALDO], [#persone.FILIPPO], [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi], ),
     ( [0.6.0], [2026-03-04], [#persone.ALDO], [#persone.FILIPPO], [Corrette e aggiornate le tabelle delle attività dei documenti, aggiunto sprint 5], ),
-    ( [0.7.0], [2026-03-05], [#persone.ALDO], [#persone.FILIPPO], [Aggiunto @ROAM di classicazione e gestione rischi ROAM], ),
+    ( [0.7.0], [2026-03-05], [#persone.ALDO], [#persone.FILIPPO], [Aggiunta parte di classicazione e gestione rischi ROAM], ),
     ( [0.8.0], [2026-03-11], [Felician Mario\ Necsulescu], [-], [Scritto Sprint 6], ),
     ( [0.9.0], [2026-03-25], [#persone.DT], [Felician Mario\ Necsulescu], [Scritto Sprint 7], ),
     ( [0.10.0], [2026-03-25], [#persone.ALDO], [-], [Stesura di preventivo attività e rischi per lo sprint 8], ),
