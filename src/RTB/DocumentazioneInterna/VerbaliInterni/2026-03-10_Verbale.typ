@@ -89,7 +89,7 @@
   = Ordine del giorno
   - Stato di avanzamento dei documenti e gestione delle verifiche/merge.
   - Pianificazione del nuovo Sprint (ruoli, ore e issue).
-  - Avanzamento del Proof of Concept (POC) e discussione sull'architettura dei dati (SQLite vs MongoDB).
+  - Avanzamento del Proof of Concept (POC) e discussione sull'architettura dei dati (relazionale o non relazionale).
   - Definizione delle strategie di testing per il Piano di Qualifica.
 ]
 
@@ -105,7 +105,7 @@
   Davide Testolin ricoprirà il ruolo di responsabile. Felician  agirà come amministratore e si occuperà di creare le issue sulla project board. Le issue di questo sprint riguarderanno principalmente il completamento dei casi d'uso, l'inizio della stesura dei requisiti e il completamento del PoC. Si è discusso inoltre del conteggio delle ore e dell'assegnazione delle ore da programmatore (per il POC) e da progettista. Le vecchie issue relative alla ricerca tecnologica e allo sviluppo/deploy verranno assegnate e spostate direttamente in "done", poiché la fase di studio è da considerarsi conclusa.
 
   == Avanzamento POC e Architettura Dati <POC>
-  Il team si è diviso le pagine da sviluppare (Import, Decision Tree, Report) e ha testato con successo l'esportazione dei PDF. La discussione principale si è concentrata sulla scelta del database: si sta valutando il passaggio da SQLite a MongoDB. MongoDB risulta vantaggioso in quanto salva i dati in formato BSON (simil-JSON) nativamente, adattandosi perfettamente alla struttura ad albero nidificata dei dati del progetto, senza richiedere traduttori o complesse query JOIN tipiche dei database relazionali. Il passaggio è considerato favorevole a condizione che semplifichi effettivamente il lavoro e permetta un agevole scarico dei file JSON, liberando la RAM durante le query.
+  Il team si è diviso le pagine da sviluppare (Import, Decision Tree, Report) e ha testato con successo l'esportazione dei PDF. La discussione principale si è concentrata sulla scelta del database: si sta valutando il passaggio da relazionale o non relazionale. MongoDB risulta vantaggioso in quanto salva i dati in formato BSON (simil-JSON) nativamente, adattandosi perfettamente alla struttura ad albero nidificata dei dati del progetto, senza richiedere traduttori o complesse query JOIN tipiche dei database relazionali. Il passaggio è considerato favorevole a condizione che semplifichi effettivamente il lavoro e permetta un agevole scarico dei file JSON, liberando la RAM durante le query.
 
   == Strategie di Testing <testing>
   È stata presentata una prima bozza delle strategie di testing per il Piano di Qualifica. I test saranno suddivisi in: test di sistema (un test per ogni caso d'uso implementato), test di accettazione (scenari generali) e una tabella di tracciamento che associa i test ai requisiti corrispondenti. Verrà inoltre redatto un cruscotto di valutazione per riassumere i risultati ottenuti.
@@ -133,7 +133,7 @@
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Integrare MongoDB nel POC in sostituzione di SQLite e verificarne il funzionamento],
+      [Integrare MongoDB nel POC verificarne il funzionamento],
       [MongoDB gestisce nativamente dati BSON (simil-JSON), adattandosi alla struttura ad albero nidificata del progetto ed eliminando la necessità di query JOIN complesse],
       [@POC],
     ),
