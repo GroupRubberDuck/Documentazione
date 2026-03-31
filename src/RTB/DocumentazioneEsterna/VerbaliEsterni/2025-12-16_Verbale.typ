@@ -207,7 +207,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Deciso in seguito.],
+  [#persone.DT],
   [Iniziare a capire come implementare la struttura degli alberi decisionali e la loro esecuzione.],
   [@passi],
 ), 

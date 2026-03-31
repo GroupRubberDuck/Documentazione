@@ -199,7 +199,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Analisti],
+  [#persone.ALDO, #persone.FILIPPO],
   [Proseguire la stesura delle Norme di Progetto],
   [VI.8.2],
 ), 
@@ -295,7 +295,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Analista],
+  [#persone.FILIPPO],
   [Aggiornamento del glossario con i termini di dominio del documento.],
   [-],
 ), 
