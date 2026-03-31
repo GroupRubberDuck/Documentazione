@@ -24,11 +24,11 @@
 // Info del documento e Versione
 // ---------------------------------------------------------
 
-#let doc = "Piano di progetto"
+#let doc = "Piano di Progetto"
 
 #let currentVersion = (
-  major: 0,
-  minor: 7,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -43,10 +43,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: versionNumber,
-    autori: ("Davide Lorenzon, Felician Mario Necsulescu, Ana Maria Draghici, Aldo Bettega",),
-    verificatori: ("Aldo Bettega, Ana Maria Draghici, Davide Testolin,",persone.FILIPPO),
+    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -55,16 +55,97 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: doc)[
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
-    ( [0.1.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Stesura iniziale e redazione Sprint 1], ),
-    ( [0.2.0], [2025-11-12], [Davide Lorenzon], [Aldo Bettega], [Layout per la pianificazione di lungo periodo.], ),
-    ( [0.2.1], [2025-12-10], [Davide Lorenzon], [Ana Maria\ Draghici], [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.], ),
-    ( [0.3.0], [2025-12-12], [Felician Mario\ Necsulescu], [Ana Maria\ Draghici], [Stesura analisi dei rischi @Analisi-dei-rischi. ], ),
-    ( [0.4.0], [2025-12-14], [Ana Maria\ Draghici], [Davide Testolin], [Aggiunta @Pianificazione e completata scrittura Sprint 2], ),
-    ( [0.4.1], [2025-12-20], [Ana Maria\ Draghici], [Davide Testolin], [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2], ),
-    ( [0.5.0], [2026-02-17], [#persone.ALDO], [-], [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi], ),
-    ( [0.6.0], [2026-03-04], [#persone.ALDO], [-], [Corrette e aggiornate le tabelle delle attività dei documenti, aggiunto sprint 5], ),
-    ( [0.7.0], [2026-03-05], [#persone.ALDO], [-], [Aggiunto @ROAM di classicazione e gestione rischi ROAM], ),
-    ( [0.8.0], [2026-03-11], [#persone.FELIX], [-], [Scritto Sprint 6], ),
+    (
+      [0.1.0],
+      [2025-11-12],
+      [Davide Lorenzon],
+      [Aldo Bettega],
+      [Stesura iniziale e redazione Sprint 1],
+    ),
+    (
+      [0.2.0],
+      [2025-11-12],
+      [Davide Lorenzon],
+      [Aldo Bettega],
+      [Layout per la pianificazione di lungo periodo.],
+    ),
+    (
+      [0.2.1],
+      [2025-12-10],
+      [Davide Lorenzon],
+      [Ana Maria\ Draghici],
+      [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.],
+    ),
+    (
+      [0.3.0],
+      [2025-12-12],
+      [Felician Mario\ Necsulescu],
+      [Ana Maria\ Draghici],
+      [Stesura analisi dei rischi @Analisi-dei-rischi. ],
+    ),
+    (
+      [0.4.0],
+      [2025-12-14],
+      [Ana Maria\ Draghici],
+      [Davide Testolin],
+      [Aggiunta @Pianificazione e completata scrittura Sprint 2],
+    ),
+    (
+      [0.4.1],
+      [2025-12-20],
+      [Ana Maria\ Draghici],
+      [Davide Testolin],
+      [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2],
+    ),
+    (
+      [0.5.0],
+      [2026-02-17],
+      [#persone.ALDO],
+      [#persone.FILIPPO],
+      [Rivisto sprint 3, Scritto sprint 4, aggiunta notazione ROAM nei rischi],
+    ),
+    (
+      [0.6.0],
+      [2026-03-04],
+      [#persone.ALDO],
+      [#persone.FILIPPO],
+      [Corrette e aggiornate le tabelle delle attività dei documenti, aggiunto sprint 5],
+    ),
+    (
+      [0.7.0],
+      [2026-03-05],
+      [#persone.ALDO],
+      [#persone.FILIPPO],
+      [Aggiunta parte di classicazione e gestione rischi ROAM],
+    ),
+    (
+      [0.8.0],
+      [2026-03-11],
+      [Felician Mario\ Necsulescu],
+      [#persone.DT],
+      [Scritto Sprint 6],
+    ),
+    (
+      [0.9.0],
+      [2026-03-25],
+      [#persone.DT],
+      [Felician Mario\ Necsulescu],
+      [Scritto Sprint 7],
+    ),
+    (
+      [0.10.0],
+      [2026-03-25],
+      [#persone.ALDO],
+      [#persone.DT],
+      [Stesura di preventivo attività e rischi per lo sprint 8],
+    ),
+    (
+      [1.0.0],
+      [2026-03-30],
+      [#persone.DT],
+      [#persone.DT],
+      [Approvazione],
+    ),
   )
   #registroModifiche(modifiche)
 ]
