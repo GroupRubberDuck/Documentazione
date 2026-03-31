@@ -47,6 +47,10 @@
   lower(text).replace(" ", "-")
 }
 
+#let snakify(text) = {
+  lower(text).replace(" ", "_")
+}
+
 // Funzione wrapper per creare header con label automatica
 #let he(body:text, level: 1) = {
   let tag = slugify((body))

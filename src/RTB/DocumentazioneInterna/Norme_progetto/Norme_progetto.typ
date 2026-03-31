@@ -49,7 +49,7 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
+  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria  Draghici],[Stesura iniziale]),
   ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti @struttura]),
   ([0.3.0],[2025-11-11],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta struttura Analisi Requisiti @requisiti]),
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunto  "ruolo-documento" @ruolo-documento]),
@@ -66,7 +66,7 @@
   ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
   ([0.12.0],[2026-02-05],[Davide Lorenzon],[Filippo Guerra],[Aggiunte descrizioni delle metriche di qualità]),
-  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
+  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[Felician Mario \ Necsulescu],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
   ([0.13.1],[2026-03-20],[Davide Lorenzon],[Filippo Guerra],[Aggiornamento della sezione relativa alla gestione dell'infra-struttura @gestione-infrastruttura
   
   - #link(label("auto-numbering"))[Numerazione automatica], 

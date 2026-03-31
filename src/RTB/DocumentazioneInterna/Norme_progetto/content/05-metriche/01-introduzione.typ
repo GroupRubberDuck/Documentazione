@@ -1,5 +1,9 @@
-Vengono riportate solo in linea generale; per maggior approfondimento consultare il documento - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica]. \
-Le metriche rappresentano strumenti fondamentali per misurare, controllare e migliorare sia il processo di sviluppo sia i prodotti realizzati. Nelle norme progetto sono considerate due principali categorie di metriche:
+// Vengono riportate solo in linea generale; per maggior approfondimento consultare il documento - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica]. \
+Le metriche rappresentano strumenti fondamentali per misurare, controllare e migliorare sia il processo di sviluppo sia i prodotti realizzati.
+
+Il tracciamento delle metriche viene effettuato all'interno del documento: #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica].
+
+ Nelle norme di progetto sono considerate due principali categorie di metriche:
 
 + *Metriche di qualità di processo*  – Consentono di valutare l’efficacia, l’efficienza e la correttezza dei processi di sviluppo, monitorando la pianificazione, l’esecuzione e la gestione delle attività.
 
@@ -17,10 +21,10 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
   ]),
   ([*Affidabilità*],[
     Misura la capacità del software di operare senza guasti in condizioni previste, garantendo comportamenti consistenti e riducendo al minimo malfunzionamenti.
-      - * Maturità *:\ #[Capacità di evitare blocchi della applicazione a seguito di errori nel software]),
-      - *Tolleranza agli errori*: \ #[Capacità di mantenere determinati livelli di prestazione in caso di errori]),
-      - *Recuperabilità*: \ #[Capacità di ripristinare livelli di prestazione predeterminati e di recuperare i dati seguito di errori]),
-      - * Aderenza *: \ #[Capacità di aderire a standard di affi]),
+      - * Maturità *:\ #[Capacità di evitare blocchi della applicazione a seguito di errori nel software],
+      - *Tolleranza agli errori*: \ #[Capacità di mantenere determinati livelli di prestazione in caso di errori],
+      - *Recuperabilità*: \ #[Capacità di ripristinare livelli di prestazione predeterminati e di recuperare i dati seguito di errori],
+      - * Aderenza *: \ #[Capacità di aderire a standard di affidabilità],
   ]),
   ([*Efficienza*],[
     Indica l’ottimizzazione delle risorse e la rapidità di risposta del software alle richieste, valutando tempi di esecuzione, throughput e utilizzo delle risorse disponibili.
@@ -40,7 +44,7 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
     - *Apprendibilità*: \ #[Facilità di apprendimento delle funzionalità]
     - *Operabilità*: \ #[Semplicità di utilizzo del prodotto]
     - *Attrattività*: \ #[Capacità di fornire un'esperienza utente gradevole]
-    - *Conformità*: \ #[Aderimento a standard di usabilità]
+    - *Conformità*: \ #[Aderenza a standard di usabilità]
 
   ]),
   ([*Manutenibilità*],[
@@ -54,7 +58,7 @@ Le metriche rappresentano strumenti fondamentali per misurare, controllare e mig
     Rappresenta la facilità con cui il prodotto può essere spostato da un ambiente di lavoro ad un altro.
     - *Adattabilità*: \ #[Facilità di adattamento del prodotto ad ambienti diversi]
 - *Installabilità*: \ #[Facilità di installazione del prodotto su un ambiente di sviluppo]
-- *Conformità*: \ #[Aderimento alle convenzioni sulla portabilità]
+- *Conformità*: \ #[Aderenza alle convenzioni sulla portabilità]
   - *Sostituibilità*: \ #[Facilità di migrazione da un  prodotto vecchio al prodotto oggetto del progetto]
   ]),
 )

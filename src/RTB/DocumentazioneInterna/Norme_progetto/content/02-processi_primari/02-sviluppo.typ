@@ -2,7 +2,7 @@
 
 Il processo di sviluppo descrive l’insieme delle attività necessarie alla realizzazione del prodotto software, a partire dall’analisi dei requisiti fino alla consegna e accettazione del sistema finale.
 
-Secondo lo standard #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017], il processo di sviluppo comprende tutte le attività tecniche volte a trasformare i requisiti concordati con il committente in un *prodotto software funzionante, verificato e conforme agli obiettivi di qualità stabiliti*.
+Secondo lo #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017], il processo di sviluppo comprende tutte le attività tecniche volte a trasformare i requisiti concordati con il committente in un *prodotto software funzionante, verificato e conforme agli obiettivi di qualità stabiliti*.
 Tali attività includono l’analisi dei requisiti, la progettazione dell’architettura, la codifica, l’integrazione, il testing e la validazione del sistema.
 
 Nel contesto del progetto, il processo di sviluppo è adottato per garantire che ogni fase di realizzazione del software sia svolta in modo *sistematico, tracciabile e coerente* con le specifiche definite, assicurando la *qualità, l’affidabilità e la manutenibilità* del prodotto nel tempo.
@@ -29,14 +29,13 @@ Il processo di sviluppo è articolato in un insieme di attività tra loro correl
 
 Le principali attività previste sono le seguenti:
 #pad(left: 1em)[ 
-+ *Analisi dei requisiti* \ Attività volta all’identificazione, analisi e formalizzazione dei requisiti funzionali, di qualità e di vincolo del sistema. I requisiti vengono raccolti a partire dal capitolato e dal confronto con la proponente, documentati nell’Analisi dei Requisiti e resi tracciabili per le successive fasi di progettazione, implementazione e verifica.
-+ *Progettazione dell’architettura del sistema* \ Definizione della struttura generale del sistema, individuando le componenti principali, le loro responsabilità e le interazioni tra di esse, al fine di soddisfare i requisiti individuati.
-+ *Progettazione dell’architettura software* \ Scomposizione del sistema in componenti software e moduli, con definizione delle interfacce e delle dipendenze, mantenendo la coerenza con l’architettura di sistema e garantendo la tracciabilità dei requisiti.
++ *Raccolta e Analisi dei Requisiti* \ Attività volta all’identificazione, analisi e formalizzazione dei requisiti funzionali, di qualità e di vincolo del sistema. I requisiti vengono raccolti a partire dal capitolato e dal confronto con la proponente, documentati nell’Analisi dei Requisiti e resi tracciabili per le successive fasi di progettazione, implementazione e verifica.
++ *Progettazione dell’architettura * \ Definizione della struttura generale del sistema, individuando le componenti principali, le loro responsabilità e le interazioni tra di esse, al fine di soddisfare i requisiti individuati.
 + *Progettazione di dettaglio* \ Definizione dettagliata delle singole componenti software e delle unità che le compongono, fornendo le informazioni necessarie alla fase di codifica.
 + *Codifica* \ Implementazione del software secondo quanto definito in fase di progettazione, adottando convenzioni di stile e buone pratiche di programmazione per garantire leggibilità, manutenibilità e qualità del codice.
-+ *Testing delle unità e integrazione del software* \ Verifica del corretto funzionamento delle singole unità software e successiva integrazione delle componenti, accompagnata da test di integrazione per individuare eventuali difetti.
-+ *Verifica e validazione del sistema* \ Esecuzione dei test di qualifica del software e del sistema per verificare la conformità ai requisiti e agli obiettivi di qualità definiti nel Piano di Qualifica.
-+ *Installazione e supporto all’accettazione* \ Consegna del prodotto software nell’ambiente concordato e supporto alla proponente nelle attività di accettazione, al fine di verificare il soddisfacimento dei requisiti contrattuali.
++ *Test e Integrazione * \ Verifica del corretto funzionamento tramite i test di sistema e successiva integrazione delle componenti, accompagnata da test di integrazione per individuare eventuali difetti.
+
++ *Installazione e supporto all’accettazione* \ Consegna del prodotto software nelle modalità concordate e supporto alla proponente nelle attività di accettazione, al fine di verificare il soddisfacimento dei requisiti contrattuali.
 ]
 
 === Inquadramento del processo nelle Baseline di progetto
@@ -52,7 +51,7 @@ Il processo di sviluppo è strettamente collegato alle baseline previste dal pro
 *Product Baseline (PB)*
 \ Comprende principalmente le attività di:
 
-- Progettazione dell’architettura di sistema;
+//- Progettazione dell’architettura di sistema;
 
 - Progettazione dell’architettura software;
 
@@ -138,7 +137,7 @@ Per lo sviluppo del software, il gruppo utilizza strumenti mirati a garantire qu
 
 - *Versionamento del codice*: Git/GitHub per gestione dei repository, branch, commit, issue e pull request.
 
-- *Formattazione e controllo del codice*: Il progetto adotta controlli automatici di qualità del codice e della documentazione tramite pipeline CI, includendo formattazione, verifica di leggibilità (indice Gulpease) e generazione automatica della documentazione e dei controlli in Typst.
+- *Formattazione e controllo del codice*: Il progetto adotta controlli automatici di qualità del codice e della documentazione tramite pipeline CI, includendo formattazione, verifica di leggibilità (indice Gulpease) e generazione automatica della documentazione.
 
 - *Gestione attività e tracciamento*: GitHub Issues per assegnazione, monitoraggio e gestione delle modifiche.
 

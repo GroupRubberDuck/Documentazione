@@ -1,7 +1,7 @@
 #import "@preview/cheq:0.3.0": checklist
-== *Processo di Qualifica (Verifica e Validazione)* <qualifica> 
+== *Processo di Qualifica * <qualifica> 
 === Introduzione
-Il processo di Qualifica coincide con l'insieme delle attività di Verifica e Validazione (V&V) pianificate nel progetto. Il suo scopo è dimostrare, tramite evidenze oggettive e misurabili, che il prodotto sia conforme alle specifiche software (Verifica) e alle attese dell'utente (Validazione).
+Il processo di Qualifica coincide con l'insieme delle attività di Verifica e Validazione pianificate nel progetto. Il suo scopo è dimostrare, tramite evidenze oggettive e misurabili, che il prodotto sia conforme alle specifiche software (Verifica) e alle attese dell'utente (Validazione).
 In termini operativi, la Qualifica non è solo una fase finale, ma un processo continuo regolato dal Piano di Qualifica, che definisce gli obiettivi quantitativi, e monitorato attraverso un cruscotto di valutazione.
 
 === Scopo del processo
@@ -42,6 +42,8 @@ La checklist utilizzata dal gruppo copre i seguenti aspetti:
 - *Codice*: rispetto delle convenzioni di nomenclatura, assenza di codice morto o commentato, presenza di commenti significativi, gestione degli errori, conformità alle linee guida del linguaggio adottato.
 
 ===== Quando usare quale metodo
+#figure(caption:"Metodologie di testing")[
+#set align(left)
 
 #table(
   columns: (auto, 1fr, 1fr),
@@ -53,6 +55,8 @@ La checklist utilizzata dal gruppo copre i seguenti aspetti:
   [Revisione del codice in pull request], [Ispezione], [Automatizzabile, ripetibile, integrata nel workflow Git],
   [Revisione pre-RTB / pre-PB], [Walkthrough], [Qualità critica, revisione completa necessaria],
 )
+
+]
 ==== Analisi dinamica
 
 L'analisi dinamica verifica il software eseguendolo con test specifici, al fine di misurarne la qualità funzionale e individuare errori nel comportamento a runtime. Ogni test è definito da uno stato iniziale, un insieme di input e gli output attesi, e deve produrre risultati riproducibili indipendentemente da chi lo esegue o quando.
@@ -72,7 +76,8 @@ Tutti i test pianificati, eseguiti e i loro esiti sono tracciati nel Piano di Qu
 dove *TipoTest* indica la categoria e *XX* è un numero progressivo che identifica univocamente il test all'interno di essa.
 
 Le categorie previste sono:
-
+#figure(caption:"Tipi di test")[
+#set align(left)
 #table(
   columns: (auto, 1fr),
   inset: 6pt,
@@ -83,10 +88,13 @@ Le categorie previste sono:
   [TS], [Test di Sistema — verifica il comportamento del sistema nella sua interezza rispetto ai requisiti],
   [TA], [Test di Accettazione — verifica che il prodotto soddisfi i criteri concordati con il committente],
 )
+]
 
 ===== Stati dei test
 
 Per consentire un monitoraggio efficace dell'avanzamento, ogni test assume uno dei seguenti stati:
+#figure(caption: "Stati dei test")[
+
 
 #table(
   columns: (auto, 1fr),
@@ -95,8 +103,10 @@ Per consentire un monitoraggio efficace dell'avanzamento, ogni test assume uno d
   [*Stato*], [*Descrizione*],
   [S],  [Superato — il test è stato eseguito e ha prodotto l'output atteso],
   [I],  [Implementato — il test è stato scritto ma non ancora eseguito],
-  [NI], [Non Implementato — il test è pianificato ma non ancora realizzato],
+  [NI], [Non Implementato — il test è pianificato ma non ancora realizzato],  
+  [F], [Fallito — il test ha prodotto un risultato diverso da quello atteso],
 )
+]
 ===== Test di Unità
 
 I test di unità rappresentano il livello di granularità più basso e verificano il corretto funzionamento delle singole unità software nella loro forma più elementare: funzioni, metodi o classi.
@@ -114,6 +124,8 @@ I due approcci sono complementari: i test funzionali verificano il contratto est
 I test di integrazione verificano che le componenti del sistema, già testate singolarmente, interagiscano e comunichino correttamente tra loro. L'obiettivo è individuare errori che emergono solo dalla combinazione di moduli: incompatibilità di interfacce, gestione scorretta dei dati condivisi o comportamenti inattesi nelle sequenze di chiamata.
 
 Il gruppo adotta uno dei due approcci seguenti a seconda della struttura del componente da integrare:
+#figure(caption: "Tipi di test d integrazione")[
+
 
 #table(
   columns: (auto, 1fr, 1fr),
@@ -127,6 +139,7 @@ Il gruppo adotta uno dei due approcci seguenti a seconda della struttura del com
   [Si parte dalle componenti di base, utilizzando driver per simulare le chiamate dei livelli superiori],
   [Quando le componenti fondamentali sono stabili e si vuole verificarne il comportamento prima di procedere verso l'alto],
 )
+]
 ===== Test di Sistema
 
 I test di sistema verificano il comportamento del sistema nella sua interezza, valutandone la conformità rispetto ai requisiti funzionali e non funzionali definiti nel documento di Analisi dei Requisiti. Consentono di validare aspetti quali la correttezza funzionale, l'affidabilità, la robustezza e la gestione degli errori in condizioni reali o simulate di utilizzo.
@@ -142,10 +155,10 @@ I test di regressione verificano che le modifiche apportate al sistema — siano
 
 In tal caso il processo da seguire è:
 
-+ Analizzare il problema e identificarne la causa
-+ Sviluppare e codificare la soluzione
-+ Rieseguire il test fallito per verificare che il problema sia stato risolto
-+ Rieseguire *l'intera suite di test* per assicurarsi che la correzione non abbia introdotto regressioni
++ Analizzare il problema e identificarne la causa;
++ Sviluppare e codificare la soluzione;
++ Rieseguire il test fallito per verificare che il problema sia stato risolto;
++ Rieseguire *l'intera suite di test* per assicurarsi che la correzione non abbia introdotto regressioni.
 
 Quest'ultimo punto è fondamentale: una modifica apparentemente localizzata può avere effetti inattesi su funzionalità già verificate. Per questo motivo non ci si limita al solo test fallito, ma si rieseguono tutti i test disponibili.
 
@@ -174,7 +187,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 
 - [ ] Controllare di aver incluso tutte le sezioni definite del WoW nel documento su cui si lavora 
 
-- [ ] *Nei verbali*: Controllare di aver aggiornato nello status TAB: 
+- [ ] *Nei verbali*: Controllare di aver aggiornato nella tabella riepilogativa dello stato del documento: 
   - stato
   - versione
   - ruoli
@@ -184,7 +197,7 @@ Di seguito viene riportata la Definition of Done per la fase RTB:
 - [ ] Un documento (o una sua sezione) è considerato completato quando:
   - È stato scritto;
   - È stato verificato;
-  - È stata aggiunta una riga nelle tabelle documentarie con il validatore finale.
+  - È stata aggiunta una riga nelle tabelle delle modifiche con il validatore finale.
 
 - [ ] Quando il documento/prodotto è completato, chiudere la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)

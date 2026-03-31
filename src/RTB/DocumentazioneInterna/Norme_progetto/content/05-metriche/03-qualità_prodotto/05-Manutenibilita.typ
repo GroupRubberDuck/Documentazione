@@ -1,35 +1,37 @@
 #import "/src/config.typ":template_dir
 #import template_dir + "/PdQ/tabellaMetriche.typ": tabellaMetriche
+#import "MPD/config/deps.typ" as deps
+
+#let targets=(
+"Code Coverage",
+"Cyclomatic Complexity",
+"Instability Index",
+"Coefficient of Coupling",
+"Code Smell",
+)
+
+
+#let metriche=()
+#for metric in targets{
+
+  import deps.get-metrica-path(metric):dati
 
 
 
+metriche.push((
 
-
+  codice:deps.get-MPD-code(metric),
+  nome:metric,
+  accettabile:dati.accettabile,
+  preferibile:dati.preferibile,
+)
+)
+}
 
 #tabellaMetriche((
-  (codice: "MPD-12",
-    nome: "Cyclomatic Complexity",
-    accettabile: $<= 10$,
-    preferibile: $<= 8$
-  ),
-  (codice: "MPD-13",
-    nome: "Instability Index",
-    accettabile: [$I>= 0.7 $\ $or $ \ $I<=0,30$],
-    preferibile: [$I>= 0.85 $\ $or $\ $I<=0,15$],
-  ),
-  (codice: "MPD-14",
-    nome: "Coefficient of Coupling",
-    accettabile: $<= 0.4$,
-    preferibile: $<= 0.2$
-  ),
-  (codice: "MPD-15",
-    nome: "Code Smells",
-    accettabile: $<= 10$ ,
-    preferibile: $<= 5$ 
-  ),
+..metriche
 ),[Metriche manutenibilità del prodotto])
 
-#include "MPD/12-cyclomatic_complexity.typ"
-#include  "MPD/13-instability_index.typ"
-#include  "MPD/14-coefficient_of_couplings.typ"
-#include  "MPD/15-code_smell.typ"
+#for metric in targets{
+  include deps.get-metrica-path(metric)
+}

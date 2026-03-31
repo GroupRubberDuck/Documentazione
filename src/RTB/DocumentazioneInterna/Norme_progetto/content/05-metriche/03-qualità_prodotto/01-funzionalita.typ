@@ -1,30 +1,36 @@
 #import "/src/config.typ":template_dir
 #import template_dir + "/PdQ/tabellaMetriche.typ": tabellaMetriche
+#import "MPD/config/deps.typ" as deps
+
+#let targets=(
+"Requisiti obbligatori soddisfatti",
+"Requisiti desiderabili soddisfatti",
+"Requisiti opzionali soddisfatti",
+)
+
+
+#let metriche=()
+#for metric in targets{
+
+  import deps.get-metrica-path(metric):dati
 
 
 
+metriche.push((
+
+  codice:deps.get-MPD-code(metric),
+  nome:metric,
+  accettabile:dati.accettabile,
+  preferibile:dati.preferibile,
+)
+)
+}
 
 #tabellaMetriche((
-  (codice: "MPD-01",
-    nome: "Requisiti obbligatori soddisfatti",
-    accettabile: $100 percent$,
-    preferibile: $100 percent$
-  ),
-  ( codice: "MPD-02",
-    nome: "Requisiti desiderabili soddisfatti",
-    accettabile: $>= 50 percent$,
-    preferibile: $>= 75 percent$
-  ),
-  (codice: "MPD-03",
-    nome: "Requisiti opzionali soddisfatti",
-    accettabile: $>= 0 percent$,
-    preferibile: $>= 50 percent$
-  ),
-),[Metriche funzionalità del prodotto])
+..metriche
+),[Metriche di funzionalità del prodotto]
+)
 
-#include "MPD/01-requisiti_obbligatori_soddifatti.typ"
-
-#include "MPD/02-requisiti_desiderabili_soddisfatti.typ"
-
-#include "MPD/03-requisiti_opzionali_soddifatti.typ"
-
+#for metric in targets{
+  include deps.get-metrica-path(metric)
+}

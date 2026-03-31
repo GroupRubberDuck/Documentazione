@@ -27,7 +27,7 @@ Poiché alcuni processi possono essere molto complessi e richiedere tempi lunghi
 
 
 Questi sottogruppi possono essere impiegati anche per:
-- Lo sviluppo del *POC* (Proof of Concept);
+- Lo sviluppo del  *Proof of Concept*;
 - Lo studio di nuove tecnologie;
 - La realizzazione di prototipi per capire quali tecnologie funzionano meglio.  
 
@@ -47,7 +47,7 @@ In particolare:
 Questo approccio consente di *mantenere l’efficienza del team* e di valorizzare l’esperienza accumulata durante il progetto.
 
 ==== Rendicontazione delle ore
-Essendo un progetto svolto per la prima volta, ogni attività formativa viene registrata anche termini di ore non retribuite #footnote[Oltre alle ore retribuite da contare nel budget].  
+Essendo un progetto svolto per la prima volta, ogni attività formativa viene registrata anche termini di ore non produttive.  
 Tali ore comprendono:
   - *Studio dei documenti e dei materiali forniti* dal docente;
   - *Preparazione dei documenti di progetto* nel modo più accurato possibile;

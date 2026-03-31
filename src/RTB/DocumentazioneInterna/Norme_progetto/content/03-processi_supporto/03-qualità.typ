@@ -1,5 +1,5 @@
 #import "/src/config.typ":he
-== *Processo di Accertamento Qualità* <qualità>
+== *Processo di Accertamento della Qualità* <qualità>
 === Introduzione
 
 Il processo di Accertamento Qualità ha il compito di verificare che documenti, deliverable e processi siano conformi agli standard, alle procedure e alle metriche definite dal progetto.
@@ -46,7 +46,7 @@ Le regole generali sono:
   stroke: 1pt + black,
   inset: 10pt
 )[
-git commit -m "Commento. Issue #01"
+git commit -m #"\""tipo: descrizione. Issue \#1 #"\""
 ]
 
 Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si utilizza il seguente comando#footnote[ #upper("è") consigliato l'utilizzo del comando per modificare commit in locale prima di fare push nella repository condivisa.  
@@ -57,7 +57,7 @@ Nel caso sia necessario modificare un commit (ad esempio in caso di errori) si u
   stroke: 1pt + black,
   inset: 10pt
 )[
-git commit --amend
+git commit \-\-amend
 ]
 
 

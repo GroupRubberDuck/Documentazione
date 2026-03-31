@@ -40,7 +40,7 @@ Per facilitare il lavoro del gruppo, in particolare la comunicazione asincrona e
 
 *Git* – Sistema di versionamento distribuito per codice e documenti.
 
-*GitHub* – Piattaforma cloud per repository, issue tracking, CI/CD e hosting.
+*GitHub* – Piattaforma cloud per repository, issue tracking, integrazione continua e hosting.
 
 *Google Docs* – Editor collaborativo per attività di brainstorming asincrono.
 
@@ -72,7 +72,7 @@ In questa sezione viene descritto il processo di creazione e configurazione degl
     ([Sprint],[Automazione del riepilogo degli sprint, comprensiva dei calcoli necessari e del layout dedicato.]),
     ([Marcatura automatica dei termini del Glossario],[Funzionalità attivabile tramite un apposito flag booleano; se lasciata sempre attiva può impattare negativamente le prestazioni della live preview.]),
     ([Separazione tra contenuto e layout del glossario],[I termini e le definizioni del glossario sono mantenuti in un file separato sotto forma di dizionario, consentendo l’ordinamento automatico e la generazione di viste personalizzate in formato PDF e HTML.]),
-    ([Gestione automatica della numerazione <auto-numbering>],[#upper("è") stata implementata una gestione automatica della numerazione sia in fase di creazione sia in fase di referenziamento, anche tra documenti diversi. La referenziazione avviene tramite funzioni apposite che accettano in input una stringa rappresentante il nome dell'elemento target. 
+    ([Gestione automatica della numerazione <auto-numbering>],[#upper("è") stata implementata una gestione automatica della numerazione sia in fase di creazione sia in fase di referenziamento, anche tra documenti diversi. La referenziazione avviene tramite funzioni apposite che accettano in input una stringa rappresentante il nome che identifica l'elemento target. 
     
     Gli elementi finora sottoposti a tale numerazione automatica sono :
     - Casi d'uso
@@ -96,13 +96,15 @@ Sono stati definiti due branch principali:
 #upper("è") stato inoltre predisposto un file `.gitignore` per evitare la pubblicazione di file indesiderati. 
 ],
  [GitHub],[],[
-#upper("è") stata creata una #link("https://github.com/GroupRubberDuck")[GitHub Organization (https://github.com/GroupRubberDuck)] dedicata alle attività di progetto e un #link("https://github.com/GroupRubberDuck/Documentazione")[repository (https://github.com/GroupRubberDuck/Documentazione)] specifico per la documentazione.
+#upper("è") stata creata una #link("https://github.com/GroupRubberDuck")[GitHub Organization (https://github.com/GroupRubberDuck)] dedicata alle attività di progetto e i seguenti repository:
+-  #link("https://github.com/GroupRubberDuck/Documentazione")[Documentazione https://github.com/GroupRubberDuck/Documentazione];
+- #link("https://github.com/GroupRubberDuck/PoC")[Proof of Concept https://github.com/GroupRubberDuck/PoC]
 
 #terms(
   separator:[: \ ], hanging-indent: 0em ,spacing:1.5em,
   ([GitHub Actions],[Sono state configurate delle GitHub Actions per la compilazione automatica dei file Typst e per l’aggiornamento automatico del sito web.]),
   ([GitHub Pages],[#upper("è") stata attivata la funzionalità *GitHub Pages* per l’hosting del sito web del progetto.]),
-  ([GitHub Issue Tracking System],[Il gruppo ha deciso di avvalersi dell’issue tracking system offerto da GitHub; maggiori dettagli sono disponibili nella sezione dedicata alla guida operativa.]),
+  ([GitHub Issue Tracking System],[Il gruppo ha deciso di avvalersi dell’issue tracking system offerto da GitHub; maggiori dettagli sono disponibili nella sezione dedicata alla guida operativa @issue-tracking.]),
 )
 ],
 
@@ -116,7 +118,7 @@ Google Drive e Google Docs non richiedono particolari operazioni di configurazio
 Google Sheets richiede invece operazioni più complesse per l’implementazione delle metriche e degli indicatori stabiliti.
 ],
 
-[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Questo va a creare eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli contenuti.]
+[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Inoltre crea eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli elementi.]
 )
 
 ]

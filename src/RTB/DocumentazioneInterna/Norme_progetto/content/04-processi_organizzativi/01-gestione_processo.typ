@@ -87,11 +87,11 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 
       [Analista],
       "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali",
-      [Fase iniziale],
+      [Principalmente \ fase iniziale],
 
       [Progettista],
       "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica",
-      [Dopo analisi],
+      [Progettazione architetturale e \ di dettaglio],
 
       [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
     )
@@ -193,20 +193,20 @@ Ogni nuova issue deve includere le seguenti informazioni:
 
 + *Verificatore* \
   Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella @DOD  *Definition of Done (DoD)*.
-  Salvo eccezioni motivate, il verificatore deve essere una persona diversa dall’autore.
+  Salvo eccezioni motivate, il verificatore deve essere una persona diversa dall'autore.
 
 + *Label (ambito/destinazione)*  #footnote()[
     Le label possono essere aggiornate nel corso del progetto: label non più utili possono essere rimosse e nuove label introdotte in base alle esigenze. ]\ #[
     Le label permettono di classificare le issue in base al loro ambito all’interno del progetto, facilitandone l’organizzazione e la ricerca.
     Le principali label adottate sono:
-    - Analisi dei Requisiti
-    - Piano di Progetto
-    - Piano di Qualifica
-    - Norme di Progetto
-    - Verbale
-    - Diario di Bordo
-    - Glossario
-    - Generale → attività non direttamente riconducibili ai documenti principali (studio di materiale, gestione repository, sito web, attività varie)
+    - Analisi dei Requisiti,
+    - Piano di Progetto,
+    - Piano di Qualifica,
+    - Norme di Progetto,
+    - Verbale,
+    - Diario di Bordo,
+    - Glossario,
+    - Generale → attività non direttamente riconducibili ai documenti principali (studio di materiale, gestione repository, sito web, attività varie).
 
 
   ]
