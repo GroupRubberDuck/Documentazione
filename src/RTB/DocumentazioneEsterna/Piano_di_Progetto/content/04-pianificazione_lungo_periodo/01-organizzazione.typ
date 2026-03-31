@@ -36,12 +36,10 @@
   }]
 
 === Preventivo <Preventivo>
-Il gruppo di lavoro prevede di completare il progetto entro e non oltre il *30 aprile 2026*, nel rispetto di un  *budget complessivo pari a 11610€*.
+Il gruppo di lavoro prevede di completare il progetto entro e non oltre il *15 maggio 2026*, nel rispetto di un  *budget complessivo pari a 11610€*.
 
 Il dettaglio della pianificazione e del budget stimato è consultabile nel documento di candidatura disponibile al seguente link:
-#link("https://grouprubberduck.github.io/Documentazione/output/Candidatura/Dichiarazione_Impegni-v2.0.0.pdf")[
-  Dichiarazione degli Impegni – versione 2.0.0
-]
+#link("https://grouprubberduck.github.io/Documentazione/output/Candidatura/Dichiarazione_Impegni-v2.0.0.pdf")[Dichiarazione degli Impegni – versione 2.0.0].
 
 Di seguito viene riportata la *tabella riepilogativa dei costi*, già inclusa nella *Dichiarazione degli Impegni*. La tabella rappresenta la stima economica elaborata in fase di candidatura e costituisce il riferimento principale per la pianificazione, il monitoraggio e il controllo dei costi lungo l'intero ciclo di vita del progetto.
 #let ruoli = (

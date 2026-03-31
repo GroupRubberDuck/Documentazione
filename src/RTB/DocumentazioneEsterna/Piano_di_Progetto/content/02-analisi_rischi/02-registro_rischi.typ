@@ -27,7 +27,7 @@
   tipo: "Rischio di progetto + Rischio di prodotto",
   descrizione: [L’utilizzo di tecnologie nuove o poco conosciute può rallentare significativamente il progetto, poiché richiede tempo per lo studio e la sperimentazione.],
   prevenzione: [Per prevenirlo si prevedono momenti iniziali di studio e la creazione di piccoli prototipi per acquisire familiarità. Il team può inoltre condividere materiali o esperienze per velocizzare l’apprendimento.],
-  mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorrere al supporto del team di Bluewind oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
+  mitigazione: [Se la mancanza di conoscenza diventa un ostacolo, si potrebbe ricorrere al supporto del team di Bluewind, oppure scegliere soluzioni tecniche più semplici. Questo permetterebbe di evitare blocchi prolungati e mantenere una buona produttività.],
   frequenza: "Alta",
   pericolo: "Alta",
 )
@@ -37,7 +37,7 @@
   nome: "Rischio tecnologico legato a errori nel codice",
   tipo: "Rischio di prodotto + Rischio di progetto",
   descrizione: [Rischio di malfunzionamenti o comportamenti inattesi dovuti a errori nel codice, come bug, logica errata o implementazioni incomplete. Questi problemi possono compromettere la funzionalità del software, rallentare lo sviluppo e aumentare i costi di correzione.],
-  prevenzione: [Applicare pratiche di sviluppo sicuro e standardizzate, come code review, pair programming, test automatici e analisi statica del codice. Seguire linee guida per la scrittura di codice pulito, modulare e manutenibile. ],
+  prevenzione: [Applicare pratiche di sviluppo sicuro e standardizzate, come code review, pair programming, test automatici e analisi statica del codice. Seguire le linee guida per la scrittura di codice pulito, modulare e manutenibile. ],
   mitigazione: [In caso di errori critici, individuare rapidamente la causa tramite debug collaborativo e strumenti di tracciamento dei bug. Ripristinare versioni stabili se necessario e pianificare correzioni incrementalmente per ridurre l'impatto sul progetto complessivo.],
   frequenza: "Media",
   pericolo: "Alta",
@@ -118,8 +118,8 @@
   nome: "Utilizzo inefficace degli strumenti di coordinamento",
   tipo: "Rischio di progetto",
   descrizione: [Rischio legato a un uso disordinato o incoerente degli strumenti di coordinamento — come GitHub, Discord o Drive — che può generare confusione nei file, difficoltà nel tracciamento delle attività e conflitti nella gestione del codice. L’assenza di metodi condivisi favorisce rapidamente il caos organizzativo.],
-  prevenzione: [Per prevenire il rischio è essenziale stabilire linee guida e standard comuni per l’utilizzo degli strumenti, come convenzioni di naming e strutture chiare delle cartelle. Formalizzare queste pratiche nelle Norme di Progetto garantisce uniformità e ordine, favorendo un ambiente di lavoro strutturato e comprensibile per tutti.],
-  mitigazione: [Se emergono inefficienze, è utile procedere a una riorganizzazione dei repository e dei documenti, eliminando duplicati o materiali obsoleti. I membri che mostrano difficoltà vengono supportati tramite chiarimenti o formazione mirata, così da ristabilire un utilizzo corretto degli strumenti.],
+  prevenzione: [Per prevenire il rischio è essenziale stabilire linee guida e standard comuni per l’utilizzo degli strumenti, come convenzioni di nomenclatura dei file e strutture chiare delle cartelle. Formalizzare queste pratiche nelle Norme di Progetto garantisce uniformità e ordine, favorendo un ambiente di lavoro strutturato e comprensibile per tutti.],
+  mitigazione: [Se emergono inefficienze, è utile procedere ad una riorganizzazione dei repository e dei documenti, eliminando duplicati o materiali obsoleti. I membri che mostrano difficoltà vengono supportati tramite chiarimenti o formazione mirata, così da ristabilire un utilizzo corretto degli strumenti.],
   frequenza: "Bassa",
   pericolo: "Media",
 )
