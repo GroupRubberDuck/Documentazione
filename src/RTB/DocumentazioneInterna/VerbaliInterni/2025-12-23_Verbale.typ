@@ -192,13 +192,13 @@ I TODO sorti da questa riunione sono i seguenti:
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.FILIPPO],
   [Aggiornare lo script Python del glossario includendo abbreviazioni e nuovi path],
   [VI.11.1]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.DT],
   [Spostare i file HTML del sito nella cartella `docs` e verificare il corretto funzionamento dei link],
   [VI.11.2]
 ),
@@ -210,19 +210,19 @@ I TODO sorti da questa riunione sono i seguenti:
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.DL],
   [Completare la sezione sull’indice di Gulpease e l’appendice applicativa],
   [VI.11.4]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.DT],
   [Definire una tecnica di preventivo e aggiornare il piano nelle retrospettive future],
   [VI.11.5]
 ),
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.DT, #persone.FILIPPO],
   [Iniziare a definire la struttura logica dei JSON per i decision tree],
   [Decisione su scelte tecnologiche PoC]
 ),

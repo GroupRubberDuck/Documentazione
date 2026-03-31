@@ -254,7 +254,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.ALDO],
   [Creazione del gruppo Telegram.],
   [VE.1.1],
 ), 

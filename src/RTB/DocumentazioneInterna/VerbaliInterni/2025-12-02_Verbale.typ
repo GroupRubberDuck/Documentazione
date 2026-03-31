@@ -207,7 +207,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Analisti],
+  [#persone.FILIPPO, #persone.ANA)],
   [Completamento Norme di \ Progetto: processi primari,\ metriche, identificazione \ documenti],
   [VI.8.2],
 ), 
@@ -215,11 +215,11 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Da definire],
   [Programmare revisione interna dei casi d’uso prima del meeting con azienda],
-  [-],
+  [#persone.FELIX],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da Definire],
+  [#persone.DT],
   [Aggiornamento del sito web (aprire nuova issue). \ 
   Verifica versionamento e \ normalizzazione dei file.],
   [VI.8.4],

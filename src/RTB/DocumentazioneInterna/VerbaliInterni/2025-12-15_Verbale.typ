@@ -189,7 +189,7 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.ANA],
   [Migliorare la pianificazione considerando il rischio: impegni imprevisti ],
   [VI.10.1],
 ),
@@ -202,7 +202,7 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Responsabile],
+  [#persone.FELIX],
   [Stesura di questo verbale.],
   [-],
 ), 
