@@ -74,7 +74,7 @@
   - #link(label("use-case-dia"))[Plot diagrammi], 
   - #link(label("python"))[Uso di script python], 
   ]),
-  ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Felician Mario \ Necsulescu],[Approvazione]),
+  ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Aldo Bettega],[Approvazione]),
 )
 #registroModifiche(modifiche)
 
