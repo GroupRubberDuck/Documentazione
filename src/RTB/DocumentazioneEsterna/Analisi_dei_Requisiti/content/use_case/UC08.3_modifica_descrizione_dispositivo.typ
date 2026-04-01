@@ -33,7 +33,7 @@
     attore-principale:"Utente",
     
     scenario-principale:[
-        + L'utente modifica il sistema operativo del dispositivo
+        + L'utente modifica la descrizione del dispositivo
     ],
     
     pre-condizioni:[
@@ -44,7 +44,7 @@
     
     
     post-condizioni:[
-        - Il sistema ha registrato la modifica del sistema operativo del dispositivo
+        - Il sistema ha registrato la modifica della descrizione del dispositivo
     ],
     
     trigger:none,
