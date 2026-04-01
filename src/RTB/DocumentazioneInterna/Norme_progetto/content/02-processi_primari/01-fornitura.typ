@@ -69,11 +69,9 @@ Per garantire continuità e tracciabilità nelle comunicazioni, il gruppo utiliz
 
 *Tracciamento*
 
-- Tutte le comunicazioni rilevanti vengono registrate;
+//- Tutte le comunicazioni rilevanti vengono registrate;
 
 - Verbali esterni e interni;
-
-- Issue GitHub per decisioni operative e richieste tracciate.
 
 *Disponibilità*
 
@@ -82,7 +80,7 @@ Il processo di fornitura produce documentazione fondamentale per la tracciabilit
 
 === Documenti principali 
 
-- *Verbali esterni*: registrazione dei meeting con BlueWind;
+- *Verbali esterni*: resoconto dei meeting con BlueWind;
 
 - *Verbali interni*: documentazione di riunioni interne;
 
@@ -98,7 +96,7 @@ Il processo di fornitura produce documentazione fondamentale per la tracciabilit
 
 - *Dichiarazione degli Impegni*: stima dei costi del progetto, ore per ruolo e responsabilità dei componenti del gruppo;
 
-- *Lettera di Candidatura*: presentazione ufficiale della candidatura del gruppo al capitolato proposto;
+- *Lettera di Presentazione*: presentazione formale del gruppo, fornisce una panoramica delle risorse consumate, rimanenti e metodologie usate;
 
 - *Valutazione dei Capitolati*: analisi dei capitolati disponibili, punti di forza, criticità e motivazioni della scelta effettuata dal gruppo.
 
@@ -114,7 +112,7 @@ Per svolgere le attività del processo di fornitura, il gruppo utilizza strument
 
 *Strumenti interni*
 
-- *GitHub*: gestione backlog, ticketing;
+- *GitHub*: gestione backlog, ticketing, pubblicazione dei documenti;
 
 - *Google Calendar*: gestione appuntamenti e scadenze;
 
@@ -125,7 +123,7 @@ Per svolgere le attività del processo di fornitura, il gruppo utilizza strument
 
 - *Google Mail*: comunicazioni ufficiali scritte;
 
-- *Zoom*: riunioni sincrone remote.
+- *Zoom*: riunioni sincrone remote;
 
 - *Telegram*: indicata dalla proponente per chiarimenti rapidi.
 

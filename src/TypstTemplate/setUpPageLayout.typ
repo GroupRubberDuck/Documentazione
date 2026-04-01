@@ -18,8 +18,19 @@
         #place(horizon + left)[#documentType]
         #place(horizon + right)[#date]
       ]
-      #align(center)[#context counter(page).display()]
-    ]),
+#align(center)[
+        #context {
+          // Controlliamo se la stringa di numbering contiene "1" (numerazione araba)
+          if numbering.contains("1") {
+            let current = counter(page).display(numbering)
+            let total = counter(page).final().first()
+            [#current di #total]
+          } else {
+            // Altrimenti (es. "i" per i numeri romani), stampiamo solo la pagina corrente
+            counter(page).display(numbering)
+          }
+        }
+      ]    ]),
     numbering: numbering,
   )
 set text(lang: "IT")

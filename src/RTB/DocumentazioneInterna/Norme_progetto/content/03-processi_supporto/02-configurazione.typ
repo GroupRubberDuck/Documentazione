@@ -21,14 +21,14 @@ Il processo di gestione delle configurazioni mira a:
 === Attività del processo
 Le principali attività della Gestione delle Configurazioni includono:
 
-+ Identificazione degli elementi di configurazione
++ Identificazione degli elementi di configurazione.
 + Applicazione del codice di versione X.Y.Z (stabile, feature, patch).
 + Aggiornamento automatico della versione in tutti i documenti tramite Typst/GitHub.
 + Inserimento di ogni modifica nel Registro delle Modifiche, comprensivo di: data, autore, verificatore, descrizione e nuova versione.
-+ Verifica delle modifiche da parte dei revisori/validatori.
++ Verifica delle modifiche da parte dei revisori.
 + Approvazione e rilascio di versioni stabili.
 + Conservazione dei documenti e del codice in repository centralizzati.
-+ Backup periodici per garantire sicurezza e recuperabilità dei dati.
++ Backup per garantire sicurezza e recuperabilità dei dati.
 
 === Procedure operative
 
@@ -48,12 +48,12 @@ dove ciascuna componente rappresenta uno stato diverso del processo di validazio
   Il suo incremento segnala una revisione sostanziale o una modifica di grande rilievo.  
   L’incremento di X comporta l’azzeramento automatico di Y e Z.
 
-- *Y – Feature proposta / Approvazione generale*  \
+- *Y – Feature*  \
   Rappresenta l’ultima approvazione da parte di un Verificatore.  
   Il suo incremento indica l’introduzione o modifica di una nuova funzionalità o sezione del documento.  
   L’incremento di Y comporta l’azzeramento di Z.
 
-- *Z – Patch della feature proposta / Modifica verificata*  \ Indica l’ultima modifica di dettaglio verificata (correzioni minori, refusi, aggiustamenti formali).  
+- *Z – Patch*  \ Indica l’ultima modifica di dettaglio verificata (correzioni minori, refusi, aggiustamenti formali).  
   L’incremento di Z rappresenta cambiamenti minori.
 ]
 
@@ -78,7 +78,7 @@ Il processo di gestione delle configurazioni utilizza uno snippet Typst per gest
 #let doc="Norme di Progetto"
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")`]
 
-- Converte le componenti numeriche della versione (X, Y, Z) in stringhe e le unisce nel formato X.Y.Z.Il risultato viene salvato nella variabile versionNumber, che rappresenta la versione corrente del documento.
+- Converte le componenti numeriche della versione (X, Y, Z) in stringhe e le unisce nel formato X.Y.Z. Il risultato viene salvato nella variabile versionNumber, che rappresenta la versione corrente del documento.
 - Inserisce la versione corrente nei metadati del documento.
 
 - Permette di rendere il numero di versione accessibile in tutto il documento, per esempio in header, footer o tabella del registro modifiche, senza doverlo aggiornare manualmente.
@@ -113,7 +113,7 @@ Il registro modifiche è la tabella principale presente in ogni documento  che t
 ]
 
 ==== Formato nome dei verbali
- Al fine di avere ordine estetico all'interno della repo, è stato deciso di adottare il seguente standard per la nomina dei verbali. Di questi documenti interessa data e versione, dunque saranno nel formato: \ YYYY-MM-DD_Verbale-vX.Y.Z.typ
+ Al fine di avere ordine cronologico all'interno della cartella dei verbali, è stato deciso di adottare il seguente standard per la nomina dei verbali. Di questi documenti interessa data e versione, dunque saranno nel formato: \ YYYY-MM-DD_Verbale-vX.Y.Z.typ
 
 === Strumenti principali utilizzati
 
