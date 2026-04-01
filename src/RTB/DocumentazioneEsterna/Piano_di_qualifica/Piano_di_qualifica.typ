@@ -27,8 +27,8 @@
 #let doc = "Piano di qualifica"
 
 #let currentVersion = (
-  major: 0,
-  minor: 7,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -108,6 +108,13 @@
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
       [Aggiornata @testing con descrizione generale del testing, descrizioni brevi per ogni test e descrizioni dei test mancanti]
+    ),
+    (
+      [1.0.0],
+      [2026-04-01],
+      [#persone.DL],
+      [#persone.ALDO],
+      [Approvazione]
     ),
   )
   #registroModifiche(modifiche)
