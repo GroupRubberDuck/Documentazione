@@ -26,11 +26,6 @@
 #table-cells.push( item_0)
 
 
-#import "RV-002_metodologia_agile.typ": data as item_1, req-name as req-1
-
-#table-cells.push( item_1)
-
-
 
 // ============================================================================
 // 📦 ESPORTAZIONE DATI (API DEL MODULO)

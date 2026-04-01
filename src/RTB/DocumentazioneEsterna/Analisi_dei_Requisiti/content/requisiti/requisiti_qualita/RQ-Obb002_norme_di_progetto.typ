@@ -13,6 +13,6 @@
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva
   fonti:[
-    #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf")[Norme di Progetto v1.0.0];
+    #link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v1.0.0.pdf")[Norme di Progetto v1.0.0];
   ]
 )

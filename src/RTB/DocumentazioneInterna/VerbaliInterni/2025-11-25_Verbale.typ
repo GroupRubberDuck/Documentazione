@@ -184,13 +184,13 @@ I TODO sorti da questa riunione sono i seguenti:
 #let TODO=(
   (
   [TD.7.3],
-  [Stabilito in seguito],
+  [#persone.FILIPPO],
   [Aggiornamento delle Norme di progetto],
   [VI.6.2],
 ),   
 (
   [TD.7.5],
-  [Stabilito in seguito],
+  [#persone.ANA],
   [Studio, modifica e formulazione della Definition of Done],
   [VI.6.4],
 ), 
@@ -223,7 +223,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Analista],
+  [#persone.FELIX],
   [Studio dei casi d'uso],
   [VI.7.3],
 ), 

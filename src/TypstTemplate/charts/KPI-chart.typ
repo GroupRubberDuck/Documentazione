@@ -1,22 +1,9 @@
-typst#import "@preview/cetz:0.4.2"
+#import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": plot
 #import "csv-parser.typ": parse-csv-to-columns
 #import "color-selection-maker.typ": get-gradient-colors
 #import "_render-trend.typ"
 
-// Grafico multi-linea (es. Gulpease documenti diversi) con possibilità di aggiungere threshold
-// es:
-// #grafico-multi-linea(
-//  (
-//    x-labels: ("Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4"),
-//    PV: (455, 845, 1230, 1395),
-//    EV: (455, 845, 1230, 1395),
-//    series-names: ("PV", "EV"),
-//  ),
-//  "Grafico a linee delle metriche EV e PV",
-//  y-label: "Valore (€)",
-//  x-label: "Sprint",
-//)
 
 #let grafico-multi-linea(
   data,
@@ -25,6 +12,7 @@ typst#import "@preview/cetz:0.4.2"
   x-label: "",
   target: none,
   series-colors: none,
+  series-thickness: none,
   marker-size: 0.15,
   line-thickness: 2pt,
   ..plot-options,
@@ -73,19 +61,24 @@ typst#import "@preview/cetz:0.4.2"
             let series-data = data.at(name)
             let xy = range(series-data.len()).zip(series-data)
             let color = palette.at(calc.rem(i, palette.len()))
+            let thickness = if series-thickness != none {
+              series-thickness.at(i, default: line-thickness)
+            } else {
+              line-thickness
+            }
 
             plot.add(
               xy,
               label: name,
               style: (
-                stroke: line-thickness + color,
+                stroke: thickness + color,
                 fill: color.lighten(80%),
               ),
               mark: "o",
               mark-size: marker-size,
               mark-style: (
                 fill: color.lighten(50%),
-                stroke: line-thickness + color,
+                stroke: thickness + color,
               ),
             )
           }

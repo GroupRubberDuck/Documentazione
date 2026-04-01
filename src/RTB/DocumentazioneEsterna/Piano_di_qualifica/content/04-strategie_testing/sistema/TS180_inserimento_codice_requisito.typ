@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'utente inserire e salvare un codice univoco valido da associare al requisito in fase di modifica del modello.
+    Verificare che l'utente possa inserire e salvare un codice univoco valido da associare al requisito in fase di modifica del modello.
 
     Un codice del requisito è valido se ha una lunghezza compresa tra 4 e 10 caratteri
   ],

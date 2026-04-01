@@ -10,7 +10,7 @@
     fineEffettiva: datetime(year: 2026, month: 03, day: 9),
   ),
   TODO: [
-    Le attività dello sprint hanno interessato tre ambiti distinti, sviluppati in modo coordinato:
+    Le attività del presente sprint si articolano in tre ambiti distinti, da sviluppare in modo coordinato:
 
     - Analisi dei Requisiti (AdR): ultimazione di tutti i casi d'uso e apertura della fase di redazione dei requisiti funzionali, classificati per priorità (Obbligatori, Desiderabili, Opzionali) in coerenza con il capitolato BlueWind.
 
@@ -20,8 +20,8 @@
 
   ],
   rischiAttesi: [
-    - *R.T.2 – Inesperienza con le tecnologie (Alta frequenza, Alta pericolosità)*: L'avanzamento del PoC richiede l'adozione e il consolidamento di tecnologie ancora non del tutto familiari al gruppo, con il rischio di rallentamenti dovuti alla curva di apprendimento.
-    - *R.O.1 – Pianificazione iniziale errata o ottimistica (Alta frequenza, Media pericolosità)*: Il recupero delle attività slittate dallo sprint precedente potrebbe portare a stime non conservative del carico di lavoro effettivo.
+    - *R.T.2 – Inesperienza con le tecnologie*: L'avanzamento del PoC richiede l'adozione e il consolidamento di tecnologie ancora non del tutto familiari al gruppo, con il rischio di rallentamenti dovuti alla curva di apprendimento.
+    - *R.O.1 – Pianificazione iniziale errata o ottimistica*: Il recupero delle attività slittate dallo sprint precedente potrebbe portare a stime non conservative del carico di lavoro effettivo.
   ],
   rischiEffettivi: [
     Nel corso dello Sprint 6 nessuno dei rischi attesi si è manifestato in modo rilevante. Il ripristino della piena operatività del gruppo ha consentito di recuperare le attività in sospeso e di mantenere un ritmo di avanzamento regolare su tutti i fronti.
@@ -41,9 +41,6 @@
   retrospettiva: [
     - *Stato di avanzamento:*
       La fase di modellazione dei casi d'uso è stata portata a termine e si è dato avvio alla classificazione strutturata dei requisiti funzionali. Sul fronte tecnico, il principale risultato concreto è stata la definizione del design delle pagine del PoC. Parallelamente, è stata condotta un'analisi delle librerie disponibili per l'esportazione PDF e si è avviata una valutazione architetturale sul database, con orientamento verso MongoDB per la sua compatibilità nativa con strutture dati ad albero in formato BSON.
-
-    - *Aspetti positivi:*
-      Il workflow di verifica ridefinito a fine Sprint 5 ha trovato piena applicazione. In precedenza tutti i documenti dovevano passare per una fase di approvazione esplicita prima di essere pubblicati sul branch develop, generando rallentamenti. Con la nuova distinzione, i verbali continuano a richiedere un'approvazione formale prima della pubblicazione, mentre piccole modifiche (minor) ad altri documenti — come PdP, PdQ e Norme — possono essere spostate direttamente in "done" dal verificatore senza attendere un'approvazione aggiuntiva. Questo ha ridotto i tempi di integrazione e reso il flusso di lavoro più fluido.
 
     - *Problemi riscontrati:*
       La conduzione parallela di analisi e sviluppo ha richiesto un raccordo continuo per prevenire disallineamenti tra i requisiti definiti e le decisioni architetturali del PoC.

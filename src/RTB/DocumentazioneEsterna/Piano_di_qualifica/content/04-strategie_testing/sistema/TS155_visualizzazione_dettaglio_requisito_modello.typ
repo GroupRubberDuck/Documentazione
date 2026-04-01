@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare nel dettaglio i dati di uno specifico requisito in fase di modifica del modello
+Verificare che l'Utente possa visualizzare nel dettaglio i dati di uno specifico requisito in fase di modifica del modello
   ],
 
   requisito-riferimento:get-req-code(

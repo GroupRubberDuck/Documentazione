@@ -16,7 +16,7 @@ In conformità agli standard ISO di riferimento, i processi di supporto consider
 
 + *Accertamento qualità*:\  Processo che comprende attività sistematiche di verifica volte a controllare che processi, documenti e prodotti intermedi siano conformi ai requisiti, agli standard e alle metriche di qualità definiti durante lo svolgimento del progetto.
 
-+ *Processo di Qualifica (Verifica e Validazione)*:\ Processo che comprende attività di verifica e validazione finalizzate a stabilire se un prodotto o deliverable può essere considerato concluso e idoneo al rilascio, garantendo la conformità alle specifiche tecniche e funzionali.
++ *Processo di Qualifica*:\ Processo che comprende attività di verifica e validazione finalizzate a stabilire se un prodotto o deliverable può essere considerato concluso e idoneo al rilascio, garantendo la conformità alle specifiche tecniche e funzionali.
 
 == *Processo di documentazione* <documentazione>
 === Introduzione
@@ -53,7 +53,7 @@ Le principali attività che compongono questo processo sono:
 === Procedure operative
 
 ==== Identificazione dei documenti <identif>
-  Si tratta di una fase di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
+  Si tratta di un'attività di pianificazione in cui ogni documento viene definito secondo le seguenti caratteristiche principali:
 
 #pad(left: 1em)[
 - Titolo;
@@ -71,7 +71,7 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
   - Essere in formato A4; 
   - I contenuti inseriti devono essere coerenti con lo scopo del documento stesso;
   - Tutti i documenti devono includere un indice dei contenuti e delle relative sottosezioni visibile all'inizio (ad eccezione del diario di bordo, che ne è esentato);
-  - Ogni pagina deve contenere nell'header e nel footer:
+  - Ogni pagina deve contenere nel header e nel footer:
    1. La sezione corrente del documento (in alto a sinistra);
    2. Il nome del gruppo (in alto a destra);
    3. Il titolo del documento (in basso a sinistra);
@@ -83,21 +83,22 @@ Ogni documento identificato all'interno dello sviluppo software deve rispettare 
 
 ==== Workflow documentale <workflow>
 All'interno dell'ambito documentale si è optato per il seguente modello per descrivere e modellare le attività necessarie a produrre un documento:
-#image(images_dir+"/workflow.drawio.png" )
+#image(images_dir+"/workflow2.drawio.png" )
 
 ==== Stati del documento <Workflow>
   - *Backlog*: magazzino delle attività da svolgere, ogni documento inizia in questo stato.
-  - *In lavorazione*: il documento è stato preso in carico da un autore.
+  - *In lavorazione*: il documento è stato preso in carico dal componente del gruppo nel ruolo previsto.
   - *In verifica*: Il lavoro dell’autore è terminato. Il documento deve ora essere revisionato oppure corretto, nel caso in cui non sia stato approvato durante la fase di validazione.
-  - *In validazione*, il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
-  - *Done*, il documento è stato approvato.
+  - *In approvazione*: il lavoro del revisore è finito. Il documento va valutato per l'approvazione oppure respinto, fornendo le opportune motivazioni accompagnate da un elenco delle correzioni da apportare.
+  - *Done*: il documento è stato approvato.
 
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
-  - Da *Backlog* a *In lavorazione*: un autore si assegna una issue e inizia a scrivere la bozza del documento.
-  - Da *In lavorazione* a *In verifica*: l'autore consegna la bozza, trasferendo la issue in revisione e assegnandola al revisore (deciso a priori) che verrà notificato automaticamente.
-  - Da *In verifica* a *In validazione*: il revisore ha apportato modifiche alla bozza e propone la revisione al validatore. Il revisore deve spostare la issue in validazione e assegnarla al validatore.
-  - Da *In validazione* a *In verifica*: il validatore rifiuta la revisione proposta allegando una lista di modifiche motivate che il revisore dovrà apportare al documento. Il validatore dovrà riassegnare la issue al revisore.
-  - Da *In validazione* a *Done*: il validatore accetta la revisione proposta e chiude la issue con #block(
+  - Da *Backlog* a *In lavorazione*:  l'Amministratore crea la issue predisponendo l'ambiente tecnico; contestualmente, in accordo con il Responsabile, viene determinato e impostato l'assegnatario (componente del gruppo nel ruolo pertinente) che prende in carico l'attività.
+  - Da *In lavorazione* a *In verifica*: l'assegnatario dichiara conclusa la propria attività, trasferendo la issue in revisione e assegnandola al Verificatore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In verifica* a *In lavorazione* (Rifiuto del Verificatore): il Verificatore rileva che non è conforme e riassegna la issue all'esecutore con un report delle anomalie da sanare.
+  - Da *In verifica* a *In approvazione*: il Verificatore accerta la correttezza dell'incremento e sposta la issue in approvazione, assegnandola al Responsabile per il controllo finale di coerenza.
+  - Da *In approvazione* a *In lavorazione* (Rifiuto del Responsabile): il Responsabile rileva incongruenze di alto livello o mancanze strategiche. La issue viene riassegnata all'assegnatario originale per la correzione, informando il Verificatore della svista.
+  - Da *In approvazione* a *Done*: il Responsabile accetta la revisione proposta e chiude la issue con #block(
   fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
   stroke: 1pt + black, // Bordo nero da 1 punto
   inset: 10pt          // Padding interno di 10 punti
@@ -107,10 +108,10 @@ All'interno dell'ambito documentale si è optato per il seguente modello per des
 I documenti sono salvati sull'apposito repository.
 
 Il path relativo è ricavabile nel seguente modo:
- \ (Fanno eccezione i diari di bordo, in quanto fanno parte delle regole di progetto, ma non supportano alcun processo primario, perciò sono salvati nella cartella *./\<Type\>src/DiariDiBordo*)
+ \ (Fanno eccezione i diari di bordo, in quanto fanno parte delle regole di progetto, ma non supportano alcun processo primario, perciò sono salvati nella cartella *./src/DiariDiBordo*)
 
 #align(center)[
-*./\<Type\>/\<Milestone\>/\<Destinatari\>/\<Cartella del Documento\>*
+*./\<Type\>/\<Baseline\>/\<Destinatari\>/\<Cartella del Documento\>*
 
 ]
 
@@ -118,16 +119,16 @@ Il path relativo è ricavabile nel seguente modo:
   ([Type],[ - *src* per i file in formato typst. \
   - *output* per i pdf.
   ]),
-  ([Milestone],[- *RTB* per i documenti allo stato della RTB. \
-                - *PB* per i documenti allo stato della PB.]),
+  ([Baseline],[- *RTB* per i documenti allo stato della RTB. \
+              - *PB* per i documenti allo stato della PB.]),
   ([Destinatari],[- DocumentazioneInterna per i documenti ad uso interno. \
                   - DocumentazioneEsterna per i documenti ad uso esterno.]),
   ([Cartella del Documento],[ 
-    - VerbaliInterni
-    - VerbaliEsterni
+    - VerbaliInterni.
+    - VerbaliEsterni.
     - Per documenti complessi coincide con il nome del documento #footnote()[
-      Per motivi di manutenibilità e facilità di aggiornamento i contenuti del file sono stati divisi in più file quando una loro sezione diventa eccessivamente corposa.
-    ]
+      Per motivi di manutenibilità e facilità di aggiornamento i contenuti del file typst sono stati divisi in più file quando una loro sezione diventa eccessivamente corposa.
+    ].
     ]),
 )
 
@@ -232,7 +233,7 @@ Il documento comprende:
 #align(left)[
 
 
-Il piano di qualifica ha l’obiettivo di garantire che il prodotto sviluppato rispetti elevati standard di qualità. Definisce processi, metriche, strategie di testing e criteri di valutazione necessari a verificare la qualità del software e del processo di sviluppo. Fornisce inoltre strumenti operativi per la misurazione e la validazione dei risultati.
+Il Piano di Qualifica ha l’obiettivo di garantire che il prodotto sviluppato rispetti elevati standard di qualità. Definisce processi, metriche, strategie di testing e criteri di valutazione necessari a verificare la qualità del software e del processo di sviluppo. Fornisce inoltre strumenti operativi per la misurazione e la validazione dei risultati.
 
 *Destinatari*: stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
 
@@ -248,7 +249,7 @@ Il documento è articolato nelle seguenti componenti:
 
 - Piano delle verifiche e validazioni;
 
-- Cruscotto qualità con indicatori e soglie di accettazione;
+- Cruscotto qualità con indicatori e soglie di accettazione.
 ]
 ]
 
@@ -263,7 +264,7 @@ Il documento è articolato nelle seguenti componenti:
 
   
 #align(left)[
-Il Piano di Progetto definisce la pianificazione complessiva delle attività, descrivendo l’approccio *plan-driven* adottato dal gruppo. \  
+Il Piano di Progetto definisce la pianificazione complessiva delle attività, descrivendo l’approccio  adottato dal gruppo. \  
 Il documento fornisce una visione strutturata dell’*organizzazione del lavoro*, includendo la definizione degli obiettivi, la gestione delle risorse, l’assegnazione dei ruoli, la pianificazione temporale e l’analisi dei rischi. \ 
 La sua funzione principale è garantire un monitoraggio costante dell’*avanzamento* del progetto attraverso *revisioni periodiche* e *rendicontazioni* relative ai vari sprint.  \
 Tale monitoraggio consente al gruppo di valutare l’efficienza del workflow, individuare tempestivamente eventuali criticità e adattare la pianificazione quando necessario.
@@ -277,24 +278,24 @@ La struttura del documento comprende:
 
 - Ambito e obiettivi del progetto;
 
-- Analisi dei rischi e piano di mitigazione;
+- Analisi dei rischi e piani di mitigazione;
 
 - Preventivo iniziale e disponibilità delle risorse;
 
 - Pianificazione di lungo periodo;
 
-- Sezione dedicata alle revisioni, con per ogni sprint:
+- Sezione dedicata alle revisioni, che per ogni sprint comprende:
 #pad(left: 1em)[
 
-- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint
+- *Attività pianificate* → obiettivi e task previsti per il periodo di sprint;
 
-- *Rischi e difficoltà emersi* → analisi degli impedimenti riscontrati e strategie di mitigazione
+- *Gestione dei rischi* → analisi proattiva dei rischi attesi e dei rischi emersi, con indicazione delle relative strategie di mitigazione e piani di contingenza;
 
-- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità
+- *Preventivo ore per ruolo* → stima dell’effort pianificato, suddiviso per responsabilità;
 
-- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione
+- *Retrospettiva del gruppo* → riflessioni su apprendimento, workflow ed efficacia della collaborazione;
 
-- *Consuntivo ore effettive* → ore realmente impiegate dal gruppo nel periodo
+- *Consuntivo ore effettive* → rendicontazione delle ore realmente impiegate dal gruppo nello sprint per aggiornare il budget residuo.
 
 ]
 ]
@@ -324,15 +325,15 @@ Ogni verbale si conclude con una *riflessione finale del gruppo*, dalla quale em
 
 Ogni verbale deve avere la seguente suddivisione numerata: 
 
-  1. *Informazioni comuni della sezione 4.1.2.1* (standard condivisi di documento)
+  1. *Informazioni comuni della @informazioni_comuni* (standard condivisi di documento)
   2. *Informazioni generali*
       #pad(left: 1em)[
-        - Data e luogo della riunione
-        - Orario di inizio/fine
-        - Partecipanti
-        - Tipo(interno/esterno)
-        - Motivo (principalmente per verbali esterni)
-        - Scriba (responsabile del verbale in quel momento)
+        - Data e luogo della riunione;
+        - Orario di inizio/fine;
+        - Partecipanti;
+        - Tipologia (interno/esterno);
+        - Motivo (principalmente per verbali esterni);
+        - Scriba (responsabile del verbale in quel momento).
 ]
     3. *Ordine del giorno* :  scaletta dei temi da discutere, raccolti e organizzati del responsabile sulla base dei contributi dei membri del gruppo o dei referenti aziendali. 
 
@@ -357,11 +358,11 @@ Ogni verbale deve avere la seguente suddivisione numerata:
   
 #align(left)[
 
-Il Diario di bordo è un’attività prevista dal Prof. Tullio Vardanega all’interno del progetto di Ingegneria del Software. Rappresenta un momento di condivisione in cui ciascun gruppo espone il proprio stato di avanzamento, con particolare attenzione a dubbi o problematiche emerse durante lo svolgimento delle attività.
+Il Diario di Bordo è un’attività prevista dal Prof. Tullio Vardanega all’interno del progetto di Ingegneria del Software. Rappresenta un momento di condivisione in cui ciascun gruppo espone il proprio stato di avanzamento, con particolare attenzione a dubbi o problematiche emerse durante lo svolgimento delle attività.
 
 Composto principalmente da: 
 #pad(left: 1em)[
-*Titolo*: Diario di bordo seguito dal numero progressivo associato.
+*Titolo*: Diario di Bordo seguito dal numero progressivo associato.
 
 *Scopo*: Fornire ai gruppi un feedback sulle attività svolte e consentire di portare all’attenzione comune eventuali dubbi relativi al processo di lavoro.
 
@@ -393,7 +394,6 @@ Il documento delle Norme di Progetto è organizzato secondo i tipi di processo p
 - *Processi primari*: attività direttamente legate alla realizzazione del prodotto software.  
 - *Processi di supporto*: attività che garantiscono qualità, tracciabilità e gestione della documentazione.  
 - *Processi organizzativi*: attività relative alla gestione del team, pianificazione e coordinamento.  
-- *Processi di qualità*: attività dedicate alla verifica, validazione e mantenimento degli standard qualitativi.
 
 ]
 
@@ -435,10 +435,10 @@ Per *favorire la tracciabilità e la consultazione immediata*, all’interno dei
 - Preview istantanea del documento.
 ]
 
-*Github*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
+*GitHub*: Strumento scelto dal gruppo per la condivisione del lavoro e la gestione delle attività tramite *issue tracking*.
 #pad(left: 1em)[ 
 - Utilizzo di GitHub Actions per la compilazione automatica dei documenti.
-- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[Github].
+- Documentazione disponibile nel repository #link("https://github.com/GroupRubberDuck/Documentazione")[GitHub].
 - #link("https://grouprubberduck.github.io/Documentazione")[Sito web] predisposto tramite GitHub Pages per facilitare la consultazione della documentazione.
 
 

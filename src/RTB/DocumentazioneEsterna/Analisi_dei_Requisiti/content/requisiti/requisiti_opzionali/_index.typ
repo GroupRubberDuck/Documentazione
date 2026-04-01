@@ -1605,7 +1605,7 @@ item_87.fonti=utils.format-array(item_87.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-089_visualizzazione_grafo_dipendenze.typ": data as item_88, req-name as req-88
+#import "ROpz-089_errore_dipendenza_circolare.typ": data as item_88, req-name as req-88
 
 #req-uc-dict.insert(
   req-88
@@ -1623,7 +1623,7 @@ item_88.fonti=utils.format-array(item_88.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-090_errore_dipendenza_circolare.typ": data as item_89, req-name as req-89
+#import "ROpz-090_rimozione_dipendenza_tra_requisiti.typ": data as item_89, req-name as req-89
 
 #req-uc-dict.insert(
   req-89
@@ -1641,7 +1641,7 @@ item_89.fonti=utils.format-array(item_89.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-091_rimozione_dipendenza_tra_requisiti.typ": data as item_90, req-name as req-90
+#import "ROpz-091_aggiunta_nodo_figlio.typ": data as item_90, req-name as req-90
 
 #req-uc-dict.insert(
   req-90
@@ -1659,7 +1659,7 @@ item_90.fonti=utils.format-array(item_90.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-092_aggiunta_nodo_figlio.typ": data as item_91, req-name as req-91
+#import "ROpz-092_aggiunta_nodo_figlio_yes.typ": data as item_91, req-name as req-91
 
 #req-uc-dict.insert(
   req-91
@@ -1677,7 +1677,7 @@ item_91.fonti=utils.format-array(item_91.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-093_aggiunta_nodo_figlio_yes.typ": data as item_92, req-name as req-92
+#import "ROpz-093_aggiunta_nodo_figlio_no.typ": data as item_92, req-name as req-92
 
 #req-uc-dict.insert(
   req-92
@@ -1695,7 +1695,7 @@ item_92.fonti=utils.format-array(item_92.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-094_aggiunta_nodo_figlio_no.typ": data as item_93, req-name as req-93
+#import "ROpz-094_aggiunta_nodo.typ": data as item_93, req-name as req-93
 
 #req-uc-dict.insert(
   req-93
@@ -1713,7 +1713,7 @@ item_93.fonti=utils.format-array(item_93.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-095_aggiunta_nodo.typ": data as item_94, req-name as req-94
+#import "ROpz-095_aggiunta_nodo_foglia.typ": data as item_94, req-name as req-94
 
 #req-uc-dict.insert(
   req-94
@@ -1731,7 +1731,7 @@ item_94.fonti=utils.format-array(item_94.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-096_aggiunta_nodo_foglia.typ": data as item_95, req-name as req-95
+#import "ROpz-096_aggiunta_nodo_foglia_pass.typ": data as item_95, req-name as req-95
 
 #req-uc-dict.insert(
   req-95
@@ -1749,7 +1749,7 @@ item_95.fonti=utils.format-array(item_95.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-097_aggiunta_nodo_foglia_pass.typ": data as item_96, req-name as req-96
+#import "ROpz-097_aggiunta_nodo_foglia_fail.typ": data as item_96, req-name as req-96
 
 #req-uc-dict.insert(
   req-96
@@ -1767,7 +1767,7 @@ item_96.fonti=utils.format-array(item_96.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-098_aggiunta_nodo_foglia_fail.typ": data as item_97, req-name as req-97
+#import "ROpz-098_aggiunta_nodo_foglia_not_applicable.typ": data as item_97, req-name as req-97
 
 #req-uc-dict.insert(
   req-97
@@ -1785,7 +1785,7 @@ item_97.fonti=utils.format-array(item_97.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-099_aggiunta_nodo_foglia_not_applicable.typ": data as item_98, req-name as req-98
+#import "ROpz-099_aggiunta_nodo_di_decisione.typ": data as item_98, req-name as req-98
 
 #req-uc-dict.insert(
   req-98
@@ -1803,7 +1803,7 @@ item_98.fonti=utils.format-array(item_98.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-100_aggiunta_nodo_di_decisione.typ": data as item_99, req-name as req-99
+#import "ROpz-100_inserimento_codice_nodo_di_decisione.typ": data as item_99, req-name as req-99
 
 #req-uc-dict.insert(
   req-99
@@ -1821,7 +1821,7 @@ item_99.fonti=utils.format-array(item_99.fonti,transf:uc-transformation-con-link
 
 
 
-#import "ROpz-101_inserimento_codice_nodo_di_decisione.typ": data as item_100, req-name as req-100
+#import "ROpz-101_errore_codice_nodo_non_valido.typ": data as item_100, req-name as req-100
 
 #req-uc-dict.insert(
   req-100
@@ -1839,7 +1839,7 @@ item_100.fonti=utils.format-array(item_100.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-102_errore_codice_nodo_non_valido.typ": data as item_101, req-name as req-101
+#import "ROpz-102_errore_codice_nodo_già_esistente.typ": data as item_101, req-name as req-101
 
 #req-uc-dict.insert(
   req-101
@@ -1857,7 +1857,7 @@ item_101.fonti=utils.format-array(item_101.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-103_errore_codice_nodo_già_esistente.typ": data as item_102, req-name as req-102
+#import "ROpz-103_inserimento_domanda_nodo_di_decisione.typ": data as item_102, req-name as req-102
 
 #req-uc-dict.insert(
   req-102
@@ -1875,7 +1875,7 @@ item_102.fonti=utils.format-array(item_102.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-104_inserimento_domanda_nodo_di_decisione.typ": data as item_103, req-name as req-103
+#import "ROpz-104_errore_domanda_vuota.typ": data as item_103, req-name as req-103
 
 #req-uc-dict.insert(
   req-103
@@ -1893,7 +1893,7 @@ item_103.fonti=utils.format-array(item_103.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-105_errore_domanda_vuota.typ": data as item_104, req-name as req-104
+#import "ROpz-105_modifica_nodo_di_decisione.typ": data as item_104, req-name as req-104
 
 #req-uc-dict.insert(
   req-104
@@ -1911,7 +1911,7 @@ item_104.fonti=utils.format-array(item_104.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-106_modifica_nodo_di_decisione.typ": data as item_105, req-name as req-105
+#import "ROpz-106_modifica_codice_nodo_decision_tree.typ": data as item_105, req-name as req-105
 
 #req-uc-dict.insert(
   req-105
@@ -1929,7 +1929,7 @@ item_105.fonti=utils.format-array(item_105.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-107_modifica_codice_nodo_decision_tree.typ": data as item_106, req-name as req-106
+#import "ROpz-107_errore_modifica_codice_nodo_non_valido.typ": data as item_106, req-name as req-106
 
 #req-uc-dict.insert(
   req-106
@@ -1947,7 +1947,7 @@ item_106.fonti=utils.format-array(item_106.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-108_errore_modifica_codice_nodo_non_valido.typ": data as item_107, req-name as req-107
+#import "ROpz-108_errore_modifica_codice_nodo_già_esistente.typ": data as item_107, req-name as req-107
 
 #req-uc-dict.insert(
   req-107
@@ -1965,7 +1965,7 @@ item_107.fonti=utils.format-array(item_107.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-109_errore_modifica_codice_nodo_già_esistente.typ": data as item_108, req-name as req-108
+#import "ROpz-109_modifica_domanda_nodo_decision_tree.typ": data as item_108, req-name as req-108
 
 #req-uc-dict.insert(
   req-108
@@ -1983,7 +1983,7 @@ item_108.fonti=utils.format-array(item_108.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-110_modifica_domanda_nodo_decision_tree.typ": data as item_109, req-name as req-109
+#import "ROpz-110_errore_modifica_domanda_vuota.typ": data as item_109, req-name as req-109
 
 #req-uc-dict.insert(
   req-109
@@ -2001,7 +2001,7 @@ item_109.fonti=utils.format-array(item_109.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-111_errore_modifica_domanda_vuota.typ": data as item_110, req-name as req-110
+#import "ROpz-111_rimozione_nodo_dal_decision_tree.typ": data as item_110, req-name as req-110
 
 #req-uc-dict.insert(
   req-110
@@ -2019,7 +2019,7 @@ item_110.fonti=utils.format-array(item_110.fonti,transf:uc-transformation-con-li
 
 
 
-#import "ROpz-112_rimozione_nodo_dal_decision_tree.typ": data as item_111, req-name as req-111
+#import "ROpz-112_errore_eliminazione_nodo_root.typ": data as item_111, req-name as req-111
 
 #req-uc-dict.insert(
   req-111
@@ -2034,24 +2034,6 @@ item_111.fonti=utils.format-array(item_111.fonti,transf:uc-transformation-con-li
 }
 
 #table-cells.push( item_111)
-
-
-
-#import "ROpz-113_errore_eliminazione_nodo_root.typ": data as item_112, req-name as req-112
-
-#req-uc-dict.insert(
-  req-112
-  ,
-  item_112.fonti
-  )
-
-
-#{
-item_112.fonti=utils.format-array(item_112.fonti,transf:uc-transformation-con-link)
-
-}
-
-#table-cells.push( item_112)
 
 
 

@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare il numero di versione del modello durante la visualizzazione dei dati nel dettaglio
+Verificare che l'Utente possa visualizzare il numero di versione del modello durante la visualizzazione dei dati nel dettaglio
 
   ],
 

@@ -26,9 +26,14 @@
 #table-cells.push( item_0)
 
 
-#import "RV-opz002_database_relazionale.typ": data as item_1, req-name as req-1
+#import "RV-opz002_supporto_containerizzazione_docker.typ": data as item_1, req-name as req-1
 
 #table-cells.push( item_1)
+
+
+#import "RV-opz003_database_relazionale.typ": data as item_2, req-name as req-2
+
+#table-cells.push( item_2)
 
 
 

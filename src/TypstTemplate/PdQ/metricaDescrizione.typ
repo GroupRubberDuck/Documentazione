@@ -5,6 +5,8 @@
   formula:content,
   interpretazione:content,
   come-calcolo:content,
+  // serve a gestire parametri extra passati accidentalmente con lo spreading 
+  ..sink
 )={
   box(fill:luma(95%),inset:1em,radius:3%, stroke:1pt, width:100%)[
 

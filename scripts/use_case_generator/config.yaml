@@ -262,7 +262,6 @@ structure:
         # - Annulla modifica anagrafica requisito TODO
     - Aggiungi dipendenza:
         - Errore dipendenza circolare:
-            - Visualizza grafo dipendenze
     - Rimuovi dipendenza
     - Aggiungi nodo figlio:
         - Aggiungi nodo figlio YES

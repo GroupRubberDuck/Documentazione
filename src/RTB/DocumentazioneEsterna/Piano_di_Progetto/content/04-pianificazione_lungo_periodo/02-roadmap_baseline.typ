@@ -4,7 +4,7 @@
 
 
 Di seguito vengono riportati i documenti richiesti per questa fase.
-Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo agile*.
+Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo Agile*.
 
 
 #let attivitaADR = (
@@ -23,9 +23,15 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
   "Definizione preliminare delle funzionalità e redazione delle matrici di tracciamento tra funzionalità e casi d’uso",
   [_Sprint 3_],
   "Completato",
-  "DA DEFINIRE",
-  [_Sprint 5_],
-  "DA DEFINIRE",
+  "Completamento dei casi d'uso e dei diagrammi UML",
+  [_Sprint 4_],
+  "Completato",
+  "Definizione preliminare dei requisiti funzionali",
+  [_Sprint 6_],
+  "Completato",
+  "Completamento dei requisiti funzionali e non funzionali",
+  [_Sprint 7_],
+  "Completato",
 )
 #figure(caption: "RTB-Analisi dei Requisiti")[
   #tabellaAtt(titolo: "Analisi dei Requisiti", attivita: attivitaADR)
@@ -50,9 +56,6 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
   [Pianificazione di \ lungo periodo],
   [_Sprint 3_],
   "Completato",
-  [DA COMPLETARE],
-  [_Sprint 5_],
-  [DA COMPLETARE],
   [Pianificazione di \ breve periodo],
   [_Tutti gli sprint_],
   "In corso",
@@ -73,6 +76,9 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
   "Completato",
   "Cruscotto di valutazione",
   [_Sprint 5_],
+  "Completato",
+  "Definizione iniziale delle strategie di testing",
+  [_Sprint 6_],
   "Completato",
 )
 #figure(caption: "RTB-Piano di Qualifica")[
@@ -130,16 +136,27 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
 
 
 #let attivitaPoC = (
-  // studio, setup repo, design e codifica forse
-  "Python 3x",
-  [_Sprint 1_],
-  "Da definire",
+  "Setup dell'ambiente di sviluppo",
+  [_Sprint 5_],
+  "Completato",
   "Flask",
-  [_Sprint 1_],
-  "Da definire",
+  [_Sprint 6_],
+  "Completato",
   "Docker",
-  [_Sprint 1_],
-  "Da definire",
+  [_Sprint 6_],
+  "Completato",
+  "D3JS",
+  [_Sprint 6_],
+  "Completato",
+  "Pydantic",
+  [_Sprint 6_],
+  "Completato",
+  "MongoDB",
+  [_Sprint 7_],
+  "Completato",
+  "Vue.js",
+  [_Sprint 8_],
+  "Completato",
 )
 #figure(caption: "RTB-Proof of Concept")[
   #tabellaAtt(titolo: "Proof of Concept", attivita: attivitaPoC)

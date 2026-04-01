@@ -120,7 +120,6 @@ structure:
 - Errore modifica nome requisito non valido
 - Modifica descrizione requisito
 - Aggiunta dipendenza tra requisiti
-- Visualizzazione grafo dipendenze
 - Errore dipendenza circolare
 - Rimozione dipendenza tra requisiti
 
