@@ -3,11 +3,11 @@
 #import "MPD/config/deps.typ" as deps
 
 #let targets=(
-"Code Coverage",
 "Cyclomatic Complexity",
 "Instability Index",
 "Coefficient of Coupling",
 "Code Smell",
+"Code Coverage",
 )
 
 

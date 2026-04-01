@@ -8,27 +8,27 @@
 
 #include "MPD04-failure_density.typ"
 
-#include "MPD05-code_coverage.typ"
+#include "MPD05-statement_coverage.typ"
 
-#include "MPD06-statement_coverage.typ"
+#include "MPD06-branch_coverage.typ"
 
-#include "MPD07-branch_coverage.typ"
+#include "MPD07-user_error_rate.typ"
 
-#include "MPD08-user_error_rate.typ"
+#include "MPD08-time_to_complete_task.typ"
 
-#include "MPD09-time_to_complete_task.typ"
+#include "MPD09-response_time.typ"
 
-#include "MPD10-response_time.typ"
+#include "MPD10-cpu_utilization.typ"
 
-#include "MPD11-cpu_utilization.typ"
+#include "MPD11-memory_utilization.typ"
 
-#include "MPD12-memory_utilization.typ"
+#include "MPD12-cyclomatic_complexity.typ"
 
-#include "MPD13-cyclomatic_complexity.typ"
+#include "MPD13-instability_index.typ"
 
-#include "MPD14-instability_index.typ"
+#include "MPD14-coefficient_of_coupling.typ"
 
-#include "MPD15-coefficient_of_coupling.typ"
+#include "MPD15-code_smell.typ"
 
-#include "MPD16-code_smell.typ"
+#include "MPD16-code_coverage.typ"
 
