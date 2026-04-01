@@ -13,8 +13,8 @@
     Le attività di questo sprint si sono concentrate sullo studio della validità delle tecnologie usate nel PoC, in seguito alle indicazioni del professor Cardin.
   ],
   rischiAttesi: [
-    - *R.T.2 - Inesperienza con le tecnologie (Alta frequenza, Alta pericolosità)*: a seguito dell'incontro col professor Cardin è stato necessario verificare e studiare più a fondo la validità delle scelte tecnologiche effettuate
-    - *R.O.1 - Pianificazione iniziale errata o ottimistica (Alta frequenza, Alta pericolosità)*: lo studio delle tecnologie è un'attività difficilmente scomponibile e di costo poco prevedibile
+    - *R.T.2 - Inesperienza con le tecnologie*: a seguito dell'incontro col professor Cardin è stato necessario verificare e studiare più a fondo la validità delle scelte tecnologiche effettuate
+    - *R.O.1 - Pianificazione iniziale errata o ottimistica*: lo studio delle tecnologie è un'attività difficilmente scomponibile e di costo poco prevedibile
   ],
   rischiEffettivi: [
     // fine sprint

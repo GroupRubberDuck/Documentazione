@@ -161,13 +161,6 @@
   )
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
-  #outline(
-    title: [Lista delle immagini],
-    target: figure.where(kind: image),
-  )
-]
-
 // ---------------------------------------------------------
 // Contenuto del Documento
 // ---------------------------------------------------------

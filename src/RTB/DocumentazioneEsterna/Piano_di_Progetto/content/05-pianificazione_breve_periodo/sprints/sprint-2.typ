@@ -49,15 +49,15 @@
   ),
   retrospettiva: [
     - *Avvio e strutturazione documenti*:
-      Parallelamente è stato portato avanti lo studio del materiale fornito dall’azienda e si è lavorato al miglioramento della documentazione principale, in particolare il *Piano di Progetto*, le *Norme di Progetto* e l'*Analisi dei requisiti*. Tuttavia, sono emerse difficoltà nella *definizione dei casi d’uso* e nella redazione del *documento di Analisi dei requisiti*. Per questo motivo il gruppo ha deciso di adottare inizialmente una visione ad *alto livello* (a macro-blocchi), rimandando un maggiore dettaglio ai prossimi sprint.
+      Parallelamente è stato portato avanti lo studio del materiale fornito dall’azienda e si è lavorato al miglioramento della documentazione principale, in particolare il *Piano di Progetto*, le *Norme di Progetto* e l'*Analisi dei Requisiti*. Tuttavia, sono emerse difficoltà nella *definizione dei casi d’uso* e nella redazione del *documento di Analisi dei requisiti*. Per questo motivo il gruppo ha deciso di adottare inizialmente una visione ad *alto livello* (a macro-blocchi), rimandando un maggiore dettaglio ai prossimi sprint.
 
-    - *Coordinamento Organizzativo e Strategie di Mitigazione*:
+    - *Coordinamento organizzativo e strategie di mitigazione*:
       Le principali criticità organizzative hanno riguardato il *coordinamento nella stesura dei casi d’uso* e lo *studio condiviso del materiale*. In particolare, il gruppo ha riscontrato difficoltà nel conciliare lo studio con la redazione degli altri documenti. Per mitigare tali problemi sono stati proposti *brevi incontri informali*, finalizzati alla suddivisione dello studio e alla creazione di momenti strutturati di confronto interno.
 
     - *Mitigazione rischi*:
       Rispetto allo Sprint 1, *le attività di mitigazione dei rischi* sono risultate complessivamente più efficaci, anche se il gruppo ritiene che sia possibile un ulteriore miglioramento. Le mitigazioni adottate dovranno quindi essere testate anche negli sprint successivi per valutarne concretamente l’efficacia.
 
-    - *Prospettive per lo Sprint Successivo*:
+    - *Prospettive per lo sprint successivo*:
       Alla luce di quanto emerso, nel *prossimo sprint* le attività principali saranno incentrate su una *definizione più accurata dei casi d’uso*; di conseguenza, i ruoli maggiormente coinvolti saranno quelli di Analista e Verificatore.
   ],
 )

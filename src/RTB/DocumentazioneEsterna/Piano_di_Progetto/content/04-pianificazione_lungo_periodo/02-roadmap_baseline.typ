@@ -4,7 +4,7 @@
 
 
 Di seguito vengono riportati i documenti richiesti per questa fase.
-Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo agile*.
+Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione degli sprint a cui sono associati. Questo approccio permette di avere una *visione d'insieme delle attività*, stimare il lavoro complessivo e suddividerlo successivamente in singoli sprint, seguendo le *buone pratiche dello sviluppo Agile*.
 
 
 #let attivitaADR = (
@@ -56,9 +56,6 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
   [Pianificazione di \ lungo periodo],
   [_Sprint 3_],
   "Completato",
-  [DA COMPLETARE],
-  [_Sprint 5_],
-  [DA COMPLETARE],
   [Pianificazione di \ breve periodo],
   [_Tutti gli sprint_],
   "In corso",

@@ -10,7 +10,7 @@
     fineEffettiva: datetime(year: 2026, month: 02, day: 24),
   ),
   TODO: [
-    Le attività di questo sprint si sono focalizzate prioritariamente sul consolidamento dell'Analisi dei Requisiti. Parallelamente, è stato necessario un intervento di allineamento sul Piano di Progetto per garantire la coerenza documentale con l'effettivo stato di avanzamento. Nello specifico, le operazioni hanno riguardato:
+    Le attività previste per il presente sprint mirano al consolidamento dell'Analisi dei Requisiti e al contestuale allineamento del Piano di Progetto. L'obiettivo è garantire la perfetta coerenza tra la documentazione ufficiale e l'effettivo stato di avanzamento del progetto. Nello specifico, si prevede di:
 
     - Analisi dei Requisiti (AdR): revisione e modellazione dei casi d'uso (Use Case), integrando direttamente i riscontri emersi dal confronto con l'azienda proponente BlueWind.
 
@@ -39,13 +39,13 @@
     (persona: persone.FILIPPO, ruolo: ruoli.Analista, orePreviste: 1, oreEffettive: 1),
   ),
   retrospettiva: [
-    - *Gestione Risorse e Rischi (Impatto Esami):* 
+    - *Gestione risorse e rischi (impatto esami):* 
       L'inizio del periodo è stato pesantemente segnato dalla sessione d'esami. Il gruppo ha dovuto prendere atto di una disponibilità "bassa" o "nulla" da parte di quasi tutti i membri. Questo rischio concretizzato ha costretto a un riallineamento delle aspettative e a una riorganizzazione delle priorità.
     
     - *Focalizzazione sulla Requirement Baseline:* 
       Per ottimizzare le scarse risorse produttive, il team ha deciso di dare priorità assoluta alla revisione e all'ultimazione dei Casi d'Uso e dell'Analisi dei Requisiti. Questa scelta è stata strategica, in quanto questi documenti costituiscono una dipendenza bloccante per le fasi successive del progetto.
 
-    - *Miglioramenti di Processo (Workflow e Metriche):*
+    - *Miglioramenti di Processo (workflow e metriche):*
       Nuovo Workflow Git: Per risolvere le rigidità del precedente iter di approvazione, è stato discusso e definito un nuovo workflow basato su una migliore gestione dei branch.
       Tracciamento Ore: È stato introdotto un Google Spreadsheet condiviso per tracciare rigorosamente le ore. Questo strumento permette di distinguere in modo oggettivo tra "ore di orologio" e "ore produttive", agevolando la raccolta di dati realistici per le metriche.
 
