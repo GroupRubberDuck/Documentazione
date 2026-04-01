@@ -185,7 +185,7 @@ format-dict-as-table(columns: 2,uc-non-tracciati.map(
     columns: (auto,auto,auto,auto),
     table.header("Tipologia","Obbligatori","Desiderabili","Opzionali"),
     "Funzionali",[#r-obb.deps.mappa.len()],[#r-des.deps.mappa.len()],[#r-opz.deps.mappa.len()],
-    "Qualità",[5],[0],[0],
-    "Vincolo",[2],[0],[2],
+    "Qualità",[6],[0],[0],
+    "Vincolo",[1],[0],[4],
   )
 ]
