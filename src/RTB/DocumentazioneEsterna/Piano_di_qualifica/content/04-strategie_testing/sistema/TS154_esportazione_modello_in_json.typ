@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa scaricare un file in formato JSON contente le informazioni strutturali del modello
+Verificare che l'Utente possa scaricare un file in formato JSON contenente le informazioni strutturali del modello
 
   ],
 

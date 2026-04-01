@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa visualizzare correttamente i nodi fogli dello scheletro di decision tree in fase di modifica del modello
+Verificare che l'Utente possa visualizzare correttamente i nodi foglia dello scheletro di decision tree in fase di modifica del modello
   ],
 
   requisito-riferimento:get-req-code(

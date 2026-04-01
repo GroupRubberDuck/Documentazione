@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa visualizzare la risposta alla domanda del nodo di decisione durante la visone in dettaglio del decision tree 
+Verificare che l'Utente possa visualizzare la risposta alla domanda del nodo di decisione durante la visione in dettaglio del decision tree 
 
   ],
 

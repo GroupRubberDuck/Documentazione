@@ -10,7 +10,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente possa inserire manualemente le informazioni descrittive del dispositivo da valutare ],
+    Verificare che l'Utente possa inserire manualmente le informazioni descrittive del dispositivo da valutare ],
 
 
 

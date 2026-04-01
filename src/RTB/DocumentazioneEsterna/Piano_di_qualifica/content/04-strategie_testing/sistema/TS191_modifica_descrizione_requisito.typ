@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa inserire per la modifica e salvare una nuova descrizione del requisito
+Verificare che l'Utente possa modificare e salvare una nuova descrizione del requisito
   ],
 
   requisito-riferimento:get-req-code(

@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Vericare che l'Utente possa aggiungere correttamente un nodo allo scheletro del decision tree
+Verificare che l'Utente possa aggiungere correttamente un nodo allo scheletro del decision tree
   ],
 
   requisito-riferimento:get-req-code(

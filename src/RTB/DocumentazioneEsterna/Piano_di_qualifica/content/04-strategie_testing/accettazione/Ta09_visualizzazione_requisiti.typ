@@ -10,7 +10,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente possa visualizzare le informazione associate ai requisiti
+    Verificare che l'Utente possa visualizzare le informazioni associate ai requisiti
   ],
 
 

@@ -6,7 +6,7 @@ settings:
       index_file: "_index.typ"
 
       # Il prefisso non può contenere il carattere di title separator
-      prefix: "Ta"
+      prefix: "TA"
       # Estensione dei file generati
       extension: ".typ"
 

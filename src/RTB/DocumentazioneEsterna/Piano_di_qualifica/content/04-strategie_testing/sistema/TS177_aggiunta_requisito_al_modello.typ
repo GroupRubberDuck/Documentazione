@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verifica che l'utente possa aggiungere un requisito al modello in fase di modifica di esso
+Verifica che l'utente possa aggiungere un requisito al modello durante fase di modifica della struttura del modello
   ],
 
   requisito-riferimento:get-req-code(

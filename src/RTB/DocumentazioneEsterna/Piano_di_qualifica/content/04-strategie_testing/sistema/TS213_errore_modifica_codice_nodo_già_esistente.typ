@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifca e mostri un messaggio di errore se l'Utente inserisce un codice già associato ad un altro nodo dello stesso decision tree
+Verificare che il sistema blocchi l'operazione di modifica e mostri un messaggio di errore se l'Utente inserisce un codice già associato ad un altro nodo dello stesso decision tree
 
   ],
 
