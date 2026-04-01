@@ -47,13 +47,13 @@ parent-uc: "Crea nuovo dispositivo",
     
     
     post-condizioni:[
-        - L'utente ha inserito correttamente il nome del dispositivo inserito correttamente
+        - Il sistema ha registrato il cambiamento del nome del dispositivo
     ],
     
     trigger:none,
     
     scenari-alternativi:[
-        - L'utente inserisce un nome del dispositivo non valido
+        - L'utente inserisce un nome del dispositivo non valido #sym.arrow #use-case-label(nome-etichetta: "Errore nome dispositivo non valido")
     ],
     
     inclusioni:none,

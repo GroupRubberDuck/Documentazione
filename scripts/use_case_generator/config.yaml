@@ -44,7 +44,7 @@ structure:
             - Selezione file XML
             - Selezione file CSV
     #extends
-    - Errore file dispositivo non valido 
+    - Errore file dispositivo non valido
     - Visualizza dati dispositivo:
         #include
         - Visualizza nome dispositivo
@@ -59,7 +59,7 @@ structure:
             - Errore modifica nome dispositivo non valido
         - Modifica sistema operativo dispositivo
         - Modifica descrizione dispositivo
-        - Annulla modifiche dispositivo
+    - Annulla modifiche dispositivo
     - Elimina dispositivo:
         - Elimina dispositivo direttamente
         - Elimina dispositivo con back-up:
@@ -168,8 +168,8 @@ structure:
 
     - Valuta nodo di decisione:
         - Inserisci risposta nodo decision tree:
-            - Seleziona Yes
-            - Seleziona No
+            - Seleziona YES
+            - Seleziona NO
     - Vai al nodo successivo:
         - Nodo senza risposta selezionata
         - Nodo successore foglia
@@ -262,7 +262,6 @@ structure:
         # - Annulla modifica anagrafica requisito TODO
     - Aggiungi dipendenza:
         - Errore dipendenza circolare:
-            - Visualizza grafo dipendenze
     - Rimuovi dipendenza
     - Aggiungi nodo figlio:
         - Aggiungi nodo figlio YES

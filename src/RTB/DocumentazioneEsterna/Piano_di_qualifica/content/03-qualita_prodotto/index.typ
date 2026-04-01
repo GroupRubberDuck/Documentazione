@@ -58,8 +58,8 @@ Rileva quanto il software sia intuitivo e facile da utilizzare, considerando la 
   ),
   (codice: "MPD-08",
     nome: "Time to Complete Task",
-    accettabile: "10 minuti",
-    preferibile: "5 minuti"
+    accettabile: "<= 30 sec",
+    preferibile: "<= 60 sec"
   ),
 ),[Metriche usabilità del prodotto])
 

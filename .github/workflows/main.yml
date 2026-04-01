@@ -3,7 +3,7 @@ name: Compilazione dei documenti e aggiornamento del sito web
 on:
   push:
     branches:
-      - main 
+      - main
       - develop
 permissions:
   contents: write
@@ -26,7 +26,9 @@ jobs:
       - name: Run Typst build script
         run: |
           chmod +x scripts/updateTypstFiles.sh
+          chmod +x scripts/genWebsite.sh
           ./scripts/updateTypstFiles.sh
+          ./scripts/genWebsite.sh
 
       - name: Commit and push PDFs
         if: github.ref == 'refs/heads/main'
@@ -35,21 +37,15 @@ jobs:
           git config --local user.name "GitHub Action"
 
           mkdir -p output
-          
+
           git add -f output/**  # -f per forzare nonostante .gitignore
           git add index.html
-          #git diff --staged --quiet  || git commit -m "Auto-generate PDFs from Typst & update website [skip ci]"
           git commit -m "Auto-generate PDFs from Typst & update website [skip ci]"
           git push
 
       - name: Upload Artifacts
-        if: always()  # <--- Questo assicura che scarichi il log anche se c'è stato un errore!
+        if: always() # <--- Questo assicura che scarichi il log anche se c'è stato un errore!
         uses: actions/upload-artifact@v4
         with:
           name: PDF-and-Logs
           path: output/
-
-      - name: update website
-        run: |
-          chmod +x scripts/updateTypstFiles.sh
-          ./scripts/genWebsite.sh

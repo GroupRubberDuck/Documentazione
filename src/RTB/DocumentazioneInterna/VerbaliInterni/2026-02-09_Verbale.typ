@@ -166,12 +166,6 @@ Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Redazione verbale interno del 2026-02-09],
-      [Avere il verbale esterno disponibile per tutti],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Rivista pianificazione delle attività],
       [Necessario alla gestione degli imprevisti],
       [@gest],
@@ -210,7 +204,7 @@ Rimangono alcuni vincoli necessari al mantenimento di un certo grado di qualità
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [Redazione verbale interno della riunione svoltasi il  2026-01-13],
-      [VI.14.1],
+      [-],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],

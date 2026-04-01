@@ -24,8 +24,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0, //manca approvazione bluewind
-  minor: 1,
+  major: 1, //manca approvazione bluewind
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -40,7 +40,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ALDO,),
     verificatori: ("Filippo Guerra",),
@@ -53,7 +53,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-01-14], persone.ALDO, [Filippo Guerra], [Stesura del verbale]),
-    ([1.0.0], [2026-01-14], persone.ALDO, persone.ALDO, [Approvazione]),
+    ([1.0.0], [2026-01-16], persone.ALDO, persone.ALDO, [Approvazione interna ed esterna del documento]),
   )
 
   #registroModifiche(modifiche)
@@ -105,7 +105,7 @@
   == Analisi dei requisiti
 
   === Editor di testo
-  Nella produzione dei requisiti è stata notata la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
+  Durante la stesura dei requisiti è emersa la necessità di due differenti "editor" all'interno del sistema: uno per gli alberi decisionali, uno per la modifica dei documenti nella fase di importazione.
   BlueWind ha rassicurato che questo secondo editor non dovrebbe presentare difficoltà implementative significative.
 
   === Requisiti di performance
@@ -113,12 +113,12 @@
   Infatti l'unica operazione che potrebbe avere necessità di tali requisiti è il caricamento degli alberi: per rendere la user experience più fluida è stato consigliato di caricare tutti gli alberi in un primo momento (aumentando il tempo di caricamento iniziale), per poi averli tutti a disposizione.
 
   == Tecnologie e architettura
-  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto ci sono a disposizione varie librerie python per quanto riguarda il backend.
+  È stata esposta una lista di possibili tecnologie utilizzabili. BlueWind ha consigliato l'uso di strict doc ed è stato detto che sono disponibili varie librerie Python per quanto riguarda il backend.
   Per quanto riguarda il database è necessario che sia relazionale.
   Per l'architettura di sistema ci sono due opzioni: layered architecture con strati MVC (semplice, efficace per il problema e conosciuta dai membri del gruppo) oppure architettura esagonale (più sofisticata ma difficile da implementare).
 
   == Come procedere
-  Nel prossimo periodo sarà necessario creare un "esempio giocattolo" esponibile all'azienda, affinchè si mostri di essere in grado di utilizzare le tecnologie scelte e si affrontino le problematiche trovate.
+  Nel prossimo periodo sarà necessario creare un prototipo dimostrativo esponibile all'azienda, affinché si mostri di essere in grado di utilizzare le tecnologie scelte e si affrontino le problematiche trovate.
   È stato consigliato di partire dal caricamento dell'albero e la sua navigazione.
 
 ]
@@ -133,7 +133,7 @@
   #let decisioni = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Creazione di esempio giocattolo],
+      [Scelta e studio delle tecnologie per la creazione di un prototipo dimostrativo],
       [Avere un esempio da mostrare e iniziare a trovare soluzioni a problemi di implementazione],
       [-],
     ),
@@ -154,8 +154,14 @@
   #let TODO = (
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [#persone.ALDO],
+      [Redazione di questo verbale],
       [-],
-      [Creazione di esempio giocattolo],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [Tutto il gruppo],
+      [Scegliere e studiare tecnologie adatte alla creazione di un prototipo dimostrativo],
       [VE.4.1],
     ),
   )
@@ -172,7 +178,7 @@
   Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
   Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
-  /*#place(right)[#image(images_dir+"/approvazione_Bluewind.png")]*/
+  #place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
 
 ]
 

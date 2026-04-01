@@ -24,7 +24,7 @@ settings:
 
 # La struttura gerarchica
 structure:
-- Applicazione desktop o web-based
-- Metodologia Agile
-- Backend in Python
-- Database relazionale
+#  - Applicazione web locale
+ - Backend in Python
+ - Supporto containerizzazione Docker
+ - Database relazionale

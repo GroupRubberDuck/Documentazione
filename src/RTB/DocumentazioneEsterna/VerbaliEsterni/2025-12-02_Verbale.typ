@@ -52,7 +52,7 @@
 
     ([0.1.0],[2025-12-03],[Filippo Guerra],[Davide Lorenzon],[Stesura del verbale]),
     ([0.1.1],[2025-12-07],[Davide Lorenzon],[Aldo Bettega],[Correzione dei contenuti del verbale]),
-    ([1.0.0],[2025-12-09],[Filippo Guerra],[Filippo Guerra],[Approvazione del documento]),
+    ([1.0.0],[2025-12-09],[Filippo Guerra],[Filippo Guerra],[Approvazione interna ed esterna del documento]),
     )
     
 
@@ -123,7 +123,7 @@
   Devono essere utilizzati solo link ufficiali, come quelli del sito dell’ente normativo o della pagina di acquisto dello standard EN18031.
 
   == Distinzione tra documenti tecnici e decision tree <separazioneDT-asset>
-  L'azienda chiarisce che :
+  L'azienda chiarisce che:
   - I *Documenti Tecnici* sono file descrittivi (CSV, JSON, XML) contenenti asset, funzioni e configurazioni del dispositivo.
   - I *Decision Tree* sono file strutturati (JSON o XML) contenenti la logica dei requisiti EN18031. \ Essi non devono essere hard-coded nell’applicazione per semplificare aggiornamenti futuri.
   Per quanto riguarda l'importazione dei file viene stabilito che:
@@ -143,7 +143,7 @@
   - *nodi orfani*,
   - *percorsi interrotti*,
   - *foglie finali mancanti*,
-  - *altre incoerenze logiche*.//cosa è un'incoerenza logica
+  - *altre incoerenze logiche*.
   
 
   === Gestione dei requisiti Not Applicable e giustificazioni <gestioneNA>
@@ -304,25 +304,25 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Deciso in seguito.],
+  [#persone.FELIX],
   [Aggiornare il documento Analisi dei Requisiti con tutte le precisazioni ricevute],
   [VE.2.1-VE.2.6],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Deciso in seguito.],
+  [#persone.FELIX],
   [Raffinare i casi d’uso su importazione, esecuzione, dashboard, modifiche DT],
   [VE.2.1-VE.2.6],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Deciso in seguito.],
+  [#persone.DL],
   [Introdurre la distinzione tra utente standard e responsabile tecnico],
   [VE.2.7],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Deciso in seguito.],
+  [#persone.ALDO],
   [Aggiornare i casi d’uso],
   [VE.2.1-VE.2.11],
 ),
@@ -330,7 +330,7 @@ I TODO sorti da questa riunione sono i seguenti:
   )
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
-La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicazione interna tra i membri del gruppo non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra".
+La riorganizzazione delle issue GitLab/GitHub e il miglioramento della comunicazione interna tra i membri del gruppo non sono stati classificati all'interno dei TODO in quanto è un'attività esclusivamente di "palestra".
 
 ]
 

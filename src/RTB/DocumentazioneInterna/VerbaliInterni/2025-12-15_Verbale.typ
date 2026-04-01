@@ -189,7 +189,7 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Da definire],
+  [#persone.ANA],
   [Migliorare la pianificazione considerando il rischio: impegni imprevisti ],
   [VI.10.1],
 ),
@@ -199,6 +199,13 @@ I TODO sorti da questa riunione sono i seguenti:
   [Inizio della stesura del piano di qualifica.],
   [VI.10.2],
 ),
+
+(
+  [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
+  [#persone.FELIX],
+  [Stesura di questo verbale.],
+  [-],
+), 
 
   )
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)

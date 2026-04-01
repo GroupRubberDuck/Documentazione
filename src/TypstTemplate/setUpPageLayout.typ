@@ -1,6 +1,6 @@
 #import "/src/config.typ":glossario,flagMarcaturaAutoamticaTerminiGlossario
 #import glossario:*
-#let insertPages(PageTitle:str, documentType:str, date:"" , doc, numbering:str )={
+#let insertPages(PageTitle:str, documentType:str, date:"" , doc, numbering:str , gloss-flag:true)={
   set page(
     paper: "a4",
     header: place(
@@ -18,21 +18,35 @@
         #place(horizon + left)[#documentType]
         #place(horizon + right)[#date]
       ]
-      #align(center)[#context counter(page).display()]
-    ]),
+#align(center)[
+        #context {
+          // Controlliamo se la stringa di numbering contiene "1" (numerazione araba)
+          if numbering.contains("1") {
+            let current = counter(page).display(numbering)
+            let total = counter(page).final().first()
+            [#current di #total]
+          } else {
+            // Altrimenti (es. "i" per i numeri romani), stampiamo solo la pagina corrente
+            counter(page).display(numbering)
+          }
+        }
+      ]    ]),
     numbering: numbering,
   )
 set text(lang: "IT")
 show ref: riferimento=>{
   underline(strong(riferimento))
 }
+// show link: riferimento=>{
+//   underline(text(riferimento, fill: blue))
+// }
 set par(justify: true)
 
 
 
   // inizio show rule per la marcatura dei termini del glossario
   // per motivi di performance la marcatura può essere attivata o disattivata tramite una flag apposita
-  if flagMarcaturaAutoamticaTerminiGlossario and documentType!="Glossario"{  let  chiavi=dict.keys().map(key=>{
+  if flagMarcaturaAutoamticaTerminiGlossario and gloss-flag and documentType!="Glossario"{  let  chiavi=dict.keys().map(key=>{
     "(?i)\\b" + key + "\\b"
   
     }
@@ -51,25 +65,25 @@ set par(justify: true)
 
 
 
-#let insertRomanNumberedPages(PageTitle, documentType, date, doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,date:date.display(),doc)
+#let insertRomanNumberedPages(PageTitle, documentType, date, doc, gloss-flag:true) = {
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,date:date.display(),doc,gloss-flag: gloss-flag)
 
 }
 
 
-#let insertArabicNumberedPages(PageTitle, documentType, date, doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1" ,date:date.display(),doc)
+#let insertArabicNumberedPages(PageTitle, documentType, date, doc,gloss-flag:true) = {
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1" ,date:date.display(),doc,gloss-flag:gloss-flag)
 
 }
 
-#let insertRomanNumberedPagesSenzaData(PageTitle:"Titolo della pagina", documentType:"Tipo di documento", doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,doc)
+#let insertRomanNumberedPagesSenzaData(PageTitle:"Titolo della pagina", documentType:"Tipo di documento", doc, gloss-flag:true) = {
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"i" ,doc, gloss-flag: gloss-flag)
 
 }
 
 
-#let insertArabicNumberedPagesSenzaData(PageTitle:"Titolo della pagina", documentType:"Tipo di documento", doc) = {
-insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1 " ,doc)
+#let insertArabicNumberedPagesSenzaData(PageTitle:"Titolo della pagina", documentType:"Tipo di documento", doc,gloss-flag:true) = {
+insertPages(PageTitle:PageTitle,documentType:documentType,numbering:"1 " ,doc, gloss-flag: gloss-flag)
 }
 
 

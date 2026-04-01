@@ -51,7 +51,7 @@
 
     ([0.1.0],[2025-11-17],[Davide Lorenzon],[Aldo Bettega],[Stesura delle domande]),
     ([0.2.0],[#giornoRiunione.display()],[Davide Lorenzon],[Felician Mario Necsulescu],[Stesura delle sezioni rimanenti]),
-    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione del documento]),
+    ([1.0.0],[2025-11-18],[Davide Lorenzon],[Davide Lorenzon],[Approvazione interna ed esterna del documento]),
 
     )
 
@@ -110,13 +110,13 @@
   
   + Vorremmo anche capire meglio chi saranno gli utenti finali del sistema, per definire correttamente i casi d’uso. \ Abbiamo ipotizzato tecnici di conformità che eseguono le valutazioni con i decision tree, responsabili qualità/compliance che usano i risultati dei decision tree e nuovi membri del team per familiarizzare con la norma, ma non sappiamo se sono le figure corrette. Ci sono altri ruoli che pensate possano usare la piattaforma?
 
-  + Ci potete dare delle dritte per  la Proof of Concept?
+  + Ci potete dare delle dritte per il Proof of Concept?
 
   + È possibile stabilire dei canali di comunicazione asincroni? Si definisce già un giorno di “recap” specifico o ci aggiorniamo successivamente? 
 
   + Volevamo chiedervi: noi abbiamo provato già a vedere dei possibili metodi per gestirci fra di noi, però data ancora l’inesperienza non sappiamo bene verso che tecnologie orientarci, anche per questione di coordinamento interno, avete delle dritte che potete darci? Dalle vostre esperienze quali ritenete siano gli aspetti fondamentali su cui concentrarsi per lavorare in team in modo efficiente? Noi comunque abbiamo iniziato a lavorare sulla varia documentazione creando una repository github che se serve condividiamo.
 
-  + Per la questione caso di studio machinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
+  + Per la questione caso di studio macchinetta del caffè: si può già avere un esempio di come questi dati verranno forniti? per capire un attimo qual è la struttura e familiarizzarci.  
 
   + Sarà fornita della documentazione riguardante le normative che dovremo usare, cioè l’Access Control Mechanism e l’Authentication Mechanism?
 ]
@@ -139,7 +139,7 @@
       Gli utenti finali che utilizzeranno l'applicativo sono utenti esperti dell'ambito IT. Il prodotto software serve a questi utenti per semplificare e velocizzare la verifica di standard tecnici. Non ci sono altri destinatari previsti oltre quelli già specificati.
     ],
     [
-      Per quanto riguarda la Proof of Concept e le tecnologie back-end si preferisce l'uso di python 3.x, mentre per il front-end non vengono imposti particolari vincoli.
+      Per quanto riguarda il Proof of Concept e le tecnologie back-end si preferisce l'uso di python 3.x, mentre per il front-end non vengono imposti particolari vincoli.
       Le tecnologie consigliate per il front-end sono le seguenti:
       - Flask(python);
       - React(javascript);
@@ -155,7 +155,7 @@
       I consigli organizzativi forniti dalla proponente sono basati sulla loro esperienza personale.
       In genere il loro approccio organizzativo si configura come segue:
       + Creazione di un gruppo di lavoro interno riguardante il progetto, utile per semplificare e velocizzare le comunicazioni di bassa importanza;
-      + Codice e documentazione sono versionate con GitHub;
+      + Codice e documentazione sono versionati con GitHub;
       + Brevi incontri giornalieri;
       + Uso della project board di GitHub per la gestione delle issues.
     ],
@@ -222,7 +222,7 @@
   (
   [#getCode(prefisso:prefisso,contatore:contatoreDecisioni)],
   [Creazione di un gruppo Telegram per la comunicazione asincrona],
-  [#upper("è") stato suggerito dalla proponente ed è un punto di partenza appropriato per l'AdR.],
+  [Migliorare e velocizzare le comunicazioni rapide con l'azienda],
   [-]
 ),
 (
@@ -250,11 +250,11 @@ I TODO sorti da questa riunione sono i seguenti:
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
   [Davide Lorenzon],
   [Redazione del verbale di questa riunione.],
-  [],
+  [-],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.ALDO],
   [Creazione del gruppo Telegram.],
   [VE.1.1],
 ), 
@@ -262,7 +262,7 @@ I TODO sorti da questa riunione sono i seguenti:
 #utilityTable(TODO,header: ("Codice","Assegnatari","Task","Decisione di riferimento"),columns: (auto,auto,1fr,auto),)
 
 
-Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolto successivamente e ad opera di un singolo membro del gruppo.
+Lo studio dei documenti forniti è un compito per tutti i membri del gruppo, non è stato classificato all'interno dei TODO in quanto è un'attività esclusivamente di "palestra", la redazione di un documento di studio e sintesi sarà svolta successivamente e ad opera di un singolo membro del gruppo.
 ]
 
 #insertArabicNumberedPages("Approvazione esterna ","Verbale esterno",giornoRiunione )[

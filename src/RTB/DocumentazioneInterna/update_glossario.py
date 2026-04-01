@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# usa il commando: python update_glossario.py --typ "C:\Users\User\Desktop\Documentazione\src\RTB\DocumentazioneInterna\dizionario.typ" --html "C:\Users\User\Desktop\Documentazione\glossario.html"
 """
 update_glossario.py
 -------------------

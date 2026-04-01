@@ -12,16 +12,39 @@ Il prodotto sviluppato è un’applicazione software progettata per verificare i
 L’obiettivo dell’applicazione è supportare e guidare l’utente nella valutazione dei requisiti di cybersecurity, eseguendo in autonomia i percorsi decisionali tramite decision tree (alberi di decisione).
 Questo approccio permette di accelerare, standardizzare e rendere più affidabile il processo di verifica della conformità, con la generazione automatica della documentazione tecnica richiesta a supporto dell’assessment. 
   == Glossario
+
+Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato il seguente approccio per la gestione dei riferimenti al Glossario: \
+I termini tecnici vengono marcati con *pedice “G” (esempio#sub("G"))* .\ 
+
+Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
+
   // da definire
 == Riferimenti
 === Riferimenti normativi
-  - #link("https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento progetto]
-  - #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto Automated EN18031
-Compliance Verification di BlueWind]
-- #link("https://www.iso.org/standard/63712.html")[Standard ISO 12207:2017]
+
+- Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl \ https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf  \
+  _Ultima consultazione: 14 gennaio 2025_
+
+- Regolamento del progetto \ https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf \
+  _Ultima consultazione: 11 dicembre 2025_
+
+
+
 === Riferimenti informativi
-- #link("https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo]
+- Standard ISO/IEC/IEEE 12207:2017 \ https://www.iso.org/standard/63712.html \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- Software Engineering, Ian Sommerville \ https://galileodiscovery.unipd.it/permalink/39UPD_INST/1j3btfv/alma9938989417806046 \
+  _Ultima consultazione: 20 febbraio 2026_
+
+- Standard ISO/IEC 9126 \ https://en.wikipedia.org/wiki/ISO/IEC_9126 \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- Standard ISO/IEC/IEEE 12207:1995 \ https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf \
+  _Ultima consultazione: 10 gennaio 2026_
+
+- Glossario, versione 1.0.0  \ https://grouprubberduck.github.io/Documentazione/glossario.html \
+  _Ultima consultazione: 11 marzo 2026_
 
 
 

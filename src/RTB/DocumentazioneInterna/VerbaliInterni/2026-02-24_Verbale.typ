@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -37,7 +37,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ANA,),
     verificatori: (persone.ALDO,),
@@ -51,7 +51,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-02-24], persone.ANA, persone.ALDO,[Stesura del verbale]),
-    //([1.0.0], [2026-02-00], persone.DL, persone.DL,[Approvazione]),
+    ([1.0.0], [2026-03-02], persone.ANA, persone.ANA,[Approvazione]),
   )
 
   #registroModifiche(modifiche)
@@ -86,13 +86,13 @@
     ]
 ]
 
-#insertArabicNumberedPages("Ordine del giorno","Verbale interno",giornoRiunione )[
+#insertArabicNumberedPages("Ordine del giorno", "Verbale interno", giornoRiunione)[
   = Ordine del giorno
-- Revisione dei casi d'uso e dei requisiti.
-- Aggiornamento del Piano di Progetto (PdP) e dei grafici nel Piano di Qualifica (PdQ).
-- Discussione e definizione delle taglie per le issue e tracciamento delle ore.
-- Nuovo workflow Git (gestione dei branch).
-- Strategia, ricerca e test delle tecnologie per il Proof of Concept (PoC).
+  - Revisione dei casi d'uso e dei requisiti.
+  - Aggiornamento del Piano di Progetto (PdP) e dei grafici nel Piano di Qualifica (PdQ).
+  - Discussione e definizione delle taglie per le issue e tracciamento delle ore.
+  - Nuovo workflow Git (gestione dei branch).
+  - Strategia, ricerca e test delle tecnologie per il Proof of Concept (PoC).
 ]
 
 
@@ -101,25 +101,25 @@
   Durante la riunione si è discusso del carico di lavoro attuale e della pianificazione.
   \  È stata ribadita l'importanza della gestione del rischio relativo agli impegni imprevisti, con l'obiettivo di migliorare la pianificazione complessiva. \ È stato inoltre sottolineato l'utilizzo di branch separati per documento, al fine di evitare merge tardivi nel main o eventuali conflitti. \ Il gruppo ha discusso dei casi d'uso e dei requisiti in via di ultimazione, ai quali è stata attribuita maggiore priorità.\  È stato assegnato l'avvio dello sviluppo del PoC, con particolare enfasi sulla configurazione dell'ambiente di sviluppo.\  Infine, sono stati presentati e discussi i grafici delle metriche raccolte nel PdQ; il gruppo ha concordato che tali metriche verranno monitorate e analizzate più approfonditamente in seguito.
 
- == Pianificazione e Documenti (Issue Aperte)
-Il team deve concentrarsi sulle issue attualmente aperte, in particolare sulla revisione dei casi d'uso e sulla revisione dei requisiti. È inoltre strettamente necessario aggiornare il Piano di Progetto (PdP) inserendo i dati a consuntivo dell'ultimo sprint e la fase di preventivo per lo sprint in corso. Per quanto riguarda il Piano di Qualifica (PdQ), è stata confermata l'aggiunta dei grafici generati direttamente tramite codice Typst, soluzione che garantisce una migliore manutenibilità rispetto all'inserimento manuale o all'utilizzo di altri strumenti.
+  == Pianificazione e Documenti (Issue Aperte)
+  Il team deve concentrarsi sulle issue attualmente aperte, in particolare sulla revisione dei casi d'uso e sulla revisione dei requisiti. È inoltre strettamente necessario aggiornare il Piano di Progetto (PdP) inserendo i dati a consuntivo dell'ultimo sprint e la fase di preventivo per lo sprint in corso. Per quanto riguarda il Piano di Qualifica (PdQ), è stata confermata l'aggiunta dei grafici generati direttamente tramite codice Typst, soluzione che garantisce una migliore manutenibilità rispetto all'inserimento manuale o all'utilizzo di altri strumenti.
 
-== Definizione Taglie Issue e Tracciamento Ore
-Per migliorare la stima del lavoro, il gruppo ha standardizzato le taglie delle issue — già presenti nell'issue tracking system — basandosi su un tempo stimato:
+  == Definizione Taglie Issue e Tracciamento Ore
+  Per migliorare la stima del lavoro, il gruppo ha standardizzato le taglie delle issue — già presenti nell'issue tracking system — basandosi su un tempo stimato:
 
-- XS: Attività rapide, sotto l'ora (es. merge o piccoli fix).
-- S: Tra 1 e 2 ore.
-- M: Circa 3 ore.
-- L: Oltre le 3 ore (es. task complesse per il PoC).
+  - XS: Attività rapide, sotto l'ora (es. merge o piccoli fix).
+  - S: Tra 1 e 2 ore.
+  - M: Circa 3 ore.
+  - L: Oltre le 3 ore (es. task complesse per il PoC).
 
-Questo tracciamento rappresenta una stima iniziale: qualora il tempo risultasse sottostimato o sovrastimato, la stima verrà progressivamente affinata attraverso feedback interni. \ 
-Per ottenere un tracciamento oggettivo delle ore di orologio e delle ore produttive, è stato deciso di adottare uno spreadsheet condiviso su Google Drive, al fine di facilitare la raccolta dei dati e la successiva generazione di metriche. Il team manterrà una rotazione dei ruoli, con la flessibilità necessaria a permettere a ciascun membro di completare il monte ore richiesto.
+  Questo tracciamento rappresenta una stima iniziale: qualora il tempo risultasse sottostimato o sovrastimato, la stima verrà progressivamente affinata attraverso feedback interni. \
+  Per ottenere un tracciamento oggettivo delle ore di orologio e delle ore produttive, è stato deciso di adottare uno spreadsheet condiviso su Google Drive, al fine di facilitare la raccolta dei dati e la successiva generazione di metriche. Il team manterrà una rotazione dei ruoli, con la flessibilità necessaria a permettere a ciascun membro di completare il monte ore richiesto.
 
-== Nuovo Workflow Git
-Per evitare conflitti, è stato stabilito un nuovo workflow: non si scriverà più direttamente sul branch `develop`. Per ogni documento o nuova task verrà creato un branch dedicato (es. `feature/nome-documento`), che verrà mergiato in `develop` solo a lavoro concluso e revisionato.
+  == Nuovo Workflow Git
+  Per evitare conflitti, è stato stabilito un nuovo workflow: non si scriverà più direttamente sul branch `develop`. Per ogni documento o nuova task verrà creato un branch dedicato (es. `feature/nome-documento`), che verrà mergiato in `develop` solo a lavoro concluso e revisionato.
 
-== Workflow e Setup per il PoC
-Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettamente separata dalla documentazione e dal prodotto finale. Il workflow per il PoC prevede una prima fase denominata "Ricerca e test delle tecnologie" . Prima di scrivere codice, il team (in particolare Filippo Guerra e Davide Testolin) configurerà l'ambiente di sviluppo utilizzando Docker, e sperimentando invece l'uso anche di Poetry (gestione dipendenze), MyPy/BearType e Ruff (formatter).
+  == Workflow e Setup per il PoC
+  Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettamente separata dalla documentazione e dal prodotto finale. Il workflow per il PoC prevede una prima fase denominata "Ricerca e test delle tecnologie" . Prima di scrivere codice, il team (in particolare Filippo Guerra e Davide Testolin) configurerà l'ambiente di sviluppo utilizzando Docker, e sperimentando invece l'uso anche di Poetry (gestione dipendenze), MyPy/BearType e Ruff (formatter).
 ]
 
 
@@ -154,25 +154,23 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
       [Mantenere la documentazione di progetto aggiornata e allineata all'avanzamento reale del lavoro.],
       [Sez. 3.1],
     ),
-     (
+    (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Inserimento dei grafici delle metriche nel Piano di Qualifica (PdQ).],
       [Garantire una migliore manutenibilità e coerenza stilistica rispetto all'inserimento manuale o all'uso di strumenti esterni.],
       [Sez. 3.1],
     ),
-     (
+    (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Prioritizzazione della revisione dei casi d'uso e dei requisiti.],
       [I documenti di analisi sono in via di ultimazione e costituiscono una dipendenza per le fasi successive di sviluppo.],
       [Sez. 3.1],
-    )
-    
-    
+    ),
   )
 
   #utilityTable(decisioni, header: ("Codice", "Descrizione", "Motivazioni", "Ref."), columns: (auto, 2fr, 2fr, auto))]
 
-
+#insertArabicNumberedPages("TODO", "Verbale interno", giornoRiunione)[
   = TODO
 
   #let prefisso = "TD.19."
@@ -185,18 +183,18 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ANA],
       [Stesura del verbale interno del 2026-02-24.],
-      [VI.15.1],
+      [-],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Amministratori],
+      [#persone.ANA],
       [Aggiungere i grafici delle metriche nel PdQ],
       [VI.15.5],
     ),
      
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [Amministratori],
+      [#persone.ALDO],
       [Aggiornare il PdP],
       [VI.15.4],
     ),
@@ -204,31 +202,31 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [Configurare e condividere con il team lo spreadsheet su Google Drive per il tracciamento delle ore.],
-      [VI.15.2],
+      [VI.15.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL, \ #persone.FELIX],
       [Revisione e ultimazione dei casi d'uso.],
-      [VI.15.6],
+      [VI.15.5],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL, \ #persone.FELIX],
       [Revisione e ultimazione dei requisiti.],
-      [VI.15.6],
+      [VI.15.5],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DT, \ #persone.FILIPPO],
       [PoC: Creazione della repository dedicata e configurazione dell'ambiente di sviluppo.],
-      [VI.15.3],
+      [VI.15.2],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DT,\  #persone.FILIPPO],
       [PoC: Avvio della fase di ricerca e test delle tecnologie selezionate.],
-      [VI.15.3],
+      [VI.15.2],
     ),
   )
   #utilityTable(
@@ -237,5 +235,5 @@ Si è stabilito di creare una repository dedicata esclusivamente al PoC, nettame
     columns: (auto, auto, 1fr, auto),
   )
 
-
+]
 

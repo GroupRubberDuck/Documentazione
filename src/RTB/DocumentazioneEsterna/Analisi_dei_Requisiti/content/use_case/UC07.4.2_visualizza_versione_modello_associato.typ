@@ -41,7 +41,7 @@
     ],
     
     post-condizioni:[
-        - L'utente ha visualizzato il nome del modello associato al dispositivo
+        - L'utente ha visualizzato il numero di versione del modello associato al dispositivo
     ],
     
     trigger:none,

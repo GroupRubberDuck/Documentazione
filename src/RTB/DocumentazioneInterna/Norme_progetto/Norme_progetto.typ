@@ -5,6 +5,7 @@
 #import template_dir + "/utilityTable.typ": getCode, utilityTable
 #import template_dir + "/statusTab.typ": statusTab
 #import "/src/RTB/DocumentazioneInterna/Glossario.typ" : dict
+#import glossario: dict
 #set text(size: 13pt)
 // #set par(justify: true)
 
@@ -20,8 +21,8 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
-  minor:12,
+  major:1,
+  minor:0,
   patch:0,
 )
 //converte dizionario in stringa
@@ -33,10 +34,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: versionNumber,
-    autori: ("Davide Lorenzon", "Aldo Bettega", "Guerra Filippo", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega" ),
+    autori: ("Davide Lorenzon", "Aldo Bettega", " Filippo Guerra", "Ana Maria Draghici"),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega", "Filippo Guerra", "Felician Mario Necsulescu" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -48,32 +49,46 @@
 #let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
 #let modifiche=(
 
-  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria Draghici],[Stesura iniziale]),
+  ([0.1.0],[2025-11-],[Davide Lorenzon],[Ana Maria  Draghici],[Stesura iniziale]),
   ([0.2.0],[2025-11-11],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta struttura dei documenti @struttura]),
   ([0.3.0],[2025-11-11],[Ana Maria Draghici],[Davide Lorenzon],[Aggiunta struttura Analisi Requisiti @requisiti]),
   ([0.4.0],[2025-11-29],[Guerra	Filippo],[Ana Maria Draghici],[Aggiunto  "ruolo-documento" @ruolo-documento]),
   ([0.5.0],[2025-11-30],[Ana Maria Draghici],[Aldo Bettega],[Aggiunto  "Definition of Done" @DOD e "Issue tracking System" @issue-tracking]),
   ([0.6.0],[2025-12-02],[Ana Maria Draghici],[Aldo Bettega],[Completata struttura documenti @struttura , aggiunto  "Configurazione" @configurazione]),
   ([0.6.1],[2025-12-02],[Davide Lorenzon],[Davide Lorenzon],[Apportate modifiche di ordine nella documentazione @documentazione]),
-  ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunto scrittura commit @commit, e sezione su workflow documentale @workflow, aggiornata definition of done @DOD]),
+  ([0.7.0],[2025-12-04],[Aldo Bettega],[Davide Lorenzon],[Aggiunta scrittura commit @commit, e sezione su workflow documentale @workflow, aggiornata definition of done @DOD]),
   ([0.8.0],[2025-12-09],[Filippo Guerra],[Davide Lorenzon],[Aggiunto Processo di fornitura @fornitura]),  
   ([0.8.1],[2025-12-10],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta Rendicontazione delle ore @Rendicontazione_delle_ore ]),
   ([0.8.2],[2025-12-13],[Davide Lorenzon],[Ana Maria Draghici],[Rivista introduzione, approfondita Gestione del processo @gestione-del-processo]),
   ([0.8.3],[2025-12-14],[Davide Lorenzon],[Ana Maria Draghici],[Stesura della sezione Gestione dell'infrastruttura @gestione-infrastruttura]),
   ([0.8.4],[2025-12-15],[Davide Lorenzon],[Ana Maria Draghici],[Stesura della sezione del Processo di miglioramento @processo_miglioramento  e  processo di formazione @processo_di_formazione]),
-  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
-  ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processi supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
+  ([0.9.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisti processi primari @primari, sottosezioni @fornitura e @sviluppo_primario]),
+  ([0.10.0],[2026-01-10],[Ana Maria Draghici],[Davide Lorenzon],[Rivisto processo di supporto @supporto, aggiunte sottosezioni @qualità e @qualifica]),
   ([0.11.0],[2026-01-14],[Ana Maria Draghici],[Davide Lorenzon],[Completata prima scrittura Norme di Progetto]),
-  ([0.12.0],[2026-02-05],[Davide Lorenzon],[],[Aggiunte descrizioni delle metriche di qualità]),
+  ([0.12.0],[2026-02-05],[Davide Lorenzon],[Filippo Guerra],[Aggiunte descrizioni delle metriche di qualità]),
+  ([0.13.0],[2026-03-20],[Ana Maria Draghici],[Felician Mario \ Necsulescu],[Aggiunta alla @qualifica la descrizione delle varie strategie di testing (Processo di Qualifica)]),
+  ([0.13.1],[2026-03-20],[Davide Lorenzon],[Filippo Guerra],[Aggiornamento della sezione relativa alla gestione dell'infra-struttura @gestione-infrastruttura
   
+  - #link(label("auto-numbering"))[Numerazione automatica], 
+  - #link(label("auto-tracker"))[Tracciamento automatico],
+  - #link(label("use-case-dia"))[Plot diagrammi], 
+  - #link(label("python"))[Uso di script python], 
+  ]),
+  ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Felician Mario \ Necsulescu],[Approvazione]),
 )
 #registroModifiche(modifiche)
 
 ]
 
+
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
 ]
+
+#insertRomanNumberedPagesSenzaData(PageTitle: "Elenco delle Tabelle", documentType: doc)[
+  #outline(title: "Elenco delle Tabelle",target:figure.where(kind:table))
+]
+
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
