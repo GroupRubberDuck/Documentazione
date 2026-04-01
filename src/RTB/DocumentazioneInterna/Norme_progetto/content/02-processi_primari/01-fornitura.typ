@@ -80,7 +80,7 @@ Il processo di fornitura produce documentazione fondamentale per la tracciabilit
 
 === Documenti principali 
 
-- *Verbali esterni*: registrazione dei meeting con BlueWind;
+- *Verbali esterni*: resoconto dei meeting con BlueWind;
 
 - *Verbali interni*: documentazione di riunioni interne;
 
@@ -123,7 +123,7 @@ Per svolgere le attività del processo di fornitura, il gruppo utilizza strument
 
 - *Google Mail*: comunicazioni ufficiali scritte;
 
-- *Zoom*: riunioni sincrone remote.
+- *Zoom*: riunioni sincrone remote;
 
 - *Telegram* : indicata dalla proponente per chiarimenti rapidi.
 

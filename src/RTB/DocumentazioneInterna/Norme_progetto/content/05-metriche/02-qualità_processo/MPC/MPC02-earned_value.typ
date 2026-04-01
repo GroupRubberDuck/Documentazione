@@ -9,10 +9,8 @@
 #let dati=(
     codice:deps.get-MPC-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Rappresenta il valore del lavoro completato rispetto 
-    al budget previsto.
-    
-    Molto utile per monitorare l'andamento effettivo delle attività di progetto",
+    descrizione-breve:"Rappresenta il valore del lavoro completato rispetto al budget previsto.
+Molto utile per monitorare l'andamento effettivo delle attività di progetto.",
     formula:[$
   "EV"= "BAC" * "% di lavoro completata"
 $

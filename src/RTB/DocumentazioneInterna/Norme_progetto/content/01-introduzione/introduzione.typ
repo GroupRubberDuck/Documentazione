@@ -13,7 +13,7 @@ L’obiettivo dell’applicazione è supportare e guidare l’utente nella valut
 Questo approccio permette di accelerare, standardizzare e rendere più affidabile il processo di verifica della conformità, con la generazione automatica della documentazione tecnica richiesta a supporto dell’assessment. 
   == Glossario
 
-Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato il seguente approccio alla gestione dei riferimenti al Glossario: \
+Per garantire precisione terminologica senza compromettere la leggibilità, in questo documento viene adottato il seguente approccio per la gestione dei riferimenti al Glossario: \
 I termini tecnici vengono marcati con *pedice “G” (esempio#sub("G"))* .\ 
 
 Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro e facilmente navigabile, favorendo la consultazione mirata del Glossario solo quando necessario.
@@ -22,28 +22,28 @@ Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro 
 == Riferimenti
 === Riferimenti normativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl \ https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf]  \
+- Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl \ https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf  \
   _Ultima consultazione: 11 novembre 2025_
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto \ https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf] \
+- Regolamento del progetto \ https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf \
   _Ultima consultazione: 11 novembre 2025_
 
 
 
 === Riferimenti informativi
-- #link("https://www.iso.org/standard/63712.html")[Standard ISO/IEC/IEEE 12207:2017] \ https://www.iso.org/standard/63712.html \
+- Standard ISO/IEC/IEEE 12207:2017 \ https://www.iso.org/standard/63712.html \
   _Ultima consultazione: 10 gennaio 2026_
 
-- #link("https://galileodiscovery.unipd.it/permalink/39UPD_INST/1j3btfv/alma9938989417806046")[Software Engineering, Ian Sommerville \ https://galileodiscovery.unipd.it/permalink/39UPD_INST/1j3btfv/alma9938989417806046] \
+- Software Engineering, Ian Sommerville \ https://galileodiscovery.unipd.it/permalink/39UPD_INST/1j3btfv/alma9938989417806046 \
+  _Ultima consultazione: 20 febbraio 2026_
+
+- Standard ISO/IEC 9126 \ https://en.wikipedia.org/wiki/ISO/IEC_9126 \
   _Ultima consultazione: 10 gennaio 2026_
 
-- #link("https://en.wikipedia.org/wiki/ISO/IEC_9126")[Standard ISO/IEC 9126 \ https://en.wikipedia.org/wiki/ISO/IEC_9126] \
+- Standard ISO/IEC/IEEE 12207:1995 \ https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf \
   _Ultima consultazione: 10 gennaio 2026_
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[Standard ISO/IEC/IEEE 12207:1995 \ https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf] \
-  _Ultima consultazione: 10 gennaio 2026_
-
-- #link("https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo GroupRubberDuck  \ https://grouprubberduck.github.io/Documentazione/] \
+- Glossario, versione 1.0.0  \ https://grouprubberduck.github.io/Documentazione/glossario.html \
   _Ultima consultazione: 11 marzo 2026_
 
 

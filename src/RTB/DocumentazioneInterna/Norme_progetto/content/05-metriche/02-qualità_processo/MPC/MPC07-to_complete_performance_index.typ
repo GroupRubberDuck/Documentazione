@@ -10,7 +10,7 @@
     codice:deps.get-MPC-code(nome-metrica),
     nome:nome-metrica,
     descrizione-breve:[
-      Rappresenta l'efficienza richiesta in futuro per completare il lavoro entro il termine previsto
+      Rappresenta l'efficienza richiesta in futuro per completare il lavoro entro il termine previsto.
     ],
     formula:[
       $"Estimate at Completion"= ("Budget at Completion" - "Earned Value") / ("Budget at Completion" - "Actual Cost" )$

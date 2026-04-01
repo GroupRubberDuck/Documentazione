@@ -8,7 +8,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Percentuale di istruzioni del codice coperte da test automatizzati",
+    descrizione-breve:"Percentuale di istruzioni del codice coperte da test automatizzati.",
     formula:$ "Statement Coverage"="Istruzioni Testate" / "Istruzioni Totali" $,
     interpretazione:[
       - Valore accettabile:$>=80 percent$

@@ -8,7 +8,7 @@
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
 
-    descrizione-breve:"Percentuale di rami di codice coperte da test automatizzati",
+    descrizione-breve:"Percentuale di rami di codice coperte da test automatizzati.",
     formula:$ "Branch coverage"="Numero di Branch coperti da test" / "Numero di Branch totali" $,
     interpretazione:[
       - Valore accettabile:$>=70 percent$

@@ -82,6 +82,11 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
 ]
+
+#insertRomanNumberedPagesSenzaData(PageTitle: "Elenco delle Tabelle", documentType: doc)[
+  #outline(title: "Elenco delle Tabelle",target:figure.where(kind:table))
+]
+
 #context counter(page).update(1)
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione

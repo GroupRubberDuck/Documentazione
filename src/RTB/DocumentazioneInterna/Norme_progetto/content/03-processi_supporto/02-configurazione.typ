@@ -21,11 +21,11 @@ Il processo di gestione delle configurazioni mira a:
 === Attività del processo
 Le principali attività della Gestione delle Configurazioni includono:
 
-+ Identificazione degli elementi di configurazione
++ Identificazione degli elementi di configurazione.
 + Applicazione del codice di versione X.Y.Z (stabile, feature, patch).
 + Aggiornamento automatico della versione in tutti i documenti tramite Typst/GitHub.
 + Inserimento di ogni modifica nel Registro delle Modifiche, comprensivo di: data, autore, verificatore, descrizione e nuova versione.
-+ Verifica delle modifiche da parte dei revisori/validatori.
++ Verifica delle modifiche da parte dei revisori.
 + Approvazione e rilascio di versioni stabili.
 + Conservazione dei documenti e del codice in repository centralizzati.
 + Backup per garantire sicurezza e recuperabilità dei dati.
@@ -78,7 +78,7 @@ Il processo di gestione delle configurazioni utilizza uno snippet Typst per gest
 #let doc="Norme di Progetto"
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")`]
 
-- Converte le componenti numeriche della versione (X, Y, Z) in stringhe e le unisce nel formato X.Y.Z.Il risultato viene salvato nella variabile versionNumber, che rappresenta la versione corrente del documento.
+- Converte le componenti numeriche della versione (X, Y, Z) in stringhe e le unisce nel formato X.Y.Z. Il risultato viene salvato nella variabile versionNumber, che rappresenta la versione corrente del documento.
 - Inserisce la versione corrente nei metadati del documento.
 
 - Permette di rendere il numero di versione accessibile in tutto il documento, per esempio in header, footer o tabella del registro modifiche, senza doverlo aggiornare manualmente.

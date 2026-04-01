@@ -11,8 +11,7 @@
     nome:nome-metrica,
     descrizione-breve:[
       
-L'indice di gulpease misura la leggibilità di un testo.
-
+L'Indice di Gulpease misura la leggibilità di un testo.\
 Valuta il grado di istruzione necessario alla comprensione del contenuto.
     ],
     formula:[

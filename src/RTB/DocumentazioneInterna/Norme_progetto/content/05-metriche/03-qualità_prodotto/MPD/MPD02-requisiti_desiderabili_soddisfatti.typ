@@ -10,7 +10,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Rappresenta la percentuale di requisiti Desiderabili soddisfatti. \n "+upper("è")+
+    descrizione-breve:"Rappresenta la percentuale di requisiti desiderabili soddisfatti. \n "+upper("è")+
     " utile a monitorare il grado di soddisfacimento dei requisiti desiderabili.",
     formula:$ "RDesS"="Numero di requisiti desiderabili soddisfatti" / "Numero di requisiti desiderabili" $,
     accettabile: $>= 50 percent$,

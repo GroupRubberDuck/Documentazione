@@ -10,7 +10,7 @@
     codice:deps.get-MPC-code(nome-metrica),
     nome:nome-metrica,
     descrizione-breve:"Rappresenta il costo effettivo sostenuto.
-    Risulta utile nel verificare che il lavoro svolto sia in linea con le aspettative",
+Risulta utile nel verificare che il lavoro svolto sia in linea con le aspettative.",
     formula:[$
   "AC"= "Costo sostenuto nello sprint"
 $

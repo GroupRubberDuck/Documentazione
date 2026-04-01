@@ -99,7 +99,11 @@ metriche.push((
   preferibile:dati.preferibile,
 )
 )
-},[Metriche processo di Documentazione])
+}
+
+#tabellaMetriche((
+..metriche
+),[Metriche processo di Documentazione])
 
 #for metric in Documentazione{
   include deps.get-metrica-path(metric)
@@ -112,7 +116,7 @@ metriche.push((
   )
 
 #let metriche=()
-#for metric in Documentazione{
+#for metric in Verifica{
 
   import deps.get-metrica-path(metric):dati
 
@@ -126,7 +130,11 @@ metriche.push((
   preferibile:dati.preferibile,
 )
 )
-},[Metriche processo di Verifica])
+}
+
+#tabellaMetriche((
+..metriche
+),[Metriche processo di Verifica])
 
 #for metric in Verifica{
   include deps.get-metrica-path(metric)
@@ -144,7 +152,7 @@ metriche.push((
 
 
 #let metriche=()
-#for metric in Documentazione{
+#for metric in gestioneProcessi{
 
   import deps.get-metrica-path(metric):dati
 
@@ -158,7 +166,10 @@ metriche.push((
   preferibile:dati.preferibile,
 )
 )
-},[Metriche processo di Gestione dei Processi ])
+}
+#tabellaMetriche((
+..metriche
+),[Metriche processo di Gestione dei Processi ])
 
 #for metric in gestioneProcessi{
   include deps.get-metrica-path(metric)

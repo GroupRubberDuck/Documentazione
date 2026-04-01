@@ -10,7 +10,7 @@
     codice:deps.get-MPC-code(nome-metrica),
     nome:nome-metrica,
     descrizione-breve:[
-      Rappresenta la percentuale di test automatizzati che vengono superati
+      Rappresenta la percentuale di test automatizzati che vengono superati.
     ],
     formula:[
       $

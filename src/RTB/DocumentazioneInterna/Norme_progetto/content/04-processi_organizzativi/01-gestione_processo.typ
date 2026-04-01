@@ -21,7 +21,7 @@ Lo scopo del processo di Gestione del Processo è:
 
 #he(body: "Attività del processo", level: 3)
 
-Lo standard #link("https://www.iso.org/standard/63712.html")[ISO/IEC/IEEE 12207:1997] definisce la gestione del processo come un insieme di attività organizzate che permettono di pianificare, controllare e valutare l’esecuzione dei processi di progetto.
+Lo standard #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[ISO/IEC/IEEE 12207:1995] definisce la gestione del processo come un insieme di attività organizzate che permettono di pianificare, controllare e valutare l’esecuzione dei processi di progetto.
 
 Nel contesto del progetto, tali attività coprono l’intero ciclo di vita del processo e sono strutturate in fasi successive, ciascuna con obiettivi e responsabilità ben definite.
 Esse consentono di garantire il corretto avanzamento delle attività, il rispetto delle risorse disponibili e la conformità agli standard di qualità stabiliti.
@@ -50,22 +50,16 @@ Il responsabile avvia le attività del processo in conformità a quanto stabilit
 - *Comunicazione esterna*: gestisce i flussi comunicativi con la *proponente* e il *committente*, garantendo chiarezza e coerenza informativa.
 
 4. *Revisione e valutazione*\ Al completamento delle attività, il verificatore controlla che i risultati ottenuti siano conformi alle metriche di qualità e agli standard definiti.
-5. *Chiusura*  \ Un'attività si ritiene completa dopo aver superato l'attività di verifica. Si veda la definition-of-done per maggiori dettagli. La chiusura delle issue legate alle attività avviene tramite merge sul main a intervalli prefissati.
+5. *Chiusura*  \ Un'attività si ritiene completa dopo aver superato l'attività di verifica. Si veda la Definition of Done (@DOD) per maggiori dettagli. La chiusura delle issue legate alle attività avviene tramite merge sul main a intervalli prefissati.
 
 === Procedure operative
 ==== Ruoli di Progetto <ruoli-di-progetto>
-La seguente sezione descrive le fasi della progettazione software.
-All’interno del team, per garantire coerenza, efficienza e qualità, ogni ruolo ha compiti specifici e interviene in momenti diversi del progetto.
-
-Nel contesto del corso di Ingegneria del Software, tutti i membri del team devono ricoprire almeno una volta ciascun ruolo definito.
-
-La tabella sottostante riassume in maniera chiara i compiti associati a ciascun ruolo.
+La seguente sezione descrive la distribuzione delle responsabilità all'interno del team. Per garantire coerenza, efficienza e qualità, ogni ruolo assolve compiti specifici all'interno dei processi previsti dal Way of Working.\
+Coerentemente con gli obiettivi del corso di Ingegneria del Software, la struttura organizzativa permette una rotazione tale per cui ogni membro del team ricopra ciascun ruolo almeno una volta.\
+La tabella sottostante riassume le responsabilità e l'apporto di ogni figura:
 
 // -------- TIMELINE VISIVA --------
 #align(center)[
-  *Avanzamento del progetto*\
-  #v(6pt)
-  #sym.bar.h ● *Analisi* #sym.arrow.r ● *Progettazione* #sym.arrow.r ● *Implementazione* #sym.arrow.r ● *Verifica*
   #{
     show table.cell: set text(size: 11pt)
     table(
@@ -74,7 +68,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
       table.header([*Ruolo*], [*Compiti*], [*Presenza*]),
 
       [Responsabile],
-      "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti",
+      "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Approvazione/redazione documenti",
       [Tutto il progetto],
 
       [Amministratore],
@@ -87,10 +81,10 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 
       [Analista],
       "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali",
-      [Principalmente \ fase iniziale],
+      [Massimo nella definizione dei requisiti;\ continuo per l'affinamento],
 
       [Progettista],
-      "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica",
+      "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione dei requisiti in struttura tecnica",
       [Progettazione architetturale e \ di dettaglio],
 
       [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
@@ -99,7 +93,7 @@ La tabella sottostante riassume in maniera chiara i compiti associati a ciascun 
 
 ]
 ==== Rendicontazione delle ore <Rendicontazione_delle_ore>
-La pianificazione e il monitoraggio delle ore produttive del progetto sono gestiti tramite il documento "Piano di progetto", in cui vengono registrate sia le ore previste sia quelle effettivamente svolte per ciascun ruolo e membro del gruppo.
+La pianificazione e il monitoraggio delle ore produttive del progetto sono gestiti tramite il documento "Piano di Progetto", in cui vengono registrate sia le ore previste sia quelle effettivamente svolte per ciascun ruolo e membro del gruppo.
 
 La ripartizione oraria è accompagnata dai relativi costi, consentendo una visione completa delle risorse economiche impiegate.
 Al fine di rendere rigorosa, oggettiva e verificabile la rendicontazione oraria, il team ha implementato un foglio di calcolo Google Sheets avanzato dedicato al tracciamento dell'effort. Per alimentare questo documento, è stato sviluppato uno script automatizzato che estrae i dati dal repository e genera dei file CSV dedicati per ogni singolo sprint, i quali vengono poi importati nel foglio. Questo strumento aggrega i dati operativi con lo storico e la gestione delle issue (dimensione, tipologia e scadenze). Tale sistema integrato permette non solo di mappare con precisione l'impegno effettivo di ciascun membro, ma anche di classificare le ore in produttive e non produttive, scalandole dinamicamente dal budget preventivato per i vari ruoli di progetto.
@@ -133,13 +127,12 @@ Ruoli:
     [Norme di Progetto (NdP)], [R/A], [R], [-], [-], [-], [V],
     [Analisi dei Requisiti (AdR)], [A], [-], [R], [-], [-], [V],
     [Piano di Progetto (PdP)], [R/A], [-], [C (supporto rischi)], [-], [-], [V],
-    [Piano di Qualifica (PdQ)], [A], [R], [-], [-], [-], [V],
-    [Design Document (DD)], [A], [-], [C (per coerenza requisiti)], [R], [C], [V],
+    [Piano di Qualifica (PdQ)], [A], [C (configurazione dei tool automatici)], [-], [-], [-], [R/V (Verificatore A redige, il Verificatore B verifica)],
+    [Specifica Tecnica], [A], [-], [C (per coerenza requisiti)], [R], [C], [V],
     [Manuale Utente (MU)], [A], [-], [-], [R], [C], [V],
-    [Verbali interni], [R/A], [R], [-], [-], [-], [V],
-    [Verbali esterni], [R/A], [R], [-], [-], [-], [V],
-    [Test Report (TR)], [A], [-], [-], [C], [R], [V],
-    [Documentazione tecnica interna], [A], [R (per strumenti e template)], [R], [C], [-], [V],
+    [Verbali interni], [R/A], [-], [-], [-], [-], [V],
+    [Verbali esterni], [R/A], [-], [-], [-], [-], [V],
+
   )
 }
 
@@ -161,7 +154,7 @@ Ogni issue rappresenta un’attività, un task o una modifica da realizzare e se
 
 Le issue possono essere organizzate in modo gerarchico tramite *relazioni parent/child*, consentendo di suddividere attività complesse in sotto-attività più semplici e gestibili.
 
-La chiusura di un’issue avviene esclusivamente al soddisfacimento dei criteri definiti nella Definition of Done (DoD), che garantisce il rispetto degli standard di qualità e di completezza stabiliti.
+La chiusura di un’issue avviene esclusivamente al soddisfacimento dei criteri definiti nella Definition of Done (@DOD ), che garantisce il rispetto degli standard di qualità e di completezza stabiliti.
 
 Inoltre, il sistema di gestione delle issue prevede:
 
@@ -192,8 +185,8 @@ Ogni nuova issue deve includere le seguenti informazioni:
   Il membro del gruppo incaricato di svolgere l’issue.
 
 + *Verificatore* \
-  Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella @DOD  *Definition of Done (DoD)*.
-  Salvo eccezioni motivate, il verificatore deve essere una persona diversa dall'autore.
+  Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella  *Definition of Done* (@DOD).
+  Per garantire l'oggettività della verifica e l'assenza di conflitti di interesse, il verificatore deve essere necessariamente una figura diversa dall'autore.
 
 + *Label (ambito/destinazione)*  #footnote()[
     Le label possono essere aggiornate nel corso del progetto: label non più utili possono essere rimosse e nuove label introdotte in base alle esigenze. ]\ #[
@@ -236,9 +229,9 @@ Ogni nuova issue deve includere le seguenti informazioni:
 
 Il flusso operativo standard per la gestione di un’issue è il seguente:
 
-+ L’amministratore crea una nuova issue tramite il template dedicato;
++ Il responsabile individua le attività necessarie al raggiungimento degli obiettivi; l'amministratore le traduce operativamente creando le issue sul repository tramite i template predisposti;
 + Vengono assegnati autore/i e verificatore/i;
 + Vengono compilati tutti i campi richiesti (descrizione, scopo, label, tipo, priorità, dimensione, scadenza);
-+ L’issue viene inserita nello stato iniziale *Backlog*;
++ L’issue viene inserita nello stato iniziale Backlog;
 + L’issue avanza attraverso gli stati del workflow fino al completamento;
-+ La chiusura dell’issue avviene esclusivamente al soddisfacimento dei criteri definiti nella *Definition of Done*.
++  La chiusura definitiva dell'issue avviene tramite un commit di chiusura e lo spostamento manuale in Done nel Project Board, operazione che spetta al responsabile come atto di approvazione finale dell'attività.
