@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa correttamente esportare i risultati della valutazione nella forma di report di conformità in formato pdf
+Verificare che l'Utente possa correttamente esportare i risultati della valutazione nella forma di report di conformità in formato pdf
   ],
 
   requisito-riferimento:get-req-code(

@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa inserire un nuovo modello tramite la funzione di importazione di un file esterno.
+Verificare che l'Utente possa inserire un nuovo modello tramite la funzione di importazione di un file esterno.
 
 I formati di file supportati sono JSON e XML
   ],

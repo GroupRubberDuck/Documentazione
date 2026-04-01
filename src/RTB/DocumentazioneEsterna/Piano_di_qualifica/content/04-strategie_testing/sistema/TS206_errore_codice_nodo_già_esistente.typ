@@ -4,14 +4,15 @@
 
 
 
-#let test-name="Rimozione dipendenza tra requisiti"
+#let test-name="Errore codice nodo già esistente"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-    Verificare che l'utente possa rimuovere una dipendenza dal requisito in fase di modifica del requisito
+Verificare che il sistema interrompa l'operazione di inserimento del codice del nodo di decisione se l'Utente inserisce un codice già associato a un nodo esistente 
+
   ],
 
   requisito-riferimento:get-req-code(

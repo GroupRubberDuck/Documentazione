@@ -4,14 +4,14 @@
 
 
 
-#let test-name="Errore modifica domanda vuota"
+#let test-name="Modifica domanda nodo decision tree"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifica della domanda se l'utente cancella la domanda senza inserirne una nuova
+Verificare che l'Utente possa modificare e salvare una domanda
   ],
 
   requisito-riferimento:get-req-code(

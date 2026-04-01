@@ -4,14 +4,14 @@
 
 
 
-#let test-name="Aggiunta nodo"
+#let test-name="Aggiunta nodo figlio yes"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Vericare che l'utente possa aggiungere correttamente un nodo allo scheletro del decision tree
+Verificare che l'Utente possa aggiungere un nodo figlio a un nodo di decisione creando la relazione di bivio decisionale YES nello scheletro del decision tree
   ],
 
   requisito-riferimento:get-req-code(

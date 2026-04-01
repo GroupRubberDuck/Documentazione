@@ -4,14 +4,14 @@
 
 
 
-#let test-name="Modifica nodo di decisione"
+#let test-name="Rimozione dipendenza tra requisiti"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa modifcare le informazioni di nodi di decisione già inseriti nello scheletro del decsion tree
+    Verificare che l'Utente possa rimuovere una dipendenza dal requisito in fase di modifica del requisito
   ],
 
   requisito-riferimento:get-req-code(

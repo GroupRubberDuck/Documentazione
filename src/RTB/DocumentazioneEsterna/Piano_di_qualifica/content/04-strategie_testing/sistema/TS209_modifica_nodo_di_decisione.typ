@@ -4,14 +4,14 @@
 
 
 
-#let test-name="Modifica domanda nodo decision tree"
+#let test-name="Modifica nodo di decisione"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa modifcare e salvare una domanda
+Verificare che l'utente possa modificare le informazioni di nodi di decisione già inseriti nello scheletro del decision tree
   ],
 
   requisito-riferimento:get-req-code(

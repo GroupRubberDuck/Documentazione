@@ -4,14 +4,14 @@
 
 
 
-#let test-name="Errore modifica codice nodo non valido"
+#let test-name="Errore modifica domanda vuota"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifca e mostri un messaggio di errore se l'Utente inserisce un codice di lunghezza non compresa tra 4 e 10 caratteri
+Verificare che il sistema blocchi l'operazione di modifica della domanda se l'Utente cancella la domanda senza inserirne una nuova
   ],
 
   requisito-riferimento:get-req-code(

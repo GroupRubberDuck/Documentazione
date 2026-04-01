@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema blocchi l'operazione di modifica e mostri un messaggio di errore se l'utente prova a inserire un nome per il requisito non compreso tra 1 e 64 caratteri
+Verificare che il sistema blocchi l'operazione di modifica e mostri un messaggio di errore se l'Utente prova a inserire un nome per il requisito non compreso tra 1 e 64 caratteri
   ],
 
   requisito-riferimento:get-req-code(

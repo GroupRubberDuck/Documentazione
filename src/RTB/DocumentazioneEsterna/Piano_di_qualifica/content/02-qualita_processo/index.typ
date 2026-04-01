@@ -81,7 +81,7 @@
   ),
   (codice: "MPC-11",
     nome: "Correttezza ortografica",
-    accettabile: $<= 0.01$,
+    accettabile: $<= 1$,
     preferibile: $=0$
   ),
   ),[Metriche processo di Documentazione])
@@ -93,11 +93,6 @@
     accettabile: $>= 90 percent$,
     preferibile: $100 percent$
   ),
-  (codice: "MPC-13",
-    nome: "Code Coverage",
-    accettabile: $>= 80 percent$,
-    preferibile: $>= 90 percent$
-  ),
   ),[Metriche processo di Verifica])
 
   == Processi organizzativi
@@ -106,12 +101,12 @@
 
   === Gestione dei processi
   #tabellaMetriche((
-    (codice: "MPC-14",
+    (codice: "MPC-13",
     nome: "Time Efficiency",
     accettabile: $>= 80 percent$,
     preferibile: $>= 100 percent$
     ),
-    (codice: "MPC-15",
+    (codice: "MPC-14",
      nome: "Task Completion on Time",
      accettabile: $>= 90 percent$,
      preferibile: $=100 percent$

@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa modificare le informazioni anagrafiche del requisito in fase di modifica del modello
+Verificare che l'Utente possa modificare le informazioni anagrafiche del requisito in fase di modifica del modello
   ],
 
   requisito-riferimento:get-req-code(

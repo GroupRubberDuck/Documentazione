@@ -4,14 +4,17 @@
 
 
 
-#let test-name="Aggiunta nodo figlio yes"
+#let test-name="Inserimento codice nodo di decisione"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa aggiungere un nodo figlio a un nodo di decisione creando la relazione di bivio decisionale YES nello scheletro del decision tree
+Verificare che l'Utente possa inserire e salvare un codice univoco valido per il nuovo nodo di decisione.
+
+Il codice è valido se ha una lunghezza compresa tra 4 e 10 caratteri
+
   ],
 
   requisito-riferimento:get-req-code(

@@ -4,15 +4,14 @@
 
 
 
-#let test-name="Errore codice nodo già esistente"
+#let test-name="Aggiunta nodo"
 
 #let data=(
 
   nome:test-name,
 
   descrizione:[
-Verificare che il sistema interrompa l'operazione di inserimento del codice del nodo di decisione se l'utente inserisce un codice già associato a un nodo esistente 
-
+Verificare che l'Utente possa aggiungere correttamente un nodo allo scheletro del decision tree
   ],
 
   requisito-riferimento:get-req-code(

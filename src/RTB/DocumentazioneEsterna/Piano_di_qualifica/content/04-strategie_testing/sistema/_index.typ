@@ -2692,7 +2692,7 @@
   )
 }
 
-#import "TS193_visualizzazione_grafo_dipendenze.typ": data as item_192
+#import "TS193_errore_dipendenza_circolare.typ": data as item_192
 
 
 #{
@@ -2706,7 +2706,7 @@
   )
 }
 
-#import "TS194_errore_dipendenza_circolare.typ": data as item_193
+#import "TS194_rimozione_dipendenza_tra_requisiti.typ": data as item_193
 
 
 #{
@@ -2720,7 +2720,7 @@
   )
 }
 
-#import "TS195_rimozione_dipendenza_tra_requisiti.typ": data as item_194
+#import "TS195_aggiunta_nodo_figlio.typ": data as item_194
 
 
 #{
@@ -2734,7 +2734,7 @@
   )
 }
 
-#import "TS196_aggiunta_nodo_figlio.typ": data as item_195
+#import "TS196_aggiunta_nodo_figlio_yes.typ": data as item_195
 
 
 #{
@@ -2748,7 +2748,7 @@
   )
 }
 
-#import "TS197_aggiunta_nodo_figlio_yes.typ": data as item_196
+#import "TS197_aggiunta_nodo_figlio_no.typ": data as item_196
 
 
 #{
@@ -2762,7 +2762,7 @@
   )
 }
 
-#import "TS198_aggiunta_nodo_figlio_no.typ": data as item_197
+#import "TS198_aggiunta_nodo.typ": data as item_197
 
 
 #{
@@ -2776,7 +2776,7 @@
   )
 }
 
-#import "TS199_aggiunta_nodo.typ": data as item_198
+#import "TS199_aggiunta_nodo_foglia.typ": data as item_198
 
 
 #{
@@ -2790,7 +2790,7 @@
   )
 }
 
-#import "TS200_aggiunta_nodo_foglia.typ": data as item_199
+#import "TS200_aggiunta_nodo_foglia_pass.typ": data as item_199
 
 
 #{
@@ -2804,7 +2804,7 @@
   )
 }
 
-#import "TS201_aggiunta_nodo_foglia_pass.typ": data as item_200
+#import "TS201_aggiunta_nodo_foglia_fail.typ": data as item_200
 
 
 #{
@@ -2818,7 +2818,7 @@
   )
 }
 
-#import "TS202_aggiunta_nodo_foglia_fail.typ": data as item_201
+#import "TS202_aggiunta_nodo_foglia_not_applicable.typ": data as item_201
 
 
 #{
@@ -2832,7 +2832,7 @@
   )
 }
 
-#import "TS203_aggiunta_nodo_foglia_not_applicable.typ": data as item_202
+#import "TS203_aggiunta_nodo_di_decisione.typ": data as item_202
 
 
 #{
@@ -2846,7 +2846,7 @@
   )
 }
 
-#import "TS204_aggiunta_nodo_di_decisione.typ": data as item_203
+#import "TS204_inserimento_codice_nodo_di_decisione.typ": data as item_203
 
 
 #{
@@ -2860,7 +2860,7 @@
   )
 }
 
-#import "TS205_inserimento_codice_nodo_di_decisione.typ": data as item_204
+#import "TS205_errore_codice_nodo_non_valido.typ": data as item_204
 
 
 #{
@@ -2874,7 +2874,7 @@
   )
 }
 
-#import "TS206_errore_codice_nodo_non_valido.typ": data as item_205
+#import "TS206_errore_codice_nodo_già_esistente.typ": data as item_205
 
 
 #{
@@ -2888,7 +2888,7 @@
   )
 }
 
-#import "TS207_errore_codice_nodo_già_esistente.typ": data as item_206
+#import "TS207_inserimento_domanda_nodo_di_decisione.typ": data as item_206
 
 
 #{
@@ -2902,7 +2902,7 @@
   )
 }
 
-#import "TS208_inserimento_domanda_nodo_di_decisione.typ": data as item_207
+#import "TS208_errore_domanda_vuota.typ": data as item_207
 
 
 #{
@@ -2916,7 +2916,7 @@
   )
 }
 
-#import "TS209_errore_domanda_vuota.typ": data as item_208
+#import "TS209_modifica_nodo_di_decisione.typ": data as item_208
 
 
 #{
@@ -2930,7 +2930,7 @@
   )
 }
 
-#import "TS210_modifica_nodo_di_decisione.typ": data as item_209
+#import "TS210_modifica_codice_nodo_decision_tree.typ": data as item_209
 
 
 #{
@@ -2944,7 +2944,7 @@
   )
 }
 
-#import "TS211_modifica_codice_nodo_decision_tree.typ": data as item_210
+#import "TS211_errore_modifica_codice_nodo_non_valido.typ": data as item_210
 
 
 #{
@@ -2958,7 +2958,7 @@
   )
 }
 
-#import "TS212_errore_modifica_codice_nodo_non_valido.typ": data as item_211
+#import "TS212_errore_modifica_codice_nodo_già_esistente.typ": data as item_211
 
 
 #{
@@ -2972,7 +2972,7 @@
   )
 }
 
-#import "TS213_errore_modifica_codice_nodo_già_esistente.typ": data as item_212
+#import "TS213_modifica_domanda_nodo_decision_tree.typ": data as item_212
 
 
 #{
@@ -2986,7 +2986,7 @@
   )
 }
 
-#import "TS214_modifica_domanda_nodo_decision_tree.typ": data as item_213
+#import "TS214_errore_modifica_domanda_vuota.typ": data as item_213
 
 
 #{
@@ -3000,7 +3000,7 @@
   )
 }
 
-#import "TS215_errore_modifica_domanda_vuota.typ": data as item_214
+#import "TS215_rimozione_nodo_dal_decision_tree.typ": data as item_214
 
 
 #{
@@ -3014,7 +3014,7 @@
   )
 }
 
-#import "TS216_rimozione_nodo_dal_decision_tree.typ": data as item_215
+#import "TS216_errore_eliminazione_nodo_root.typ": data as item_215
 
 
 #{
@@ -3024,20 +3024,6 @@
     item_215.descrizione,
     item_215.requisito-riferimento,
     item_215.stato,
-  )
-  )
-}
-
-#import "TS217_errore_eliminazione_nodo_root.typ": data as item_216
-
-
-#{
-  test-array.push((
-
-    deps.get-test-code(nome-etichetta:item_216.nome),
-    item_216.descrizione,
-    item_216.requisito-riferimento,
-    item_216.stato,
   )
   )
 }

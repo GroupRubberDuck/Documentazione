@@ -22,22 +22,19 @@
 
   Questo metodo consente di mantenere il testo chiaro e tecnicamente corretto, permettendo al lettore di riferirsi al Glossario solo quando necessario, senza interrompere il flusso della lettura.
 
-  == Riferimenti
+== Riferimenti
 
-  === Riferimenti normativi
-  #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.8.4.pdf")[Norme di Progetto v0.8.4];\ 
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
-  ]
+=== Riferimenti normativi
+#pad(left: 1em)[
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \ _Ultima consultazione: 11 novembre 2025_; \
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \ _Ultima consultazione: 11 novembre 2025_; \
+  - #inserisciLink(url:"https://www.iso.org/standard/63712.html")[Standard ISO/IEC/IEEE 12207:2017] \ _Ultima consultazione: 10 gennaio 2026_; \
+  - #inserisciLink(url:"https://en.wikipedia.org/wiki/ISO/IEC_9126")[Standard ISO/IEC 9126] \ _Ultima consultazione: 10 gennaio 2026_; \
+]
 
-  === Riferimenti informativi
-  #pad(left: 1em)[
-     - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario v0.4]; \
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[ISO/IEC 12207 - 1995]; \
-    - #inserisciLink(url:"https://it.wikipedia.org/wiki/ISO/IEC_9126")[ISO/IEC 9126]; \
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T08.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Qualità di processo];\
-   
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T0.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Qualità di prodotto];\
-
-  
-  ]
+=== Riferimenti informativi
+#pad(left: 1em)[
+  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf")[Glossario del gruppo] \ _Ultima consultazione: 20 marzo 2026_; \
+  - #inserisciLink(url:"https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville] \ _Ultima consultazione: 10 gennaio 2026_; \
+  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo GroupRubberDuck] \ _Ultima consultazione: 11 marzo 2026_; \
+]

@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare lo scheletro del decision tree durante la visualizzazione del dettaglio del requisito in fase di modifica del modello 
+Verificare che l'Utente possa visualizzare lo scheletro del decision tree durante la visualizzazione del dettaglio del requisito in fase di modifica del modello 
   ],
 
   requisito-riferimento:get-req-code(
