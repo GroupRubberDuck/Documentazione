@@ -4,7 +4,7 @@
 
 
 
-#import "Ta01_importazione_documento_dispositivo.typ": data as item_0
+#import "TA01_importazione_documento_dispositivo.typ": data as item_0
 
 
 #{
@@ -17,7 +17,7 @@
   )
 }
 
-#import "Ta02_creazione_documento_dispositivo.typ": data as item_1
+#import "TA02_creazione_documento_dispositivo.typ": data as item_1
 
 
 #{
@@ -30,7 +30,7 @@
   )
 }
 
-#import "Ta03_gestione_informazioni_dispositivo.typ": data as item_2
+#import "TA03_gestione_informazioni_dispositivo.typ": data as item_2
 
 
 #{
@@ -43,7 +43,7 @@
   )
 }
 
-#import "Ta04_esecuzione_della_valutazione.typ": data as item_3
+#import "TA04_esecuzione_della_valutazione.typ": data as item_3
 
 
 #{
@@ -56,7 +56,7 @@
   )
 }
 
-#import "Ta05_rispetto_delle_gerarchia_dello_standard.typ": data as item_4
+#import "TA05_rispetto_delle_gerarchia_dello_standard.typ": data as item_4
 
 
 #{
@@ -69,7 +69,7 @@
   )
 }
 
-#import "Ta06_visualizzazione_dashboard.typ": data as item_5
+#import "TA06_visualizzazione_dashboard.typ": data as item_5
 
 
 #{
@@ -82,7 +82,7 @@
   )
 }
 
-#import "Ta07_visualizzazione_asset.typ": data as item_6
+#import "TA07_visualizzazione_asset.typ": data as item_6
 
 
 #{
@@ -95,7 +95,7 @@
   )
 }
 
-#import "Ta08_valuta_asset.typ": data as item_7
+#import "TA08_valuta_asset.typ": data as item_7
 
 
 #{
@@ -108,7 +108,7 @@
   )
 }
 
-#import "Ta09_visualizzazione_requisiti.typ": data as item_8
+#import "TA09_visualizzazione_requisiti.typ": data as item_8
 
 
 #{
@@ -121,7 +121,7 @@
   )
 }
 
-#import "Ta10_compila_decision_tree.typ": data as item_9
+#import "TA10_compila_decision_tree.typ": data as item_9
 
 
 #{
@@ -134,7 +134,7 @@
   )
 }
 
-#import "Ta11_esportazione_documento_dispositivo.typ": data as item_10
+#import "TA11_esportazione_documento_dispositivo.typ": data as item_10
 
 
 #{
@@ -147,7 +147,7 @@
   )
 }
 
-#import "Ta12_esportazione_report.typ": data as item_11
+#import "TA12_esportazione_report.typ": data as item_11
 
 
 #{
