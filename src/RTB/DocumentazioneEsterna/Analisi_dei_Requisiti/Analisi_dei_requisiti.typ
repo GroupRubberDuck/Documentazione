@@ -109,7 +109,7 @@
   ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
    ([1.1.0], [2026-03-31], persone.ANA, [Filippo Guerra], [Correzioni errori segnalati per la Requirements And Technology
 Baseline]),
-  ([2.0.0], [2026-03-22], persone.FILIPPO, [-], [Approvazione]),
+  ([2.0.0], [2026-03-22], persone.FILIPPO, [-], [Approvazione]), 
 
   )
 
