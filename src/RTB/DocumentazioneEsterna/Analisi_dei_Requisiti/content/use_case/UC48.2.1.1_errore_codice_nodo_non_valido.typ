@@ -30,7 +30,7 @@
     
     scenario-principale:[
         + Il sistema blocca l'operazione
-        + Il sistema mostra un messagio di errore esplicativo
+        + Il sistema mostra un messaggio di errore esplicativo
     ],
     
     pre-condizioni:[

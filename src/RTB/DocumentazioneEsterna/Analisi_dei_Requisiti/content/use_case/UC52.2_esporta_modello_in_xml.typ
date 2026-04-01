@@ -42,11 +42,7 @@
     ],
     
     post-condizioni:[
-<<<<<<< HEAD
         - L'utente ha scaricato il file XML contenente i dati del modello
-=======
-        - L'utente ha scaricato il file XML contenente i dati del dispositivo
->>>>>>> 716b4f5aa33ab6cc60bf253f8c0c0520005c2baf
     ],
     
     

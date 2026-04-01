@@ -1,4 +1,5 @@
 #import "/src/config.typ": inserisciLink, template_dir
+#import "/src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ": versionNumber
 
 == Scopo del documento
 Nell'ambito dei progetti di sviluppo software,
@@ -31,7 +32,7 @@ Le modifiche sostanziali ai requisiti comportano l'incremento della versione pri
 === Riferimenti normativi
 #pad(left: 1em)[
   - #inserisciLink(
-      url: "https://github.com/GroupRubberDuck/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_progetto.pdf",
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v" + versionNumber + ".pdf",
     )[Norme di Progetto];\
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf",

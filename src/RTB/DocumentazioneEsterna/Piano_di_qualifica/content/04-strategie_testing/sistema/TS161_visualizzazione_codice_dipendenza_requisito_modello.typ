@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa il codice del requisito di ogni elemento della lista delle dipendenze durante la visualizzazione nel dettaglio in fase di modifica del modello
+Verificare che l'Utente possa visualizzare il codice del requisito di ogni elemento della lista delle dipendenze durante la visualizzazione nel dettaglio in fase di modifica del modello
   ],
 
   requisito-riferimento:get-req-code(

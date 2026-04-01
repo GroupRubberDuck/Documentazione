@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'Utente possa visualizzaree la lista delle dipendenze del requisito
+Verificare che l'Utente possa visualizzare la lista delle dipendenze del requisito
   ],
 
   requisito-riferimento:get-req-code(

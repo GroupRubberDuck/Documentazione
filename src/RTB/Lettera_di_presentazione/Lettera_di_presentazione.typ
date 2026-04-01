@@ -1,83 +1,99 @@
 #import "/src/config.typ": *
-#import template_dir+"/frontPage.typ": frontPage, frontPageSenzaData
-#import template_dir+"/setUpPageLayout.typ":*
-#import template_dir+"/registroModifiche.typ":registroModifiche
-#import template_dir+"/utilityTable.typ":utilityTable, getCode
-#import template_dir+"/statusTab.typ":statusTab
-#set text( size: 13pt)
+#import template_dir + "/frontPage.typ": frontPage, frontPageSenzaData
+#import template_dir + "/setUpPageLayout.typ": *
+#import template_dir + "/registroModifiche.typ": registroModifiche
+#import template_dir + "/utilityTable.typ": getCode, utilityTable
+#import template_dir + "/statusTab.typ": statusTab
+#set text(size: 13pt)
 #set heading(numbering: "1.a)")
 
 #frontPageSenzaData([Lettera di Presentazione])
 
-#insertRomanNumberedPagesSenzaData(PageTitle:"Stato del documento",documentType:"Lettera di presentazione",gloss-flag:false)[
-#statusTab(
-  stato:"In progress",
-  versione:"0.1.0",
-  autori:("Aldo Bettega",), 
-  verificatori: (""),
-  uso:"Esterno",
-  destinatari:("Professor Tullio Vardanega","Professor Riccardo Cardin"))
+#insertRomanNumberedPagesSenzaData(
+  PageTitle: "Stato del documento",
+  documentType: "Lettera di presentazione",
+  gloss-flag: false,
+)[
+  #statusTab(
+    stato: "Approvato",
+    versione: "1.0.0",
+    autori: ("Aldo Bettega",),
+    verificatori: ("Davide Lorenzon",),
+    uso: "Esterno",
+    destinatari: ("Professor Tullio Vardanega", "Professor Riccardo Cardin"),
+  )
 ]
 
-#insertRomanNumberedPagesSenzaData(PageTitle:"Registro modifiche",documentType:"Lettera di presentazione",gloss-flag:false)[
+#insertRomanNumberedPagesSenzaData(
+  PageTitle: "Registro modifiche",
+  documentType: "Lettera di presentazione",
+  gloss-flag: false,
+)[
 
-#registroModifiche((
-  ("0.1.0","2026-03-22","Aldo Bettega", "", "Stesura lettera di presentazione"),
-))
+  #registroModifiche((
+    ("0.1.0", "2026-03-22", "Aldo Bettega", "Davide Lorenzon", "Stesura lettera di presentazione"),
+    ("1.0.0", "2026-03-22", "Davide Testolin", "Davide Lorenzon", "Approvazione"),
+    ("1.1.0", "2026-04-01", "Aldo Bettega", "", "Modificata data di consegna e aggiornamento link"),
+  ))
 ]
 
 
-#insertArabicNumberedPagesSenzaData(PageTitle:"Lettera di presentazione",documentType:"Lettera di presentazione", gloss-flag:false)[
+#insertArabicNumberedPagesSenzaData(
+  PageTitle: "Lettera di presentazione",
+  documentType: "Lettera di presentazione",
+  gloss-flag: false,
+)[
 
-#enfasi[Lettera di presentazione del gruppo RubberDuck]
-Egregi Professori Vardanega e Cardin,  \
+  #enfasi[Lettera di presentazione del gruppo RubberDuck]
+  Egregi Professori Vardanega e Cardin,  \
 
-Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi alla revisione denominata Requirements and Technology Baseline per il capitolato
-
-
-#align(center)[
-*"EN18031 Compliance Verification"*
-]
-
-proposto dall'azienda Bluewind Srl.
-
-La documentazione prodotta durante questa fase del progetto è gestita tramite apposito repository : \ #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione")[https://github.com/GroupRubberDuck/Documentazione]
-
-Per facilitare la consultazione, tali documenti sono resi disponibili anche tramite l'apposito sito web: \ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione")[https://grouprubberduck.github.io/Documentazione]
-
-Tramite esso sono consultabili: 
-- Il Piano di Qualifica, 
-- Il Piano di Progetto, 
-- L’Analisi dei Requisiti \ #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf")[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf]
-- Il Glossario. 
-
-In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
-
-Per agevolare la consultazione dei documenti, il gruppo si è munito di un sito web:
+  Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi alla revisione denominata Requirements and Technology Baseline per il capitolato
 
 
-
-Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito repository :
-
-#inserisciLink(url:"https://github.com/GroupRubberDuck/PoC")[https://github.com/GroupRubberDuck/PoC]
-
-
-#enfasi[Piano di lavoro]
-Con la presente lettera desideriamo inoltre aggiornarVi sugli impegni presi, confermando il costo finale per la realizzazione del progetto di *11610 €* e allo stesso tempo ribadendo l’impegno preso in fase di candidatura di completare il progetto entro il *30 Aprile 2026*.
-
-
-Cordiali saluti,\  
-
-Il gruppo RubberDuck  
-\
-Componenti del gruppo: \ 
-- Aldo Bettega [2101087]
-- Davide Testolin [2079242]
-- Filippo Guerra [2077681]
-- Ana Maria Draghici [2101044]
-- Felician Mario Necsulescu [2111935]
-- Davide Lorenzon [2101075]
+  #align(center)[
+    *"EN18031 Compliance Verification"*
   ]
+
+  proposto dall'azienda Bluewind Srl.
+
+  La documentazione prodotta durante questa fase del progetto è gestita tramite apposito #inserisciLink(url: "https://github.com/GroupRubberDuck/Documentazione")[repository]
+
+  Per facilitare la consultazione, tali documenti sono resi disponibili anche tramite l'apposito #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/")[sito web]
+
+  Tramite esso sono consultabili:
+  - #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0pdf",
+    )[Il Piano di Qualifica]
+  - #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0pdf",
+    )[Il Piano di Progetto]
+  - #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf",
+    )[L’Analisi dei Requisiti]
+  - #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf",
+    )[Il Glossario]
+
+  In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
+
+  Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito #inserisciLink(url: "https://github.com/GroupRubberDuck/PoC")[repository]
+
+
+  #enfasi[Piano di lavoro]
+  Con la presente lettera desideriamo inoltre aggiornarVi sugli impegni presi, confermando il costo finale per la realizzazione del progetto di *11610 €*. A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *15 maggio*, comportando una proroga di due settimane rispetto alla scadenza inizialmente prevista del 30 aprile.
+
+  Cordiali saluti,\
+
+  Il gruppo RubberDuck
+  \
+  Componenti del gruppo: \
+  - Aldo Bettega [2101087]
+  - Davide Testolin [2079242]
+  - Filippo Guerra [2077681]
+  - Ana Maria Draghici [2101044]
+  - Felician Mario Necsulescu [2111935]
+  - Davide Lorenzon [2101075]
+]
 
 
 

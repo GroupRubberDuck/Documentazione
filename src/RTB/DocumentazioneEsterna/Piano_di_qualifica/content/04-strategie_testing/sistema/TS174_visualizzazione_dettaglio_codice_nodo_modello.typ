@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare il codice dello specifico nodo visualizzato  nel dettaglio in fase di modifica del modello
+Verificare che l'Utente possa visualizzare il codice dello specifico nodo visualizzato  nel dettaglio in fase di modifica del modello
 
   ],
 

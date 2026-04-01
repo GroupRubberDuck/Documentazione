@@ -11,7 +11,7 @@
     parent-uc: "Aggiungi dipendenza",
   target-uc: use-case-nome,
   actors: ("Utente",),
-  includes: ("Visualizza grafo dipendenze",),
+  includes: (),
   extends: (:),
   generalizations: (),
   spacing: (3.5cm, 2cm), 
@@ -35,7 +35,6 @@
     scenario-principale:[
         + Il sistema rileva una dipendenza circolare
         + Il sistema blocca l'aggiunta
-        + L'utente visualizza il grafo delle dipendenze di quel requisito #sym.arrow #use-case-label(nome-etichetta: "Visualizza grafo dipendenze")
         + Il sistema annulla l'aggiunta della dipendenza
     ],
     
@@ -53,15 +52,13 @@
     
     scenari-alternativi:none,
     
-    inclusioni:[
-        - #use-case-label(nome-etichetta: "Visualizza grafo dipendenze")
-    ],
+    inclusioni:none,
     
     estensioni:none,
     
     generalizzazioni:none,
     
-    path-immagine-diagramma:diagram,
+    path-immagine-diagramma:none,
     
     figure-caption:none,
 )

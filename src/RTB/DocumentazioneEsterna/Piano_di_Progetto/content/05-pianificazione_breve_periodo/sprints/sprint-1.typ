@@ -59,16 +59,15 @@
     (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
   ),
   retrospettiva: [
-    - *Avvio e Risultati Raggiunti*:
-    La Retrospettiva 1 ha rappresentato una *fase di avvio* del progetto. Durante questo sprint il gruppo si è concentrato principalmente sulla *definizione della struttura* dei documenti principali, nonché sull’individuazione delle *migliori pratiche* di versionamento e tracciamento delle modifiche. Le attività di studio e di documentazione previste sono state in larga parte completate.
+    - *Risultati raggiunti*: Durante questo sprint il gruppo si è concentrato principalmente sulla *definizione della struttura* dei documenti principali, nonché sull’individuazione delle *migliori pratiche* di versionamento e tracciamento delle modifiche. Le attività di studio e di documentazione previste sono state in larga parte completate.
 
-    - *Criticità e Gestione dei Rischi*:
-      Tuttavia, il gruppo ha riscontrato alcune difficoltà, in particolare nella *stima dei tempi* e nella *definizione delle task*. Inoltre, la comunicazione interna non risultava ancora pienamente strutturata. Le attività di mitigazione dei rischi adottate sono state valutate come mediamente efficaci: trattandosi di una fase iniziale del progetto, non è stato possibile ottenere risultati pienamente consolidati, che si prevede emergeranno nei prossimi sprint.
+    - *Criticità e gestione dei rischi*:
+      Il gruppo ha riscontrato alcune difficoltà, in particolare nella *stima dei tempi* e nella *definizione delle task*. Inoltre, la comunicazione interna non risultava ancora pienamente strutturata. Le attività di mitigazione dei rischi adottate sono state valutate come mediamente efficaci: trattandosi di una fase iniziale del progetto, non è stato possibile ottenere risultati pienamente consolidati, che si prevede emergeranno nei prossimi sprint.
 
-    - *Aree di Miglioramento*:
+    - *Aree di miglioramento*:
       Alla luce di queste considerazioni, il gruppo ha deciso che nel prossimo sprint si lavorerà in modo mirato sul *miglioramento della pianificazione*, sulla *scomposizione delle attività* e sul *rafforzamento della comunicazione interna*. Questi aspetti rappresentano infatti aree di miglioramento su cui il gruppo deve migliorare.
 
-    - *Pianificazione Operativa Futura*:
+    - *Pianificazione operativa futura*:
       Di conseguenza, nel prossimo sprint si prevede un maggiore impegno nelle *attività di verifica*, dato che il metodo di lavoro non è ancora completamente strutturato, e nel ruolo di amministratore. Parallelamente, continueranno le attività principali di analisi e studio.
   ],
 )

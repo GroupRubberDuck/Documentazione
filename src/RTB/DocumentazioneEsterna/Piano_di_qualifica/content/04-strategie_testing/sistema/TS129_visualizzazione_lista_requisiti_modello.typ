@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare la lista dei requisiti previsti da uno specifico modello 
+Verificare che l'Utente possa visualizzare la lista dei requisiti previsti da uno specifico modello 
   ],
 
   requisito-riferimento:get-req-code(

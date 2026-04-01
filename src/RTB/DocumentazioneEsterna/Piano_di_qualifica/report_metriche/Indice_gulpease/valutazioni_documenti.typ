@@ -11,7 +11,7 @@
 #let risultati=()
 
 #for key in listaDocumenti.keys(){
-  let risultato=compute_gulpease(include listaDocumenti.at(key))
+  let risultato=compute_gulpease(read(listaDocumenti.at(key)))
   display_gulpease(risultato, nomeDocumento:key)
 
   risultati.push((nomeDocumento:risultato.valore))
@@ -21,6 +21,6 @@
 #metadata(risultati)<risultati>
  #let prova=include template_dir+"/indiceGulpease/Gulpease_info.typ"
 
- #display_gulpease(compute_gulpease(prova))
+ #display_gulpease(compute_gulpease(read(template_dir+"/indiceGulpease/Gulpease_info.typ")))
 
  #show_smart_text(prova)

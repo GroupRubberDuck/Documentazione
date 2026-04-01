@@ -37,7 +37,7 @@
     codice:get-use-case-code(nome-etichetta: use-case-nome),
     
 scenario-principale: [
-        + L'utente richiede il salvataggio definitivo della modifiche
+        + L'utente richiede il salvataggio definitivo delle modifiche
         + Il sistema verifica la validità e l'integrità strutturale del modello
         + Il sistema salva le modifiche
     ],

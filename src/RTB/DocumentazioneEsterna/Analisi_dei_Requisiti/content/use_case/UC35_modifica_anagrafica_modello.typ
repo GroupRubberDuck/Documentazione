@@ -39,7 +39,7 @@
     ],
     
     pre-condizioni:[
-        + L'utente sta visualizzando il dettaglio del modello
+        - L'utente sta visualizzando il dettaglio del modello
     ],
     
     post-condizioni:[

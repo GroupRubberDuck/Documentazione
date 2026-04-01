@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare le informazioni dettagliate di uno specifico modello
+Verificare che l'Utente possa visualizzare le informazioni dettagliate di uno specifico modello
 
   ],
 

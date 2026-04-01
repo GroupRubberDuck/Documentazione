@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'Utente deve possa avviare una sessione di valutazione relativa a uno specifico dispositivo
+    Verificare che l'Utente possa avviare una sessione di valutazione relativa a uno specifico dispositivo
   ],
 
   requisito-riferimento:get-req-code(

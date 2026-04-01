@@ -40,6 +40,22 @@
 //   
 // 
 // 
+// 
+// 
+// 
+// 
+// #let currentVersion=(
+//   major:0,
+//   minor:13,
+//   patch:1,
+// )
+// //converte dizionario in stringa
+// #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+// #metadata(versionNumber)<versionNumber>
+
+
+
+
 #let doc="Glossario"
 
 #type(abbr)

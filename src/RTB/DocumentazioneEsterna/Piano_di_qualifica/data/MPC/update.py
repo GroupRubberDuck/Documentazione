@@ -19,6 +19,7 @@ SETTIMANE_PIANIFICATE = 24
 RSI_DATA: dict = {
     # Esempio: 1: (0, 50),   # sprint 1: 0 modifiche su 50 requisiti totali
 }
+
 SPRINT_BOUNDARIES = [
     (date(2025, 11, 25), 1),
     (date(2025, 12,  8), 2),
@@ -26,9 +27,13 @@ SPRINT_BOUNDARIES = [
     (date(2026,  2,  4), 4),
     (date(2026,  2, 18), 5),
     (date(2026,  3, 10), 6),
+    (date(2026,  3, 24), 7),  # Sprint 7: 10/03/2026 – 24/03/2026
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']
+
+# Keyword per classificare task correttive (case-insensitive, match parziale)
+KEYWORD_CORRETTIVE = ['correz', 'verific', 'fix', 'modific']
 
 
 # ─── UTILITIES ────────────────────────────────────────────────────────────────
@@ -45,21 +50,40 @@ def parse_date(s: str):
     return None
 
 
+def sprint_boundary_for_date(d: date) -> int:
+    """Restituisce il numero di sprint per una data, in base ai boundaries."""
+    for boundary, sprint_num in SPRINT_BOUNDARIES:
+        if d <= boundary:
+            return sprint_num
+    return SPRINT_BOUNDARIES[-1][1]
+
+
 def infer_sprint(row: dict):
+    """
+    Inferisce lo sprint dalla colonna 'Sprint', poi da End date, poi da Start date.
+    Se nessuna data è disponibile, restituisce None.
+    """
+    # 1. Colonna Sprint esplicita
     for key in row:
         if key.strip().lower() == 'sprint':
             try:
                 return int(row[key].strip())
             except ValueError:
                 pass
+
+    # 2. End date
     end_raw = row.get('End date', row.get('end date', row.get('End Date', ''))).strip()
     d = parse_date(end_raw)
-    if d is None:
-        return None
-    for boundary, sprint_num in SPRINT_BOUNDARIES:
-        if d <= boundary:
-            return sprint_num
-    return SPRINT_BOUNDARIES[-1][1]
+    if d is not None:
+        return sprint_boundary_for_date(d)
+
+    # 3. Fallback: Start date → assegna al boundary del proprio sprint
+    start_raw = row.get('Start date', row.get('start date', row.get('Start Date', ''))).strip()
+    d = parse_date(start_raw)
+    if d is not None:
+        return sprint_boundary_for_date(d)
+
+    return None
 
 
 def has_author(row: dict, autore_col: str) -> bool:
@@ -67,6 +91,12 @@ def has_author(row: dict, autore_col: str) -> bool:
         return False
     val = row.get(autore_col, '').strip()
     return bool(val) and val not in ('-', '')
+
+
+def is_correttiva(title: str) -> bool:
+    """Restituisce True se il titolo contiene keyword correttive."""
+    t = title.lower()
+    return any(k in t for k in KEYWORD_CORRETTIVE)
 
 
 def extract_balanced_parens(content: str, keyword: str) -> str:
@@ -114,21 +144,32 @@ def load_sprint_blocks_from_files(sprint_dir: str) -> list:
 def load_task_data_per_sprint(sprint_csv_path: str) -> dict:
     """
     Legge sprint.csv e restituisce per ogni sprint un dict con:
-      - 'done':     task completate (hanno autore)
-      - 'total':    task totali dello sprint
-      - 'ev_ratio': done / total  → usato per il calcolo dell'EV (MPC-02)
-
-    Nota: una task è considerata "completata in tempo" (MPC-15) se ha un autore
-    e la sua End date rientra nella finestra del rispettivo sprint.
+      - 'done':        task completate (hanno autore)
+      - 'total':       task totali dello sprint
+      - 'ev_ratio':    done / total
+      - 'correttive':  task con keyword correttive nel titolo
     """
     rows = []
-    with open(sprint_csv_path, 'r', encoding='utf-8') as f:
+    # utf-8-sig rimuove automaticamente il BOM aggiunto da Excel/GitHub/Notion
+    with open(sprint_csv_path, 'r', encoding='utf-8-sig') as f:
         sample = f.read(4096)
         f.seek(0)
-        sep = '\t' if sample.count('\t') > sample.count(',') else ','
+        tab_count   = sample.count('\t')
+        comma_count = sample.count(',')
+        sep = '\t' if tab_count > comma_count else ','
+        print(f"   📋 Separatore rilevato: {'TAB' if sep == chr(9) else 'VIRGOLA'}")
         reader = csv.DictReader(f, delimiter=sep)
         for row in reader:
-            rows.append({k.strip(): v.strip() for k, v in row.items() if k and v is not None})
+            cleaned = {}
+            for k, v in row.items():
+                if k is None:       # DictReader usa None come restkey per colonne extra
+                    continue
+                k2 = k.strip()
+                if not k2:
+                    continue
+                cleaned[k2] = (v or '').strip()
+            if cleaned:
+                rows.append(cleaned)
 
     if not rows:
         print("⚠️  sprint.csv è vuoto!")
@@ -150,17 +191,23 @@ def load_task_data_per_sprint(sprint_csv_path: str) -> dict:
             no_sprint += 1
 
     if no_sprint:
-        print(f"   ⚠️  {no_sprint} task senza End date valida → ignorate")
+        print(f"   ⚠️  {no_sprint} task senza date valide → ignorate")
 
     print(f"   📋 Task per sprint: { {k: len(v) for k, v in sorted(by_sprint.items())} }")
 
     result = {}
     for sp, sp_rows in sorted(by_sprint.items()):
-        total    = len(sp_rows)
-        done     = sum(1 for r in sp_rows if has_author(r, autore_col))
-        ev_ratio = done / total if total > 0 else 0.0
-        result[sp] = {'done': done, 'total': total, 'ev_ratio': ev_ratio}
-        print(f"   Sprint {sp}: {done}/{total} task completate = {ev_ratio:.1%}")
+        total      = len(sp_rows)
+        done       = sum(1 for r in sp_rows if has_author(r, autore_col))
+        correttive = sum(1 for r in sp_rows if is_correttiva(r.get('Title', '')))
+        ev_ratio   = done / total if total > 0 else 0.0
+        result[sp] = {
+            'done':       done,
+            'total':      total,
+            'ev_ratio':   ev_ratio,
+            'correttive': correttive,
+        }
+        print(f"   Sprint {sp}: {done}/{total} completate, {correttive} correttive = {ev_ratio:.1%}")
 
     return result
 
@@ -228,28 +275,24 @@ def update_metrics():
                 prev  = int(p_m.group(1))
                 eff   = int(e_m.group(1))
                 costo = tariffe.get(ruolo, 0)
-                s_pv       += prev * costo   # PV sprint = Σ(ore previste × tariffa)
-                s_ac       += eff  * costo   # AC sprint = Σ(ore effettive × tariffa)
+                s_pv       += prev * costo
+                s_ac       += eff  * costo
                 s_ore_prev += prev
                 s_ore_eff  += eff
 
-        # EV sprint = PV sprint × % task completate  (proxy: task con autore / totali)
-        sp_data  = task_data.get(i, {'done': 0, 'total': 0, 'ev_ratio': 0.0})
-        ev_ratio = sp_data['ev_ratio']
-        s_ev     = s_pv * ev_ratio
+        # EV sprint = PV sprint × % task completate
+        sp_data    = task_data.get(i, {'done': 0, 'total': 0, 'ev_ratio': 0.0, 'correttive': 0})
+        ev_ratio   = sp_data['ev_ratio']
+        s_ev       = s_pv * ev_ratio
 
         # Accumulo cumulativo
-        cum_pv         += s_pv
-        cum_ac         += s_ac
-        cum_ev         += s_ev
-        cum_ore_prev   += s_ore_prev
-        cum_ore_eff    += s_ore_eff
+        cum_pv       += s_pv
+        cum_ac       += s_ac
+        cum_ev       += s_ev
+        cum_ore_prev += s_ore_prev
+        cum_ore_eff  += s_ore_eff
 
         # ── Metriche di Fornitura (MPC-01..08) ────────────────────────────────
-
-        # MPC-01 PV  → cum_pv  (valore pianificato: 0 ≤ PV ≤ BAC)
-        # MPC-02 EV  → cum_ev  (valore guadagnato: ideale ≥ PV)
-        # MPC-03 AC  → cum_ac  (costo reale: ideale ≤ EV)
 
         # MPC-04 SPI = EV / PV  (≥ 0.9 accettabile, ≥ 1.0 ottimo)
         spi = cum_ev / cum_pv if cum_pv > 0 else 1.0
@@ -267,71 +310,75 @@ def update_metrics():
         tcpi_denom = BAC_FISSO - cum_ac
         tcpi = (BAC_FISSO - cum_ev) / tcpi_denom if tcpi_denom > 0 else 1.0
 
-        # Varianze (derivate, non metriche doc standalone ma utili nei grafici)
+        # Varianze
         sv = cum_ev - cum_pv   # Schedule Variance = EV - PV
         cv = cum_ev - cum_ac   # Cost Variance     = EV - AC
 
-        # ── Metriche di Sviluppo (MPC-09) ─────────────────────────────────────
-
-        # MPC-09 RSI = 1 - (NR / NTR)  (≥ 0.7 accettabile, 1.0 ottimo)
-        # Dato inserito manualmente in RSI_DATA perché non ricavabile da sprint.csv
+        # ── MPC-09 RSI ────────────────────────────────────────────────────────
         rsi_entry = RSI_DATA.get(i)
         if rsi_entry:
             nr, ntr = rsi_entry
             rsi = round(1.0 - (nr / ntr), 3) if ntr > 0 else 1.0
         else:
-            rsi = ''   # dato non disponibile per questo sprint
+            rsi = ''
 
-        # ── Metriche di Processo (MPC-14, MPC-15) ─────────────────────────────
-
-        # MPC-14 Time Efficiency = Ore produttive / Ore totali
-        # ore previste ≈ ore produttive (pianificate), ore effettive ≈ ore totali impiegate
+        # ── MPC-14 Time Efficiency ────────────────────────────────────────────
+        # ore previste ≈ ore produttive, ore effettive ≈ ore totali impiegate
         # (≥ 80% accettabile, ≥ 100% ottimo)
         time_efficiency = cum_ore_prev / cum_ore_eff if cum_ore_eff > 0 else 1.0
 
-        # ── Metrica interna (non in doc) ──────────────────────────────────────
+        # ── MPC-15 TimeEAC ────────────────────────────────────────────────────
         # Stima settimane a completamento basata su SPI
         time_eac = SETTIMANE_PIANIFICATE / spi if spi > 0 else SETTIMANE_PIANIFICATE
 
+        # ── MPC-16 Issue per sprint (non cumulative) ──────────────────────────
+        task_totali     = sp_data['total']
+        task_completate = sp_data['done']
+        task_correttive = sp_data['correttive']
+
         data_points.append({
-            'Sprint':               f"Sprint {i}",
-            'PV':                   round(cum_pv),                      # MPC-01
-            'EV':                   round(cum_ev),                      # MPC-02
-            'AC':                   round(cum_ac),                      # MPC-03
-            'SPI':                  round(spi, 3),                      # MPC-04
-            'CPI':                  round(cpi, 3),                      # MPC-05
-            'EAC':                  round(eac),                         # MPC-06
-            'TCPI':                 round(tcpi, 3),                     # MPC-07
-            'ETC':                  round(etc),                         # MPC-08
-            'RSI':                  rsi,                                # MPC-09
-            'SV':                   round(sv),
-            'CV':                   round(cv),
-            'TimeEfficiency':       round(time_efficiency, 3),          # MPC-14
-            'TimeEAC':              round(time_eac, 2),                 # interno
+            'Sprint':           f"Sprint {i}",
+            'PV':               round(cum_pv),              # MPC-01
+            'EV':               round(cum_ev),              # MPC-02
+            'AC':               round(cum_ac),              # MPC-03
+            'SPI':              round(spi, 3),              # MPC-04
+            'CPI':              round(cpi, 3),              # MPC-05
+            'EAC':              round(eac),                 # MPC-06
+            'TCPI':             round(tcpi, 3),             # MPC-07
+            'ETC':              round(etc),                 # MPC-08
+            'RSI':              rsi,                        # MPC-09
+            'SV':               round(sv),
+            'CV':               round(cv),
+            'TimeEfficiency':   round(time_efficiency, 3),  # MPC-14
+            'TimeEAC':          round(time_eac, 2),         # MPC-15
+            'TaskTotali':       task_totali,                # MPC-16
+            'TaskCompletate':   task_completate,            # MPC-16
+            'TaskCorrettive':   task_correttive,            # MPC-16
         })
 
         print(
             f"  Sprint {i}: PV={cum_pv:.0f}€  EV={cum_ev:.0f}€  AC={cum_ac:.0f}€ | "
             f"SPI={spi:.3f}  CPI={cpi:.3f}  EAC={eac:.0f}€ | "
-            f"TimeEff={time_efficiency:.1%}"
+            f"TimeEff={time_efficiency:.1%}  "
+            f"Task={task_completate}/{task_totali} ({task_correttive} correttive)"
             + (f"  RSI={rsi}" if rsi != '' else "  RSI=N/A")
         )
 
-    # 5. Export CSV — nomi file esistenti nel progetto
+    # 5. Export CSV
     csv_map = [
-        ('01-planned_value.csv',                 'PV'),                    # MPC-01
-        ('02-earned_value.csv',                  'EV'),                    # MPC-02
-        ('03-actual_cost.csv',                   'AC'),                    # MPC-03
-        ('04-schedule_performance_index.csv',    'SPI'),                   # MPC-04
-        ('05-cost_performance_index.csv',        'CPI'),                   # MPC-05
-        ('06-estimate_at_completion.csv',        'EAC'),                   # MPC-06
-        ('07-to_complete_performance_index.csv', 'TCPI'),                  # MPC-07
-        ('08-estimate_to_complete.csv',          'ETC'),                   # MPC-08
-        ('09-requirements_stability.csv',        'RSI'),                   # MPC-09
-        ('09-cost_variance.csv',                 'CV'),                    # MPC (CV)
-        ('10-schedule_variance.csv',             'SV'),                    # MPC (SV)
-        ('14-time_efficiency.csv',               'TimeEfficiency'),        # MPC-14
-        ('15-process_lead_time.csv',             'TimeEAC'),               # interno
+        ('01-planned_value.csv',                 'PV'),              # MPC-01
+        ('02-earned_value.csv',                  'EV'),              # MPC-02
+        ('03-actual_cost.csv',                   'AC'),              # MPC-03
+        ('04-schedule_performance_index.csv',    'SPI'),             # MPC-04
+        ('05-cost_performance_index.csv',        'CPI'),             # MPC-05
+        ('06-estimate_at_completion.csv',        'EAC'),             # MPC-06
+        ('07-to_complete_performance_index.csv', 'TCPI'),            # MPC-07
+        ('08-estimate_to_complete.csv',          'ETC'),             # MPC-08
+        ('09-requirements_stability.csv',        'RSI'),             # MPC-09
+        ('09-cost_variance.csv',                 'CV'),
+        ('10-schedule_variance.csv',             'SV'),
+        ('14-time_efficiency.csv',               'TimeEfficiency'),  # MPC-14
+        ('15-process_lead_time.csv',             'TimeEAC'),         # MPC-15
     ]
 
     print()
@@ -343,6 +390,15 @@ def update_metrics():
             for d in data_points:
                 writer.writerow([d['Sprint'], d[key]])
         print(f"💾 Aggiornato: {filename}")
+
+    # MPC-16: issue totali, completate e correttive per sprint (non cumulative)
+    filepath_16 = os.path.join(OUTPUT_DIR, '16-issue_per_sprint.csv')
+    with open(filepath_16, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['Sprint', 'TaskTotali', 'TaskCompletate', 'TaskCorrettive'])
+        for d in data_points:
+            writer.writerow([d['Sprint'], d['TaskTotali'], d['TaskCompletate'], d['TaskCorrettive']])
+    print(f"💾 Aggiornato: 16-issue_per_sprint.csv")
 
     print("\n✅ Tutte le metriche aggiornate con successo.")
 

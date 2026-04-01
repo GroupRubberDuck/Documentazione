@@ -41,9 +41,9 @@
     ],
     
     pre-condizioni:[
-        + Il sistema è attivo
-        + Nel sistema non sono attive sessioni di valutazioni di dispositivi
-        + Nel sistema non sono attive sessioni di modifica di modelli di standard
+        - Il sistema è attivo
+        - Nel sistema non sono attive sessioni di valutazioni di dispositivi
+        - Nel sistema non sono attive sessioni di modifica di modelli di standard
     ],
     
     post-condizioni:[
