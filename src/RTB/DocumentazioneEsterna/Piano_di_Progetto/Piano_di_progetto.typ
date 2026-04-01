@@ -46,7 +46,7 @@
     stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
-    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
