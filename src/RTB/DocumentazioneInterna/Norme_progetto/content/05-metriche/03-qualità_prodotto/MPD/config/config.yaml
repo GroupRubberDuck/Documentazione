@@ -29,7 +29,6 @@ structure:
 - Requisiti Desiderabili soddisfatti
 - Requisiti opzionali soddisfatti
 - Failure Density
-- Code Coverage
 - Statement Coverage
 - Branch Coverage
 - User Error Rate
@@ -41,3 +40,4 @@ structure:
 - Instability Index
 - Coefficient of coupling
 - Code Smell
+- Code Coverage
