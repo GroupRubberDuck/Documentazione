@@ -94,8 +94,8 @@ All'interno dell'ambito documentale si è optato per il seguente modello per des
 
 ==== Procedura di avanzamento tra stati <Procedura_Workflow>
   - Da *Backlog* a *In lavorazione*:  l'Amministratore crea la issue predisponendo l'ambiente tecnico; contestualmente, in accordo con il Responsabile, viene determinato e impostato l'assegnatario (componente del gruppo nel ruolo pertinente) che prende in carico l'attività.
-  - Da *In lavorazione* a *In verifica*: l'assegnatario consegna il proprio incremento, trasferendo la issue in revisione e assegnandola al Verificatore (deciso a priori) che verrà notificato automaticamente.
-  - Da *In verifica* a *In lavorazione* (Rifiuto del Verificatore): il Verificatore rileva non conformità e riassegna la issue all'esecutore con un report delle anomalie da sanare.
+  - Da *In lavorazione* a *In verifica*: l'assegnatario dichiara conclusa la propria attività, trasferendo la issue in revisione e assegnandola al Verificatore (deciso a priori) che verrà notificato automaticamente.
+  - Da *In verifica* a *In lavorazione* (Rifiuto del Verificatore): il Verificatore rileva che non è conforme e riassegna la issue all'esecutore con un report delle anomalie da sanare.
   - Da *In verifica* a *In approvazione*: il Verificatore accerta la correttezza dell'incremento e sposta la issue in approvazione, assegnandola al Responsabile per il controllo finale di coerenza.
   - Da *In approvazione* a *In lavorazione* (Rifiuto del Responsabile): il Responsabile rileva incongruenze di alto livello o mancanze strategiche. La issue viene riassegnata all'assegnatario originale per la correzione, informando il Verificatore della svista.
   - Da *In approvazione* a *Done*: il Responsabile accetta la revisione proposta e chiude la issue con #block(
