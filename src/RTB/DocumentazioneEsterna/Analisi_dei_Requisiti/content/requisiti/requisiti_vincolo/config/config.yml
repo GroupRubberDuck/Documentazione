@@ -24,7 +24,7 @@ settings:
 
 # La struttura gerarchica
 structure:
- - Applicazione web locale
+#  - Applicazione web locale
  - Backend in Python
  - Supporto containerizzazione Docker
  - Database relazionale

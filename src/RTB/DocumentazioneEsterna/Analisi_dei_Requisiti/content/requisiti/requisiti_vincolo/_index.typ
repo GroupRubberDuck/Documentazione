@@ -21,24 +21,19 @@
 
 
 
-#import "RV-opz001_applicazione_web_locale.typ": data as item_0, req-name as req-0
+#import "RV-opz001_backend_in_python.typ": data as item_0, req-name as req-0
 
 #table-cells.push( item_0)
 
 
-#import "RV-opz002_backend_in_python.typ": data as item_1, req-name as req-1
+#import "RV-opz002_supporto_containerizzazione_docker.typ": data as item_1, req-name as req-1
 
 #table-cells.push( item_1)
 
 
-#import "RV-opz003_supporto_containerizzazione_docker.typ": data as item_2, req-name as req-2
+#import "RV-opz003_database_relazionale.typ": data as item_2, req-name as req-2
 
 #table-cells.push( item_2)
-
-
-#import "RV-opz004_database_relazionale.typ": data as item_3, req-name as req-3
-
-#table-cells.push( item_3)
 
 
 
