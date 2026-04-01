@@ -12,7 +12,7 @@
       table.header([*Ruolo*], [*Compiti*], [*Presenza*]),
 
       [Responsabile],
-      "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione documenti",
+      "- Coordinamento piani e scadenze\n- Approvazione release\n- Comunicazione col committente\n- Uso efficiente delle risorse\n- Redazione di alcuni documenti",
       [Tutto il progetto],
 
       [Amministratore],
@@ -25,13 +25,13 @@
 
       [Analista],
       "- Analisi dei requisiti\n- Definizione bisogni del sistema\n- Redazione specifiche funzionali",
-      [Fase iniziale],
+      [Predominante nel periodo di RTB, supporto alla gestione dei cambiamenti nel periodo di PB.],
 
       [Progettista],
       "- Progetta architettura sistema\n- Design e modellazione\n- Traduzione requisiti in struttura tecnica",
-      [Dopo analisi],
+      [Post-consolidamento della Baseline dei Requisiti],
 
-      [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Implementazione],
+      [Programmatore], "- Codifica software\n- Implementazione design\n- Sviluppo funzionalità", [Post-consolidamento della Progettazione di Dettaglio],
     )
   }]
 
@@ -41,7 +41,7 @@ Il gruppo di lavoro prevede di completare il progetto entro e non oltre il *15 m
 Il dettaglio della pianificazione e del budget stimato è consultabile nel documento di candidatura disponibile al seguente link:
 #link("https://grouprubberduck.github.io/Documentazione/output/Candidatura/Dichiarazione_Impegni-v2.0.0.pdf")[Dichiarazione degli Impegni – versione 2.0.0].
 
-Di seguito viene riportata la *tabella riepilogativa dei costi*, già inclusa nella *Dichiarazione degli Impegni*. La tabella rappresenta la stima economica elaborata in fase di candidatura e costituisce il riferimento principale per la pianificazione, il monitoraggio e il controllo dei costi lungo l'intero ciclo di vita del progetto.
+Di seguito viene riportata la *tabella riepilogativa dei costi*, già inclusa nella *Dichiarazione degli Impegni*. La tabella rappresenta la stima economica elaborata durante il periodo di candidatura e costituisce il riferimento principale per la pianificazione, il monitoraggio e il controllo dei costi lungo l'intero ciclo di vita del progetto.
 #let ruoli = (
   (nome: "Responsabile", costo: 30, oreIndividuali: 11),
   (nome: "Amministratore", costo: 20, oreIndividuali: 9),

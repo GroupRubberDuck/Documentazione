@@ -46,7 +46,7 @@
     stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
-    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -158,13 +158,6 @@
   #outline(
     title: [Lista delle tabelle],
     target: figure.where(kind: table),
-  )
-]
-
-#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
-  #outline(
-    title: [Lista delle immagini],
-    target: figure.where(kind: image),
   )
 ]
 

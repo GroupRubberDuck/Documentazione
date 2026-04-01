@@ -17,7 +17,7 @@
     - Proof of Concept (PoC): realizzazione delle pagine concordate (Import, Decision Tree, Dashboard e Report) e collegamento con il database MongoDB.
   ],
   rischiAttesi: [
-    - *R.T.2 – Inesperienza con le tecnologie (Alta frequenza, Alta pericolosità)*: Lo sviluppo del PoC richiede l'utilizzo di tecnologie con cui il gruppo ha ancora poca dimestichezza.
+    - *R.T.2 – Inesperienza con le tecnologie*: Lo sviluppo del PoC richiede l'utilizzo di tecnologie con cui il gruppo ha ancora poca dimestichezza.
   ],
   rischiEffettivi: [
     Nessun particolare rischio si è presentato in questo sprint.
@@ -34,13 +34,10 @@
     (persona: persone.DT, ruolo: ruoli.Verificatore, orePreviste: 5, oreEffettive: 5),
   ),
   retrospettiva: [
-    - *Completamento dell'Analisi dei Requisiti (AdR):*
-    Al fine di presentare la RTB sono stati migliorati i requisiti funzionali in modo da raggiungere uno stato definitivo e integrati i requisiti non funzionali.
+    - *Completamento dell'Analisi dei Requisiti (AdR):* Al fine di presentare la RTB sono stati migliorati i requisiti funzionali in modo da raggiungere uno stato definitivo e integrati i requisiti non funzionali.
 
-    - *Realizzazione del Proof of Concept (PoC):*
-    Il Proof of Concept è stato realizzato dividendosi le pagine da creare tra i membri del gruppo. Si è implementato MongoDB come database e D3js per la visualizzazione e interattività dei decision tree, oltre alle altre tecnologie già confermate in precedenza. In seguito sono stati aggiunti alcuni test per dimostrare l'utilizzo della libreria pytest ed il tracciamento dei requisiti con la libreria strictdoc.
+    - *Realizzazione del Proof of Concept (PoC):* Il Proof of Concept è stato realizzato dividendosi le pagine da creare tra i membri del gruppo. Si è implementato MongoDB come database e D3js per la visualizzazione e interattività dei decision tree, oltre alle altre tecnologie già confermate in precedenza. In seguito sono stati aggiunti alcuni test per dimostrare l'utilizzo della libreria pytest ed il tracciamento dei requisiti con la libreria strictdoc.
 
-    - *Presentazione della RTB con il Prof. Cardin:*
-    Lo sprint si è concluso con il colloquio per la RTB con il Prof. Cardin. A seguito dei feedback ricevuti, il gruppo ha avviato una fase di analisi critica sullo stack tecnologico, valutando nello specifico l'introduzione di Vue.js per migliorare la gestione del frontend e la reattività dell'interfaccia rispetto alle soluzioni precedentemente ipotizzate.
+    - *Presentazione della RTB con il Prof. Cardin:* Lo sprint si è concluso con il colloquio per la RTB con il Prof. Cardin. A seguito dei feedback ricevuti, il gruppo ha avviato una fase di analisi critica sullo stack tecnologico, valutando nello specifico l'introduzione di Vue.js per migliorare la gestione del frontend e la reattività dell'interfaccia rispetto alle soluzioni precedentemente ipotizzate.
   ],
 )
