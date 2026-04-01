@@ -50,6 +50,7 @@
 
   #let modifiche = (
     ([0.1.0], [2026-03-30], persone.ALDO, persone.DT, [Stesura del verbale]),
+    ([1.0.0], [2026-04-01], persone.ALDO, persone.ALDO, [Approvazione]),
   )
 
   #registroModifiche(modifiche)
