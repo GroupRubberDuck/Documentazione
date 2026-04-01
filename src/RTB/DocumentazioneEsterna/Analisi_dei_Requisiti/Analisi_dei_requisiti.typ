@@ -35,7 +35,7 @@
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
   major:1,
-  minor:0,
+  minor:1,
   patch:0,
 )
 //converte dizionario in stringa
@@ -107,6 +107,8 @@
   ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
   ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
+   ([1.1.0], [2026-03-31], persone.ANA, [], [Correzioni errori segnalati per la Requirements And Technology
+Baseline])
   )
 
 #registroModifiche(modifiche)
