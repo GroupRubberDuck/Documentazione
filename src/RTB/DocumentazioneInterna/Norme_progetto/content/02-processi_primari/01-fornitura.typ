@@ -100,12 +100,6 @@ Il processo di fornitura produce documentazione fondamentale per la tracciabilit
 
 - *Valutazione dei Capitolati*: analisi dei capitolati disponibili, punti di forza, criticità e motivazioni della scelta effettuata dal gruppo.
 
-// valuto in seguito se tenere i link o no così
-  /*- #link("https://grouprubberduck.github.io/Documentazione/")[Analisi dei Requisiti]  
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Progetto]  
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Qualifica]  
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Norme di Progetto]  
-  - #link("https://grouprubberduck.github.io/Documentazione/")[Verbali esterni] */
 === Strumenti a supporto
 
 Per svolgere le attività del processo di fornitura, il gruppo utilizza strumenti sia interni sia esterni:

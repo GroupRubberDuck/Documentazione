@@ -104,4 +104,4 @@ rimane prossimo a 1, dimostrando che il team ha rispettato la pianificazione
 temporale. Il miglioramento del CPI osservato a partire dai sprint centrali è
 parzialmente riconducibile a una riorganizzazione del lavoro successiva alla
 sessione esami. Le cause degli scostamenti sono documentate nel
-#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].

@@ -86,7 +86,7 @@ negli sprint successivi. Il dato va tuttavia letto con cautela: il completamento
 nei tempi previsti non riflette necessariamente la qualità del lavoro svolto. Task chiuse
 parzialmente hanno generato attività correttive negli sprint successivi, come evidenziato
 anche dall'andamento documentato nel
-#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto].
+#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
 
 
 // ═══════════════════════════════════════════════════════════════════════════

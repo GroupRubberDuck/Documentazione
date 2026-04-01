@@ -46,5 +46,5 @@ di CPI e SPI nel corso del progetto. Lo sforamento proiettato è da ricondurre
 principalmente a imprecisioni nelle stime iniziali delle ore per ruolo. La soglia ottimale
 è fissata al 110% del BAC (12771€) come margine di tolleranza. Il consuntivo effettivo
 resta però sotto il BAC, come documentato nel
-#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_Progetto.pdf")[Piano di Progetto]
+#link("https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto]
 e nella sezione @budget-progress-bar.
