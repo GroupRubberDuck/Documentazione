@@ -8,7 +8,7 @@
 
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura quanto spesso un utente fa errori durante l'uso del prodotto",
+    descrizione-breve:"Misura quanto spesso un utente fa errori durante l'uso del prodotto.",
     formula:$ "User error rate"="Errori Totali" / "Azioni Totali" $,
     interpretazione:[
       - Valore accettabile:$<=3 percent$

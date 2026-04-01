@@ -10,7 +10,7 @@
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
     descrizione-breve:[
-      Rappresenta la percentuale di codice coperto da test automatizzati
+      Rappresenta la percentuale di codice coperto da test automatizzati.
     ],
     formula:[
       $

@@ -21,9 +21,9 @@
 //Info del documento 
 // 
 #let currentVersion=(
-  major:0,
-  minor:13,
-  patch:1,
+  major:1,
+  minor:0,
+  patch:0,
 )
 //converte dizionario in stringa
 #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
@@ -34,10 +34,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Davide Lorenzon", "Aldo Bettega", " Filippo Guerra", "Ana Maria Draghici"),
-    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega", "Filippo Guerra" ),
+    verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega", "Filippo Guerra", "Felician Mario Necsulescu" ),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -74,10 +74,12 @@
   - #link(label("use-case-dia"))[Plot diagrammi], 
   - #link(label("python"))[Uso di script python], 
   ]),
+  ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Felician Mario \ Necsulescu],[Approvazione]),
 )
 #registroModifiche(modifiche)
 
 ]
+
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")

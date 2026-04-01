@@ -9,7 +9,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura il coupling tra le componenti del sistema",
+    descrizione-breve:"Misura il coupling tra le componenti del sistema.",
     formula:[$ "Coefficient of coupling" = "Numero di dipendenze" / "Numero di componenti" $],
     interpretazione:[
       - Valore accettabile:$<=0.4$

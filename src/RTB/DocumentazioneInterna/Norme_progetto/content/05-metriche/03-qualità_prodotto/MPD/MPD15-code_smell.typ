@@ -8,7 +8,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura il rapporto tra codice smell e KLOC",
+    descrizione-breve:"Misura il rapporto tra codice smell e KLOC.",
     formula:[
       $"Code smell"="Numero di codice smell" / "KLOC"$
     ],

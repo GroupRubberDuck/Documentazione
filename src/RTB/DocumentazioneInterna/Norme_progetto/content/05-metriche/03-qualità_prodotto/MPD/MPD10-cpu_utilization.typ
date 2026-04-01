@@ -8,7 +8,7 @@
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
 
-    descrizione-breve:"Misura l'utilizzo di CPU lato client",
+    descrizione-breve:"Misura l'utilizzo di CPU lato client.",
     formula:none,
     interpretazione:[
       - Valore accettabile:$<=35 percent$

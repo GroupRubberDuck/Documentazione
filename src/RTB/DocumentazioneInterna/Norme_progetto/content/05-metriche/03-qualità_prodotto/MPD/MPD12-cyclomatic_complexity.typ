@@ -9,7 +9,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura la complessità del codice in base al numero di percorsi linearmente dipendenti",
+    descrizione-breve:"Misura la complessità del codice in base al numero di percorsi linearmente dipendenti.",
     formula:[$
                "Cyclomatic complexity"=E - N + 2P
              $

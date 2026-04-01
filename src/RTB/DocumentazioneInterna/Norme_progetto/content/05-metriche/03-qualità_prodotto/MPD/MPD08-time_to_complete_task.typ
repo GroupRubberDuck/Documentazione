@@ -7,7 +7,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Tempo medio per completare un'attività",
+    descrizione-breve:"Tempo medio per completare un'attività.",
     formula:$ ("Tempo Ottimista" + 4 * "Tempo Probabile" + "Tempo Pessimista") / 6  $,
     interpretazione:[
       - Valore accettabile:5 minuti

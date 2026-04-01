@@ -8,7 +8,7 @@
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
 
-    descrizione-breve:"Misura l'utilizzo di memoria RAM lato client",
+    descrizione-breve:"Misura l'utilizzo di memoria RAM lato client.",
     formula:none,
     interpretazione:[
       - Valore accettabile:$<=4 "GB"$

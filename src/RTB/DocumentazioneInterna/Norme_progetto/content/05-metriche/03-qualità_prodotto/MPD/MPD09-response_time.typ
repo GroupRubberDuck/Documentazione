@@ -7,7 +7,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura il tempo medio impiegato dal prodotto per rispondere a una richiesta",
+    descrizione-breve:"Misura il tempo medio impiegato dal prodotto per rispondere a una richiesta.",
     formula:none,
     interpretazione:[
       - Valore accettabile:$<=3 "secondi"$

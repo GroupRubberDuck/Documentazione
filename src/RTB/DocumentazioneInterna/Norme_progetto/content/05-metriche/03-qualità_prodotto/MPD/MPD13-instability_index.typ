@@ -9,7 +9,7 @@
 #let dati=(
     codice:deps.get-MPD-code(nome-metrica),
     nome:nome-metrica,
-    descrizione-breve:"Misura la resilienza di un modulo al cambiamento",
+    descrizione-breve:"Misura la resilienza di un modulo al cambiamento.",
     formula:[$
                "Instability index"="Ce" / ("Ce" + "Ca")
              $
