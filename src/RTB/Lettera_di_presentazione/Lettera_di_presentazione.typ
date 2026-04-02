@@ -33,7 +33,7 @@
   #registroModifiche((
     ("0.1.0", "2026-03-22", "Aldo Bettega", "Davide Lorenzon", "Stesura lettera di presentazione"),
     ("1.0.0", "2026-03-22", "Davide Testolin", "Davide Lorenzon", "Approvazione"),
-    ("1.1.0", "2026-04-01", "Aldo Bettega", "", "Modificata data di consegna e aggiornamento link"),
+    ("1.1.0", "2026-04-01", "Aldo Bettega", "", "Modifica data di consegna e aggiornamento link"),
   ))
 ]
 
@@ -47,7 +47,7 @@
   #enfasi[Lettera di presentazione del gruppo RubberDuck]
   Egregi Professori Vardanega e Cardin,  \
 
-  Il gruppo *RubberDuck* desidera comunicare la propria intenzione a candidarsi alla revisione denominata Requirements and Technology Baseline per il capitolato
+  Il gruppo *RubberDuck* desidera comunicare la propria intenzione di candidarsi alla revisione denominata Requirements and Technology Baseline per il capitolato
 
 
   #align(center)[
@@ -56,31 +56,37 @@
 
   proposto dall'azienda Bluewind Srl.
 
-  La documentazione prodotta durante questa fase del progetto è gestita tramite apposito #inserisciLink(url: "https://github.com/GroupRubberDuck/Documentazione")[repository]
+  La documentazione prodotta durante questa fase del progetto è gestita tramite apposito repository: \
+    #inserisciLink(url: "https://github.com/GroupRubberDuck/Documentazione")[https://github.com/GroupRubberDuck/Documentazione]
 
-  Per facilitare la consultazione, tali documenti sono resi disponibili anche tramite l'apposito #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/")[sito web]
+  Per facilitare la consultazione, tali documenti sono resi disponibili anche tramite l'apposito sito web: \    #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/")[https://grouprubberduck.github.io/Documentazione/]
 
   Tramite esso sono consultabili:
-  - #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0pdf",
-    )[Il Piano di Qualifica]
-  - #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0pdf",
-    )[Il Piano di Progetto]
-  - #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf",
-    )[L’Analisi dei Requisiti]
-  - #inserisciLink(
+  - Il Piano di Qualifica \
+    #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf]
+  - Il Piano di Progetto \
+    #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf]
+  - L'Analisi dei Requisiti \
+    #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.1.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.1.0.pdf]
+  - Il Glossario \
+    #inserisciLink(
       url: "https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf",
-    )[Il Glossario]
+    )[https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Glossario.pdf]
 
   In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
 
-  Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito #inserisciLink(url: "https://github.com/GroupRubberDuck/PoC")[repository]
+  Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito repository: \
+    #inserisciLink(url: "https://github.com/GroupRubberDuck/PoC")[https://github.com/GroupRubberDuck/PoC]
 
 
   #enfasi[Piano di lavoro]
-  Con la presente lettera desideriamo inoltre aggiornarVi sugli impegni presi, confermando il costo finale per la realizzazione del progetto di *11610 €*. A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *15 maggio*, comportando una proroga di due settimane rispetto alla scadenza inizialmente prevista del 30 aprile.
+  Con la presente lettera desideriamo inoltre aggiornarvi sugli impegni presi, confermando il costo finale per la realizzazione del progetto di *11.610 €*. A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *15 maggio*, comportando una proroga di due settimane rispetto alla scadenza inizialmente prevista del 30 aprile.
 
   Cordiali saluti,\
 
