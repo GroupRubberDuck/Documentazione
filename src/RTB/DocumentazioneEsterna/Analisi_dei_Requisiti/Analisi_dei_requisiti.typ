@@ -35,7 +35,7 @@
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
   major:1,
-  minor:0,
+  minor:1,
   patch:0,
 )
 //converte dizionario in stringa
@@ -49,7 +49,7 @@
     stato: "Approvato",
     versione: versionNumber,
     autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega", "Filippo Guerra"),
-    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin"),
+    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin","Filippo GUerra"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -107,6 +107,8 @@
   ([0.11.20], [2026-03-15], persone.FELIX,persone.DL, [Raffinati i requisiti opzionali @funzionali-opzionali]),
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
   ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
+   ([1.1.0], [2026-03-31], persone.ANA, [Filippo Guerra], [Correzioni errori segnalati per la Requirements And Technology
+Baseline])
   )
 
 #registroModifiche(modifiche)
@@ -188,7 +190,7 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
  == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf")[Norme di Progetto v0.13.1 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf)];\ 
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf")[Norme di Progetto v1.0.0 (https://grouprubberduck.github.io/Documentazione/output/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v1.0.0.pdf)];\ 
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf)]; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification (https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf)]; \
     - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031 (https://www.evs.ee/en/evs-en-18031-1-2024)]
@@ -277,10 +279,9 @@ Lo scopo di questa sezione è descrivere in dettaglio i casi d’uso individuati
   - *Nominativo*: identificativo univoco e descrittivo del caso d'uso;\
   - *Attori Principali*: soggetti (umani o sistemi esterni) che interagiscono con il sistema;\
   - *Precondizioni*: stato del sistema prima dell'esecuzione del caso d'uso;\
-  - *Trigger*: identifichiamo l'evento specifico o l'azione dell'attore che avvia l'esecuzione del caso d'uso.\
-  - *Postcondizioni*: stato del sistema al termine dell'esecuzione del caso d'uso;\
+  - *Trigger*: evento specifico o azione dell'attore che avvia l'esecuzione del caso d'uso.\
   - *Scenario principale*: si mostra passo dopo passo la sequenza di interazioni tra attori e sistema che caratterizza il flusso di esecuzione normale, mostrando come si passa dalle condizioni iniziali al risultato finale;\
-  - *Scenari alternativi*: documentiamo i percorsi di esecuzione che si discostano dal flusso normale e le situazioni in cui l'esecuzione regolare viene interrotta a causa di condizioni anomale o scelte diverse dell'utente;\
+  - *Scenari alternativi*: dpercorsi di esecuzione che si discostano dal flusso normale e le situazioni in cui l'esecuzione regolare viene interrotta a causa di condizioni anomale o scelte diverse dell'utente;\
   - *Estensioni*: comportamenti alternativi che possono verificarsi durante l'esecuzione del caso d'uso, tipicamente in risposta a condizioni particolari; 
   - *Inclusioni*: funzionalità che fanno parte del caso d'uso, descrivendo le operazioni che lo compongono;\
   - *Specializzazioni*: eventuali casi d'uso figli che specializzano il caso d'uso corrente, ereditandone le caratteristiche di base e aggiungendone di specifiche.

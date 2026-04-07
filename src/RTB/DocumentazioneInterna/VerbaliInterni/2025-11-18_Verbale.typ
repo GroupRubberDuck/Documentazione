@@ -203,25 +203,25 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.ALDO],
   [Studio e stesura del nuovo workflow.],
   [VI.6.1],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.FILIPPO],
   [Aggiornamento delle norme di progetto, aggiunta nuova correlazione ruolo-documento.],
   [VI.6.2],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.ANA],
   [Aggiornamento Norme di progetto e documenti per RTB, per adottare il vers. semantico.],
   [VI.6.3],
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.ANA],
   [Studio e modifica della Definition of Done.],
   [VI.6.4],
 ), 
@@ -233,7 +233,7 @@ I TODO sorti da questa riunione sono i seguenti:
 ), 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Stabilito in seguito],
+  [#persone.DT],
   [Modificare lo script per la compilazione dei documenti in modo che ignori i documenti per la candidatura. Alcune delle modifiche non sono retrocompatibili.],
   [VI.6.5],
 ), 

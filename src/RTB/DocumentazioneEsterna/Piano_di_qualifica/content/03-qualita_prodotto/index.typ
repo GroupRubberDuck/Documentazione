@@ -32,8 +32,8 @@ Misura la capacità del software di operare senza guasti in condizioni previste,
 #tabellaMetriche((
   (codice: "MPD-04",
     nome: "Failure Density",
-    accettabile: $<= 50 percent$,
-    preferibile: $<= 20 percent$
+    accettabile: $<= 0.5$,
+    preferibile: $<= 0.2$
   ),
   (codice: "MPD-05",
     nome: "Statement Coverage",
@@ -111,5 +111,10 @@ Misura quanto facilmente il software può essere modificato o esteso senza intro
     nome: "Code Smells",
     accettabile: $<= 10$ ,
     preferibile: $<= 5$ 
+  ),
+  (codice: "MPD-16",
+    nome: "Code Coverage",
+    accettabile: $<= 80%$ ,
+    preferibile: $<= 90%$ 
   ),
 ),[Metriche manutenibilità del prodotto])

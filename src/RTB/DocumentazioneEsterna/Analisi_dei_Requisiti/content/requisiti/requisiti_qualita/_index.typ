@@ -46,6 +46,11 @@
 #table-cells.push( item_4)
 
 
+#import "RQ-Obb006_metodologia_agile.typ": data as item_5, req-name as req-5
+
+#table-cells.push( item_5)
+
+
 
 // ============================================================================
 // 📦 ESPORTAZIONE DATI (API DEL MODULO)

@@ -189,7 +189,7 @@ I TODO sorti da questa riunione sono i seguenti:
 
 (
   [#getCode(prefisso:prefisso,contatore:contatoreTodo)],
-  [Responsabile],
+  [#persone.FELIX],
   [Stesura di questo verbale],
   [-],
 ),

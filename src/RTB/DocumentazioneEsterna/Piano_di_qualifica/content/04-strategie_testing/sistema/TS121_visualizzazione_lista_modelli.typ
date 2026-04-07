@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-    Verificare che l'utente possa visualizzare la lista dei modelli registrati nel sistema
+    Verificare che l'Utente possa visualizzare la lista dei modelli registrati nel sistema
   ],
 
   requisito-riferimento:get-req-code(

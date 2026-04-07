@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa visualizzare per ogni elemento della lista dei modelli il numero di versione del modello
+Verificare che l'Utente possa visualizzare per ogni elemento della lista dei modelli il numero di versione del modello
 
   ],
 

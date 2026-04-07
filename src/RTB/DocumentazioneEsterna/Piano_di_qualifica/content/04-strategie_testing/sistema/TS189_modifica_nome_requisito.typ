@@ -11,7 +11,7 @@
   nome:test-name,
 
   descrizione:[
-Verificare che l'utente possa inserire e salvare un nuovo nome valido per il requisito in fase di modifica di esso.
+Verificare che l'Utente possa inserire e salvare un nuovo nome valido per il requisito in fase di modifica di esso.
 
 Un nome è valido se ha una lunghezza compresa tra 1 e 64 caratteri
   

@@ -8,7 +8,13 @@
     ],
 
   descrizione:[
-    Il sistema deve essere sviluppato come applicazione desktop o web-based, non vengono posti vincoli sulla suddivisione backend/frontend.
+    L'applicazione deve essere distribuita come web app locale, accessibile tramite browser web su indirizzo localhost. L'utente non deve installare software esterno oltre a un browser compatibile e Docker (per containerizzazione).
+    
+    *Browser supportati:*
+    - Google Chrome versione 90+
+    - Mozilla Firefox versione 88+
+    - Apple Safari versione 14+
+    - Microsoft Edge versione 90+
   ],
   // Per facilitare l'automazione, gli use case associati vanno riferiti solo per nome
   // La conversione in codice con label sarà effettuata in una fase successiva

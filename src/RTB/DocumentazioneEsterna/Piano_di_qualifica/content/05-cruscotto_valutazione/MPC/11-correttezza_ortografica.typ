@@ -31,4 +31,4 @@
   y-max: calc.max(..values-co),
 )
 
-Il team ha introdotto il monitoraggio della correttezza ortografica a partire dallo Sprint 3, in risposta a una criticità emersa nelle revisioni della documentazione. Il grafico mostra un trend fortemente positivo: gli errori scendono da 64 nello Sprint 3 a 55 nello Sprint 4, fino a circa 9 nello Sprint 5, evidenziando un miglioramento netto grazie all'adozione di processi di verifica più sistematici.
+Il team ha introdotto il monitoraggio della correttezza ortografica a partire dallo Sprint 3, in risposta a una criticità emersa nelle revisioni della documentazione. I risultati mostrano un miglioramento significativo: il numero di errori si è ridotto drasticamente nel tempo, evidenziando l’efficacia dell’adozione di processi di verifica più strutturati e sistematici.

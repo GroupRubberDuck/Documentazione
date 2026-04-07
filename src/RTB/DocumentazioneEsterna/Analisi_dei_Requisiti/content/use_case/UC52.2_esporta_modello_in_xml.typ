@@ -43,7 +43,6 @@
     
     post-condizioni:[
         - L'utente ha scaricato il file XML contenente i dati del modello
-
     ],
     
     
