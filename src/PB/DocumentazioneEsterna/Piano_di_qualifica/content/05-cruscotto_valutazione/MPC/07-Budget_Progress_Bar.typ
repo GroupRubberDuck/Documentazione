@@ -125,3 +125,4 @@
 
 Il budget consumato si riferisce al solo periodo RTB sul totale.
 Il progetto completo prevede momenti successivi (PB) non ancora avviati
+

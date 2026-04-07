@@ -157,3 +157,4 @@ Il grafico illustra la composizione del budget nel corso del progetto. I costi e
 mostrano una crescita controllata e lineare, mentre il lavoro rimanente stimato (ETC)
 diminuisce progressivamente, mantenendo il budget totale (EAC) generalmente stabile.
 Il BAC (€#str(bac-value)) è riportato come riferimento per valutare lo scostamento proiettato.
+

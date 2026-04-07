@@ -48,3 +48,4 @@ principalmente a imprecisioni nelle stime iniziali delle ore per ruolo. La sogli
 resta però sotto il BAC, come documentato nel
 #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto]
 e nella sezione @budget-progress-bar.
+
