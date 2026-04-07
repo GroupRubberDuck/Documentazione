@@ -2,6 +2,7 @@
 #import template_dir + "/utilityTable.typ": utilityTable
 
 
+
 === Ruoli
 #align(center)[
   #{
