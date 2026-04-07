@@ -55,3 +55,4 @@ Le modifiche sostanziali ai requisiti comportano l'incremento della versione pri
   - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
   - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni]; \
 ]
+

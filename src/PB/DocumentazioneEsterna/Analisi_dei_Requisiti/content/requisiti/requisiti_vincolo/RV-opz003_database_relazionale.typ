@@ -16,3 +16,4 @@
     #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/VerbaliEsterni/2026-01-13_Verbale-v1.0.0.pdf")[Verbale esterno 2026-01-13 v1.0.0];
   ]
 )
+

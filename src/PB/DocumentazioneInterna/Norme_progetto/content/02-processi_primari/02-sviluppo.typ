@@ -144,5 +144,3 @@ Per lo sviluppo del software, il gruppo utilizza strumenti mirati a garantire qu
 - *Comunicazione e collaborazione interna*: Discord o WhatsApp per coordinamento rapido, aggiornamenti sullo stato di avanzamento e chiarimenti tra membri del gruppo.
 
 - *Comunicazione verso la proponente*: email ufficiale, Zoom  per riunioni sincrone e Telegram per chiarimenti rapidi.
-
-

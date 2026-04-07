@@ -56,3 +56,4 @@
       - Al fine di ottimizzare la gestione delle risorse, si è deciso di adottare un modello di ruoli più flessibile. Sebbene a ogni membro venga assegnato un ruolo di cui deve garantire l'adempimento delle task principali, è consentito svolgere ore lavorative anche in ruoli differenti.
   ],
 )
+

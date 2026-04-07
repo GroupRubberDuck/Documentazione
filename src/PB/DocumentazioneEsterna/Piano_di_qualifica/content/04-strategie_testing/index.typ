@@ -33,3 +33,4 @@ I Test di Regressione hanno lo scopo di rilevare eventuali anomalie introdotte d
 \ \ \ 
 == Test di Integrazione
 I Test di Integrazione verificano il corretto funzionamento delle interazioni tra i diversi componenti o moduli del sistema, assicurando che le interfacce tra essi si comportino come atteso. La loro definizione è demandata alle attività previste per la Product Baseline (PB).
+

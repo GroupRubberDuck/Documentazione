@@ -101,3 +101,4 @@ test=>get-test-label(nome-etichetta: test)
     ..contenuto
   )
 }
+

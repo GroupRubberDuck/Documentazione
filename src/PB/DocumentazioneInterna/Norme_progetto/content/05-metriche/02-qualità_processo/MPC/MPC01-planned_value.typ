@@ -39,4 +39,3 @@ _BAC_ Sta per budget at completion
     ]
 }
 #descrizione-metrica(..dati)
-

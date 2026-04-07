@@ -166,3 +166,4 @@ Ogni documento è suddiviso nelle sezioni che lo compongono, con l'indicazione d
 
 === Product Baseline
 La redazione di questo paragrafo sarà effettuata in seguito al superamento della Requirements and Technology Baseline (RTB).
+

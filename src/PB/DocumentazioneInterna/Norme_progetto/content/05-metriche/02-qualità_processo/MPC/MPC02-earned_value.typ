@@ -17,6 +17,7 @@ $
 _BAC_ Sta per budget at completion
 
 ],
+
     interpretazione:[
       - Valore accettabile:$>= "PV"*0,75$
       - Valore ottimo:$>= "PV"$

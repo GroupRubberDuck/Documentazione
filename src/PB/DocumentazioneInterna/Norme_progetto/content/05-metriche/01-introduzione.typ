@@ -76,3 +76,4 @@ dove:
   - *MPD* per le metriche di qualità del prodotto
 
 - #strong("##") è un contatore progressivo
+

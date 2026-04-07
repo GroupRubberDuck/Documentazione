@@ -231,4 +231,3 @@ I processi di verifica e validazione si appoggiano ai seguenti documenti:
 #link("https://grouprubberduck.github.io/Documentazione/")[Riferimento alle Norme di Progetto.]  
 - *Verbali esterni*: documentano le decisioni e i requisiti concordati con BlueWind Srl nel corso delle riunioni. Costituiscono riferimento per verificare la corrispondenza tra quanto richiesto e quanto implementato.
 #link("https://grouprubberduck.github.io/Documentazione/")[Riferimento ai Verbali esterni]
-

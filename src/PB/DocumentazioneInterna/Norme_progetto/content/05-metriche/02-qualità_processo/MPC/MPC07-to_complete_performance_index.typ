@@ -33,5 +33,3 @@
     ]
 }
 #descrizione-metrica(..dati)
-
-

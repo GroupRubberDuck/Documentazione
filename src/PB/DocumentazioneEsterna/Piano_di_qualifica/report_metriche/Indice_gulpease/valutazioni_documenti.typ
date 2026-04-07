@@ -24,3 +24,5 @@
  #display_gulpease(compute_gulpease(read(template_dir+"/indiceGulpease/Gulpease_info.typ")))
 
  #show_smart_text(prova)
+
+ 
