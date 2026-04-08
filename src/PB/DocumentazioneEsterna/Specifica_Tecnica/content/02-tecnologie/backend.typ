@@ -6,21 +6,24 @@
     ([Python],[3.12.X],[
         Linguaggio interpretato scelto per la rapidità di sviluppo, l'alta leggibilità e il vasto ecosistema.
     ]),
-  "Framework": 
+  "Framework Principale": 
       ([Flask],[3.1.3],[
         Micro-framework web flessibile che permette un controllo totale sull'architettura.
+
+
+        Buona documentazione e possibilità di consulto tecnico con la proponente.
     ]),
   "Dipendenze principali":
     (
       ([waitress],[3.0.2],[
-        Server WSGI leggero e pronto per la produzione. Gestisce la concorrenza delle richieste in modo affidabile su più sistemi operativi.]),
+        Server WSGI leggero. \ Gestisce la concorrenza delle richieste in modo affidabile.]),
       ([fpdf],[],[Libreria per la generazione dinamica di documenti e reportistica in formato PDF direttamente lato server.]),
-      ([pymongo],[],[Driver ufficiale per l'integrazione con MongoDB. Consente interazioni agili con il database NoSQL orientato ai documenti.]),
-      ([pydantic],[],[Utilizzato, insieme a pydantic-settings, per la validazione rigida e type-safe dei dati in ingresso e delle variabili d'ambiente di sistema.]),
-      ([python.dotenv],[],[Gestione semplificata delle configurazioni. Permette il caricamento dinamico a runtime dei parametri definiti nel singolo file centralizzato .env.]),
-      ([],[],[]),
-      ([],[],[]),
-      ([],[],[]),
+      ([pymongo],[],[Driver ufficiale per l'integrazione con MongoDB.]),
+      ([pydantic],[],[Utilizzato per la validazione rigida e type-safe dei dati in ingresso e delle variabili d'ambiente di sistema.]),
+      ([python-dotenv],[],[Gestione semplificata delle configurazioni e la gestione delle variabili d'ambiente.]),
+      ([Jinja2],[],[Template engine HTML con un'ottima integrazione con Flask]),
+      ([werkzeug],[],[Server di sviluppo locale]),
+      ([watchdog],[],[Permette l'hot reloading, passando le modifiche al server di sviluppo senza necessità di riavvio e conservando lo stato attuale]),
     ),
   "Dynamic Testing":(
       ([pytest],[],[Framework di testing adottato per la sua sintassi concisa. Utilizzato per automatizzare i "Sanity Tests" e validare l'integrazione di sistema alla radice del progetto.]),
