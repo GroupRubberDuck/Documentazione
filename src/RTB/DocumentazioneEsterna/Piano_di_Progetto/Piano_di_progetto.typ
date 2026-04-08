@@ -146,6 +146,13 @@
       [#persone.ALDO],
       [Approvazione],
     ),
+    (
+      [1.1.0],
+      [2026-04-08],
+      [#persone.ALDO],
+      [],
+      [Stesura retrospettiva sprint 8],
+    ),
   )
   #registroModifiche(modifiche)
 ]
