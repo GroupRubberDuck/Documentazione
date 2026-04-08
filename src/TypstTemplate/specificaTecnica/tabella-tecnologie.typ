@@ -1,8 +1,3 @@
-
-
-
-#let header-color = rgb("#008080") 
-
 #let header-color = rgb("#008080")
 
 #let tabella-tecnologie(

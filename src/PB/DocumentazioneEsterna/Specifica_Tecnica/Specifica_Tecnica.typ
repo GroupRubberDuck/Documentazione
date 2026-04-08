@@ -52,12 +52,29 @@
   #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
     (
+      [0.0.1],
+      [2026-04-08],
+      [Davide Lorenzon,\ Aldo Bettega ],
+      [-],
+      [Creazione del documento],
+    ),
+    (
       [0.1.0],
       [2026-04-08],
       [Aldo Bettega],
       [-],
       [Creazione del documento e stesura introduzione],
     ),
+    (
+      [0.1.1],
+      [2026-04-08],
+      [Davide Lorenzon],
+      [-],
+      [Bozza iniziale della  Tecnologie.
+      ],
+    ),
+
+
   )
   #registroModifiche(modifiche)
 ]
