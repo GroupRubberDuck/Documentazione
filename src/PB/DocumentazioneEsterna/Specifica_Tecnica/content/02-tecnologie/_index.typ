@@ -3,10 +3,10 @@ In questa sezione vengono descritte le tecnologie utilizzate nello sviluppo del 
 Per ogni tecnologia è riportata la versione di riferimento e il relativo ruolo all'interno del progetto
 
 
-#include "02-tecnologie/backend.typ"
+#include "backend.typ"
 
 
-#include "02-tecnologie/frontend.typ"
+#include "frontend.typ"
 
 
-#include "02-tecnologie/persistence.typ"
+#include "persistence.typ"

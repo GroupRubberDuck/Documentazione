@@ -3,10 +3,6 @@
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
-#import template_dir + "/utilityTable.typ": getCode, utilityTable
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
-#import template_dir + "/PdP/tabellaAtt.typ": tabellaAtt
-#import template_dir + "/PdQ/tabellaMetriche.typ": tabellaMetriche
 #import glossario: dict
 #set text(size: 13pt)
 #set par(justify: true)
@@ -36,37 +32,43 @@
 #metadata(versionNumber)<versionNumber>
 
 
+// ---------------------------------------------------------
+// Pagine Iniziali (Frontespizio, Stato, Modifiche, Indici)
+// ---------------------------------------------------------
+
 #frontPageSenzaData(doc)
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "In lavorazione",
     versione: versionNumber,
-    autori: ( persone.DL, ),
-    verificatori: ( ),
+    autori: (persone.ALDO,persone.DL,),
+    verificatori: (),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Registro modifiche", documentType: doc)[
-
-
-
+  #let header = ("Versione", "Data", "Descrizione", "Autore", "Revisore", "Validatore")
   #let modifiche = (
     (
+      [0.1.0],
+      [2026-04-08],
+      [Aldo Bettega],
+      [-],
+      [Stesura introduzione],
+    ),
+        (
       [0.0.1],
       [2026-04-08],
-      [Davide Lorenzon ],
+      [Davide Lorenzon, Aldo Bettega ],
       [],
-      [Creazione del documento e stesura iniziale.],
+      [Creazione del documento],
     ),
 
   )
   #registroModifiche(modifiche)
-  // #utilityTable(modifiche,header:header,columns:(auto,auto,2fr,1fr,1fr,1.1fr))
-
-
 ]
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
@@ -89,52 +91,52 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione <introduzione>
 
-  #include "content/01-introduzione.typ"
+  #include "content/01-introduzione/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Tecnologie", documentType: doc)[
   = Tecnologie <tecnologie>
 
-  #include "content/02-tecnologie.typ"
+  #include "content/02-tecnologie/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Architettura di Sistema ", documentType: doc)[
   = Architettura di Sistema <architettura-sistema>
 
-  #include "content/03-architettura-sistema.typ"
+  #include "content/03-architettura/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Design Patterns", documentType: doc)[
   = Design Patterns <design-patterns>
 
-  #include "content/04-design-pattern.typ"
+  #include "content/04-design-pattern/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Diagrammi delle classi", documentType: doc)[
   = Diagrammi delle classi<diagrammi-classi>
 
-  #include "content/05-diagrammi-classi.typ"
+  #include "content/05-diagrammi-classi/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Tracciamento", documentType: doc)[
   = Tracciamento <tracciamento>
 
-  #include "content/06-tracciamento.typ"
+  #include "content/06-tracciamento/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
   = Qualità architetturale <qualita-architetturale>
 
-  #include "content/07-qualita-architetturale.typ"
+  #include "content/07-qualita-architetturale/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
   = Gestione Errori e Logging <gestione-errori-logging>
 
 
-  #include "content/08-gestione-errori.typ"
+  #include "content/08-gestione-errori/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Sicurezza", documentType: doc)[
   = Sicurezza <sicurezza>
 
-  #include "content/09-sicurezza.typ"
+  #include "content/09-sicurezza/_index.typ"
 ]
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Performance e Scalabilità", documentType: doc)[
   = Performance e Scalabilità <Performance-Scalabilita>
 
- #include "content/10-performance-scalabilita.typ"
+ #include "content/10-performance-scalabilita/_index.typ"
 ]
