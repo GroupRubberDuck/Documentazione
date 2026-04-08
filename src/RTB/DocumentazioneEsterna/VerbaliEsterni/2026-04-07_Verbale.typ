@@ -38,7 +38,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "In verifica",
     versione: versionNumber,
     autori: (persone.ALDO,),
     verificatori: (),
@@ -50,7 +50,7 @@
 
 
   #let modifiche = (
-    ([0.1.0], [2026-04-07], persone.ALDO, "", [Stesura del verbale]),
+    ([0.1.0], [2026-04-07], persone.ALDO, persone.FILIPPO, [Stesura del verbale]),
   )
 
   #registroModifiche(modifiche)
@@ -124,13 +124,13 @@
   Una delle correzioni più rilevanti apportate all'analisi ha riguardato la definizione delle metodologie di testing da utilizzare.
 
   == Controllo tipizzato
-  Il dibattito sul controllo tipizzato si è concentrato sull'uso di Mypy per l'inferenza statica in Python. Il Professor Cardin ha sollevato dubbi su una possibile incoerenza tra la natura dinamica di Python e l'imposizione di tipi statici. Il proponente ha suggerito che, sebbene Mypy possa prevenire bug a runtime , rischia di diventare un vincolo limitante durante la progettazione iniziale. La raccomandazione è di dare priorità alla definizione dell'architettura e dei moduli , valutando l'inserimento dei controlli tipizzati solo in una fase successiva o finale per evitare rallentamenti nello sviluppo.
+  Il dibattito sul controllo tipizzato si è concentrato sull'uso di MyPy per l'inferenza statica in Python. Il Professor Cardin ha sollevato dubbi su una possibile incoerenza tra la natura dinamica di Python e l'imposizione di tipi statici. Il proponente ha suggerito che, sebbene Mypy possa prevenire bug a runtime , rischia di diventare un vincolo limitante durante la progettazione iniziale. La raccomandazione è di dare priorità alla definizione dell'architettura e dei moduli, valutando l'inserimento dei controlli tipizzati solo in una fase successiva o finale per evitare rallentamenti nello sviluppo.
 
   = Pianificazione e scadenze
-   Il team ha comunicato lo spostamento della consegna finale al 15 maggio per garantire una fase di progettazione più accurata prima di procedere con la codifica e i test.
+   Il team ha comunicato lo spostamento della consegna finale al 15 maggio 2026 per garantire una fase di progettazione più accurata prima di procedere con la codifica e i test.
 ]
 
 #insertArabicNumberedPages("Decisioni", "Verbale esterno", giornoRiunione)[
   = Decisioni & TODO
-  Da questa riunione non sono sorte particolari decisioni. Arrivati ad uno stato di progettazione più maturo verrà ricontattata l'azienda.
+  Da questa riunione non sono sorte particolari decisioni. Arrivati a uno stato di progettazione più maturo verrà ricontattata l'azienda.
 ]
