@@ -41,7 +41,7 @@
     stato: "In verifica",
     versione: versionNumber,
     autori: (persone.ALDO,),
-    verificatori: (),
+    verificatori: (persone.FILIPPO,),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo", "BlueWind srl"),
   )
