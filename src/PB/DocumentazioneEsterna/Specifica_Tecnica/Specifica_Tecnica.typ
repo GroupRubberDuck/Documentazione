@@ -24,8 +24,8 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 0,
-  patch: 1,
+  minor: 1,
+  patch: 0,
 )
 //converte dizionario in stringa
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -42,7 +42,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO,persone.DL,),
+    autori: (persone.ALDO, persone.DL),
     verificatori: (),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -110,7 +110,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Architettura di Sistema ", documentType: doc)[
   = Architettura di Sistema <architettura-sistema>
 
-  #include "content/03-architettura/_index.typ"
+  #include "content/03-architettura/index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Design Patterns", documentType: doc)[
   = Design Patterns <design-patterns>
@@ -147,5 +147,5 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Performance e Scalabilità", documentType: doc)[
   = Performance e Scalabilità <Performance-Scalabilita>
 
- #include "content/10-performance-scalabilita/_index.typ"
+  #include "content/10-performance-scalabilita/_index.typ"
 ]
