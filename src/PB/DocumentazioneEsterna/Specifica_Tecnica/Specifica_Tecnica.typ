@@ -41,7 +41,11 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
+<<<<<<< HEAD
     autori: (persone.ALDO,),
+=======
+    autori: (persone.ALDO, persone.DL),
+>>>>>>> d8da029c (Feat: bozza su ST della parte 03-architettura. #154)
     verificatori: (),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -96,6 +100,7 @@
 #context counter(page).update(1)
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
+<<<<<<< HEAD
   = Introduzione
   #include "content/01-introduzione/index.typ"
 ]
@@ -108,4 +113,56 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione
   #include "content/03-architettura/index.typ"
+=======
+  = Introduzione <introduzione>
+
+  #include "content/01-introduzione/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Tecnologie", documentType: doc)[
+  = Tecnologie <tecnologie>
+
+  #include "content/02-tecnologie/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Architettura di Sistema ", documentType: doc)[
+  = Architettura di Sistema <architettura-sistema>
+
+  #include "content/03-architettura/index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Design Patterns", documentType: doc)[
+  = Design Patterns <design-patterns>
+
+  #include "content/04-design-pattern/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Diagrammi delle classi", documentType: doc)[
+  = Diagrammi delle classi<diagrammi-classi>
+
+  #include "content/05-diagrammi-classi/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Tracciamento", documentType: doc)[
+  = Tracciamento <tracciamento>
+
+  #include "content/06-tracciamento/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
+  = Qualità architetturale <qualita-architetturale>
+
+  #include "content/07-qualita-architetturale/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
+  = Gestione Errori e Logging <gestione-errori-logging>
+
+
+  #include "content/08-gestione-errori/_index.typ"
+]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Sicurezza", documentType: doc)[
+  = Sicurezza <sicurezza>
+
+  #include "content/09-sicurezza/_index.typ"
+]
+
+#insertArabicNumberedPagesSenzaData(PageTitle: "Performance e Scalabilità", documentType: doc)[
+  = Performance e Scalabilità <Performance-Scalabilita>
+
+  #include "content/10-performance-scalabilita/_index.typ"
+>>>>>>> d8da029c (Feat: bozza su ST della parte 03-architettura. #154)
 ]
