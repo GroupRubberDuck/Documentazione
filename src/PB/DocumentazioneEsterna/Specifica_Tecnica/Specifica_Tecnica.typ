@@ -74,7 +74,14 @@
       [Bozza iniziale della @tecnologie Tecnologie.
       ],
     ),
-
+    (
+      [0.1.2],
+      [2026-04-09],
+      [Davide Lorenzon],
+      [-],
+      [Bozza iniziale della @deployment Architettura di deployment.
+      ],
+    ),
 
   )
   #registroModifiche(modifiche)
