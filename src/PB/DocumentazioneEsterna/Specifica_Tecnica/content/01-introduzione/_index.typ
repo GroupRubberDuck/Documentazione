@@ -1,18 +1,18 @@
 #import "/src/config.typ":template_dir,inserisciLink
 
 == Scopo del documento
-Il presente documento ha l'obiettivo di descrivere in dettaglio l'architettura del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, delle relative responsabilità e delle loro interazioni all'interno del sistema.
+Il presente documento intende fornire una descrizione approfondita dell’architettura del prodotto software, delineando con chiarezza le componenti che lo costituiscono, le loro responsabilità e le interazioni reciproche all’interno del sistema.
 La Specifica Tecnica funge da riferimento principale per la fase di progettazione e codifica, garantendo coerenza con i requisiti analizzati e consolidando la maturità architetturale del prodotto.
 
 Nello specifico, questo documento si propone di:
 
-- Definire l'architettura logica del prodotto, illustrando i design pattern adottati e l'organizzazione dei moduli;
+- *Definire l'architettura logica e i design pattern*: descrivere l'organizzazione dei moduli e le logiche di interazione, evidenziando come i pattern adottati garantiscano un codice modulare e testabile.
 
-- Esporre l'architettura di deployment, delineando la distribuzione delle componenti nell'ambiente di esecuzione;
+- *Motivare lo stack tecnologico*: giustificare la scelta delle tecnologie utilizzate in funzione della scalabilità del sistema e della qualità complessiva del prodotto finale.
 
-- Giustificare le scelte tecnologiche, evidenziando come queste favoriscano la scalabilità, la testabilità e la qualità del codice;
+- *Delineare l'architettura di deployment*: illustrare la distribuzione delle componenti negli ambienti di esecuzione e le strategie di rilascio adottate.
 
-- Fornire una guida solida per facilitare la comprensione, l'estensione e la manutenzione futura del prodotto.
+- *Fornire un framework per l'evoluzione del software* : stabilire le linee guida necessarie per facilitare la comprensione del sistema, agevolando futuri interventi di estensione e manutenzione.
 
 == Scopo del prodotto
 Il prodotto si prefigge di automatizzare e digitalizzare il processo di verifica della conformità alla normativa EN 18031, sostituendo le attuali procedure manuali, spesso onerose e soggette a errore umano, con una soluzione software interattiva.
