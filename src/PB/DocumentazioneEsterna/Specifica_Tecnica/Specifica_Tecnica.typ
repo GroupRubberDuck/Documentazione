@@ -41,11 +41,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-<<<<<<< HEAD
-    autori: (persone.ALDO,),
-=======
     autori: (persone.ALDO, persone.DL),
->>>>>>> d8da029c (Feat: bozza su ST della parte 03-architettura. #154)
     verificatori: (),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -58,46 +54,26 @@
     (
       [0.0.1],
       [2026-04-08],
-      [#persone.DL],
-      [#persone.ALDO],
+      [Davide Lorenzon,\ Aldo Bettega ],
+      [-],
       [Creazione del documento],
     ),
     (
       [0.1.0],
       [2026-04-08],
-      [#persone.ALDO],
+      [Aldo Bettega],
       [-],
       [Creazione del documento e stesura introduzione],
     ),
     (
       [0.1.1],
       [2026-04-08],
-<<<<<<< HEAD
       [Davide Lorenzon],
       [-],
       [Bozza iniziale della  Tecnologie.
-=======
-      [#persone.DL],
-      [#persone.ALDO],
-      [Bozza iniziale della @tecnologie Tecnologie.
->>>>>>> 23137731 (Verifica: verifica sezione tecnologie di ST. #150)
       ],
     ),
-    (
-      [0.1.2],
-      [2026-04-09],
-      [#persone.DL],
-      [-],
-      [Bozza iniziale della @deployment Architettura di deployment.
-      ],
-    ),
-    (
-      [0.1.3],
-      [2026-04-10],
-      [#persone.ALDO],
-      [-],
-      [Stesura della @prem e @archlog]
-    )
+
 
   )
   #registroModifiche(modifiche)
@@ -120,20 +96,6 @@
 #context counter(page).update(1)
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
-<<<<<<< HEAD
-  = Introduzione
-  #include "content/01-introduzione/index.typ"
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
-  = Introduzione
-  #include "content/02-tecnologie/index.typ"
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
-  = Introduzione
-  #include "content/03-architettura/index.typ"
-=======
   = Introduzione <introduzione>
 
   #include "content/01-introduzione/_index.typ"
@@ -184,5 +146,4 @@
   = Performance e Scalabilità <Performance-Scalabilita>
 
   #include "content/10-performance-scalabilita/_index.typ"
->>>>>>> d8da029c (Feat: bozza su ST della parte 03-architettura. #154)
 ]
