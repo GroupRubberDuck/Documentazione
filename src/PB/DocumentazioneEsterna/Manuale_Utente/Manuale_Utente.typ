@@ -45,7 +45,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.DT,),
+    autori: (persone.DT, persone.FILIPPO,),
     verificatori: (),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -61,6 +61,13 @@
       persone.DT,
       [],
       [Stesura iniziale],
+    ),
+    (
+      [0.2.0],
+      [2026-04-10],
+      persone.FILIPPO,
+      [],
+      [Stesura bozza iniziale sezione 1.1 e 1.2],
     ),
   )
   #registroModifiche(modifiche)
