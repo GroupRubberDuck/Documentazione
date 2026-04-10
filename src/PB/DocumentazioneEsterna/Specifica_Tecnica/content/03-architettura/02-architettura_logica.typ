@@ -1,4 +1,4 @@
-== Architettura Logica
+== Architettura Logica<archlog>
 
 === Stile architetturale
 L'architettura adottata per realizzare il prodotto è l'architettura esagonale. Questo tipo di architettura ha come obiettivo primario isolare la logica di business dal resto. Questo approccio garantisce un'elevata testabilità del sistema e rende il nucleo del software completamente agnostico rispetto ai dettagli implementativi (framework, database o interfacce).

@@ -10,7 +10,7 @@ Permette di aggiungere o rimuovere campi dai dati senza riscrivere l'intera orga
 
 Nel progetto *#nome-progetto* viene utilizzato come sistema per la persistenza dei dati, in particolare per la rappresentazione dei dispositivi sottoposti alle valutazioni e per la rappresentazione del modello di standard tramite configurazioni esterne.
 
-Il suo utilizzo permette di rappresentare facilmente strutture dati annidiate, tramite una sintassi JSON.
+Il suo utilizzo permette di rappresentare facilmente strutture dati annidate, tramite una sintassi JSON.
 
 Evita la gestione di join complessi tipici di un database relazionale, offre una maggiore sicurezza rispetto alla gestione manuale di file di rappresentazione interni.
 

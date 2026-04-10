@@ -1,4 +1,5 @@
 #import "/src/TypstTemplate/specificaTecnica/tabella-tecnologie.typ": tabella-tecnologie,
+#pagebreak()
 == Frontend <frontend>
 
 #let frontend=(

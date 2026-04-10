@@ -55,33 +55,40 @@
     (
       [0.0.1],
       [2026-04-08],
-      [Davide Lorenzon,\ Aldo Bettega ],
-      [-],
+      [#persone.DL],
+      [#persone.ALDO],
       [Creazione del documento],
     ),
     (
       [0.1.0],
       [2026-04-08],
-      [Aldo Bettega],
+      [#persone.ALDO],
       [-],
       [Stesura introduzione],
     ),
     (
       [0.1.1],
       [2026-04-08],
-      [Davide Lorenzon],
-      [-],
+      [#persone.DL],
+      [#persone.ALDO],
       [Bozza iniziale della @tecnologie Tecnologie.
       ],
     ),
     (
       [0.1.2],
       [2026-04-09],
-      [Davide Lorenzon],
+      [#persone.DL],
       [-],
       [Bozza iniziale della @deployment Architettura di deployment.
       ],
     ),
+    (
+      [0.1.3],
+      [2026-04-10],
+      [#persone.ALDO],
+      [-],
+      [Stesura della @prem e @archlog]
+    )
 
   )
   #registroModifiche(modifiche)
