@@ -26,6 +26,15 @@ replaceInFile() {
     sed -z -i "s#<!--%BEGIN_$2%-->.*<!--%END_$2%-->#$out#g" index.html
 }
 
+# PB
+replaceInFile "output/PB/DocumentazioneEsterna/VerbaliEsterni/" "PB_VERBALI_ESTERNI"
+replaceInFile "output/PB/DocumentazioneInterna/VerbaliInterni/" "PB_VERBALI_INTERNI"
+replaceInFile "output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/" "PB_ADR"
+replaceInFile "output/PB/DocumentazioneEsterna/Manuale_Utente/" "PB_MU"
+replaceInFile "output/PB/DocumentazioneEsterna/Piano_di_Progetto/" "PB_PDP"
+replaceInFile "output/PB/DocumentazioneEsterna/Piano_di_qualifica/" "PB_PDQ"
+replaceInFile "output/PB/DocumentazioneInterna/Norme_progetto/" "PB_NDP"
+
 # RTB
 replaceInFile "output/RTB/DocumentazioneEsterna/VerbaliEsterni/" "RTB_VERBALI_ESTERNI"
 replaceInFile "output/RTB/DocumentazioneInterna/VerbaliInterni/" "RTB_VERBALI_INTERNI"

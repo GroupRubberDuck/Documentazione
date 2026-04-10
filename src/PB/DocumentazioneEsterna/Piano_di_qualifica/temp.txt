@@ -1,0 +1,66 @@
+touch ./content/05-cruscotto_valutazione/MPD/01-requisiti_obbligatori_soddifatti.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/02-requisiti_opzionali_soddifatti.typ &&.
+touch ./content/05-cruscotto_valutazione/MPD/03-requisiti_desiderabili_soddisfatti.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/04-failure_density.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/05-statement_coverage.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/06-branch_coverage.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/07-user_error_rate.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/08-time_to_complete_task.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/09-response_time.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/10-CPU_utilization.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/11-memory_utilization.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/12-cyclomatic_complexity.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/13-modularity_index.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/14-coefficient_of_couplings.typ &&
+touch ./content/05-cruscotto_valutazione/MPD/15-code_smell.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/01-planned_value.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/02-earned_value.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/03-actual_cost.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/04-schedule_performance_index.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/05-cost_performance_index.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/06-estimate_at_completion.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/07-to_complete_performance_index.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/08-estimate_to_complete.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/09-requirements_stability.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/10-requirements_coverage.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/12-correttezza_ortografica.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/13-test_success_rate.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/14-code_coverage.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/15-process_lead_time.typ &&
+touch ./content/05-cruscotto_valutazione/MPC/16-task_completion_on_time.typ &&
+
+
+touch ./data/MPD/01-requisiti_obbligatori_soddifatti.csv &&
+touch ./data/MPD/02-requisiti_opzionali_soddifatti.csv &&
+touch ./data/MPD/03-requisiti_desiderabili_soddisfatti.csv &&
+touch ./data/MPD/04-failure_density.csv &&
+touch ./data/MPD/05-statement_coverage.csv &&
+touch ./data/MPD/06-branch_coverage.csv &&
+touch ./data/MPD/07-user_error_rate.csv &&
+touch ./data/MPD/08-time_to_complete_task.csv &&
+touch ./data/MPD/09-response_time.csv &&
+touch ./data/MPD/10-CPU_utilization.csv &&
+touch ./data/MPD/11-memory_utilization.csv &&
+touch ./data/MPD/12-cyclomatic_complexity.csv &&
+touch ./data/MPD/13-modularity_index.csv &&
+touch ./data/MPD/14-coefficient_of_couplings.csv &&
+touch ./data/MPD/15-code_smell.csv &&
+touch ./data/MPC/01-planned_value.csv &&
+touch ./data/MPC/02-earned_value.csv &&
+touch ./data/MPC/03-actual_cost.csv &&
+touch ./data/MPC/04-schedule_performance_index.csv &&
+touch ./data/MPC/05-cost_performance_index.csv &&
+touch ./data/MPC/06-estimate_at_completion.csv &&
+touch ./data/MPC/07-to_complete_performance_index.csv &&
+touch ./data/MPC/08-estimate_to_complete.csv &&
+touch ./data/MPC/09-requirements_stability.csv &&
+touch ./data/MPC/10-requirements_coverage.csv &&
+touch ./data/MPC/11-indice_gulpease.csv &&
+touch ./data/MPC/12-correttezza_ortografica.csv &&
+touch ./data/MPC/13-test_success_rate.csv &&
+touch ./data/MPC/14-code_coverage.csv &&
+touch ./data/MPC/15-process_lead_time.csv &&
+touch ./data/MPC/16-task_completion_on_time.csv
+
+
+
