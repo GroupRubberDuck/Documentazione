@@ -19,18 +19,6 @@
 #show heading.where(level: 2): set text(size: 16pt)
 
 
-//
-//Info del documento
-//
-#let currentVersion = (
-  major: 0,
-  minor: 1,
-  patch: 0,
-)
-//converte dizionario in stringa
-#let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
-#metadata(versionNumber)<versionNumber>
-
 #let giornoRiunione = datetime(year: 2026, month: 04, day: 09)
 #let doctype = "Verbale interno"
 #frontPage([Verbale riunione], giornoRiunione)
@@ -38,21 +26,11 @@
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
     stato: "In lavorazione",
-    versione: versionNumber,
     autori: (persone.FILIPPO,),
     verificatori: (persone.ALDO,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
-]
-
-#insertRomanNumberedPages("Registro Modifiche", doctype, giornoRiunione)[
-
-  #let modifiche = (
-    ([0.1.0], [2026-04-09], persone.FILIPPO, persone.ALDO, [Stesura del verbale]),
-  )
-
-  #registroModifiche(modifiche)
 ]
 
 #insertRomanNumberedPages("Indice", "Verbale interno", giornoRiunione)[
@@ -66,7 +44,7 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Interno
-  - *Motivazione*: Riunione 
+  - *Motivazione*: Riunione
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 18.00
@@ -94,7 +72,7 @@
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della Riunione
-  La riunione ha avuto come obiettivo principale l’allineamento sull’avanzamento del documento di  Specifica Tecnica e la pianificazione delle attività del prossimo sprint. Il team ha discusso lo stato dell’architettura di sistema (esagonale), concordando di procedere con la progettazione di dettaglio a partire dallo sprint successivo (sprint 9). Si è discusso anche sull'avvio della scrittura del Manuale Utente e sull’aggiornamento del PDP.
+  La riunione ha avuto come obiettivo principale l’allineamento sull’avanzamento del documento di  Specifica Tecnica e la previa pianificazione delle attività del prossimo sprint. Il team ha discusso lo stato dell’architettura di sistema (esagonale), concordando di procedere con la progettazione di dettaglio a partire dallo sprint successivo (sprint 9). Si è discusso anche sull'avvio della scrittura del Manuale Utente e sull’aggiornamento del PDP.
 ]
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
@@ -106,20 +84,20 @@
 
   = Design Pattern e Progettazione<design>
   Il team ha discusso i design pattern da adottare. I pattern identificati come necessari sono:
-    - Strategy: per la gestione di file di formati diversi (CSV, XML, ecc.).
-    - Observer: per monitorare gli aggiornamenti dei requisiti e le relative dipendenze nella core logic. Vue.js integra nativamente questo pattern tramite data binding reattivo.
-    - Command: per supportare le operazioni di salvataggio e annullamento delle modifiche durante una sessione.
-    - Adapter: per l’integrazione tra porte e adattatori nell’architettura esagonale.
-  Per la stesura del diagramma delle classi, il responsabile ha suggerito di consultare le specifiche tecniche di altri gruppi come riferimento. Le sezioni 4 (design pattern) e 5 (diagrammi delle classi) sono prioritarie e costituiscono la parte più importante del documento.
+  - Strategy: per la gestione di file di formati diversi (CSV, XML, ecc.).
+  - Observer: per monitorare gli aggiornamenti dei requisiti e le relative dipendenze nella core logic. Vue.js integra nativamente questo pattern tramite data binding reattivo.
+  - Command: per supportare le operazioni di salvataggio e annullamento delle modifiche durante una sessione.
+  - Adapter: per l’integrazione tra porte e adattatori nell’architettura esagonale.
+  Le sezioni 4 (design pattern) e 5 (diagrammi delle classi) sono prioritarie e costituiscono la parte più importante del documento.
 
   = Manuale Utente <man>
-  Il team ha avviato la discussione sull’impostazione del Manuale Utente. 
-  Dalle analisi dei documenti di altri gruppi è emerso che il documento è rivolto all’utente finale e deve includere: introduzione e descrizione delle funzionalità principali, requisiti hardware e software, istruzioni di installazione e guide operative per le azioni principali dell’applicazione. 
+  Il team ha avviato la discussione sull’impostazione del Manuale Utente.
+  Dalle analisi dei documenti di altri gruppi è emerso che il documento è rivolto all’utente finale e deve includere: introduzione e descrizione delle funzionalità principali, requisiti hardware e software, istruzioni di installazione e guide operative per le azioni principali dell’applicazione.
   In questa fase iniziale si procederà con la stesura dell’introduzione e della sezione di installazione, rimandando le guide operative alla disponibilità dell’applicazione.
 
   = Aggiornamento PDP <doc>
   Il team ha stabilito di aggiornare il Piano di Progetto con la consuntivazione dello sprint 8 e di incorporare, a partire dallo sprint 9, i miglioramenti suggeriti dal Professor Tullio Vardanega in merito alla struttura della sezione di analisi dei rischi.
-  E stata valutata non necessaria la correzione retroattiva degli sprint precedenti. È stato anche deciso che, negli sprint futuri, tutti i task passeranno per lo stato “In approvazione” prima di essere spostati in “Done” a fine sprint, in modo da facilitare la retrospettiva.
+  È stata valutata non necessaria la correzione retroattiva degli sprint precedenti. È stato anche deciso che, negli sprint futuri, tutti i task passeranno per lo stato “In approvazione” prima di essere spostati in “Done” a fine sprint, in modo da facilitare la retrospettiva.
 ]
 
 
@@ -133,7 +111,7 @@
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Avvio progettazione di dettaglio nel prossimo sprint],
-      [],
+      [Avanzare nella stesura di Specifica Tecnica],
       [@spec],
     ),
     (
@@ -150,7 +128,7 @@
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Aggiornare PDP con sprint 8 e miglioramenti di Tullio],
+      [Aggiornare PDP con sprint 8 e miglioramenti consigliati dal professor Vardanega],
       [Allineamento documentazione e recepimento feedback docente],
       [@doc],
     ),
@@ -160,6 +138,12 @@
       [Facilitare retrospettiva e approvazione responsabile],
       [@doc],
     ),
+   (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Affinare la bozza di architettura stesa in Specifica Tecnica],
+      [Completare il paragrafo di architettura logica],
+      [@spec],
+    ), 
   )
 
   #utilityTable(decisioni, header: ("Codice", "Descrizione", "Motivazioni", "Ref."), columns: (auto, 2fr, 2fr, auto))
@@ -187,7 +171,7 @@
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [Migliorare la sezione architettura logica nella Specifica Tecnica],
-      [VI.21.1],
+      [VI.21.6],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
@@ -212,7 +196,7 @@
       [Tutto il gruppo],
       [Studio diagramma delle classi per avvio stesura entro martedì],
       [VI.21.1],
-    )
+    ),
   )
   #utilityTable(
     TODO,
