@@ -1,0 +1,87 @@
+@startuml Valutazione_e_transizione_stato_uc26-27
+actor Utente as utente
+participant "<<Boundary>> \n Vue.js" as vue
+participant "<<Inbound Adapter>> \n Flask API" as flask
+participant "<<Inbound Port>> \n ValutazioneNodoUseCase" as inPort
+participant "<<Service>> \n ValutazioneNodoService" as service
+participant "<<Domain>> \n RegoleNorma" as domain
+participant "<<Outbound port>> \n DeviceRepository" as outPort
+participant "<<Outbound adapter>> PyMongo" as outAdapter
+
+utente -> vue: Selezione risposta (sì, no)
+activate vue
+
+vue -> flask: POST api/valutazione(device_id, node_id, answer)
+activate flask
+
+flask -> inPort: ValutazioneNodo(device_id, node_id, answer)
+activate inPort
+
+inPort -> service: [Dispatch polimorfico della funzione]
+activate service
+
+service -> outPort: get_valutazione(device_id)
+activate outPort
+
+outPort -> outAdapter: trova_doc_dispositivo(device_id)
+activate outAdapter
+
+outAdapter --> outPort: BSON
+deactivate outAdapter
+
+outPort --> service: statoDispositivo
+deactivate outPort
+
+service -> domain: setRisposta(statoDispositivo, node_id, answer)
+activate domain
+
+domain -> domain: calcolo transizione e dipendenze
+
+alt NODO INTERMEDIO
+
+    domain --> service: statoNodoSucc
+
+    service -> outPort: aggiornaStato(device_id, StatoNodoSucc)
+    activate outPort
+
+    outPort -> outAdapter: aggiornaDoc()
+    activate outAdapter
+
+    outAdapter --> outPort: return
+    deactivate outAdapter
+
+    outPort --> service: return
+    deactivate outPort
+
+    service --> inPort: risultato(nodoSuccessivo)
+
+else NODO FOGLIA
+    domain --> service: risultatoFineRequisito (pass/fail)
+    deactivate domain
+
+    service -> outPort: aggiornaStato(device_id, risultatoFineRequisito)
+    activate outPort
+
+    outPort -> outAdapter: aggiornaDoc()
+    activate outAdapter
+
+    outAdapter --> outPort: return
+    deactivate outAdapter
+
+    outPort --> service: return
+    deactivate outPort
+
+    service --> inPort: risultato(statoFinale)
+
+end
+
+
+
+inPort --> flask: Risultato
+
+flask --> vue: risposta HTTP
+
+vue --> utente: mostra prossima domanda o esito finale
+
+
+@enduml
