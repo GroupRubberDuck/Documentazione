@@ -3,10 +3,6 @@
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiTecnologici
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiPersonali
-#import template_dir + "/PdP/tabellaRischi.typ": tabellaRischiOrganizzativi
-#import template_dir + "/PdP/tabellaAtt.typ": tabellaAtt
 #import glossario: dict
 #set text(size: 13pt)
 #set par(justify: true)
@@ -28,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 1,
+  minor: 3,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -45,10 +41,10 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.DT, persone.FILIPPO,),
+    autori: (persone.DT, persone.FILIPPO),
     verificatori: (),
     uso: "Esterno",
-    destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
+    destinatari: ("Utenti finali",),
   )
 ]
 
@@ -68,6 +64,13 @@
       persone.FILIPPO,
       [],
       [Stesura bozza iniziale sezione 1.1 e 1.2],
+    ),
+    (
+      [0.3.0],
+      [2026-04-13],
+      persone.DT,
+      [],
+      [Stesura sezione 2],
     ),
   )
   #registroModifiche(modifiche)
@@ -107,9 +110,4 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Istruzioni d'uso", documentType: doc)[
   = Istruzioni d'uso <Istruzioni_uso>
   #include "content/04-istruzioni_uso/index.typ"
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Supporto tecnico", documentType: doc)[
-  = Supporto tecnico <Supporto_tecnico>
-  #include "content/05-supporto_tecnico/index.typ"
 ]
