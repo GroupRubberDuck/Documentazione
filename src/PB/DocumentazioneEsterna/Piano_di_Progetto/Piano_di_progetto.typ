@@ -153,6 +153,13 @@
       [#persone.ANA],
       [Stesura retrospettiva sprint 8],
     ),
+    (
+      [1.2.0],
+      [2026-04-14],
+      [#persone.FILIPPO],
+      [-],
+      [Aggiunta sezione PB, stesura sprint 9],
+    ),
   )
   #registroModifiche(modifiche)
 ]
