@@ -55,22 +55,22 @@
       [0.1.0],
       [2026-04-09],
       persone.DT,
-      [],
+      persone.DL,
       [Stesura iniziale],
     ),
     (
       [0.2.0],
       [2026-04-10],
       persone.FILIPPO,
-      [],
-      [Stesura bozza iniziale sezione 1.1 e 1.2],
+      persone.DL,
+      [Stesura bozza iniziale @intro],
     ),
     (
       [0.3.0],
       [2026-04-13],
       persone.DT,
-      [],
-      [Stesura sezione 2],
+      persone.DL,
+      [Stesura @Requisiti],
     ),
   )
   #registroModifiche(modifiche)
@@ -93,7 +93,7 @@
 #context counter(page).update(1)
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
-  = Introduzione
+  = Introduzione <intro>
   #include "content/01-introduzione/index.typ"
 ]
 
