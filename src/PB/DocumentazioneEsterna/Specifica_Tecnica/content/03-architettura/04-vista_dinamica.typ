@@ -32,3 +32,19 @@ Una volta recuperato il dispositivo, il Servizio invoca l'aggregazione dei verde
 // altri papabili: uc11, uc23, UC33.3
 
 == Diagrammi di attività
+
+=== Navigazione degli alberi
+
+#image("uml/png/Attività_navigazione.drawio.png", width: 80%)
+
+Il diagramma di attività illustra l'algoritmo di navigazione dell'albero normativo.
+
+Il flusso si basa su un ciclo continuo il cui innesco principale è la risposta dell'utente a uno specifico snodo (Sì/No). Dopo l'inserimento dell'input, il sistema calcola il nodo successivo e ne verifica la natura tramite un blocco decisionale ("è foglia?"):
+
+Se il nodo non è una foglia (nodo intermedio), il flusso torna indietro per sottoporre all'utente la nuova domanda appena calcolata.
+
+Se il nodo è una foglia (ramo di valutazione concluso), il sistema innesca la logica di avanzamento gerarchico.
+
+La fase di avanzamento procede per livelli. Dapprima, il sistema calcola e verifica se vi sono ulteriori requisiti da valutare per l'asset corrente ("trovo requisiti?"). In caso positivo, il nuovo requisito viene caricato e il ciclo di domande riparte dall'inizio. In caso negativo, il sistema sale di livello verificando l'esistenza di ulteriori asset non ancora esaminati nel dispositivo ("trovo asset?"). Se viene individuato un nuovo asset, ne vengono calcolati i relativi requisiti, che vengono caricati per riavviare la compilazione.
+
+L'algoritmo fuoriesce da questo ciclo annidato solo ed esclusivamente quando sia i requisiti sia gli asset del dispositivo sono stati completamente esauriti. In questo scenario conclusivo, il sistema procede al calcolo del report finale e termina l'attività.
