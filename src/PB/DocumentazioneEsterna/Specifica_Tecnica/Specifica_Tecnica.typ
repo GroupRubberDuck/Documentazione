@@ -88,6 +88,13 @@
       [#persone.ALDO],
       [-],
       [Stesura della @prem e @archlog]
+    ),
+    (
+      [0.1.4],
+      [2026-04-15],
+      [#persone.ALDO],
+      [-],
+      [Stesura della @vista_din]
     )
 
   )
