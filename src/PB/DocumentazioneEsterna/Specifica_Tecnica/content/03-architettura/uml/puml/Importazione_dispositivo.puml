@@ -1,14 +1,14 @@
-@startuml importazione_dispositivo_uc05-06
+@startuml Importazione_dispositivo_uc05_06
 
 actor "Utente" as utente
-participant "<<Boundary>> Vue.js" as vue
+participant "<<Boundary>>\nVue.js" as vue
 participant "<<Inbound Adapter>>\nFlask API" as flask
 participant "<<DTO>>\nImportDeviceDTO" as DTO
 participant "<<Service>>\nDeviceService" as service
-participant "<<Domain Entity>>\nDispositivoDTO" as domain
-participant "<<Outbound Port>>\nrepository" as repo
+participant "<<Domain Entity>>\nDispositivo" as domain
+participant "<<Outbound Adapter>>\npymongo : DeviceRepositoryPort" as repo
 
-utente -> vue: importazione dispositivo
+utente -> vue: Importazione dispositivo
 activate vue
 
 vue -> flask: POST /api/devices
@@ -17,10 +17,10 @@ activate flask
 flask -> DTO: validazione_sintassi(JSON)
 activate DTO
 
-alt UC06 - Errore file dispositivo non valido
+alt UC06 - Errore formato file
     DTO --> flask: ValidationError
-    flask --> vue: HTTP 400
-    vue --> utente: formato non valido
+    flask --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: formato non valido
 else Sintassi Corretta
     DTO --> flask: DTO_validato
 end
@@ -29,15 +29,15 @@ deactivate DTO
 flask -> service: importa_dispositivo(DTO_validato)
 activate service
 
-service -> domain: DispositivoDTO.create(dati_estratti_dal_dto)
+service -> domain: Dispositivo.create(dati_estratti_dal_dto)
 activate domain
 
 domain -> domain: verifica_regole_normative()
-alt UC06: Errore file dispositivo non valido
+alt UC06 - Errore semantica file
     domain --> service: DomainException
     service --> flask: Eccezione Propagata
-    flask --> vue: HTTP 422
-    vue --> utente: il file viola la norma
+    flask --> vue: HTTP 422 Unprocessable Entity
+    vue --> utente: Errore: il file viola la norma
 else L'entità rispetta le regole di dominio
     domain --> service: nuovo_dispositivo
 end
@@ -51,9 +51,10 @@ deactivate repo
 service --> flask: success(id_dispositivo)
 deactivate service
 
-flask --> vue: HTTP 201: dispositivo creato
+flask --> vue: HTTP 201 Created
 deactivate flask
 
-vue --> utente: dispositivo importato
+vue --> utente: Dispositivo importato
+deactivate vue
 
 @enduml

@@ -21,11 +21,15 @@ Tramite l'uso di un Alternative Sequence Fragment (alt), il diagramma modella il
 se la risposta porta a un nodo intermedio, il sistema salva il progresso e restituisce la domanda successiva;
 se la risposta raggiunge una foglia dell'albero normativo, il sistema calcola la conformità finale (Pass/Fail) e chiude lo stato della valutazione.
 
-=== Importazione e validazione UC33.3
+=== UC30 - Esportazione report di conformità
+#image("uml/png/Esportazione_report_uc30.png")
 
-=== Esportazione in pdf UC30.1
+Il diagramma di sequenza illustra il processo di generazione ed esportazione del resoconto finale di conformità per un dispositivo valutato.
 
+Il flusso è innescato da una chiamata HTTP gestita dall'Adattatore Inbound. Il Servizio applicativo avvia il recupero del documento che viene effettuato grazie all'outbound adapter (PyMongo) che estrae i dati dal database.
 
-// altri papabili: uc11, uc23
+Una volta recuperato il dispositivo, il Servizio invoca l'aggregazione dei verdetti sul Dominio, il quale restituisce una struttura dati esclusivamente logica (Pass/Fail/NA) senza possedere alcuna conoscenza del rendering finale. Per la creazione del file fisico il Servizio usa la porta di generazione del pdf che traduce i dati puri in un layout grafico, restituendo il file che arriverà all'utente.
+
+// altri papabili: uc11, uc23, UC33.3
 
 == Diagrammi di attività

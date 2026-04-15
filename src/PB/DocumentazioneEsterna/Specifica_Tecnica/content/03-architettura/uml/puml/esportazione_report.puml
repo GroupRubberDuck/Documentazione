@@ -1,0 +1,47 @@
+@startuml Esportazione_report_uc30
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 150
+
+actor "Utente" as utente
+participant "<<Boundary>>\nVue.js" as vue
+participant "<<Inbound Adapter>>\nFlask API" as flask
+participant "<<Service>>\nReportService" as service
+participant "<<Outbound Adapter>>\npymongo : DeviceRepositoryPort" as repo
+participant "<<Domain Entity>>\nDispositivo" as domain
+participant "<<Outbound Adapter>>\nfpdf : PdfGeneratorPort" as pdf
+
+utente -> vue: Richiede esportazione report
+activate vue
+
+vue -> flask: GET /api/devices/{id}/report\nAccept: application/pdf
+activate flask
+
+flask -> service: genera_report_dispositivo(id)
+activate service
+
+service -> repo: get_device(id)
+activate repo
+repo --> service: istanza_dispositivo
+deactivate repo
+
+service -> domain: calcola_resoconto_finale()
+activate domain
+domain --> service: dati_resoconto_logico
+deactivate domain
+
+service -> pdf: genera_pdf(dati_resoconto_logico)
+activate pdf
+pdf --> service: file_pdf_binario
+deactivate pdf
+
+service --> flask: file_pdf_binario
+deactivate service
+
+flask --> vue: HTTP 200 OK\n(Content-Type: application/pdf)
+deactivate flask
+
+vue --> utente: Download file PDF avviato
+deactivate vue
+
+@enduml
