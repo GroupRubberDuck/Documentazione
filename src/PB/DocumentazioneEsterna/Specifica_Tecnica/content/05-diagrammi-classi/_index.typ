@@ -5,6 +5,7 @@
 - nodo normativo
 - report
 
+#include "01-diagramma.typ"
 
 
 == Implementazione dell'esagono

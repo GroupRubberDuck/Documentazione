@@ -1,0 +1,122 @@
+@startuml Modello_di_Dominio
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam packageStyle rectangle
+
+package "1. Oggetti di valutazione" {
+    class Dispositivo {
+        - id: Integer
+        - nome: String
+        - sistemaOperativo: String
+        - descrizione: String
+        + aggiungiAsset(a: Asset): void
+        + calcolaConformitaGlobale(): Verdetto
+    }
+
+    class Asset {
+        - id: Integer
+        - nome: String
+        - descrizione: String
+        - tipo: TipoAsset
+    }
+
+    enum TipoAsset <<enumeration>> {
+        SECURITY
+        NETWORK
+    }
+}
+
+package "2. Navigazione a Valutazione" {
+    class ReportConformita {
+        - id: Integer
+        - dataEmissione: Date
+        - esitoGlobale: Verdetto
+    }
+
+    class ValutazioneRequisito {
+        - id: Integer
+        - stato: StatoValutazione
+        - giustificazione: String
+        - mapRisposte: Map<String, Boolean>
+        + registraRisposta(idNodo: Integer, risposta: Boolean): void
+    }
+
+    enum StatoValutazione <<enumeration>> {
+        IN_CORSO
+        PASS
+        FAIL
+        NA
+    }
+}
+
+package "3. Modello Normativo" {
+    class ModelloStandard {
+        - id: Integer
+        - codice: String
+        - nome: String
+        - versione: String
+    }
+
+    class Requisito {
+        - codice: String
+        - nome: String
+        - descrizione: String
+    }
+
+    class DecisionTree {
+        - rootNodeId: String
+    }
+
+    abstract class NodoNormativo <<abstract>> {
+        - codice: String
+        + {abstract} isFoglia(): Boolean
+    }
+
+    class NodoDecisionale {
+        - domanda: String
+        + getNextNode(risposta: Boolean): NodoNormativo
+    }
+
+    class NodoFoglia {
+        - esito: Verdetto
+    }
+}
+
+enum Verdetto <<enumeration>> {
+    PASS
+    FAIL
+    NA
+}
+
+'Relazioni verticali'
+
+Dispositivo *-- "1..*" Asset
+Asset -down-> TipoAsset
+
+ReportConformita o-- "*" ValutazioneRequisito
+ValutazioneRequisito --> StatoValutazione
+
+ModelloStandard *-- "1..*" Requisito
+Requisito *-- "1" DecisionTree
+DecisionTree *-- "1..*" NodoNormativo
+
+
+NodoNormativo <|-- NodoDecisionale : eredita
+NodoNormativo <|-- NodoFoglia : eredita
+NodoDecisionale --> "2" NodoNormativo : YES/NO
+
+Requisito "0..*" -right-> Requisito : dipende da >
+
+'Relazioni orizziontali'
+
+Dispositivo -right-> "1" ModelloStandard : valutato su >
+
+Asset "1" <-left- "*" ValutazioneRequisito : < relativa a
+ValutazioneRequisito "1" -right-> "1" Requisito : riferita a >
+
+ReportConformita -down-> Verdetto
+NodoFoglia -down-> Verdetto
+
+@enduml

@@ -131,7 +131,7 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Architettura di Sistema ", documentType: doc)[
   = Architettura di Sistema <architettura-sistema>
 
-  #include "content/03-architettura/index.typ"
+  #include "content/03-architettura/_index.typ"
 ]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Design Patterns", documentType: doc)[
   = Design Patterns <design-patterns>

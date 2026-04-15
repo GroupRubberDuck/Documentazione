@@ -2,14 +2,14 @@
 La seguente sezione illustra il comportamento dinamico del sistema tramite diagrammi di sequenza, focalizzandosi sui casi d'uso di maggiore interesse. Questi modelli descrivono l'ordine cronologico dei messaggi scambiati tra gli attori esterni, i componenti infrastrutturali e il nucleo applicativo.
 
 === UC05 - Importazione dispositivo
-#image("uml/png/importazione_dispositivo_uc05-06.png");
+#image("../uml/png/importazione_dispositivo_uc05-06.png");
 
 Il diagramma illustra il processo di importazione e validazione strutturale di un dispositivo attraverso i layer dell'Architettura Esagonale. Il flusso adotta un approccio Fail-Fast diviso in due fasi. Inizialmente, l'Adattatore Inbound utilizza un Data Transfer Object (DTO) per eseguire una validazione strutturale sul formato del file in ingresso. Successivamente, il Servizio estrae i dati validati e li passa al Dominio, a cui è delegata esclusivamente la verifica delle regole normative.
 
 Tramite le due aree alt viene modellata la gestione degli errori del caso (UC06): il primo blocco respinge i payload malformati fermandoli al confine del sistema (HTTP 400); il secondo gestisce le violazioni delle regole di business sollevate dal nucleo applicativo (HTTP 422). Solo se l'entità supera entrambi i controlli, il Servizio invoca l'Adattatore di persistenza per il salvataggio e completa l'operazione.
 
 === UC26, UC27 - Valutazione di un nodo e transizione di stato
-#image("uml/png/Valutazione_e_transizione_stato_uc26_27.png")
+#image("../uml/png/Valutazione_e_transizione_stato_uc26_27.png")
 
 Il diagramma di sequenza illustra il flusso principale di interazione durante la valutazione di un dispositivo secondo la norma EN18031.
 Il diagramma evidenzia il rigoroso attraversamento dei layer architettonici, dal Boundary (Vue.js) fino al driver di persistenza (PyMongo).
@@ -21,7 +21,7 @@ se la risposta porta a un nodo intermedio, il sistema salva il progresso e resti
 se la risposta raggiunge una foglia dell'albero normativo, il sistema calcola la conformità finale (Pass/Fail) e chiude lo stato della valutazione.
 
 === UC30 - Esportazione report di conformità
-#image("uml/png/Esportazione_report_uc30.png")
+#image("../uml/png/Esportazione_report_uc30.png")
 
 Il diagramma di sequenza illustra il processo di generazione ed esportazione del resoconto finale di conformità per un dispositivo valutato.
 
@@ -35,7 +35,7 @@ Una volta recuperato il dispositivo, il Servizio invoca l'aggregazione dei verde
 
 === Navigazione degli alberi
 
-#image("uml/png/Attività_navigazione.drawio.png", width: 80%)
+#image("../uml/png/Attività_navigazione.drawio.png", width: 80%)
 
 Il diagramma di attività illustra l'algoritmo di navigazione dell'albero normativo.
 
