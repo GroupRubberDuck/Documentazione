@@ -6,7 +6,7 @@
 4. Aprire le Impostazioni di VsCode (Ctrl + ,) e cercare:
     plantuml.exportOutDir
 5. inserire percorso relativo (serve a dire dove compilare l'output) scrivendo:
-    uml/png
+    src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/png
 6. cercare anche:
     plantuml export include folder hierarchy
    e disabilitare la spunta
