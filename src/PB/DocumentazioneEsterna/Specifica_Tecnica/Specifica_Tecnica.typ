@@ -73,7 +73,28 @@
       [Bozza iniziale della  Tecnologie.
       ],
     ),
-
+    (
+      [0.1.2],
+      [2026-04-09],
+      [#persone.DL],
+      [-],
+      [Bozza iniziale della @deployment Architettura di deployment.
+      ],
+    ),
+    (
+      [0.1.3],
+      [2026-04-10],
+      [#persone.ALDO],
+      [-],
+      [Stesura della @prem e @archlog]
+    ),
+    (
+      [0.1.4],
+      [2026-04-15],
+      [#persone.ALDO],
+      [-],
+      [Stesura della @vista_din]
+    )
 
   )
   #registroModifiche(modifiche)
@@ -128,22 +149,5 @@
 #insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
   = Qualità architetturale <qualita-architetturale>
 
-  #include "content/07-qualita-architetturale/_index.typ"
-]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
-  = Gestione Errori e Logging <gestione-errori-logging>
 
-
-  #include "content/08-gestione-errori/_index.typ"
-]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Sicurezza", documentType: doc)[
-  = Sicurezza <sicurezza>
-
-  #include "content/09-sicurezza/_index.typ"
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Performance e Scalabilità", documentType: doc)[
-  = Performance e Scalabilità <Performance-Scalabilita>
-
-  #include "content/10-performance-scalabilita/_index.typ"
 ]

@@ -1,4 +1,4 @@
-== Diagrammi di sequenza
+== Diagrammi di sequenza<vista_din>
 La seguente sezione illustra il comportamento dinamico del sistema tramite diagrammi di sequenza, focalizzandosi sui casi d'uso di maggiore interesse. Questi modelli descrivono l'ordine cronologico dei messaggi scambiati tra gli attori esterni, i componenti infrastrutturali e il nucleo applicativo.
 
 === UC05 - Importazione dispositivo
