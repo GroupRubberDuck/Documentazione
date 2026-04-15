@@ -85,14 +85,14 @@
       [0.1.3],
       [2026-04-10],
       [#persone.ALDO],
-      [-],
+      [#persone.DL],
       [Stesura della @prem e @archlog]
     ),
     (
       [0.1.4],
       [2026-04-15],
       [#persone.ALDO],
-      [-],
+      [#persone.DL],
       [Stesura della @vista_din]
     )
 
