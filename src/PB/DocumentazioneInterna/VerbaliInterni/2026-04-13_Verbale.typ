@@ -25,7 +25,8 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
+    versione: "1.0.0",
     autori: (persone.FILIPPO,),
     verificatori: (persone.DL,),
     uso: "Interno",
@@ -64,7 +65,7 @@
 
 #insertArabicNumberedPages("Ordine del giorno", "Verbale interno", giornoRiunione)[
   = Ordine del giorno
-  - Retrospettiva dello Sprint 8.
+  - Retrospettiva dello Sprint 9.
   - Aggiornamento sullo stato della Specifica Tecnica (ST).
   - Definizione dei ruoli e assegnazione dei task per lo Sprint 10.
 ]
@@ -72,7 +73,7 @@
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della Riunione
-  La riunione è iniziata con la retrospettiva dello Sprint 8, durante la quale ciascun membro ha rendicontato le attività svolte e le relative ore per ruolo. Il team ha poi discusso l'avanzamento del documento di Specifica Tecnica, con particolare attenzione all'architettura esagonale, ai diagrammi di sequenza e alla struttura del diagramma delle classi. Sono state prese decisioni tecniche riguardo all'utilizzo di PlantUML come strumento per la generazione di diagrammi UML e alla notazione da adottare (UML 2.0). Infine, il gruppo ha definito i ruoli per lo Sprint 10 e programmato una mini-riunione di allineamento di metà sprint.
+  La riunione è iniziata con la retrospettiva dello Sprint 9, durante la quale ciascun membro ha rendicontato le attività svolte e le relative ore per ruolo. Il team ha poi discusso l'avanzamento del documento di Specifica Tecnica, con particolare attenzione all'architettura esagonale, ai diagrammi di sequenza e alla struttura del diagramma delle classi. Sono state prese decisioni tecniche riguardo all'utilizzo di PlantUML come strumento per la generazione di diagrammi UML e alla notazione da adottare (UML 2.0). Infine, il gruppo ha definito i ruoli per lo Sprint 10 e programmato una mini-riunione di allineamento di metà sprint.
 ]
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
@@ -81,14 +82,14 @@
   == Diagrammi di Sequenza
   È stata presentata la bozza dei diagrammi di sequenza realizzati tramite PlantUML (software usato al posto di draw.io). L'utilizzo di PlantUML ha consentito di ridurre notevolmente i tempi di produzione, perciò il team ha deciso di usare PlantUML anche per i futuri diagrammi delle classi. È stato precisato che i diagrammi di sequenza devono contenere i nomi reali delle funzioni che verranno implementate; eventuali discrepanze emerse durante la codifica verranno corrette per mantenere la coerenza tra documentazione e codice.
 
-  == Diagrammi delle Classi
+  == Diagrammi delle Classi 
   Il team ha deciso di adottare la notazione UML 2.0 per la rappresentazione delle interfacce nei diagrammi delle classi, utilizzando la rappresentazione a cerchio (lollipop). È stata verificata la compatibilità di PlantUML con tale notazione.
   Per quanto riguarda la struttura del diagramma delle classi, il team ha optato per una suddivisione per package anziché per un unico grande diagramma, al fine di migliorare leggibilità e manutenibilità. Ogni package conterrà il proprio diagramma delle classi; i file PlantUML potranno essere organizzati in una cartella dedicata all'interno del repository, così da essere sotto controllo di versione e importabili nella Specifica Tecnica.
 
   == Persistenza dei dati (Mongo DB)
   È stata presentata la necessità di descrivere nella ST la struttura di persistenza su MongoDB. Il modello dei dati prevede una struttura ad albero: il nodo radice rappresenta i dati anagrafici del dispositivo, i nodi figli sono gli asset, e i nodi foglia sono i requisiti definiti dal modello. MongoDB salva i dati in formato JSON, che supporta nativamente questa struttura. Il team ha discusso la possibilità di definire vincoli di schema per le parti fisse del modello (es. nome e sistema operativo del dispositivo) lasciando flessibilità per le parti variabili (asset e requisiti).
 
-  == Design Pattern e Architettura
+  == Design Pattern e Architettura <ds>
    È stato chiarito che le classi all'interno di un modulo non devono comunicare direttamente con classi di moduli diversi, ma sempre tramite porte e adattatori, in accordo con i principi dell'architettura esagonale. Il team ha concordato di procedere con una bozza dei design pattern, consapevole che le scelte potranno essere riviste durante la fase di codifica.
 
   = Pianificazione Sprint 10  <sprint>
@@ -118,8 +119,8 @@ Il gruppo ha inoltre concordato una mini-riunione informale di allineamento per 
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Utilizzo della notazione UML 2.0 per le interfacce (lollipop)],
-      [Adottare lo standard più recente e coerente con i requisiti],
+      [Utilizzo della notazione UML 2.0],
+      [Adottare lo standard più recente],
       [@st],
     ),
     (
@@ -130,8 +131,20 @@ Il gruppo ha inoltre concordato una mini-riunione informale di allineamento per 
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Valutazione dei design pattern applicabili],
+      [Attività di ricerca utile per la  progettazione nel dettaglio],
+      [@ds],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
       [Pianificazione dello sprint 10],
       [Garantire copertura di tutti i ruoli necessari nella prossima iterazione],
+      [@sprint],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Studio della vista dati],
+      [Attività necessaria a delineare la struttura del sistema di permanenza dei dati],
       [@sprint],
     ),
   )
@@ -161,13 +174,13 @@ Il gruppo ha inoltre concordato una mini-riunione informale di allineamento per 
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.FELIX],
       [Scrivere la sezione Design Pattern nella Specifica Tecnica],
-      [VI.22.1],
+      [VI.22.4],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ANA],
       [Redigere la vista dati (persistenza MongoDB) nella Specifica Tecnica],
-      [-],
+      [VI.22.6],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
@@ -179,7 +192,7 @@ Il gruppo ha inoltre concordato una mini-riunione informale di allineamento per 
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.FILIPPO, \ #persone.DT],
       [Studiare e avviare la progettazione del diagramma delle classi per i moduli della Specifica Tecnica],
-      [VI.22.1],
+      [VI.22.3],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
