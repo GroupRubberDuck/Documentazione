@@ -116,7 +116,7 @@
       [2026-03-05],
       [#persone.ALDO],
       [#persone.FILIPPO],
-      [Aggiunta parte di classicazione e gestione rischi ROAM],
+      [Aggiunta parte di classificazione e gestione rischi ROAM],
     ),
     (
       [0.8.0],
@@ -157,7 +157,7 @@
       [1.2.0],
       [2026-04-14],
       [#persone.FILIPPO],
-      [-],
+      [#persone.DL],
       [Aggiunta sezione PB, stesura sprint 9],
     ),
   )
