@@ -9,7 +9,7 @@ Il diagramma illustra il processo di importazione e validazione strutturale di u
 Tramite le due aree alt viene modellata la gestione degli errori del caso (UC06): il primo blocco respinge i payload malformati fermandoli al confine del sistema (HTTP 400); il secondo gestisce le violazioni delle regole di business sollevate dal nucleo applicativo (HTTP 422). Solo se l'entità supera entrambi i controlli, il Servizio invoca l'Adattatore di persistenza per il salvataggio e completa l'operazione.
 
 === UC26, UC27 - Valutazione di un nodo e transizione di stato
-#image("uml/png/Valutazione_e_transizione_stato_uc26-27.png");
+#image("uml/png/Valutazione_e_transizione_stato_uc26_27.png")
 
 Il diagramma di sequenza illustra il flusso principale di interazione durante la valutazione di un dispositivo secondo la norma EN18031.
 Il diagramma evidenzia il rigoroso attraversamento dei layer architettonici, dal Boundary (Vue.js) fino al driver di persistenza (PyMongo).
