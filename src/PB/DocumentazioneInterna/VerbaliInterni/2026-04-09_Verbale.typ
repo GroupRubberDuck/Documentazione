@@ -19,13 +19,25 @@
 #show heading.where(level: 2): set text(size: 16pt)
 
 
+//
+//Info del documento
+//
+#let currentVersion = (
+  major: 1,
+  minor: 0,
+  patch: 0,
+)
+//converte dizionario in stringa
+#let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
+#metadata(versionNumber)<versionNumber>
 #let giornoRiunione = datetime(year: 2026, month: 04, day: 09)
 #let doctype = "Verbale interno"
 #frontPage([Verbale riunione], giornoRiunione)
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In approvazione",
+    stato: "Approvato",
+    versione: versionNumber,
     autori: (persone.FILIPPO,),
     verificatori: (persone.ALDO,),
     uso: "Interno",

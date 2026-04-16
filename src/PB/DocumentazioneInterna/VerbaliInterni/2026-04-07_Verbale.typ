@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -37,22 +37,13 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ALDO,),
     verificatori: (persone.FILIPPO,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
-]
-
-#insertRomanNumberedPages("Registro Modifiche", doctype, giornoRiunione)[
-
-  #let modifiche = (
-    ([0.1.0], [2026-04-07], persone.ALDO, persone.FILIPPO, [Stesura del verbale]),
-  )
-
-  #registroModifiche(modifiche)
 ]
 
 #insertRomanNumberedPages("Indice", "Verbale interno", giornoRiunione)[
