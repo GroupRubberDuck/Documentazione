@@ -94,7 +94,14 @@
       [2026-04-15],
       [#persone.ALDO],
       [#persone.DL],
-      [Stesura della @vista_din]
+      [Stesura della @vista_din, vista dinamica]
+    ),
+    (
+      [0.1.5],
+      [2026-04-16],
+      [#persone.DL],
+      [-],
+      [Stesura della @vista-dati, vista dati]
     )
 
   )
