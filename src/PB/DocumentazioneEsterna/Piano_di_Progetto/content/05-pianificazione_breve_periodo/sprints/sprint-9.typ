@@ -39,7 +39,7 @@
   Nel corso dello sprint 9 sono state svolte le seguenti attività:
   - *Specifica Tecnica*: 
     - affinamento dell'architettura logica esagonale (pro e contro); 
-    - prima stesura della sezione dei design pattern (Strategy, Observer, Command, Adapter); 
+    - prima stesura della sezione dei design pattern ; 
     - prima redazione dei diagrammi di sequenza.
   - *Manuale Utente*: 
     - prima stesura sezioni introduttive.
