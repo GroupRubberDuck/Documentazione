@@ -503,6 +503,17 @@
   "Soluzione web-based":[
     Applicazione accessibile tramite browser web, che non richiede installazione locale e può essere utilizzata da qualsiasi dispositivo connesso a internet.
   ],
+  "Schema-flexible":[
+    Caratteristica architetturale tipica dei database NoSQL orientati ai documenti (come MongoDB) che consente di memorizzare dati senza la necessità di definire a priori una struttura rigida. In un ambiente schema-flexible, documenti appartenenti alla medesima collezione possono presentare campi, tipi di dato e gerarchie (nidificazioni) differenti tra loro, garantendo un'elevata agilità nell'evoluzione del modello dati.
+  ],
+  "NoSQL":[
+    *Not Only SQL*.
+
+    Indica una categoria di sistemi di gestione di basi di dati che, a differenza dei tradizionali database relazionali, non utilizza un modello basato su tabelle, righe e colonne con schemi rigidi. Progettati per offrire elevata flessibilità e scalabilità orizzontale, i database NoSQL sono ottimizzati per la gestione di grandi volumi di dati eterogenei, non strutturati o semi-strutturati, utilizzando diversi modelli di archiviazione.
+  ],
+  "Database orientato ai documenti":[
+      Specifica tipologia di database NoSQL progettata per memorizzare, recuperare e gestire informazioni sotto forma di documenti (tipicamente formattati in JSON, BSON o XML). A differenza dei database relazionali, in cui le informazioni sono distribuite su più tabelle normalizzate, in questo modello tutti i dati correlati a una singola entità logica vengono incapsulati all'interno di un unico documento gerarchico. Questo approccio favorisce l'adozione di un design Schema-flexible e si allinea in modo naturale con le strutture dati dei moderni linguaggi di programmazione.
+  ]
 
 )
 
