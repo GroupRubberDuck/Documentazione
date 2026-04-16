@@ -1,12 +1,11 @@
-== Modello di dominio
-- dispositivo
-- asset
-- albero requisito
-- nodo normativo
-- report
+#include "01-diagramma_dominio.typ"
 
-#include "01-diagramma.typ"
+/*
+== Aree
+- Area device e asset management
+- Area model builder
+- area evaluation engine
+- area di import/export e reporting
+*/
 
-
-== Implementazione dell'esagono
-Contiene il valutazioneService circondato da porte (interfacce) e adatpter (classi concrete che le implementano)
+#include "02-area_device.typ"

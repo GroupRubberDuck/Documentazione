@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 1,
+  minor: 4,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -82,25 +82,25 @@
       ],
     ),
     (
-      [0.1.3],
+      [0.2.0],
       [2026-04-10],
       [#persone.ALDO],
       [#persone.DL],
       [Stesura della @prem e @archlog]
     ),
     (
-      [0.1.4],
+      [0.3.0],
       [2026-04-15],
       [#persone.ALDO],
       [#persone.DL],
-      [Stesura della @vista_din, vista dinamica]
+      [Stesura della @vista_din]
     ),
     (
-      [0.1.5],
+      [0.4.0],
       [2026-04-16],
-      [#persone.DL],
-      [-],
-      [Stesura della @vista-dati, vista dati]
+      [#persone.ALDO],
+      [],
+      [Stesura @diagdom e @classe_disp]
     )
 
   )
