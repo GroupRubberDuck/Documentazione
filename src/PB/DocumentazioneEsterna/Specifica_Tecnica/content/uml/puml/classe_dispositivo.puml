@@ -1,0 +1,70 @@
+@startuml classe_dispositivo
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "Inbound Adapter" {
+    class DispositivoController <<Flask Blueprint>> {
+        + getListaDispositivi(req: Request): Response
+        + creaDispositivo(req: Request): Response
+        + importaDispositivo(req: Request): Response
+        + getDettaglioDispositivo(id: String): Response
+        + modificaDispositivo(id: String, req: Request): Response
+        + eliminaDispositivo(id: String): Response
+    }
+}
+
+package "Ports" {
+    
+    interface InterfaceDispositivoUseCase <<Inbound Port>> {
+        + {abstract} getListaDispositivi(): List<Dispositivo>
+        + {abstract} creaDispositivo(dto: CreaDispositivoDTO): Dispositivo
+        + {abstract} importaDispositivo(file: File): Dispositivo
+        + {abstract} getDettaglioDispositivo(id: String): Dispositivo
+        + {abstract} modificaDispositivo(id: String, dto: ModificaDispositivoDTO): Dispositivo
+        + {abstract} eliminaDispositivo(id: String): void
+    }
+
+    interface InterfaceDispositivoRepository <<Outbound Port>> {
+        + {abstract} save(d: Dispositivo): void
+        + {abstract} findById(id: String): Dispositivo
+        + {abstract} findAll(): List<Dispositivo>
+        + {abstract} deleteById(id: String): void
+    }
+}
+
+package "Application Core" <<Rectangle>> {
+
+    class DispositivoService <<Application Service>> {
+        - repository: InterfaceDispositivoRepository
+        + getListaDispositivi(): List<Dispositivo>
+        + creaDispositivo(dto: CreaDispositivoDTO): Dispositivo
+        + importaDispositivo(data: RawData): Dispositivo
+        + getDettaglioDispositivo(id: String): Dispositivo
+        + modificaDispositivo(id: String, dto: ModificaDispositivoDTO): Dispositivo
+        + eliminaDispositivo(id: String): void
+        + validaRegoleBusiness(d: Dispositivo): void
+    }
+
+    class Dispositivo <<Entity>>
+}
+
+package "Outbound Adapter" {
+    class MongoDispositivoAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        + save(d: Dispositivo): void
+        + findById(id: String): Dispositivo
+        + findAll(): List<Dispositivo>
+        + deleteById(id: String): void
+    }
+}
+
+' Relazioni
+
+DispositivoController --> InterfaceDispositivoUseCase : utilizza
+MongoDispositivoAdapter ..|> InterfaceDispositivoRepository : implementa
+InterfaceDispositivoUseCase <|.. DispositivoService : implementa
+DispositivoService --> InterfaceDispositivoRepository : utilizza
+DispositivoService ..> Dispositivo : crea e modifica
+
+@enduml

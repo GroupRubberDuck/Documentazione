@@ -31,8 +31,7 @@ package "1. Oggetti di valutazione" {
 package "2. Navigazione a Valutazione" {
     class ReportConformita {
         - id: Integer
-        - dataEmissione: Date
-        - esitoGlobale: Verdetto
+        - esitoFinale: Verdetto
     }
 
     class ValutazioneRequisito {
@@ -107,16 +106,16 @@ NodoNormativo <|-- NodoDecisionale : eredita
 NodoNormativo <|-- NodoFoglia : eredita
 NodoDecisionale --> "2" NodoNormativo : YES/NO
 
-Requisito "0..*" -right-> Requisito : dipende da >
+Requisito "0..*" ---right-> "1..*" Requisito : dipende da >
 
 'Relazioni orizziontali'
 
-Dispositivo -right-> "1" ModelloStandard : valutato su >
+Dispositivo --> "1" ModelloStandard : valutato su >
 
-Asset "1" <-left- "*" ValutazioneRequisito : < relativa a
-ValutazioneRequisito "1" -right-> "1" Requisito : riferita a >
+Asset "1" <-- "*" ValutazioneRequisito : < relativa a
+ValutazioneRequisito "1" --> "1" Requisito : riferita a >
 
-ReportConformita -down-> Verdetto
-NodoFoglia -down-> Verdetto
+ReportConformita -> Verdetto
+NodoFoglia -up-> Verdetto
 
 @enduml
