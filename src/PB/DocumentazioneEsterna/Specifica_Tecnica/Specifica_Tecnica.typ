@@ -77,7 +77,7 @@
       [0.1.2],
       [2026-04-09],
       [#persone.DL],
-      [-],
+      [#persone.FILIPPO],
       [Bozza iniziale della @deployment Architettura di deployment.
       ],
     ),
