@@ -42,8 +42,8 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL),
-    verificatori: (),
+    autori: (persone.ALDO, persone.DL,persone.ANA),
+    verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
