@@ -9,3 +9,4 @@
 */
 
 #include "02-area_device.typ"
+#include "03-area_asset.typ"
