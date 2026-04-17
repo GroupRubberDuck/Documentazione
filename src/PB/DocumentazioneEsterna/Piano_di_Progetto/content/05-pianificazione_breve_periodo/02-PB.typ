@@ -2,8 +2,9 @@
 #import template_dir + "/PdP/sprint.typ": aggiornaResiduo, displayResiduo, ruoli, sprint
 
 #import "sprints/sprint-9.typ" as s9
+#import "sprints/sprint-10.typ" as s10
 
-#let tutti_gli_sprint = (s9.sprint_data, )
+#let tutti_gli_sprint = (s9.sprint_data, s10.sprint_data)
 
 #let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
 

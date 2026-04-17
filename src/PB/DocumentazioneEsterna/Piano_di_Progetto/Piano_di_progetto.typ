@@ -45,7 +45,7 @@
   #statusTab(
     stato: "Approvato",
     versione: versionNumber,
-    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
+    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO, persone.FILIPPO),
     verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -159,6 +159,13 @@
       [#persone.FILIPPO],
       [#persone.DL],
       [Aggiunta sezione PB, stesura sprint 9],
+    ),
+    (
+      [1.3.0],
+      [2026-04-16],
+      [#persone.DT],
+      [],
+      [Stesura sprint 10],
     ),
   )
   #registroModifiche(modifiche)
