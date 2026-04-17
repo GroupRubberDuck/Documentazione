@@ -66,9 +66,7 @@
 
   A seguito della retrospettiva, il team ha adottato le seguenti misure: 
   - *R.O.1- Pianificazione Errata o Ottimistica*: le stime per le attività di progettazione di dettaglio saranno scomposte in task più granulari a inizio sprint, con revisione collettiva prima dell'avvio. 
-  - *Nuova misura organizzativa*: introduzione di una mini-riunione informale di allineamento a
-  metà sprint, aperta a tutti i membri disponibili, per monitorare l'avanzamento e
-  redistribuire eventuali attività prima che i ritardi si accumulino.
+  - *Nuova misura organizzativa*: introduzione di una mini-riunione informale di allineamento a   metà sprint, aperta a tutti i membri disponibili, per monitorare l'avanzamento e   redistribuire eventuali attività prima che i ritardi si accumulino.
   - *Processo di Approvazione*: tutti i task dovranno transitare per lo stato «In approvazione» prima di essere spostati in «Done», al fine di facilitare la retrospettiva.
 
   *Miglioramento della pianificazione futura*
