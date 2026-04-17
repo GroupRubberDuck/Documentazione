@@ -1,11 +1,11 @@
 == Diagramma di dominio<diagdom>
-Il diagramma delle classi illustra il Modello di Dominio (Domain Model) del nucleo applicativo. Progettato rispettando i principi del Domain-Driven Design (DDD) e dell'Architettura Esagonale, il modello incapsula esclusivamente la logica di business pura (Core), risultando del tutto agnostico rispetto ai dettagli infrastrutturali.
+Il diagramma delle classi illustra il Modello di Dominio del nucleo applicativo. Progettato rispettando i principi del Domain-Driven Design e dell'Architettura Esagonale, il modello incapsula esclusivamente la logica di business pura, risultando del tutto agnostico rispetto ai dettagli infrastrutturali.
 
 #image("../uml/png/Modello_di_Dominio.png")
 
 Per garantire coerenza logica e separazione delle responsabilità, le classi sono state logicamente organizzate in tre macro-package:
 
-1. *Oggetti di Valutazione*
++ #[*Oggetti di Valutazione*
   
   Questo package modella le entità concrete sottoposte alla valutazione:
 
@@ -14,8 +14,8 @@ Per garantire coerenza logica e separazione delle responsabilità, le classi son
   - `Asset`: rappresenta i singoli componenti fisici o logici (classificati tramite l'enumerazione `TipoAsset` in Security o Network) che costituiscono il dispositivo.
 
   La relazione tra `Dispositivo` e `Asset` è una composizione. La distruzione logica di un dispositivo all'interno del sistema comporta la distruzione dei relativi asset associati.
-
-2. *Modello Normativo*
+]
++ #[ *Modello Normativo*
 
   Questo package incapsula la struttura formale della norma di riferimento.
 
@@ -26,8 +26,8 @@ Per garantire coerenza logica e separazione delle responsabilità, le classi son
     - `NodoDecisionale`: nodi intermedi che incapsulano una domanda e definiscono una biforcazione logica (`YES/NO`) verso i nodi successivi.
 
     - `NodoFoglia`: nodi terminali del ramo decisionale che emettono un Verdetto di conformità (`PASS, FAIL, NA`) per l'albero a cui appartengono
-
-3. *Navigazione e Valutazione*
+]
++ #[ *Navigazione e Valutazione*
 
   Questo package funge da area di interazione tra l'entità fisica e la regola normativa.
 
@@ -38,5 +38,5 @@ Per garantire coerenza logica e separazione delle responsabilità, le classi son
     È legato a `ValutazioneRequisito` tramite una relazione di aggregazione: il report colleziona le singole valutazioni per generare l'esito finale, ma una sua eventuale eliminazione o rigenerazione non invalida i dati delle valutazioni persistite nel sistema.
 
   Viene fatto utilizzo di enumerazioni (`TipoAsset`, `StatoValutazione`, `Verdetto`). Questa scelta impone vincoli di dominio stringenti, garantendo la type-safety ed evitando stati di valutazione non previsti dal capitolato.
-
+]
   

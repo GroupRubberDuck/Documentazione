@@ -99,14 +99,14 @@
       [0.4.0],
       [2026-04-16],
       [#persone.ALDO],
-      [],
+      [#persone.DL],
       [Stesura @diagdom e @classe_disp]
     ),
     (
       [0.5.0],
       [2026-04-16],
       [#persone.ANA],
-      [],
+      [#persone.DL],
       [Stesura vista_dati @vista-dati ]
     )
 
