@@ -114,7 +114,7 @@
       [0.6.0],
       [2026-04-17],
       [#persone.FILIPPO],
-      [],
+      [#persone.DL],
       [Stesura vista_dati @classe_asset ]
     )
 
