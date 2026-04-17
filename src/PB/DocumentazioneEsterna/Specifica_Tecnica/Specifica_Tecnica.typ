@@ -109,6 +109,13 @@
       [#persone.ANA],
       [#persone.DL],
       [Stesura vista_dati @vista-dati ]
+    ),
+    (
+      [0.6.0],
+      [2026-04-17],
+      [#persone.FILIPPO],
+      [],
+      [Stesura vista_dati @classe_asset ]
     )
 
   )
