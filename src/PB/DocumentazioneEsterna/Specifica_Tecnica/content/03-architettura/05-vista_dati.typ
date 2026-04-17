@@ -171,7 +171,7 @@ Il documento Dispositivo rappresenta l'entità centrale del sistema, in quanto o
 
     [`giustificazione`], 
     [string], 
-    [Testo motivazionale inserito dall'utente. *Obbligatorio* quando `valutazione.value` è `FAIL` o `NA`. Opzionale per esito `PASS`.]
+    [Testo descrittivo della motivazione inserito dall'utente. *Obbligatorio* quando `valutazione.value` è `FAIL` o `NA`. Opzionale per esito `PASS`.]
   )
 ]
 
