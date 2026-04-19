@@ -1,0 +1,177 @@
+@startuml Import_Model
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+    class ModelBuilder {
+      + Model_DTO_to_Model(Model_dto: ModelFileDTO): Model
+      + get_error_log(): ErrorLog
+    }
+
+    class Model {
+    }
+
+    class ErrorLog {
+      - error_list: list[string]
+      + has_errors(): bool
+      + errors(): list[string]
+    }
+
+    class ModelFileDTO {
+      + Model_name: string
+      + Model_os_name: string
+      + Model_description: string
+      + Model_id: string
+      + Model_name: string
+      + Model_version: string
+      + assets: list[AssetFileDTO]
+    }
+
+    class AssetFileDTO {
+      + asset_name: string
+      + asset_type: AssetType
+      + asset_description: string
+      + assessments: list[AssessmentFileDTO]
+    }
+
+    class AssessmentFileDTO {
+      + requirement_code: string
+      + answers: dictionary[string:bool]
+    }
+  }
+
+  package "Logica Applicativa" {
+    class ImportModelService {
+      - Model_importer_factory: FileModelImporterFactoryPort
+      - Model_repository: ModelRepositoryPort
+      + __init__(Model_importer_factory: FileModelImporterFactoryPort, Model_repository: ModelRepositoryPort)
+      + import_Model(Model_file_content: BinaryIO, extension: AllowedModelFileExtension): ErrorLog
+    }
+
+    enum AllowedModelFileExtension <<enum>> {
+      CSV
+      XML
+      JSON
+    }
+  }
+
+  package "Inbound Ports" {
+    interface ImportModelPort <<interface>> {
+      + import_Model(Model_file_content: BinaryIO, extension: AllowedModelFileExtension): ErrorLog
+    }
+  }
+
+  package "Outbound Ports" {
+    interface FileModelImporterPort <<interface>> {
+      + parse_Model_file(Model_file_content: BinaryIO): ModelFileDTO
+    }
+
+    interface ModelRepositoryPort <<interface>> {
+      + register_Model(Model: Model): bool
+    }
+
+    interface FileModelImporterFactoryPort <<interface>> {
+      + get_file_Model_importer(extension: AllowedModelFileExtension): FileModelImporterPort
+    }
+  }
+}
+
+package "Inbound Adapter" {
+  class FlaskImportModelRequestHandler {
+    - import_port: ImportModelPort
+    + __init__(import_port: ImportModelPort)
+    + import_Model()
+  }
+
+  class FlaskUploadFileController <<Utility>> {
+    + get_http_file_payload(): BinaryIO
+    + get_http_file_extension(): string
+  }
+}
+
+package "Outbound Adapter" {
+  abstract class FileModelImporter <<Template Method>> {
+    + parse_Model_file(Model_file_content: BinaryIO): ModelFileDTO
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class CSVFileModelImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class JSONFileModelImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class XMLFileModelImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class ConcreteFileModelImporterFactory {
+    + get_file_Model_importer(extension: AllowedModelFileExtension): FileModelImporterPort
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound
+FlaskImportModelRequestHandler --> ImportModelPort : " usa"
+FlaskImportModelRequestHandler .up.> FlaskUploadFileController
+
+' Port -> Service
+ImportModelPort <|.. ImportModelService
+
+' Service -> Outbound Ports
+ImportModelService -down-> FileModelImporterFactoryPort
+ImportModelService -down-> ModelRepositoryPort
+
+' Service -> Domain
+ImportModelService ..> ModelBuilder
+
+' Factory
+FileModelImporterFactoryPort <|.. ConcreteFileModelImporterFactory
+FileModelImporterFactoryPort ..> FileModelImporterPort
+ConcreteFileModelImporterFactory .up.> CSVFileModelImporter
+ConcreteFileModelImporterFactory .up.> JSONFileModelImporter
+ConcreteFileModelImporterFactory .up.> XMLFileModelImporter
+
+' Importer hierarchy
+FileModelImporterPort <|.. FileModelImporter
+FileModelImporter <|-down- CSVFileModelImporter
+FileModelImporter <|-down- XMLFileModelImporter
+FileModelImporter <|-down- JSONFileModelImporter
+
+' Importer -> DTO
+FileModelImporter ..> ModelFileDTO : "ritorna"
+
+' Builder
+ModelBuilder ..> ModelFileDTO : "usa"
+ModelBuilder ..> Model : "crea"
+ModelBuilder ..> ErrorLog : "popola"
+
+' Service -> ErrorLog
+ImportModelService ..> ErrorLog : "ritorna"
+
+' DTO composition
+ModelFileDTO *-- AssetFileDTO
+AssetFileDTO *-- AssessmentFileDTO
+
+@enduml

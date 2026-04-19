@@ -1,0 +1,177 @@
+@startuml Import_Device
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+    class DeviceBuilder {
+      + device_DTO_to_device(device_dto: DeviceFileDTO): Device
+      + get_error_log(): ErrorLog
+    }
+
+    class Device {
+    }
+
+    class ErrorLog {
+      - error_list: list[string]
+      + has_errors(): bool
+      + errors(): list[string]
+    }
+
+    class DeviceFileDTO {
+      + device_name: string
+      + device_os_name: string
+      + device_description: string
+      + model_id: string
+      + model_name: string
+      + model_version: string
+      + assets: list[AssetFileDTO]
+    }
+
+    class AssetFileDTO {
+      + asset_name: string
+      + asset_type: AssetType
+      + asset_description: string
+      + assessments: list[AssessmentFileDTO]
+    }
+
+    class AssessmentFileDTO {
+      + requirement_code: string
+      + answers: dictionary[string:bool]
+    }
+  }
+
+  package "Logica Applicativa" {
+    class ImportDeviceService {
+      - device_importer_factory: FileDeviceImporterFactoryPort
+      - device_repository: DeviceRepositoryPort
+      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
+      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+    }
+
+    enum AllowedDeviceFileExtension <<enum>> {
+      CSV
+      XML
+      JSON
+    }
+  }
+
+  package "Inbound Ports" {
+    interface ImportDevicePort <<interface>> {
+      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+    }
+  }
+
+  package "Outbound Ports" {
+    interface FileDeviceImporterPort <<interface>> {
+      + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
+    }
+
+    interface DeviceRepositoryPort <<interface>> {
+      + register_device(device: Device): bool
+    }
+
+    interface FileDeviceImporterFactoryPort <<interface>> {
+      + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
+    }
+  }
+}
+
+package "Inbound Adapter" {
+  class FlaskImportDeviceRequestHandler {
+    - import_port: ImportDevicePort
+    + __init__(import_port: ImportDevicePort)
+    + import_device()
+  }
+
+  class FlaskUploadFileController <<Utility>> {
+    + get_http_file_payload(): BinaryIO
+    + get_http_file_extension(): string
+  }
+}
+
+package "Outbound Adapter" {
+  abstract class FileDeviceImporter <<Template Method>> {
+    + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class CSVFileDeviceImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class JSONFileDeviceImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class XMLFileDeviceImporter {
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+  }
+
+  class ConcreteFileDeviceImporterFactory {
+    + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound
+FlaskImportDeviceRequestHandler --> ImportDevicePort : " usa"
+FlaskImportDeviceRequestHandler .up.> FlaskUploadFileController
+
+' Port -> Service
+ImportDevicePort <|.. ImportDeviceService
+
+' Service -> Outbound Ports
+ImportDeviceService -down-> FileDeviceImporterFactoryPort
+ImportDeviceService -down-> DeviceRepositoryPort
+
+' Service -> Domain
+ImportDeviceService ..> DeviceBuilder
+
+' Factory
+FileDeviceImporterFactoryPort <|.. ConcreteFileDeviceImporterFactory
+FileDeviceImporterFactoryPort ..> FileDeviceImporterPort
+ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter
+ConcreteFileDeviceImporterFactory .up.> JSONFileDeviceImporter
+ConcreteFileDeviceImporterFactory .up.> XMLFileDeviceImporter
+
+' Importer hierarchy
+FileDeviceImporterPort <|.. FileDeviceImporter
+FileDeviceImporter <|-down- CSVFileDeviceImporter
+FileDeviceImporter <|-down- XMLFileDeviceImporter
+FileDeviceImporter <|-down- JSONFileDeviceImporter
+
+' Importer -> DTO
+FileDeviceImporter ..> DeviceFileDTO : "ritorna"
+
+' Builder
+DeviceBuilder ..> DeviceFileDTO : "usa"
+DeviceBuilder ..> Device : "crea"
+DeviceBuilder ..> ErrorLog : "popola"
+
+' Service -> ErrorLog
+ImportDeviceService ..> ErrorLog : "ritorna"
+
+' DTO composition
+DeviceFileDTO *-- AssetFileDTO
+AssetFileDTO *-- AssessmentFileDTO
+
+@enduml

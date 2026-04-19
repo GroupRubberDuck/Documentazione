@@ -1,0 +1,174 @@
+@startuml Export_Model
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+    class Model {
+    }
+
+    class ModelFileDTO {
+      + Model_id: string
+      + Model_name: string
+      + Model_version_number: string
+      + request_list: list[RequestDTO]
+    }
+
+    class RequirementFileDTO {
+      + request_name: string
+      + request_code: string
+      + request_description: string
+      + request_target: string
+      + dependency_list: list[string]
+      + assessments: list[AssessmentFileDTO]
+      + decision_tree_root_node: DecisionTreeNodeFileDTO
+      + justification: string
+    }
+
+    class DecisionTreeNodeFileDTO {
++ node_type: NodeType
++ question_code: string  
++ question_text: string  
++ result_status: ResultStatus  
++ YES_child: DecisionTreeNodeFileDTO
++ NO_child:  DecisionTreeNodeFileDTO
+      }
+
+    
+  
+  enum ResultStatus <<enum>>{
+    PASS
+    FAIL
+    NOT_APPLICABLE
+  } 
+  
+  enum NodeType <<enum>>{
+    DECISION_NODE
+    LEAF_NODE
+  } 
+  
+  }
+
+
+  package "Logica Applicativa" {
+    class ExportModelService {
+      - Model_repository: ModelRepositoryPort
+      - file_exporter_factory: FileModelExporterFactoryPort
+      + __init__(Model_repository: ModelRepositoryPort, file_exporter_factory: FileModelExporterFactoryPort)
+      + export_Model(Model_id: string, extension: AllowedModelFileExtension): bytes
+    }
+
+    enum AllowedModelFileExtension {
+      CSV
+      XML
+      JSON
+    }
+  }
+
+  package "Inbound Ports" {
+    interface ExportModelPort <<interface>> {
+      + export_Model(Model_id: string, extension: AllowedModelFileExtension): bytes
+    }
+  }
+
+  package "Outbound Ports" {
+    interface ModelRepositoryPort <<interface>> {
+      + get_Model_by_id(Model_id: string): Model
+    }
+
+    interface FileModelExporterPort <<interface>> {
+      + generate_Model_file(Model_dto: ModelFileDTO): bytes
+    }
+
+    interface FileModelExporterFactoryPort <<interface>> {
+      + get_file_Model_exporter(extension: AllowedModelFileExtension): FileModelExporterPort
+    }
+  }
+}
+
+package "Inbound Adapter" {
+  class FlaskExportModelRequestHandler {
+    - export_port: ExportModelPort
+    + __init__(export_port: ExportModelPort)
+    + export_Model()
+  }
+
+  class FlaskDownloadFileController <<Utility>> {
+    + build_file_response(file_bytes: bytes, filename: string): FlaskResponse
+  }
+}
+
+package "Outbound Adapter" {
+  abstract class FileModelExporter <<Template Method>> {
+    + generate_Model_file(Model_dto: ModelFileDTO): bytes
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class CSVFileModelExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class JSONFileModelExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class XMLFileModelExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class ConcreteFileModelExporterFactory {
+    + get_file_Model_exporter(extension: AllowedModelFileExtension): FileModelExporterPort
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound
+FlaskExportModelRequestHandler --> ExportModelPort : " usa"
+FlaskExportModelRequestHandler .r.> FlaskDownloadFileController
+
+' Port -> Service
+ExportModelPort <|.. ExportModelService
+
+' Service -> Outbound Ports
+ExportModelService -down-> ModelRepositoryPort
+ExportModelService -down-> FileModelExporterFactoryPort
+ExportModelService ..> ModelFileDTO : "crea"
+
+' Factory
+FileModelExporterFactoryPort <|.. ConcreteFileModelExporterFactory
+FileModelExporterFactoryPort ..> FileModelExporterPort
+ConcreteFileModelExporterFactory .up.> CSVFileModelExporter
+ConcreteFileModelExporterFactory .up.> JSONFileModelExporter
+ConcreteFileModelExporterFactory .up.> XMLFileModelExporter
+
+' Exporter hierarchy
+FileModelExporterPort <|.. FileModelExporter
+FileModelExporter <|-down- CSVFileModelExporter
+FileModelExporter <|-down- JSONFileModelExporter
+FileModelExporter <|-down- XMLFileModelExporter
+
+' Exporter -> DTO
+FileModelExporter ..> ModelFileDTO : "riceve"
+
+' DTO composition
+ModelFileDTO *-- RequirementFileDTO
+RequirementFileDTO *-- DecisionTreeNodeFileDTO
+
+' Model -> DTO
+Model ..> ModelFileDTO : "si converte in"
+
+@enduml

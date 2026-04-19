@@ -1,0 +1,154 @@
+@startuml Export_Device
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+    class Device {
+    }
+
+    class DeviceFileDTO {
+      + device_name: string
+      + device_os_name: string
+      + device_description: string
+      + model_id: string
+      + model_name: string
+      + model_version: string
+      + assets: list[AssetFileDTO]
+    }
+
+    class AssetFileDTO {
+      + asset_name: string
+      + asset_type: AssetType
+      + asset_description: string
+      + assessments: list[AssessmentFileDTO]
+    }
+
+    class AssessmentFileDTO {
+      + requirement_code: string
+      + answers: dictionary[string:bool]
+    }
+  }
+
+  package "Logica Applicativa" {
+    class ExportDeviceService {
+      - device_repository: DeviceRepositoryPort
+      - file_exporter_factory: FileDeviceExporterFactoryPort
+      + __init__(device_repository: DeviceRepositoryPort, file_exporter_factory: FileDeviceExporterFactoryPort)
+      + export_device(device_id: string, extension: AllowedDeviceFileExtension): bytes
+    }
+
+    enum AllowedDeviceFileExtension {
+      CSV
+      XML
+      JSON
+    }
+  }
+
+  package "Inbound Ports" {
+    interface ExportDevicePort <<interface>> {
+      + export_device(device_id: string, extension: AllowedDeviceFileExtension): bytes
+    }
+  }
+
+  package "Outbound Ports" {
+    interface DeviceRepositoryPort <<interface>> {
+      + get_device_by_id(device_id: string): Device
+    }
+
+    interface FileDeviceExporterPort <<interface>> {
+      + generate_device_file(device_dto: DeviceFileDTO): bytes
+    }
+
+    interface FileDeviceExporterFactoryPort <<interface>> {
+      + get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort
+    }
+  }
+}
+
+package "Inbound Adapter" {
+  class FlaskExportDeviceRequestHandler {
+    - export_port: ExportDevicePort
+    + __init__(export_port: ExportDevicePort)
+    + export_device()
+  }
+
+  class FlaskDownloadFileController <<Utility>> {
+    + build_file_response(file_bytes: bytes, filename: string): FlaskResponse
+  }
+}
+
+package "Outbound Adapter" {
+  abstract class FileDeviceExporter <<Template Method>> {
+    + generate_device_file(device_dto: DeviceFileDTO): bytes
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class CSVFileDeviceExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class JSONFileDeviceExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class XMLFileDeviceExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+  }
+
+  class ConcreteFileDeviceExporterFactory {
+    + get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound
+FlaskExportDeviceRequestHandler --> ExportDevicePort : " usa"
+FlaskExportDeviceRequestHandler .r.> FlaskDownloadFileController
+
+' Port -> Service
+ExportDevicePort <|.. ExportDeviceService
+
+' Service -> Outbound Ports
+ExportDeviceService -down-> DeviceRepositoryPort
+ExportDeviceService -down-> FileDeviceExporterFactoryPort
+ExportDeviceService ..> DeviceFileDTO : "crea"
+
+' Factory
+FileDeviceExporterFactoryPort <|.. ConcreteFileDeviceExporterFactory
+FileDeviceExporterFactoryPort ..> FileDeviceExporterPort
+ConcreteFileDeviceExporterFactory .up.> CSVFileDeviceExporter
+ConcreteFileDeviceExporterFactory .up.> JSONFileDeviceExporter
+ConcreteFileDeviceExporterFactory .up.> XMLFileDeviceExporter
+
+' Exporter hierarchy
+FileDeviceExporterPort <|.. FileDeviceExporter
+FileDeviceExporter <|-down- CSVFileDeviceExporter
+FileDeviceExporter <|-down- JSONFileDeviceExporter
+FileDeviceExporter <|-down- XMLFileDeviceExporter
+
+' Exporter -> DTO
+FileDeviceExporter ..> DeviceFileDTO : "riceve"
+
+' DTO composition
+DeviceFileDTO *-- AssetFileDTO
+AssetFileDTO *-- AssessmentFileDTO
+
+' Device -> DTO
+Device ..> DeviceFileDTO : "si converte in"
+
+@enduml
