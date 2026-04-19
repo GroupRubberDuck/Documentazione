@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 5,
+  minor: 6,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -41,7 +41,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL,persone.ANA),
+    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO),
     verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
