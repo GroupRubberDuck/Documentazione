@@ -19,3 +19,27 @@
    e selezionare .png
 
 ora si ha il png da inserire nel doc nella cartella uml/png
+
+
+
+# Alternativa con script
+
+se si ha plantuml installato da terminale
+e lo script ha il permesso di esecuzione
+
+chmod +x compile_puml.sh
+
+basta lanciare da terminale lo script :
+src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/compile_puml.sh
+
+questo legge tutti i file nella cartella :
+src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/puml
+
+come png nella cartella:
+src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/png
+
+
+
+
+
+
