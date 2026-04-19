@@ -1,0 +1,116 @@
+@startuml classe_valutazione
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam Linetype ortho
+
+package "Inbound Adapter" <<Rectangle>> {
+  class ValutazioneController <<Flask Blueprint>> {
+    +avviaValutazione(device_id: String, req: Request): Response
+    +valutaNodo(device_id: String, req: Request): Response
+    +getStatoValutazione(device_id: String, asset_id: String, req_id: String): Response
+    +getReportConformita(device_id: String): Response
+    +resetValutazione(device_id: String, asset_id: String, req_id: String): Response
+  }
+}
+
+package "Ports" <<Rectangle>> {
+  interface InterfaceValutazioneUseCase <<Inbound Port>> {
+    +avviaValutazione(device_id: String, asset_id: String, req_id: String): NodoDTO
+    +valutaNodo(device_id: String, asset_id: String, req_id: String, node_id: String, risposta: Boolean): NodoDTO
+    +getStatoValutazione(device_id: String, asset_id: String, req_id: String): ValutazioneDTO
+    +getReportConformita(device_id: String): ReportDTO
+    +resetValutazione(device_id: String, asset_id: String, req_id: String): void
+  }
+
+  interface InterfaceValutazioneRepository <<Outbound Port>> {
+    +findByDeviceAndRequisito(device_id: String, asset_id: String, req_id: String): ValutazioneRequisito
+    +save(device_id: String, v: ValutazioneRequisito): void
+    +deleteByDeviceAndRequisito(device_id: String, asset_id: String, req_id: String): void
+    +findAllByDevice(device_id: String): List<ValutazioneRequisito>
+  }
+}
+
+package "Application Core" <<Rectangle>>  {
+  class ValutazioneService <<Application Service>> {
+    -repository: InterfaceValutazioneRepository
+    -dispositivoRepository: InterfaceDispositivoRepository
+    -modelloRepository: InterfaceModelloRepository
+    +avviaValutazione(device_id: String, asset_id: String, req_id: String): NodoDTO
+    +valutaNodo(device_id: String, asset_id: String, req_id: String, node_id: String, risposta: Boolean): NodoDTO
+    +getStatoValutazione(device_id: String, asset_id: String, req_id: String): ValutazioneDTO
+    +getReportConformita(device_id: String): ReportDTO
+    +resetValutazione(device_id: String, asset_id: String, req_id: String): void
+    -costruisciReport(dispositivo: Dispositivo, valutazioni: List<ValutazioneRequisito>): ReportConformita
+  }
+}
+
+package "Domain" <<Rectangle>> {
+
+  class ValutazioneRequisito <<Entity>> {
+    -id: String
+    -stato: StatoValutazione
+    -giustificazione: String
+    -mapRisposte: Map<String, Boolean>
+    +registraRisposta(idNodo: String, risposta: Boolean): void
+    +calcolaEsito(tree: DecisionTree): Verdetto
+    +isCompletata(): Boolean
+    +getUltimoNodoAttivo(tree: DecisionTree): NodoNormativo
+    +reset(): void
+    +getGiustificazione(): String
+    +setGiustificazione(testo: String): void
+  }
+
+  class ReportConformita <<Entity>> {
+    -id: String
+    -esitoFinale: Verdetto
+    -valutazioni: List<ValutazioneRequisito>
+    +calcolaEsitoGlobale(): Verdetto
+    +getValutazioniPerEsito(v: Verdetto): List<ValutazioneRequisito>
+    +getTotaleRequisiti(): Integer
+    +getTotalePassati(): Integer
+    +getTotaleFalliti(): Integer
+    +getTotaleNonApplicabili(): Integer
+  }
+
+  enum StatoValutazione {
+    IN_CORSO
+    PASS
+    FAIL
+    NA
+  }
+
+  enum Verdetto {
+    PASS
+    FAIL
+    NA
+  }
+}
+
+
+package "Outbound Adapter" <<Rectangle>>{
+  class MongoValutazioneAdapter <<Mongo Repository>> {
+    -collection: pymongo.Collection
+    +findByDeviceAndRequisito(device_id: String, asset_id: String, req_id: String): ValutazioneRequisito
+    +save(device_id: String, v: ValutazioneRequisito): void
+    +deleteByDeviceAndRequisito(device_id: String, asset_id: String, req_id: String): void
+    +findAllByDevice(device_id: String): List<ValutazioneRequisito>
+  }
+}
+
+ValutazioneController ..> InterfaceValutazioneUseCase : utilizza
+
+InterfaceValutazioneUseCase <|.. ValutazioneService : implementa
+ValutazioneService ..> InterfaceValutazioneRepository : utilizza
+
+InterfaceValutazioneRepository <|.. MongoValutazioneAdapter : implementa
+
+ValutazioneService ..> ValutazioneRequisito : crea
+ValutazioneService ..> ReportConformita : costruisce
+
+ReportConformita o--> "0..*" ValutazioneRequisito : aggrega
+
+ValutazioneRequisito --> StatoValutazione : stato
+ValutazioneRequisito --> Verdetto : esito 
+ReportConformita --> Verdetto : esito finale
+
+@enduml

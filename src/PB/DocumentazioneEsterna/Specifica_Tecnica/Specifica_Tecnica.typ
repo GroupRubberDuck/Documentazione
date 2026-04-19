@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 1,
+  minor: 6,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -42,8 +42,8 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL),
-    verificatori: (),
+    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO),
+    verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -78,30 +78,51 @@
       [0.1.2],
       [2026-04-09],
       [#persone.DL],
-      [-],
+      [#persone.FILIPPO],
       [Bozza iniziale della @deployment Architettura di deployment.
       ],
     ),
     (
-      [0.1.3],
+      [0.2.0],
       [2026-04-10],
       [#persone.ALDO],
       [#persone.DL],
       [Stesura della @prem e @archlog]
     ),
     (
-      [0.1.4],
+      [0.3.0],
       [2026-04-15],
       [#persone.ALDO],
       [#persone.DL],
-      [Stesura della @vista_din, vista dinamica]
+      [Stesura della @vista_din]
     ),
     (
-      [0.1.5],
+      [0.4.0],
       [2026-04-16],
+      [#persone.ALDO],
       [#persone.DL],
+      [Stesura @diagdom e @classe_disp]
+    ),
+    (
+      [0.5.0],
+      [2026-04-16],
+      [#persone.ANA],
+      [#persone.DL],
+      [Stesura vista_dati @vista-dati ]
+    ),
+    (
+      [0.6.0],
+      [2026-04-17],
+      [#persone.FILIPPO],
+      [#persone.DL],
+      [Stesura vista_dati @classe_asset ]
+    ),
+    (
+      [0.6.1],
+      [2026-04-17],
+      [#persone.FILIPPO],
       [-],
-      [Stesura della @vista-dati, vista dati]
+      [Bozza della classe valutazione @classe_valutazione ]
     )
 
   )

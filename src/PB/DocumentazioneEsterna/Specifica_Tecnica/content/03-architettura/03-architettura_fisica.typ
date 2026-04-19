@@ -8,8 +8,8 @@ Questa scelta è coerente con lo sviluppo di una web app locale.
 
 In questo contesto un'architettura a monolite modulare, rispetto all'architettura a microservizi, offre i seguenti vantaggi:
 
-- *Semplicità di Deployment*, tutte le funzionalità sono contenute nella singola unità operativa;
-- *Latenze ridotte*, lo scambio di informazioni avviene completamente in locale.
+- *Semplicità di Deployment*: tutte le funzionalità sono contenute nella singola unità operativa;
+- *Latenze ridotte*: lo scambio di informazioni avviene completamente in locale.
 
 Non si è optato per una architettura monolitica tradizionale in cui spesso il codice è fortemente accoppiato.
 
@@ -37,12 +37,12 @@ Per la distribuzione viene usato Docker come tool di containerizzazione  e Docke
     *Packaging e isolamento*.
     L'infrastruttura è orchestrata tramite Docker Compose e prevede i seguenti container:
     #terms(separator:[\ ],hanging-indent: 0em,
-      ([#sym.bullet web-app],[Contiene l'ambiente Python, il framework Flask, gli asset statici del frontend e altre dipendenze #footnote()[
+      ([#sym.bullet Web-app],[Contiene l'ambiente Python, il framework Flask, gli asset statici del frontend e altre dipendenze #footnote()[
         Vedi sezione #link(<tecnologie>)[Tecnologie] - #link(<backend>)[Backend]
       ]
       ]),
       (
-        [#sym.bullet mongodb],[Basato sull'immagine ufficiale di MongoDB. Per prevenire la perdita dei dati questo container è agganciato a un Docker Volume locale.]
+        [#sym.bullet Mongodb],[Basato sull'immagine ufficiale di MongoDB. Per prevenire la perdita dei dati questo container è agganciato a un Docker Volume locale.]
       )
     )
     
