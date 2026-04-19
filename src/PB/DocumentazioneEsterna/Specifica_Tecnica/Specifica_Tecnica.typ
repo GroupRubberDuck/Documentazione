@@ -115,6 +115,13 @@
       [#persone.FILIPPO],
       [#persone.DL],
       [Stesura vista_dati @classe_asset ]
+    ),
+    (
+      [0.6.1],
+      [2026-04-17],
+      [#persone.FILIPPO],
+      [-],
+      [Bozza della classe valutazione @classe_valutazione ]
     )
 
   )
