@@ -10,3 +10,4 @@
 
 #include "02-area_device.typ"
 #include "03-area_asset.typ"
+#include "04-area_valutazione.typ"
