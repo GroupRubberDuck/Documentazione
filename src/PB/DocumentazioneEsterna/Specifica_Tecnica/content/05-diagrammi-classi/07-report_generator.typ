@@ -1,4 +1,4 @@
-== Generazione Report
+== Generazione Report <report-generator>
 Per realizzare la funzione di generazione del report di valutazione come file scaricabile rispettando i principi dell'architettura esagonale si è deciso di modellare il sistema mettendo in evidenza l'ambito di competenza delle varie classi.
 
 
