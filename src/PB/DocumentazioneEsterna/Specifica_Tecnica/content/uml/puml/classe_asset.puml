@@ -2,85 +2,132 @@
 skinparam linetype ortho
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
-
+skinparam nodesep 80
+skinparam ranksep 80
 
 package "Inbound Adapter" {
- class AssetController <<Flask Blueprint>> {
-   +getListaAsset(device_id: String, req: Request): Response
-   +creaAsset(device_id: String, req: Request): Response
-   +getDettaglioAsset(device_id: String, asset_id: String): Response
-   +modificaAsset(device_id: String, asset_id: String, req: Request): Response
-   +eliminaAsset(device_id: String, asset_id: String): Response
- }
+  class FlaskAssetRequestHandler <<Flask Blueprint>> {
+    - asset_port: AssetUseCasePort
+    + __init__(asset_port: AssetUseCasePort)
+    + get_lista_asset(device_id: string): Response
+    + crea_asset(device_id: string): Response
+    + get_dettaglio_asset(device_id: string, asset_id: string): Response
+    + modifica_asset(device_id: string, asset_id: string): Response
+    + elimina_asset(device_id: string, asset_id: string): Response
+  }
+
+  class Request <<Flask>> {
+  }
+
+  note right of Request
+    Oggetto globale di Flask.
+    Accessibile tramite import
+    nei metodi del controller
+    per estrarre i dati della
+    richiesta HTTP corrente.
+  end note
 }
 
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+    class Device <<Aggregate Root>> {
+      - id: string
+      - assets: list[Asset]
+      + add_asset(name: string, asset_type: AssetType, description: string): Asset
+      + get_asset_by_id(asset_id: string): Asset
+      + get_all_assets(): list[Asset]
+      + update_asset(asset_id: string, name: string, asset_type: AssetType, description: string): void
+      + remove_asset(asset_id: string): void
+    }
+
+    class Asset <<Entity>> {
+      - id: string
+      - name: string
+      - asset_type: AssetType
+      - description: string
+    }
+
+    enum AssetType <<enum>> {
+      SECURITY
+      NETWORK
+    }
+
+    class CreaAssetDTO {
+    }
+
+    class ModificaAssetDTO {
+    }
+
+    class AssetSummaryDTO {
+    }
+
+    class AssetDetailDTO {
+    }
+  }
+
+  package "Logica Applicativa" {
+    class AssetService <<Application Service>> {
+      - device_repository: DeviceRepositoryPort
+      + __init__(device_repository: DeviceRepositoryPort)
+      + get_lista_asset(device_id: string): list[AssetSummaryDTO]
+      + crea_asset(device_id: string, dto: CreaAssetDTO): bool
+      + get_dettaglio_asset(device_id: string, asset_id: string): AssetDetailDTO
+      + modifica_asset(device_id: string, asset_id: string, dto: ModificaAssetDTO): bool
+      + elimina_asset(device_id: string, asset_id: string): void
+    }
+  }
+
+  package "Inbound Ports" {
+    interface AssetUseCasePort <<interface>> {
+      + get_lista_asset(device_id: string): list[AssetSummaryDTO]
+      + crea_asset(device_id: string, dto: CreaAssetDTO): bool
+      + get_dettaglio_asset(device_id: string, asset_id: string): AssetDetailDTO
+      + modifica_asset(device_id: string, asset_id: string, dto: ModificaAssetDTO): bool
+      + elimina_asset(device_id: string, asset_id: string): void
+    }
+  }
+
+  package "Outbound Ports" {
+    interface DeviceRepositoryPort <<interface>> {
+      + get_device_by_id(device_id: string): Device
+      + save_device(device: Device): void
+    }
+  }
+}
 
 package "Outbound Adapter" {
- class MongoAssetAdapter <<Mongo Repository>> {
-   -collection: pymongo.Collection
-   +save(device_id: String, a: Asset): void
-   +findById(device_id: String, asset_id: String): Asset
-   +findAllByDevice(device_id: String): List<Asset>
-   +deleteById(device_id: String, asset_id: String): void
- }
+  class MongoDeviceRepository <<Mongo Repository>> {
+    - collection: pymongo.Collection
+    + get_device_by_id(device_id: string): Device
+    + save_device(device: Device): void
+  }
 }
 
+' --- Relazioni ---
 
-package "Ports" {
- interface InterfaceAssetUseCase <<Inbound Port>> {
-   +getListaAsset(device_id: String): List<Asset>
-   +creaAsset(device_id: String, dto: CreaAssetDTO): Asset
-   +getDettaglioAsset(device_id: String, asset_id: String): Asset
-   +modificaAsset(device_id: String, asset_id: String, dto: ModificaAssetDTO): Asset
-   +eliminaAsset(device_id: String, asset_id: String): void
- }
+' Inbound
+FlaskAssetRequestHandler ..> Request
+FlaskAssetRequestHandler --> AssetUseCasePort : " usa"
 
+' Port -> Service
+AssetUseCasePort <|.. AssetService
 
- interface InterfaceAssetRepository <<Outbound Port>> {
-   +save(device_id: String, a: Asset): void
-   +findById(device_id: String, asset_id: String): Asset
-   +findAllByDevice(device_id: String): List<Asset>
-   +deleteById(device_id: String, asset_id: String): void
- }
-}
+' Service -> Domain
+AssetService ..> Device : "recupera e modifica"
+AssetService ..> CreaAssetDTO : "riceve"
+AssetService ..> ModificaAssetDTO : "riceve"
+AssetService ..> AssetSummaryDTO : "crea"
+AssetService ..> AssetDetailDTO : "crea"
 
+' Service -> Outbound Port
+AssetService --> DeviceRepositoryPort
 
-package "Application Core" {
- class AssetService <<Application Service>> {
-   -repository: InterfaceAssetRepository
-   +getListaAsset(device_id: String): List<Asset>
-   +creaAsset(device_id: String, dto: CreaAssetDTO): Asset
-   +getDettaglioAsset(device_id: String, asset_id: String): Asset
-   +modificaAsset(device_id: String, asset_id: String, dto: ModificaAssetDTO): Asset
-   +eliminaAsset(device_id: String, asset_id: String): void
-   -validaRegoleBusiness(a: Asset): void
- }
+' Outbound Adapter
+DeviceRepositoryPort <|.. MongoDeviceRepository
 
-
- class Asset <<Entity>> {
-   -id: String
-   -nome: String
-   -descrizione: String
-   -tipo: TipoAsset
-   -lista_valutazioni: List<ValutazioneRequisito>
-   +aggiungiValutazione(v: ValutazioneRequisito): void
-   +getValutazioneByRequisito(codice: String): ValutazioneRequisito
- }
-
-
- enum TipoAsset {
-   SECURITY
-   NETWORK
- }
-}
-
-
-AssetController ..> InterfaceAssetUseCase : utilizza
-InterfaceAssetUseCase <|.. AssetService : implementa
-AssetService ..> InterfaceAssetRepository : utilizza
-InterfaceAssetRepository <|.. MongoAssetAdapter : implementa
-AssetService --> Asset : crea e modifica
-Asset --> TipoAsset : usa
-
+' Domain interno
+Device *-- Asset
+Asset --> AssetType
 
 @enduml
