@@ -10,7 +10,7 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 + #[ *Inbound Adapter*
 
 
- Il pacchetto Inbound Adapter rappresenta il punto di contatto con l’utente. Contiene l’AssetController, sviluppato come Blueprint Flask. Il suo unico compito è ricevere le richieste HTTP, tradurle in un formato comprensibile al sistema e restituire una risposta web. Gli endpoint sono annidati gerarchicamente sotto la risorsa Dispositivo, poiché un Asset non esiste in modo autonomo rispetto al Dispositivo padre. Questo livello non prende nessuna decisione logica.
+ Il pacchetto Inbound Adapter rappresenta il punto di contatto con l'utente. Contiene l'AssetController, sviluppato come Blueprint Flask. Il suo unico compito è ricevere le richieste HTTP, tradurle in un formato comprensibile al sistema e restituire una risposta web. Gli endpoint sono annidati gerarchicamente sotto la risorsa Dispositivo, poiché un Asset non esiste in modo autonomo rispetto al Dispositivo padre. Questo livello non prende nessuna decisione logica.
 ]
 
 + #[ *Application Core e Ports*
@@ -19,10 +19,10 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
  Al centro del diagramma si trova la logica vera e propria del software. Per proteggere questa parte centrale, essa comunica con l'esterno unicamente tramite delle Porte (Interfacce astratte):
 
 
-   `InterfaceAssetUseCase` (Inbound Port): È l'elenco dei servizi offerti all'utente. Il Controller "utilizza" questa porta per inviare i comandi, senza aver bisogno di sapere come verranno eseguiti.
+   `InterfaceAssetUseCase` (Inbound Port): È l'elenco dei servizi offerti all'utente. Il Controller «utilizza» questa porta per inviare i comandi, senza aver bisogno di sapere come verranno eseguiti. I metodi esposti coprono le operazioni CRUD sugli asset (getListaAsset, creaAsset, getDettaglioAsset, modificaAsset, eliminaAsset), con i parametri che includono sempre il device_id per rispettare la natura gerarchica della relazione.
 
 
-   `DispositivoService` (Service): Questa classe riceve i comandi dalla porta Inbound, crea e modifica le entità Asset e verifica che i dati rispettino le regole di business tramite un metodo privato dedicato (validaRegoleBusiness). In particolare, questo metodo garantisce che il campo tipo contenga esclusivamente uno dei valori ammessi dall’enumerazione TipoAsset (Security, Network), la cui validazione è delegata interamente al livello applicativo e non al database..
+   `AssetService` (Service): È la classe che svolge il lavoro reale. Implementa `InterfaceAssetUseCase` e riceve i comandi dalla porta Inbound. Crea e modifica le entità Asset e verifica che i dati rispettino le regole di business tramite un metodo privato dedicato (`validaRegoleBusiness`). In particolare, questo metodo garantisce che il campo tipo contenga esclusivamente uno dei valori ammessi dall'enumerazione TipoAsset (Security, Network); questa validazione è delegata interamente al livello applicativo e non al database.
 
 
    `InterfaceAssetRepository` (Outbound Port): Quando il Service ha finito i controlli e deve salvare i dati, non contatta direttamente il database. Usa invece questa porta di uscita, che dichiara solo il bisogno di salvare o leggere un dato, senza specificare la tecnologia.
