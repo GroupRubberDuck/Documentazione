@@ -12,11 +12,12 @@ Il tracciamento delle metriche viene effettuato all'interno del documento: #link
     Valuta la capacità del software di fornire correttamente le funzionalità richieste dai requisiti, assicurando completezza e coerenza rispetto alle specifiche definite.
     In particolare sono considerate:
 
-        - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere].
-        - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti].
-        - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti].
-        - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio].
-        - *Sicurezza*:#[ \ Non vi sono falle di sicurezza che espongono dati sensibili degli utenti].
+        - *Adeguatezza*:#[ \ Presenza di funzioni appropriate per i compiti che deve svolgere],
+        - *Accuratezza*:#[ \ Capacità di fornire risultati nel modo stabilito nei requisiti],
+        - *Interoperabilità*:#[ \ La capacità del prodotto di interagire con altri sistemi definiti],
+        - *Conformità*:#[ \ Il prodotto aderisce a determinati standard di dominio],
+        - *Sicurezza*:#[ \ Non vi sono falle di sicurezza ],
+
       
   ]),
   ([*Affidabilità*],[

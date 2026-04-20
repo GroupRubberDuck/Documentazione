@@ -1,0 +1,43 @@
+# Configurazione dei casi d'uso
+settings:
+  # Percorso dove creare i file (relativo allo script)
+  output_dir: "src/PB/DocumentazioneInterna/Norme_progetto/content/05-metriche/03-qualità_prodotto/MPD"
+
+  # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+  index_file: "_index.typ"
+
+  # Il prefisso non può contenere il carattere di title separator
+  prefix: "MPD"
+  # Estensione dei file generati
+  extension: ".typ"
+
+  # Regole di numerazione e stile
+  formatting:
+    padding: 2 # Zeri iniziali: 2 -> "01", 3 -> "001"
+    separator: "." # Separatore numeri: "1.1" vs "1-1"
+    title_separator: "-" # Separatore tra numero e titolo: "01_Titolo"
+    filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+
+  # (Opzionale) File template da copiare per i nuovi file
+  template_path: "scripts/use_case_generator/template.typ"
+  index_header_template: "src/PB/DocumentazioneInterna/Norme_progetto/content/05-metriche/03-qualità_prodotto/MPD/index_header_template.typ"
+  index_row_template: "src/PB/DocumentazioneInterna/Norme_progetto/content/05-metriche/03-qualità_prodotto/MPD/index_row_template.typ"
+  index_footer_template: "src/PB/DocumentazioneInterna/Norme_progetto/content/05-metriche/03-qualità_prodotto/MPD/index_footer_template.typ"
+# La struttura gerarchica
+structure:
+- Requisiti obbligatori soddisfatti
+- Requisiti Desiderabili soddisfatti
+- Requisiti opzionali soddisfatti
+- Failure Density
+- Statement Coverage
+- Branch Coverage
+- User Error Rate
+- Time To Complete Task
+- Response Time
+- CPU Utilization
+- Memory Utilization
+- Cyclomatic Complexity
+- Instability Index
+- Coefficient of coupling
+- Code Smell
+- Code Coverage
