@@ -72,7 +72,7 @@
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 09:40
   - *Ora fine*: 11:43
-  - *Scriba*: #persone.ANA
+  - *Scriba*: #persone.DT
   - *Partecipanti*:#align(left)[
       #set list(marker: [--])
       - Aldo Bettega
