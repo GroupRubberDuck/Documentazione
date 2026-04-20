@@ -9,13 +9,7 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 
 
 + #[ *Inbound Adapter*
-  Per proteggere il nucleo applicativo, tutta la comunicazione con l'esterno avviene esclusivamente tramite interfacce:
-  `InterfaceValutazioneUseCase` (Inbound Port): definisce il contratto dei casi d'uso offerti all'esterno. Il Controller invoca questa porta senza conoscere l'implementazione sottostante. I metodi principali riguardano l'avvio, la progressione nodo per nodo, la lettura dello stato corrente, il reset e la generazione del report finale.
-  `ValutazioneService` (Service): è la classe che svolge il lavoro reale. Implementa l'Inbound Port e orchestra l'intero flusso di navigazione degli alberi. In particolare:
-  - recupera il contesto di valutazione (dispositivo, modello normativo, stato corrente) tramite i repository.
-  - delega al Domain il calcolo della transizione di stato e della logica normativa EN 18031.
-  - usa un metodo privato `caricaContestoValutazione` per centralizzare il caricamento ed evitare duplicazione tra le operazioni.
-  `InterfaceValutazioneRepository` (Outbound Port): definisce il contratto di persistenza che il Service utilizza. Astrae completamente la tecnologia di storage: il nucleo non conosce MongoDB.
+  Il pacchetto Inbound Adapter contiene il `ValutazioneController`, sviluppato come Blueprint Flask. Il suo unico compito è ricevere le richieste HTTP, tradurle in un formato comprensibile al sistema e restituire una risposta web. Questo livello non prende nessuna decisione logica; delega interamente il controllo alle Inbound Ports. Gli endpoint esposti corrispondono alle operazioni principali del ciclo di vita di una valutazione: avvio, progressione nodo per nodo, lettura dello stato corrente, reset e richiesta del report finale.
 ]
 
 + #[ *Application Core e Ports*
@@ -24,22 +18,23 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
  Al centro del diagramma si trova la logica vera e propria del software. Per proteggere questa parte centrale, essa comunica con l'esterno unicamente tramite delle Porte (Interfacce astratte):
 
 
-   `InterfaceAssetUseCase` (Inbound Port): È l'elenco dei servizi offerti all'utente. Il Controller "utilizza" questa porta per inviare i comandi, senza aver bisogno di sapere come verranno eseguiti.
+   `InterfaceValutazioneUseCase` (Inbound Port): Definisce il contratto dei casi d'uso offerti all'esterno. Il Controller invoca questa porta senza conoscere l'implementazione sottostante. I metodi principali riguardano l'avvio (avviaValutazione), la progressione nodo per nodo (valutaNodo), la lettura dello stato corrente (getStatoValutazione), il reset (resetValutazione) e la generazione del report finale (getReportConformita).
 
+   `ValutazioneService` (Service): È la classe che svolge il lavoro reale. Implementa InterfaceValutazioneUseCase e orchestra l'intero flusso di navigazione degli alberi decisionali. In particolare:
+   - ecupera il contesto di valutazione (dispositivo, modello normativo, stato corrente) tramite i repository iniettati (`dispositivoRepository` e `modelloRepository`) esposti come Outbound Ports appartenenti ai rispettivi moduli;
+   - delega al Domain il calcolo della transizione di stato e della logica normativa EN 18031;
+   - utilizza un metodo privato caricaContestoValutazione per centralizzare il caricamento ed evitare duplicazione tra le operazioni.
 
-   `DispositivoService` (Service): Questa classe riceve i comandi dalla porta Inbound, crea e modifica le entità Asset e verifica che i dati rispettino le regole di business tramite un metodo privato dedicato (validaRegoleBusiness). In particolare, questo metodo garantisce che il campo tipo contenga esclusivamente uno dei valori ammessi dall’enumerazione TipoAsset (Security, Network), la cui validazione è delegata interamente al livello applicativo e non al database..
-
-
-   `InterfaceAssetRepository` (Outbound Port): Quando il Service ha finito i controlli e deve salvare i dati, non contatta direttamente il database. Usa invece questa porta di uscita, che dichiara solo il bisogno di salvare o leggere un dato, senza specificare la tecnologia.
+   `InterfaceValutazioneRepository` (Outbound Port): Definisce il contratto di persistenza specifico per le valutazioni che il Service utilizza. Astrae completamente la tecnologia di storage: il nucleo non conosce MongoDB. I metodi esposti comprendono la ricerca per dispositivo e requisito, il salvataggio, la cancellazione e il recupero completo per dispositivo.
 
 ]
 + #[ *Domain*
 
 
   Il livello Domain incapsula le entità e le regole di business pure.
-  `ValutazioneRequisito`: è la classe di associazione centrale tra un Asset e un Requisito normativo (già visibile nel diagramma di dominio alla Sezione 5.1). Memorizza nella mappa mapRisposte le risposte booleane date dall'utente per ciascun nodo dell'albero, permettendo la sospensione e la ripresa della compilazione. Il metodo calcolaEsito delega al DecisionTree la restituzione del verdetto finale percorrendo il cammino registrato. Il metodo `getUltimoNodoAttivo` determina a quale nodo dell'albero l'utente deve essere reindirizzato in caso di ripresa.
-  `ReportConformita`: aggrega una collezione di `ValutazioneRequisito` relative a un intero Dispositivo. La relazione è di aggregazione e non di composizione: l'eventuale rigenerazione o cancellazione di un report non invalida le valutazioni persistite nel sistema. Offre metodi per calcolare l'esito globale e per interrogare la distribuzione dei verdetti (totale PASS, FAIL, NA).
-  `StatoValutazione` e Verdetto: due enumerazioni che impongono vincoli di dominio stringenti sullo stato del processo di valutazione e sull'esito finale, garantendo type-safety e prevenendo stati non previsti dalla norma.
+  - `ValutazioneRequisito`: è la classe di associazione centrale tra un Asset e un Requisito normativo (già visibile nel diagramma di dominio alla Sezione 5.1). Memorizza nella mappa mapRisposte le risposte booleane date dall'utente per ciascun nodo dell'albero, permettendo la sospensione e la ripresa della compilazione. Il metodo calcolaEsito delega al DecisionTree la restituzione del verdetto finale percorrendo il cammino registrato. Il metodo `getUltimoNodoAttivo` determina a quale nodo dell'albero l'utente deve essere reindirizzato in caso di ripresa.
+  - `ReportConformita`: aggrega una collezione di `ValutazioneRequisito` relative a un intero Dispositivo. La relazione è di aggregazione e non di composizione: l'eventuale rigenerazione o cancellazione di un report non invalida le valutazioni persistite nel sistema. Offre metodi per calcolare l'esito globale e per interrogare la distribuzione dei verdetti (totale PASS, FAIL, NA).
+  - `StatoValutazione` e `Verdetto`: due enumerazioni che impongono vincoli di dominio stringenti sullo stato del processo di valutazione e sull'esito finale, garantendo type-safety e prevenendo stati non previsti dalla norma.
 ]
 + #[ *Outbound Adapter*
 
