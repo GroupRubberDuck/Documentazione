@@ -41,7 +41,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO),
+    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO, persone.FELIX.replace("\n","")),
     verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -122,6 +122,21 @@
       [#persone.FILIPPO],
       [-],
       [Bozza della classe valutazione @classe_valutazione ]
+    ),
+
+    (
+      [0.7.0],
+      [2026-04-19],
+      [#persone.FELIX],
+      [-],
+      [Stesura dei design pattern: creazionali e strutturali @design-pattern-creazionali, @design-pattern-strutturali]
+    ),
+    (
+      [0.7.1],
+      [2026-04-20],
+      [#persone.FELIX],
+      [-],
+      [Stesura dei design pattern comportamentali @design-pattern-comportamentali]
     )
 
   )
