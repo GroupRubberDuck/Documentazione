@@ -1,0 +1,51 @@
+name: Issue template generico
+description: Processo strutturato di creazione issue
+title: "[Issue]"
+body:
+
+  - type: textarea
+    id: descrizione
+    attributes:
+      label: Descrizione
+      description: Spiegazione dettagliata della issue
+      placeholder: Aggiungere una descrizione
+    validations:
+      required: true
+
+  - type: textarea
+    id: scopo
+    attributes:
+      label: Scopo
+      description: Fine della issue, quale dovrebbe essere il risultato
+      placeholder: Aggiungere uno scopo
+    validations:
+      required: true
+
+
+  - type: dropdown
+    id: autore
+    attributes:
+      label: Autore
+      description: Seleziona un autore
+      multiple: true
+      options:
+        - "@davbios"
+        - "@unluckypippo" 
+        - "@genos36"
+        - "@DraghiciAnaMaria"
+        - "@aldobettega-unipd"
+        - "@FelicianNek"
+      
+  - type: dropdown
+    id: verificator
+    attributes:
+      label: Verificatore
+      description: Seleziona un verificatore
+      multiple: true
+      options:
+        - "@davbios"
+        - "@unluckypippo" 
+        - "@genos36"
+        - "@DraghiciAnaMaria"
+        - "@aldobettega-unipd"
+        - "@FelicianNek"

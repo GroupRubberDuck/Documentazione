@@ -1,6 +1,13 @@
 #let src_dir = "/src"
 #let template_dir = src_dir + "/TypstTemplate"
 #let images_dir = src_dir + "/assets/Images"
+#let glossario = "/src/RTB/DocumentazioneInterna/dizionario.typ"
+
+
+
+#let is-test-mode=false
+
+
 
 #let front_page_file = template_dir + "/frontPage.typ"
 #let setup_layout_file = template_dir + "/setUpPageLayout.typ"
@@ -12,6 +19,7 @@
 #let danger_icon = images_dir + "/danger_icon.webp"
 #let question_mark_icon = images_dir + "/question_mark_icon.png"
 
+#let flagMarcaturaAutoamticaTerminiGlossario=true
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)
@@ -24,4 +32,32 @@
     #set text(fill:blue)
     #link(url)[#testo]
   ]
+}
+#show ref: riferimento=>{
+  strong(riferimento)
+}
+
+#let persone=(
+  DL:"Davide Lorenzon",
+  DT:"Davide Testolin",
+  ANA:"Ana Maria Draghici",
+  ALDO:"Aldo Bettega",
+  FELIX:[Felician Mario \ Necsulescu],
+  FILIPPO:"Filippo Guerra"
+)
+
+
+#let slugify(text) = {
+  lower(text.trim()).replace(" ", "-")
+}
+
+#let snakify(text) = {
+  lower(text).replace(" ", "_")
+}
+
+// Funzione wrapper per creare header con label automatica
+#let he(body:text, level: 1) = {
+  let tag = slugify((body))
+  // Crea l'heading e gli attacca la label dinamica
+  [#heading(level: level, body) #label(tag)]
 }

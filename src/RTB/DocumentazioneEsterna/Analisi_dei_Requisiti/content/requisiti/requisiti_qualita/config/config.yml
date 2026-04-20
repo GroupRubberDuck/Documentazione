@@ -1,0 +1,32 @@
+settings:
+      # Percorso dove creare i file (relativo allo script)
+      output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita"
+
+      # Nome del file aggregatore (se lasciato vuoto, non lo crea)
+      index_file: "_index.typ"
+
+      # Il prefisso non può contenere il carattere di title separator
+      prefix: "RQ-Obb"
+      # Estensione dei file generati
+      extension: ".typ"
+
+      # Regole di numerazione e stile
+      formatting:
+            padding: 3 # Zeri iniziali: 2 -> "01", 3 -> "001"
+            separator: "." # Separatore numeri: "1.1" vs "1-1"
+            title_separator: "_" # Separatore tra numero e titolo: "01_Titolo"
+            filename_style: "snake_case" # "snake_case" (a_b) o "kebab_case" (a-b)
+      index_header_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita/config/index_header_template.typ"
+      index_row_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita/config/index_row_template.typ"
+      index_footer_template: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita/config/index_footer_template.typ"
+      # (Opzionale) File template da copiare per i nuovi file
+      template_path: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_qualita/config/template.typ"
+
+# La struttura gerarchica
+structure:
+- Metriche di qualita
+- Norme di progetto
+- Manuale utente
+- Documentazione su repository GitHub
+- Codice sorgente su repository GitHub
+- metodologia_agile

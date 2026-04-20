@@ -13,20 +13,43 @@
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    
+    /* Variabili personalizzate aggiunte */
+    --bg-primary: #001c29;
+    --bg-secondary: #012638;
+    --text-primary: #ffffff;
+    --text-secondary: #a5c7d4;
+    
+    /* Variabili per il glossario */
+    --surface: var(--bg-secondary);
+    --surface2: #023247;
+    --border: #1e3a4a;
+    --accent: #5b8dee;
+    --text: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --badge-abbr: rgba(91, 141, 238, 0.15);
+    --badge-abbr-text: #8bb0ff;
+    --badge-term: rgba(174, 66, 51, 0.327);
+    --badge-term-text: #d4b8a5;
   }
 }
+
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     box-sizing: border-box;
@@ -175,6 +198,7 @@
     display: none !important;
   }
 }
+
 @layer utilities {
   .sr-only {
     position: absolute;
@@ -214,11 +238,17 @@
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
   }
   .block {
     display: block;
@@ -237,9 +267,6 @@
   }
   .inline-flex {
     display: inline-flex;
-  }
-  .table {
-    display: table;
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -261,20 +288,6 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .scale-y-0 {
-    --tw-scale-y: 0%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
-  }
-  .scale-y-100 {
-    --tw-scale-y: 100%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -322,15 +335,14 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
@@ -374,24 +386,6 @@
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .opacity-0 {
-    opacity: 0%;
-  }
-  .opacity-100 {
-    opacity: 100%;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .hover\:underline {
     &:hover {
@@ -523,12 +517,8 @@
     }
   }
 }
-:root {
-  --bg-primary: #001c29;
-  --bg-secondary: #012638;
-  --text-primary: #ffffff;
-  --text-secondary: #a5c7d4;
-}
+
+/* ===== STILI PERSONALIZZATI ===== */
 .bg-primary {
   background-color: var(--bg-primary);
 }
@@ -553,6 +543,23 @@ h2:not(.footer-title) {
   margin-bottom: calc(var(--spacing) * 2);
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.docs h2 {
+  margin-bottom: calc(var(--spacing) * 2);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.docs h3 {
+  margin-bottom: calc(var(--spacing) * 2);
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+.docs h4 {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  font-style: italic;
 }
 main > section:first-of-type {
   border-top: none;
@@ -588,50 +595,359 @@ ul.docs-list a {
 #navbar-dropdown.hidden {
   transition: all 0.4s ease;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+section.docs {
+  background-color: var(--bg-primary);
+  padding: 1.5em;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1em;
 }
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+section.docs .collapsible {
+  text-align: left;
+  display: block;
+  width: 100%;
 }
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+.btn-collapse {
+  float: right;
+  margin-top: -2em;
+  transition: 100ms linear all;
 }
+.collapsible {
+  cursor: pointer;
+}
+.active .btn-collapse {
+  transform: rotate(-90deg);
+}
+section.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* ===== SCROLLBAR PERSONALIZZATA ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border, #1e3a4a);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent, #5b8dee);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border, #1e3a4a) var(--bg-primary);
+}
+
+/* ===== STILI GLOSSARIO ===== */
+
+/* --- Pagina glossario layout --- */
+.glossario-page {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.glossario-header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 0.75rem;
+}
+
+
+/* --- Back link nel glossario --- */
+.glossario-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.glossario-back-link:hover { opacity: 1; }
+
+/* --- Search row --- */
+.glossario-search-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.glossario-search-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.glossario-search-wrap svg {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+input[type="search"] {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  padding: 0.6rem 0.9rem 0.6rem 2.4rem;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="search"]:focus { border-color: var(--accent); }
+input[type="search"]::placeholder { color: var(--text-secondary); }
+
+/* --- Type filters --- */
+.glossario-type-filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.glossario-type-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.glossario-type-btn:hover { border-color: var(--accent); color: var(--text); }
+.glossario-type-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.glossario-type-btn.active-abbr { background: var(--badge-abbr); border-color: var(--badge-abbr-text); color: var(--badge-abbr-text); }
+.glossario-type-btn.active-term { background: var(--badge-term); border-color: var(--badge-term-text); color: var(--badge-term-text); }
+
+/* --- Letter nav --- */
+.glossario-letter-nav {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.glossario-letter-btn {
+ 
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.glossario-letter-btn:hover:not(:disabled) { background: var(--surface2); color: var(--text); }
+.glossario-letter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.glossario-letter-btn:disabled { opacity: 0.2; cursor: default; }
+.glossario-letter-btn.clear-btn {
+  width: auto;
+  padding: 0 0.6rem;
+  font-size: 0.7rem;
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+/* --- Results bar --- */
+.glossario-results-bar {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0 0.25rem;
+  min-height: 1.25rem;
+}
+.glossario-results-bar b { color: var(--accent); }
+
+/* --- Main content area --- */
+.glossario-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+/* --- Sections --- */
+.glossario-section {
+  margin-bottom: 3rem;
+}
+
+.glossario-section-letter {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* --- Term cards --- */
+.glossario-term-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.glossario-term-card:hover { border-color: #2a4a60; transform: translateX(4px); }
+
+.glossario-term-card:hover::before { opacity: 1; }
+
+.glossario-term-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.glossario-term-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.glossario-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.glossario-badge-abbr {
+  background: var(--badge-abbr);
+  color: var(--badge-abbr-text);
+  border: 1px solid var(--badge-abbr-text);
+}
+.glossario-badge-term {
+  background: var(--badge-term);
+  color: var(--badge-term-text);
+  border: 1px solid var(--badge-term-text);
+}
+
+.glossario-term-def {
+  font-family: 'Lora', serif;
+  font-size: 0.925rem;
+  line-height: 1.7;
+  color: #b0b4c8;
+}
+.glossario-term-def ul { margin: 0.5rem 0 0 1.2rem; list-style: disc; }
+.glossario-term-def li { margin-bottom: 0.25rem; }
+.glossario-term-def mark {
+  background: rgba(91, 141, 238, 0.25);
+  color: #a5c0f7;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* --- No results --- */
+.glossario-no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  display: none;
+}
+.glossario-no-results.show { display: block; }
+.glossario-no-results span {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+/* --- Scroll to top button (glossario) --- */
+#glossario-scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 200;
+}
+#glossario-scrollTop.visible { opacity: 1; transform: translateY(0); }
+
 @property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
+
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
+
+/* --- Scroll to top button (index) --- */
+#index-scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 200;
+}
+#index-scrollTop.visible { opacity: 1; transform: translateY(0); }

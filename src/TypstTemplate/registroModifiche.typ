@@ -24,9 +24,9 @@
 
 #let registroModifiche(colore:rgb("#dddfe0"), rows) = {
   rows=rows.rev()
-let header=("Versione","Data","Descrizione","Autore","Revisore","Validatore")
+let header=("Vers.","Data","Autore","Verificatore","Descrizione")
 
-utilityTable(rows,header:header,columns:(auto,auto,auto,auto,auto,auto))
+utilityTable(rows,header:header,columns:(auto,auto,auto,auto,1fr))
 
 pagebreak()
 }
