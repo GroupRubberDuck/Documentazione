@@ -42,7 +42,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO),
+    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO, persone.FELIX.replace("\n","")),
     verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -123,6 +123,44 @@
       [#persone.FILIPPO],
       [-],
       [Bozza della classe valutazione @classe_valutazione ]
+    ),
+    (
+      [0.6.2],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Bozza delle classi relative a import ed export tramite file di dispositivo e modello @import-export-device e @import-export-model
+      ]
+    ),
+    (
+      [0.6.3],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Bozza delle classi relative alla generazione del report di conformità
+      @report-generator]
+    ),
+    (
+      [0.6.4],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Revisione architetturale della sezione relativa alla modifica degli asset @classe_asset]
+    ),
+
+    (
+      [0.7.0],
+      [2026-04-19],
+      [#persone.FELIX],
+      [-],
+      [Stesura dei design pattern: creazionali e strutturali @design-pattern-creazionali, @design-pattern-strutturali]
+    ),
+    (
+      [0.7.1],
+      [2026-04-20],
+      [#persone.FELIX],
+      [-],
+      [Stesura dei design pattern comportamentali @design-pattern-comportamentali]
     )
 
   )

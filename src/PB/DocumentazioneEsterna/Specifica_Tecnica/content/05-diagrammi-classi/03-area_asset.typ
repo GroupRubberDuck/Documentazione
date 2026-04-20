@@ -25,7 +25,7 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
    `AssetUseCasePort` (Inbound Port): È l'elenco dei servizi offerti all'utente. Il request handler "utilizza" questa porta per inviare i comandi, senza aver bisogno di sapere come verranno eseguiti.
 
 
-   `DispositivoService` (Service): Questa classe realizza le funzioni dalle Inbound Port, crea e modifica le entità Asset, ma sempre utilizzando i metodi della classe Device e verifica che i dati rispettino le regole di business.y
+   `AssetService` (Service): Questa classe realizza le funzioni dalle Inbound Port, crea e modifica le entità Asset, ma sempre utilizzando i metodi della classe Device.
 
 
    `DeviceRepositoryPort` (Outbound Port): Quando il Service deve salvare i dati, non contatta direttamente il database. Usa invece questa porta di uscita, che dichiara solo il bisogno di salvare o leggere un dato, senza specificare la tecnologia.
