@@ -1,0 +1,9 @@
+@startuml DecisionTree
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class DecisionTree {
+    - rootNodeId: String
+}
+
+@enduml

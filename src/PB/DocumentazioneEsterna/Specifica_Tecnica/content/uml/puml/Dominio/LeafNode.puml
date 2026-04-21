@@ -1,0 +1,9 @@
+@startuml LeafNode
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class LeafNode {
+    - verdict: Verdict
+}
+
+@enduml

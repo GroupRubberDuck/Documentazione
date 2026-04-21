@@ -1,0 +1,10 @@
+@startuml Answer
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Answer {
+    - answer: Map<idNode, bool>
+    - justification: String
+}
+
+@enduml
