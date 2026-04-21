@@ -39,7 +39,7 @@
     stato: "In lavorazione",
     versione: versionNumber,
     autori: (persone.DT,),
-    verificatori: (),
+    verificatori: (persone.FILIPPO,),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -85,10 +85,10 @@
   Nella riunione si è discusso principalmente sul progresso dello sprint corrente attraverso la retrospettiva, in particolare sul progresso del documento Specifica Tecnica.
 
   = Merge al termine degli sprint <merge>
-  E' stato chiarito che al termine di ogni sprint è compito dell'amministratore effettuare il merge dal branch develop al main. Inoltre è stata chiarita la procedura di merge dai branch dedicati ai singoli file (o gruppi di file come i verbali): fatto il merge con main solo una volta che il file si trovi completamente verificato. In questo modo tutti i documenti sul branch main sono completamente verificati e pronti per essere mergati sul branch main.
+  È stato chiarito che al termine di ogni sprint è compito dell'amministratore effettuare il merge dal branch develop al main. Inoltre è stata chiarita la procedura di merge dai branch dedicati ai singoli file (o gruppi di file come i verbali): il merge con main va effettuato solo una volta che il file risulti completamente verificato. In questo modo tutti i documenti sul branch main sono completamente verificati e pronti per essere incorporati sul branch main.
 
   = Divisione del diagramma delle classi <divisione>
-  E' stato deciso di dividere il diagramma delle classi per aree logiche, ad esempio per la sezione dispositivo ci sono la parte inbound del dispositivo, la classe dispositivo della porta e la classe dispositivo del core.
+  È stato deciso di dividere il diagramma delle classi per aree logiche, ad esempio per la sezione dispositivo sono presenti: la parte inbound, la classe della porta e la classe del core.
 
 ]
 
