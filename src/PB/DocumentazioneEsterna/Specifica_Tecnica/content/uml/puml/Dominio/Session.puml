@@ -1,0 +1,11 @@
+@startuml Session
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Session {
+    - evaluationSheet: EvaluationSheet
+    - sessionId: String
+    - sessionType: SessionType
+}
+
+@enduml

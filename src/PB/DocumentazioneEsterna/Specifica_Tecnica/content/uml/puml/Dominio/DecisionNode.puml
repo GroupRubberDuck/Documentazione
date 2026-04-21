@@ -1,0 +1,10 @@
+@startuml DecisionNode
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class DecisionNode {
+    - question: String
+    + getNextNode(answer: Boolean): Node
+}
+
+@enduml

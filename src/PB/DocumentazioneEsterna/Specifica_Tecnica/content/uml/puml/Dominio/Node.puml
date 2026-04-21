@@ -1,0 +1,10 @@
+@startuml Node
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+abstract class Node <<abstract>> {
+    - code: String
+    + {abstract} isLeaf(): Boolean
+}
+
+@enduml

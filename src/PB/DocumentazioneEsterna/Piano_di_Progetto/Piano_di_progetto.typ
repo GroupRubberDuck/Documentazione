@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 0,
+  minor: 1,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -145,6 +145,13 @@
       [#persone.DT],
       [#persone.ALDO],
       [Approvazione],
+    ),
+    (
+      [1.1.0],
+      [2026-04-08],
+      [#persone.ALDO],
+      [#persone.ANA],
+      [Stesura retrospettiva sprint 8],
     ),
   )
   #registroModifiche(modifiche)
