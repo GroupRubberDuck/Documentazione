@@ -22,7 +22,7 @@
 // 
 #let currentVersion=(
   major:1,
-  minor:0,
+  minor:1,
   patch:0,
 )
 //converte dizionario in stringa
@@ -75,6 +75,7 @@
   - #link(label("python"))[Uso di script python], 
   ]),
   ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Aldo Bettega],[Approvazione]),
+  ([1.1.0],[2026-04-21],[Filippo Guerra],[-],[Aggiunta alla sezione @sviluppo_primario della parte di Naming Convention]),
 )
 #registroModifiche(modifiche)
 
