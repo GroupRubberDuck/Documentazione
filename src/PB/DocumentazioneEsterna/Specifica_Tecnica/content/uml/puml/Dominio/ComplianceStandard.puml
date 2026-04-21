@@ -1,0 +1,12 @@
+@startuml ComplianceStandard
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class ComplianceStandard {
+    - id: String
+    - code: String
+    - name: String
+    - version: String
+}
+
+@enduml

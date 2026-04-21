@@ -1,0 +1,21 @@
+@startuml
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+
+package "1. Evaluation Object" {
+    !include Device.puml
+    !include Asset.puml
+    !include AssetType.puml
+}
+
+package "2. Evaluation" {
+
+}
+
+package "3. Compliance Standard" {
+
+}
+
+
+@enduml

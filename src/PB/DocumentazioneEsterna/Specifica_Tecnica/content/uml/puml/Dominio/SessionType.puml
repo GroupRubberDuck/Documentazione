@@ -1,0 +1,10 @@
+@startuml SessionType
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+enum SessionType {
+    EVALUATION
+    MODEL_EDITING
+}
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml Device
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Device {
+    - id: String
+    - name: String
+    - operatingSystem: String
+    - description: String
+    - assets: List<Asset>
+
+    + addAsset(asset: Asset): void
+    + removeAsset(assetId: String): void
+}
+
+Device *-- "1..*" Asset
+
+@enduml

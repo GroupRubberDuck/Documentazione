@@ -1,0 +1,11 @@
+@startuml Verdict
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+enum Verdict {
+    PASS
+    FAIL
+    NA
+}
+
+@enduml

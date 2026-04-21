@@ -1,0 +1,12 @@
+@startuml Requirement
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Requirement {
+    - codice: String
+    - nome: String
+    - descrizione: String
+    - target: String
+}
+
+@enduml
