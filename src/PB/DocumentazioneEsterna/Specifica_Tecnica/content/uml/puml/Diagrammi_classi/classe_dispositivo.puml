@@ -1,55 +1,98 @@
-@startuml classe_dispositivo
+@startuml classe_device
 skinparam linetype ortho
 skinparam nodesep 120
 skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class DispositivoController <<Flask Blueprint>> {
+    class DeviceController <<Flask Blueprint>> {
+        - queryService: QueryDeviceUseCase
+        - writeService: WriteDeviceUseCase
         + getListaDispositivi(req: Request): Response
-        + creaDispositivo(req: Request): Response
-        + importaDispositivo(req: Request): Response
-        + getDettaglioDispositivo(id: String): Response
-        + modificaDispositivo(id: String, req: Request): Response
-        + eliminaDispositivo(id: String): Response
+        + createDevice(req: Request): Response
+        + getDettaglioDevice(id: String): Response
+        + modifyDevice(id: String, req: Request): Response
+        + deleteDevice(id: String): Response
     }
 }
 
 package "Application Core" {
-    
-    () "InterfaceDispositivoUseCase" as InboundPort
-    () "InterfaceDispositivoRepository" as OutboundPort
 
-    class DispositivoService <<Application Service>> {
-        - repository: InterfaceDispositivoRepository
-        + getListaDispositivi(): List<Dispositivo>
-        + creaDispositivo(dto: CreaDispositivoDTO): Dispositivo
-        + importaDispositivo(data: RawData): Dispositivo
-        + getDettaglioDispositivo(id: String): Dispositivo
-        + modificaDispositivo(id: String, dto: ModificaDispositivoDTO): Dispositivo
-        + eliminaDispositivo(id: String): void
-        + validaRegoleBusiness(d: Dispositivo): void
+    () "QueryDeviceUseCase"
+    () "DeviceReadRepositoryPort"
+
+    () "DeviceWriteUseCase"
+    () "DeviceWriteRepositoryPort"
+
+    class DeviceQueryService <<Application Service>> {
+        - repository: DeviceReadRepositoryPort
+        + getListaDispositivi(): List<DeviceSummaryDTO>
+        + getDettaglioDevice(id: String): Device
     }
 
-    class Dispositivo <<Entity>>
-    
-    InboundPort -down- DispositivoService : " fornisce"
-    DispositivoService -down-( OutboundPort : " richiede"
-    DispositivoService ..> Dispositivo : " crea e modifica"
+    class DeviceWriteService <<Application Service>> {
+        - repository: DeviceWriteRepositoryPort
+        + getListaDispositivi(): List<DeviceSummaryDTO>
+        + getDettaglioDevice(id: String): Device
+        + createDevice(CreateDeviceDTO): bool
+        + modifyDevice(ModifyDeviceDTO): bool 
+        + deleteDevice(deviceId: String): bool
+    }
+
+    class CreateDeviceDTO {
+        + deviceName: String
+        + deviceOS: String
+        + deviceDescription: String
+        + deviceComplianceStandardId: String
+    }
+
+    class ModifyDeviceDTO {
+        + deviceId: String
+        + deviceName: String
+        + deviceOS: String
+        + deviceDescription: String
+    }
+
+    class DeviceSummaryDTO {
+        + deviceId: String
+        + deviceName: String
+    }
+
+    class DeviceDetailDTO {
+        + deviceId: String
+        + deviceName: String
+        + deviceOS: String
+        + deviceDescription: String
+        + deviceComplianceStandard: String
+    }
+
+    QueryDeviceUseCase -down- DeviceQueryService : "fornisce"
+    DeviceQueryService -down-( DeviceReadRepositoryPort : "richiede"
+    DeviceQueryService ..> Device : "legge"
+    DeviceQueryService ..> DeviceSummaryDTO: "popola"
+    DeviceQueryService ..> DeviceDetailDTO: "popola"
+
+    DeviceWriteUseCase -- DeviceWriteService : "fornisce"
+    DeviceWriteService --( DeviceWriteRepositoryPort: "richiede"
+
 }
 
 package "Outbound Adapter" {
-    class MongoDispositivoAdapter <<Mongo Repository>> {
+    class MongoDeviceAdapter <<Mongo Repository>> {
         - collection: pymongo.Collection
-        + save(d: Dispositivo): void
-        + findById(id: String): Dispositivo
-        + findAll(): List<Dispositivo>
+        + save(d: Device): void
+        + findById(id: String): Device
+        + findAll(): List<Device>
+        + getListDeviceSummary(): List<DeviceSummary>
         + deleteById(id: String): void
     }
 }
 
-DispositivoController -( InboundPort : " utilizza"
+DeviceController -( QueryDeviceUseCase : "utilizza"
+DeviceController -( DeviceWriteUseCase: "utilizza"
 
-OutboundPort -down- MongoDispositivoAdapter : " implementa"
+
+DeviceReadRepositoryPort -- MongoDeviceAdapter : "implementa"
+DeviceWriteRepositoryPort -- MongoDeviceAdapter: "implementa"
 
 @enduml
