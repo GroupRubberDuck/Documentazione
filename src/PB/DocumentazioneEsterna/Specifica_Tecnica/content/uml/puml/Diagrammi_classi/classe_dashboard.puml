@@ -1,92 +1,134 @@
-@startuml classe_dashboard
+@startuml classe_dashboard_query
 skinparam linetype ortho
-skinparam nodesep 150
+skinparam nodesep 110
+skinparam ranksep 130
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class AssetDashboardController <<Adapter>> {
-        + getDashboardDispositivo(dispId: String, req: Request): Response
-        + getDettaglioAsset(assetId: String, req: Request): Response
-        + aggiungiAsset(dispId: String, dto: AssetDTO, req: Request): Response
-        + modificaAsset(assetId: String, dto: AssetDTO, req: Request): Response
-        + eliminaAsset(assetId: String, req: Request): Response
+    class DashboardController <<Flask Blueprint>> {
+        - queryService: DashboardQueryUseCase
+        ' CORREZIONE 4: Firme pulite, il framework gestisce l'estrazione da Request
+        + getDashboardDispositivo(sessionId: String): Response
+        + getDettaglioAsset(sessionId: String, assetId: String): Response
     }
 }
 
-package "Business Logic" {
-    class AssetDTO <<DTO>> {
-        + nome: String
-        + tipo: TipoAsset
-        + descrizione: String
+package "Application Core" {
+
+    ' --- INBOUND PORT ---
+    ' CORREZIONE 3: Interfaccia esplicita per il contratto
+    interface DashboardQueryUseCase <<Inbound Port>> {
+        + getDashboardDispositivo(sessionId: String): DashboardDTO
+        + getDettaglioAsset(sessionId: String, assetId: String): AssetDetailDTO
     }
-    
+
+    ' --- OUTBOUND PORT ---
+    interface SessionCachePort <<Outbound Port>> {
+        + save_session(session: Session): void
+        + get_session(session_id: String): Session
+        + delete_session(session_id: String): void
+        + has_active_session(): bool
+    }
+
+    ' --- APPLICATION SERVICE ---
+    class DashboardQueryService <<Application Service>> {
+        - sessionCache: SessionCachePort
+        + getDashboardDispositivo(sessionId: String): DashboardDTO
+        + getDettaglioAsset(sessionId: String, assetId: String): AssetDetailDTO
+    }
+
+    ' --- DTOs (Data Transfer Objects) ---
     class DashboardDTO <<DTO>> {
-        + dispositivoId: String
-        + statoAggregato: StatoValutazione
-        + listaAsset: List<AssetDTO>
+        + deviceId: String
+        + deviceName: String
+        + operatingSystem: String
+        + description: String
+        + statoAggregato: EvaluationState
+        + listaAsset: List<AssetSummaryDTO>
     }
 
-    class DettaglioAssetDTO <<DTO>> {
-        + id: String
-        + nome: String
-        + tipo: TipoAsset
-        + descrizione: String
-        + statoAggregato: StatoValutazione
-        + listaRequisiti: List<ValutazioneRequisito>
+    class AssetSummaryDTO <<DTO>> {
+        + assetId: String
+        + name: String
+        + type: AssetType
+        + statoAggregato: EvaluationState
     }
 
-    () "InterfaceAssetUseCase" as InboundPort
-    () "InterfaceAssetRepository" as OutboundPort
-    () "InterfaceValutazioneReadRepository" as OutboundPortValutazione
-
-    class AssetService <<Service>> {
-        - repository: InterfaceAssetRepository
-        - valutazioneRepo: InterfaceValutazioneReadRepository
-        + getDashboardDispositivo(dispId: String, sessionId: String): DashboardDTO
-        + getDettaglioAsset(assetId: String, sessionId: String): DettaglioAssetDTO
-        + aggiungiAsset(dispId: String, dto: AssetDTO): Asset
-        + modificaAsset(assetId: String, dto: AssetDTO): Asset
-        + eliminaAsset(assetId: String): void
-        - validaNomeAsset(nome: String): void
-        - calcolaStatoDispositivo(dispId: String, sessionId: String): StatoValutazione
-        - calcolaStatoAsset(assetId: String, sessionId: String): StatoValutazione
+    class AssetDetailDTO <<DTO>> {
+        + assetId: String
+        + name: String
+        + type: AssetType
+        + description: String
+        + statoAggregato: EvaluationState
+        + listaRequisiti: List<RequirementEvalDTO>
     }
 
-    class Asset <<Domain>> {
+    class RequirementEvalDTO <<DTO>> {
+        + codiceRequisito: String
+        + statoValutazione: EvaluationState
+    }
+
+    ' --- DOMAIN ENTITIES ---
+    class Session <<Entity>> {
+        - sessionId: String
+        - sessionType: SessionType
+        + getEvaluationSheet(): EvaluationSheet
+    }
+
+    class EvaluationSheet <<Entity>> {
+        ' CORREZIONE 2: Lettura degli stati (CQRS Read) invece che ricalcolo continuo
+        + getAssetEvaluationState(assetId: String): EvaluationState
+        + getDeviceEvaluationState(): EvaluationState
+    }
+
+    ' CORREZIONE 1: Aggiunte entità Device e Asset per chiudere il flusso dati
+    class Device <<Entity>> {
         - id: String
-        - nome: String
-        - tipo: TipoAsset
-        - descrizione: String
+        - name: String
+        - operatingSystem: String
+        - description: String
+        + getAsset(assetId: String): Asset
+        + getAllAssets(): List<Asset>
     }
 
-    AssetService "1" *-right- "*" Asset : "gestisce"
-    InboundPort -down- AssetService : "fornisce"
-    AssetService -down-( OutboundPort : "richiede asset"
-    AssetService -down-( OutboundPortValutazione : "richiede valutazioni"
-    AssetService ..> DashboardDTO : "popola"
-    AssetService ..> DettaglioAssetDTO: "popola"
+    class Asset <<Entity>> {
+        - id: String
+        - name: String
+        - type: AssetType
+        - description: String
+    }
+
+    ' --- RELAZIONI CORE ---
+    DashboardQueryUseCase <|.. DashboardQueryService : "implementa"
+    
+    ' Il Service si aggancia alla porta di Cache corretta
+    DashboardQueryService -down-( SessionCachePort : "richiede"
+
+    ' Il Service legge la sessione e usa l'EvaluationSheet e il Device per i calcoli
+    DashboardQueryService ..> Session : "legge"
+    Session *-- "1" EvaluationSheet : "contiene"
+    EvaluationSheet *-- "1" Device : "valuta"
+    Device *-- "*" Asset : "contiene"
+
+    ' Relazioni DTO
+    DashboardQueryService ..> DashboardDTO : "popola"
+    DashboardQueryService ..> AssetDetailDTO : "popola"
+    DashboardDTO *-- AssetSummaryDTO
+    AssetDetailDTO *-- RequirementEvalDTO
 }
 
 package "Outbound Adapter" {
-    ' UNICO ADAPTER CHE IMPLEMENTA ENTRAMBE LE PORTE
-    class MongoDashboardAdapter <<Adapter>> {
-        - db: pymongo.Database
-        + save(a: Asset): void
-        + findById(id: String): Asset
-        + findByDispositivoId(dispId: String): List<Asset>
-        + deleteById(id: String): void
-        + findRequisitiByAssetAndSession(assetId: String, sessionId: String): List<ValutazioneRequisito>
+    class InMemorySessionCache <<Cache Adapter>> {
+        - sessions: dictionary[string:Session]
+        + save_session(session: Session): void
+        + get_session(session_id: String): Session
+        + delete_session(session_id: String): void
+        + has_active_session(): bool
     }
 }
 
-' Flussi Inbound 
-AssetDashboardController -( InboundPort : "richiede"
-AssetDashboardController ..> AssetDTO : "usa"
-AssetDashboardController ..> DettaglioAssetDTO: "usa"
-AssetDashboardController ..> DashboardDTO: "usa"
-
-' Flussi Outbound - Entrambe le porte sono fornite dallo stesso Adapter
-OutboundPort -down- MongoDashboardAdapter : "fornisce"
-OutboundPortValutazione -down- MongoDashboardAdapter : "fornisce"
+' --- WIRING ESTERNO ---
+DashboardController -( DashboardQueryUseCase : "utilizza"
+SessionCachePort -down- InMemorySessionCache : "implementa"
 
 @enduml
