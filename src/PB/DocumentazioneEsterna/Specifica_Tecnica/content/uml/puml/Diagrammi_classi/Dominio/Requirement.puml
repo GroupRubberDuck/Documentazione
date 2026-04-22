@@ -3,9 +3,9 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class Requirement {
-    - codice: String
-    - nome: String
-    - descrizione: String
+    - code: String
+    - name: String
+    - description: String
     - target: String
 }
 Requirement *-- "1" DecisionTree

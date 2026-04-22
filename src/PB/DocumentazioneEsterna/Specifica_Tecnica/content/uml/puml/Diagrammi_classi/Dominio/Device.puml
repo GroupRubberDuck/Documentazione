@@ -5,12 +5,12 @@ skinparam classAttributeIconSize 0
 class Device {
     - id: String
     - name: String
-    - operatingSystem: String
+    - operating_system: String
     - description: String
     - assets: List<Asset>
 
-    + addAsset(asset: Asset): void
-    + removeAsset(assetId: String): void
+    + add_asset(asset: Asset): void
+    + remove_asset(asset_id: String): void
 }
 
 Device *-- "1..*" Asset

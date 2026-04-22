@@ -3,14 +3,14 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class EvaluationSheet {
-    ' - complianceStandard: ComplianceStandard
+    ' - compliance_standard: ComplianceStandard
     ' - device: Device
 
     + <<Create>> EvaluationSheet(device: Device, standard: ComplianceStandard): EvaluationSheet
 
-    + evaluateRequirements(assetId: String, requirementsId: String): EvaluationState
-    + evaluateAsset(assetId: String): EvaluationState
-    + evaluateDevice(): EvaluationState
+    + evaluate_requirements(asset_id: String, requirements_id: List<String>): EvaluationState
+    + evaluate_asset(assetId: String): EvaluationState
+    + evaluate_device(): EvaluationState
 }
 EvaluationSheet --> Device
 EvaluationSheet --> ComplianceStandard
