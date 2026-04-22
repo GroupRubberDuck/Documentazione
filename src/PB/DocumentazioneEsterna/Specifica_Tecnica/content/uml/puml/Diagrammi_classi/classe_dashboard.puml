@@ -6,111 +6,70 @@ skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
     class DashboardController <<Flask Blueprint>> {
-        - queryService: DashboardQueryUseCase
-        ' CORREZIONE 4: Firme pulite, il framework gestisce l'estrazione da Request
-        + getDashboardDispositivo(sessionId: String): Response
-        + getDettaglioAsset(sessionId: String, assetId: String): Response
+        - query_service: InterfaceDashboardQueryUseCase
+        + get_dashboard_dispositivo(session_id: String): Response
+        + get_dettaglio_asset(session_id: String, asset_id: String): Response
     }
 }
 
 package "Application Core" {
 
-    ' --- INBOUND PORT ---
-    ' CORREZIONE 3: Interfaccia esplicita per il contratto
-    interface DashboardQueryUseCase <<Inbound Port>> {
-        + getDashboardDispositivo(sessionId: String): DashboardDTO
-        + getDettaglioAsset(sessionId: String, assetId: String): AssetDetailDTO
+    interface InterfaceDashboardQueryUseCase <<Inbound Port>> {
+        + get_dashboard_dispositivo(session_id: String): DashboardDTO
+        + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
     }
 
-    ' --- OUTBOUND PORT ---
-    interface SessionCachePort <<Outbound Port>> {
+    interface InterfaceSessionCachePort <<Outbound Port>> {
         + save_session(session: Session): void
         + get_session(session_id: String): Session
         + delete_session(session_id: String): void
         + has_active_session(): bool
     }
 
-    ' --- APPLICATION SERVICE ---
     class DashboardQueryService <<Application Service>> {
-        - sessionCache: SessionCachePort
-        + getDashboardDispositivo(sessionId: String): DashboardDTO
-        + getDettaglioAsset(sessionId: String, assetId: String): AssetDetailDTO
+        - session_cache: InterfaceSessionCachePort
+        + get_dashboard_dispositivo(session_id: String): DashboardDTO
+        + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
     }
 
-    ' --- DTOs (Data Transfer Objects) ---
     class DashboardDTO <<DTO>> {
-        + deviceId: String
-        + deviceName: String
-        + operatingSystem: String
+        + device_id: String
+        + device_name: String
+        + operating_system: String
         + description: String
-        + statoAggregato: EvaluationState
-        + listaAsset: List<AssetSummaryDTO>
+        + stato_aggregato: EvaluationState
+        + lista_asset: List<AssetSummaryDTO>
     }
 
     class AssetSummaryDTO <<DTO>> {
-        + assetId: String
+        + asset_id: String
         + name: String
         + type: AssetType
-        + statoAggregato: EvaluationState
+        + stato_aggregato: EvaluationState
     }
 
     class AssetDetailDTO <<DTO>> {
-        + assetId: String
+        + asset_id: String
         + name: String
         + type: AssetType
         + description: String
-        + statoAggregato: EvaluationState
-        + listaRequisiti: List<RequirementEvalDTO>
+        + stato_aggregato: EvaluationState
+        + lista_requisiti: List<RequirementEvalDTO>
     }
 
     class RequirementEvalDTO <<DTO>> {
-        + codiceRequisito: String
-        + statoValutazione: EvaluationState
+        + codice_requisito: String
+        + stato_valutazione: EvaluationState
     }
 
-    ' --- DOMAIN ENTITIES ---
-    class Session <<Entity>> {
-        - sessionId: String
-        - sessionType: SessionType
-        + getEvaluationSheet(): EvaluationSheet
-    }
+    !include Dominio/Session.puml
+    !include Dominio/EvaluationSheet.puml
 
-    class EvaluationSheet <<Entity>> {
-        ' CORREZIONE 2: Lettura degli stati (CQRS Read) invece che ricalcolo continuo
-        + getAssetEvaluationState(assetId: String): EvaluationState
-        + getDeviceEvaluationState(): EvaluationState
-    }
+    InterfaceDashboardQueryUseCase <|.. DashboardQueryService : "implementa"
+    DashboardQueryService -down-( InterfaceSessionCachePort : "richiede"
 
-    ' CORREZIONE 1: Aggiunte entità Device e Asset per chiudere il flusso dati
-    class Device <<Entity>> {
-        - id: String
-        - name: String
-        - operatingSystem: String
-        - description: String
-        + getAsset(assetId: String): Asset
-        + getAllAssets(): List<Asset>
-    }
-
-    class Asset <<Entity>> {
-        - id: String
-        - name: String
-        - type: AssetType
-        - description: String
-    }
-
-    ' --- RELAZIONI CORE ---
-    DashboardQueryUseCase <|.. DashboardQueryService : "implementa"
-    
-    ' Il Service si aggancia alla porta di Cache corretta
-    DashboardQueryService -down-( SessionCachePort : "richiede"
-
-    ' Il Service legge la sessione e usa l'EvaluationSheet e il Device per i calcoli
     DashboardQueryService ..> Session : "legge"
-    Session *-- "1" EvaluationSheet : "contiene"
-    EvaluationSheet *-- "1" Device : "valuta"
-    Device *-- "*" Asset : "contiene"
 
-    ' Relazioni DTO
     DashboardQueryService ..> DashboardDTO : "popola"
     DashboardQueryService ..> AssetDetailDTO : "popola"
     DashboardDTO *-- AssetSummaryDTO
@@ -119,7 +78,7 @@ package "Application Core" {
 
 package "Outbound Adapter" {
     class InMemorySessionCache <<Cache Adapter>> {
-        - sessions: dictionary[string:Session]
+        - sessions: dictionary[String:Session]
         + save_session(session: Session): void
         + get_session(session_id: String): Session
         + delete_session(session_id: String): void
@@ -127,8 +86,7 @@ package "Outbound Adapter" {
     }
 }
 
-' --- WIRING ESTERNO ---
-DashboardController -( DashboardQueryUseCase : "utilizza"
-SessionCachePort -down- InMemorySessionCache : "implementa"
+DashboardController -( InterfaceDashboardQueryUseCase : "utilizza"
+InterfaceSessionCachePort -down- InMemorySessionCache : "implementa"
 
 @enduml

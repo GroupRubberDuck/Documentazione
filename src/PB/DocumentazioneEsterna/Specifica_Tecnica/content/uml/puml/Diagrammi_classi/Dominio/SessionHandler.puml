@@ -7,4 +7,8 @@ class SessionHandler {
 + is_operation_allowed(operation: OperationType, active_session_types: list[SessionType]): bool
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7b25d04f (Feat: classe_dashboard)
 @enduml
