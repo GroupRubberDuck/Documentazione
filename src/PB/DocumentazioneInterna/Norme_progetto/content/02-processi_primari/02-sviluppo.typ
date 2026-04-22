@@ -146,17 +146,17 @@ Per lo sviluppo del software, il gruppo utilizza strumenti mirati a garantire qu
 - *Comunicazione verso la proponente*: email ufficiale, Zoom  per riunioni sincrone e Telegram per chiarimenti rapidi.
 
 === Convenzioni di stile
-Per garantire di qualità dello sviluppo del codice verranno usati i seguenti criteri:
+Per garantire di qualità dello sviluppo del codice verranno usati i seguenti criteri (i nomi delle classi e delle variabili saranno in inglese):
   - *Backend* :
     - *Variabili, attributi, funzioni e metodi*: snake_case.
-    - *Classi, Data Transfer Object (DTO), Interfacce (Porte)*: PascalCase, nel caso delle interfacce si aggiunge il prefisso Interface (es. InterfaceDispositivoRepository).
+    - *Classi, Data Transfer Object (DTO), Interfacce (Porte)*: PascalCase, nel caso delle interfacce si aggiunge il prefisso Interface (es. InterfaceDeviceRepository).
     - *Costanti a livello di Modulo*: UPPER_SNAKE_CASE.
   - *Frontend* :
     - *Variabili, attributi, funzioni e metodi*: camelCase.
     - *Handler di eventi*: camelCase con prefisso handle (es. handleSubmit() ).
     - *Componenti Vue*: PascalCase.
   - *Persistenza (MongoDB)* :
-    - *Campi dei documenti*: snake_case (es.nome_dispositivo).
+    - *Campi dei documenti*: snake_case (es.device_name).
     - *Nomi delle collection*: lowercase al plurale (es. dispositivi, moduli).
   - *Indentazioni* : \ I blocchi annidati del codice devono seguire un'identazione equivalente a 2 spazi, sia nel Backend che nel Frontend.
 
