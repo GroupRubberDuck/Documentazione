@@ -1,0 +1,53 @@
+@startuml classe_sessione
+skinparam linetype ortho
+skinparam nodesep 150
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class ValutazioneSessioneController <<Adapter>> {
+        + avviaValutazione(req: Request): Response
+        + scartaModifiche(id: String, req: Request): Response
+        + salvaValutazione(id: String, req: Request): Response
+    }
+}
+
+package "Business Logic" {
+    class AvviaValutazioneDTO <<DTO>> {
+        + dispositivoId: String
+    }
+
+    () "InterfaceSessioneUseCase" as InboundPort
+    () "InterfaceSessioneRepository" as OutboundPort
+
+    class SessioneService <<Service>> {
+        - repository: InterfaceSessioneRepository
+        + avviaValutazione(dto: AvviaValutazioneDTO): SessioneValutazione
+        + scartaModifiche(id: String): void
+        + salvaValutazione(id: String, chiudiSessione: boolean): SessioneValutazione
+        - cambiaStatoSessione(s: SessioneValutazione, nuovoStato: StatoValutazione): void
+    }
+
+    class SessioneValutazione <<Domain>> {}
+
+    SessioneService "1" *-right- "1" SessioneValutazione : " gestisce"
+    InboundPort -down- SessioneService : " fornisce"
+    SessioneService -down-( OutboundPort : " richiede"
+}
+
+package "Outbound Adapter" {
+    class MongoSessioneAdapter <<Adapter>> {
+        - collection: pymongo.Collection
+        + save(s: SessioneValutazione): void
+        + findById(id: String): SessioneValutazione
+        + deleteById(id: String): void
+    }
+}
+
+' Flusso Inbound (dall'esterno verso il Core)
+ValutazioneSessioneController -( InboundPort : " richiede"
+ValutazioneSessioneController ..> AvviaValutazioneDTO : " usa"
+
+' Flusso Outbound (dall'esterno che realizza il Core)
+OutboundPort -down- MongoSessioneAdapter : " fornisce"
+
+@enduml
