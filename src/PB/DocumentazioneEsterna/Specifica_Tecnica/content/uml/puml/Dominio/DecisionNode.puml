@@ -6,5 +6,7 @@ class DecisionNode {
     - question: String
     + getNextNode(answer: Boolean): Node
 }
+DecisionNode *--" yes_child \n no_child" Node
+DecisionNode --|> Node
 
 @enduml

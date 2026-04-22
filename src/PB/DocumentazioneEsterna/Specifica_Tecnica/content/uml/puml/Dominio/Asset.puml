@@ -7,7 +7,8 @@ class Asset {
     - name: String
     - type: AssetType
     - description: String
-    - listValutation: Map<idReq, Answer>
 }
+
+Asset *-- "1..*" Answer
 
 @enduml

@@ -7,15 +7,30 @@ package "1. Evaluation Object" {
     !include Device.puml
     !include Asset.puml
     !include AssetType.puml
-}
-
-package "2. Evaluation" {
-
+    !include Answer.puml
 }
 
 package "3. Compliance Standard" {
+    !include ComplianceStandard.puml
+    !include DecisionNode.puml
+    !include Node.puml
+    !include LeafNode.puml
+    !include DecisionTree.puml
+    !include Requirement.puml
+
 
 }
+package "2. Evaluation" {
+    !include EvaluationSheet.puml
+    !include EvaluationState.puml
+    !include Verdict.puml
+}
+
+package "4. Session" {
+    !include Session.puml
+    !include SessionType.puml
+}
+
 
 
 @enduml

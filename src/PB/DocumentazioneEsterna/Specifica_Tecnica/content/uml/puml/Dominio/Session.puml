@@ -3,9 +3,9 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class Session {
-    - evaluationSheet: EvaluationSheet
+    ' - evaluationSheet: EvaluationSheet
     - sessionId: String
     - sessionType: SessionType
 }
-
+Session --> EvaluationSheet
 @enduml
