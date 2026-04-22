@@ -8,5 +8,6 @@ class ComplianceStandard {
     - name: String
     - version: String
 }
+ComplianceStandard *-- "1..*" Requirement
 
 @enduml

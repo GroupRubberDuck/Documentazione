@@ -2,9 +2,9 @@
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
-class EvaluatonSheet {
-    - complianceStandard: ComplianceStandard
-    - device: Device
+class EvaluationSheet {
+    ' - complianceStandard: ComplianceStandard
+    ' - device: Device
 
     + <<Create>> EvaluationSheet(device: Device, standard: ComplianceStandard): EvaluationSheet
 
@@ -12,5 +12,6 @@ class EvaluatonSheet {
     + evaluateAsset(assetId: String): EvaluationState
     + evaluateDevice(): EvaluationState
 }
-
+EvaluationSheet --> Device
+EvaluationSheet --> ComplianceStandard
 @enduml

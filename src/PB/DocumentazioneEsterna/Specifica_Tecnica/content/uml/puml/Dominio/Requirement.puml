@@ -8,5 +8,6 @@ class Requirement {
     - descrizione: String
     - target: String
 }
+Requirement *-- "1" DecisionTree
 
 @enduml

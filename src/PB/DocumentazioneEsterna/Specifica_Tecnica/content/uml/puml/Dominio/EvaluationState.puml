@@ -1,0 +1,12 @@
+@startuml EvaluationState
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+enum EvaluationState {
+    PASS
+    FAIL
+    NA
+    PENDING
+}
+
+@enduml

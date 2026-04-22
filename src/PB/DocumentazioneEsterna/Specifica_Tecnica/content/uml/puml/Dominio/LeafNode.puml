@@ -5,5 +5,5 @@ skinparam classAttributeIconSize 0
 class LeafNode {
     - verdict: Verdict
 }
-
+LeafNode --|> Node
 @enduml
