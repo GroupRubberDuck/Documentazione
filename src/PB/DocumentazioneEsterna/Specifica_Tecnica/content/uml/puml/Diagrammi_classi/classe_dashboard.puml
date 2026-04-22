@@ -1,0 +1,92 @@
+@startuml classe_dashboard
+skinparam linetype ortho
+skinparam nodesep 150
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class AssetDashboardController <<Adapter>> {
+        + getDashboardDispositivo(dispId: String, req: Request): Response
+        + getDettaglioAsset(assetId: String, req: Request): Response
+        + aggiungiAsset(dispId: String, dto: AssetDTO, req: Request): Response
+        + modificaAsset(assetId: String, dto: AssetDTO, req: Request): Response
+        + eliminaAsset(assetId: String, req: Request): Response
+    }
+}
+
+package "Business Logic" {
+    class AssetDTO <<DTO>> {
+        + nome: String
+        + tipo: TipoAsset
+        + descrizione: String
+    }
+    
+    class DashboardDTO <<DTO>> {
+        + dispositivoId: String
+        + statoAggregato: StatoValutazione
+        + listaAsset: List<AssetDTO>
+    }
+
+    class DettaglioAssetDTO <<DTO>> {
+        + id: String
+        + nome: String
+        + tipo: TipoAsset
+        + descrizione: String
+        + statoAggregato: StatoValutazione
+        + listaRequisiti: List<ValutazioneRequisito>
+    }
+
+    () "InterfaceAssetUseCase" as InboundPort
+    () "InterfaceAssetRepository" as OutboundPort
+    () "InterfaceValutazioneReadRepository" as OutboundPortValutazione
+
+    class AssetService <<Service>> {
+        - repository: InterfaceAssetRepository
+        - valutazioneRepo: InterfaceValutazioneReadRepository
+        + getDashboardDispositivo(dispId: String, sessionId: String): DashboardDTO
+        + getDettaglioAsset(assetId: String, sessionId: String): DettaglioAssetDTO
+        + aggiungiAsset(dispId: String, dto: AssetDTO): Asset
+        + modificaAsset(assetId: String, dto: AssetDTO): Asset
+        + eliminaAsset(assetId: String): void
+        - validaNomeAsset(nome: String): void
+        - calcolaStatoDispositivo(dispId: String, sessionId: String): StatoValutazione
+        - calcolaStatoAsset(assetId: String, sessionId: String): StatoValutazione
+    }
+
+    class Asset <<Domain>> {
+        - id: String
+        - nome: String
+        - tipo: TipoAsset
+        - descrizione: String
+    }
+
+    AssetService "1" *-right- "*" Asset : "gestisce"
+    InboundPort -down- AssetService : "fornisce"
+    AssetService -down-( OutboundPort : "richiede asset"
+    AssetService -down-( OutboundPortValutazione : "richiede valutazioni"
+    AssetService ..> DashboardDTO : "popola"
+    AssetService ..> DettaglioAssetDTO: "popola"
+}
+
+package "Outbound Adapter" {
+    ' UNICO ADAPTER CHE IMPLEMENTA ENTRAMBE LE PORTE
+    class MongoDashboardAdapter <<Adapter>> {
+        - db: pymongo.Database
+        + save(a: Asset): void
+        + findById(id: String): Asset
+        + findByDispositivoId(dispId: String): List<Asset>
+        + deleteById(id: String): void
+        + findRequisitiByAssetAndSession(assetId: String, sessionId: String): List<ValutazioneRequisito>
+    }
+}
+
+' Flussi Inbound 
+AssetDashboardController -( InboundPort : "richiede"
+AssetDashboardController ..> AssetDTO : "usa"
+AssetDashboardController ..> DettaglioAssetDTO: "usa"
+AssetDashboardController ..> DashboardDTO: "usa"
+
+' Flussi Outbound - Entrambe le porte sono fornite dallo stesso Adapter
+OutboundPort -down- MongoDashboardAdapter : "fornisce"
+OutboundPortValutazione -down- MongoDashboardAdapter : "fornisce"
+
+@enduml

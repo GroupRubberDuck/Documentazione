@@ -1,7 +1,8 @@
 @startuml classe_dispositivo
 skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 120
 skinparam classAttributeIconSize 0
-skinparam packageStyle rectangle
 
 package "Inbound Adapter" {
     class DispositivoController <<Flask Blueprint>> {
@@ -14,26 +15,10 @@ package "Inbound Adapter" {
     }
 }
 
-package "Ports" {
+package "Application Core" {
     
-    interface InterfaceDispositivoUseCase <<Inbound Port>> {
-        + {abstract} getListaDispositivi(): List<Dispositivo>
-        + {abstract} creaDispositivo(dto: CreaDispositivoDTO): Dispositivo
-        + {abstract} importaDispositivo(file: File): Dispositivo
-        + {abstract} getDettaglioDispositivo(id: String): Dispositivo
-        + {abstract} modificaDispositivo(id: String, dto: ModificaDispositivoDTO): Dispositivo
-        + {abstract} eliminaDispositivo(id: String): void
-    }
-
-    interface InterfaceDispositivoRepository <<Outbound Port>> {
-        + {abstract} save(d: Dispositivo): void
-        + {abstract} findById(id: String): Dispositivo
-        + {abstract} findAll(): List<Dispositivo>
-        + {abstract} deleteById(id: String): void
-    }
-}
-
-package "Application Core" <<Rectangle>> {
+    () "InterfaceDispositivoUseCase" as InboundPort
+    () "InterfaceDispositivoRepository" as OutboundPort
 
     class DispositivoService <<Application Service>> {
         - repository: InterfaceDispositivoRepository
@@ -47,6 +32,10 @@ package "Application Core" <<Rectangle>> {
     }
 
     class Dispositivo <<Entity>>
+    
+    InboundPort -down- DispositivoService : " fornisce"
+    DispositivoService -down-( OutboundPort : " richiede"
+    DispositivoService ..> Dispositivo : " crea e modifica"
 }
 
 package "Outbound Adapter" {
@@ -59,12 +48,8 @@ package "Outbound Adapter" {
     }
 }
 
-' Relazioni
+DispositivoController -( InboundPort : " utilizza"
 
-DispositivoController --> InterfaceDispositivoUseCase : utilizza
-MongoDispositivoAdapter ..|> InterfaceDispositivoRepository : implementa
-InterfaceDispositivoUseCase <|.. DispositivoService : implementa
-DispositivoService --> InterfaceDispositivoRepository : utilizza
-DispositivoService ..> Dispositivo : crea e modifica
+OutboundPort -down- MongoDispositivoAdapter : " implementa"
 
 @enduml

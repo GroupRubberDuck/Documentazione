@@ -1,0 +1,88 @@
+@startuml Diagramma_Package
+skinparam componentStyle rectangle
+
+
+package "Frontend Client" {
+    package "Vue.js App" {
+        component "Axios (HTTP Client)" as Axios
+        component "Pinia (State)" as Pinia
+        component "Componenti UI" as UI
+    }
+}
+
+database "MongoDB" as Mongo #D5E8D4
+
+package "Backend (Python)" {
+
+    package "Outbound Adapters (Infrastructure)" as oadapter #E8F2FC {
+        component "FPDF (Generazione Report)" as FPDF
+        component "Import adapters" as ImpAdapter
+        component "Export adapters" as ExpAdapter
+
+        package "Pymongo" {
+            component "Repository Dispositivi" as RepoDisp
+            component "Repository Modelli" as RepoMod
+        }
+    }
+
+    
+
+    package "Core (Application & Domain)" as Core #E2F0D9 {
+
+        package "Outbound Ports" as oport #FFF2CC {
+            interface "Repository (Outbound)" as RepoPort
+            interface "Import (Outbound)" as ImportPort
+            interface "Export (Outbound)" as ExportPort
+            interface "Report (Outbound)" as ReportPort
+        }
+
+        package "Domain" as dominio {
+            component "Pydantic (Validazione)" as Pydantic
+            component "Entità e Regole EN18031" as Entita
+        }
+
+        package "Services" as services {
+            component "Implementazione Use Case" as UseCaseImpl
+        }
+
+        
+        
+        
+
+        package "Inbound Ports" as iport #FFF2CC  {
+            interface "Use Case (Inbound)" as InboundPort
+        }
+
+        
+    }
+
+
+    package "Inbound Adapters (Presentation)" as iadapter #E8F2FC {
+        component "Flask API" as FlaskAPI
+        component "Flask WEB" as FlaskWEB
+        component "Upload controller" as UpCtrl
+        component "Download controller" as DownCtrl
+    }
+    
+
+    
+}
+
+
+
+
+services --> dominio : "usa"
+services --> iport
+services --> oport
+
+iadapter --> iport
+oadapter --> oport
+
+Axios ..> FlaskAPI : " HTTP Rest"
+Axios ..> FlaskWEB : " HTTP Rest"
+
+Pymongo --> Mongo: BSON
+
+
+@enduml
+
