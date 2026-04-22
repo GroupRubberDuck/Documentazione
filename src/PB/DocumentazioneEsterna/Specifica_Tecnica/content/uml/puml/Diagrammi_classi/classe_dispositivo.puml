@@ -32,8 +32,6 @@ package "Application Core" {
 
     class DeviceWriteService <<Application Service>> {
         - repository: DeviceWriteRepositoryPort
-        + getListaDispositivi(): List<DeviceSummaryDTO>
-        + getDettaglioDevice(id: String): Device
         + createDevice(CreateDeviceDTO): bool
         + modifyDevice(ModifyDeviceDTO): bool 
         + deleteDevice(deviceId: String): bool
