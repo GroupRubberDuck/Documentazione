@@ -128,15 +128,26 @@
       [0.7.0],
       [2026-04-19],
       [#persone.FELIX],
-      [-],
+      [#persone.DL],
+      [Stesura dei principi di design
+      @principi-design
+      ]
+    ),
+    (
+      [0.7.1],
+      [2026-04-19],
+      [#persone.FELIX],
+      [#persone.DL],
       [Stesura dei design pattern: creazionali e strutturali @design-pattern-creazionali, @design-pattern-strutturali]
     ),
     (
       [0.7.1],
       [2026-04-20],
       [#persone.FELIX],
-      [-],
-      [Stesura dei design pattern comportamentali @design-pattern-comportamentali]
+      [#persone.DL],
+      [Stesura dei design pattern comportamentali e architetturali
+      @design-pattern-comportamentali,      
+      ]
     )
 
   )
