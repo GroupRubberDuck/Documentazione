@@ -41,7 +41,7 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO, persone.FELIX.replace("\n","")),
+    autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO, persone.FELIX.replace("\n",""), persone.DT),
     verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -147,6 +147,13 @@
       [Stesura dei design pattern comportamentali e architetturali
       @design-pattern-comportamentali,      
       ]
+    ),
+    (
+      [0.7.2],
+      [2026-04-22],
+      [#persone.DT],
+      [],
+      [Migliorata sezione @vista-dati]
     )
 
   )
