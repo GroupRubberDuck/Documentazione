@@ -158,7 +158,6 @@ package "Inbound Adapter" {
 
 package "Application Core" {
     
-    ' Le interfacce diventano Ball (porte logiche)
     () "InterfaceAssetUseCase" as InboundPort
 
     class AssetService <<Application Service>> {
