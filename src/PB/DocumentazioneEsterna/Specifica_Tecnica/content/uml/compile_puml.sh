@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# --- Configurazione ---
-# Prende le cartelle passate come argomento, oppure usa quelle di default
-INPUT_DIR=${1:-"./puml"}          # Default: cartella corrente se non specificata
-OUTPUT_DIR=${2:-"./png"} # Default: cartella "immagini" se non specificata
+# --- Configurazione dei percorsi ---
 
+# 1. Trova la cartella assoluta in cui si trova QUESTO script,
+# indipendentemente da dove lo lanci nel terminale.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+# 2. Imposta i percorsi: prende l'argomento se passato, altrimenti usa
+# le cartelle 'puml' e 'png' relative alla posizione dello script.
+INPUT_DIR=${1:-"$SCRIPT_DIR/puml"}          
+OUTPUT_DIR=${2:-"$SCRIPT_DIR/png"}
 # --- Controlli iniziali ---
 # Controlla se la cartella di input esiste
 if [ ! -d "$INPUT_DIR" ]; then
