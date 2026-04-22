@@ -34,7 +34,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "Approvato",
+    stato: "In lavorazione",
     versione: versionNumber,
     autori: ("Davide Lorenzon", "Aldo Bettega", " Filippo Guerra", "Ana Maria Draghici"),
     verificatori: ("Ana Maria Draghici", "Davide Lorenzon", "Aldo Bettega", "Filippo Guerra", "Felician Mario Necsulescu" ),
@@ -75,7 +75,7 @@
   - #link(label("python"))[Uso di script python], 
   ]),
   ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Aldo Bettega],[Approvazione]),
-  ([1.1.0],[2026-04-21],[Filippo Guerra],[-],[Aggiunta alla sezione @sviluppo_primario della parte di Naming Convention]),
+  ([1.1.0],[2026-04-21],[Filippo Guerra],[Felician Mario \ Necsulescu],[Aggiunta alla sezione @sviluppo_primario la parte di Naming Convention]),
 )
 #registroModifiche(modifiche)
 

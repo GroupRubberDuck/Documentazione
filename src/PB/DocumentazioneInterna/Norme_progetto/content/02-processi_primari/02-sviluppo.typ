@@ -157,8 +157,8 @@ Per garantire di qualità dello sviluppo del codice verranno usati i seguenti cr
     - *Componenti Vue*: PascalCase.
   - *Persistenza (MongoDB)* :
     - *Campi dei documenti*: snake_case (es.device_name).
-    - *Nomi delle collection*: lowercase al plurale (es. dispositivi, moduli).
-  - *Indentazioni* : \ I blocchi annidati del codice devono seguire un'identazione equivalente a 2 spazi, sia nel Backend che nel Frontend.
+    - *Nomi delle collection*: lowercase al plurale (es. devices, modules).
+  - *Indentazioni* : \ I blocchi annidati del codice devono seguire un'indentazione equivalente a 2 spazi, sia nel Backend che nel Frontend.
 
 
 
