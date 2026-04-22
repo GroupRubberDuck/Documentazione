@@ -1,0 +1,77 @@
+@startuml AssetQueryService
+skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+class AssetController <<Flask Blueprint>>{
+        + __init__(asset_query_use_case:AssetQueryUseCase)
+        + create_asset(request:Request):Response
+        + update_asset(request:Request):Response
+        + delete_asset(asset_id:String):Response 
+        + get_asset_by_id(request:Request):Response
+
+} 
+
+}
+
+package "Application Core" {
+
+        package "Inbound Port"{
+
+                interface AssetQueryUseCase <<interface>>{
+                                __init__(device_repository:DeviceReadRepositoryPort, model_repository:ComplianceStandardReadRepositoryPort)
+                                + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
+                }
+
+                ' interface AssetWriteUseCase <<interface>>{
+                '                 + create_asset(create_data:CreateAssetDTO):bool
+                '                 + update_asset(update_data:UpdateAssetDTO):bool
+                '                 + delete_asset(id:string):bool
+                ' }
+                
+        }
+
+        package Domain {
+                class Device
+                class ComplianceStandard
+                class EvaluationSheet
+        }
+        class  AssetQueryService{
+                + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
+        }
+
+        class AssetDetailDTO{
+                + asset_id: string
+                + name: string
+                + asset_type: AssetType
+                + description: string
+                + asset_evaluation_state
+                + requirement_evaluations: map<String,EvaluationState>
+        }
+
+        package "Outbound Ports"{
+                interface SessionCachePort {
+
+                }
+
+        }
+}
+
+AssetController --> AssetQueryUseCase
+
+AssetQueryService -->SessionCachePort
+
+
+AssetQueryService -up-|> AssetQueryUseCase
+
+
+AssetQueryService ..> AssetDetailDTO 
+AssetQueryService ..> EvaluationSheet 
+AssetQueryService ..> Device
+AssetQueryService ..> ComplianceStandard 
+
+
+
+@enduml

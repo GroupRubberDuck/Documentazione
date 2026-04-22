@@ -1,0 +1,68 @@
+@startuml AssetWriteService
+skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+package "Inbound Adapter"{
+class AssetController <<Flask Blueprint>>{
+        + __init__(asset_query_use_case:AssetQueryUseCase)
+        + create_asset(request:Request):Response
+        + update_asset(request:Request):Response
+        + delete_asset(asset_id:String):Response 
+        + get_asset_by_id(request:Request):Response
+
+} 
+
+}
+
+
+package "Application Core" {
+
+        package "Inbound Port"{
+
+                interface AssetWriteUseCase <<interface>>{
+                                + create_asset(create_data:CreateAssetDTO):bool
+                                + update_asset(update_data:UpdateAssetDTO):bool
+                                + delete_asset(id:string):bool
+                }
+                
+        }
+                class AssetWriteService {
+                        __init__(session_cache_port:SessionCachePort)
+                                + create_asset(create_data:CreateAssetDTO):bool
+                                + update_asset(update_data:UpdateAssetDTO):bool
+                                + delete_asset(id:string):bool
+                }
+                
+        package Domain {
+                class Device
+                class CreateAssetDTO{
+                        name:String
+                        AssetType:AssetType
+                        description:String
+                }
+                class UpdateAssetDTO{
+                        asset_id:string
+                        name:String
+                        AssetType:AssetType
+                        description:String
+                }
+        }
+
+
+        package "Outbound Ports"{
+                !include ports/SessionCachePort.puml 
+        }
+}
+
+
+AssetController --> AssetWriteUseCase
+
+AssetWriteService -->SessionCachePort
+
+
+AssetWriteService -up-|> AssetWriteUseCase
+
+
+
+@enduml

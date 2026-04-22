@@ -1,0 +1,178 @@
+@startuml SessionService
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+package "Inbound Adapter" {
+  class EvaluationSessionController <<Flask Blueprint>> {
+    - session_port: EvaluationSessionUseCasePort
+    + __init__(session_port: EvaluationSessionUseCasePort)
+    + open_evaluation_session(): Response
+    + rollback(): Response
+    + commit(): Response
+    + commit_and_close(): Response
+  }
+
+  class Request <<Flask>> {
+  }
+
+  note right of Request
+    Oggetto globale di Flask.
+    Accessibile tramite import
+    nei metodi del controller.
+  end note
+}
+
+package "Application Core" {
+
+  package "Domain" {
+    class EvaluationSession {
+      - device: Device
+      - model: Model
+      - evaluation_sheet: EvaluationSheet
+      + get_device(): Device
+      + get_model(): Model
+      + get_evaluation_sheet(): EvaluationSheet
+    }
+
+    class SessionManager {
+      + can_open_session(requested_type: SessionType, active_types: list[SessionType]): bool
+      + is_operation_allowed(operation: OperationType, active_types: list[SessionType]): bool
+    }
+
+    enum SessionType <<enum>> {
+      VALUTAZIONE
+      EDITING_MODELLO
+    }
+
+    class Device <<Aggregate Root>> {
+    }
+
+    class Model {
+    }
+
+    class EvaluationSheet {
+    }
+
+    class OperationResult {
+      + success: bool
+      + data: Object
+      + error_message: string
+    }
+  }
+
+  package "Inbound Port" {
+    interface EvaluationSessionUseCasePort <<interface>> {
+      + open_evaluation_session(device_id: string, model_id: string): OperationResult
+      + commit(): OperationResult
+      + rollback(): OperationResult
+      + commit_and_close(): OperationResult
+    }
+  }
+
+  package "Application Service" {
+    class EvaluationSessionService <<Application Service>> {
+'       - session_manager: SessionManager
+'       - session_cache: EvaluationSessionCachePort
+'       - device_reader: DeviceReaderPort
+'       - model_reader: ModelReaderPort
+'       - device_writer: DeviceWriterPort
+      + __init__(session_manager: SessionManager, session_cache: EvaluationSessionCachePort, device_reader: DeviceReaderPort, model_reader: ModelReaderPort, device_writer: DeviceWriterPort)
+      + open_evaluation_session(device_id: string, model_id: string): OperationResult
+      + commit(): OperationResult
+      + rollback(): OperationResult
+      + commit_and_close(): OperationResult
+    }
+  }
+
+  package "Outbound Port" {
+    interface EvaluationSessionCachePort <<interface>> {
+      + save_session(session: EvaluationSession): void
+      + get_session(): EvaluationSession
+      + has_active_session(): bool
+      + delete_session(): void
+    }
+
+    interface DeviceReaderPort <<interface>> {
+      + get_device_by_id(device_id: string): Device
+    }
+
+    interface ModelReaderPort <<interface>> {
+      + get_model_by_id(model_id: string): Model
+    }
+
+    interface DeviceWriterPort <<interface>> {
+      + save_device(device: Device): void
+    }
+  }
+}
+
+package "Outbound Adapter" {
+  class InMemorySessionCache {
+    - session: EvaluationSession
+    + save_session(session: EvaluationSession): void
+    + get_session(): EvaluationSession
+    + has_active_session(): bool
+    + delete_session(): void
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound
+EvaluationSessionController --> EvaluationSessionUseCasePort : " usa"
+EvaluationSessionController ..> Request
+
+' Port -> Service
+EvaluationSessionUseCasePort <|.. EvaluationSessionService
+
+' Service -> Domain
+EvaluationSessionService ..> SessionManager : "consulta"
+EvaluationSessionService ..> EvaluationSession : "crea"
+EvaluationSessionService ..> OperationResult : "ritorna"
+
+' Service -> Outbound Ports
+EvaluationSessionService --> EvaluationSessionCachePort
+EvaluationSessionService --> DeviceReaderPort
+EvaluationSessionService --> ModelReaderPort
+EvaluationSessionService --> DeviceWriterPort
+
+' Outbound Adapter -> Port
+EvaluationSessionCachePort <|.. InMemorySessionCache
+
+' Domain interno
+EvaluationSession o-- Device
+EvaluationSession o-- Model
+EvaluationSession *-- EvaluationSheet
+SessionManager ..> SessionType
+
+' note bottom of EvaluationSessionService
+'   open: consulta SessionManager,
+'   carica Device e Model dai reader,
+'   crea EvaluationSession,
+'   salva nella cache.
+  
+'   commit: recupera sessione dalla cache,
+'   salva Device tramite DeviceWriter,
+'   mantiene sessione attiva.
+  
+'   rollback: elimina sessione dalla cache,
+'   le modifiche non persistite vanno perse.
+  
+'   commit_and_close: commit + rollback.
+' end note
+
+' Nota sul SessionCoordinator
+' note as N1
+'   SessionCoordinator non è presente
+'   in questo diagramma perché esiste
+'   un solo tipo di sessione attivo.
+'   Verrà introdotto quando sarà
+'   implementata la sessione di
+'   editing del modello.
+' end note
+
+@enduml
