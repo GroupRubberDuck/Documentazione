@@ -1,11 +1,17 @@
 @startuml calsse_asset
 skinparam linetype ortho
+<<<<<<< HEAD
+=======
+skinparam nodesep 120
+skinparam ranksep 120
+>>>>>>> 01595f06 (Feat: aggiornamento diagrammi con ballsocket)
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
 skinparam ranksep 100
 skinparam packageStyle rectangle
 skinparam style strictuml
 
+<<<<<<< HEAD
 package "Business Logic" {
 
   package "Logica di Dominio" {
@@ -139,4 +145,54 @@ Report o-- Model
 ' Outbound Adapter -> Port
 SessionCachePort <|.. InMemorySessionCache
 
+=======
+package "Inbound Adapter" {
+    class AssetController <<Flask Blueprint>> {
+        +getListaAsset(device_id: String, req: Request): Response
+        +creaAsset(device_id: String, req: Request): Response
+        +getDettaglioAsset(device_id: String, asset_id: String): Response
+        +modificaAsset(device_id: String, asset_id: String, req: Request): Response
+        +eliminaAsset(device_id: String, asset_id: String): Response
+    }
+}
+
+package "Application Core" {
+    
+    ' Le interfacce diventano Ball (porte logiche)
+    () "InterfaceAssetUseCase" as InboundPort
+    () "InterfaceAssetRepository" as OutboundPort
+
+    class AssetService <<Application Service>> {
+        -repository: InterfaceAssetRepository
+        +getListaAsset(device_id: String): List<Asset>
+        +creaAsset(device_id: String, dto: CreaAssetDTO): Asset
+        +getDettaglioAsset(device_id: String, asset_id: String): Asset
+        +modificaAsset(device_id: String, asset_id: String, dto: ModificaAssetDTO): Asset
+        +eliminaAsset(device_id: String, asset_id: String): void
+        -validaRegoleBusiness(a: Asset): void
+    }
+
+    class Asset <<Entity>> {    }
+
+    InboundPort -down- AssetService : "fornisce"
+    AssetService -down-( OutboundPort : "richiede"
+    AssetService ..> Asset : "crea e modifica"
+}
+
+package "Outbound Adapter" {
+    class MongoAssetAdapter <<Mongo Repository>> {
+        -collection: pymongo.Collection
+        +save(device_id: String, a: Asset): void
+        +findById(device_id: String, asset_id: String): Asset
+        +findAllByDevice(device_id: String): List<Asset>
+        +deleteById(device_id: String, asset_id: String): void
+    }
+}
+
+
+AssetController -( InboundPort : "utilizza"
+
+OutboundPort -down- MongoAssetAdapter : "implementa"
+
+>>>>>>> 01595f06 (Feat: aggiornamento diagrammi con ballsocket)
 @enduml
