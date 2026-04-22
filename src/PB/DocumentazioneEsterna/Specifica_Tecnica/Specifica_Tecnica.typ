@@ -130,7 +130,6 @@
       [#persone.FELIX],
       [#persone.DL],
       [Stesura dei principi di design
-      @principi-design
       ]
     ),
     (
