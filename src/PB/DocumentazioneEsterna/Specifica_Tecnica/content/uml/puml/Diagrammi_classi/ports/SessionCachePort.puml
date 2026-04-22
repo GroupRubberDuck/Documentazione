@@ -1,0 +1,14 @@
+@startuml
+
+interface SessionCachePort{
+        + get_asset_by_id(id_device:string, id:string):Asset
+        + create_asset(create_data:CreateAssetDTO):bool
+        + update_asset(update_data:UpdateAssetDTO):bool
+        + delete_asset(id:string):bool
+
+        ' + get_update_log():UpdateLog
+}
+
+
+
+@enduml

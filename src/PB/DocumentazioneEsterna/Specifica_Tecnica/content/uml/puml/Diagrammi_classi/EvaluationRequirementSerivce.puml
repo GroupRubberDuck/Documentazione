@@ -1,0 +1,41 @@
+@startuml
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+package "Inbound Adapter"{
+class EvaluationRequirementsQueryController <<Flask Blueprint>>{
+        + __init__(asset_query_use_case:AssetQueryUseCase)
+        + get_requirement_by_id(request:Request):Response
+
+} 
+
+}
+
+
+package "Application Core" {
+
+        package "Inbound Port"{
+
+
+                
+        }
+
+                
+        package Domain {
+
+        }
+
+
+        package "Outbound Ports"{
+        }
+}
+
+
+
+@enduml
