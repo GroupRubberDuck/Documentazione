@@ -30,17 +30,17 @@ package "Business Logic" {
       + model_id: string
       + model_name: string
       + model_version: string
-      + assets: list[AssetFileDTO]
+      ' + assets: list[AssetFileDTO]
     }
 
     class AssetFileDTO {
       + asset_name: string
       + asset_type: AssetType
       + asset_description: string
-      + assessments: list[AssessmentFileDTO]
+      ' + assessments: list[AnswerFileDTO]
     }
 
-    class AssessmentFileDTO {
+    class AnswerFileDTO {
       + requirement_code: string
       + answers: dictionary[string:bool]
     }
@@ -48,9 +48,9 @@ package "Business Logic" {
 
   package "Logica Applicativa" {
     class ImportDeviceService {
-      - device_importer_factory: FileDeviceImporterFactoryPort
-      - device_repository: DeviceRepositoryPort
-      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
+      ' - device_importer_factory: FileDeviceImporterFactoryPort
+      ' - device_repository: DeviceWriteRepositoryPort
+      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceWriteRepositoryPort)
       + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
     }
 
@@ -62,7 +62,7 @@ package "Business Logic" {
   }
 
   package "Inbound Ports" {
-    interface ImportDevicePort <<interface>> {
+    interface ImportDeviceUseCase <<interface>> {
       + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
     }
   }
@@ -72,7 +72,7 @@ package "Business Logic" {
       + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
     }
 
-    interface DeviceRepositoryPort <<interface>> {
+    interface DeviceWriteRepositoryPort <<interface>> {
       + register_device(device: Device): bool
     }
 
@@ -83,13 +83,13 @@ package "Business Logic" {
 }
 
 package "Inbound Adapter" {
-  class FlaskImportDeviceRequestHandler {
-    - import_port: ImportDevicePort
-    + __init__(import_port: ImportDevicePort)
+  class ImportDeviceController <<Flask Blueprint>> {
+    ' - import_port: ImportDeviceUseCase
+    + __init__(import_port: ImportDeviceUseCase)
     + import_device()
   }
 
-  class FlaskUploadFileController <<Utility>> {
+  class UploadFileController <<Utility>> {
     + get_http_file_payload(): BinaryIO
     + get_http_file_extension(): string
   }
@@ -133,15 +133,15 @@ package "Outbound Adapter" {
 ' --- Relazioni ---
 
 ' Inbound
-FlaskImportDeviceRequestHandler --> ImportDevicePort : " usa"
-FlaskImportDeviceRequestHandler .up.> FlaskUploadFileController
+ImportDeviceController --> ImportDeviceUseCase : " usa"
+ImportDeviceController .up.> UploadFileController
 
 ' Port -> Service
-ImportDevicePort <|.. ImportDeviceService
+ImportDeviceUseCase <|.. ImportDeviceService
 
 ' Service -> Outbound Ports
 ImportDeviceService -down-> FileDeviceImporterFactoryPort
-ImportDeviceService -down-> DeviceRepositoryPort
+ImportDeviceService -down-> DeviceWriteRepositoryPort
 
 ' Service -> Domain
 ImportDeviceService ..> DeviceBuilder
@@ -171,7 +171,7 @@ DeviceBuilder ..> ErrorLog : "popola"
 ImportDeviceService ..> ErrorLog : "ritorna"
 
 ' DTO composition
-DeviceFileDTO *-- AssetFileDTO
-AssetFileDTO *-- AssessmentFileDTO
+DeviceFileDTO *-- "1..*" AssetFileDTO
+AssetFileDTO *-- "1..*"  AnswerFileDTO
 
 @enduml
