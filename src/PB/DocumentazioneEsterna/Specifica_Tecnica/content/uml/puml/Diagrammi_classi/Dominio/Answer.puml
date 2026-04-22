@@ -3,7 +3,7 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class Answer {
-    - answer: Map<idNode, bool>
+    - answer: Map<id_node, bool>
     - justification: String
 }
 

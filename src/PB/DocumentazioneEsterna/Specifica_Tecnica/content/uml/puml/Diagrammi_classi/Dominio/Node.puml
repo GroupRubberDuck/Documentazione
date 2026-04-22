@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 
 abstract class Node <<abstract>> {
     - code: String
-    + {abstract} isLeaf(): Boolean
+    + {abstract} is_leaf(): Boolean
 }
 
 @enduml
