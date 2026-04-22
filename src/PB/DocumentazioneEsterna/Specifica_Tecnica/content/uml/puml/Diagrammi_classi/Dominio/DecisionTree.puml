@@ -3,7 +3,7 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class DecisionTree {
-    ' - rootNodeId: String
+    ' - root_node_id: String
 }
 DecisionTree *-- "root_node" Node
 
