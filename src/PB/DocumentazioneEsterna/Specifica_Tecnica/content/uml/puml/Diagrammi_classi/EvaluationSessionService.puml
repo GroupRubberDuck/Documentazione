@@ -10,66 +10,61 @@ package "Inbound Adapter" {
   class EvaluationSessionController <<Flask Blueprint>> {
     - session_port: EvaluationSessionUseCasePort
     + __init__(session_port: EvaluationSessionUseCasePort)
-    + open_evaluation_session(): Response
-    + rollback(): Response
-    + commit(): Response
-    + commit_and_close(): Response
+    + open_evaluation_session(Request): Response
+    + close_session(Request): Response
+    + save(Request): Response
+    + save_and_close(Request): Response
   }
 
-  class Request <<Flask>> {
-  }
+'   class Request <<Flask>> {
+'   }
 
-  note right of Request
-    Oggetto globale di Flask.
-    Accessibile tramite import
-    nei metodi del controller.
-  end note
+'   note right of Request
+'     Oggetto globale di Flask.
+'     Accessibile tramite import
+'     nei metodi del controller.
+'   end note
 }
 
 package "Application Core" {
 
   package "Domain" {
     class EvaluationSession {
-      - device: Device
-      - model: Model
-      - evaluation_sheet: EvaluationSheet
-      + get_device(): Device
-      + get_model(): Model
+'       - evaluation_sheet: EvaluationSheet
       + get_evaluation_sheet(): EvaluationSheet
     }
-
+' contiene la regola di business sull'apertura di  sessioni
     class SessionManager {
       + can_open_session(requested_type: SessionType, active_types: list[SessionType]): bool
-      + is_operation_allowed(operation: OperationType, active_types: list[SessionType]): bool
     }
+' per ora non lo metto, il suo  compito sarà ascoltare le porte session cache e ccontrolalre lo stato di attività
+        ' class SessionCoordinator{
+        '         + __init__(session_manager: SessionManager,valutazione_cache: ValutazioneSessionCachePort, editing_cache: EditingSessionCachePort)
+        '         + can_open_session(requested_type: SessionType)
+        ' }
 
     enum SessionType <<enum>> {
       VALUTAZIONE
-      EDITING_MODELLO
+      EDITING_ComplianceStandardLO
     }
 
     class Device <<Aggregate Root>> {
     }
 
-    class Model {
+    class ComplianceStandard {
     }
 
     class EvaluationSheet {
     }
 
-    class OperationResult {
-      + success: bool
-      + data: Object
-      + error_message: string
-    }
   }
 
   package "Inbound Port" {
     interface EvaluationSessionUseCasePort <<interface>> {
-      + open_evaluation_session(device_id: string, model_id: string): OperationResult
-      + commit(): OperationResult
-      + rollback(): OperationResult
-      + commit_and_close(): OperationResult
+      + open_evaluation_session(device_id: string, ComplianceStandard_id: string): bool
+      + save(): bool
+      + close(): bool
+      + save_and_close(): bool
     }
   }
 
@@ -78,13 +73,13 @@ package "Application Core" {
 '       - session_manager: SessionManager
 '       - session_cache: EvaluationSessionCachePort
 '       - device_reader: DeviceReaderPort
-'       - model_reader: ModelReaderPort
+'       - ComplianceStandard_reader: ComplianceStandardReaderPort
 '       - device_writer: DeviceWriterPort
-      + __init__(session_manager: SessionManager, session_cache: EvaluationSessionCachePort, device_reader: DeviceReaderPort, model_reader: ModelReaderPort, device_writer: DeviceWriterPort)
-      + open_evaluation_session(device_id: string, model_id: string): OperationResult
-      + commit(): OperationResult
-      + rollback(): OperationResult
-      + commit_and_close(): OperationResult
+      + __init__(session_manager: SessionManager, session_cache: EvaluationSessionCachePort, device_reader: DeviceReaderPort, ComplianceStandard_reader: ComplianceStandardReaderPort, device_writer: DeviceWriterPort)
+      + open_evaluation_session(device_id: string, ComplianceStandard_id: string): OperationResult
+      + save(): bool
+      + close(): bool
+      + save_and_close(): bool
     }
   }
 
@@ -96,13 +91,13 @@ package "Application Core" {
       + delete_session(): void
     }
 
-    interface DeviceReaderPort <<interface>> {
-      + get_device_by_id(device_id: string): Device
-    }
+'     interface DeviceReaderPort <<interface>> {
+'       + get_device_by_id(device_id: string): Device
+'     }
 
-    interface ModelReaderPort <<interface>> {
-      + get_model_by_id(model_id: string): Model
-    }
+'     interface ComplianceStandardReaderPort <<interface>> {
+'       + get_ComplianceStandard_by_id(ComplianceStandard_id: string): ComplianceStandard
+'     }
 
     interface DeviceWriterPort <<interface>> {
       + save_device(device: Device): void
@@ -124,7 +119,7 @@ package "Outbound Adapter" {
 
 ' Inbound
 EvaluationSessionController --> EvaluationSessionUseCasePort : " usa"
-EvaluationSessionController ..> Request
+' EvaluationSessionController ..> Request
 
 ' Port -> Service
 EvaluationSessionUseCasePort <|.. EvaluationSessionService
@@ -132,26 +127,26 @@ EvaluationSessionUseCasePort <|.. EvaluationSessionService
 ' Service -> Domain
 EvaluationSessionService ..> SessionManager : "consulta"
 EvaluationSessionService ..> EvaluationSession : "crea"
-EvaluationSessionService ..> OperationResult : "ritorna"
+' EvaluationSessionService ..> OperationResult : "ritorna"
 
 ' Service -> Outbound Ports
 EvaluationSessionService --> EvaluationSessionCachePort
-EvaluationSessionService --> DeviceReaderPort
-EvaluationSessionService --> ModelReaderPort
+' EvaluationSessionService --> DeviceReaderPort
+' EvaluationSessionService --> ComplianceStandardReaderPort
 EvaluationSessionService --> DeviceWriterPort
 
 ' Outbound Adapter -> Port
 EvaluationSessionCachePort <|.. InMemorySessionCache
 
 ' Domain interno
-EvaluationSession o-- Device
-EvaluationSession o-- Model
+EvaluationSheet --> Device
+EvaluationSheet --> ComplianceStandard
 EvaluationSession *-- EvaluationSheet
 SessionManager ..> SessionType
 
 ' note bottom of EvaluationSessionService
 '   open: consulta SessionManager,
-'   carica Device e Model dai reader,
+'   carica Device e ComplianceStandard dai reader,
 '   crea EvaluationSession,
 '   salva nella cache.
   
@@ -172,7 +167,7 @@ SessionManager ..> SessionType
 '   un solo tipo di sessione attivo.
 '   Verrà introdotto quando sarà
 '   implementata la sessione di
-'   editing del modello.
+'   editing del ComplianceStandardlo.
 ' end note
 
 @enduml
