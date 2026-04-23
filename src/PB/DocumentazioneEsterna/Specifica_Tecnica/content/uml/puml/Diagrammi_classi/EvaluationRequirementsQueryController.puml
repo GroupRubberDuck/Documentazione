@@ -22,12 +22,17 @@ package "Application Core" {
 
         package "Inbound Port"{
 
+               class EvaluationRequirementsQueryService{
 
+               }
                 
         }
 
                 
         package Domain {
+                class EvaluationSheet{}
+
+                class EvaluationSession{}
 
         }
 

@@ -7,4 +7,5 @@ class SessionHandler {
 + is_operation_allowed(operation: OperationType, active_session_types: list[SessionType]): bool
 
 }
+
 @enduml

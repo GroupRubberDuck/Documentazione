@@ -4,8 +4,8 @@ skinparam classAttributeIconSize 0
 
 class Session {
     ' - evaluationSheet: EvaluationSheet
-    - sessionId: String
-    - sessionType: SessionType
+    - session_id: String
+    - session_type: SessionType
 }
 Session --> EvaluationSheet
 @enduml
