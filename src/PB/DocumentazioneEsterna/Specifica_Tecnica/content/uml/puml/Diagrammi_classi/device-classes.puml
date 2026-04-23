@@ -1,4 +1,4 @@
-@startuml classe_device
+@startuml device
 skinparam linetype ortho
 skinparam nodesep 120
 skinparam ranksep 120

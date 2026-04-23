@@ -1,4 +1,4 @@
-@startuml classe_dashboard_query
+@startuml dashboard-classes
 skinparam linetype ortho
 skinparam nodesep 110
 skinparam ranksep 130

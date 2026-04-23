@@ -1,4 +1,4 @@
-@startuml Gestione_Sessione
+@startuml session-manager
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
