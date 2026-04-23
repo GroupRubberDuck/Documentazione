@@ -23,7 +23,21 @@ package "Business Logic" {
       + errors(): list[string]
     }
 
-    class DeviceFileDTO {
+  package "Logica Applicativa" {
+    class ImportDeviceService {
+      - device_importer_factory: FileDeviceImporterFactoryPort
+      - device_repository: DeviceRepositoryPort
+      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
+      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+    }
+
+    enum AllowedDeviceFileExtension <<enum>> {
+      CSV
+      XML
+      JSON
+    }
+
+        class DeviceFileDTO {
       + device_name: string
       + device_os_name: string
       + device_description: string
@@ -45,20 +59,6 @@ package "Business Logic" {
       + answers: dictionary[string:bool]
     }
   }
-
-  package "Logica Applicativa" {
-    class ImportDeviceService {
-      ' - device_importer_factory: FileDeviceImporterFactoryPort
-      ' - device_repository: DeviceWriteRepositoryPort
-      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceWriteRepositoryPort)
-      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
-    }
-
-    enum AllowedDeviceFileExtension <<enum>> {
-      CSV
-      XML
-      JSON
-    }
   }
 
   package "Inbound Ports" {
