@@ -1,4 +1,4 @@
-@startuml classe_valutazione
+@startuml evaluation
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam Linetype ortho
