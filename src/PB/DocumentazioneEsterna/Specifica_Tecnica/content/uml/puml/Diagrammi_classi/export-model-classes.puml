@@ -1,4 +1,4 @@
-@startuml Export_Model
+@startuml export-model
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80

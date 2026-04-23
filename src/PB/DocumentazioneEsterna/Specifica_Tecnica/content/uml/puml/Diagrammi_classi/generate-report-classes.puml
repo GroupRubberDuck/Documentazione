@@ -1,4 +1,4 @@
-@startuml Generate_Report
+@startuml generate-report
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80

@@ -1,4 +1,4 @@
-@startuml Import_Device
+@startuml import-device
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80

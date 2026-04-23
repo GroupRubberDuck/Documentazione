@@ -1,4 +1,4 @@
-@startuml Frontend_Decision_Tree
+@startuml decision-tree-and-node
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80

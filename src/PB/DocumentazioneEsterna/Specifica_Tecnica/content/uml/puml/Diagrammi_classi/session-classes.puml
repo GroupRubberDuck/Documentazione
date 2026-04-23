@@ -1,4 +1,4 @@
-@startuml Gestione_Sessione
+@startuml session
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
@@ -57,23 +57,6 @@ package "Business Logic" {
       + rollback(): void
     }
 
-    class ValutazioneService <<Application Service>> {
-      - session_cache: SessionCachePort
-      + __init__(session_cache: SessionCachePort)
-      + answer_node(session_id: string, dto: AnswerNodeDTO): void
-      + add_justification(session_id: string, dto: JustificationDTO): void
-      + get_valutazione_status(session_id: string): ValutazioneStatusDTO
-    }
-
-    class AssetSessionService <<Application Service>> {
-      - session_cache: SessionCachePort
-      + __init__(session_cache: SessionCachePort)
-      + add_asset(session_id: string, dto: CreaAssetDTO): bool
-      + update_asset(session_id: string, asset_id: string, dto: ModificaAssetDTO): bool
-      + delete_asset(session_id: string, asset_id: string): void
-      + get_lista_asset(session_id: string): list[AssetSummaryDTO]
-      + get_dettaglio_asset(session_id: string, asset_id: string): AssetDetailDTO
-    }
   }
 
   package "Inbound Ports" {
@@ -83,19 +66,8 @@ package "Business Logic" {
       + rollback(): void
     }
 
-    interface ValutazionePort <<interface>> {
-      + answer_node(session_id: string, dto: AnswerNodeDTO): void
-      + add_justification(session_id: string, dto: JustificationDTO): void
-      + get_valutazione_status(session_id: string): ValutazioneStatusDTO
-    }
 
-    interface AssetSessionPort <<interface>> {
-      + add_asset(session_id: string, dto: CreaAssetDTO): bool
-      + update_asset(session_id: string, asset_id: string, dto: ModificaAssetDTO): bool
-      + delete_asset(session_id: string, asset_id: string): void
-      + get_lista_asset(session_id: string): list[AssetSummaryDTO]
-      + get_dettaglio_asset(session_id: string, asset_id: string): AssetDetailDTO
-    }
+
   }
 
   package "Outbound Ports" {
@@ -129,23 +101,7 @@ package "Inbound Adapter" {
     + rollback(): Response
   }
 
-  class FlaskValutazioneRequestHandler <<Flask Blueprint>> {
-    - valutazione_port: ValutazionePort
-    + __init__(valutazione_port: ValutazionePort)
-    + answer_node(session_id: string): Response
-    + add_justification(session_id: string): Response
-    + get_status(session_id: string): Response
-  }
 
-  class FlaskAssetSessionRequestHandler <<Flask Blueprint>> {
-    - asset_session_port: AssetSessionPort
-    + __init__(asset_session_port: AssetSessionPort)
-    + add_asset(session_id: string): Response
-    + update_asset(session_id: string, asset_id: string): Response
-    + delete_asset(session_id: string, asset_id: string): Response
-    + get_lista_asset(session_id: string): Response
-    + get_dettaglio_asset(session_id: string, asset_id: string): Response
-  }
 
   class Request <<Flask>> {
   }
@@ -173,31 +129,22 @@ package "Outbound Adapter" {
 
 ' Inbound Adapter -> Ports
 FlaskSessionRequestHandler --> SessionPort : " usa"
-FlaskValutazioneRequestHandler --> ValutazionePort : " usa"
-FlaskAssetSessionRequestHandler --> AssetSessionPort : " usa"
 FlaskSessionRequestHandler ..> Request
-FlaskValutazioneRequestHandler ..> Request
-FlaskAssetSessionRequestHandler ..> Request
 
 ' Inbound Ports -> Services
 SessionPort <|.. SessionService
-ValutazionePort <|.. ValutazioneService
-AssetSessionPort <|.. AssetSessionService
 
 ' Services -> Outbound Ports
 SessionService --> SessionCachePort
 SessionService --> DeviceReaderPort
 SessionService --> DeviceWriterPort
 SessionService --> ModelReaderPort
-ValutazioneService --> SessionCachePort
-AssetSessionService --> SessionCachePort
 
 ' Service -> Domain
 SessionService ..> SessionManager : "usa"
 SessionService ..> Session : "crea"
 SessionService ..> Report : "crea"
-ValutazioneService ..> Report : "modifica"
-AssetSessionService ..> Report : "modifica"
+
 
 ' Domain interno
 Session o-- Report
