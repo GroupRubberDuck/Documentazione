@@ -10,8 +10,8 @@ skinparam style strictuml
 
 package "Inbound Adapter"{
 class EvaluationRequirementsQueryController <<Flask Blueprint>>{
-        + __init__(asset_query_use_case:AssetQueryUseCase)
-        + get_requirement_by_id(request:Request):Response
+        + __init__(requirement_query_use_case:EvaluationRequirementsQueryUseCase)
+        + get_requirement_view_by_id(request:Request):Response
 
 } 
 
@@ -22,6 +22,11 @@ package "Application Core" {
 
         package "Inbound Port"{
 
+<<<<<<< HEAD:src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/puml/Diagrammi_classi/EvaluationRequirementSerivce.puml
+=======
+               class EvaluationRequirementsQueryUseCase{
+                        + get_requirement_view_by_id(device_id,asset_id,requirement_id):RequirementViewDTO
+>>>>>>> 009b7b42 (aggiornato Evaluation Session Serrvice):src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/puml/Diagrammi_classi/EvaluationRequirementsQueryController.puml
 
                 
         }
