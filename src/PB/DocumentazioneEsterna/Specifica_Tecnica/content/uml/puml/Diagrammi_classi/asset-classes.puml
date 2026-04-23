@@ -1,4 +1,4 @@
-@startuml asset-classes
+@startuml asset
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80

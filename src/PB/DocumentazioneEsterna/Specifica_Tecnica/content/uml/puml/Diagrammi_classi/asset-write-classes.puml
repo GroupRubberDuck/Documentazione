@@ -1,4 +1,4 @@
-@startuml AssetWriteService
+@startuml asset-write-service
 skinparam linetype ortho
 skinparam nodesep 120
 skinparam ranksep 120

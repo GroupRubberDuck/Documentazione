@@ -1,4 +1,4 @@
-@startuml dashboard-classes
+@startuml dashboard
 skinparam linetype ortho
 skinparam nodesep 110
 skinparam ranksep 130
