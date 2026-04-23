@@ -1,0 +1,63 @@
+@startuml device-query
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class DeviceController <<Flask Blueprint>> {
+        - query_use_case: InterfaceDeviceQueryUseCase
+        - write_use_case: InterfaceDeviceWriteUseCase
+
+        + get_device_list(): Response
+        + get_device_detail(device_id: String): Response
+
+        + create_device(): Response
+        + modify_device(device_id: String): Response
+        + delete_device(device_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface InterfaceDeviceQueryUseCase <<Inbound Port>> {
+        + get_device_list(): List<Device>
+        + get_device_detail(device_id: String): Device
+    }
+
+    interface InterfaceDeviceReadRepositoryPort <<Outbound Port>> {
+        + find_by_id(device_id: String): Device
+        + find_all(): List<Device>
+    }
+
+    class DeviceQueryService <<Application Service>> {
+        - repository: InterfaceDeviceReadRepositoryPort
+        
+        + get_device_list(): List<Device>
+        + get_device_detail(device_id: String): Device
+    }
+
+    !include ./Dominio/Device.puml
+
+    InterfaceDeviceQueryUseCase <|.. DeviceQueryService : "implementa"
+    DeviceQueryService -down-( InterfaceDeviceReadRepositoryPort : "richiede"
+    
+    DeviceQueryService ..> Device : "legge e restituisce"
+}
+
+package "Outbound Adapter" {
+    class MongoDeviceAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        
+        + save(device: Device): void
+        + delete_by_id(id: String): void
+        
+        + find_by_id(id: String): Device
+        + find_all(): List<DeviceDTO>
+    }
+}
+
+DeviceController -( InterfaceDeviceQueryUseCase : "utilizza"
+InterfaceDeviceReadRepositoryPort <|.. MongoDeviceAdapter : "implementa"
+
+@enduml
