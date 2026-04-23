@@ -6,9 +6,9 @@ skinparam ranksep 100
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-package "Business Logic" {
+package "Application Core" {
 
-  package "Logica di Dominio" {
+  package "Domain" {
     class DeviceBuilder {
       + device_DTO_to_device(device_dto: DeviceFileDTO): Device
       + get_error_log(): ErrorLog
@@ -22,63 +22,61 @@ package "Business Logic" {
       + has_errors(): bool
       + errors(): list[string]
     }
-
-  package "Logica Applicativa" {
-    class ImportDeviceService {
-      - device_importer_factory: FileDeviceImporterFactoryPort
-      - device_repository: DeviceRepositoryPort
-      + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
-      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
-    }
-
-    enum AllowedDeviceFileExtension <<enum>> {
-      CSV
-      XML
-      JSON
-    }
-
-        class DeviceFileDTO {
-      + device_name: string
-      + device_os_name: string
-      + device_description: string
-      + model_id: string
-      + model_name: string
-      + model_version: string
-      ' + assets: list[AssetFileDTO]
-    }
-
-    class AssetFileDTO {
-      + asset_name: string
-      + asset_type: AssetType
-      + asset_description: string
-      ' + assessments: list[AnswerFileDTO]
-    }
-
-    class AnswerFileDTO {
-      + requirement_code: string
-      + answers: dictionary[string:bool]
-    }
-  }
   }
 
-  package "Inbound Ports" {
-    interface ImportDeviceUseCase <<interface>> {
-      + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
-    }
+  class ImportDeviceService {
+    - device_importer_factory: FileDeviceImporterFactoryPort
+    - device_repository: DeviceRepositoryPort
+    + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
+    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
   }
 
-  package "Outbound Ports" {
-    interface FileDeviceImporterPort <<interface>> {
-      + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
-    }
+  enum AllowedDeviceFileExtension <<enum>> {
+    CSV
+    XML
+    JSON
+  }
 
-    interface DeviceWriteRepositoryPort <<interface>> {
-      + register_device(device: Device): bool
-    }
+  class DeviceFileDTO {
+    + device_name: string
+    + device_os_name: string
+    + device_description: string
+    + model_id: string
+    + model_name: string
+    + model_version: string
+    ' + assets: list[AssetFileDTO]
+  }
 
-    interface FileDeviceImporterFactoryPort <<interface>> {
-      + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
-    }
+  class AssetFileDTO {
+    + asset_name: string
+    + asset_type: AssetType
+    + asset_description: string
+    ' + assessments: list[AnswerFileDTO]
+  }
+
+  class AnswerFileDTO {
+    + requirement_code: string
+    + answers: dictionary[string:bool]
+  }
+}
+
+package "Inbound Ports" {
+  interface ImportDeviceUseCase <<interface>> {
+    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+  }
+}
+
+package "Outbound Ports" {
+  interface FileDeviceImporterPort <<interface>> {
+    + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
+  }
+
+  interface DeviceWriteRepositoryPort <<interface>> {
+    + save(device: Device): bool
+  }
+
+  interface FileDeviceImporterFactoryPort <<interface>> {
+    + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
   }
 }
 
@@ -159,8 +157,6 @@ FileDeviceImporter <|-down- CSVFileDeviceImporter
 FileDeviceImporter <|-down- XMLFileDeviceImporter
 FileDeviceImporter <|-down- JSONFileDeviceImporter
 
-' Importer -> DTO
-FileDeviceImporter ..> DeviceFileDTO : "ritorna"
 
 ' Builder
 DeviceBuilder ..> DeviceFileDTO : "usa"

@@ -32,7 +32,7 @@ package "Application Core" {
 
     class DeviceQueryService <<Application Service>> {
         - repository: InterfaceDeviceReadRepositoryPort
-        
+
         + get_device_list(): List<Device>
         + get_device_detail(device_id: String): Device
     }
@@ -41,17 +41,17 @@ package "Application Core" {
 
     InterfaceDeviceQueryUseCase <|.. DeviceQueryService : "implementa"
     DeviceQueryService -down-( InterfaceDeviceReadRepositoryPort : "richiede"
-    
+
     DeviceQueryService ..> Device : "legge e restituisce"
 }
 
 package "Outbound Adapter" {
     class MongoDeviceAdapter <<Mongo Repository>> {
         - collection: pymongo.Collection
-        
+
         + save(device: Device): void
         + delete_by_id(id: String): void
-        
+
         + find_by_id(id: String): Device
         + find_all(): List<DeviceDTO>
     }
