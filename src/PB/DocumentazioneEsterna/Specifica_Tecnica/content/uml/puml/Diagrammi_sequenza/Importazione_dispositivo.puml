@@ -2,59 +2,71 @@
 
 actor "Utente" as utente
 participant "<<Boundary>>\nVue.js" as vue
-participant "<<Inbound Adapter>>\nFlask API" as flask
-participant "<<DTO>>\nImportDeviceDTO" as DTO
-participant "<<Service>>\nDeviceService" as service
-participant "<<Domain Entity>>\nDispositivo" as domain
-participant "<<Outbound Adapter>>\npymongo : DeviceRepositoryPort" as repo
+participant "<<Inbound Adapter>>\nImportDeviceController" as controller
+participant "<<Utility>>\nHttpRequestHelper" as helper
+participant "<<Service>>\nImportDeviceService" as service
+participant "<<Outbound Adapter>>\nConcreteFileImporterFactory" as factory
+participant "<<Outbound Adapter>>\nFileDeviceImporter (es. CSV)" as parser
+participant "<<Domain>>\nDeviceBuilder" as builder
+participant "<<Outbound Adapter>>\nMongoDeviceAdapter" as repo
 
-utente -> vue: Importazione dispositivo
+utente -> vue: Carica file (CSV/XML/JSON)
 activate vue
 
-vue -> flask: POST /api/devices
-activate flask
+vue -> controller: POST /api/devices/import
+activate controller
 
-flask -> DTO: validazione_sintassi(JSON)
-activate DTO
+controller -> helper: estrai_payload_e_estensione()
+activate helper
+helper --> controller: file_content, ext
+deactivate helper
 
-alt UC06 - Errore formato file
-    DTO --> flask: ValidationError
-    flask --> vue: HTTP 400 Bad Request
-    vue --> utente: Errore: formato non valido
-else Sintassi Corretta
-    DTO --> flask: DTO_validato
-end
-deactivate DTO
-
-flask -> service: importa_dispositivo(DTO_validato)
+controller -> service: import_device(file_content, ext)
 activate service
 
-service -> domain: Dispositivo.create(dati_estratti_dal_dto)
-activate domain
+service -> factory: get_file_device_importer(ext)
+activate factory
+factory --> service: parser_corretto
+deactivate factory
 
-domain -> domain: verifica_regole_normative()
-alt UC06 - Errore semantica file
-    domain --> service: DomainException
-    service --> flask: Eccezione Propagata
-    flask --> vue: HTTP 422 Unprocessable Entity
-    vue --> utente: Errore: il file viola la norma
-else L'entità rispetta le regole di dominio
-    domain --> service: nuovo_dispositivo
+service -> parser: parse_device_file(file_content)
+activate parser
+alt UC06 - Errore formato file (es. CSV corrotto)
+    parser --> service: ParseException
+    service --> controller: Errore di parsing
+    controller --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: formato del file non valido
+else Sintassi Corretta
+    parser --> service: DeviceFileDTO (Dati estratti)
 end
-deactivate domain
+deactivate parser
 
-service -> repo: salva(nuovo_dispositivo)
+service -> builder: device_DTO_to_device(DeviceFileDTO)
+activate builder
+builder -> builder: valida_regole_business()
+
+alt UC06 - Errore semantica (es. Mac Address invalido)
+    builder --> service: Device nullo, ErrorLog (popolato)
+    service --> controller: ErrorLog
+    controller --> vue: HTTP 422 Unprocessable Entity (con ErrorLog)
+    vue --> utente: Mostra lista di tutti gli errori nel file
+else L'entità rispetta le regole
+    builder --> service: nuovo_dispositivo, ErrorLog (vuoto)
+end
+deactivate builder
+
+service -> repo: save(nuovo_dispositivo)
 activate repo
-repo --> service: id_dispositivo
+repo --> service: success
 deactivate repo
 
-service --> flask: success(id_dispositivo)
+service --> controller: success (ErrorLog vuoto)
 deactivate service
 
-flask --> vue: HTTP 201 Created
-deactivate flask
+controller --> vue: HTTP 201 Created
+deactivate controller
 
-vue --> utente: Dispositivo importato
+vue --> utente: Dispositivo importato con successo
 deactivate vue
 
 @enduml
