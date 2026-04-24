@@ -1,0 +1,48 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+' --- DTO di riferimento ---
+class NodeDTO << (D,#FF7700) DTO >> {
+  + id: String
+  + text: String
+  + parentId: String | null
+  + yesChildId: String | null
+  + noChildId: String | null
+}
+
+' --- Lo Store (Il "Backend" del Frontend) ---
+class DecisionTreeStore << (S,#FF9900) Pinia Store >> {
+  -- state (reattivo) --
+  + isSideBarOpen: Boolean
+  + selectedNodeId: String
+  + answers: Map<String, Boolean>
+  + layoutResult: LayoutResult
+  -- actions --
+  + closeSideBar()
+  + setAnswer(nodeId: String, answer: Boolean)
+  + selectNode(nodeId: String)
+}
+
+' --- Il Componente Visivo ---
+class TreeSidebar << (V,#41B883) Vue Component >> {
+  - store: DecisionTreeStore
+  
+  + currentNode: NodeDTO | null <<computed>>
+  + currentAnswer: Boolean | undefined <<computed>>
+  + hasNextNode: Boolean <<computed>>
+  
+  + submit(answer: Boolean)
+  + goPrevious()
+  + goNext()
+}
+
+' --- Relazioni ---
+TreeSidebar o-- DecisionTreeStore : legge stato\ne chiama azioni
+TreeSidebar ..> NodeDTO : usa per\nil rendering
+
+@enduml
