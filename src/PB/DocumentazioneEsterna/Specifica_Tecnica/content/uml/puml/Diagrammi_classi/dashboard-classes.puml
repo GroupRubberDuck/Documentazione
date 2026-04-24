@@ -6,7 +6,7 @@ skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
     class DashboardController <<Flask Blueprint>> {
-        - query_service: InterfaceDashboardQueryUseCase
+        - query_service: DashboardQueryUseCase
         + get_dashboard_dispositivo(session_id: String): Response
         + get_dettaglio_asset(session_id: String, asset_id: String): Response
     }
@@ -14,12 +14,12 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    interface InterfaceDashboardQueryUseCase <<Inbound Port>> {
+    interface DashboardQueryUseCase <<Inbound Port>> {
         + get_dashboard_dispositivo(session_id: String): DashboardDTO
         + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
     }
 
-    interface InterfaceSessionCachePort <<Outbound Port>> {
+    interface SessionCachePort <<Outbound Port>> {
         + save_session(session: Session): void
         + get_session(session_id: String): Session
         + delete_session(session_id: String): void
@@ -27,7 +27,7 @@ package "Application Core" {
     }
 
     class DashboardQueryService <<Application Service>> {
-        - session_cache: InterfaceSessionCachePort
+        - session_cache: SessionCachePort
         + get_dashboard_dispositivo(session_id: String): DashboardDTO
         + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
     }
@@ -65,8 +65,8 @@ package "Application Core" {
     !include Dominio/Session.puml
     !include Dominio/EvaluationSheet.puml
 
-    InterfaceDashboardQueryUseCase <|.. DashboardQueryService : "implementa"
-    DashboardQueryService -down-( InterfaceSessionCachePort : "richiede"
+    DashboardQueryUseCase <|.. DashboardQueryService : "implementa"
+    DashboardQueryService -down-( SessionCachePort : "richiede"
 
     DashboardQueryService ..> Session : "legge"
 
@@ -86,7 +86,7 @@ package "Outbound Adapter" {
     }
 }
 
-DashboardController -( InterfaceDashboardQueryUseCase : "utilizza"
-InterfaceSessionCachePort -down- InMemorySessionCache : "implementa"
+DashboardController -( DashboardQueryUseCase : "utilizza"
+SessionCachePort -down- InMemorySessionCache : "implementa"
 
 @enduml

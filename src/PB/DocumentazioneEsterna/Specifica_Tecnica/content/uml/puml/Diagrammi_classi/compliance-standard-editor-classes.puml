@@ -1,0 +1,99 @@
+@startuml compliance-standard-editor
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 130
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardEditorController <<Flask Blueprint>> {
+        - editor_service: StandardEditorUseCase
+        
+        + open_session(standard_id: String): Response
+        + commit(session_id: String): Response
+        + rollback(session_id: String): Response
+        
+        + add_requirement(session_id: String): Response
+        + update_requirement(session_id: String, req_code: String): Response
+        + add_node(session_id: String): Response
+        + remove_element(session_id: String, element_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface StandardEditorUseCase <<Inbound Port>> {
+        ' UC36, 37, 38
+        + open_edit_session(standard_id: String): String
+        + commit_changes(session_id: String): void
+        + discard_changes(session_id: String): void
+        
+        ' UC42, 43, 44
+        + add_requirement(session_id: String, req_data: dict): void
+        + remove_requirement(session_id: String, req_code: String): void
+        + update_requirement(session_id: String, req_code: String, data: dict): void
+        
+        ' UC45, 46
+        + manage_dependency(session_id: String, source: String, target: String): void
+        
+        ' UC47, 48, 49, 50
+        + add_node(session_id: String, parent_id: String, node_data: dict): void
+        + update_node(session_id: String, node_id: String, data: dict): void
+        + remove_node(session_id: String, node_id: String): void
+    }
+
+    interface StandardCachePort <<Outbound Port>> {
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    interface StandardRepositoryPort <<Outbound Port>> {
+        + find_by_id(id: String): ComplianceStandard
+        + save(standard: ComplianceStandard): void
+    }
+
+    class StandardEditorService <<Application Service>> {
+        - cache: StandardCachePort
+        - repository: StandardRepositoryPort
+        - session_handler: SessionHandler
+        
+        + open_edit_session(standard_id: String): String
+        + commit_changes(session_id: String): void
+    }
+
+    !include Dominio/ComplianceStandard.puml
+    !include Dominio/SessionHandler.puml
+
+    StandardEditorUseCase <|.. StandardEditorService : "implementa"
+    StandardEditorService -down-( StandardCachePort : "richiede"
+    StandardEditorService -down-( StandardRepositoryPort : "richiede"
+    StandardEditorService ..> SessionHandler : "valida regole"
+    
+    StandardEditorService ..> ComplianceStandard : "manipola"
+}
+
+package "Outbound Adapter" {
+    class InMemoryStandardCache <<Cache Adapter>> {
+        - storage: dict[String: ComplianceStandard]
+        
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    class MongoStandardAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        
+        + find_all(): List<ComplianceStandard>
+        + find_by_id(id: String): ComplianceStandard
+        + save(standard: ComplianceStandard): void
+        + delete_by_id(id: String): void
+        + exists_by_name(name: String): bool
+    }
+}
+
+StandardEditorController -( StandardEditorUseCase : "usa"
+StandardCachePort -down- InMemoryStandardCache : "implementa"
+StandardRepositoryPort -down- MongoStandardAdapter : "implementa"
+
+@enduml

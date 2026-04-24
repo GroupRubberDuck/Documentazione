@@ -1,0 +1,60 @@
+@startuml compliance-standard-write
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardController <<Flask Blueprint>> {
+        - write_service: StandardWriteUseCase
+        
+        + update_anagrafica(standard_id: String): Response
+        + delete_standard(standard_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface StandardWriteUseCase <<Inbound Port>> {
+        + update_anagrafica(standard_id: String, name: String, version: String, description: String): bool
+        + delete_standard(standard_id: String): bool
+    }
+
+    interface StandardRepositoryPort <<Outbound Port>> {
+        + save(standard: ComplianceStandard): void
+        + find_by_id(standard_id: String): ComplianceStandard
+        + find_all(): List<ComplianceStandard>
+        + delete_by_id(standard_id: String): void
+    }
+
+    class StandardWriteService <<Application Service>> {
+        - repository: StandardRepositoryPort
+        
+        + update_anagrafica(standard_id: String, name: String, version: String, description: String): bool
+        + delete_standard(standard_id: String): bool
+    }
+
+    !include Dominio/ComplianceStandard.puml
+
+    StandardWriteUseCase <|.. StandardWriteService : "implementa"
+    StandardWriteService -down-( StandardRepositoryPort : "richiede"
+
+    StandardWriteService ..> ComplianceStandard : "modifica"
+}
+
+package "Outbound Adapter" {
+    class MongoStandardAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        
+        ' Metodi esposti dalla Porta
+        + save(standard: ComplianceStandard): void
+        + find_by_id(standard_id: String): ComplianceStandard
+        + find_all(): List<ComplianceStandard>
+        + delete_by_id(standard_id: String): void
+    }
+}
+
+StandardController -( StandardWriteUseCase : "usa"
+StandardRepositoryPort -down- MongoStandardAdapter : "implementa"
+
+@enduml
