@@ -8,20 +8,27 @@ package "Inbound Adapter" {
     class StandardController <<Flask Blueprint>> {
         - write_service: StandardWriteUseCase
         
-        + update_anagrafica(standard_id: String): Response
+        + update(standard_id: String): Response
+        + create(): Response
         + delete_standard(standard_id: String): Response
     }
 }
 
 package "Application Core" {
 
+    class CreateStandardDTO {
+        + name: String
+    }
+
     interface StandardWriteUseCase <<Inbound Port>> {
-        + update_anagrafica(standard_id: String, name: String, version: String, description: String): bool
+        + update(standard_id: String, name: String, version: String, description: String): bool
+        + create(standard: CreateStandardDTO): bool
         + delete_standard(standard_id: String): bool
     }
 
     interface StandardRepositoryPort <<Outbound Port>> {
         + save(standard: ComplianceStandard): void
+        + register(standard: ComplianceStandard): void
         + find_by_id(standard_id: String): ComplianceStandard
         + find_all(): List<ComplianceStandard>
         + delete_by_id(standard_id: String): void
@@ -30,7 +37,7 @@ package "Application Core" {
     class StandardWriteService <<Application Service>> {
         - repository: StandardRepositoryPort
         
-        + update_anagrafica(standard_id: String, name: String, version: String, description: String): bool
+        + update(standard_id: String, name: String, version: String, description: String): bool
         + delete_standard(standard_id: String): bool
     }
 
@@ -47,6 +54,7 @@ package "Outbound Adapter" {
         - collection: pymongo.Collection
         
         + save(standard: ComplianceStandard): void
+        + register(standard: ComplianceStandard): void
         + find_by_id(standard_id: String): ComplianceStandard
         + find_all(): List<ComplianceStandard>
         + delete_by_id(standard_id: String): void

@@ -26,7 +26,7 @@ UC: class
 
         read requisiti
         40: visualizza dettaglio requisito modello
-        41: visualizza dettaglio codice requisito padre
+        41: visualizza dettaglio nodo foglia modello
 
         Operazioni modello
         35: modifica anagrafica
