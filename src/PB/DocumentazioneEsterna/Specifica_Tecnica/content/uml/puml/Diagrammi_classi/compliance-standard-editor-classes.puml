@@ -41,7 +41,7 @@ package "Application Core" {
         + remove_node(session_id: String, node_id: String): void
     }
 
-    interface StandardCachePort <<Outbound Port>> {
+    interface EditingSessionCachePort <<Outbound Port>> {
         + save_standard(session_id: String, standard: ComplianceStandard): void
         + get_standard(session_id: String): ComplianceStandard
         + delete_standard(session_id: String): void
@@ -53,7 +53,7 @@ package "Application Core" {
     }
 
     class StandardEditorService <<Application Service>> {
-        - cache: StandardCachePort
+        - cache: EditingSessionCachePort
         - repository: StandardRepositoryPort
         - session_handler: SessionHandler
         
@@ -65,7 +65,7 @@ package "Application Core" {
     !include Dominio/SessionHandler.puml
 
     StandardEditorUseCase <|.. StandardEditorService : "implementa"
-    StandardEditorService -down-( StandardCachePort : "richiede"
+    StandardEditorService -down-( EditingSessionCachePort : "richiede"
     StandardEditorService -down-( StandardRepositoryPort : "richiede"
     StandardEditorService ..> SessionHandler : "valida regole"
     
@@ -93,7 +93,7 @@ package "Outbound Adapter" {
 }
 
 StandardEditorController -( StandardEditorUseCase : "usa"
-StandardCachePort -down- InMemoryStandardCache : "implementa"
+EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
 StandardRepositoryPort -down- MongoStandardAdapter : "implementa"
 
 @enduml
