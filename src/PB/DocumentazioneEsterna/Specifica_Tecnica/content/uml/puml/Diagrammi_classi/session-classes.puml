@@ -1,4 +1,4 @@
-@startuml session
+@startuml EvaluationSession
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
@@ -6,64 +6,73 @@ skinparam ranksep 100
 skinparam packageStyle rectangle
 skinparam style strictuml
 
+
+
+package "Inbound Adapter" {
+  class FlaskSessionRequestHandler <<Flask Blueprint>> {
+    ' - session_port: EvaluationSessionUseCase
+    + __init__(session_port: EvaluationSessionUseCase)
+    + open_session(): Response
+    + save_session(session_id:String): Response
+    + save_and_close(session_id:String): Response
+    + close_session(session_id:String): Response
+  }
+
+
+
+  ' class Request <<Flask>> {
+  ' }
+
+  ' note right of Request
+  '   Oggetto globale di Flask.
+  '   Accessibile tramite import
+  '   nei metodi dei request handler
+  '   per estrarre i dati della
+  '   richiesta HTTP corrente.
+  ' end note
+}
+
+
+
+
+
+
+
+
 package "Business Logic" {
 
   package "Logica di Dominio" {
-    class SessionManager {
-      + can_open_session(active_session_exists: bool): bool
-      + get_allowed_session_types(): list[SessionType]
-    }
 
-    class Session {
-      - session_id: string
-      - session_type: SessionType
-      - report: Report
-      + get_report(): Report
-    }
+!include Dominio/SessionHandler.puml
+!include Dominio/EvaluationSession.puml
 
-    class Report {
-      - device: Device
-      - model: Model
-      + answer_node(node_code: string, answer: bool): void
-      + add_justification(asset_id: string, requirement_code: string, text: string): void
-      + add_asset(name: string, asset_type: AssetType, description: string): void
-      + update_asset(asset_id: string, name: string, asset_type: AssetType, description: string): void
-      + remove_asset(asset_id: string): void
-      + get_all_assets(): list[Asset]
-    }
 
-    class Device <<Aggregate Root>> {
-    }
-
-    class Model {
-    }
-
-    enum SessionType <<enum>> {
-      VALUTAZIONE
-      EDITING_MODELLO
-    }
   }
 
   package "Logica Applicativa" {
-    class SessionService <<Application Service>> {
-      - session_manager: SessionManager
-      - session_cache: SessionCachePort
-      - device_reader: DeviceReaderPort
-      - model_reader: ModelReaderPort
+    class EvaluationSessionService  {
+
+      - session_cache: EvaluationSessionCachePort
       - device_writer: DeviceWriterPort
-      + __init__(session_manager: SessionManager, session_cache: SessionCachePort, device_reader: DeviceReaderPort, model_reader: ModelReaderPort, device_writer: DeviceWriterPort)
+      + __init__(session_cache: EvaluationSessionCachePort, device_reader:DeviceReadRepositoryPort, device_writer: DeviceWritePort,standard_reader:StandardRepositoryPort)
       + open_session(device_id: string, model_id: string): string
       + commit(): void
       + rollback(): void
     }
 
+
+  class SessionCoordinator{
+    + can_open_session(session_type:SessionType)
   }
 
+  }
+
+
   package "Inbound Ports" {
-    interface SessionPort <<interface>> {
+    interface EvaluationSessionUseCase <<interface>> {
       + open_session(device_id: string, model_id: string): string
-      + commit(): void
-      + rollback(): void
+      + save(session_id): void
+      + close(session_id): void
     }
 
 
@@ -71,49 +80,28 @@ package "Business Logic" {
   }
 
   package "Outbound Ports" {
-    interface SessionCachePort <<interface>> {
+    interface EvaluationSessionCachePort <<interface>> {
       + save_session(session: Session): void
       + get_session(session_id: string): Session
       + delete_session(session_id: string): void
       + has_active_session(): bool
     }
 
-    interface DeviceReaderPort <<interface>> {
-      + get_device_by_id(device_id: string): Device
-    }
 
-    interface DeviceWriterPort <<interface>> {
+    interface DeviceWritePort <<interface>> {
       + save_device(device: Device): void
     }
-
-    interface ModelReaderPort <<interface>> {
-      + get_model_by_id(model_id: string): Model
+    interface StandardRepositoryPort <<interface>> {
+      + get_compliance_standard(standard_id:String ): void
     }
+    interface DeviceReadPort <<interface>> {
+      + get_device(device_id: String): void
+    }
+
   }
 }
 
-package "Inbound Adapter" {
-  class FlaskSessionRequestHandler <<Flask Blueprint>> {
-    - session_port: SessionPort
-    + __init__(session_port: SessionPort)
-    + open_session(): Response
-    + commit(): Response
-    + rollback(): Response
-  }
 
-
-
-  class Request <<Flask>> {
-  }
-
-  note right of Request
-    Oggetto globale di Flask.
-    Accessibile tramite import
-    nei metodi dei request handler
-    per estrarre i dati della
-    richiesta HTTP corrente.
-  end note
-}
 
 package "Outbound Adapter" {
   class InMemorySessionCache {
@@ -127,32 +115,16 @@ package "Outbound Adapter" {
 
 ' --- Relazioni ---
 
-' Inbound Adapter -> Ports
-FlaskSessionRequestHandler --> SessionPort : " usa"
-FlaskSessionRequestHandler ..> Request
+FlaskSessionRequestHandler --> EvaluationSessionUseCase
+EvaluationSessionUseCase <|-- EvaluationSessionService
+EvaluationSessionService --> EvaluationSessionCachePort
+EvaluationSessionService --> DeviceWritePort
+EvaluationSessionService --> StandardRepositoryPort
+EvaluationSessionService --> DeviceReadPort
+EvaluationSessionService --> SessionCoordinator
 
-' Inbound Ports -> Services
-SessionPort <|.. SessionService
-
-' Services -> Outbound Ports
-SessionService --> SessionCachePort
-SessionService --> DeviceReaderPort
-SessionService --> DeviceWriterPort
-SessionService --> ModelReaderPort
-
-' Service -> Domain
-SessionService ..> SessionManager : "usa"
-SessionService ..> Session : "crea"
-SessionService ..> Report : "crea"
-
-
-' Domain interno
-Session o-- Report
-Report o-- Device
-Report o-- Model
-SessionManager ..> SessionType
-
-' Outbound Adapter -> Port
-SessionCachePort <|.. InMemorySessionCache
+SessionCoordinator --> EditingSessionCachePort 
+SessionCoordinator --> EvaluationSessionCachePort 
+SessionCoordinator ..> SessionHandler
 
 @enduml
