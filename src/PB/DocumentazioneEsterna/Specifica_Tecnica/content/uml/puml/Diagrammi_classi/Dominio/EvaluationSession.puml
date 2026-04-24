@@ -5,7 +5,7 @@ skinparam classAttributeIconSize 0
 class EvaluationSession {
     ' - evaluationSheet: EvaluationSheet
     - session_id: String
-    - session_type: SessionType
 }
-EvaluationSession --> EvaluationSheet
+EvaluationSession --> Device
+EvaluationSession --> ComplianceStandard
 @enduml

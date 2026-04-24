@@ -3,8 +3,7 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class SessionHandler {
-+ can_open_session(requested_type: SessionType, active_session_exists: bool): bool
-+ is_operation_allowed(operation: OperationType, active_session_types: list[SessionType]): bool
+    + can_open_session(requested_type: SessionType, active_session_exists: bool): bool
 
 }
 

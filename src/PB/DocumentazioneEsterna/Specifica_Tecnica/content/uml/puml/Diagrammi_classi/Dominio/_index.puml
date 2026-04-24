@@ -27,8 +27,9 @@ package "2. Evaluation" {
 }
 
 package "4. Session" {
-    !include Session.puml
+    !include EvaluationSession.puml
     !include SessionType.puml
+    !include SessionHandler.puml
 }
 
 
