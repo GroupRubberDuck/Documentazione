@@ -1,11 +1,11 @@
-@startuml Session
+@startuml EvaluationSession
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
-class Session {
+class EvaluationSession {
     ' - evaluationSheet: EvaluationSheet
     - session_id: String
     - session_type: SessionType
 }
-Session --> EvaluationSheet
+EvaluationSession --> EvaluationSheet
 @enduml

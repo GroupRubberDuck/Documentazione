@@ -32,9 +32,15 @@ package "Application Core" {
     class StandardQueryService <<Application Service>> {
         - repository: StandardRepositoryPort
         
-        + get_standard_list(): List<ComplianceStandard>
+        + get_standard_list(): List<ComplianceStandardSummaryDTO>
         + get_standard_detail(standard_id: String): ComplianceStandard
         + get_requirement_detail(standard_id: String, req_code: String): Requirement
+    }
+
+    class ComplianceStandardSummaryDTO {
+        - id: String
+        - name: String
+        - version_number: String
     }
 
     !include Dominio/ComplianceStandard.puml
@@ -53,7 +59,7 @@ package "Outbound Adapter" {
         
         + save(standard: ComplianceStandard): void
         + find_by_id(standard_id: String): ComplianceStandard
-        + find_all(): List<ComplianceStandard>
+        + find_all(): List<ComplianceStandardSummaryDTO>
         + delete_by_id(standard_id: String): void
     }
 }
