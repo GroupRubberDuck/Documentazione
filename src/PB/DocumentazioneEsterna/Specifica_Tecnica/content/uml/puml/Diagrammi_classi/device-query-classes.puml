@@ -6,8 +6,8 @@ skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
     class DeviceController <<Flask Blueprint>> {
-        - query_use_case: InterfaceDeviceQueryUseCase
-        - write_use_case: InterfaceDeviceWriteUseCase
+        - query_use_case: DeviceQueryUseCase
+        - write_use_case: DeviceWriteUseCase
 
         + get_device_list(): Response
         + get_device_detail(device_id: String): Response
@@ -20,18 +20,18 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    interface InterfaceDeviceQueryUseCase <<Inbound Port>> {
+    interface DeviceQueryUseCase <<Inbound Port>> {
         + get_device_list(): List<Device>
         + get_device_detail(device_id: String): Device
     }
 
-    interface InterfaceDeviceReadRepositoryPort <<Outbound Port>> {
+    interface DeviceReadRepositoryPort <<Outbound Port>> {
         + find_by_id(device_id: String): Device
         + find_all(): List<Device>
     }
 
     class DeviceQueryService <<Application Service>> {
-        - repository: InterfaceDeviceReadRepositoryPort
+        - repository: DeviceReadRepositoryPort
 
         + get_device_list(): List<Device>
         + get_device_detail(device_id: String): Device
@@ -39,8 +39,8 @@ package "Application Core" {
 
     !include ./Dominio/Device.puml
 
-    InterfaceDeviceQueryUseCase <|.. DeviceQueryService : "implementa"
-    DeviceQueryService -down-( InterfaceDeviceReadRepositoryPort : "richiede"
+    DeviceQueryUseCase <|.. DeviceQueryService : "implementa"
+    DeviceQueryService -down-( DeviceReadRepositoryPort : "richiede"
 
     DeviceQueryService ..> Device : "legge e restituisce"
 }
@@ -57,7 +57,7 @@ package "Outbound Adapter" {
     }
 }
 
-DeviceController -( InterfaceDeviceQueryUseCase : "utilizza"
-InterfaceDeviceReadRepositoryPort <|.. MongoDeviceAdapter : "implementa"
+DeviceController -( DeviceQueryUseCase : "utilizza"
+DeviceReadRepositoryPort <|.. MongoDeviceAdapter : "implementa"
 
 @enduml
