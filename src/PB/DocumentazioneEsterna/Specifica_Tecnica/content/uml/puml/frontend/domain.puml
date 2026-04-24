@@ -13,9 +13,8 @@ skinparam style strictuml
 ' Permette ai widget di avere una sorta di comunicazione, un widget modifica un'informazione nello store,
 '  il cambiamento viene letto dagli altri widget che stanno ascoltando lo store
 Interface Node <<Interface>> {
-        + getNext(answer:bool):Node | null
-        + getPrevious():String | null
-        + getRenderData : DTO
+        + getRenderData() : DTO
+        + getNext(answer:bool):String | null
         + getPrevious():String | null
 
 }
@@ -27,16 +26,16 @@ class DecisionNode {
         - parentId:String | null
         - yesChildId: String
         - noChildId:String
+        + getRenderData() : DTO
         + getNext(answer:bool):String | null
-        + getRenderData : DTO
         + getPrevious():String | null
 }
 
 
 class LeafNode {
         - result:evaluationStateType
+        + getRenderData() : DTO
         + getNext(answer:bool):String | null
-        + getRenderData : DTO
         + getPrevious():String | null
 }
 

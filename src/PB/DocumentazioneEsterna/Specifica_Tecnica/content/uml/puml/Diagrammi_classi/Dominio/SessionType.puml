@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 
 enum SessionType {
     EVALUATION
-    MODEL_EDITING
+    STANDARD_EDITING
 }
 
 @enduml

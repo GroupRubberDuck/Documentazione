@@ -6,7 +6,7 @@ class EvaluationSheet {
     ' - compliance_standard: ComplianceStandard
     ' - device: Device
 
-    + <<Create>> EvaluationSheet(device: Device, standard: ComplianceStandard): EvaluationSheet
+    + __init__ (device: Device, standard: ComplianceStandard): EvaluationSheet
 
     + evaluate_requirements(asset_id: String, requirements_id: List<String>): EvaluationState
     + evaluate_asset(assetId: String): EvaluationState
