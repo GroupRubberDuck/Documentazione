@@ -51,7 +51,6 @@ package "Outbound Adapter" {
     class MongoStandardAdapter <<Mongo Repository>> {
         - collection: pymongo.Collection
         
-        ' Metodi esposti dalla Porta
         + save(standard: ComplianceStandard): void
         + find_by_id(standard_id: String): ComplianceStandard
         + find_all(): List<ComplianceStandard>
