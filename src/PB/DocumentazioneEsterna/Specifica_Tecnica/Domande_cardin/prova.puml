@@ -1,0 +1,35 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "Inbound Adapter" {
+    class DeviceController <<Flask Blueprint>> {
+        - query_use_case: DeviceQueryUseCase
+        - write_use_case: DeviceWriteUseCase
+        + get_device_list(): Response
+        + get_device_detail(device_id: String): Response
+        + create_device(): Response
+        + modify_device(device_id: String): Response
+        + delete_device(device_id: String): Response
+    }
+}
+
+package "Application Core" {
+    
+    ' Definizione dell'interfaccia come puro "Lollipop" (pallino) senza rettangolo
+    () "DeviceQueryUseCase" as IDeviceQueryUseCase
+
+    class DeviceQueryService <<Application Service>> {
+        - repository: DeviceReadRepositoryPort
+        + get_device_list(): List<Device>
+        + get_device_detail(device_id: String): Device
+    }
+}
+
+' Relazione "Ball & Socket": 
+' Il Controller ha il socket -(
+' Il Service si connette al lollipop --
+DeviceController -( IDeviceQueryUseCase : "utilizza"
+IDeviceQueryUseCase -- DeviceQueryService : "implementa"
+
+@enduml
