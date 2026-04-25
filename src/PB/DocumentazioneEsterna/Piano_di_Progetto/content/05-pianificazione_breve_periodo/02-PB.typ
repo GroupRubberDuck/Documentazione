@@ -3,8 +3,9 @@
 
 #import "sprints/sprint-9.typ" as s9
 #import "sprints/sprint-10.typ" as s10
+#import "sprints/sprint-11.typ" as s11
 
-#let tutti_gli_sprint = (s9.sprint_data, s10.sprint_data)
+#let tutti_gli_sprint = (s9.sprint_data, s10.sprint_data, s11.sprint_data)
 
 #let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
 

@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 1,
+  minor: 4,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -43,7 +43,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "Approvato",
+    stato: "In Corso",
     versione: versionNumber,
     autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO, persone.FILIPPO),
     verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
@@ -166,6 +166,13 @@
       [#persone.DT],
       [],
       [Stesura sprint 10],
+    ),
+    (
+      [1.4.0],
+      [2026-04-25],
+      [#persone.ANA],
+      [],
+      [Stesura sprint 11],
     ),
   )
   #registroModifiche(modifiche)
