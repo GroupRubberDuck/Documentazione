@@ -4,16 +4,28 @@ skinparam nodesep 120
 skinparam ranksep 120
 skinparam classAttributeIconSize 0
 package "Inbound Adapter"{
-class AssetController <<Flask Blueprint>>{
+class FlaskAssetWriteController <<Flask Blueprint>>{
         + __init__(asset_query_use_case:AssetQueryUseCase)
-        + create_asset(request:Request):Response
-        + update_asset(request:Request):Response
-        + delete_asset(asset_id:String):Response 
-        + get_asset_by_id(request:Request):Response
+        + create_asset():Response
+        + update_asset():Response
+        + delete_asset():Response 
+        ' + get_asset_by_id():Response
 
 } 
+  class Request <<Flask>> {
+  }
 
+  note right of Request
+    Oggetto globale di Flask.
+    Accessibile tramite import
+    nei metodi dei request handler
+    per estrarre i dati della
+    richiesta HTTP corrente.
+  end note
+
+  FlaskAssetWriteController ..> Request
 }
+
 
 
 package "Application Core" {
@@ -51,14 +63,15 @@ package "Application Core" {
 
 
         package "Outbound Ports"{
-                !include ports/SessionCachePort.puml 
+                !include ports/out/EvaluationSessionCachePort.puml
+
         }
 }
 
 
-AssetController --> AssetWriteUseCase
+FlaskAssetWriteController --> AssetWriteUseCase
 
-AssetWriteService -->SessionCachePort
+AssetWriteService --> EvaluationSessionCachePort
 
 
 AssetWriteService -up-|> AssetWriteUseCase

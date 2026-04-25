@@ -12,16 +12,14 @@ package "Business Logic" {
     class Device {
     }
 
-    class ReportDTO {
-  
-   }
+
 
 
   }
 
   package "Logica Applicativa" {
     class GenerateReportService {
-      - device_repository: DeviceRepositoryPort
+      - session_cache: EvaluationSessionCachePort
       - report_generator: ReportGeneratorPort
       + __init__(device_repository: DeviceRepositoryPort, report_generator: ReportGeneratorPort)
       + generate_report(device_id: string): bytes
@@ -29,15 +27,13 @@ package "Business Logic" {
   }
 
   package "Inbound Ports" {
-    interface GenerateReportPort <<interface>> {
+    interface GenerateReportUseCase <<interface>> {
       + generate_report(device_id: string): bytes
     }
   }
 
   package "Outbound Ports" {
-    interface DeviceRepositoryPort <<interface>> {
-      + get_device_by_id(device_id: string): Device
-    }
+!include ports/out/EvaluationSessionCachePort.puml
 
     interface ReportGeneratorPort <<interface>> {
       + generate_report(report_dto: ReportDTO): bytes
@@ -46,9 +42,9 @@ package "Business Logic" {
 }
 
 package "Inbound Adapter" {
-  class FlaskReportRequestHandler {
-    - report_port: GenerateReportPort
-    + __init__(report_port: GenerateReportPort)
+  class FlaskReportGeneratorController {
+    - report_port: GenerateReportUseCase
+    + __init__(report_port: GenerateReportUseCase)
     + generate_report()
   }
 
@@ -59,26 +55,26 @@ package "Inbound Adapter" {
 
 package "Outbound Adapter" {
   class PDFReportGenerator {
-    + generate_report(report_dto: ReportDTO): bytes
+    + generate_report(device:Device,standard:ComplianceStandard ): bytes
   }
 }
 
 ' --- Relazioni ---
 
 ' Inbound
-FlaskReportRequestHandler --> GenerateReportPort : " usa"
-FlaskReportRequestHandler ..> FlaskDownloadFileController
+FlaskReportGeneratorController --> GenerateReportUseCase : " usa"
+FlaskReportGeneratorController ..> FlaskDownloadFileController
 
 ' Port -> Service
-GenerateReportPort <|.. GenerateReportService
+GenerateReportUseCase <|.. GenerateReportService
 
 ' Service -> Outbound Ports
-GenerateReportService -down-> DeviceRepositoryPort
+GenerateReportService -down-> EvaluationSessionCachePort
 GenerateReportService -down-> ReportGeneratorPort
 
 ' Service -> Domain
 GenerateReportService ..> Device : "recupera"
-GenerateReportService ..> ReportDTO : "crea"
+
 
 ' Outbound Adapter -> Port
 ReportGeneratorPort <|.. PDFReportGenerator

@@ -1,0 +1,12 @@
+@startuml device-query
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+    interface DeviceReadRepositoryPort <<Outbound Port>> {
+        + find_by_id(device_id: String): Device
+        + find_all(): List<Device>
+    }
+
+@enduml

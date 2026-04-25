@@ -5,10 +5,10 @@ skinparam ranksep 130
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class DashboardController <<Flask Blueprint>> {
+    class FlaskDashboardQueryController <<Flask Blueprint>> {
         - query_service: DashboardQueryUseCase
-        + get_dashboard_dispositivo(session_id: String): Response
-        + get_dettaglio_asset(session_id: String, asset_id: String): Response
+        + get_dashboard_dispositivo(): Response
+        + get_dettaglio_asset(): Response
     }
 }
 
@@ -19,12 +19,7 @@ package "Application Core" {
         + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
     }
 
-    interface EvaluationSessionCachePort <<Outbound Port>> {
-        + save_session(session: EvaluationSession): void
-        + get_session(session_id: String): EvaluationSession
-        + delete_session(session_id: String): void
-        + has_active_session(): bool
-    }
+    !include ports/out/EvaluationSessionCachePort.puml
 
     class DashboardQueryService <<Application Service>> {
         - session_cache: EvaluationSessionCachePort
@@ -86,7 +81,7 @@ package "Outbound Adapter" {
     }
 }
 
-DashboardController -( DashboardQueryUseCase : "utilizza"
+FlaskDashboardQueryController -( DashboardQueryUseCase : "utilizza"
 EvaluationSessionCachePort -down- InMemoryEvaluationSessionCache : "implementa"
 
 @enduml

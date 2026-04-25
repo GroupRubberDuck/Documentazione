@@ -37,9 +37,9 @@ package "Business Logic" {
 
   package "Logica Applicativa" {
     class ExportDeviceService {
-      - device_repository: DeviceRepositoryPort
+      - device_repository: DeviceReadRepositoryPort
       - file_exporter_factory: FileDeviceExporterFactoryPort
-      + __init__(device_repository: DeviceRepositoryPort, file_exporter_factory: FileDeviceExporterFactoryPort)
+      + __init__(device_repository: DeviceReadRepositoryPort, file_exporter_factory: FileDeviceExporterFactoryPort)
       + export_device(device_id: string, extension: AllowedDeviceFileExtension): bytes
     }
 
@@ -57,7 +57,7 @@ package "Business Logic" {
   }
 
   package "Outbound Ports" {
-    interface DeviceRepositoryPort <<interface>> {
+    interface DeviceReadRepositoryPort <<interface>> {
       + get_device_by_id(device_id: string): Device
     }
 
@@ -124,7 +124,7 @@ FlaskExportDeviceRequestHandler .r.> FlaskDownloadFileController
 ExportDevicePort <|.. ExportDeviceService
 
 ' Service -> Outbound Ports
-ExportDeviceService -down-> DeviceRepositoryPort
+ExportDeviceService -down-> DeviceReadRepositoryPort
 ExportDeviceService -down-> FileDeviceExporterFactoryPort
 ExportDeviceService ..> DeviceFileDTO : "crea"
 

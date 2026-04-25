@@ -5,12 +5,12 @@ skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class StandardController <<Flask Blueprint>> {
+    class FlaskStandardQueryController <<Flask Blueprint>> {
         - query_service: StandardQueryUseCase
         
         + get_standards(): Response
-        + get_standard_detail(standard_id: String): Response
-        + get_requirement_detail(standard_id: String, req_code: String): Response
+        + get_standard_detail(): Response
+        ' + get_requirement_detail(standard_id: String, req_code: String): Response
     }
 }
 
@@ -19,22 +19,17 @@ package "Application Core" {
     interface StandardQueryUseCase <<Inbound Port>> {
         + get_standard_list(): List<ComplianceStandard>
         + get_standard_detail(standard_id: String): ComplianceStandard
-        + get_requirement_detail(standard_id: String, req_code: String): Requirement
+        ' + get_requirement_detail(standard_id: String, req_code: String): Requirement
     }
 
-    interface StandardRepositoryPort <<Outbound Port>> {
-        + save(standard: ComplianceStandard): void
-        + find_by_id(standard_id: String): ComplianceStandard
-        + find_all(): List<ComplianceStandard>
-        + delete_by_id(standard_id: String): void
-    }
+    !include ports/out/StandardReadRepositoryPort.puml
 
     class StandardQueryService <<Application Service>> {
         - repository: StandardRepositoryPort
         
         + get_standard_list(): List<ComplianceStandardSummaryDTO>
         + get_standard_detail(standard_id: String): ComplianceStandard
-        + get_requirement_detail(standard_id: String, req_code: String): Requirement
+        ' + get_requirement_detail(standard_id: String, req_code: String): Requirement
     }
 
     class ComplianceStandardSummaryDTO {
@@ -47,7 +42,7 @@ package "Application Core" {
     !include Dominio/Requirement.puml
 
     StandardQueryUseCase <|.. StandardQueryService : "implementa"
-    StandardQueryService -down-( StandardRepositoryPort : "richiede"
+    StandardQueryService -down-( StandardReadRepositoryPort : "richiede"
 
     StandardQueryService ..> ComplianceStandard : "legge"
     StandardQueryService ..> Requirement : "legge"
@@ -64,7 +59,7 @@ package "Outbound Adapter" {
     }
 }
 
-StandardController -( StandardQueryUseCase : "usa"
-StandardRepositoryPort -down- MongoStandardAdapter : "implementa"
+FlaskStandardQueryController -( StandardQueryUseCase : "usa"
+StandardReadRepositoryPort -down- MongoStandardAdapter : "implementa"
 
 @enduml
