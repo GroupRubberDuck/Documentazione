@@ -63,7 +63,7 @@ package "Application Core" {
         class EvaluationRequirementsQueryService{
                 + __init__ (evaluation_session_cache_port:EvaluationSessionCachePort)
                 + get_requirement_view_by_id(device_id,asset_id,requirement_id):RequirementViewDTO
-
+                ' + evaluate_requirement_by_id(device_id,asset_id,requirement_id):EvaluationState
         }
  EvaluationRequirementsQueryService -up-|> EvaluationRequirementsQueryUseCase  
 EvaluationRequirementsQueryController -->  EvaluationRequirementsQueryUseCase

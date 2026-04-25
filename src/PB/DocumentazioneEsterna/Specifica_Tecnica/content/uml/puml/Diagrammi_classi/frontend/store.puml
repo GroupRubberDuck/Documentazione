@@ -14,6 +14,7 @@ class DecisionTreeStore <<Pinia Store>>{
         - selectedNodeId:String
         - isSideBarOpen:bool
         - activePath:ref<list[String]>
+        - apiClient:ApiClient
 
         - refreshPath()
         + init(data, savedAnswers)

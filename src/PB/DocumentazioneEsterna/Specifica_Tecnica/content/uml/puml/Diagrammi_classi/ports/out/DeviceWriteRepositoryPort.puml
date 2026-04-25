@@ -1,0 +1,13 @@
+@startuml device-query
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+    interface DeviceWriteRepositoryPort <<Outbound Port>> {
+        + save(device: Device): void
+        + find_by_id(device_id: String): Device
+        + delete_by_id(device_id: String): void
+    }
+
+@enduml

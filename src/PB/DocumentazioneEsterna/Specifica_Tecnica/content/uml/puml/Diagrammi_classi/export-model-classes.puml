@@ -1,4 +1,4 @@
-@startuml export-model
+@startuml export-ComplianceStandard
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
@@ -9,13 +9,13 @@ skinparam style strictuml
 package "Business Logic" {
 
   package "Logica di Dominio" {
-    class Model {
+    class ComplianceStandard {
     }
 
-    class ModelFileDTO {
-      + Model_id: string
-      + Model_name: string
-      + Model_version_number: string
+    class ComplianceStandardFileDTO {
+      + ComplianceStandard_id: string
+      + ComplianceStandard_name: string
+      + ComplianceStandard_version_number: string
       + request_list: list[RequestDTO]
     }
 
@@ -56,14 +56,14 @@ package "Business Logic" {
 
 
   package "Logica Applicativa" {
-    class ExportModelService {
-      - Model_repository: ModelRepositoryPort
-      - file_exporter_factory: FileModelExporterFactoryPort
-      + __init__(Model_repository: ModelRepositoryPort, file_exporter_factory: FileModelExporterFactoryPort)
-      + export_Model(Model_id: string, extension: AllowedModelFileExtension): bytes
+    class ExportComplianceStandardService {
+      - ComplianceStandard_repository: ComplianceStandardRepositoryPort
+      - file_exporter_factory: FileComplianceStandardExporterFactoryPort
+      + __init__(ComplianceStandard_repository: ComplianceStandardRepositoryPort, file_exporter_factory: FileComplianceStandardExporterFactoryPort)
+      + export_ComplianceStandard(ComplianceStandard_id: string, extension: AllowedComplianceStandardFileExtension): bytes
     }
 
-    enum AllowedModelFileExtension {
+    enum AllowedComplianceStandardFileExtension {
       CSV
       XML
       JSON
@@ -71,31 +71,31 @@ package "Business Logic" {
   }
 
   package "Inbound Ports" {
-    interface ExportModelPort <<interface>> {
-      + export_Model(Model_id: string, extension: AllowedModelFileExtension): bytes
+    interface ExportComplianceStandardPort <<interface>> {
+      + export_ComplianceStandard(ComplianceStandard_id: string, extension: AllowedComplianceStandardFileExtension): bytes
     }
   }
 
   package "Outbound Ports" {
-    interface ModelRepositoryPort <<interface>> {
-      + get_Model_by_id(Model_id: string): Model
+    interface ComplianceStandardRepositoryPort <<interface>> {
+      + get_ComplianceStandard_by_id(ComplianceStandard_id: string): ComplianceStandard
     }
 
-    interface FileModelExporterPort <<interface>> {
-      + generate_Model_file(Model_dto: ModelFileDTO): bytes
+    interface FileComplianceStandardExporterPort <<interface>> {
+      + generate_ComplianceStandard_file(ComplianceStandard_dto: ComplianceStandardFileDTO): bytes
     }
 
-    interface FileModelExporterFactoryPort <<interface>> {
-      + get_file_Model_exporter(extension: AllowedModelFileExtension): FileModelExporterPort
+    interface FileComplianceStandardExporterFactoryPort <<interface>> {
+      + get_file_ComplianceStandard_exporter(extension: AllowedComplianceStandardFileExtension): FileComplianceStandardExporterPort
     }
   }
 }
 
 package "Inbound Adapter" {
-  class FlaskExportModelRequestHandler {
-    - export_port: ExportModelPort
-    + __init__(export_port: ExportModelPort)
-    + export_Model()
+  class FlaskExportComplianceStandardController {
+    - export_port: ExportComplianceStandardPort
+    + __init__(export_port: ExportComplianceStandardPort)
+    + export_ComplianceStandard()
   }
 
   class FlaskDownloadFileController <<Utility>> {
@@ -104,71 +104,71 @@ package "Inbound Adapter" {
 }
 
 package "Outbound Adapter" {
-  abstract class FileModelExporter <<Template Method>> {
-    + generate_Model_file(Model_dto: ModelFileDTO): bytes
+  abstract class FileComplianceStandardExporter <<Template Method>> {
+    + generate_ComplianceStandard_file(ComplianceStandard_dto: ComplianceStandardFileDTO): bytes
     # prepare_structure()
     # write_data()
     # finalize_output()
   }
 
-  class CSVFileModelExporter {
+  class CSVFileComplianceStandardExporter {
     # prepare_structure()
     # write_data()
     # finalize_output()
   }
 
-  class JSONFileModelExporter {
+  class JSONFileComplianceStandardExporter {
     # prepare_structure()
     # write_data()
     # finalize_output()
   }
 
-  class XMLFileModelExporter {
+  class XMLFileComplianceStandardExporter {
     # prepare_structure()
     # write_data()
     # finalize_output()
   }
 
-  class ConcreteFileModelExporterFactory {
-    + get_file_Model_exporter(extension: AllowedModelFileExtension): FileModelExporterPort
+  class ConcreteFileComplianceStandardExporterFactory {
+    + get_file_ComplianceStandard_exporter(extension: AllowedComplianceStandardFileExtension): FileComplianceStandardExporterPort
   }
 }
 
 ' --- Relazioni ---
 
 ' Inbound
-FlaskExportModelRequestHandler --> ExportModelPort : " usa"
-FlaskExportModelRequestHandler .r.> FlaskDownloadFileController
+FlaskExportComplianceStandardController --> ExportComplianceStandardPort : " usa"
+FlaskExportComplianceStandardController .r.> FlaskDownloadFileController
 
 ' Port -> Service
-ExportModelPort <|.. ExportModelService
+ExportComplianceStandardPort <|.. ExportComplianceStandardService
 
 ' Service -> Outbound Ports
-ExportModelService -down-> ModelRepositoryPort
-ExportModelService -down-> FileModelExporterFactoryPort
-ExportModelService ..> ModelFileDTO : "crea"
+ExportComplianceStandardService -down-> ComplianceStandardRepositoryPort
+ExportComplianceStandardService -down-> FileComplianceStandardExporterFactoryPort
+ExportComplianceStandardService ..> ComplianceStandardFileDTO : "crea"
 
 ' Factory
-FileModelExporterFactoryPort <|.. ConcreteFileModelExporterFactory
-FileModelExporterFactoryPort ..> FileModelExporterPort
-ConcreteFileModelExporterFactory .up.> CSVFileModelExporter
-ConcreteFileModelExporterFactory .up.> JSONFileModelExporter
-ConcreteFileModelExporterFactory .up.> XMLFileModelExporter
+FileComplianceStandardExporterFactoryPort <|.. ConcreteFileComplianceStandardExporterFactory
+FileComplianceStandardExporterFactoryPort ..> FileComplianceStandardExporterPort
+ConcreteFileComplianceStandardExporterFactory .up.> CSVFileComplianceStandardExporter
+ConcreteFileComplianceStandardExporterFactory .up.> JSONFileComplianceStandardExporter
+ConcreteFileComplianceStandardExporterFactory .up.> XMLFileComplianceStandardExporter
 
 ' Exporter hierarchy
-FileModelExporterPort <|.. FileModelExporter
-FileModelExporter <|-down- CSVFileModelExporter
-FileModelExporter <|-down- JSONFileModelExporter
-FileModelExporter <|-down- XMLFileModelExporter
+FileComplianceStandardExporterPort <|.. FileComplianceStandardExporter
+FileComplianceStandardExporter <|-down- CSVFileComplianceStandardExporter
+FileComplianceStandardExporter <|-down- JSONFileComplianceStandardExporter
+FileComplianceStandardExporter <|-down- XMLFileComplianceStandardExporter
 
 ' Exporter -> DTO
-FileModelExporter ..> ModelFileDTO : "riceve"
+FileComplianceStandardExporter ..> ComplianceStandardFileDTO : "riceve"
 
 ' DTO composition
-ModelFileDTO *-- RequirementFileDTO
+ComplianceStandardFileDTO *-- RequirementFileDTO
 RequirementFileDTO *-- DecisionTreeNodeFileDTO
 
-' Model -> DTO
-Model ..> ModelFileDTO : "si converte in"
+' ComplianceStandard -> DTO
+ComplianceStandard ..> ComplianceStandardFileDTO : "si converte in"
 
 @enduml

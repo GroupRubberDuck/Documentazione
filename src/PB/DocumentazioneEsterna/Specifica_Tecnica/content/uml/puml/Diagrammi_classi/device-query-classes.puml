@@ -5,16 +5,13 @@ skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class DeviceController <<Flask Blueprint>> {
+    class DeviceQueryController <<Flask Blueprint>> {
         - query_use_case: DeviceQueryUseCase
-        - write_use_case: DeviceWriteUseCase
 
         + get_device_list(): Response
-        + get_device_detail(device_id: String): Response
+        + get_device_detail(): Response
 
-        + create_device(): Response
-        + modify_device(device_id: String): Response
-        + delete_device(device_id: String): Response
+
     }
 }
 
@@ -25,10 +22,7 @@ package "Application Core" {
         + get_device_detail(device_id: String): Device
     }
 
-    interface DeviceReadRepositoryPort <<Outbound Port>> {
-        + find_by_id(device_id: String): Device
-        + find_all(): List<Device>
-    }
+ !include ports/out/DeviceReadRepositoryPort.puml
 
     class DeviceQueryService <<Application Service>> {
         - repository: DeviceReadRepositoryPort
@@ -57,7 +51,7 @@ package "Outbound Adapter" {
     }
 }
 
-DeviceController -( DeviceQueryUseCase : "utilizza"
+DeviceQueryController -( DeviceQueryUseCase : "utilizza"
 DeviceReadRepositoryPort <|.. MongoDeviceAdapter : "implementa"
 
 @enduml

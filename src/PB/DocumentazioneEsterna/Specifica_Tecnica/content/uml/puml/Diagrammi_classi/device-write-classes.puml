@@ -5,17 +5,13 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class DeviceController <<Flask Blueprint>> {
+    class DeviceWriteController <<Flask Blueprint>> {
 
-        - query_use_case: DeviceQueryUseCase
         - write_use_case: DeviceWriteUseCase
 
-        + get_device_list(): Response
-        + get_device_detail(device_id: String): Response
-
         + create_device(): Response
-        + modify_device(device_id: String): Response
-        + delete_device(device_id: String): Response
+        + modify_device(): Response
+        + delete_device(): Response
     }
 }
 
@@ -41,11 +37,8 @@ package "Application Core" {
         + modify_device(dto: ModifyDeviceDTO): bool
         + delete_device(device_id: String): bool
     }
-    interface DeviceWriteRepositoryPort <<Outbound Port>> {
-        + save(device: Device): void
-        + find_by_id(device_id: String): Device
-        + delete_by_id(device_id: String): void
-    }
+
+    !include ports/out/DeviceWriteRepositoryPort.puml
 
     class DeviceWriteService <<Application Service>> {
         - repository: DeviceWriteRepositoryPort
@@ -70,7 +63,7 @@ package "Outbound Adapter" {
     }
 }
 
-DeviceController --( DeviceWriteUseCase: "utilizza"
+DeviceWriteController --( DeviceWriteUseCase: "utilizza"
 
 DeviceWriteRepositoryPort <|.. MongoDeviceAdapter: "implementa"
 

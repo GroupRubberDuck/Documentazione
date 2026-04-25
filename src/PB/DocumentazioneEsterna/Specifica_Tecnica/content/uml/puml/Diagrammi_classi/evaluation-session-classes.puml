@@ -1,173 +1,130 @@
-@startuml SessionService
+@startuml EvaluationSession
 skinparam linetype ortho
-skinparam nodesep 100
-skinparam ranksep 80
 skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
 skinparam packageStyle rectangle
 skinparam style strictuml
 
+
+
 package "Inbound Adapter" {
-  class EvaluationSessionController <<Flask Blueprint>> {
-    - session_port: EvaluationSessionUseCasePort
-    + __init__(session_port: EvaluationSessionUseCasePort)
-    + open_evaluation_session(Request): Response
-    + close_session(Request): Response
-    + save(Request): Response
-    + save_and_close(Request): Response
+  class FlaskSessionEvaluationController <<Flask Blueprint>> {
+    ' - session_port: EvaluationSessionUseCase
+    + __init__(session_port: EvaluationSessionUseCase)
+    + open_session(): Response
+    + save_session(session_id:String): Response
+    + save_and_close(session_id:String): Response
+    + close_session(session_id:String): Response
   }
 
-'   class Request <<Flask>> {
-'   }
 
-'   note right of Request
-'     Oggetto globale di Flask.
-'     Accessibile tramite import
-'     nei metodi del controller.
-'   end note
+
+  ' class Request <<Flask>> {
+  ' }
+
+  ' note right of Request
+  '   Oggetto globale di Flask.
+  '   Accessibile tramite import
+  '   nei metodi dei request handler
+  '   per estrarre i dati della
+  '   richiesta HTTP corrente.
+  ' end note
 }
 
-package "Application Core" {
 
-  package "Domain" {
-    class EvaluationSession {
-'       - evaluation_sheet: EvaluationSheet
-      + get_evaluation_sheet(): EvaluationSheet
-    }
-' contiene la regola di business sull'apertura di  sessioni
-    class SessionManager {
-      + can_open_session(requested_type: SessionType, active_types: list[SessionType]): bool
-    }
-' per ora non lo metto, il suo  compito sarà ascoltare le porte session cache e ccontrolalre lo stato di attività
-        ' class SessionCoordinator{
-        '         + __init__(session_manager: SessionManager,valutazione_cache: ValutazioneSessionCachePort, editing_cache: EditingSessionCachePort)
-        '         + can_open_session(requested_type: SessionType)
-        ' }
 
-    enum SessionType <<enum>> {
-      VALUTAZIONE
-      EDITING_ComplianceStandardLO
-    }
 
-    class Device <<Aggregate Root>> {
-    }
 
-    class ComplianceStandard {
-    }
 
-    class EvaluationSheet {
-    }
+
+
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+
+!include Dominio/SessionHandler.puml
+!include Dominio/EvaluationSession.puml
+
 
   }
 
-  package "Inbound Port" {
-    interface EvaluationSessionUseCasePort <<interface>> {
-      + open_evaluation_session(device_id: string, ComplianceStandard_id: string): bool
-      + save(): bool
-      + close(): bool
-      + save_and_close(): bool
+  package "Logica Applicativa" {
+    class EvaluationSessionService  {
+
+      - session_cache: EvaluationSessionCachePort
+      - device_writer: DeviceWriterPort
+      + __init__(session_cache: EvaluationSessionCachePort, device_reader:DeviceReadRepositoryPort, device_writer: DeviceWritePort,standard_reader:StandardRepositoryPort)
+      + open_session(device_id: string, model_id: string): string
+      + commit(): void
+      + rollback(): void
     }
+
+
+  class SessionCoordinator{
+    + can_open_session(session_type:SessionType)
   }
 
-  package "Application Service" {
-    class EvaluationSessionService <<Application Service>> {
-'       - session_manager: SessionManager
-'       - session_cache: EvaluationSessionCachePort
-'       - device_reader: DeviceReaderPort
-'       - ComplianceStandard_reader: ComplianceStandardReaderPort
-'       - device_writer: DeviceWriterPort
-      + __init__(session_manager: SessionManager, session_cache: EvaluationSessionCachePort, device_reader: DeviceReaderPort, ComplianceStandard_reader: ComplianceStandardReaderPort, device_writer: DeviceWriterPort)
-      + open_evaluation_session(device_id: string, ComplianceStandard_id: string): OperationResult
-      + save(): bool
-      + close(): bool
-      + save_and_close(): bool
-    }
   }
 
-  package "Outbound Port" {
+
+  package "Inbound Ports" {
+    interface EvaluationSessionUseCase <<interface>> {
+      + open_session(device_id: string, model_id: string): string
+      + save(session_id): void
+      + close(session_id): void
+    }
+
+
+
+  }
+
+  package "Outbound Ports" {
     interface EvaluationSessionCachePort <<interface>> {
-      + save_session(session: EvaluationSession): void
-      + get_session(): EvaluationSession
-      + has_active_session(): bool
-      + delete_session(): void
+    + save_session(session: EvaluationSession): void
+    + get_session(session_id: string): EvaluationSession
+    + delete_session(session_id: string): void
+    + has_active_session(): bool
     }
 
-'     interface DeviceReaderPort <<interface>> {
-'       + get_device_by_id(device_id: string): Device
-'     }
 
-'     interface ComplianceStandardReaderPort <<interface>> {
-'       + get_ComplianceStandard_by_id(ComplianceStandard_id: string): ComplianceStandard
-'     }
-
-    interface DeviceWriterPort <<interface>> {
+    interface DeviceWritePort <<interface>> {
       + save_device(device: Device): void
     }
+    interface StandardRepositoryPort <<interface>> {
+      + get_compliance_standard(standard_id:String ): void
+    }
+    interface DeviceReadPort <<interface>> {
+      + get_device(device_id: String): void
+    }
+
   }
 }
 
+
+
 package "Outbound Adapter" {
-  class InMemorySessionCache {
-    - session: EvaluationSession
+  class InMemoryEvaluationSessionCache {
+    - sessions: dictionary[string:EvaluationSession]
     + save_session(session: EvaluationSession): void
-    + get_session(): EvaluationSession
+    + get_session(session_id: string): EvaluationSession
+    + delete_session(session_id: string): void
     + has_active_session(): bool
-    + delete_session(): void
   }
 }
 
 ' --- Relazioni ---
 
-' Inbound
-EvaluationSessionController --> EvaluationSessionUseCasePort : " usa"
-' EvaluationSessionController ..> Request
+FlaskSessionEvaluationController --> EvaluationSessionUseCase
+EvaluationSessionUseCase <|-- EvaluationSessionService
+EvaluationSessionService --> InMemoryEvaluationSessionCache
+EvaluationSessionService --> DeviceWritePort
+EvaluationSessionService --> StandardRepositoryPort
+EvaluationSessionService --> DeviceReadPort
+EvaluationSessionService --> SessionCoordinator
 
-' Port -> Service
-EvaluationSessionUseCasePort <|.. EvaluationSessionService
-
-' Service -> Domain
-EvaluationSessionService ..> SessionManager : "consulta"
-EvaluationSessionService ..> EvaluationSession : "crea"
-' EvaluationSessionService ..> OperationResult : "ritorna"
-
-' Service -> Outbound Ports
-EvaluationSessionService --> EvaluationSessionCachePort
-' EvaluationSessionService --> DeviceReaderPort
-' EvaluationSessionService --> ComplianceStandardReaderPort
-EvaluationSessionService --> DeviceWriterPort
-
-' Outbound Adapter -> Port
-EvaluationSessionCachePort <|.. InMemorySessionCache
-
-' Domain interno
-EvaluationSheet --> Device
-EvaluationSheet --> ComplianceStandard
-EvaluationSession *-- EvaluationSheet
-SessionManager ..> SessionType
-
-' note bottom of EvaluationSessionService
-'   open: consulta SessionManager,
-'   carica Device e ComplianceStandard dai reader,
-'   crea EvaluationSession,
-'   salva nella cache.
-  
-'   commit: recupera sessione dalla cache,
-'   salva Device tramite DeviceWriter,
-'   mantiene sessione attiva.
-  
-'   rollback: elimina sessione dalla cache,
-'   le modifiche non persistite vanno perse.
-  
-'   commit_and_close: commit + rollback.
-' end note
-
-' Nota sul SessionCoordinator
-' note as N1
-'   SessionCoordinator non è presente
-'   in questo diagramma perché esiste
-'   un solo tipo di sessione attivo.
-'   Verrà introdotto quando sarà
-'   implementata la sessione di
-'   editing del ComplianceStandardlo.
-' end note
+SessionCoordinator --> EditingSessionCachePort 
+SessionCoordinator --> EvaluationSessionCachePort 
+SessionCoordinator ..> SessionHandler
 
 @enduml

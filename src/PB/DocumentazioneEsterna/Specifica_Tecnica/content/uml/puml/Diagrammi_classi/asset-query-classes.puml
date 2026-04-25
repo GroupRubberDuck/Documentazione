@@ -5,25 +5,43 @@ skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-class AssetController <<Flask Blueprint>>{
+class FlaskAssetQueryController <<Flask Blueprint>>{
         + __init__(asset_query_use_case:AssetQueryUseCase)
-        + create_asset(request:Request):Response
-        + update_asset(request:Request):Response
-        + delete_asset(asset_id:String):Response 
+        ' + create_asset(request:Request):Response
+        ' + update_asset(request:Request):Response
+        ' + delete_asset(asset_id:String):Response 
         + get_asset_by_id(request:Request):Response
 
 } 
+  class Request <<Flask>> {
+  }
 
+  note right of Request
+    Oggetto globale di Flask.
+    Accessibile tramite import
+    nei metodi dei request handler
+    per estrarre i dati della
+    richiesta HTTP corrente.
+  end note
+
+  FlaskAssetQueryController ..> Request
 }
 
 package "Application Core" {
 
         package "Inbound Port"{
 
-                interface AssetQueryUseCase <<interface>>{
-                                __init__(device_repository:DeviceReadRepositoryPort, model_repository:ComplianceStandardReadRepositoryPort)
-                                + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
-                }
+
+class AssetQueryUseCase{
+        + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
+
+}
+
+
+
+                ' interface AssetQueryUseCase <<interface>>{
+                '                 + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
+                ' }
 
                 ' interface AssetWriteUseCase <<interface>>{
                 '                 + create_asset(create_data:CreateAssetDTO):bool
@@ -34,9 +52,9 @@ package "Application Core" {
         }
 
         package Domain {
-                class Device
-                class ComplianceStandard
-                class EvaluationSheet
+                !include Dominio/Device.puml
+                !include Dominio/ComplianceStandard.puml
+                !include Dominio/EvaluationSheet.puml
         }
         class  AssetQueryService{
                 + get_asset_by_id(id_device:string, id:string):AssetDetailDTO
@@ -47,21 +65,19 @@ package "Application Core" {
                 + name: string
                 + asset_type: AssetType
                 + description: string
-                + asset_evaluation_state
+                + asset_evaluation_state:EvaluationState
                 + requirement_evaluations: map<String,EvaluationState>
         }
 
         package "Outbound Ports"{
-                interface SessionCachePort {
-
-                }
+                !include ports/out/EvaluationSessionCachePort.puml
 
         }
 }
 
-AssetController --> AssetQueryUseCase
+FlaskAssetQueryController --> AssetQueryUseCase
 
-AssetQueryService -->SessionCachePort
+AssetQueryService -->EvaluationSessionCachePort
 
 
 AssetQueryService -up-|> AssetQueryUseCase
