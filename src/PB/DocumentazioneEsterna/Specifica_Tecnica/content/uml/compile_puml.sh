@@ -8,8 +8,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
 # 2. Imposta i percorsi: prende l'argomento se passato, altrimenti usa
 # le cartelle 'puml' e 'png' relative alla posizione dello script.
-INPUT_DIR=${1:-"$SCRIPT_DIR/puml"}          
-OUTPUT_DIR=${2:-"$SCRIPT_DIR/png"}
+INPUT_DIR=${1:-"$SCRIPT_DIR/puml/Diagrammi_classi/frontend"}          
+OUTPUT_DIR=${2:-"$SCRIPT_DIR/png/Diagrammi_classi/frontend"}
 # --- Controlli iniziali ---
 # Controlla se la cartella di input esiste
 if [ ! -d "$INPUT_DIR" ]; then
