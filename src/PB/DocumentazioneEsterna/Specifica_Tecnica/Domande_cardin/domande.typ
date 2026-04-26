@@ -131,6 +131,14 @@ Anche se questa pratica è lecita va valutato il trade off tra codice boilerplat
   // Il nostro dubbio riguarda il dove definirli, se far ritornare un'entità di dominio tramite i metodi definiti nella inbound port, in questo caso il problema è dato dal paradigma di python che non implementa il const
 ]
 
+== Pydantic e dominio
+Pydantic offre una sintassi molto snella per la definizione di regole di verifica per la validazione semantica dei dati.
+
+Se si optasse per utilizzare DTO nel dominio l'uso di pydantic per la loro definizione tornerebbe utile a ridurre la verbosità.
+
+== Import export di file
+In generale si preferisce mantenere i dati come raw byte o classi della libreria standard che permettono di rappresentare i file oppure si utilizzano dei DTO di dominio
+
 
 == Interfacce e javascript
 
