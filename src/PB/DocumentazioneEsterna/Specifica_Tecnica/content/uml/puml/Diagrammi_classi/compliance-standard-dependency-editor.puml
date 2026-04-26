@@ -1,0 +1,76 @@
+@startuml compliance-standard-dependency-editor
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 130
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardEditorController <<Flask Blueprint>> {
+        - dep_editor_use_case: DependencyEditorUseCase
+        
+        ' Metodi filtrati per il dominio "Dipendenze"
+        + add_dependency(session_id: String): Response
+        + remove_dependency(session_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface DependencyEditorUseCase <<Inbound Port>> {
+        + add_dependency(session_id: String, source_req: String, target_req: String): void
+        + remove_dependency(session_id: String, source_req: String, target_req: String): void
+    }
+
+    interface EditingSessionCachePort <<Outbound Port>> {
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    class DependencyEditorService <<Application Service>> {
+        - cache: EditingSessionCachePort
+        - session_handler: SessionHandler
+        
+        + add_dependency(session_id: String, source_req: String, target_req: String): void
+        + remove_dependency(session_id: String, source_req: String, target_req: String): void
+    }
+
+    !include Dominio/ComplianceStandard.puml
+    !include Dominio/SessionHandler.puml
+
+    DependencyEditorUseCase <|.. DependencyEditorService : "implementa"
+
+    DependencyEditorService -down-( EditingSessionCachePort : "richiede"
+
+    DependencyEditorService ..> SessionHandler : "valida regole"
+    DependencyEditorService ..> ComplianceStandard : "manipola dipendenze"
+}
+
+package "Outbound Adapter" {
+    class InMemoryStandardCache <<Cache Adapter>> {
+        ' capire meglio che cosa salvare nel db, DTO o oggetto di dominio?
+        - storage: dict[String: ComplianceStandard]
+        
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+}
+
+StandardEditorController -( DependencyEditorUseCase : "usa"
+
+EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
+
+@enduml
+
+' UC45: Aggiungi dipendenza
+'     1. il controller prende l'id della sessione e gli id dei due requisiti trattati e ci invoca DependencyEditorUseCase.add_dependency(...)
+'     2. il service estrae il ComplianceStandard dalla sessione con EditingSessionCachePort.get_standard(session_id)
+'     3. il service dice al dominio ComplianceStandard di creare il legame e validarlo
+'     4. se tutto ok, il service salva l'aggregato invocando EditingSessionCachePort.save_standard(session_id, standard)
+
+' UC46: Rimuovi dipendenza
+'     1. StandardEditorController richiede la rimozione con remove_dependency(session_id), e delega al service
+'     2. DependencyEditorService chiama remove_dependency(session_id, source_req, target_req)
+'     3. il service recupera la bozza dalla sessione e dice al dominio ComplianceStandard di eliminarlo
+'     4. il service salva con EditingSessionCachePort.save_standard(session_id, standard)
