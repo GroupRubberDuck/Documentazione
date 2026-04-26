@@ -59,14 +59,17 @@
 
   Volevamo chiedere se è accettabile usare nella specifica tecnica la sintassi UML 1.0 oppure una ball priva delle dichiarazioni dei metodi, eventualmente segnalati con apposita nota
 
-  #image("image1.png", width: 70%)
+  #image("assets/image1.png", width: 70%)
 
-  #image("image2.png", width: 70%)
+  #image("assets/image2.png", width: 70%)
   
 
   === Livello di Dettaglio degli Adapter nei Diagrammi Parziali
 
   Quando un singolo Adapter implementa molteplici Porte, come deve essere rappresentato nei diagrammi delle classi settoriali (es. diagrammi focalizzati su un singolo caso d'uso)? Deve mostrare l'elenco completo di tutti i metodi che possiede, oppure è preferibile omettere i metodi non rilevanti per il contesto specifico?
+
+  #image("assets/image3.png", width: 70%)
+  #image("assets/image4.png", width: 70%)
 
   == Scelte Architetturali (Architettura Esagonale)
   
