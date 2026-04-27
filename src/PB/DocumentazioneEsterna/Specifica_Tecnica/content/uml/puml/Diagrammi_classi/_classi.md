@@ -15,14 +15,12 @@ Inbound Port:
    - ModifyDeviceUseCase
    - DeleteDeviceUseCase
 
-
 Service
    - GetDeviceListService
    - GetDeviceDetailService
    - CreateDeviceService
    - ModifyDeviceService
    - DeleteDeviceService
-
 
 
 Outbound Port:

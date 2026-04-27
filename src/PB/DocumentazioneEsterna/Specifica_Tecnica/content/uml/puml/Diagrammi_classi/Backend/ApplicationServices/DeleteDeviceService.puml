@@ -1,0 +1,8 @@
+@startuml DeleteDeviceService
+
+class DeleteDeviceService <<Application Service>> {
+    - delete_port: DeleteDevicePort
+    + delete(command: DeleteDeviceCommand): void
+}
+
+@enduml

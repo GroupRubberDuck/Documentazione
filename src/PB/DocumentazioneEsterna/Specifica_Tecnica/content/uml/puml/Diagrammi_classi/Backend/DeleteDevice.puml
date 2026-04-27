@@ -1,0 +1,35 @@
+@startuml DeleteDevice
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+    
+    class DeleteDeviceCommand {
+        - device_id: String
+    }
+    () "DeleteDeviceUseCase"
+    !include ApplicationServices/DeleteDeviceService.puml
+    !include Domain/Device.puml
+    () "DeleteDevicePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+DeleteDeviceService - DeleteDeviceUseCase
+
+
+DeleteDeviceService --( DeleteDevicePort: usa
+
+WriteDeviceController --( DeleteDeviceUseCase: usa
+MongoDeviceAdapter - DeleteDevicePort
+
+@enduml

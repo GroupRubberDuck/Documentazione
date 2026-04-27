@@ -1,0 +1,9 @@
+@startuml ModifyDeviceService
+
+class ModifyDeviceService <<Application Service>> {
+    - save_port: SaveDevicePort
+
+    + modify(command: ModifyDeviceCommand)
+}
+
+@enduml

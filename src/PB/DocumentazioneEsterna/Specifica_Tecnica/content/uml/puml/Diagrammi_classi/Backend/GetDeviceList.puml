@@ -9,7 +9,7 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    class DeviceSummaryDTO {
+    class DeviceSummary {
         - name: String
     }
     () "GetDeviceListUseCase" as GetDeviceListUseCase
@@ -26,9 +26,9 @@ package "Outbound Adapter" {
 GetDeviceListService - GetDeviceListUseCase
 
 
-GetDeviceListService --( FindAllDevicesPort
+GetDeviceListService --( FindAllDevicesPort : usa
 
-QueryDeviceController --( GetDeviceListUseCase : "usa"
-MongoDeviceAdapter - FindAllDevicesPort : "implementa"
+QueryDeviceController --( GetDeviceListUseCase : usa
+MongoDeviceAdapter - FindAllDevicesPort
 
 @enduml

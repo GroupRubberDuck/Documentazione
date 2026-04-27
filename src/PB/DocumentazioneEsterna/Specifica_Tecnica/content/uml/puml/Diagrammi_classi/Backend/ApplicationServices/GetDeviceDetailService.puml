@@ -3,7 +3,7 @@
 class GetDeviceDetailService <<Application Service>> {
     - find_port: FindDeviceByIdPort
 
-    + execute(query: GetDeviceDetailQuery): Device
+    + get_device(query: GetDeviceDetailQuery): Device
 }
 
 @enduml
