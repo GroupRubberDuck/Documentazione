@@ -1,0 +1,9 @@
+@startuml GetDeviceListService
+
+class GetDeviceListService <<Application Service>> {
+    - find_port: FindAllDevicesPort
+
+    + execute(query: GetDeviceListQuery): List<DeviceSummaryDTO>
+}
+
+@enduml

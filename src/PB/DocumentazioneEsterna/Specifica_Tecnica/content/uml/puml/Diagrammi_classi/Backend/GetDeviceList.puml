@@ -1,0 +1,34 @@
+@startuml GetDeviceList
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/QueryDeviceController.puml
+}
+
+package "Application Core" {
+    class DeviceSummaryDTO {
+        - name: String
+    }
+    () "GetDeviceListUseCase" as GetDeviceListUseCase
+    !include ApplicationServices/GetDeviceListService.puml
+    !include Domain/Device.puml
+    () "FindAllDevicesPort" as FindAllDevicesPort
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+GetDeviceListService - GetDeviceListUseCase
+
+
+GetDeviceListService --( FindAllDevicesPort
+
+QueryDeviceController --( GetDeviceListUseCase : "usa"
+MongoDeviceAdapter - FindAllDevicesPort : "implementa"
+
+@enduml

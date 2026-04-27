@@ -60,7 +60,6 @@
   Volevamo chiedere se è accettabile usare nella specifica tecnica la sintassi UML 1.0 oppure una ball priva delle dichiarazioni dei metodi, eventualmente segnalati con apposita nota
 
   #image("assets/image1.png", width: 70%)
-
   #image("assets/image2.png", width: 70%)
   
 

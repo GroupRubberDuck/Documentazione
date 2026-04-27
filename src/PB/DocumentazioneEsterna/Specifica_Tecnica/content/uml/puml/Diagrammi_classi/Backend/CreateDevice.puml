@@ -1,0 +1,31 @@
+@startuml CreateDevice
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+    () "CreateDeviceUseCase" as CreateDeviceUseCase
+    !include ApplicationServices/CreateDeviceService.puml
+    !include Domain/Device.puml
+    () "SaveDevicePort" as SaveDevicePort
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+CreateDeviceService - CreateDeviceUseCase
+
+
+CreateDeviceService --( SaveDevicePort
+
+WriteDeviceController --( CreateDeviceUseCase : "usa"
+MongoDeviceAdapter - SaveDevicePort : "implementa"
+
+@enduml

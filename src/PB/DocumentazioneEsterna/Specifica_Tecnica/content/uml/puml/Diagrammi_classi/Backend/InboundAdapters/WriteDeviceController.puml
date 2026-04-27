@@ -1,0 +1,13 @@
+@startuml WriteDeviceController
+
+package "Inbound Adapter" {
+    class WriteDeviceController <<Flask Blueprint>> {
+
+        - create_use_case: WriteDeviceUseCase
+        - modify_use_case: ModifyDeviceUseCase
+
+        + create_device(): Response
+        + modify_device(): Response
+        + delete_device(): Response
+    }
+}

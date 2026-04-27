@@ -1,0 +1,12 @@
+@startuml MongoDeviceAdapter
+
+class MongoDeviceAdapter <<Mongo Repository>> {
+    - collection: pymongo.Collection
+    + save(device: Device): void
+    + delete(device_id: String): void
+
+    + find_by_id(device_id: String): Device
+    + find_all(): List<DeviceSummaryDTO>
+}
+
+@enduml

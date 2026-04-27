@@ -38,8 +38,8 @@ package "Application Core" {
         - version_number: String
     }
 
-    !include Dominio/ComplianceStandard.puml
-    !include Dominio/Requirement.puml
+    '!include Dominio/ComplianceStandard.puml
+    '!include Dominio/Requirement.puml
 
     StandardQueryUseCase <|.. StandardQueryService : "implementa"
     StandardQueryService -down-( StandardReadRepositoryPort : "richiede"
