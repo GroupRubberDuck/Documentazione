@@ -164,7 +164,7 @@
       [1.3.0],
       [2026-04-16],
       [#persone.DT],
-      [],
+      [#persone.FILIPPO],
       [Stesura sprint 10],
     ),
     (

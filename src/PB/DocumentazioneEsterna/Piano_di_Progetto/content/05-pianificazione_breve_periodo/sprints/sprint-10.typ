@@ -13,8 +13,8 @@
     In questo sprint il focus è stato unicamente sulla progettazione, quindi sulla stesura e miglioramento del documento Specifica Tecnica.
   ],
   rischiAttesi: [
-    - *R.O.1 - Pianificazione iniziale errata o ottimistica*: la redazione dei diagrammi di sequenza è un'attività di difficile stima, con rischio di sottovalutazione del carico di lavoro effettivo.
-    - *R.P.2 - Disponibilità variabile per impegni pianificati*: a breve durata dello sprint (una settimana) riduce i margini di recupero in caso di imprevisti.
+    - *R.O.1 - Pianificazione iniziale errata o ottimistica*: la redazione dei diagrammi delle classi è un'attività di difficile stima, con rischio di sottovalutazione del carico di lavoro effettivo.
+    - *R.P.2 - Disponibilità variabile per impegni pianificati*: la breve durata dello sprint (una settimana) riduce i margini di recupero in caso di imprevisti.
   ],
   rischiEffettivi: [
     Nessuno in particolare.
@@ -49,6 +49,6 @@
         - Amministratore — Filippo Guerra, Davide Testolin;
         - Progettisti — tutto il gruppo.
     - *Lungo termine*:
-      - Completamento della progettazione
+      - Completamento della Specifica Tecnica nelle sezioni mancanti in modo da portare il documento a uno stato approvabile prima dell'avvio della fase di implementazione.
   ],
 )
