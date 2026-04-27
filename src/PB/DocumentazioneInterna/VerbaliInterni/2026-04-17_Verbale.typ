@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -36,7 +36,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT,),
     verificatori: (persone.FILIPPO,),
@@ -56,11 +56,11 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Interno
-  - *Motivazione*: Riunione
+  - *Motivazione*: Riunione di metà sprint
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 9.00
-  - *Ora fine*: 10.06
+  - *Ora fine*: 10.00
   - *Scriba*: #persone.DT
   - *Partecipanti*:#align(left)[
       #set list(marker: [--])
@@ -75,21 +75,20 @@
 
 #insertArabicNumberedPages("Ordine del giorno", "Verbale interno", giornoRiunione)[
   = Ordine del giorno
-  - Retrospettiva di metà Sprint 10.
+  - Analisi dello stato di avanzamento dello Sprint 10.
   
 ]
 
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della Riunione
-  Nella riunione si è discusso principalmente sul progresso dello sprint corrente attraverso la retrospettiva, in particolare sul progresso del documento Specifica Tecnica.
+  Nella riunione si è discusso principalmente sul progresso dello sprint corrente, in particolare sul progresso del documento Specifica Tecnica.
 
   = Merge al termine degli sprint <merge>
-  È stato chiarito che al termine di ogni sprint è compito dell'amministratore effettuare il merge dal branch develop al main. Inoltre è stata chiarita la procedura di merge dai branch dedicati ai singoli file (o gruppi di file come i verbali): il merge con main va effettuato solo una volta che il file risulti completamente verificato. In questo modo tutti i documenti sul branch main sono completamente verificati e pronti per essere incorporati sul branch main.
+  È stato chiarito che al termine di ogni sprint è compito dell'amministratore effettuare il merge dal branch develop al main. Inoltre è stata chiarita la procedura di merge dai branch dedicati ai singoli file (o gruppi di file come i verbali): il merge con main va effettuato solo una volta che il file risulti completamente verificato. In questo modo tutti i documenti sul branch develop sono completamente verificati e pronti per essere incorporati sul branch main.
 
   = Divisione del diagramma delle classi <divisione>
-  È stato deciso di dividere il diagramma delle classi per aree logiche, ad esempio per la sezione dispositivo sono presenti: la parte inbound, la classe della porta e la classe del core.
-
+  Al fine di garantire la massima leggibilità, il diagramma delle classi è stato suddiviso in aree logiche coerenti con l'architettura adottata. Per il modulo dispositivo, ad esempio, la rappresentazione è articolata in tre livelli: la componente inbound (input), l'interfaccia della Porta e la logica di business definita nel Core.
 ]
 
 #insertArabicNumberedPages("Decisioni", "Verbale interno", giornoRiunione)[

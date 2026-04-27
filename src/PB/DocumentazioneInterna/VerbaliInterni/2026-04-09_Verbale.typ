@@ -56,7 +56,7 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Interno
-  - *Motivazione*: Riunione
+  - *Motivazione*: Riunione di metà sprint
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 18.00
@@ -78,18 +78,18 @@
   - Revisione dell'avanzamento del documento Specifica Tecnica.
   - Discussione sui design pattern da adottare.
   - Avvio della stesura del Manuale Utente.
-  - Aggiornamento del documento Piano di Progetto (PDP) con sprint 8 e incorporazione dei miglioramenti suggeriti dal professor Vardanega.
+  - Aggiornamento del documento Piano di Progetto con sprint 8 e incorporazione dei miglioramenti suggeriti dal professor Vardanega.
 ]
 
 
 #insertArabicNumberedPages("Riassunto della riunione", "Verbale interno", giornoRiunione)[
   = Riassunto della Riunione
-  La riunione ha avuto come obiettivo principale l’allineamento sull’avanzamento del documento di  Specifica Tecnica e la previa pianificazione delle attività del prossimo sprint. Il team ha discusso lo stato dell’architettura di sistema (esagonale), concordando di procedere con la progettazione di dettaglio a partire dallo sprint successivo (sprint 9). Si è discusso anche sull'avvio della scrittura del Manuale Utente e sull’aggiornamento del PDP.
+  La riunione ha avuto come obiettivo principale l’allineamento sull’avanzamento del documento di  Specifica Tecnica e la pianificazione delle attività del prossimo sprint. Il team ha discusso lo stato dell’architettura di sistema (esagonale), concordando di procedere con la progettazione di dettaglio a partire dallo sprint successivo (sprint 9). Si è discusso anche sull'avvio della scrittura del Manuale Utente e sull’aggiornamento del PdP.
 ]
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
   = Avanzamento Specifica Tecnica <spec>
-  Il team ha presentato lo stato attuale della Specifica Tecnica.
+  Il team ha riassunto lo stato attuale della Specifica Tecnica.
   La sezione di architettura di sistema è stata strutturata nei seguenti paragrafi: architettura generale, architettura logica (con descrizione del pattern esagonale e relativi pro e contro) e un diagramma dei package da rifinire.
   Il team ha concordato che le motivazioni alla base della scelta dell’architettura esagonale sono: testabilità del core, sviluppo parallelo tramite porte e adattatori, separazione del nucleo applicativo e inversione delle dipendenze. Come limiti sono stati rilevati una curva di apprendimento ripida e un overhead iniziale di configurazione.
   A partire dal prossimo sprint si prevede di avviare la progettazione di dettaglio (sezioni 4 e 5 del documento: design pattern e diagrammi delle classi), che rappresenta la parte più corposa della Specifica Tecnica.
@@ -98,13 +98,12 @@
   Il team ha discusso i design pattern da adottare. I pattern identificati come necessari sono:
   - Strategy: per la gestione di file di formati diversi (CSV, XML, ecc.).
   - Observer: per monitorare gli aggiornamenti dei requisiti e le relative dipendenze nella core logic. Vue.js integra nativamente questo pattern tramite data binding reattivo.
-  - Command: per supportare le operazioni di salvataggio e annullamento delle modifiche durante una sessione.
   - Adapter: per l’integrazione tra porte e adattatori nell’architettura esagonale.
   Le sezioni 4 (design pattern) e 5 (diagrammi delle classi) sono prioritarie e costituiscono la parte più importante del documento.
 
   = Manuale Utente <man>
   Il team ha avviato la discussione sull’impostazione del Manuale Utente.
-  Dalle analisi dei documenti di altri gruppi è emerso che il documento è rivolto all’utente finale e deve includere: introduzione e descrizione delle funzionalità principali, requisiti hardware e software, istruzioni di installazione e guide operative per le azioni principali dell’applicazione.
+  Da alcune analisi è emerso che il documento è rivolto all’utente finale e deve includere: introduzione e descrizione delle funzionalità principali, requisiti hardware e software, istruzioni di installazione e guide operative per le azioni principali dell’applicazione.
   In questa fase iniziale si procederà con la stesura dell’introduzione e della sezione di installazione, rimandando le guide operative alla disponibilità dell’applicazione.
 
   = Aggiornamento PDP <doc>

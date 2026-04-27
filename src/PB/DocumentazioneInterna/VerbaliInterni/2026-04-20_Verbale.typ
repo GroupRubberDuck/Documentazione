@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -36,10 +36,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT,),
-    verificatori: (),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -56,7 +56,7 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Interno
-  - *Motivazione*: Riunione
+  - *Motivazione*: Riunione di fine sprint
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Discord
   - *Ora inizio*: 15.00
@@ -89,20 +89,21 @@
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
   = Specifica Tecnica <st>
-  Sono state completate le sezioni schema dati e design pattern, mentre sono stati inserirti nuovi diagrammi nella sezione diagramma delle classi.
+  Sono state completate le sezioni schema dati e design pattern, mentre sono stati inserirti nuovi diagrammi nella sezione diagramma delle classi. In particolare, sono stati formalizzati i pattern creazionali, strutturali e comportamentali necessari a garantire il disaccoppiamento previsto dall’Architettura Esagonale. Parallelamente, la sezione dedicata ai diagrammi delle classi è stata aggiornata con nuovi schemi granulari, suddivisi per aree logiche, per facilitare la comprensione delle interazioni tra le componenti inbound, le porte e il core.
 
   = Pianificazione Sprint 11  <sprint>
   Lo Sprint 11 è stato definito dal 21 aprile al 27 aprile 2026. La riunione di chiusura sprint è stata fissata per lunedì 27 aprile alle ore 15.00. I ruoli assegnati per lo sprint sono i seguenti:
 
   - Responsabile — Ana Maria Draghici;
   - Amministratore — Filippo Guerra, Davide Testolin;
+  - Verificatori — Felician Mario Necsulescu;
   - Progettisti — tutto il gruppo.
 
   = Codifica <codifica>
   E' stato deciso di iniziare la fase di codifica, assegnata ai due amministratori Davide Testolin e Filippo Guerra. Inizialmente dovranno impostare l'ambiente di sviluppo per il Minimum Viable Product (MVP) e successivamente iniziare la codifica del dominio.
 
   = Incontro con il Prof. Cardin
-  E' stato deciso di richiedere al Prof. Cardin un incontro per risolvere alcuni dubbi del gruppo.
+  A seguito di un'analisi interna delle criticità residue, il gruppo ha deciso di richiedere un incontro di chiarimento al Prof. Cardin. L'obiettivo è sottoporre al docente alcuni dubbi specifici riguardanti le scelte architetturali e l’applicazione dei pattern, al fine di validare la direzione intrapresa prima di procedere massivamente con la codifica.
 ]
 
 
@@ -162,7 +163,7 @@
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [],
+      [Tutto il gruppo],
       [Stesura delle domande per il Prof. Cardin],
       [-],
     ),
