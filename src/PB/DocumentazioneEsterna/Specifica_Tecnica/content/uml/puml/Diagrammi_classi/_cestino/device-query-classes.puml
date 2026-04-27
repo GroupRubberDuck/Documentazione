@@ -31,7 +31,7 @@ package "Application Core" {
         + get_device_detail(device_id: String): Device
     }
 
-    !include ./Dominio/Device.puml
+    '!include ./Dominio/Device.puml
 
     DeviceQueryUseCase <|.. DeviceQueryService : "implementa"
     DeviceQueryService -down-( DeviceReadRepositoryPort : "richiede"

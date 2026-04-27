@@ -1,0 +1,12 @@
+@startuml QueryDeviceController
+skinparam classAttributeIconSize 0
+
+class QueryDeviceController <<Flask Blueprint>> {
+    - list_use_case: GetDeviceListUseCase
+    - detail_use_case: GetDeviceDetailUseCase
+
+    + get_device_list(): Response
+    + get_device_detail(): Response
+}
+
+@enduml

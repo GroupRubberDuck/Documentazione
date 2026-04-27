@@ -30,7 +30,7 @@ package "Application Core" {
         + device_description: String
     }
 
-    !include ./Dominio/Device.puml
+    '!include ./Dominio/Device.puml
 
     interface DeviceWriteUseCase <<Inbound Port>> {
         + create_device(dto: CreateDeviceDTO): bool
