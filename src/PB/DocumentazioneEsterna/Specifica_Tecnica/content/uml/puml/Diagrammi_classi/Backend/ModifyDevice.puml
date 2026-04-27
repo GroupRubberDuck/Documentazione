@@ -1,0 +1,36 @@
+@startuml ModifyDevice
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+    class ModifyDeviceCommand <<Command DTO>> {
+        + device_name: String
+        + device_os: String
+        + device_description: String
+    }
+    () "ModifyDeviceUseCase"
+    !include ApplicationServices/ModifyDeviceService.puml
+    !include Domain/Device.puml
+    () "SaveDevicePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+ModifyDeviceService - ModifyDeviceUseCase
+
+
+ModifyDeviceService --( SaveDevicePort: usa
+
+WriteDeviceController --( ModifyDeviceUseCase: usa
+MongoDeviceAdapter - SaveDevicePort
+
+@enduml

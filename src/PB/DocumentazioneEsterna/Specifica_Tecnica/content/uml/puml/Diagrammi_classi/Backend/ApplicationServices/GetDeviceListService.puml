@@ -3,7 +3,7 @@
 class GetDeviceListService <<Application Service>> {
     - find_port: FindAllDevicesPort
 
-    + execute(query: GetDeviceListQuery): List<DeviceSummaryDTO>
+    + get_list(): List<DeviceSummary>
 }
 
 @enduml

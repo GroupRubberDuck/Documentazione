@@ -6,7 +6,7 @@ class MongoDeviceAdapter <<Mongo Repository>> {
     + delete(device_id: String): void
 
     + find_by_id(device_id: String): Device
-    + find_all(): List<DeviceSummaryDTO>
+    + find_all(): List<DeviceSummary>
 }
 
 @enduml

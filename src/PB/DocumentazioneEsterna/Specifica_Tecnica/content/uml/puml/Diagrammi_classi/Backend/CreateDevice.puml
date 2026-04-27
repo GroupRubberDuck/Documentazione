@@ -9,6 +9,14 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
+
+    class CreateDeviceCommand <<Command DTO>> {
+        + device_name: String
+        + device_os: String
+        + device_description: String
+        + compliance_standard_id: String
+    }
+    
     () "CreateDeviceUseCase" as CreateDeviceUseCase
     !include ApplicationServices/CreateDeviceService.puml
     !include Domain/Device.puml
@@ -23,9 +31,9 @@ package "Outbound Adapter" {
 CreateDeviceService - CreateDeviceUseCase
 
 
-CreateDeviceService --( SaveDevicePort
+CreateDeviceService --( SaveDevicePort : usa
 
-WriteDeviceController --( CreateDeviceUseCase : "usa"
-MongoDeviceAdapter - SaveDevicePort : "implementa"
+WriteDeviceController --( CreateDeviceUseCase : usa
+MongoDeviceAdapter - SaveDevicePort
 
 @enduml

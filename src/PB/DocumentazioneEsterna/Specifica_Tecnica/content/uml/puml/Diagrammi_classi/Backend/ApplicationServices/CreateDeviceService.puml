@@ -2,8 +2,7 @@
 
 class CreateDeviceService <<Application Service>> {
     - find_port: FindAllDevicesPort
-
-    + execute(query: GetDeviceListQuery): List<DeviceSummaryDTO>
+    + create(command: CreateDeviceCommand): void
 }
 
 @enduml
