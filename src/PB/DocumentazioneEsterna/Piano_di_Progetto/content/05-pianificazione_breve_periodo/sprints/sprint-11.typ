@@ -13,34 +13,38 @@
     In questo sprint l'obiettivo principale è l'avvio della codifica del dominio (MVP) e il consolidamento della documentazione tecnica.
   ],
   rischiAttesi: [
-    - *R.T.2 - Complessità tecnica della codifica*: l'inizio dell'attività di traduzione dei requisiti in codice potrebbe richiedere più tempo del previsto per l'allineamento sulle convenzioni di naming.
+- *R.T.2 - Inesperienza con le tecnologie*: l'inizio dell'attività di traduzione dei requisiti in codice potrebbe richiedere più tempo del previsto per l'allineamento sulle convenzioni di naming e per l'analisi della struttura dell'MVP in coerenza con la Specifica Tecnica.
   ],
   rischiEffettivi: [
     Nessuno in particolare.
   ],
   oreProduttive: (
-
     (persona: persone.ANA, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FILIPPO, ruolo: ruoli.Progettista, orePreviste: 4, oreEffettive: 4), 
-    (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),      
-    (persona: persone.DL, ruolo: ruoli.Progettista, orePreviste: 6, oreEffettive: 6),      
-    (persona: persone.ALDO, ruolo: ruoli.Progettista, orePreviste: 4, oreEffettive: 4),    
-    (persona: persone.FELIX, ruolo: ruoli.Progettista, orePreviste: 4, oreEffettive: 4),  
+    (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.ALDO, ruolo: ruoli.Progettista, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.DL, ruolo: ruoli.Progettista, orePreviste: 8, oreEffettive: 10),
+    (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 3),
+    (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 3),
+    (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 3),
   ),
   retrospettiva: [
     *Consuntivo di periodo*:
     Nel corso dello sprint 11 sono state svolte le seguenti attività:
     - *Codifica*:
-      - Avvio dell'attività di codifica del dominio 
-      - Setup dell'ambiente MVP 
+      - Avvio dell'attività di codifica del dominio
+      - Setup dell'ambiente MVP
       - Definizione delle Naming convention su NdP
     - *Documentazione*:
-      - Redazione ST- frontend e sezione design pattern 
+      - Redazione ST - frontend e sezione design pattern
     *Miglioramento della pianificazione futura*
     - *Breve termine*:
-      - Proseguire con l'implementazione delle funzionalità core del dominio.
-      - Iniziare i primi test di unità sulle classi codificate.
+      - Aldo e Lorenzon: proseguire come Programmatori nell'implementazione delle funzionalità core del dominio.
+      - Testolin: Progettista, rivedere e affinare i diagrammi delle classi.
+      - Felix: Responsabile del prossimo sprint.
+      - Filippo: Amministratore.
+      - Ana Maria: implementazione del database nel rispetto delle naming convention definite. 
+      - Tutto il gruppo: trasversalmente Progettisti, supporto reciproco e Verificatori del lavoro svolto.
     - *Lungo termine*:
       - Completamento dell'MVP per la validazione delle scelte progettuali.
       - Completamento del documento della Specifica Tecnica.

@@ -43,7 +43,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In Corso",
+    stato: "In lavorazione",
     versione: versionNumber,
     autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO, persone.FILIPPO),
     verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
@@ -171,7 +171,7 @@
       [1.4.0],
       [2026-04-25],
       [#persone.ANA],
-      [],
+      [-],
       [Stesura sprint 11],
     ),
   )
