@@ -1,34 +1,23 @@
 @startuml GetAssetDetail
 skinparam linetype ortho
-skinparam nodesep 90
-skinparam ranksep 100
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class DashboardQueryController <<Flask Blueprint>> {
-        - get_dashboard_uc: GetDeviceDashboardUseCase
-        - get_asset_detail_uc: GetAssetDetailUseCase
-
-        + __init__(get_dashboard_uc: GetDeviceDashboardUseCase, get_asset_detail_uc: GetAssetDetailUseCase)
-        + get_dashboard_dispositivo(): Response
-        + get_dettaglio_asset(): Response
-    }
+    !include InboundAdapters/QueryDashboardController.puml
 }
 
 package "Application Core" {
 
-    class GetAssetDetailQuery <<Query DTO>> {
+    () "GetAssetDetailUseCase" as GetAssetDetailUseCase
+
+    class AssetDetailQuery <<Query DTO>> {
         + session_id: String
         + asset_id: String
     }
 
-    () "GetAssetDetailUseCase" as GetAssetDetailUseCase
-
-    class GetAssetDetailService <<Application Service>> {
-        + execute(query: GetAssetDetailQuery): AssetDetailDTO
-    }
-
-    class AssetDetailDTO <<Response DTO>> {
+    class AssetDetailResponse {
         + asset_id: String
         + name: String
         + type: AssetType
@@ -37,23 +26,23 @@ package "Application Core" {
         + lista_requisiti: List<RequirementEvalDTO>
     }
 
-    class RequirementEvalDTO <<Response DTO>> {
+    class RequirementEval{
         + codice_requisito: String
         + stato_valutazione: EvaluationState
     }
 
-    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
+    !include ApplicationServices/GetAssetDetailService.puml
 
-    ' Inclusioni di dominio permesse
     !include Domain/EvaluationSession.puml
     !include Domain/EvaluationSheet.puml
 
-    GetAssetDetailService -up- GetAssetDetailUseCase
-    GetAssetDetailService -down-( EvaluationSessionCachePort : "richiede"
+    () "GetSessionPort"
+    () "EvaluationSessionCachePort"
 
-    GetAssetDetailService ..> GetAssetDetailQuery : "legge"
-    GetAssetDetailService ..> AssetDetailDTO : "popola"
-    AssetDetailDTO *-- RequirementEvalDTO
+    GetAssetDetailService -up- GetAssetDetailUseCase
+    GetAssetDetailService --( GetSessionPort : richiede
+    GetSessionPort --( EvaluationSessionCachePort
+    AssetDetail *-- RequirementEval
 }
 
 package "Outbound Adapter" {
@@ -66,7 +55,7 @@ package "Outbound Adapter" {
     }
 }
 
-DashboardQueryController -down-( GetAssetDetailUseCase : "usa"
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+QueryDashboardController --( GetAssetDetailUseCase : usa
+InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort
 
 @enduml

@@ -35,14 +35,15 @@ package "Application Core" {
         + type: AssetType
         + stato_aggregato: EvaluationState
     }
+    () "GetSessionPort"
+    () "EvaluationSessionCachePort"
 
-    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
-
-    ' Inclusioni di dominio permesse
     !include Domain/EvaluationSession.puml
 
     GetDeviceDashboardService -up- GetDeviceDashboardUseCase
-    GetDeviceDashboardService -down-( EvaluationSessionCachePort : "richiede"
+    GetDeviceDashboardService --( GetSessionPort : "richiede"
+
+    GetSessionPort -- EvaluationSessionCachePort
 
     GetDeviceDashboardService ..> GetDeviceDashboardQuery : "legge"
     GetDeviceDashboardService ..> DashboardDTO : "popola"
@@ -59,7 +60,7 @@ package "Outbound Adapter" {
     }
 }
 
-DashboardQueryController -down-( GetDeviceDashboardUseCase : "usa"
+QueryDashboardController -down-( GetDeviceDashboardUseCase : "usa"
 InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
 
 @enduml
