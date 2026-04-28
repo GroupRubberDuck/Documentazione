@@ -1,0 +1,7 @@
+@startuml ConcreteFileDeviceImporterFactory
+
+class ConcreteFileDeviceImporterFactory {
+    + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
+}
+
+@enduml
