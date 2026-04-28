@@ -1,0 +1,38 @@
+@startuml CreateAsset
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteAssetController.puml
+}
+
+package "Application Core" {
+
+    class CreateAssetCommand <<Command DTO>> {
+        name:String
+        AssetType:AssetType
+        description:String
+    }
+
+    () "CreateAssetUseCase"
+    !include ApplicationServices/CreateAssetService.puml
+    !include Domain/Asset.puml
+    () "EvaluationSessionCachePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+
+CreateAssetService - CreateAssetUseCase
+
+
+CreateAssetService --( EvaluationSessionCachePort : usa
+
+WriteAssetController --( CreateAssetUseCase : usa
+InMemoryEvaluationSessionCache - EvaluationSessionCachePort
+
+@enduml

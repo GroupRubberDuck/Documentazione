@@ -16,6 +16,8 @@ UC: class
 
 33: import-model
 
+---------------------------------------- opzionali -----------------------------
+
 31-32, 34-52: model-management
 
     Senza sessione

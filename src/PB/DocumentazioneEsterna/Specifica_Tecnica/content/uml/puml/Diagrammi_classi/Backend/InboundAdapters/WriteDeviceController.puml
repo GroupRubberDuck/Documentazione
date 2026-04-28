@@ -2,10 +2,10 @@
 
 class WriteDeviceController <<Flask Blueprint>> {
     - create_use_case: WriteDeviceUseCase
-    - modify_use_case: ModifyDeviceUseCase
+    - update_use_case: UpdateDeviceUseCase
     - delete_use_case: DeleteDeviceUseCase
 
     + create_device(req: Request): Response
-    + modify_device(req: Request): Response
+    + update_device(req: Request): Response
     + delete_device(req: Request): Response
 }

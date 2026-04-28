@@ -1,0 +1,39 @@
+@startuml UpdateAsset
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteAssetController.puml
+}
+
+package "Application Core" {
+
+    class UpdateAssetCommand <<Command DTO>> {
+        asset_id:string
+        name:String
+        AssetType:AssetType
+        description:String
+    }
+
+    () "UpdateAssetUseCase"
+    !include ApplicationServices/UpdateAssetService.puml
+    !include Domain/Asset.puml
+    () "EvaluationSessionCachePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+
+UpdateAssetService - UpdateAssetUseCase
+
+
+UpdateAssetService --( EvaluationSessionCachePort : usa
+
+WriteAssetController --( UpdateAssetUseCase : usa
+InMemoryEvaluationSessionCache - EvaluationSessionCachePort
+
+@enduml
