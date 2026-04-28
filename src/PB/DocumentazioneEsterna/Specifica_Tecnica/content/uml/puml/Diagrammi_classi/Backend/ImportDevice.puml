@@ -1,0 +1,37 @@
+@startuml CreateDevice
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+
+    class ImportDeviceCommand <<Command DTO>> {
+        + device_file_content: BinaryIO
+        + extension: AllowedDeviceFileExtension
+    }
+    
+    () "ImportDeviceUseCase" as ImportDeviceUseCase
+    !include ApplicationServices/ImportDeviceService.puml
+    !include Domain/Device.puml
+    () "SaveDevicePort" as SaveDevicePort
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+ImportDeviceService - ImportDeviceUseCase
+
+
+ImportDeviceService --( SaveDevicePort : usa
+
+WriteDeviceController --( ImportDeviceUseCase : usa
+MongoDeviceAdapter - SaveDevicePort
+
+@enduml

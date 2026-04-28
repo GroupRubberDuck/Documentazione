@@ -1,0 +1,10 @@
+@startuml ImportDeviceService
+
+class ImportDeviceService <<Application Service>> {
+    - device_repository: DeviceRepositoryPort
+    - device_importer_factory: FileDeviceImporterFactoryPort
+    + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
+    + import_device(command ImportDeviceCommand): ErrorLog
+}
+
+@enduml
