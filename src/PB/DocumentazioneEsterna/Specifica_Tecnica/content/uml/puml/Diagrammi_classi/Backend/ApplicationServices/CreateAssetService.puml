@@ -1,7 +1,6 @@
 @startuml CreateAssetService
 
 class CreateAssetService {
-    __init__(session_cache_port:SessionCachePort)
     + create_asset(asset: CreateAssetCommand):bool
 }
 

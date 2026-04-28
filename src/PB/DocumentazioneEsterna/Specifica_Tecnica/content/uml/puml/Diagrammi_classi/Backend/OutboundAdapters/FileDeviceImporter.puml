@@ -1,0 +1,11 @@
+@startuml FileDeviceImporter
+
+abstract class FileDeviceImporter <<Template Method>> {
+    + parse_device_file(device_file_content: BinaryIO): Device
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+}
+
+@enduml

@@ -1,7 +1,6 @@
 @startuml SaveAssetService
 
 class SaveAssetService {
-    __init__(session_cache_port:SessionCachePort)
     + save_asset(asset: SaveAssetCommand): bool
 }
 

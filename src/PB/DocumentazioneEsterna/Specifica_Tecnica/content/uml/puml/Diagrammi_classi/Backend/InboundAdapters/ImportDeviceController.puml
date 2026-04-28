@@ -1,0 +1,15 @@
+@startuml ImportDeviceController
+
+class ImportDeviceController <<Flask Blueprint>> {
+    + __init__(import_port: ImportDeviceUseCase)
+    + import_device()
+}
+
+class UploadFileController <<Utility>> {
+    + get_http_file_payload(): BinaryIO
+    + get_http_file_extension(): string
+}
+
+ImportDeviceController .up.> UploadFileController
+
+@enduml

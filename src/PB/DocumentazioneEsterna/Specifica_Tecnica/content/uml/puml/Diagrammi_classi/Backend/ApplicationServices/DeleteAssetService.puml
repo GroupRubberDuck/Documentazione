@@ -1,7 +1,6 @@
 @startuml DeleteAssetService
 
 class DeleteAssetService {
-    __init__(session_cache_port:SessionCachePort)
     + delete_asset(asset: DeleteAssetCommand):bool
 }
 
