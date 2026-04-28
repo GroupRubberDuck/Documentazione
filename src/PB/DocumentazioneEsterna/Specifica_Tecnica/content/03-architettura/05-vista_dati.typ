@@ -138,7 +138,7 @@ La collection "Modelli" contiene la definizione strutturale degli standard norma
     "Sub-documento --- requirements[N]",
     [`id`], [string], [Identificativo testuale univoco del requisito.],
     [`name`], [string], [Titolo sintetico del requisito.],
-    [`description`], [document], [Testo descrittivi del contesto normativo (`descrizione_norma`, `descrizione_target`).],
+    [`description`], [document], [Testo descrittivi del contesto normativo (`norm_description`, `target_description`).],
     [`root_node`], [document], [Punto d'ingresso dell'albero decisionale per questo requisito.],
     [`dependencies`], [array], [Elenco di codici di requisiti propedeutici da soddisfare prima della valutazione.]
   )
