@@ -10,7 +10,7 @@ package "Inbound Adapter"{
 
 package "Application Core" {
     class GetDeviceDetailQuery {
-        - device_id: String
+        + device_id: String
     }
     () "GetDeviceDetailUseCase" as GetDeviceDetailUseCase
     !include ApplicationServices/GetDeviceDetailService.puml

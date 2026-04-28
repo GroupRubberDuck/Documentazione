@@ -11,9 +11,9 @@ package "Inbound Adapter"{
 package "Application Core" {
 
     class CreateAssetCommand <<Command DTO>> {
-        name:String
-        AssetType:AssetType
-        description:String
+        + name:String
+        + type:AssetType
+        + description:String
     }
 
     () "CreateAssetUseCase"
