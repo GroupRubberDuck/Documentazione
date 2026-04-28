@@ -11,10 +11,10 @@ package "Inbound Adapter"{
 package "Application Core" {
 
     class SaveAssetCommand <<Command DTO>> {
-        asset_id:string
-        name:String
-        AssetType:AssetType
-        description:String
+        + asset_id:string
+        + name:String
+        + type:AssetType
+        + description:String
     }
 
     () "SaveAssetUseCase"

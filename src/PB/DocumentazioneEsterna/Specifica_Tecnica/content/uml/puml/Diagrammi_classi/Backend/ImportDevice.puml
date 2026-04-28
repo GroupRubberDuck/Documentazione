@@ -10,28 +10,79 @@ package "Inbound Adapter"{
 
 package "Application Core" {
 
+    () "ImportDeviceUseCase"
+
+    !include ApplicationServices/ImportDevice<Service.puml
+
+    enum AllowedDeviceFileExtension <<enum>> {
+        CSV
+        XML
+        JSON
+    }
+
     class ImportDeviceCommand <<Command DTO>> {
         + device_file_content: BinaryIO
         + extension: AllowedDeviceFileExtension
     }
-    
-    () "ImportDeviceUseCase" as ImportDeviceUseCase
+
     !include ApplicationServices/ImportDeviceService.puml
     !include Domain/Device.puml
-    () "SaveDevicePort" as SaveDevicePort
+    () "FileDeviceImporterPort"
+    () "DeviceWriteRepositoryPort"
+    () "FileDeviceImporterFactoryPort"
 }
 
 package "Outbound Adapter" {
-    !include OutboundAdapters/MongoDeviceAdapter.puml
+    abstract class FileDeviceImporter <<Template Method>> {
+        + parse_device_file(device_file_content: BinaryIO): Device
+        # check_metadata(): bool
+        # open_stream(): file
+        # parse_data()
+        # close_stream(): void
+    }
+
+    class CSVFileDeviceImporter {
+        # check_metadata(): bool
+        # open_stream(): file
+        # parse_data()
+        # close_stream(): void
+    }
+
+    class JSONFileDeviceImporter {
+        # check_metadata(): bool
+        # open_stream(): file
+        # parse_data()
+        # close_stream(): void
+    }
+
+    class XMLFileDeviceImporter {
+        # check_metadata(): bool
+        # open_stream(): file
+        # parse_data()
+        # close_stream(): void
+    }
+
+    class ConcreteFileDeviceImporterFactory {
+        + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
+    }
 }
 
+ImportDeviceController --( ImportDeviceUseCase : usa
 
-ImportDeviceService - ImportDeviceUseCase
+ImportDeviceUseCase - ImportDeviceService
 
+ImportDeviceService ..> FileDeviceImporterPort
+ImportDeviceService --( FileDeviceImporterFactoryPort
+ImportDeviceService --( DeviceWriteRepositoryPort
 
-ImportDeviceService --( SaveDevicePort : usa
+FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
+ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter
+ConcreteFileDeviceImporterFactory .up.> JSONFileDeviceImporter
+ConcreteFileDeviceImporterFactory .up.> XMLFileDeviceImporter
 
-WriteDeviceController --( ImportDeviceUseCase : usa
-MongoDeviceAdapter - SaveDevicePort
+FileDeviceImporterPort - FileDeviceImporter
+FileDeviceImporter <|-down- CSVFileDeviceImporter
+FileDeviceImporter <|-down- XMLFileDeviceImporter
+FileDeviceImporter <|-down- JSONFileDeviceImporter
 
 @enduml

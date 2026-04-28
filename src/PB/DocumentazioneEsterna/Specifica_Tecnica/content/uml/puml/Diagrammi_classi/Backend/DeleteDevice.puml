@@ -11,7 +11,7 @@ package "Inbound Adapter"{
 package "Application Core" {
     
     class DeleteDeviceCommand {
-        - device_id: String
+        + device_id: String
     }
     () "DeleteDeviceUseCase"
     !include ApplicationServices/DeleteDeviceService.puml

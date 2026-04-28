@@ -11,7 +11,7 @@ package "Inbound Adapter"{
 package "Application Core" {
 
     class DeleteAssetCommand <<Command DTO>> {
-        asset_id:string
+        + asset_id: String
     }
 
     () "DeleteAssetUseCase"

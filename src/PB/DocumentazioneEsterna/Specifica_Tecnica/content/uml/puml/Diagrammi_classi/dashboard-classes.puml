@@ -7,40 +7,36 @@ skinparam classAttributeIconSize 0
 package "Inbound Adapter" {
     class FlaskDashboardQueryController <<Flask Blueprint>> {
         - query_service: DashboardQueryUseCase
-        + get_dashboard_dispositivo(): Response
-        + get_dettaglio_asset(): Response
+        + get_device_dashboard(): Response
+        + get_asset_detail(): Response
     }
 }
 
 package "Application Core" {
 
     interface DashboardQueryUseCase <<Inbound Port>> {
-        + get_dashboard_dispositivo(session_id: String): DashboardDTO
-        + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
+        + get_device_dashboard(session_id: String): DashboardDTO
+        + get_asset_detail(session_id: String, asset_id: String): AssetDetailDTO
     }
 
     !include ports/out/EvaluationSessionCachePort.puml
 
-    class DashboardQueryService <<Application Service>> {
-        - session_cache: EvaluationSessionCachePort
-        + get_dashboard_dispositivo(session_id: String): DashboardDTO
-        + get_dettaglio_asset(session_id: String, asset_id: String): AssetDetailDTO
-    }
+    !include ApplicationServices/DashboardQueryService.puml
 
     class DashboardDTO <<DTO>> {
         + device_id: String
         + device_name: String
         + operating_system: String
         + description: String
-        + stato_aggregato: EvaluationState
-        + lista_asset: List<AssetSummaryDTO>
+        + state: EvaluationState
+        + assets_list: List<AssetSummaryDTO>
     }
 
     class AssetSummaryDTO <<DTO>> {
         + asset_id: String
         + name: String
         + type: AssetType
-        + stato_aggregato: EvaluationState
+        + state: EvaluationState
     }
 
     class AssetDetailDTO <<DTO>> {
@@ -48,13 +44,13 @@ package "Application Core" {
         + name: String
         + type: AssetType
         + description: String
-        + stato_aggregato: EvaluationState
-        + lista_requisiti: List<RequirementEvalDTO>
+        + state: EvaluationState
+        + requirements_list: List<RequirementEvalDTO>
     }
 
     class RequirementEvalDTO <<DTO>> {
-        + codice_requisito: String
-        + stato_valutazione: EvaluationState
+        + code: String
+        + state: EvaluationState
     }
 
     '!include Dominio/EvaluationSession.puml
@@ -72,13 +68,7 @@ package "Application Core" {
 }
 
 package "Outbound Adapter" {
-    class InMemoryEvaluationSessionCache <<Cache Adapter>> {
-        - sessions: dictionary[String:EvaluationSession]
-        + save_session(session: EvaluationSession): void
-        + get_session(session_id: String): EvaluationSession
-        + delete_session(session_id: String): void
-        + has_active_session(): bool
-    }
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
 FlaskDashboardQueryController -( DashboardQueryUseCase : "utilizza"
