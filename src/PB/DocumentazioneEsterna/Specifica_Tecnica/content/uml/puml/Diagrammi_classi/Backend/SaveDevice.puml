@@ -1,4 +1,4 @@
-@startuml UpdateDevice
+@startuml SaveDevice
 skinparam linetype ortho
 skinparam nodesep 80
 skinparam ranksep 80
@@ -9,15 +9,17 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    class UpdateDeviceCommand <<Command DTO>> {
+    class SaveDeviceCommand <<Command DTO>> {
         + device_name: String
         + device_os: String
         + device_description: String
     }
-    () "UpdateDeviceUseCase"
-    !include ApplicationServices/UpdateDeviceService.puml
+    () "SaveDeviceUseCase"
+    !include ApplicationServices/SaveDeviceService.puml
     !include Domain/Device.puml
     () "SaveDevicePort"
+
+    SaveDeviceUseCase .right.> SaveDeviceCommand
 }
 
 package "Outbound Adapter" {
@@ -25,12 +27,12 @@ package "Outbound Adapter" {
 }
 
 
-UpdateDeviceService - UpdateDeviceUseCase
+SaveDeviceService - SaveDeviceUseCase
 
 
-UpdateDeviceService --( SaveDevicePort: usa
+SaveDeviceService ---( SaveDevicePort: usa
 
-WriteDeviceController --( UpdateDeviceUseCase: usa
+WriteDeviceController --( SaveDeviceUseCase: usa
 MongoDeviceAdapter - SaveDevicePort
 
 @enduml

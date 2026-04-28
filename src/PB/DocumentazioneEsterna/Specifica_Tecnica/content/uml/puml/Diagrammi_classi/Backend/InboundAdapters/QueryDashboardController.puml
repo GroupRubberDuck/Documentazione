@@ -1,0 +1,8 @@
+@startuml QueryDashboardController
+
+class DashboardQueryController <<Flask Blueprint>> {
+    + get_dashboard_dispositivo(): Response
+    + get_dettaglio_asset(): Response
+}
+
+@enduml

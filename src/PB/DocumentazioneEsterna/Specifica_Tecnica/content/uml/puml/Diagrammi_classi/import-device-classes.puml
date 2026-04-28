@@ -9,18 +9,7 @@ skinparam style strictuml
 package "Application Core" {
 
   package "Domain" {
-    class DeviceBuilder {
-      + device_DTO_to_device(device_dto: DeviceFileDTO): Device
-      + get_error_log(): ErrorLog
-    }
-
     class Device {
-    }
-
-    class ErrorLog {
-      - error_list: list[string]
-      + has_errors(): bool
-      + errors(): list[string]
     }
   }
 
@@ -28,7 +17,7 @@ package "Application Core" {
     - device_importer_factory: FileDeviceImporterFactoryPort
     - device_repository: DeviceRepositoryPort
     + __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)
-    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): bool
   }
 
   enum AllowedDeviceFileExtension <<enum>> {
@@ -36,39 +25,17 @@ package "Application Core" {
     XML
     JSON
   }
-
-  class DeviceFileDTO {
-    + device_name: string
-    + device_os_name: string
-    + device_description: string
-    + model_id: string
-    + model_name: string
-    + model_version: string
-    ' + assets: list[AssetFileDTO]
-  }
-
-  class AssetFileDTO {
-    + asset_name: string
-    + asset_type: AssetType
-    + asset_description: string
-    ' + assessments: list[AnswerFileDTO]
-  }
-
-  class AnswerFileDTO {
-    + requirement_code: string
-    + answers: dictionary[string:bool]
-  }
 }
 
 package "Inbound Ports" {
   interface ImportDeviceUseCase <<interface>> {
-    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): ErrorLog
+    + import_device(device_file_content: BinaryIO, extension: AllowedDeviceFileExtension): bool
   }
 }
 
 package "Outbound Ports" {
   interface FileDeviceImporterPort <<interface>> {
-    + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
+    + parse_device_file(device_file_content: BinaryIO): Device
   }
 
   interface DeviceWriteRepositoryPort <<interface>> {
@@ -95,7 +62,7 @@ package "Inbound Adapter" {
 
 package "Outbound Adapter" {
   abstract class FileDeviceImporter <<Template Method>> {
-    + parse_device_file(device_file_content: BinaryIO): DeviceFileDTO
+    + parse_device_file(device_file_content: BinaryIO): Device
     # check_metadata()
     # open_stream()
     # parse_data()
@@ -141,9 +108,6 @@ ImportDeviceUseCase <|.. ImportDeviceService
 ImportDeviceService -down-> FileDeviceImporterFactoryPort
 ImportDeviceService -down-> DeviceWriteRepositoryPort
 
-' Service -> Domain
-ImportDeviceService ..> DeviceBuilder
-
 ' Factory
 FileDeviceImporterFactoryPort <|.. ConcreteFileDeviceImporterFactory
 FileDeviceImporterFactoryPort ..> FileDeviceImporterPort
@@ -156,18 +120,5 @@ FileDeviceImporterPort <|.. FileDeviceImporter
 FileDeviceImporter <|-down- CSVFileDeviceImporter
 FileDeviceImporter <|-down- XMLFileDeviceImporter
 FileDeviceImporter <|-down- JSONFileDeviceImporter
-
-
-' Builder
-DeviceBuilder ..> DeviceFileDTO : "usa"
-DeviceBuilder ..> Device : "crea"
-DeviceBuilder ..> ErrorLog : "popola"
-
-' Service -> ErrorLog
-ImportDeviceService ..> ErrorLog : "ritorna"
-
-' DTO composition
-DeviceFileDTO *-- "1..*" AssetFileDTO
-AssetFileDTO *-- "1..*"  AnswerFileDTO
 
 @enduml

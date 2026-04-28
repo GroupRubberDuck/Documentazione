@@ -17,6 +17,8 @@ package "Application Core" {
     !include ApplicationServices/DeleteDeviceService.puml
     !include Domain/Device.puml
     () "DeleteDevicePort"
+
+    DeleteDeviceUseCase .right.> DeleteDeviceCommand
 }
 
 package "Outbound Adapter" {

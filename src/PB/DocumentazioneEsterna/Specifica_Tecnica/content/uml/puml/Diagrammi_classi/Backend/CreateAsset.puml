@@ -19,7 +19,9 @@ package "Application Core" {
     () "CreateAssetUseCase"
     !include ApplicationServices/CreateAssetService.puml
     !include Domain/Asset.puml
-    () "EvaluationSessionCachePort"
+    () "SaveSessionPort"
+    () "GetSessionPort"
+    () "EvaluationSessionPort"
 }
 
 package "Outbound Adapter" {
@@ -30,9 +32,13 @@ package "Outbound Adapter" {
 CreateAssetService - CreateAssetUseCase
 
 
-CreateAssetService --( EvaluationSessionCachePort : usa
+CreateAssetService --( SaveSessionPort : usa
+CreateAssetService --( GetSessionPort : usa
+
+SaveSessionPort -- EvaluationSessionPort
+GetSessionPort -- EvaluationSessionPort
 
 WriteAssetController --( CreateAssetUseCase : usa
-InMemoryEvaluationSessionCache - EvaluationSessionCachePort
+InMemoryEvaluationSessionCache - EvaluationSessionPort
 
 @enduml
