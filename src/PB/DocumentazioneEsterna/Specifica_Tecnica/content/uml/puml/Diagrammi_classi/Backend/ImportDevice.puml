@@ -1,18 +1,20 @@
-@startuml CreateDevice
+@startuml import-device
 skinparam linetype ortho
-skinparam nodesep 80
-skinparam ranksep 80
 skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
 
-package "Inbound Adapter"{
-    !include InboundAdapters/WriteDeviceController.puml
+package "Inbound Adapter" {
+    !include InboundAdapters/ImportDeviceController.puml
 }
 
 package "Application Core" {
 
     () "ImportDeviceUseCase"
 
-    !include ApplicationServices/ImportDevice<Service.puml
+    !include ApplicationServices/ImportDeviceService.puml
 
     enum AllowedDeviceFileExtension <<enum>> {
         CSV
@@ -25,8 +27,6 @@ package "Application Core" {
         + extension: AllowedDeviceFileExtension
     }
 
-    !include ApplicationServices/ImportDeviceService.puml
-    !include Domain/Device.puml
     () "FileDeviceImporterPort"
     () "DeviceWriteRepositoryPort"
     () "FileDeviceImporterFactoryPort"
@@ -35,31 +35,31 @@ package "Application Core" {
 package "Outbound Adapter" {
     abstract class FileDeviceImporter <<Template Method>> {
         + parse_device_file(device_file_content: BinaryIO): Device
-        # check_metadata(): bool
-        # open_stream(): file
+        # check_metadata()
+        # open_stream()
         # parse_data()
-        # close_stream(): void
+        # close_stream()
     }
 
     class CSVFileDeviceImporter {
-        # check_metadata(): bool
-        # open_stream(): file
+        # check_metadata()
+        # open_stream()
         # parse_data()
-        # close_stream(): void
+        # close_stream()
     }
 
     class JSONFileDeviceImporter {
-        # check_metadata(): bool
-        # open_stream(): file
+        # check_metadata()
+        # open_stream()
         # parse_data()
-        # close_stream(): void
+        # close_stream()
     }
 
     class XMLFileDeviceImporter {
-        # check_metadata(): bool
-        # open_stream(): file
+        # check_metadata()
+        # open_stream()
         # parse_data()
-        # close_stream(): void
+        # close_stream()
     }
 
     class ConcreteFileDeviceImporterFactory {
