@@ -1,0 +1,36 @@
+@startuml DeleteAsset
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteAssetController.puml
+}
+
+package "Application Core" {
+
+    class DeleteAssetCommand <<Command DTO>> {
+        asset_id:string
+    }
+
+    () "DeleteAssetUseCase"
+    !include ApplicationServices/DeleteAssetService.puml
+    !include Domain/Asset.puml
+    () "EvaluationSessionCachePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+
+DeleteAssetService - DeleteAssetUseCase
+
+
+DeleteAssetService --( EvaluationSessionCachePort : usa
+
+WriteAssetController --( DeleteAssetUseCase : usa
+InMemoryEvaluationSessionCache - EvaluationSessionCachePort
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml InMemoryEvaluationSessionCache
+
+class InMemoryEvaluationSessionCache {
+    - sessions: dictionary[string:EvaluationSession]
+    + save_session(session: EvaluationSession): void
+    + get_session(session_id: string): EvaluationSession
+    + delete_session(session_id: string): void
+    + has_active_session(): bool
+}
+
+@enduml

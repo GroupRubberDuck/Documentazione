@@ -1,0 +1,7 @@
+@startuml GetAssetDetailService
+
+class  GetAssetDetailService{
+    + get_asset_by_id(id_device:string, id:string): AssetDetailDTO
+}
+
+@enduml

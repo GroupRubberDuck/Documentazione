@@ -1,7 +1,6 @@
-@startuml QueryDeviceController
-skinparam classAttributeIconSize 0
+@startuml QueryAssetController
 
-class QueryDeviceController <<Flask Blueprint>> {
+class QueryAssetController <<Flask Blueprint>> {
     - list_use_case: GetDeviceListUseCase
     - detail_use_case: GetDeviceDetailUseCase
 

@@ -8,19 +8,30 @@ Inbound Adapter:
    - QueryDeviceController
    - WriteDeviceController
 
+   - QueryAssetController
+   - WriteAssetController
+
 Inbound Port:
    - GetDeviceListUseCase
    - GetDeviceDetailUseCase
    - CreateDeviceUseCase
-   - ModifyDeviceUseCase
+   - UpdateDeviceUseCase
    - DeleteDeviceUseCase
+
+   - CreateAssetUseCase
+   - UpdateAssetUseCase
+   - DeleteAssetService
 
 Service
    - GetDeviceListService
    - GetDeviceDetailService
    - CreateDeviceService
-   - ModifyDeviceService
+   - UpdateDeviceService
    - DeleteDeviceService
+
+   - CreateAssetService
+   - UpdateAssetService
+   - DeleteAssetService
 
 
 Outbound Port:
@@ -28,6 +39,10 @@ Outbound Port:
    - FindDeviceByIdPort
    - SaveDevicePort
    - DeleteDevicePort
+
+   - SaveAssetToSessionPort
+   - GetAssetFromSessionPort
+   - DeleteAssetFromSessionPort
 
 
 

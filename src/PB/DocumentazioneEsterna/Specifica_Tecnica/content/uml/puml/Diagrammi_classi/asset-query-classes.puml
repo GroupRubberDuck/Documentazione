@@ -52,9 +52,9 @@ class AssetQueryUseCase{
         }
 
         package Domain {
-                !include Dominio/Device.puml
-                !include Dominio/ComplianceStandard.puml
-                !include Dominio/EvaluationSheet.puml
+                '!include Dominio/Device.puml
+                '!include Dominio/ComplianceStandard.puml
+                '!include Dominio/EvaluationSheet.puml
         }
         class  AssetQueryService{
                 + get_asset_by_id(id_device:string, id:string):AssetDetailDTO

@@ -43,8 +43,8 @@ package "Business Logic" {
 
   package "Logica di Dominio" {
 
-!include Dominio/SessionHandler.puml
-!include Dominio/EvaluationSession.puml
+'!include Dominio/SessionHandler.puml
+'!include Dominio/EvaluationSession.puml
 
 
   }
