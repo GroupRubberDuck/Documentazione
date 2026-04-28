@@ -1,8 +1,0 @@
-@startuml UpdateAssetService
-
-class UpdateAssetService {
-    __init__(session_cache_port:SessionCachePort)
-    + update_asset(asset: UpdateAssetCommand): bool
-}
-
-@enduml

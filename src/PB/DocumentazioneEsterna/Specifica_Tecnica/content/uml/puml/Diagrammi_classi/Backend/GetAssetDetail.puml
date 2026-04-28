@@ -1,0 +1,72 @@
+@startuml GetAssetDetail
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class DashboardQueryController <<Flask Blueprint>> {
+        - get_dashboard_uc: GetDeviceDashboardUseCase
+        - get_asset_detail_uc: GetAssetDetailUseCase
+
+        + __init__(get_dashboard_uc: GetDeviceDashboardUseCase, get_asset_detail_uc: GetAssetDetailUseCase)
+        + get_dashboard_dispositivo(): Response
+        + get_dettaglio_asset(): Response
+    }
+}
+
+package "Application Core" {
+
+    class GetAssetDetailQuery <<Query DTO>> {
+        + session_id: String
+        + asset_id: String
+    }
+
+    () "GetAssetDetailUseCase" as GetAssetDetailUseCase
+
+    class GetAssetDetailService <<Application Service>> {
+        + execute(query: GetAssetDetailQuery): AssetDetailDTO
+    }
+
+    class AssetDetailDTO <<Response DTO>> {
+        + asset_id: String
+        + name: String
+        + type: AssetType
+        + description: String
+        + stato_aggregato: EvaluationState
+        + lista_requisiti: List<RequirementEvalDTO>
+    }
+
+    class RequirementEvalDTO <<Response DTO>> {
+        + codice_requisito: String
+        + stato_valutazione: EvaluationState
+    }
+
+    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
+
+    ' Inclusioni di dominio permesse
+    !include Domain/EvaluationSession.puml
+    !include Domain/EvaluationSheet.puml
+
+    GetAssetDetailService -up- GetAssetDetailUseCase
+    GetAssetDetailService -down-( EvaluationSessionCachePort : "richiede"
+
+    GetAssetDetailService ..> GetAssetDetailQuery : "legge"
+    GetAssetDetailService ..> AssetDetailDTO : "popola"
+    AssetDetailDTO *-- RequirementEvalDTO
+}
+
+package "Outbound Adapter" {
+    class InMemoryEvaluationSessionCache <<Session Cache>> {
+        - sessions: dictionary[string:EvaluationSession]
+        + save_session(session: EvaluationSession): void
+        + get_session(session_id: string): EvaluationSession
+        + delete_session(session_id: string): void
+        + has_active_session(): bool
+    }
+}
+
+DashboardQueryController -down-( GetAssetDetailUseCase : "usa"
+InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+
+@enduml

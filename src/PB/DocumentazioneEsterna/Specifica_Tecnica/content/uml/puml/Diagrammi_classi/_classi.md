@@ -11,27 +11,35 @@ Inbound Adapter:
    - QueryAssetController
    - WriteAssetController
 
+   - QueryDashboardController
+
 Inbound Port:
    - GetDeviceListUseCase
    - GetDeviceDetailUseCase
    - CreateDeviceUseCase
-   - UpdateDeviceUseCase
+   - SaveDeviceUseCase
    - DeleteDeviceUseCase
 
    - CreateAssetUseCase
-   - UpdateAssetUseCase
+   - SaveAssetUseCase
    - DeleteAssetService
+
+   - GetDeviceDashboardUseCase
+   - GetAssetDetailUseCase
 
 Service
    - GetDeviceListService
    - GetDeviceDetailService
    - CreateDeviceService
-   - UpdateDeviceService
+   - SaveDeviceService
    - DeleteDeviceService
 
    - CreateAssetService
-   - UpdateAssetService
+   - SaveAssetService
    - DeleteAssetService
+
+   - GetDeviceDashboardService
+   - GetAssetDetailService
 
 
 Outbound Port:
@@ -40,12 +48,12 @@ Outbound Port:
    - SaveDevicePort
    - DeleteDevicePort
 
-   - SaveAssetToSessionPort
-   - GetAssetFromSessionPort
-   - DeleteAssetFromSessionPort
-
-
+     - SaveEvaluationSessionPort
+     - GetEvaluationSessionPort
+     - DeleteEvaluationSessionPort
+   - EvaluationSessionPort
 
 Outbound Adapter:
    - MongoDeviceAdapter
+   - InMemoryEvaluationSessionCache
   

@@ -1,0 +1,7 @@
+@startuml GetDeviceDashboardService
+
+class GetDeviceDashboardService <<Application Service>> {
+    + get(query: GetDeviceDashboardQuery): DashboardDTO
+}
+
+@enduml

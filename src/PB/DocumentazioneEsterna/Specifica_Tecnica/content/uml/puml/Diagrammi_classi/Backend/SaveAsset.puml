@@ -1,4 +1,4 @@
-@startuml DeleteAsset
+@startuml SaveAsset
 skinparam linetype ortho
 skinparam nodesep 80
 skinparam ranksep 80
@@ -10,12 +10,15 @@ package "Inbound Adapter"{
 
 package "Application Core" {
 
-    class DeleteAssetCommand <<Command DTO>> {
+    class SaveAssetCommand <<Command DTO>> {
         asset_id:string
+        name:String
+        AssetType:AssetType
+        description:String
     }
 
-    () "DeleteAssetUseCase"
-    !include ApplicationServices/DeleteAssetService.puml
+    () "SaveAssetUseCase"
+    !include ApplicationServices/SaveAssetService.puml
     !include Domain/Asset.puml
     () "SaveSessionPort"
     () "GetSessionPort"
@@ -27,15 +30,15 @@ package "Outbound Adapter" {
 }
 
 
-DeleteAssetService - DeleteAssetUseCase
+SaveAssetService - SaveAssetUseCase
 
-DeleteAssetService --( SaveSessionPort : usa
-DeleteAssetService --( GetSessionPort : usa
+SaveAssetService --( SaveSessionPort : usa
+SaveAssetService --( GetSessionPort : usa
 
 SaveSessionPort -- EvaluationSessionPort
 GetSessionPort -- EvaluationSessionPort
 
-WriteAssetController --( DeleteAssetUseCase : usa
+WriteAssetController --( SaveAssetUseCase : usa
 InMemoryEvaluationSessionCache - EvaluationSessionPort
 
 @enduml
