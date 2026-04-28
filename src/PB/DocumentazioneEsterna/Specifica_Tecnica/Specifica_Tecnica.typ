@@ -152,7 +152,7 @@
       [0.7.2],
       [2026-04-22],
       [#persone.DT],
-      [],
+      [Ana Maria Draghici],
       [Migliorata sezione @vista-dati]
     )
 
