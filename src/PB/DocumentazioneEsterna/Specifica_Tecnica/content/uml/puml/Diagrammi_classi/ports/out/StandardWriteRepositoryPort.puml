@@ -7,7 +7,7 @@ skinparam classAttributeIconSize 0
     interface StandardWriteRepositoryPort <<Outbound Port>> {
         + update(standard: UpdateStandardDTO): bool
         + create(standard: CreateStandardDTO): bool
-        + delete_standard(standard_id: String): bool
+        + delete(standard_id: String): bool
     }
 
     @enduml
