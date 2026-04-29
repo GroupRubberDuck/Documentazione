@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -35,10 +35,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In approvazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ANA,),
-    verificatori: ("-",),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -101,7 +101,7 @@
   = Codifica e MVP <codifica>
   È stata avviata la strutturazione della directory del backend dell'MVP, con le cartelle per dominio, adapter, porte e service. È stata valutata la possibilità di adottare una struttura piatta per la serializzazione dell'albero decisionale, in coerenza con quanto già adottato nel frontend.
 
-  È stato inoltre stabilito l'utilizzo di pull request per la revisione del codice, in luogo del push diretto sul branch principale. Sarà valutata l'introduzione di una pipeline di Continuous Integration basata su Pytest.
+  È stato inoltre stabilito l'utilizzo di pull request per la revisione del codice, al posto del push diretto sul branch principale. Sarà valutata l'introduzione di una pipeline di Continuous Integration basata su Pytest.
 
   = Pianificazione Sprint 12 <sprint>
   Lo Sprint 12 è stato definito a partire dal 28 aprile 2026. I ruoli assegnati per lo sprint sono i seguenti:
