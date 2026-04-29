@@ -1,0 +1,10 @@
+@startuml EvaluationSessionController
+
+class EvaluationSessionController <<Flask Blueprint>> {
+    + open_session(): Response
+    + save_session(req: Request): Response
+    + save_and_close(req: Request): Response
+    + close_session(req: Request): Response
+}
+
+@enduml

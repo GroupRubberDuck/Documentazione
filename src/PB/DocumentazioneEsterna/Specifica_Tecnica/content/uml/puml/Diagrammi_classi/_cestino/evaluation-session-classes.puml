@@ -18,33 +18,15 @@ package "Inbound Adapter" {
     + close_session(session_id:String): Response
   }
 
-
-
-  ' class Request <<Flask>> {
-  ' }
-
-  ' note right of Request
-  '   Oggetto globale di Flask.
-  '   Accessibile tramite import
-  '   nei metodi dei request handler
-  '   per estrarre i dati della
-  '   richiesta HTTP corrente.
-  ' end note
 }
-
-
-
-
-
-
 
 
 package "Business Logic" {
 
   package "Logica di Dominio" {
 
-'!include Dominio/SessionHandler.puml
-'!include Dominio/EvaluationSession.puml
+    '!include Dominio/SessionHandler.puml
+    '!include Dominio/EvaluationSession.puml
 
 
   }
@@ -61,9 +43,9 @@ package "Business Logic" {
     }
 
 
-  class SessionCoordinator{
-    + can_open_session(session_type:SessionType)
-  }
+    class SessionCoordinator{
+      + can_open_session(session_type:SessionType)
+    }
 
   }
 
@@ -81,10 +63,10 @@ package "Business Logic" {
 
   package "Outbound Ports" {
     interface EvaluationSessionCachePort <<interface>> {
-    + save_session(session: EvaluationSession): void
-    + get_session(session_id: string): EvaluationSession
-    + delete_session(session_id: string): void
-    + has_active_session(): bool
+      + save_session(session: EvaluationSession): void
+      + get_session(session_id: string): EvaluationSession
+      + delete_session(session_id: string): void
+      + has_active_session(): bool
     }
 
 
@@ -123,8 +105,8 @@ EvaluationSessionService --> StandardRepositoryPort
 EvaluationSessionService --> DeviceReadPort
 EvaluationSessionService --> SessionCoordinator
 
-SessionCoordinator --> EditingSessionCachePort 
-SessionCoordinator --> EvaluationSessionCachePort 
+SessionCoordinator --> EditingSessionCachePort
+SessionCoordinator --> EvaluationSessionCachePort
 SessionCoordinator ..> SessionHandler
 
 @enduml
