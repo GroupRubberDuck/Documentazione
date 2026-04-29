@@ -19,10 +19,14 @@ package "Application Core" {
     }
 
     () "FindDevicePort"
+    () "SaveDevicePort"
+    () "RepositoryPort"
 
     GetDeviceDetailService - GetDeviceDetailUseCase
 
     GetDeviceDetailService --( FindDevicePort
+    FindDevicePort --( RepositoryPort
+    SaveDevicePort ---( RepositoryPort
 }
 
 package "Outbound Adapter" {
@@ -36,6 +40,6 @@ package "Outbound Adapter" {
 }
 
 QueryDeviceController --( GetDeviceDetailUseCase: usa
-MongoDeviceAdapter - FindDevicePort
+MongoDeviceAdapter - RepositoryPort
 
 @enduml
