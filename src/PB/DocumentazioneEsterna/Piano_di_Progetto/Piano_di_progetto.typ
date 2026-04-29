@@ -178,7 +178,7 @@
       [1.4.0],
       [2026-04-28],
       [#persone.FELIX],
-      [],    
+      [#persone.ANA],    
       [Stesura miglioramenti pianificazione sprint 10 e 11],
     ),
     (
