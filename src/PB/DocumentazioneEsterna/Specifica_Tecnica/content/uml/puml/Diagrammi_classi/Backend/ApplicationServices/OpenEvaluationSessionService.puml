@@ -1,0 +1,7 @@
+@startuml OpenEvaluationSessionService
+
+class OpenEvaluationSessionService <<Application Service>> {
+    + open(command: OpenSessionCommand): String
+}
+
+@enduml

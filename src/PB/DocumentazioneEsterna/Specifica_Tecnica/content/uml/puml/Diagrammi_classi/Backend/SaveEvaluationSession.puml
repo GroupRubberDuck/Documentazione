@@ -1,0 +1,39 @@
+@startuml SaveEvaluationSession
+
+skinparam nodesep 150
+skinparam ranksep 150
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/EvaluationSessionController.puml
+}
+
+package "Application Core" {
+
+    () "SaveEvaluationSessionUseCase"
+
+    class SaveSessionCommand {
+        + session_id: String
+    }
+
+    !include ApplicationServices/SaveEvaluationSessionService.puml
+
+    () "SaveSessionPort"
+    () "EvaluationSessionCachePort"
+
+    !include Domain/EvaluationSession.puml
+
+    SaveEvaluationSessionService -up- SaveEvaluationSessionUseCase
+    SaveEvaluationSessionService -( SaveSessionPort
+    SaveSessionPort -( EvaluationSessionCachePort : richiede
+    SaveEvaluationSessionService ..> SaveSessionCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+EvaluationSessionController -left-( SaveEvaluationSessionUseCase : usa
+InMemoryEvaluationSessionCache -up-- EvaluationSessionCachePort
+
+@enduml

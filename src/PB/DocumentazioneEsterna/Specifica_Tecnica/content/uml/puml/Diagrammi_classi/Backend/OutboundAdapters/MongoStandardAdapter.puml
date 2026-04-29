@@ -1,0 +1,7 @@
+@startuml MongoStandardAdapter
+
+class MongoStandardAdapter <<Repository>> {
+    + find_by_id(standard_id: String): ComplianceStandard
+}
+
+@enduml

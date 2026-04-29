@@ -1,0 +1,5 @@
+@startuml SaveEvaluationSessionService
+
+class SaveEvaluationSessionService {
+    + save(command: CommitSessionCommand): void
+}
