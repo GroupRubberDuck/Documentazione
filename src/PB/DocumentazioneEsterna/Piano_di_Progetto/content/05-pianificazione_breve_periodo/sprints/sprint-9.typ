@@ -70,16 +70,13 @@
   - *Processo di Approvazione*: tutti i task dovranno transitare per lo stato «In approvazione» prima di essere spostati in «Done», al fine di facilitare la retrospettiva.
 
   *Miglioramento della pianificazione futura*
-  - *Breve termine*: 
-    - Priorità alla progettazione del diagramma delle classi.
-    - Completamento della  sezione design pattern nella Specifica Tecnica e revisione della vista dati MongoDB.
-    - Ruoli assegnati:
-      - Responsabile — Davide Testolin; 
-      - Amministratore — Felician Mario Necsulescu;
-      - Progettisti — tutto il gruppo;
-      - Verificatori — Filippo Guerra, Davide Lorenzon.
+
+   - *Breve termine*:
+      - Dare priorità al completamento del diagramma delle classi e della sezione design pattern, necessari per stabilizzare la Specifica Tecnica.
+      - Proseguire la revisione della vista dati MongoDB per garantire coerenza con l’architettura definita.
+      - Mantenere una pianificazione equilibrata tra attività di progettazione, codifica e verifica.
+
   - *Lungo termine*:
-    - La Product Baseline richiede il completamento della Specifica Tecnica (diagrammi delle classi e design pattern) prima di avviare la fase di codifica; il ritardo accumulato sui diagrammi delle classi impone di considerare questo task come bloccante per i prossimi sprint.
-    - Il Manuale Utente potrà essere completato nelle guide operative solo a seguito della disponibilità dell'applicazione;
+    - Integrare progressivamente lo sviluppo del Manuale Utente con lo stato reale dell’applicazione, evitando disallineamenti tra documentazione e implementazione.
   ],
 )

@@ -39,14 +39,9 @@
       - Redazione ST - frontend e sezione design pattern
     *Miglioramento della pianificazione futura*
     - *Breve termine*:
-      - Aldo e Lorenzon: proseguire come Programmatori nell'implementazione delle funzionalità core del dominio.
-      - Testolin: Progettista, rivedere e affinare i diagrammi delle classi.
-      - Felix: Responsabile del prossimo sprint.
-      - Filippo: Amministratore.
-      - Ana Maria: implementazione del database nel rispetto delle naming convention definite. 
-      - Tutto il gruppo: trasversalmente Progettisti, supporto reciproco e Verificatori del lavoro svolto.
+      - Migliorare la pianificazione della fase di codifica  garantendo una maggiore coerenza tra Specifica Tecnica e implementazione fin dalle prime attività, così da ridurre rielaborazioni successive.
+
     - *Lungo termine*:
-      - Completamento dell'MVP per la validazione delle scelte progettuali.
-      - Completamento del documento della Specifica Tecnica.
+        - Rafforzare la stabilità del processo di sviluppo man mano che cresce l’MVP, migliorando la pianificazione degli sprint successivi in base all’evoluzione reale del sistema e non solo alle previsioni iniziali.
   ],
 )

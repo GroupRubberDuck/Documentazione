@@ -42,13 +42,11 @@
 
     *Miglioramento della pianificazione futura*
     - *Breve termine*:
-      - Continuare la fase di progettazione.
-      - Iniziare la fase di codifica.
-      - Ruoli assegnati:
-        - Responsabile — Ana Maria Draghici;
-        - Amministratore — Filippo Guerra, Davide Testolin;
-        - Progettisti — tutto il gruppo.
-    - *Lungo termine*:
-      - Completamento della Specifica Tecnica nelle sezioni mancanti in modo da portare il documento a uno stato approvabile prima dell'avvio della fase di implementazione.
-  ],
+      - Mantenere l’attuale approccio alla pianificazione, che ha garantito una buona aderenza tra stime e consuntivi, continuando a definire task chiari e ben distribuiti tra i membri del team.
+      - Accompagnare il completamento della progettazione con attività di verifica sistematica, così da assicurare la coerenza e la qualità della Specifica Tecnica in vista della fase di implementazione.
+
+  - *Lungo termine*:
+    - Strutturare la transizione verso la fase di codifica in modo progressivo, assicurando che gli artefatti progettuali siano sufficientemente maturi per evitare rielaborazioni nelle fasi successive.
+    - Consolidare un approccio incrementale allo sviluppo, in cui ogni sprint produca risultati completi e validati, favorendo continuità operativa ed efficienza complessiva del progetto.
+  ]
 )

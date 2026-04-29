@@ -45,8 +45,8 @@
   #statusTab(
     stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO, persone.FILIPPO),
-    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
+    autori: (persone.DT, "Felician Mario Necsulescu", persone.ANA, persone.ALDO, persone.FILIPPO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, "Felician Mario Necsulescu"),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -171,8 +171,22 @@
       [1.4.0],
       [2026-04-25],
       [#persone.ANA],
-      [-],
+      [#persone.FELIX],
       [Stesura sprint 11],
+    ),
+    (
+      [1.4.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [],    
+      [Stesura miglioramenti pianificazione sprint 10 e 11],
+    ),
+    (
+      [1.4.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [],    
+      [Stesura sprint 12],
     ),
   )
   #registroModifiche(modifiche)
