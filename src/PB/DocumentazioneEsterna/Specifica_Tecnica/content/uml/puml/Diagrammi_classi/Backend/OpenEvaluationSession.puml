@@ -23,17 +23,17 @@ package "Application Core" {
         + can_open_session(session_type: SessionType): bool
     }
 
-    () "FindDeviceByIdPort"
-    () "FindStandardByIdPort"
-    () "EvaluationSessionCachePort"
+    () "FindDevicePort"
+    () "FindStandardPort"
+    () "CreateSessionPort"
 
     !include Domain/EvaluationSession.puml
 
     OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
 
-    OpenEvaluationSessionService -right-( FindDeviceByIdPort : richiede
-    OpenEvaluationSessionService --( FindStandardByIdPort : richiede
-    OpenEvaluationSessionService --( EvaluationSessionCachePort : richiede
+    OpenEvaluationSessionService -right-( FindDevicePort : richiede
+    OpenEvaluationSessionService --( FindStandardPort : richiede
+    OpenEvaluationSessionService --( CreateSessionPort : richiede
 
 }
 
@@ -44,8 +44,8 @@ package "Outbound Adapter" {
 }
 
 EvaluationSessionController -left-( OpenEvaluationSessionUseCase : usa
-MongoDeviceAdapter -up- FindDeviceByIdPort
-MongoStandardAdapter -up- FindStandardByIdPort
-InMemoryEvaluationSessionCache -up-- EvaluationSessionCachePort
+MongoDeviceAdapter -up- FindDevicePort
+MongoStandardAdapter -up- FindStandardPort
+InMemoryEvaluationSessionCache -up-- CreateSessionPort
 
 @enduml

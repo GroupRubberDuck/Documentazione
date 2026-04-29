@@ -1,0 +1,76 @@
+@startuml import-device
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+
+package "Inbound Adapter" {
+    !include InboundAdapters/ImportStandardController.puml
+}
+
+package "Application Core" {
+
+    () "ImportStandardUseCase"
+
+    !include ApplicationServices/ImportStandardService.puml
+
+    enum AllowedStandardFileExtension <<enum>> {
+        XML
+        JSON
+    }
+
+    class ImportStandardCommand <<Command DTO>> {
+        + device_file_content: BinaryIO
+        + extension: AllowedStandardFileExtension
+    }
+
+    () "FileStandardImporterPort"
+    () "StandardWriteRepositoryPort"
+    () "FileStandardImporterFactoryPort"
+}
+
+package "Outbound Adapter" {
+    abstract class FileStandardImporter <<Template Method>> {
+        + parse_device_file(device_file_content: BinaryIO): Standard
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class JSONFileStandardImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class XMLFileStandardImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class ConcreteFileStandardImporterFactory {
+        + get_file_device_importer(extension: AllowedStandardFileExtension): FileStandardImporterPort
+    }
+}
+
+ImportStandardController --( ImportStandardUseCase : usa
+
+ImportStandardUseCase - ImportStandardService
+
+ImportStandardService ..> FileStandardImporterPort
+ImportStandardService --( FileStandardImporterFactoryPort
+ImportStandardService --( StandardWriteRepositoryPort
+
+FileStandardImporterFactoryPort - ConcreteFileStandardImporterFactory
+ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter
+ConcreteFileStandardImporterFactory .up.> XMLFileStandardImporter
+
+FileStandardImporterPort - FileStandardImporter
+FileStandardImporter <|-down- XMLFileStandardImporter
+FileStandardImporter <|-down- JSONFileStandardImporter
+
+@enduml

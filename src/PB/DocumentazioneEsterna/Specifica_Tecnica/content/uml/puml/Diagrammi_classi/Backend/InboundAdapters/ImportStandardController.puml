@@ -1,0 +1,15 @@
+@startuml ImportStandardController
+
+class ImportStandardController <<Flask Blueprint>> {
+    + __init__(import_port: ImportStandardUseCase)
+    + import_standard(req: Request): Response
+}
+
+class UploadFileController <<Utility>> {
+    + get_http_file_payload(): BinaryIO
+    + get_http_file_extension(): string
+}
+
+ImportStandardController .up.> UploadFileController
+
+@enduml

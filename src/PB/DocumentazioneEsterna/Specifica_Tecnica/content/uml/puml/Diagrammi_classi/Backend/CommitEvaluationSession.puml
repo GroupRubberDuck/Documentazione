@@ -20,22 +20,16 @@ package "Application Core" {
 
     () "SaveDevicePort"
     () "GetSessionPort"
-    () "DeleteSessionPort"
-    () "EvaluationSessionCachePort"
 
     !include Domain/EvaluationSession.puml
     !include Domain/Device.puml
 
     CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
 
-    CommitEvaluationSessionService -right-( SaveDevicePort : richiede
+    CommitEvaluationSessionService --( SaveDevicePort : richiede
+    CommitEvaluationSessionService --( GetSessionPort : richiede
 
-    CommitEvaluationSessionService --( DeleteSessionPort
-    CommitEvaluationSessionService --( GetSessionPort
-    DeleteSessionPort -( EvaluationSessionCachePort
-    GetSessionPort --( EvaluationSessionCachePort
-
-    CommitEvaluationSessionService ..> CommitSessionCommand : legge
+    CommitEvaluationSessionService .right.> CommitSessionCommand : legge
 }
 
 package "Outbound Adapter" {
@@ -43,8 +37,8 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController -left-( CommitEvaluationSessionUseCase : usa
-MongoDeviceAdapter -up- SaveDevicePort
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort
+EvaluationSessionController --( CommitEvaluationSessionUseCase : usa
+MongoDeviceAdapter - SaveDevicePort
+InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml

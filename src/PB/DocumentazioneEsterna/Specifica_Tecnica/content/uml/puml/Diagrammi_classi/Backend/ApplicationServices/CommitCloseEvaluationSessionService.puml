@@ -1,0 +1,7 @@
+@startuml CommitCloseEvaluationSessionService
+
+class CommitCloseEvaluationSessionService {
+    + commit_and_close(command: CommitCloseSessionCommand): void
+}
+
+@enduml

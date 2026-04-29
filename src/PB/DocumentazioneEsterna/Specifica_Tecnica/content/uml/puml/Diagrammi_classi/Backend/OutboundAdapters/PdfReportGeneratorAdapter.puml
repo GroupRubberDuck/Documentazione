@@ -1,0 +1,9 @@
+@startuml PdfReportGeneratorAdapter
+
+class PdfReportGeneratorAdapter <<Report Adapter>> {
+    + generate_report(session: EvaluationSession): bytes
+    # format_header()
+    # print_asset_evaluations()
+    # format_footer()
+}
+@enduml

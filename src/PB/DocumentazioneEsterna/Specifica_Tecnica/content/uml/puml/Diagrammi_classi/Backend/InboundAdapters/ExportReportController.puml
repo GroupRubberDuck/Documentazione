@@ -1,0 +1,7 @@
+@startuml ExportReportController
+
+class ExportReportController {
+    + export_report(): Response
+}
+
+@enduml
