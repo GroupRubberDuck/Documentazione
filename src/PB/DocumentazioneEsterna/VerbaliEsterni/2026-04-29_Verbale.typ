@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -35,10 +35,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
-    verificatori: (),
+    verificatori: ("Ana Maria Draghici",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -99,7 +99,7 @@ Il team ha presentato le tre unità di dominio principali:
 
 - Compliance Standard: funge da template, contenente l'albero decisionale ricorsivo e i target di riferimento.
 
-È stata chiarita la distinzione tra Verdict (stato previsto dallo standard: Pass, Fail, NA) ed Evaluation State, che include lo stato Pending per gestire la sospensione operativa della valutazione.
+È stata definita la distinzione tra Verdict, che rappresenta l'esito formale previsto dallo standard (Pass, Fail, NA), ed Evaluation State, che riflette invece lo stato del workflow operativo. Quest'ultimo include lo stato Pending, utilizzato per gestire la sospensione temporanea della valutazione senza alterare la semantica dello standard di compliance.
 
 = Gestione delle Sessioni  <sessioni>
 Per l'MVP è stata adottata una gestione delle sessioni in-memory tramite un outbound adapter dedicato. Sebbene non sia la soluzione ottimale per sistemi distribuiti, è stata ritenuta accettabile per un'applicazione locale.
@@ -181,4 +181,14 @@ TODO,
 header: ("Codice", "Assegnatari", "Task", "Decisione di riferimento"),
 columns: (auto, auto, 1fr, auto),
 )
+]
+
+
+#insertArabicNumberedPages("Approvazione esterna ", "Verbale esterno", giornoRiunione)[
+  = Approvazione esterna
+  La presente sezione documenta la conferma e la validazione del verbale da parte del proponente esterno.
+  Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
+
+  Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
+
 ]
