@@ -47,16 +47,17 @@
 
 #insertArabicNumberedPages("Informazioni generali", "Domande", giornoRiunione)[
   = Diagrammi delle classi
-  == Outbound Port
-  Nella definizione delle outbound port è corretto creare un’interfaccia che eredita da alcune outbound port e poi realizzare un singolo adapter che implementa questa porta,
-  ad esempio  le porte che interagiscono con il sistema di permanenza dichiarano ognuna un metodo: save, get, delete e create.
-
-  poi si aggiunge un’interfaccia che eredita da tutte 4 che chiameremo repository e il ConcreteRepository implementa quest’ultima interfaccia
-
   == Socket ball
   È corretto l’utilizzo di socket ball per rappresentare l’interfaccia (ball) + utilizzo dei metodi esposti della porta (socket)
 
   #image("assets/image5.png")
+  #pagebreak()
+  == Outbound Port
+  Nella definizione delle outbound port è corretto creare un’interfaccia che eredita da alcune outbound port e poi realizzare un singolo adapter che implementa questa porta,
+  ad esempio  le porte che interagiscono con il sistema di permanenza dichiarano ognuna un metodo: save, get, delete e create?
+
+  poi si aggiunge un’interfaccia che eredita da tutte 4 che chiameremo repository e il ConcreteRepository implementa quest’ultima interfaccia
+  #image("assets/image6.png")
 
   #pagebreak()
   = Architettura
