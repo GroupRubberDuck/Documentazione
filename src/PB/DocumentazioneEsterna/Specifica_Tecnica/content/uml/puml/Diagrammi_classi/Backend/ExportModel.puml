@@ -1,0 +1,104 @@
+@startuml ExportStandard
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/ExportStandardController.puml
+}
+
+package "Application Core" {
+
+    class ExportStandardQuery <<Query Command>> {
+        + device_id: String
+        + extension: AllowedStandardFileExtension
+    }
+
+    enum AllowedStandardFileExtension <<enum>> {
+        XML
+        JSON
+    }
+
+    () "ExportStandardUseCase"
+
+    !include ApplicationServices/ExportStandardService.puml
+
+    class StandardFileCommand {
+        + Model_name: string
+        + Model_os_name: string
+        + Model_description: string
+        + Model_id: string
+        + Model_name: string
+        + Model_version: string
+        + assets: list[AssetFileDTO]
+    }
+    
+    class AssetFileCommand {
+        + asset_name: string
+        + asset_type: AssetType
+        + asset_description: string
+        + assessments: list[AssessmentFileDTO]
+    }
+
+    class AssessmentFileCommand {
+        + requirement_code: String
+        + answers: dictionary[String:bool]
+    }
+
+    () "FindStandardPort"
+    () "FileStandardExporterFactoryPort"
+    () "FileStandardExporterPort"
+
+    !include Domain/ComplianceStandard.puml
+
+    ExportStandardService -up- ExportStandardUseCase
+
+    ExportStandardService -right-( FindStandardPort : "richiede"
+    ExportStandardService -down-( FileStandardExporterFactoryPort : "richiede"
+
+    ExportStandardService ---( FileStandardExporterPort : "usa"
+
+    StandardFileCommand *-- AssetFileCommand
+    AssetFileCommand *-- AssessmentFileCommand
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoStandardAdapter.puml
+    !include OutboundAdapters/ConcreteFileStandardExporterFactory.puml
+
+    abstract class FileStandardExporter <<Template Method>> {
+        + generate_device_file(device_dto: StandardFileCommand): bytes
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    class JSONFileStandardExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    class XMLFileStandardExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    FileStandardExporterPort -- FileStandardExporter
+    FileStandardExporter <|-down- JSONFileStandardExporter
+    FileStandardExporter <|-down- XMLFileStandardExporter
+
+    ConcreteFileStandardExporterFactory .. FileStandardExporterPort : "crea"
+
+    ConcreteFileStandardExporterFactory .up.> JSONFileStandardExporter
+    ConcreteFileStandardExporterFactory .up.> XMLFileStandardExporter
+}
+
+ExportStandardController -down-( ExportStandardUseCase : usa
+
+MongoStandardAdapter -up-- FindStandardPort
+ConcreteFileStandardExporterFactory -up- FileStandardExporterFactoryPort
+
+@enduml

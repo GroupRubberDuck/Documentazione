@@ -1,0 +1,7 @@
+@startuml ExportDeviceService
+
+class ExportDeviceService <<Application Service>> {
+    + export(query: ExportDeviceQuery): bytes
+}
+
+@enduml

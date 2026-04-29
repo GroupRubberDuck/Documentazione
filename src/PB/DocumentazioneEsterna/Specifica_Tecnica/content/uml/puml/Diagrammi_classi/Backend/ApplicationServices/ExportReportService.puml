@@ -1,0 +1,8 @@
+@startuml ExportReportService
+
+class ExportReportService {
+    + execute(query: ExportReportQuery): bytes
+}
+
+
+@enduml

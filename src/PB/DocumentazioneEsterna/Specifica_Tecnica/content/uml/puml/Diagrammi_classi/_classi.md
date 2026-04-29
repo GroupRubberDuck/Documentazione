@@ -57,3 +57,35 @@ Outbound Adapter:
    - MongoDeviceAdapter
    - InMemoryEvaluationSessionCache
   
+
+
+----------------------------------------------------
+
+Inbound Adapter:
+- open -> apre la sessione
+- close -> chiude la sessione
+- commit -> salva modifica (sul db)
+- commit_and_close -> salva e chiude
+
+Application Service
+- openService -> comunica con openSessionPort
+- closeService -> comunica con deleteSessionPort
+- commitService -> comuinica con getSessionPort (recupera info device) + saveDevicePort della repo del dispositivo (salva Device su Mongo)
+- commitCloseService -> ha le porte di commit e close
+
+
+Outbound port
+- hasActiveSessionPort
+- deleteSessionPort
+- createSessionPort
+- getSessionPort
+- saveSessionPort (usato per operazioni di modifica quando c'è sessione attiva)
+
+
+Outbound Adapter
+- InMemoryEvaluationSessionCache
+  - save_session()
+  - get_session(id: String) ritorna l'oggetto sessione
+  - delete_session()
+  - create_session() ritorna l'id della sessione creata
+  - has_active_session()

@@ -1,0 +1,50 @@
+@startuml ExportReport
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/ExportReportController.puml
+}
+
+package "Application Core" {
+
+    class ExportReportQuery <<Query Command>> {
+        + session_id: String
+        + format: ReportFormat
+    }
+
+    enum ReportFormat <<enum>> {
+        PDF
+    }
+
+    () "ExportReportUseCase"
+
+    !include ApplicationServices/ExportReportService.puml
+
+    () "GetSessionPort"
+    () "ReportGeneratorPort"
+
+    !include Domain/EvaluationSession.puml
+
+    ExportReportService -up- ExportReportUseCase
+
+    ExportReportService -right-( GetSessionPort : "richiede"
+    ExportReportService -down-( ReportGeneratorPort : "richiede"
+
+    ExportReportService ..> ExportReportQuery : "legge"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+    !include OutboundAdapters/PdfReportGeneratorAdapter.puml
+
+    PdfReportGeneratorAdapter -up- ReportGeneratorPort : "implementa"
+}
+
+ExportReportController -down-( ExportReportUseCase : usa
+
+InMemoryEvaluationSessionCache -up-- GetSessionPort
+
+@enduml

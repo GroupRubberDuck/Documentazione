@@ -2,9 +2,10 @@
 
 class EvaluationSessionController <<Flask Blueprint>> {
     + open_session(): Response
-    + save_session(req: Request): Response
-    + save_and_close(req: Request): Response
     + close_session(req: Request): Response
+    + save_session(req: Request): Response
+    + commit_session(req: Request): Response
+    + commit_and_close(req: Request): Response
 }
 
 @enduml

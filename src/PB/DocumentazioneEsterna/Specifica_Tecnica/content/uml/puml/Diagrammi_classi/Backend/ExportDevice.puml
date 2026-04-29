@@ -1,0 +1,105 @@
+@startuml ExportDevice
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/ExportDeviceController.puml
+}
+
+package "Application Core" {
+
+    class ExportDeviceQuery <<Query Command>> {
+        + device_id: String
+        + extension: AllowedDeviceFileExtension
+    }
+
+    enum AllowedDeviceFileExtension <<enum>> {
+        XML
+        JSON
+        CSV
+    }
+
+    () "ExportDeviceUseCase"
+
+    !include ApplicationServices/ExportDeviceService.puml
+
+    class DeviceFileCommand {
+        + device_name: String
+        + device_os_name: String
+        + device_description: String
+        + model_id: String
+        + model_name: String
+        + model_version: String
+        + assets: List<AssetFileCommand>
+    }
+
+    class AssetFileCommand {
+        + asset_name: String
+        + asset_type: AssetType
+        + asset_description: String
+        + assessments: List<AssessmentFileCommand>
+    }
+
+    class AssessmentFileCommand {
+        + requirement_code: String
+        + answers: dictionary[String:bool]
+    }
+
+    () "FindDevicePort"
+    () "FileDeviceExporterFactoryPort"
+    () "FileDeviceExporterPort"
+
+    !include Domain/Device.puml
+
+    ExportDeviceService -up- ExportDeviceUseCase
+
+    ExportDeviceService -right-( FindDevicePort : "richiede"
+    ExportDeviceService -down-( FileDeviceExporterFactoryPort : "richiede"
+
+    ExportDeviceService ---( FileDeviceExporterPort : "usa"
+
+    DeviceFileCommand *-- AssetFileCommand
+    AssetFileCommand *-- AssessmentFileCommand
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
+
+    abstract class FileDeviceExporter <<Template Method>> {
+        + generate_device_file(device_dto: DeviceFileCommand): bytes
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    class JSONFileDeviceExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    class XMLFileDeviceExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    FileDeviceExporterPort -- FileDeviceExporter
+    FileDeviceExporter <|-down- JSONFileDeviceExporter
+    FileDeviceExporter <|-down- XMLFileDeviceExporter
+
+    ConcreteFileDeviceExporterFactory .. FileDeviceExporterPort : "crea"
+
+    ConcreteFileDeviceExporterFactory .up.> JSONFileDeviceExporter
+    ConcreteFileDeviceExporterFactory .up.> XMLFileDeviceExporter
+}
+
+ExportDeviceController -down-( ExportDeviceUseCase : usa
+
+MongoDeviceAdapter -up-- FindDevicePort
+ConcreteFileDeviceExporterFactory -up- FileDeviceExporterFactoryPort
+
+@enduml
