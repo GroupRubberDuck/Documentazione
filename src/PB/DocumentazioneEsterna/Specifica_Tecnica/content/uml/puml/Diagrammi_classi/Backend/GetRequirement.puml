@@ -1,0 +1,79 @@
+@startuml GetRequirement
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class EvaluationRequirementsQueryController <<Flask Blueprint>> {
+        + get_requirement(req: Request): Response
+    }
+}
+
+package "Application Core" {
+
+    class GetRequirementQuery <<Query DTO>> {
+        + session_id: String
+        + asset_id: String
+        + requirement_id: String
+    }
+
+    () "GetRequirementUseCase"
+
+    class GetRequirementService <<Application Service>> {
+        + execute(query: GetRequirementQuery): RequirementDTO
+    }
+
+    class RequirementDTO <<Response DTO>> {
+        + requirement_code: String
+        + requirement_name: String
+        + justification: String
+        + stato_valutazione: EvaluationState
+        + dependency_list: List<DependencyDTO>
+        + decision_tree: DecisionTreeDTO
+    }
+
+    class DecisionTreeDTO <<Response DTO>> {
+        + root_node: NodeDTO
+    }
+
+    class NodeDTO <<Response DTO>> {
+        + node_id: String
+        + type: NodeType
+        + question_text: String
+        + user_answer: Boolean
+        + evaluation_state: EvaluationState
+    }
+
+    class DependencyDTO <<Response DTO>> {
+        + requirement_code: String
+        + stato_valutazione: EvaluationState
+    }
+
+    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
+
+    !include Domain/EvaluationSession.puml
+    !include Domain/EvaluationSheet.puml
+
+    GetRequirementService -up- GetRequirementUseCase
+    
+    GetRequirementService -down-( EvaluationSessionCachePort : "richiede sessione"
+
+    GetRequirementService ..> GetRequirementQuery : "legge"
+    GetRequirementService ..> RequirementDTO : "popola"
+    
+    RequirementDTO *-- DecisionTreeDTO
+    RequirementDTO *-- DependencyDTO
+    DecisionTreeDTO *-- NodeDTO
+}
+
+package "Outbound Adapter" {
+    class InMemoryEvaluationSessionCache <<Session Cache>> {
+        + get_session(session_id: String): EvaluationSession
+    }
+}
+
+EvaluationRequirementsQueryController -down-( GetRequirementUseCase : "usa"
+InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+
+@enduml
