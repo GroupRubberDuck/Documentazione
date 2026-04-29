@@ -1,33 +1,47 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 80
 skinparam linetype ortho
 
 package "Inbound Adapter" {
-    class DeviceController <<Flask Blueprint>> {
-        - query_use_case: DeviceQueryUseCase
-        + get_device_list(): Response
-        + get_device_detail(device_id: String): Response
+    class QueryDeviceController <<Flask Blueprint>> {
+        - list_use_case: GetDeviceListUseCase
+        - detail_use_case: GetDeviceDetailUseCase
+
+        + get_device_list(req: Request): Response
+        + get_device_detail(req: Request): Response
     }
 }
 
 package "Application Core" {
-    
-    interface "DeviceQueryUseCase" as IDeviceQueryUseCase {
-        + get_device_list(): List<Device>
-        + get_device_detail(device_id: String): Device
+
+    () "GetDeviceDetailUseCase"
+
+    class GetDeviceDetailService <<Application Service>> {
+        + get_device(query: GetDeviceDetailQuery): Device
     }
 
-    class DeviceQueryService <<Application Service>> {
-        - repository: DeviceReadRepositoryPort
-        + get_device_list(): List<Device>
-        + get_device_detail(device_id: String): Device
+    () "FindDevicePort"
+
+    GetDeviceDetailService - GetDeviceDetailUseCase
+
+    GetDeviceDetailService --( FindDevicePort
+}
+
+package "Outbound Adapter" {
+    class MongoDeviceAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        + save(device: Device): void
+        + register(device: Device): void
+        + delete(device_id: String): void
+
+        + find_by_id(device_id: String): Device
+        + find_all(): List<DeviceSummary>
     }
 }
 
-' Relazione "Ball & Socket": 
-' Il Controller ha il socket -(
-' Il Service si connette al lollipop --
-DeviceController -( IDeviceQueryUseCase : "utilizza"
-IDeviceQueryUseCase -- DeviceQueryService : "implementa"
+QueryDeviceController --( GetDeviceDetailUseCase: usa
+MongoDeviceAdapter - FindDevicePort
 
 @enduml
