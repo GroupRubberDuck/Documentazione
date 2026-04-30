@@ -20,23 +20,18 @@ package "Application Core" {
     }
 
     class ImportStandardCommand <<Command DTO>> {
-        + device_file_content: BinaryIO
+        + standard_file_content: BinaryIO
         + extension: AllowedStandardFileExtension
     }
 
     () "FileStandardImporterPort"
-    () "StandardWriteRepositoryPort"
+    () "StandardSavePort"
     () "FileStandardImporterFactoryPort"
 }
 
 package "Outbound Adapter" {
-    abstract class FileStandardImporter <<Template Method>> {
-        + parse_device_file(device_file_content: BinaryIO): Standard
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
+    
+    !include OutboundAdapters/FileStandardImporter.puml
 
     class JSONFileStandardImporter {
         # check_metadata()
@@ -52,9 +47,8 @@ package "Outbound Adapter" {
         # close_stream()
     }
 
-    class ConcreteFileStandardImporterFactory {
-        + get_file_device_importer(extension: AllowedStandardFileExtension): FileStandardImporterPort
-    }
+    !include OutboundAdapters/ConcreteFileStandardImporterFactory.puml
+    !!include OutboundAdapters/MongoStandardAdapter.puml
 }
 
 ImportStandardController --( ImportStandardUseCase : usa
@@ -63,7 +57,7 @@ ImportStandardUseCase - ImportStandardService
 
 ImportStandardService ..> FileStandardImporterPort
 ImportStandardService --( FileStandardImporterFactoryPort
-ImportStandardService --( StandardWriteRepositoryPort
+ImportStandardService --( StandardSavePort
 
 FileStandardImporterFactoryPort - ConcreteFileStandardImporterFactory
 ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter

@@ -1,0 +1,7 @@
+@startuml ConcreteFileStandardImporterFactory
+
+class ConcreteFileStandardImporterFactory {
+    + get_file_standard_importer(extension: AllowedStandardFileExtension): FileStandardImporterPort
+}
+
+@enduml

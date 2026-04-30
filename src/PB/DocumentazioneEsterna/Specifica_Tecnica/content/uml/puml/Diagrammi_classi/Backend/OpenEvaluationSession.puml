@@ -12,11 +12,6 @@ package "Application Core" {
 
     () "OpenEvaluationSessionUseCase"
 
-    class OpenSessionCommand {
-        + device_id: String
-        + model_id: String
-    }
-
     !include ApplicationServices/OpenEvaluationSessionService.puml
 
     class SessionCoordinator <<Domain Service>> {
@@ -31,9 +26,9 @@ package "Application Core" {
 
     OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
 
-    OpenEvaluationSessionService -right-( FindDevicePort : richiede
-    OpenEvaluationSessionService --( FindStandardPort : richiede
-    OpenEvaluationSessionService --( CreateSessionPort : richiede
+    OpenEvaluationSessionService -right-> FindDevicePort : richiede
+    OpenEvaluationSessionService --> FindStandardPort : richiede
+    OpenEvaluationSessionService --> CreateSessionPort : richiede
 
 }
 
@@ -43,7 +38,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController -left-( OpenEvaluationSessionUseCase : usa
+EvaluationSessionController -left-> OpenEvaluationSessionUseCase : usa
 MongoDeviceAdapter -up- FindDevicePort
 MongoStandardAdapter -up- FindStandardPort
 InMemoryEvaluationSessionCache -up-- CreateSessionPort

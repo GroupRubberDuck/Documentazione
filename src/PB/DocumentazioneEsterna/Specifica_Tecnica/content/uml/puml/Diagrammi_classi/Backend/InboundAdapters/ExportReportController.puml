@@ -1,7 +1,12 @@
 @startuml ExportReportController
 
 class ExportReportController {
-    + export_report(): Response
+    + export_report(req: Request): Response
 }
+
+class DownloadFileController <<Utility>> {
+    + build_file_response(file_bytes: bytes, filename: string): FlaskResponse
+}
+ExportReportController .r.> DownloadFileController
 
 @enduml

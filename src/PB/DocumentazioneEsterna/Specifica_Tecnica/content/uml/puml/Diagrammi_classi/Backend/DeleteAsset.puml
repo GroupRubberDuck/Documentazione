@@ -10,16 +10,12 @@ package "Inbound Adapter"{
 
 package "Application Core" {
 
-    class DeleteAssetCommand <<Command DTO>> {
-        + asset_id: String
-    }
-
     () "DeleteAssetUseCase"
     !include ApplicationServices/DeleteAssetService.puml
     !include Domain/Asset.puml
+    !include Domain/EvaluationSession.puml
     () "SaveSessionPort"
     () "GetSessionPort"
-    () "EvaluationSessionPort"
 }
 
 package "Outbound Adapter" {
@@ -29,13 +25,12 @@ package "Outbound Adapter" {
 
 DeleteAssetService - DeleteAssetUseCase
 
-DeleteAssetService --( SaveSessionPort : usa
-DeleteAssetService --( GetSessionPort : usa
+DeleteAssetService --> SaveSessionPort : usa
+DeleteAssetService --> GetSessionPort : usa
 
-SaveSessionPort -- EvaluationSessionPort
-GetSessionPort -- EvaluationSessionPort
+SaveSessionPort -- InMemoryEvaluationSessionCache
+GetSessionPort -- InMemoryEvaluationSessionCache
 
-WriteAssetController --( DeleteAssetUseCase : usa
-InMemoryEvaluationSessionCache - EvaluationSessionPort
+WriteAssetController --> DeleteAssetUseCase : usa
 
 @enduml

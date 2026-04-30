@@ -4,7 +4,7 @@ class ImportStandardService <<Application Service>> {
     - device_repository: StandardRepositoryPort
     - device_importer_factory: FileStandardImporterFactoryPort
     + __init__(device_importer_factory: FileStandardImporterFactoryPort, device_repository: StandardRepositoryPort)
-    + import_standard(command ImportStandardCommand): ErrorLog
+    + import_standard(command ImportStandardCommand): void
 }
 
 @enduml

@@ -1,0 +1,10 @@
+@startuml FileStandardImporter
+abstract class FileStandardImporter <<Template Method>> {
+    + parse_standard_file(standard_file_content: BinaryIO): ComplianceStandard
+    # check_metadata()
+    # open_stream()
+    # parse_data()
+    # close_stream()
+}
+
+@enduml

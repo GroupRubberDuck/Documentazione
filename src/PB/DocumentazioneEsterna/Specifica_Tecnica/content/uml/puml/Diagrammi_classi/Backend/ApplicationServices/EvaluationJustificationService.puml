@@ -1,0 +1,7 @@
+@startuml EvaluationJustificationService
+
+class EvaluationJustificationService <<Application Service>> {
+    + insert_justification(command: InsertJustificationCommand): void
+}
+
+@enduml

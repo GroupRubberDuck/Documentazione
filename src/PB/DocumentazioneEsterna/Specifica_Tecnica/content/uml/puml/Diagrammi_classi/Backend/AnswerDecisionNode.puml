@@ -20,26 +20,29 @@ package "Application Core" {
         + answer: Boolean
     }
 
-    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
+    !include ApplicationServices/AnswerDecisionNodeService.puml
+
+    () "SaveSessionPort"
+    () "GetSessionPort"
 
     !include Domain/EvaluationSession.puml
     !include Domain/EvaluationSheet.puml
 
     AnswerDecisionNodeService -up- AnswerDecisionNodeUseCase
     
-    AnswerDecisionNodeService -down-( EvaluationSessionCachePort : "richiede"
+    AnswerDecisionNodeService -down-> SaveSessionPort : richiede
+    AnswerDecisionNodeService -down-> GetSessionPort : richiede
 
-    AnswerDecisionNodeService ..> AnswerNodeCommand : "legge"
+    AnswerDecisionNodeService ..> AnswerNodeCommand : legge
 }
 
 package "Outbound Adapter" {
-    class InMemoryEvaluationSessionCache <<Session Cache>> {
-        + get_session(session_id: String): EvaluationSession
-        + save_session(session: EvaluationSession): void
-    }
+!include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationDecisionNodeController -down-( AnswerDecisionNodeUseCase : "usa"
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+EvaluationDecisionNodeController -down-> AnswerDecisionNodeUseCase : usa
+InMemoryEvaluationSessionCache -up- SaveSessionPort
+InMemoryEvaluationSessionCache -up- GetSessionPort
+
 
 @enduml

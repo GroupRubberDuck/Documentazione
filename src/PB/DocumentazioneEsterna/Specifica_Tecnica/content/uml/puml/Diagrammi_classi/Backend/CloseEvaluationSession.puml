@@ -12,10 +12,6 @@ package "Application Core" {
 
     () "CloseEvaluationSessionUseCase"
 
-    class CloseSessionCommand {
-        + session_id: String
-    }
-
     !include ApplicationServices/CloseEvaluationSessionService.puml
 
     () "DeleteSessionPort"
@@ -23,15 +19,14 @@ package "Application Core" {
     !include Domain/EvaluationSession.puml
 
     CloseEvaluationSessionService -up- CloseEvaluationSessionUseCase
-    CloseEvaluationSessionService -( DeleteSessionPort : richiede
-    CloseEvaluationSessionService ..> CloseSessionCommand : legge
+    CloseEvaluationSessionService -> DeleteSessionPort : richiede
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController -left-( CloseEvaluationSessionUseCase : usa
+EvaluationSessionController -left-> CloseEvaluationSessionUseCase : usa
 InMemoryEvaluationSessionCache -up- DeleteSessionPort
 
 @enduml

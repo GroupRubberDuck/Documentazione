@@ -1,7 +1,7 @@
 @startuml CloseEvaluationSessionService
 
 class CloseEvaluationSessionService <<Application Service>> {
-    + close(command: CloseSessionCommand): void
+    + close(session_id: String): void
 }
 
 @enduml

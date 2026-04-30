@@ -1,6 +1,7 @@
 @startuml MongoStandardAdapter
 
-class MongoStandardAdapter <<Repository>> {
+class MongoStandardAdapter <<Mongo Repository>> {
+    + save(standard: ComplianceStandard): void
     + find_by_id(standard_id: String): ComplianceStandard
 }
 

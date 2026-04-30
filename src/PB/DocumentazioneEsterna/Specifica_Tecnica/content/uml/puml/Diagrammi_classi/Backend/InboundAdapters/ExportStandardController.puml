@@ -1,7 +1,7 @@
 @startuml ExportStandardController
 
 class ExportStandardController <<Flask Blueprint>> {
-    + export_standard(): Response
+    + export_standard(req: Request): Response
 }
 class DownloadFileController <<Utility>> {
     + build_file_response(file_bytes: bytes, filename: string): FlaskResponse

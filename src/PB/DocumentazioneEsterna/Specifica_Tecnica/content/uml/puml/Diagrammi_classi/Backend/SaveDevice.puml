@@ -9,7 +9,7 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    class SaveDeviceCommand <<Command DTO>> {
+    class SaveDeviceCommand  {
         + device_name: String
         + device_os: String
         + device_description: String
@@ -19,7 +19,7 @@ package "Application Core" {
     !include Domain/Device.puml
     () "SaveDevicePort"
 
-    SaveDeviceUseCase .right.> SaveDeviceCommand
+    SaveDeviceService .left.> SaveDeviceCommand: legge
 }
 
 package "Outbound Adapter" {
@@ -30,9 +30,9 @@ package "Outbound Adapter" {
 SaveDeviceService - SaveDeviceUseCase
 
 
-SaveDeviceService ---( SaveDevicePort: usa
+SaveDeviceService ---> SaveDevicePort: usa
 
-WriteDeviceController --( SaveDeviceUseCase: usa
+WriteDeviceController --> SaveDeviceUseCase: usa
 MongoDeviceAdapter - SaveDevicePort
 
 @enduml

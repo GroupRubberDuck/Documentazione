@@ -1,10 +1,6 @@
 @startuml WriteAssetController
 
 class WriteAssetController <<Flask Blueprint>>{
-    - create_use_case: CreateAssetUseCase
-    - update_use_case: UpdateAssetUseCase
-    - delete_use_case: DeleteAssetUseCase
-    + __init__(create_uc: CreateAssetUseCase, update_uc: UpdateAssetUseCase, delete_uc: DeleteAssetUseCase)
     + create_asset(req: Request): Response
     + update_asset(req: Request): Response
     + delete_asset(req: Request): Response

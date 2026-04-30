@@ -9,16 +9,11 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    
-    class DeleteDeviceCommand {
-        + device_id: String
-    }
     () "DeleteDeviceUseCase"
     !include ApplicationServices/DeleteDeviceService.puml
     !include Domain/Device.puml
     () "DeleteDevicePort"
 
-    DeleteDeviceUseCase .right.> DeleteDeviceCommand
 }
 
 package "Outbound Adapter" {
@@ -29,9 +24,9 @@ package "Outbound Adapter" {
 DeleteDeviceService - DeleteDeviceUseCase
 
 
-DeleteDeviceService --( DeleteDevicePort: usa
+DeleteDeviceService --> DeleteDevicePort: usa
 
-WriteDeviceController --( DeleteDeviceUseCase: usa
+WriteDeviceController --> DeleteDeviceUseCase: usa
 MongoDeviceAdapter - DeleteDevicePort
 
 @enduml

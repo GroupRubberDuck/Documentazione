@@ -16,6 +16,8 @@ package "Application Core" {
     !include ApplicationServices/GetDeviceListService.puml
     !include Domain/Device.puml
     () "FindAllDevicesPort" as FindAllDevicesPort
+
+    GetDeviceListService .left.> DeviceSummary: popola
 }
 
 package "Outbound Adapter" {
@@ -26,9 +28,9 @@ package "Outbound Adapter" {
 GetDeviceListService - GetDeviceListUseCase
 
 
-GetDeviceListService --( FindAllDevicesPort : usa
+GetDeviceListService --> FindAllDevicesPort : usa
 
-QueryDeviceController --( GetDeviceListUseCase : usa
+QueryDeviceController --> GetDeviceListUseCase : usa
 MongoDeviceAdapter - FindAllDevicesPort
 
 @enduml
