@@ -1,0 +1,7 @@
+@startuml QueryEvaluationRequirementsController
+
+class QueryEvaluationRequirementsController <<Flask Blueprint>> {
+    + get_requirement(req: Request): Response
+}
+
+@enduml

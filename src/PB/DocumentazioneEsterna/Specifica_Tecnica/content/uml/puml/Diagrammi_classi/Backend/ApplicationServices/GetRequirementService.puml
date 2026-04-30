@@ -1,0 +1,7 @@
+@startuml GetRequirementService
+
+class GetRequirementService <<Application Service>> {
+    + get_requirement(query: GetRequirementQuery): RequirementResponse
+}
+
+@enduml

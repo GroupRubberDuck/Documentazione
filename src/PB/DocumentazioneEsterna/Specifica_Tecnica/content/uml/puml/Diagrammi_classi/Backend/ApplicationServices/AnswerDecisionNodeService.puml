@@ -1,0 +1,7 @@
+@startuml AnswerDecisionNodeService
+
+class AnswerDecisionNodeService <<Application Service>> {
+    + answer(command: AnswerNodeCommand): void
+}
+
+@enduml
