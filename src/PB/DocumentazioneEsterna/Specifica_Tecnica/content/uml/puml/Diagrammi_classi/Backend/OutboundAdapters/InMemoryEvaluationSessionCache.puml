@@ -2,11 +2,11 @@
 
 class InMemoryEvaluationSessionCache {
     - sessions: dictionary[string:EvaluationSession]
-    + create_session(): SessionReturn
-    + delete_session(session: CloseSessionCommand): void
-    + get_session(session: EvaluationSession): EvaluationSession
+    + create_session(): EvaluationSession
+    + delete_session(session_id: String): void
+    + get_session(session_id: String): EvaluationSession
     + save_session(session: EvaluationSession): void
-    + has_active_session(): bool
+    + has_active_session(device_id: String): bool
 }
 
 @enduml

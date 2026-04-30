@@ -10,18 +10,21 @@ package "Inbound Adapter"{
 
 package "Application Core" {
 
-    class CreateAssetCommand <<Command DTO>> {
+    class CreateAssetCommand {
         + name:String
         + type:AssetType
         + description:String
+        + session_id: String
     }
 
     () "CreateAssetUseCase"
     !include ApplicationServices/CreateAssetService.puml
     !include Domain/Asset.puml
+    !include Domain/EvaluationSession.puml
     () "SaveSessionPort"
     () "GetSessionPort"
-    () "EvaluationSessionPort"
+
+    CreateAssetService .left.> CreateAssetCommand: legge
 }
 
 package "Outbound Adapter" {
@@ -32,13 +35,12 @@ package "Outbound Adapter" {
 CreateAssetService - CreateAssetUseCase
 
 
-CreateAssetService --( SaveSessionPort : usa
-CreateAssetService --( GetSessionPort : usa
+CreateAssetService --> SaveSessionPort : usa
+CreateAssetService --> GetSessionPort : usa
 
-SaveSessionPort -- EvaluationSessionPort
-GetSessionPort -- EvaluationSessionPort
+SaveSessionPort -- InMemoryEvaluationSessionCache
+GetSessionPort -- InMemoryEvaluationSessionCache
 
-WriteAssetController --( CreateAssetUseCase : usa
-InMemoryEvaluationSessionCache - EvaluationSessionPort
+WriteAssetController --> CreateAssetUseCase : usa
 
 @enduml

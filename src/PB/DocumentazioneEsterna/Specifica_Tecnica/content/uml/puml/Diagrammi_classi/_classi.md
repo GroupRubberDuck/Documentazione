@@ -22,7 +22,7 @@ Inbound Port:
 
    - CreateAssetUseCase
    - SaveAssetUseCase
-   - DeleteAssetService
+   - DeleteAssetUseCase
 
    - GetDeviceDashboardUseCase
    - GetAssetDetailUseCase
@@ -48,10 +48,9 @@ Outbound Port:
    - SaveDevicePort
    - DeleteDevicePort
 
-     - SaveEvaluationSessionPort
-     - GetEvaluationSessionPort
-     - DeleteEvaluationSessionPort
-   - EvaluationSessionPort
+   - SaveEvaluationSessionPort
+   - GetEvaluationSessionPort
+   - DeleteEvaluationSessionPort
 
 Outbound Adapter:
    - MongoDeviceAdapter

@@ -1,7 +1,7 @@
 @startuml GetAssetDetailService
 
 class  GetAssetDetailService{
-    + get_asset(query: AssetDetailQuery): AssetDetailResponse
+    + get_asset(session_id: String, asset_id: String): AssetDetail
 }
 
 @enduml

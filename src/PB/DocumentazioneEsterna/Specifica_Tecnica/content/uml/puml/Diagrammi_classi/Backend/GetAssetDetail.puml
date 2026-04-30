@@ -1,7 +1,7 @@
 @startuml GetAssetDetail
 skinparam linetype ortho
-skinparam nodesep 60
-skinparam ranksep 60
+skinparam nodesep 100
+skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
@@ -12,18 +12,13 @@ package "Application Core" {
 
     () "GetAssetDetailUseCase" as GetAssetDetailUseCase
 
-    class AssetDetailQuery <<Query DTO>> {
-        + session_id: String
-        + asset_id: String
-    }
-
-    class AssetDetailResponse {
+    class AssetDetail {
         + asset_id: String
         + name: String
         + type: AssetType
         + description: String
-        + stato_aggregato: EvaluationState
-        + lista_requisiti: List<RequirementEvalDTO>
+        + aggregate_status: EvaluationState
+        + requirement_list: List<RequirementEval>
     }
 
     class RequirementEval{
@@ -37,11 +32,9 @@ package "Application Core" {
     !include Domain/EvaluationSheet.puml
 
     () "GetSessionPort"
-    () "EvaluationSessionCachePort"
 
     GetAssetDetailService -up- GetAssetDetailUseCase
-    GetAssetDetailService --( GetSessionPort : richiede
-    GetSessionPort --( EvaluationSessionCachePort
+    GetAssetDetailService --> GetSessionPort : richiede
     AssetDetail *-- RequirementEval
 }
 
@@ -56,6 +49,6 @@ package "Outbound Adapter" {
 }
 
 QueryDashboardController --( GetAssetDetailUseCase : usa
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort
+InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml

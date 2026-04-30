@@ -1,7 +1,7 @@
 @startuml CommitEvaluationSessionService
 
 class CommitEvaluationSessionService {
-    + commit(command: CommitSessionCommand): void
+    + commit(session_id: String): void
 }
 
 @enduml

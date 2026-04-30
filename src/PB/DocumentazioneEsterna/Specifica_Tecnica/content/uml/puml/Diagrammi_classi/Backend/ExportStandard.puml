@@ -10,8 +10,8 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    class ExportStandardQuery <<Query Command>> {
-        + device_id: String
+    class ExportStandardCommand {
+        + standard_id: String
         + extension: AllowedStandardFileExtension
     }
 
@@ -25,12 +25,12 @@ package "Application Core" {
     !include ApplicationServices/ExportStandardService.puml
 
     class StandardFileCommand {
-        + Model_name: string
-        + Model_os_name: string
-        + Model_description: string
-        + Model_id: string
-        + Model_name: string
-        + Model_version: string
+        + standard_name: string
+        + standard_os_name: string
+        + standard_description: string
+        + standard_id: string
+        + standard_name: string
+        + standard_version: string
         + assets: list[AssetFileDTO]
     }
     
@@ -54,10 +54,10 @@ package "Application Core" {
 
     ExportStandardService -up- ExportStandardUseCase
 
-    ExportStandardService -right-( FindStandardPort : "richiede"
-    ExportStandardService -down-( FileStandardExporterFactoryPort : "richiede"
+    ExportStandardService -right-> FindStandardPort : richiede
+    ExportStandardService -down-> FileStandardExporterFactoryPort : richiede
 
-    ExportStandardService ---( FileStandardExporterPort : "usa"
+    ExportStandardService ---> FileStandardExporterPort : usa
 
     StandardFileCommand *-- AssetFileCommand
     AssetFileCommand *-- AssessmentFileCommand
@@ -90,13 +90,13 @@ package "Outbound Adapter" {
     FileStandardExporter <|-down- JSONFileStandardExporter
     FileStandardExporter <|-down- XMLFileStandardExporter
 
-    ConcreteFileStandardExporterFactory .. FileStandardExporterPort : "crea"
+    ConcreteFileStandardExporterFactory .. FileStandardExporterPort : crea
 
     ConcreteFileStandardExporterFactory .up.> JSONFileStandardExporter
     ConcreteFileStandardExporterFactory .up.> XMLFileStandardExporter
 }
 
-ExportStandardController -down-( ExportStandardUseCase : usa
+ExportStandardController -down-> ExportStandardUseCase : usa
 
 MongoStandardAdapter -up-- FindStandardPort
 ConcreteFileStandardExporterFactory -up- FileStandardExporterFactoryPort

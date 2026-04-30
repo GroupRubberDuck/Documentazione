@@ -10,57 +10,43 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    class GetDeviceDashboardQuery <<Query DTO>> {
-        + session_id: String
-    }
-
     () "GetDeviceDashboardUseCase"
 
     !include ApplicationServices/GetDeviceDashboardService.puml
 
-    
-
-    class DashboardDTO <<Response DTO>> {
+    class DashboardCommand {
         + device_id: String
         + device_name: String
         + operating_system: String
         + description: String
-        + stato_aggregato: EvaluationState
-        + lista_asset: List<AssetSummaryDTO>
+        + aggregate_status: EvaluationState
+        + asset_list: List<AssetSummaryCommand>
     }
 
-    class AssetSummaryDTO <<Response DTO>> {
+    class AssetSummaryCommand {
         + asset_id: String
         + name: String
         + type: AssetType
         + stato_aggregato: EvaluationState
     }
+
     () "GetSessionPort"
-    () "EvaluationSessionCachePort"
 
     !include Domain/EvaluationSession.puml
 
     GetDeviceDashboardService -up- GetDeviceDashboardUseCase
-    GetDeviceDashboardService --( GetSessionPort : "richiede"
-
-    GetSessionPort -- EvaluationSessionCachePort
+    GetDeviceDashboardService --( GetSessionPort : richiede
 
     GetDeviceDashboardService ..> GetDeviceDashboardQuery : "legge"
-    GetDeviceDashboardService ..> DashboardDTO : "popola"
-    DashboardDTO *-- AssetSummaryDTO
+    GetDeviceDashboardService ..> DashboardCommand : popola
+    DashboardCommand *-- AssetSummaryCommand
 }
 
 package "Outbound Adapter" {
-    class InMemoryEvaluationSessionCache <<Session Cache>> {
-        - sessions: dictionary[string:EvaluationSession]
-        + save_session(session: EvaluationSession): void
-        + get_session(session_id: string): EvaluationSession
-        + delete_session(session_id: string): void
-        + has_active_session(): bool
-    }
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-QueryDashboardController -down-( GetDeviceDashboardUseCase : "usa"
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+QueryDashboardController -down-( GetDeviceDashboardUseCase : usa
+InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml

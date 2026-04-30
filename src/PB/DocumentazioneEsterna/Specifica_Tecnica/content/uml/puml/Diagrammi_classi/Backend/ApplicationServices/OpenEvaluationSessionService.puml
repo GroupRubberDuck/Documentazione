@@ -1,7 +1,7 @@
 @startuml OpenEvaluationSessionService
 
 class OpenEvaluationSessionService <<Application Service>> {
-    + open(command: OpenSessionCommand): String
+    + open(device_id: String, session_id: String): String
 }
 
 @enduml

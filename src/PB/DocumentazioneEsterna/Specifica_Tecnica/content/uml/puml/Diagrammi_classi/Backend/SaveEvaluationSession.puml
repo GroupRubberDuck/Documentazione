@@ -12,21 +12,14 @@ package "Application Core" {
 
     () "SaveEvaluationSessionUseCase"
 
-    class SaveSessionCommand {
-        + session_id: String
-    }
-
     !include ApplicationServices/SaveEvaluationSessionService.puml
 
     () "SaveSessionPort"
-    () "EvaluationSessionCachePort"
 
     !include Domain/EvaluationSession.puml
 
     SaveEvaluationSessionService -up- SaveEvaluationSessionUseCase
     SaveEvaluationSessionService -( SaveSessionPort
-    SaveSessionPort -( EvaluationSessionCachePort : richiede
-    SaveEvaluationSessionService ..> SaveSessionCommand : legge
 }
 
 package "Outbound Adapter" {
@@ -34,6 +27,6 @@ package "Outbound Adapter" {
 }
 
 EvaluationSessionController -left-( SaveEvaluationSessionUseCase : usa
-InMemoryEvaluationSessionCache -up-- EvaluationSessionCachePort
+InMemoryEvaluationSessionCache -up-- SaveSessionPort
 
 @enduml

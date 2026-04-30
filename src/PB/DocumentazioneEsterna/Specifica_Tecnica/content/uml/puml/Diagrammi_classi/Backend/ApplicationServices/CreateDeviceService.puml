@@ -1,7 +1,6 @@
 @startuml CreateDeviceService
 
 class CreateDeviceService <<Application Service>> {
-    - find_port: FindAllDevicesPort
     + create(command: CreateDeviceCommand): void
 }
 

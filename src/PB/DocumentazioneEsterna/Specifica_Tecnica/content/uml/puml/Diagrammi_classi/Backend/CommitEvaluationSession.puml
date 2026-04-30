@@ -12,10 +12,6 @@ package "Application Core" {
 
     () "CommitEvaluationSessionUseCase"
 
-    class CommitSessionCommand {
-        + session_id: String
-    }
-
     !include ApplicationServices/CommitEvaluationSessionService.puml
 
     () "SaveDevicePort"
@@ -26,8 +22,8 @@ package "Application Core" {
 
     CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
 
-    CommitEvaluationSessionService --( SaveDevicePort : richiede
-    CommitEvaluationSessionService --( GetSessionPort : richiede
+    CommitEvaluationSessionService --> SaveDevicePort : richiede
+    CommitEvaluationSessionService --> GetSessionPort : richiede
 
     CommitEvaluationSessionService .right.> CommitSessionCommand : legge
 }
@@ -37,7 +33,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController --( CommitEvaluationSessionUseCase : usa
+EvaluationSessionController --> CommitEvaluationSessionUseCase : usa
 MongoDeviceAdapter - SaveDevicePort
 InMemoryEvaluationSessionCache -up- GetSessionPort
 

@@ -1,13 +1,7 @@
 @startuml WriteDeviceController
 
 class WriteDeviceController <<Flask Blueprint>> {
-    - create_use_case: WriteDeviceUseCase
-    - save_use_case: SaveDeviceUseCase
-    - delete_use_case: DeleteDeviceUseCase
-    - import_use_case: ImportDeviceUseCase
-
     + create_device(req: Request): Response
     + save_device(req: Request): Response
     + delete_device(req: Request): Response
-    + import_device(req: Request): Response
 }

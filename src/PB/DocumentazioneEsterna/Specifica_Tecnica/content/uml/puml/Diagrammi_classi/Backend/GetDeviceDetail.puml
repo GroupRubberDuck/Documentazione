@@ -9,13 +9,10 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    class GetDeviceDetailQuery {
-        + device_id: String
-    }
     () "GetDeviceDetailUseCase" as GetDeviceDetailUseCase
     !include ApplicationServices/GetDeviceDetailService.puml
     !include Domain/Device.puml
-    () "FindDeviceByIdPort" as FindDeviceByIdPort
+    () "FindDevicePort"
 }
 
 package "Outbound Adapter" {
@@ -26,9 +23,9 @@ package "Outbound Adapter" {
 GetDeviceDetailService - GetDeviceDetailUseCase
 
 
-GetDeviceDetailService --( FindDeviceByIdPort: usa
+GetDeviceDetailService --> FindDevicePort: usa
 
-QueryDeviceController --( GetDeviceDetailUseCase: usa
-MongoDeviceAdapter - FindDeviceByIdPort
+QueryDeviceController --> GetDeviceDetailUseCase: usa
+MongoDeviceAdapter - FindDevicePort
 
 @enduml

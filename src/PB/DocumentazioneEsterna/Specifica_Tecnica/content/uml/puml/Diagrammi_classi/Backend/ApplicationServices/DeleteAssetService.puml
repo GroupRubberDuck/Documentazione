@@ -1,7 +1,7 @@
 @startuml DeleteAssetService
 
 class DeleteAssetService {
-    + delete_asset(asset: DeleteAssetCommand):bool
+    + delete_asset(device_id: String, session_id: String): void
 }
 
 @enduml

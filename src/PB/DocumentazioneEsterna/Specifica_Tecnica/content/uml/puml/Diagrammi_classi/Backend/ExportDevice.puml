@@ -10,7 +10,7 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    class ExportDeviceQuery <<Query Command>> {
+    class ExportDeviceCommand <<Query Command>> {
         + device_id: String
         + extension: AllowedDeviceFileExtension
     }
@@ -68,12 +68,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
     !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
 
-    abstract class FileDeviceExporter <<Template Method>> {
-        + generate_device_file(device_dto: DeviceFileCommand): bytes
-        # prepare_structure()
-        # write_data()
-        # finalize_output()
-    }
+    !include OutboundAdapters/FileDeviceExporter.puml
 
     class JSONFileDeviceExporter {
         # prepare_structure()

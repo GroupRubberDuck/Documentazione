@@ -1,7 +1,6 @@
 @startuml ImportDeviceController
 
 class ImportDeviceController <<Flask Blueprint>> {
-    + __init__(import_port: ImportDeviceUseCase)
     + import_device(req: Request): Response
 }
 

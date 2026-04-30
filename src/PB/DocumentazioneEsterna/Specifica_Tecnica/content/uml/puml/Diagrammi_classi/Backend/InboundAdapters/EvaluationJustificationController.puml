@@ -1,0 +1,7 @@
+@startuml EvaluationJustificationController
+
+class EvaluationJustificationController <<Flask Blueprint>> {
+    + insert_justification(req: Request): Response
+}
+
+@enduml

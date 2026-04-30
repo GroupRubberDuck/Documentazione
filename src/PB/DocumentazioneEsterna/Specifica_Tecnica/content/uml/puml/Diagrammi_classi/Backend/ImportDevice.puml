@@ -22,7 +22,7 @@ package "Application Core" {
         JSON
     }
 
-    class ImportDeviceCommand <<Command DTO>> {
+    class ImportDeviceCommand {
         + device_file_content: BinaryIO
         + extension: AllowedDeviceFileExtension
     }

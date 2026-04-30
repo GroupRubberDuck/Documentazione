@@ -1,9 +1,7 @@
 @startuml GetDeviceDetailService
 
 class GetDeviceDetailService <<Application Service>> {
-    - find_port: FindDeviceByIdPort
-
-    + get_device(query: GetDeviceDetailQuery): Device
+    + get_device(device_id: String): Device
 }
 
 @enduml

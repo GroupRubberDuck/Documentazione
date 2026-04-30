@@ -1,0 +1,47 @@
+@startuml InsertJustification
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/EvaluationJustificationController.puml
+}
+
+package "Application Core" {
+
+    () "InsertJustificationUseCase"
+
+    class InsertJustificationCommand {
+        + session_id: String
+        + asset_id: String
+        + requirement_id: String
+        + node_id: String
+        + justification: String
+    }
+
+    !include ApplicationServices/EvaluationJustificationService.puml
+
+    () "SaveSessionPort"
+    () "GetSessionPort"
+
+    !include Domain/EvaluationSession.puml
+    !include Domain/EvaluationSheet.puml
+
+    EvaluationJustificationService -up- InsertJustificationUseCase
+
+    EvaluationJustificationService -down-> SaveSessionPort : richiede
+    EvaluationJustificationService -down-> GetSessionPort : richiede
+
+    EvaluationJustificationService ..> InsertJustificationCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+EvaluationJustificationController -down-> InsertJustificationUseCase : usa
+InMemoryEvaluationSessionCache -up- SaveSessionPort
+InMemoryEvaluationSessionCache -up- GetSessionPort
+
+@enduml

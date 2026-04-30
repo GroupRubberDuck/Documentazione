@@ -1,6 +1,6 @@
 @startuml CreateDevice
 skinparam linetype ortho
-skinparam nodesep 50
+skinparam nodesep 80
 skinparam ranksep 50
 skinparam classAttributeIconSize 0
 
@@ -22,7 +22,7 @@ package "Application Core" {
     !include Domain/Device.puml
     () "RegisterDevicePort" as RegisterDevicePort
 
-    CreateDeviceUseCase .right.> CreateDeviceCommand
+    CreateDeviceService .left.> CreateDeviceCommand: legge
 }
 
 package "Outbound Adapter" {
@@ -33,9 +33,9 @@ package "Outbound Adapter" {
 CreateDeviceService - CreateDeviceUseCase
 
 
-CreateDeviceService ---( RegisterDevicePort : usa
+CreateDeviceService ---> RegisterDevicePort : usa
 
-WriteDeviceController --( CreateDeviceUseCase : usa
+WriteDeviceController --> CreateDeviceUseCase : usa
 MongoDeviceAdapter - RegisterDevicePort
 
 @enduml

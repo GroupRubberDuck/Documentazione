@@ -11,7 +11,7 @@ package "Inbound Adapter" {
 package "Application Core" {
     () "GetRequirementUseCase"
 
-    class GetRequirementQuery <<Query Command>> {
+    class GetRequirementCommand {
         + session_id: String
         + asset_id: String
         + requirement_id: String
@@ -23,7 +23,7 @@ package "Application Core" {
         + requirement_code: String
         + requirement_name: String
         + justification: String
-        + stato_valutazione: EvaluationState
+        + evaluation_state: EvaluationState
         + dependency_list: List<DependencyResponse>
         + decision_tree: DecisionTreeResponse
     }
@@ -52,9 +52,9 @@ package "Application Core" {
 
     GetRequirementService -up- GetRequirementUseCase
     
-    GetRequirementService -down-( GetSessionPort : "richiede sessione"
+    GetRequirementService -down-> GetSessionPort : "richiede sessione"
 
-    GetRequirementService ..> GetRequirementQuery : "legge"
+    GetRequirementService ..> GetRequirementCommand : "legge"
     GetRequirementService ..> RequirementResponse : "popola"
     
     RequirementResponse *-- DecisionTreeResponse
@@ -66,7 +66,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-QueryEvaluationRequirementsController -down-( GetRequirementUseCase : "usa"
+QueryEvaluationRequirementsController -down-> GetRequirementUseCase : "usa"
 InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml
