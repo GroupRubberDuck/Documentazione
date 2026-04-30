@@ -62,7 +62,7 @@
    #image("assets/Main.png")
 
   == Dipendenza semplice tra interfacce
-  Quale è la freccia corretta per rappresentare una dipendenza semplice tra 2 interfacce?
+  Qual è la relazione corretta per rappresentare una dipendenza semplice tra 2 interfacce?
   #image("assets/Main3.png")
   #pagebreak()
   = Architettura

@@ -5,39 +5,34 @@ skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class EvaluationRequirementsQueryController <<Flask Blueprint>> {
-        + get_requirement(req: Request): Response
-    }
+    !include InboundAdapters/QueryEvaluationRequirementsController.puml
 }
 
 package "Application Core" {
+    () "GetRequirementUseCase"
 
-    class GetRequirementQuery <<Query DTO>> {
+    class GetRequirementQuery <<Query Command>> {
         + session_id: String
         + asset_id: String
         + requirement_id: String
     }
 
-    () "GetRequirementUseCase"
+    !include ApplicationServices/GetRequirementService.puml
 
-    class GetRequirementService <<Application Service>> {
-        + execute(query: GetRequirementQuery): RequirementDTO
-    }
-
-    class RequirementDTO <<Response DTO>> {
+    class RequirementResponse{
         + requirement_code: String
         + requirement_name: String
         + justification: String
         + stato_valutazione: EvaluationState
-        + dependency_list: List<DependencyDTO>
-        + decision_tree: DecisionTreeDTO
+        + dependency_list: List<DependencyResponse>
+        + decision_tree: DecisionTreeResponse
     }
 
-    class DecisionTreeDTO <<Response DTO>> {
-        + root_node: NodeDTO
+    class DecisionTreeResponse{
+        + root_node: NodeResponse
     }
 
-    class NodeDTO <<Response DTO>> {
+    class NodeResponse{
         + node_id: String
         + type: NodeType
         + question_text: String
@@ -45,35 +40,33 @@ package "Application Core" {
         + evaluation_state: EvaluationState
     }
 
-    class DependencyDTO <<Response DTO>> {
+    class DependencyResponse{
         + requirement_code: String
         + stato_valutazione: EvaluationState
     }
 
-    () "EvaluationSessionCachePort" as EvaluationSessionCachePort
+    () "GetSessionPort"
 
     !include Domain/EvaluationSession.puml
     !include Domain/EvaluationSheet.puml
 
     GetRequirementService -up- GetRequirementUseCase
     
-    GetRequirementService -down-( EvaluationSessionCachePort : "richiede sessione"
+    GetRequirementService -down-( GetSessionPort : "richiede sessione"
 
     GetRequirementService ..> GetRequirementQuery : "legge"
-    GetRequirementService ..> RequirementDTO : "popola"
+    GetRequirementService ..> RequirementResponse : "popola"
     
-    RequirementDTO *-- DecisionTreeDTO
-    RequirementDTO *-- DependencyDTO
-    DecisionTreeDTO *-- NodeDTO
+    RequirementResponse *-- DecisionTreeResponse
+    RequirementResponse *-- DependencyResponse
+    DecisionTreeResponse *-- NodeResponse
 }
 
 package "Outbound Adapter" {
-    class InMemoryEvaluationSessionCache <<Session Cache>> {
-        + get_session(session_id: String): EvaluationSession
-    }
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationRequirementsQueryController -down-( GetRequirementUseCase : "usa"
-InMemoryEvaluationSessionCache -up- EvaluationSessionCachePort : "implementa"
+QueryEvaluationRequirementsController -down-( GetRequirementUseCase : "usa"
+InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml
