@@ -76,6 +76,7 @@
   ]),
   ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Aldo Bettega],[Approvazione]),
   ([1.1.0],[2026-04-21],[Filippo Guerra],[Felician Mario \ Necsulescu],[Aggiunta alla sezione @sviluppo_primario la parte di Naming Convention]),
+  ([1.2.0],[2026-05-03],[Felician Mario \ Necsulescu],[],[Aggiunti Specifica Tecnica e Manuale Utente alla sezione @struttura]),
 )
 #registroModifiche(modifiche)
 
