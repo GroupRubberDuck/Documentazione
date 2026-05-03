@@ -1,0 +1,8 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+    class DeviceSummary {
+        - name: String
+    }
+
+@enduml

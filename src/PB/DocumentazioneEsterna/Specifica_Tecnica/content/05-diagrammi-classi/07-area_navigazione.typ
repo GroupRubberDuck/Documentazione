@@ -1,4 +1,6 @@
-/* Esecuzione della valutazione
+
+
+ /*/* Esecuzione della valutazione
     - gestione sessione: 11-14
     - monitoraggio dashboard: 17-18
     - navigazione e risposte: 23-29
@@ -49,3 +51,4 @@ UC26: Valuta nodo di decisione.
 UC27: Vai al nodosuccessivo (gestendo anche eccezioni come l'assenza di risposta o il raggiungimento di un nodo foglia).
 UC28: Vai al nodoprecedente (gestendo l'eccezione del tentativo di risalire oltre il nodo root).
 UC29: Inserisci giustificazione decision tree.*/
+*/

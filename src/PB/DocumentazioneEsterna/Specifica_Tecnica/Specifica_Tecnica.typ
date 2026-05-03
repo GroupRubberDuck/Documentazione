@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 6,
+  minor: 8,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -123,6 +123,32 @@
       [-],
       [Bozza della classe valutazione @classe_valutazione ]
     ),
+<<<<<<< HEAD
+=======
+    (
+      [0.6.2],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Bozza delle classi relative a import ed export tramite file di dispositivo e modello /*@import-export-device e @import-export-model*/
+      ]
+    ),
+    (
+      [0.6.3],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Bozza delle classi relative alla generazione del report di conformità
+      /*@report-generator*/]
+    ),
+    (
+      [0.6.4],
+      [2026-04-19],
+      [#persone.DL],
+      [-],
+      [Revisione architetturale della sezione relativa alla modifica degli asset @classe_asset]
+    ),
+>>>>>>> 9d4ff2f5 (doc: classi device/asset/session st)
 
     (
       [0.7.0],
@@ -140,7 +166,7 @@
       [Stesura dei design pattern: creazionali e strutturali @design-pattern-creazionali, @design-pattern-strutturali]
     ),
     (
-      [0.7.1],
+      [0.7.2],
       [2026-04-20],
       [#persone.FELIX],
       [#persone.DL],
@@ -149,11 +175,18 @@
       ]
     ),
     (
-      [0.7.2],
+      [0.7.3],
       [2026-04-22],
       [#persone.DT],
       [Ana Maria Draghici],
       [Migliorata sezione @vista-dati]
+    ),
+    (
+      [0.8.0],
+      [2026-04-22],
+      [Ana Maria Draghici],
+      [],
+      [Stesura e scomposizione sezioni a partire dalla @classe_disp: Device, Asset e Session ]
     )
 
   )

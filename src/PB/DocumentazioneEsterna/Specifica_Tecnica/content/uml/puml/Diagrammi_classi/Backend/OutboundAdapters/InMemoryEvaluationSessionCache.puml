@@ -1,5 +1,5 @@
 @startuml InMemoryEvaluationSessionCache
-
+skinparam classAttributeIconSize 0
 class InMemoryEvaluationSessionCache {
     - sessions: dictionary[string:EvaluationSession]
     + create_session(): EvaluationSession

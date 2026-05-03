@@ -1,0 +1,12 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+ class RequirementEval{
+        + codice_requisito: String
+        + stato_valutazione: EvaluationState
+    }
+
+
+
+@enduml

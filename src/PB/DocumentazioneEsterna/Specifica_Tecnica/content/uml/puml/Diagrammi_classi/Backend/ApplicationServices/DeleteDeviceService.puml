@@ -1,5 +1,5 @@
 @startuml DeleteDeviceService
-
+skinparam classAttributeIconSize 0
 class DeleteDeviceService <<Application Service>> {
     + delete(device_id: String): void
 }

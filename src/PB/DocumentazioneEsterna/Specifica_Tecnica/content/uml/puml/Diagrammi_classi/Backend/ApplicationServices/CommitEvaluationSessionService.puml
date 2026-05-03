@@ -1,5 +1,5 @@
 @startuml CommitEvaluationSessionService
-
+skinparam classAttributeIconSize 0
 class CommitEvaluationSessionService {
     + commit(session_id: String): void
 }

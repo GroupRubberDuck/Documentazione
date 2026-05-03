@@ -1,5 +1,5 @@
 @startuml GetAssetDetailService
-
+skinparam classAttributeIconSize 0
 class  GetAssetDetailService{
     + get_asset(session_id: String, asset_id: String): AssetDetail
 }
