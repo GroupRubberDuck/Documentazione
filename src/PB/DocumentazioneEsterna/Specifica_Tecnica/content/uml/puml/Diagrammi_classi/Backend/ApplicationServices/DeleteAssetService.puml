@@ -1,5 +1,5 @@
 @startuml DeleteAssetService
-
+skinparam classAttributeIconSize 0
 class DeleteAssetService {
     + delete_asset(device_id: String, session_id: String): void
 }

@@ -1,0 +1,6 @@
+ @startuml SaveAssetService
+skinparam classAttributeIconSize 0
+ class SessionCoordinator <<Domain Service>> {
+        + can_open_session(session_type: SessionType): bool
+    }
+@endumlP

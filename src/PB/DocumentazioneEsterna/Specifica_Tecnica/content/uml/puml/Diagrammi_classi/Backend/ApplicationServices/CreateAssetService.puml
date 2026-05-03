@@ -1,5 +1,5 @@
 @startuml CreateAssetService
-
+skinparam classAttributeIconSize 0
 class CreateAssetService {
     + create_asset(asset: CreateAssetCommand):bool
 }

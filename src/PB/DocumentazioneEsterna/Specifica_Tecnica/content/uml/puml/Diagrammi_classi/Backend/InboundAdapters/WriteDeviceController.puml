@@ -1,7 +1,9 @@
 @startuml WriteDeviceController
-
+skinparam classAttributeIconSize 0
 class WriteDeviceController <<Flask Blueprint>> {
     + create_device(req: Request): Response
     + save_device(req: Request): Response
     + delete_device(req: Request): Response
 }
+
+@enduml

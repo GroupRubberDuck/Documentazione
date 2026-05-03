@@ -1,4 +1,5 @@
 @startuml MongoDeviceAdapter
+skinparam classAttributeIconSize 0
 
 class MongoDeviceAdapter <<Mongo Repository>> {
     - collection: pymongo.Collection

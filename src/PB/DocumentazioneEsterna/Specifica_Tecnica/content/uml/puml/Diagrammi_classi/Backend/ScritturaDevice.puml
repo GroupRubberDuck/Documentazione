@@ -1,0 +1,75 @@
+@startuml WriteDeviceModule_Optimized
+skinparam linetype ortho
+skinparam nodesep 50
+skinparam ranksep 50
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+    
+    
+    () "CreateDeviceUseCase" as CreateUC
+    () "SaveDeviceUseCase" as SaveUC
+    () "DeleteDeviceUseCase" as DeleteUC
+
+    !include ApplicationServices/CreateDeviceService.puml
+    !include ApplicationServices/SaveDeviceService.puml
+    !include ApplicationServices/DeleteDeviceService.puml
+
+    
+    class CreateDeviceCommand {
+        + device_name: String
+        + device_os: String
+        + device_description: String
+        + compliance_standard_id: String
+    }
+    
+    class SaveDeviceCommand {
+        + device_id: String
+        + device_name: String
+        + device_os: String
+        + device_description: String
+    }
+
+    
+    () "RegisterDevicePort" as RegPort
+    () "SaveDevicePort" as SavePort
+    () "DeleteDevicePort" as DeletePort
+
+  
+    !include Domain/Device.puml
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+
+WriteDeviceController -down-> CreateUC
+WriteDeviceController -down-> SaveUC
+WriteDeviceController -down-> DeleteUC
+
+CreateUC -down- CreateDeviceService
+SaveUC -down- SaveDeviceService
+DeleteUC -down- DeleteDeviceService
+
+
+CreateDeviceService -right.> CreateDeviceCommand : legge
+SaveDeviceService -right.> SaveDeviceCommand : legge
+
+
+CreateDeviceService -down-> RegPort : usa
+SaveDeviceService -down-> SavePort : usa
+DeleteDeviceService -down-> DeletePort : usa
+
+RegPort -down- MongoDeviceAdapter
+SavePort -down- MongoDeviceAdapter
+DeletePort -down- MongoDeviceAdapter
+
+
+Device -[hidden]right- CreateDeviceService
+
+@enduml
