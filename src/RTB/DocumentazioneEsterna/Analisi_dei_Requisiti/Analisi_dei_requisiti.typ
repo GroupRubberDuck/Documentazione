@@ -108,7 +108,8 @@
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
   ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
    ([1.1.0], [2026-03-31], persone.ANA, [Filippo Guerra], [Correzioni errori segnalati per la Requirements And Technology
-Baseline])
+Baseline]),
+  ([1.1.1], [2026-05-04], persone.ALDO, "", [Rimosso uc visualizza stato sospeso]),
   )
 
 #registroModifiche(modifiche)
