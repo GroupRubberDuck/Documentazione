@@ -1,0 +1,8 @@
+ @startuml AllowedStandardFileExtension
+skinparam classAttributeIconSize 0
+ 
+ enum AllowedStandardFileExtension <<enum>> {
+        XML
+        JSON
+    }
+@enduml

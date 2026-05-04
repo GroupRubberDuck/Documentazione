@@ -34,7 +34,7 @@ package "Application Core" {
     () "GetSessionPort"
 
     GetAssetDetailService -up- GetAssetDetailUseCase
-    GetAssetDetailService --> GetSessionPort : richiede
+    GetAssetDetailService --> GetSessionPort : usa
     AssetDetail *-- RequirementEval
 }
 
@@ -48,7 +48,7 @@ package "Outbound Adapter" {
     }
 }
 
-QueryDashboardController --( GetAssetDetailUseCase : usa
+QueryDashboardController --> GetAssetDetailUseCase : usa
 InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml

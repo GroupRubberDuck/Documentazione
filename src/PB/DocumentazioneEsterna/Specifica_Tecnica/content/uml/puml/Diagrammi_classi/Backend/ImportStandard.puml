@@ -1,8 +1,8 @@
-@startuml import-device
+@startuml import-standard
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
-skinparam nodesep 80
-skinparam ranksep 100
+skinparam nodesep 250
+skinparam ranksep 120
 
 package "Inbound Adapter" {
     !include InboundAdapters/ImportStandardController.puml
@@ -25,8 +25,8 @@ package "Application Core" {
     }
 
     () "FileStandardImporterPort"
-    () "StandardSavePort"
     () "FileStandardImporterFactoryPort"
+    () "StandardSavePort"
 }
 
 package "Outbound Adapter" {
@@ -48,23 +48,32 @@ package "Outbound Adapter" {
     }
 
     !include OutboundAdapters/ConcreteFileStandardImporterFactory.puml
-    !!include OutboundAdapters/MongoStandardAdapter.puml
+    !include OutboundAdapters/MongoStandardAdapter.puml
 }
 
-ImportStandardController --( ImportStandardUseCase : usa
+ImportStandardController -right-> ImportStandardUseCase : usa
+ImportStandardUseCase -right- ImportStandardService
 
-ImportStandardUseCase - ImportStandardService
+' Forza spaziatura orizzontale ESTREMA tra le porte aggiungendo trattini
+FileStandardImporterPort -[hidden]right-------- FileStandardImporterFactoryPort
+FileStandardImporterFactoryPort -[hidden]right-------- StandardSavePort
 
-ImportStandardService ..> FileStandardImporterPort
-ImportStandardService --( FileStandardImporterFactoryPort
-ImportStandardService --( StandardSavePort
+ImportStandardService -down-> FileStandardImporterPort : usa
+ImportStandardService -down-> FileStandardImporterFactoryPort : usa
+ImportStandardService -down-> StandardSavePort : usa
 
-FileStandardImporterFactoryPort - ConcreteFileStandardImporterFactory
-ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter
-ConcreteFileStandardImporterFactory .up.> XMLFileStandardImporter
+' Ripetiamo la spaziatura estrema per gli adapter sottostanti
+FileStandardImporter -[hidden]right-------- ConcreteFileStandardImporterFactory
+ConcreteFileStandardImporterFactory -[hidden]right-------- MongoStandardAdapter
 
-FileStandardImporterPort - FileStandardImporter
+FileStandardImporterPort -down- FileStandardImporter
+FileStandardImporterFactoryPort -down- ConcreteFileStandardImporterFactory
+StandardSavePort -down- MongoStandardAdapter
+
 FileStandardImporter <|-down- XMLFileStandardImporter
 FileStandardImporter <|-down- JSONFileStandardImporter
+
+ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter : usa
+ConcreteFileStandardImporterFactory .up.> XMLFileStandardImporter : usa
 
 @enduml

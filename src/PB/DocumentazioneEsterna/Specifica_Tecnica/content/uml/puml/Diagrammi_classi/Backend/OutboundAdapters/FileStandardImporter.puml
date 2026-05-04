@@ -1,4 +1,5 @@
 @startuml FileStandardImporter
+skinparam classAttributeIconSize 0
 abstract class FileStandardImporter <<Template Method>> {
     + parse_standard_file(standard_file_content: BinaryIO): ComplianceStandard
     # check_metadata()

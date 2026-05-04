@@ -30,8 +30,8 @@ package "Application Core" {
 
     EvaluationJustificationService -up- InsertJustificationUseCase
 
-    EvaluationJustificationService -down-> SaveSessionPort : richiede
-    EvaluationJustificationService -down-> GetSessionPort : richiede
+    EvaluationJustificationService -down-> SaveSessionPort : usa
+    EvaluationJustificationService -down-> GetSessionPort : usa
 
     EvaluationJustificationService ..> InsertJustificationCommand : legge
 }

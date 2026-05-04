@@ -1,0 +1,11 @@
+@startuml 
+skinparam classAttributeIconSize 0
+    class RequirementResponse{
+        + requirement_code: String
+        + requirement_name: String
+        + justification: String
+        + evaluation_state: EvaluationState
+        + dependency_list: List<DependencyResponse>
+        + decision_tree: DecisionTreeResponse
+    }
+@enduml

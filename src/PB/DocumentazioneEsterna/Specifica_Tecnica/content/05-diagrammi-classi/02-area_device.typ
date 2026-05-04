@@ -151,7 +151,7 @@ _Device_ è l'entità centrale del dominio che rappresenta il Dispositivo oggett
 - `+ add_asset(asset: Asset): void` — aggiunge un _Asset_ alla lista del Dispositivo.
 - `+ remove_asset(asset_id: String): void` — rimuove l'_Asset_ identificato da `asset_id` dalla lista del Dispositivo.
 
-==== RegisterDevicePort
+==== RegisterDevicePort <RegisterDevicePort>
 
 #figure(
   image("../uml/png/CreateDevice/RegisterDevicePort.png", width: 35%),

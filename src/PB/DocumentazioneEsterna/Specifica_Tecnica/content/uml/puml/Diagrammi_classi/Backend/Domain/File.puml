@@ -1,0 +1,18 @@
+  @startuml File
+skinparam classAttributeIconSize 0
+ 
+
+ class JSONFileStandardImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class XMLFileStandardImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+    class GetRequirementCommand {
+        + session_id: String
+        + asset_id: String
+        + requirement_id: String
+    }
+
+@enduml

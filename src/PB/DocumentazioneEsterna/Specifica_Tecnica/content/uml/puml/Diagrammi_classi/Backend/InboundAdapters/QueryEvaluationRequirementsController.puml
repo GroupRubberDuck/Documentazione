@@ -1,5 +1,5 @@
 @startuml QueryEvaluationRequirementsController
-
+skinparam classAttributeIconSize 0
 class QueryEvaluationRequirementsController <<Flask Blueprint>> {
     + get_requirement(req: Request): Response
 }

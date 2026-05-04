@@ -1,0 +1,7 @@
+ @startuml
+skinparam classAttributeIconSize 0
+ class ImportDeviceCommand {
+        + device_file_content: BinaryIO
+        + extension: AllowedDeviceFileExtension
+    }
+@enduml

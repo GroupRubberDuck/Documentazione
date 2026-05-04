@@ -1,5 +1,5 @@
 @startuml ImportDeviceService
-
+skinparam classAttributeIconSize 0
 class ImportDeviceService <<Application Service>> {
     - device_repository: DeviceRepositoryPort
     - device_importer_factory: FileDeviceImporterFactoryPort

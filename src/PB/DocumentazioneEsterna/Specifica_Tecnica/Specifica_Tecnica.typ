@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 8,
+  minor: 9,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -183,10 +183,17 @@
     ),
     (
       [0.8.0],
-      [2026-04-22],
+      [2026-05-03],
       [Ana Maria Draghici],
       [],
       [Stesura e scomposizione sezioni a partire dalla @classe_disp: Device, Asset e Session ]
+    ),
+    (
+      [0.9.0],
+      [2026-05-04],
+      [Ana Maria Draghici],
+      [],
+      [Stesura e scomposizione sezioni a partire dalla @classe_disp: Import, ValutazioneRequisiti, Dashboard ]
     )
 
   )

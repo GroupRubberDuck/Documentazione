@@ -1,0 +1,9 @@
+@startuml AllowedDeviceFileExtension
+skinparam classAttributeIconSize 0
+
+enum AllowedDeviceFileExtension <<enum>> {
+        CSV
+        XML
+        JSON
+    }
+@enduml

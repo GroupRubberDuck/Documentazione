@@ -10,7 +10,8 @@
 
 #include "02-area_device.typ"
 #include "03-area_asset.typ"
-#include "06-sessione.typ"
-#include "05-dashboard.typ"
 #include "04-import.typ"
+#include "05-dashboard.typ"
+#include "06-sessione.typ"
+#include "07-area_navigazione.typ"
 #include "08-export.typ"

@@ -22,9 +22,8 @@ package "Application Core" {
 
     CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
 
-    CommitEvaluationSessionService --> SaveDevicePort : richiede
-    CommitEvaluationSessionService --> GetSessionPort : richiede
-
+    CommitEvaluationSessionService --> SaveDevicePort : usa
+    CommitEvaluationSessionService --> GetSessionPort : usa
     CommitEvaluationSessionService .right.> CommitSessionCommand : legge
 }
 
