@@ -1,0 +1,14 @@
+@startuml EvaluationEngine
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class EvaluationEngine {
+ 
+    + evaluate_device(device: Device, compliance_standard: ComplianceStanard): DeviceEvaluationResult
+    + evaluate_asset(asset: Asset, compliance_standard: ComplianceStandard): AssetEvaluationResult
+    + evalutate_requiremente(compliance_standard: ComplianceStandard, asset: Asset, cache: EvaluationSessionCache): RequirementResult
+    + aggregate_evaluation_state()
+}
+
+
+@enduml
