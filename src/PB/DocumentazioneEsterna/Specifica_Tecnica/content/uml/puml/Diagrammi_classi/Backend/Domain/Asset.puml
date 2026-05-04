@@ -1,14 +1,15 @@
 @startuml Asset
-skinparam linetype ortho
-skinparam classAttributeIconSize 0
 
 class Asset {
-    - id: String
-    - name: String
-    - type: AssetType
-    - description: String
+    - asset_id: String
+    - asset_anagraphic: AssetAnagraphic
+    - asset_proprieties: AssetProprieties
+    + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
+    + set_justification(requirement_id: String, node_id: String, value: Bool): void
+    + update_anagraphic(name: string, type: AssetType, description: String): void
 }
 
-Asset *-- "1..*" Answer
+Asset *-- "1..1" AssetAnagraphic
+Asset *-- "1..1" AssetProprieties
 
 @enduml

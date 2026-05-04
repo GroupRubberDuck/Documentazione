@@ -1,0 +1,12 @@
+@startuml AssetProprieties
+
+class AssetProprieties {
+    - asset_evidence_list: List<AssetEvidence>
+    + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
+    + set_justification(requirement_id: String, node_id: String, value: Bool): void
+    + get_evidence(requirement_id: String): AssetEvidence | void
+}
+
+AssetProprieties *-- "1..*" AssetEvidence
+
+@enduml

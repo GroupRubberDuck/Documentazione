@@ -1,0 +1,11 @@
+@startuml AssetEvaluationResult
+
+class AssetEvaluationResult <<Value Object>> {
+    - asset_id: String
+    - requirement_result: list<RequirementResult>
+    - verdict: EvaluationState
+}
+
+AssetEvaluationResult *-- "1..*" RequirementEvaluationResult
+
+@enduml
