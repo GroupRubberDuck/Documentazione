@@ -196,7 +196,7 @@ _MongoDeviceAdapter_ è la classe dell'Outbound Adapter che implementa le porte 
 === DeleteDevice
 
 #figure(
-  image("../uml/png/DeleteDevice/DeleteDevice.png", width: 100%),
+  image("../uml/png/DeleteDevice/DeleteDevice.png", width: 90%),
   caption: [Caso d'uso DeleteDevice]
 ) <fig-delete-device>
 
@@ -224,16 +224,35 @@ _DeleteDeviceUseCase_ non definisce attributi.
 
 - `+ delete(device_id: String): void` — firma del metodo delegato all'esecuzione della logica di eliminazione a partire dall'identificativo del Dispositivo.
 
+==== DeleteDeviceCommand
+
+#figure(
+  image("../uml/png/DeleteDevice/DeleteDeviceCommand.png", width: 35%),
+  caption: [DeleteDeviceCommand]
+) <fig-delete-device-command>
+
+*Descrizione*
+
+_DeleteDeviceCommand_ è il Command Object utilizzato per trasportare i dati necessari all'eliminazione di un Dispositivo. Segue il pattern Command, separando i dati di input dalla logica applicativa del servizio.
+
+*Attributi*
+
+- `+ device_id: String` — identificativo univoco del Dispositivo da eliminare.
+
+*Metodi e funzioni*
+
+_DeleteDeviceCommand_ non definisce metodi propri.
+
 ==== DeleteDeviceService
 
 #figure(
-  image("../uml/png/DeleteDevice/DeleteDeviceService.png", width: 40%),
+  image("../uml/png/DeleteDevice/DeleteDeviceService.png", width: 45%),
   caption: [DeleteDeviceService]
 ) <fig-delete-device-service>
 
 *Descrizione*
 
-_DeleteDeviceService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Dispositivo. Implementa l'interfaccia _DeleteDeviceUseCase_ e, a differenza del servizio di creazione, non richiede un Command Object: riceve direttamente l'identificativo del Dispositivo e ne coordina la rimozione dal sistema.
+_DeleteDeviceService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Dispositivo. Implementa l'interfaccia _DeleteDeviceUseCase_ e riceve un _DeleteDeviceCommand_ contenente l'identificativo del Dispositivo, coordinandone la rimozione dal sistema.
 
 *Attributi*
 
@@ -241,8 +260,7 @@ _DeleteDeviceService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ delete(device_id: String): void` — riceve l'identificativo univoco del Dispositivo e ne coordina la rimozione tramite _DeleteDevicePort_.
-
+- `+ delete(command: DeleteDeviceCommand): void` — riceve il Command Object contenente l'identificativo univoco del Dispositivo e ne coordina la rimozione tramite _DeleteDevicePort_.
 ==== DeleteDevicePort
 
 #figure(
@@ -404,7 +422,7 @@ _QueryDeviceController_ non definisce attributi propri.
 - `+ get_device_list(req: Request): Response` — riceve la richiesta HTTP di recupero della lista dei Dispositivi e restituisce una risposta HTTP con l'elenco sintetico.
 - `+ get_device_detail(req: Request): Response` — riceve la richiesta HTTP di recupero del dettaglio di un Dispositivo specifico e restituisce una risposta HTTP con i dati completi.
 
-==== GetDeviceDetailUseCase
+=== GetDeviceDetailUseCase
 #figure(
   image("../uml/png/GetDeviceDetail/GetDeviceDetailUseCase.png", width: 35%),
   caption: [GetDeviceDetailUseCase]
@@ -419,7 +437,7 @@ _GetDeviceDetailUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_device(device_id: String): Device` — firma del metodo delegato al recupero del Dispositivo corrispondente all'identificativo fornito.
+- `+ get_device(command: GetDeviceDetailCommand): Device` — firma del metodo delegato al recupero del Dispositivo corrispondente al Command fornito.
 
 ==== GetDeviceDetailService
 
@@ -438,8 +456,26 @@ _GetDeviceDetailService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_device(device_id: String): Device` — concretizza il contratto definito da _GetDeviceDetailUseCase_. Recupera il Dispositivo corrispondente all'identificativo fornito tramite _FindDevicePort_.
+- `+ get_device(command: GetDeviceDetailCommand): Device` — concretizza il contratto definito da _GetDeviceDetailUseCase_. Recupera il Dispositivo corrispondente all'identificativo contenuto nel Command tramite _FindDevicePort_.
 
+==== GetDeviceDetailCommand
+
+#figure(
+  image("../uml/png/GetDeviceDetail/GetDeviceDetailCommand.png", width: 35%),
+  caption: [GetDeviceDetailCommand]
+) <fig-get-device-detail-command>
+
+*Descrizione*
+
+_GetDeviceDetailCommand_ è  utilizzato per trasportare i dati necessari al recupero del dettaglio di un Dispositivo. Incapsula i parametri di input del metodo esposto da _GetDeviceDetailUseCase_.
+
+*Attributi*
+
+- `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare il dettaglio.
+
+*Metodi e funzioni*
+
+_GetDeviceDetailCommand_ non definisce metodi propri.
 ==== FindDevicePort <FindDevicePort>
 #figure(
   image("../uml/png/GetDeviceDetail/FindDevicePort.png", width: 35%),

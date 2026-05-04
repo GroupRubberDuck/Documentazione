@@ -10,19 +10,23 @@ package "Inbound Adapter"{
 
 package "Application Core" {
     () "DeleteDeviceUseCase"
+
+    class DeleteDeviceCommand {
+        +device_id: String
+    }
+
     !include ApplicationServices/DeleteDeviceService.puml
     !include Domain/Device.puml
     () "DeleteDevicePort"
-
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
-
 DeleteDeviceService - DeleteDeviceUseCase
 
+DeleteDeviceCommand . DeleteDeviceService: legge
 
 DeleteDeviceService --> DeleteDevicePort: usa
 

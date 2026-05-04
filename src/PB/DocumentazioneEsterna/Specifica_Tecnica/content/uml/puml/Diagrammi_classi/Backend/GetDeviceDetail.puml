@@ -10,6 +10,11 @@ package "Inbound Adapter"{
 
 package "Application Core" {
     () "GetDeviceDetailUseCase" as GetDeviceDetailUseCase
+
+    class GetDeviceDetailCommand {
+        + device_id: String
+    }
+
     !include ApplicationServices/GetDeviceDetailService.puml
     !include Domain/Device.puml
     () "FindDevicePort"
@@ -19,9 +24,9 @@ package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
-
 GetDeviceDetailService - GetDeviceDetailUseCase
 
+GetDeviceDetailService .> GetDeviceDetailCommand : legge
 
 GetDeviceDetailService --> FindDevicePort: usa
 
