@@ -61,7 +61,7 @@ Il diagramma illustra l'architettura del modulo dedicato all'apertura di una ses
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
 #block(breakable: false)[
-===== EvaluationSessionController <EvaluationSessionController>
+==== EvaluationSessionController <EvaluationSessionController>
 #figure(
   image("../uml/png/Session/EvaluationSessionController.png", width: 45%),
   caption: [EvaluationSessionController]
@@ -85,7 +85,7 @@ _EvaluationSessionController_ non definisce attributi propri.
 ]
 
 #block(breakable: false)[
-===== OpenEvaluationSessionUseCase
+==== OpenEvaluationSessionUseCase
 #figure(
   image("../uml/png/Session/OpenEvaluationSessionUseCase.png", width: 45%),
   caption: [OpenEvaluationSessionUseCase]
@@ -104,7 +104,7 @@ _OpenEvaluationSessionUseCase_ non definisce attributi.
 ]
 
 #block(breakable: false)[
-===== OpenEvaluationSessionService
+==== OpenEvaluationSessionService
 
 #figure(
   image("../uml/png/Session/OpenEvaluationSessionService.png", width: 45%),
@@ -125,7 +125,7 @@ _OpenEvaluationSessionService_ non definisce attributi propri.
 ]
 
 #block(breakable: false)[
-===== SessionCoordinator
+==== SessionCoordinator
 #figure(
   image("../uml/png/Session/SaveAssetService.png", width: 45%),
   caption: [SaveAssetService]
@@ -144,7 +144,7 @@ _SessionCoordinator_ non definisce attributi propri.
 ]
 
 #block(breakable: false)[
-===== CreateSessionPort
+==== CreateSessionPort
 #figure(
   image("../uml/png/Session/CreateSessionPort.png", width: 45%),
   caption: [CreateSessionPort]
@@ -165,7 +165,7 @@ _CreateSessionPort_ non definisce attributi.
 
 
 #block(breakable: false)[
-===== FindStandardPort
+==== FindStandardPort
 #figure(
   image("../uml/png/Session/FindStandardPort.png", width: 50%),
   caption: [FindStandardPort]
@@ -184,7 +184,7 @@ _FindStandardPort_ non definisce attributi.
 ]
 
 #block(breakable: false)[
-===== MongoStandardAdapter
+==== MongoStandardAdapter <MongoStandardAdapter>
 #figure(
   image("../uml/png/Session/MongoStandardAdapter.png", width: 50%),
   caption: [MongoStandardAdapter]
@@ -203,7 +203,7 @@ _MongoStandardAdapter_ non definisce attributi propri nel diagramma.
 - `+ find_by_id(standard_id: String): ComplianceStandard` — recupera lo standard di conformità corrispondente all'identificativo fornito.
 ]
 
-==== SaveEvaluationSession <SaveEvaluationSession>
+=== SaveEvaluationSession <SaveEvaluationSession>
 
 #block(breakable: false)[
 #figure(
@@ -222,7 +222,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ]
 
 #block(breakable: false)[
-===== SaveEvaluationSessionUseCase
+==== SaveEvaluationSessionUseCase
 #figure(
   image("../uml/png/Session/SaveEvaluationSessionUseCase.png", width: 35%),
   caption: [SaveEvaluationSessionUseCase]
@@ -241,7 +241,7 @@ _SaveEvaluationSessionUseCase_ non definisce attributi.
 ]
 
 #block(breakable: false)[
-===== SaveEvaluationSessionService
+==== SaveEvaluationSessionService
 #figure(
   image("../uml/png/Session/SaveEvaluationSessionService.png", width: 40%),
   caption: [SaveEvaluationSessionService]
@@ -260,7 +260,7 @@ _SaveEvaluationSessionService_ non definisce attributi propri.
 ]
 
 #block(breakable: false)[
-===== _SaveSessionPort_
+==== SaveSessionPort
 #figure(
   image("../uml/png/Session/SaveSessionPort.png", width: 40%),
   caption: [SaveSessionPort]
@@ -279,7 +279,7 @@ _SaveSessionPort_ non definisce attributi.
 
 
 
-==== CloseEvaluationSession <CloseEvaluationSession>
+=== CloseEvaluationSession <CloseEvaluationSession>
 
 #block(breakable: false)[
 #figure(
@@ -298,7 +298,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ]
 
 #block(breakable: false)[
-===== CloseEvaluationSessionUseCase <CloseEvaluationSessionUseCase>
+==== CloseEvaluationSessionUseCase <CloseEvaluationSessionUseCase>
 
 #figure(
   image("../uml/png/Session/CloseEvaluationSessionUseCase.png", width: 35%),
@@ -330,7 +330,7 @@ _CloseEvaluationSessionUseCase_ non definisce attributi.
 ]
 
 
-===== CloseEvaluationSessionService
+==== CloseEvaluationSessionService
 #figure(
   image("../uml/png/Session/CloseEvaluationSessionService.png", width: 35%),
   caption: [CloseEvaluationSessionService]
@@ -349,7 +349,7 @@ _CloseEvaluationSessionService_ non definisce attributi propri.
 
 
 
-===== DeleteSessionPort <DeleteSessionPort>
+==== DeleteSessionPort <DeleteSessionPort>
 #figure(
   image("../uml/png/Session/DeleteSessionPort.png", width: 35%),
   caption: [DeleteSessionPort]
@@ -366,7 +366,7 @@ _DeleteSessionPort_ non definisce attributi.
 
 - `+ delete_session(session_id: String): void` — firma del metodo che si occupa di rimuovere o invalidare lo stato di una specifica sessione di valutazione dal sistema di persistenza.
 
-==== CommitEvaluationSession <CommitEvaluationSession>
+=== CommitEvaluationSession <CommitEvaluationSession>
 
 
 #figure(
@@ -388,7 +388,7 @@ Di seguito vengono documentati esclusivamente i componenti specifici introdotti 
 
 
 #block(breakable: false)[
-===== CommitEvaluationSessionService
+==== CommitEvaluationSessionService
 #figure(
   image("../uml/png/Session/CommitEvaluationSessionService.png", width: 35%),
   caption: [CommitEvaluationSessionService]
@@ -405,7 +405,7 @@ _CommitEvaluationSessionService_ non definisce attributi propri.
 - `+ commit(session_id: String): void` — concretizza la logica di business relativa al consolidamento dei dati. Utilizza l'identificativo della sessione per applicare le modifiche allo stato persistente del dispositivo.
 ]
 
-===== CommitEvaluationSessionUseCase <CommitEvaluationSessionUseCase>
+==== CommitEvaluationSessionUseCase <CommitEvaluationSessionUseCase>
 #figure(
   image("../uml/png/Session/CommitEvaluationSessionUseCase.png", width: 40%),
   caption: [CommitEvaluationSessionUseCase]
@@ -447,7 +447,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti o aggregat
 
 
 #block(breakable: false)[
-===== CommitCloseEvaluationSessionService
+==== CommitCloseEvaluationSessionService
 #figure(
   image("../uml/png/Session/CommitCloseEvaluationSessionService.png", width: 40%),
   caption: [CommitCloseEvaluationSessionService]

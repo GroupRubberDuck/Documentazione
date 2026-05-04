@@ -9,7 +9,6 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-
     () "DeleteAssetUseCase"
     !include ApplicationServices/DeleteAssetService.puml
     !include Domain/Asset.puml
@@ -22,15 +21,14 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
+' Aggiunte direzioni esplicite (-down-) per forzare l'allineamento verticale corretto
+WriteAssetController -down-> DeleteAssetUseCase : usa
+DeleteAssetUseCase -down- DeleteAssetService
 
-DeleteAssetService - DeleteAssetUseCase
+DeleteAssetService -down-> SaveSessionPort : usa
+DeleteAssetService -down-> GetSessionPort : usa
 
-DeleteAssetService --> SaveSessionPort : usa
-DeleteAssetService --> GetSessionPort : usa
-
-SaveSessionPort -- InMemoryEvaluationSessionCache
-GetSessionPort -- InMemoryEvaluationSessionCache
-
-WriteAssetController --> DeleteAssetUseCase : usa
+SaveSessionPort -down- InMemoryEvaluationSessionCache
+GetSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

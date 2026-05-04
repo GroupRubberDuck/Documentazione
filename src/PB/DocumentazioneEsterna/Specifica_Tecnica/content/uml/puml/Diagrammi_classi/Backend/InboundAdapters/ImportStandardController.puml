@@ -1,5 +1,5 @@
 @startuml ImportStandardController
-
+skinparam classAttributeIconSize 0
 class ImportStandardController <<Flask Blueprint>> {
     + __init__(import_port: ImportStandardUseCase)
     + import_standard(req: Request): Response

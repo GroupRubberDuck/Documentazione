@@ -1,5 +1,5 @@
 @startuml EvaluationJustificationController
-
+skinparam classAttributeIconSize 0
 class EvaluationJustificationController <<Flask Blueprint>> {
     + insert_justification(req: Request): Response
 }

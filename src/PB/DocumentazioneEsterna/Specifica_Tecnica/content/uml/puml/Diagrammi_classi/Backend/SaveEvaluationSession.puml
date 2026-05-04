@@ -19,14 +19,14 @@ package "Application Core" {
     !include Domain/EvaluationSession.puml
 
     SaveEvaluationSessionService -up- SaveEvaluationSessionUseCase
-    SaveEvaluationSessionService -( SaveSessionPort
+    SaveEvaluationSessionService -> SaveSessionPort : usa
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController -left-( SaveEvaluationSessionUseCase : usa
-InMemoryEvaluationSessionCache -up-- SaveSessionPort
+EvaluationSessionController -left-> SaveEvaluationSessionUseCase : usa
+InMemoryEvaluationSessionCache -up-- SaveSessionPort 
 
 @enduml

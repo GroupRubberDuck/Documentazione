@@ -1,5 +1,5 @@
 @startuml EvaluationJustificationService
-
+skinparam classAttributeIconSize 0
 class EvaluationJustificationService <<Application Service>> {
     + insert_justification(command: InsertJustificationCommand): void
 }

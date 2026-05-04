@@ -1,5 +1,5 @@
 @startuml ImportStandardService
-
+skinparam classAttributeIconSize 0
 class ImportStandardService <<Application Service>> {
     - device_repository: StandardRepositoryPort
     - device_importer_factory: FileStandardImporterFactoryPort

@@ -1,0 +1,12 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+    class DashboardCommand {
+        + device_id: String
+        + device_name: String
+        + operating_system: String
+        + description: String
+        + aggregate_status: EvaluationState
+        + asset_list: List<AssetSummaryCommand>
+    }
+@enduml

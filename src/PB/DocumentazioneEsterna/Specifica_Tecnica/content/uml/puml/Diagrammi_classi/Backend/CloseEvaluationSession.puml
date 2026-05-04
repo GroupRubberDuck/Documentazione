@@ -19,7 +19,7 @@ package "Application Core" {
     !include Domain/EvaluationSession.puml
 
     CloseEvaluationSessionService -up- CloseEvaluationSessionUseCase
-    CloseEvaluationSessionService -> DeleteSessionPort : richiede
+    CloseEvaluationSessionService -> DeleteSessionPort : usa
 }
 
 package "Outbound Adapter" {

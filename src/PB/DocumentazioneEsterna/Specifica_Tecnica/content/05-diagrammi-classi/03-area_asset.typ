@@ -55,9 +55,13 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 
   #upper("è") in valutazione anche l'introduzione di un'unità di dominio registroModifiche, il cui compito è di tracciare le modifiche e permettere a servizi esterni di replicarle.
 ]*/
+== Sottosistema Asset e Dashboard
+#figure(
+  image("../uml/png/CreateAsset/AssetAll.png", width: 100%),
+  caption: [Sottosistema Asset e Dashboard]
+) <fig-get-device-dashboard>
 
-
-
+== Modulo di scrittura Asset
 #figure(
   image("../uml/png/CreateAsset/WriteAssetModule.png", width: 100%),
   caption: [Modulo di scrittura Asset]
@@ -97,7 +101,7 @@ _WriteAssetController_ non definisce attributi propri.
 - `+ delete_asset(req: Request): Response` — riceve la richiesta HTTP di eliminazione di un Asset, estrae l'identificativo dalla richiesta e lo inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 ]
 
-#block(breakable: false)[
+
 ==== CreateAssetUseCase
 #figure(
   image("../uml/png/CreateAsset/CreateAssetUseCase.png", width: 45%),
@@ -114,7 +118,7 @@ _CreateAssetUseCase_ non definisce attributi.
 *Metodi e funzioni*
 
 - `+ create_asset(asset: CreateAssetCommand): bool` — firma del metodo delegato all'esecuzione della logica di creazione a partire dai dati contenuti nel comando.
-]
+
 
 
 ==== CreateAssetCommand
@@ -431,7 +435,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ]
 
 #block(breakable: false)[
-==== QueryDashboardController
+==== QueryDashboardController <QueryDashboardController>
 #figure(
   image("../uml/png/GetAssetDetail/QueryDashboardController.png", width: 45%),
   caption: [QueryDashboardController]
@@ -552,8 +556,8 @@ _RequirementEval_ non definisce metodi.
 ]
 
 
-==== EvaluationSheet
-
+==== EvaluationSheet <EvaluationSheet>
+ 
 #figure(
   image("../uml/png/GetAssetDetail/EvaluationSheet.png", width: 45%),
   caption: [EvaluationSheet]
