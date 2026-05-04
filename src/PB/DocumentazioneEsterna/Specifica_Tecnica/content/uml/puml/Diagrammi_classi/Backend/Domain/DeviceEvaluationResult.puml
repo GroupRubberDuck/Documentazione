@@ -1,0 +1,12 @@
+@startuml DeviceEvaluationResult
+
+class DeviceEvaluationResult <<Value Object>> {
+    - device_id: String
+    - standard_id: String
+    - asset_result: list<AssetEvaluationResult>
+    - verdict: EvaluationState
+}
+
+DeviceEvaluationResult *-- "0..*" AssetEvaluationResult
+
+@enduml

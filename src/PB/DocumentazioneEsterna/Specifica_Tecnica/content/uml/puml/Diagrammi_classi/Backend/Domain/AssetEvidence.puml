@@ -1,0 +1,8 @@
+@startuml AssetEvidence
+
+class AssetEvidence {
+    + with_node_choice(node_id: String, value: Bool): AssetEvidence
+    + with_justification(justification: String): AssetEvidence
+}
+
+@enduml
