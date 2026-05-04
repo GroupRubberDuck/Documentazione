@@ -1,0 +1,7 @@
+@startuml UpdateDeviceService
+skinparam classAttributeIconSize 0
+class UpdateDeviceService <<Application Service>> {
+    + save(command: UpdateDeviceCommand): void
+}
+
+@enduml

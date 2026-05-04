@@ -1,7 +1,0 @@
-@startuml SaveAssetService
-skinparam classAttributeIconSize 0
-class SaveAssetService {
-    + save_asset(asset: SaveAssetCommand): bool
-}
-
-@enduml

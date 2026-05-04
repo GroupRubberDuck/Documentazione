@@ -25,7 +25,7 @@ package "Application Core" {
     !include ApplicationServices/GetDeviceDashboardService.puml
     !include ApplicationServices/GetAssetDetailService.puml
     !include ApplicationServices/CreateAssetService.puml
-    !include ApplicationServices/SaveAssetService.puml
+    !include ApplicationServices/UpdateAssetService.puml
     !include ApplicationServices/DeleteAssetService.puml
 
     ' --- COMMANDS, DTOs & ENTITIES ---
@@ -75,8 +75,6 @@ package "Application Core" {
     }
 
     !include Domain/Asset.puml
-    !include Domain/EvaluationSession.puml
-    !include Domain/EvaluationSheet.puml
 
     ' --- PORTS ---
     () "GetSessionPort"
@@ -87,31 +85,31 @@ package "Application Core" {
     ' LIVELLO 1: Distanziamo fortemente gli Use Cases per non far toccare i nomi
     GetDeviceDashboardUseCase -[hidden]right-------- GetAssetDetailUseCase
     GetAssetDetailUseCase -[hidden]right-------- CreateAssetUseCase
-    CreateAssetUseCase -[hidden]right-------- SaveAssetUseCase
-    SaveAssetUseCase -[hidden]right-------- DeleteAssetUseCase
+    CreateAssetUseCase -[hidden]right-------- UpdateAssetUseCase
+    UpdateAssetUseCase -[hidden]right-------- DeleteAssetUseCase
 
     ' LIVELLO 2: Allineiamo i Services sotto i rispettivi Use Cases
     GetDeviceDashboardService -[hidden]right-------- GetAssetDetailService
     GetAssetDetailService -[hidden]right-------- CreateAssetService
-    CreateAssetService -[hidden]right-------- SaveAssetService
-    SaveAssetService -[hidden]right-------- DeleteAssetService
+    CreateAssetService -[hidden]right-------- UpdateAssetService
+    UpdateAssetService -[hidden]right-------- DeleteAssetService
 
     ' LIVELLO 3: Spingiamo i Command/DTO esattamente sotto i loro Services
     GetDeviceDashboardService -[hidden]down---- DashboardCommand
     GetAssetDetailService -[hidden]down---- AssetDetail
     CreateAssetService -[hidden]down---- CreateAssetCommand
-    SaveAssetService -[hidden]down---- SaveAssetCommand
+    UpdateAssetService -[hidden]down---- UpdateAssetCommand
 
     ' Manteniamo l'ordine orizzontale anche per i Command per evitare incroci
     DashboardCommand -[hidden]right-------- AssetDetail
     AssetDetail -[hidden]right-------- CreateAssetCommand
-    CreateAssetCommand -[hidden]right-------- SaveAssetCommand
+    CreateAssetCommand -[hidden]right-------- UpdateAssetCommand
 
     ' LIVELLO 4: Spingiamo le classi aggregate e le porte ancora più in basso
     DashboardCommand -[hidden]down---- AssetSummaryCommand
     AssetDetail -[hidden]down---- RequirementEval
     CreateAssetCommand -[hidden]down---- GetSessionPort
-    SaveAssetCommand -[hidden]down---- SaveSessionPort
+    UpdateAssetCommand -[hidden]down---- SaveSessionPort
 
     
     Asset -[hidden]right- EvaluationSession
@@ -127,7 +125,7 @@ package "Application Core" {
     
     GetDeviceDashboardService .down.> DashboardCommand : popola
     CreateAssetService .down.> CreateAssetCommand: legge
-    SaveAssetService .down.> SaveAssetCommand: legge
+    UpdateAssetService .down.> UpdateAssetCommand: legge
 }
 
 package "Outbound Adapter" {
@@ -139,14 +137,14 @@ QueryDashboardController -down-> GetDeviceDashboardUseCase : usa
 QueryDashboardController -down-> GetAssetDetailUseCase : usa
 
 WriteAssetController -down-> CreateAssetUseCase : usa
-WriteAssetController -down-> SaveAssetUseCase : usa
+WriteAssetController -down-> UpdateAssetUseCase : usa
 WriteAssetController -down-> DeleteAssetUseCase : usa
 
 
 GetDeviceDashboardUseCase -down- GetDeviceDashboardService
 GetAssetDetailUseCase -down- GetAssetDetailService
 CreateAssetUseCase -down- CreateAssetService
-SaveAssetUseCase -down- SaveAssetService
+UpdateAssetUseCase -down- UpdateAssetService
 DeleteAssetUseCase -down- DeleteAssetService
 
 
@@ -156,8 +154,8 @@ GetAssetDetailService ---> GetSessionPort : usa
 CreateAssetService ---> GetSessionPort : usa
 CreateAssetService ---> SaveSessionPort : usa
 
-SaveAssetService ---> GetSessionPort : usa
-SaveAssetService ---> SaveSessionPort : usa
+UpdateAssetService ---> GetSessionPort : usa
+UpdateAssetService ---> SaveSessionPort : usa
 
 DeleteAssetService ---> GetSessionPort : usa
 DeleteAssetService ---> SaveSessionPort : usa

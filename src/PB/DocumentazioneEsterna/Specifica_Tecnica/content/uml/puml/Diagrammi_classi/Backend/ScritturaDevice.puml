@@ -12,11 +12,11 @@ package "Application Core" {
     
     
     () "CreateDeviceUseCase" as CreateUC
-    () "SaveDeviceUseCase" as SaveUC
+    () "UpdateDeviceUseCase" as SaveUC
     () "DeleteDeviceUseCase" as DeleteUC
 
     !include ApplicationServices/CreateDeviceService.puml
-    !include ApplicationServices/SaveDeviceService.puml
+    !include ApplicationServices/UpdateDeviceService.puml
     !include ApplicationServices/DeleteDeviceService.puml
 
     
@@ -27,7 +27,7 @@ package "Application Core" {
         + compliance_standard_id: String
     }
     
-    class SaveDeviceCommand {
+    class UpdateDeviceCommand {
         + device_id: String
         + device_name: String
         + device_os: String
@@ -53,16 +53,16 @@ WriteDeviceController -down-> SaveUC
 WriteDeviceController -down-> DeleteUC
 
 CreateUC -down- CreateDeviceService
-SaveUC -down- SaveDeviceService
+SaveUC -down- UpdateDeviceService
 DeleteUC -down- DeleteDeviceService
 
 
 CreateDeviceService -right.> CreateDeviceCommand : legge
-SaveDeviceService -right.> SaveDeviceCommand : legge
+UpdateDeviceService -right.> UpdateDeviceCommand : legge
 
 
 CreateDeviceService -down-> RegPort : usa
-SaveDeviceService -down-> SavePort : usa
+UpdateDeviceService -down-> SavePort : usa
 DeleteDeviceService -down-> DeletePort : usa
 
 RegPort -down- MongoDeviceAdapter
