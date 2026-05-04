@@ -52,7 +52,7 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 
 Il diagramma illustra l'architettura del modulo dedicato all'apertura di una sessione di valutazione. 
 
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
+
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
@@ -214,7 +214,6 @@ _MongoStandardAdapter_ non definisce attributi propri nel diagramma.
 Il diagramma illustra l'architettura del modulo dedicato al salvataggio dello stato di una sessione di valutazione corrente.
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
@@ -290,7 +289,6 @@ _SaveSessionPort_ non definisce attributi.
 Il diagramma illustra l'architettura del modulo dedicato alla chiusura e all'eliminazione di una sessione di valutazione. 
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
@@ -377,7 +375,6 @@ _DeleteSessionPort_ non definisce attributi.
 Il diagramma illustra l'architettura del modulo dedicato esclusivamente al consolidamento (commit) dei dati di una sessione di valutazione verso il dispositivo, senza richiederne la chiusura o l'eliminazione dalla memoria temporanea. 
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
@@ -434,7 +431,6 @@ _CommitEvaluationSessionUseCase_ non definisce attributi.
 Il diagramma illustra l'architettura del modulo dedicato al consolidamento (commit) e alla contestuale chiusura di una sessione di valutazione.
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \

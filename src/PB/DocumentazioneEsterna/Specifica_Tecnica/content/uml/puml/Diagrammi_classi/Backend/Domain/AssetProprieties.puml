@@ -1,5 +1,6 @@
 @startuml AssetProprieties
-
+skinparam classAttributeIconSize 0
+ 
 class AssetProprieties {
     - asset_evidence_list: List<AssetEvidence>
     + set_node_choice(requirement_id: String, node_id: String, value: Bool): void

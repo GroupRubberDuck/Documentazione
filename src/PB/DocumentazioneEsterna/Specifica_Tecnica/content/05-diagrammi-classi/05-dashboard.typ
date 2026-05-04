@@ -11,7 +11,7 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero della dashb
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
 - Per la definizione di _QueryDashboardController_, vedere la sezione @QueryDashboardController. \
-- Per la definizione di _EvaluationSession_, vedere la sezione @EvaluationSession. \
+
 
  
 ==== GetDeviceDashboardUseCase

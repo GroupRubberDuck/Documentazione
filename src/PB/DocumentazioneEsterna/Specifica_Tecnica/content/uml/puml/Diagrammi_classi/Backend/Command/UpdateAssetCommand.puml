@@ -2,7 +2,7 @@
 skinparam classAttributeIconSize 0
 
 
-    class SaveAssetCommand {
+    class UpdateAssetCommand {
         + asset_id:string
         + name:String
         + type:AssetType

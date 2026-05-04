@@ -262,14 +262,14 @@ _DeleteDevicePort_ non definisce attributi.
 - `+ delete(device_id: String): void` — firma del metodo che esegue la rimozione fisica del Dispositivo identificato da `device_id` dal sistema di persistenza.
 
 
-// SAVEE
+// Update
 
-=== SaveDevice <SaveDevice>
+=== UpdateDevice <SaveDevice>
 
-#block(breakable: false)[
+
 #figure(
-  image("../uml/png/SaveDevice/SaveDevice.png", width: 100%),
-  caption: [Caso d'uso SaveDevice]
+  image("../uml/png/SaveDevice/UpdateDevice.png", width: 100%),
+  caption: [Caso d'uso UpdateDevice]
 ) <fig-save-device>
 
 Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salvataggio dello stato di un Dispositivo esistente. 
@@ -279,35 +279,35 @@ Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salv
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
-]
-==== SaveDeviceUseCase
-#block(breakable: false)[
+
+==== UpdateDeviceUseCase
+
 #figure(
-  image("../uml/png/SaveDevice/SaveDeviceUseCase.png", width: 40%),
-  caption: [SaveDeviceUseCase]
+  image("../uml/png/SaveDevice/UpdateDeviceUseCase.png", width: 40%),
+  caption: [UpdateDeviceUseCase]
 ) <fig-save-device-use-case>
 *Descrizione*
 
-_SaveDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Dispositivo esistente. Viene implementata da _SaveDeviceService_ e utilizzata da _WriteDeviceController_.
+_UpdateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Dispositivo esistente. Viene implementata da _UpdateDeviceService_ e utilizzata da _WriteDeviceController_.
 
 *Attributi*
 
-_SaveDeviceUseCase_ non definisce attributi.
+_UpdateDeviceUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ save(command: SaveDeviceCommand): void` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
-]
+- `save(command: UpdateDeviceCommand)` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
+
 ==== SaveDeviceCommand
-#block(breakable: false)[
+
 #figure(
-  image("../uml/png/SaveDevice/SaveDeviceCommand.png", width: 35%),
-  caption: [SaveDeviceCommand]
+  image("../uml/png/SaveDevice/UpdateDeviceCommand.png", width: 35%),
+  caption: [UpdateDeviceCommand]
 ) <fig-save-device-command>
 
 *Descrizione*
 
-_SaveDeviceCommand_ è il Command Object che veicola i dati necessari alla modifica di un Dispositivo dal controller al service. Analogamente a _CreateDeviceCommand_, separa la struttura dei dati in ingresso dall'entità di dominio.
+_UpdateDeviceCommand_ è il Command Object che veicola i dati necessari alla modifica di un Dispositivo dal controller al service. Analogamente a _CreateDeviceCommand_, separa la struttura dei dati in ingresso dall'entità di dominio.
 
 *Attributi*
 
@@ -317,40 +317,40 @@ _SaveDeviceCommand_ è il Command Object che veicola i dati necessari alla modif
 
 *Metodi e funzioni*
 
-_SaveDeviceCommand_ non definisce metodi.
-]
-==== SaveDeviceService
-#block(breakable: false)[
+_UpdateDeviceCommand_ non definisce metodi.
+
+==== UpdateDeviceService
+
 #figure(
-  image("../uml/png/SaveDevice/SaveDeviceService.png", width: 45%),
-  caption: [SaveDeviceService]
+  image("../uml/png/SaveDevice/UpdateDeviceService.png", width: 45%),
+  caption: [UpdateDeviceService]
 ) <fig-save-device-service>
 
 *Descrizione*
 
-_SaveDeviceService_ è il service applicativo appartenente all'Application Core responsabile della logica di aggiornamento di un Dispositivo esistente. Implementa l'interfaccia _SaveDeviceUseCase_, riceve il comando in ingresso e ne coordina la persistenza tramite _SaveDevicePort_.
+_UpdateDeviceService_ è il service applicativo appartenente all'Application Core responsabile della logica di aggiornamento di un Dispositivo esistente. Implementa l'interfaccia _UpdateDeviceUseCase_, riceve il comando in ingresso e ne coordina la persistenza tramite _SaveDevicePort_.
 
 *Attributi*
 
-_SaveDeviceService_ non definisce attributi propri.
+_UpdateDeviceService_ non definisce attributi propri.
 \
 *Metodi e funzioni*
-]
-- `+ save(command: SaveDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
+
+- `+ save(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
 
 ==== SaveDevicePort <SaveDevicePort>
-#block(breakable: false)[
+
 #figure(
   image("../uml/png/SaveDevice/SaveDevicePort.png", width: 30%),
   caption: [SaveDevicePort]
 ) <fig-save-device-port>
 *Descrizione*
 
-_SaveDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per l'aggiornamento fisico di un Dispositivo nel sistema di persistenza. Viene implementata da _MongoDeviceAdapter_ e utilizzata da _SaveDeviceService_.
-]
+_SaveDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per l'aggiornamento fisico di un Dispositivo nel sistema di persistenza. Viene implementata da _MongoDeviceAdapter_ e utilizzata da _UpdateDeviceService_.
+
 *Attributi*
 
-_SaveDevicePort_ non definisce attributi.
+_UpdateDevicePort_ non definisce attributi.
 
 *Metodi e funzioni*
 
@@ -359,7 +359,7 @@ _SaveDevicePort_ non definisce attributi.
 
 === ReadDeviceModule <ReadDeviceModule>
 
-#block(breakable: false)[
+
 #figure(
   image("../uml/png/GetDeviceDetail/QueryDeviceModule.png", width: 100%),
   caption: [Modulo di lettura Dispositivi]
@@ -371,7 +371,7 @@ Il diagramma illustra l'architettura del modulo di lettura per la gestione dei D
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo modulo.
-]
+
 === GetDeviceDetail
 
 #figure(
@@ -459,7 +459,7 @@ _FindDevicePort_ non definisce attributi.
 
 === GetDeviceList
 
-#block(breakable: false)[
+
 #figure(
   image("../uml/png/GetDeviceList/GetDeviceList.png", width: 100%),
   caption: [Caso d'uso GetDeviceList]
@@ -472,9 +472,9 @@ Per la definizione di _Device_, vedere la sezione @Device. \
 Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
-]
 
-#block(breakable: false)[
+
+
 ==== GetDeviceListUseCase
 #figure(
   image("../uml/png/GetDeviceList/GetDeviceListUseCase.png", width: 35%),
@@ -491,9 +491,7 @@ _GetDeviceListUseCase_ non definisce attributi.
 *Metodi e funzioni*
 
 - `+ get_list(): List<DeviceSummary>` — firma del metodo delegato al recupero della lista sintetica di tutti i Dispositivi presenti nel sistema.
-]
 
-#block(breakable: false)[
 ==== GetDeviceListService
 
 #figure(
@@ -512,9 +510,7 @@ _GetDeviceListService_ è il service applicativo appartenente all'Application Co
 *Metodi e funzioni*
 
 - `+ get_list(): List<DeviceSummary>` — concretizza il contratto definito da _GetDeviceListUseCase_. Recupera la lista sintetica di tutti i Dispositivi tramite _FindAllDevicesPort_.
-]
 
-#block(breakable: false)[
 ==== DeviceSummary
 #figure(
   image("../uml/png/GetDeviceList/DeviceSummary.png", width: 30%),
@@ -531,9 +527,9 @@ _DeviceSummary_ è il Data Transfer Object che veicola la rappresentazione sinte
 *Metodi e funzioni*
 
 _DeviceSummary_ non definisce metodi.
-]
 
-#block(breakable: false)[
+
+
 ==== FindAllDevicesPort
 #figure(
   image("../uml/png/GetDeviceList/FindAllDevicesPort.png", width: 45%),
@@ -550,5 +546,5 @@ _FindAllDevicesPort_ non definisce attributi.
 *Metodi e funzioni*
 
 - `+ find_all(): List<DeviceSummary>` — firma del metodo che recupera la lista sintetica di tutti i Dispositivi presenti nel sistema di persistenza.
-]
+
 

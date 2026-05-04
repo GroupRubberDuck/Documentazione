@@ -1,7 +1,7 @@
-@startuml SaveDevice
+@startuml UpdateDevice
 skinparam linetype ortho
-skinparam nodesep 80
-skinparam ranksep 80
+skinparam nodesep 100
+skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
@@ -9,30 +9,49 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    class SaveDeviceCommand  {
+    
+    !include Domain/Device.puml
+    
+    class UpdateDeviceCommand  {
         + device_name: String
         + device_os: String
         + device_description: String
     }
-    () "SaveDeviceUseCase"
-    !include ApplicationServices/SaveDeviceService.puml
-    !include Domain/Device.puml
+    
+    !include ApplicationServices/UpdateDeviceService.puml
+    
+    () "UpdateDeviceUseCase"
     () "SaveDevicePort"
 
-    SaveDeviceService .left.> SaveDeviceCommand: legge
+    ' ==========================================
+    ' GABBIA STRUTTURALE (ALLINEAMENTO COME DA IMMAGINE)
+    ' ==========================================
+    
+    ' 1. Mettiamo il Dominio a sinistra e il Command al centro
+    Device -[hidden]right- UpdateDeviceCommand
+    
+    ' 2. Il Service legge il Command da destra verso sinistra
+    UpdateDeviceService .left.> UpdateDeviceCommand: legge
+    
+    ' 3. Agganciamo l'interfaccia UseCase a destra del Service
+    UpdateDeviceService -right- UpdateDeviceUseCase
+    
+    ' 4. Il Service scende verso il basso verso la Porta
+    UpdateDeviceService -down-> SaveDevicePort: usa
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
+' ==========================================
+' COLLEGAMENTI ESTERNI (Verticali Top-Down)
+' ==========================================
 
-SaveDeviceService - SaveDeviceUseCase
+' Il Controller scende esattamente sopra l'UseCase a destra
+WriteDeviceController -down-> UpdateDeviceUseCase: usa
 
-
-SaveDeviceService ---> SaveDevicePort: usa
-
-WriteDeviceController --> SaveDeviceUseCase: usa
-MongoDeviceAdapter - SaveDevicePort
+' La Porta scende esattamente sopra l'Adapter in basso a destra
+SaveDevicePort -down- MongoDeviceAdapter
 
 @enduml

@@ -1,4 +1,4 @@
-@startuml SaveAsset
+@startuml UpdateAsset
 skinparam linetype ortho
 skinparam nodesep 80
 skinparam ranksep 80
@@ -10,7 +10,7 @@ package "Inbound Adapter"{
 
 package "Application Core" {
 
-    class SaveAssetCommand {
+    class UpdateAssetCommand {
         + asset_id:string
         + name:String
         + type:AssetType
@@ -18,14 +18,14 @@ package "Application Core" {
         + session_id: String
     }
 
-    () "SaveAssetUseCase"
-    !include ApplicationServices/SaveAssetService.puml
+    () "UpdateAssetUseCase"
+    !include ApplicationServices/UpdateAssetService.puml
     !include Domain/Asset.puml
-    !include Domain/EvaluationSession.puml
+
     () "SaveSessionPort"
     () "GetSessionPort"
 
-    SaveAssetService .left.> SaveAssetCommand: legge
+    UpdateAssetService .left.> UpdateAssetCommand: legge
 }
 
 package "Outbound Adapter" {
@@ -33,14 +33,14 @@ package "Outbound Adapter" {
 }
 
 
-SaveAssetService - SaveAssetUseCase
+UpdateAssetService - UpdateAssetUseCase
 
-SaveAssetService --> SaveSessionPort : usa
-SaveAssetService --> GetSessionPort : usa
+UpdateAssetService --> SaveSessionPort : usa
+UpdateAssetService --> GetSessionPort : usa
 
 SaveSessionPort -- InMemoryEvaluationSessionCache
 GetSessionPort -- InMemoryEvaluationSessionCache
 
-WriteAssetController --> SaveAssetUseCase : usa
+WriteAssetController --> UpdateAssetUseCase : usa
 
 @enduml

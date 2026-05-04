@@ -12,7 +12,6 @@ package "Application Core" {
     () "DeleteAssetUseCase"
     !include ApplicationServices/DeleteAssetService.puml
     !include Domain/Asset.puml
-    !include Domain/EvaluationSession.puml
     () "SaveSessionPort"
     () "GetSessionPort"
 }

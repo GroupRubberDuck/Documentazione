@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-class SaveDeviceCommand <<Command Object>> {
+class UpdateDeviceCommand <<Command Object>> {
     + device_name: String
     + device_os: String
     + device_description: String

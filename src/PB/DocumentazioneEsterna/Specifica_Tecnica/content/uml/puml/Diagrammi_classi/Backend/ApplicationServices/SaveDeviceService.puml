@@ -1,7 +1,0 @@
-@startuml SaveDeviceService
-skinparam classAttributeIconSize 0
-class SaveDeviceService <<Application Service>> {
-    + save(command: SaveDeviceCommand): void
-}
-
-@enduml
