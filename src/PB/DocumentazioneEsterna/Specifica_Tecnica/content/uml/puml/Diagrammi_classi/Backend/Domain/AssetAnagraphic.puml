@@ -1,0 +1,14 @@
+@startuml AssetAnagraphic
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class AssetAnagraphic {
+
+    - name: String
+    - type: AssetType
+    - description: String
+}
+
+
+
+@enduml

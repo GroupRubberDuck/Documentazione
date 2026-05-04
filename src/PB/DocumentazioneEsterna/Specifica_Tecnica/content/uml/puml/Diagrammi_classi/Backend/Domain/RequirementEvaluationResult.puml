@@ -1,0 +1,13 @@
+@startuml RequirementEvaluationResult
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class RequirementEvaluationResult <<Value Object>> {
+    - requirement_id: String
+    - justification: String
+    - node_coiches: MappingProxyType
+    - state: EvaluationState
+    - dependencies: tuple[tuple[str, EvaluationState], ...]
+}
+
+@enduml
