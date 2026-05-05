@@ -101,7 +101,7 @@ Essendo importazione ed esportazione 2 processi strettamente collegati, è stato
 === ImportDevice
 
 #figure(
-  image("../uml/png/ImportDevice/import-device.png", width: 90%),
+  image("../uml/png/ImportDevice/import-device.png", width: 100%),
   caption: [Caso d'uso ImportDevice]
 ) <fig-import-device>
 
@@ -130,15 +130,16 @@ _UploadFileController_ non definisce attributi propri.
 - `+ get_http_file_extension(): String` — estrae l'estensione del file dalla richiesta HTTP.
 ]
 
-
 ==== ImportDeviceController
+
 #figure(
   image("../uml/png/ImportDevice/ImportDeviceController.png", width: 40%),
   caption: [ImportDeviceController]
-) 
+) <fig-import-device-controller>
+
 *Descrizione*
 
-_ImportDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di importazione di Dispositivi tramite file. 
+_ImportDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di importazione di Dispositivi tramite file. Utilizza _UploadFileController_ per estrarre il contenuto binario e l'estensione del file dalla request.
 
 *Attributi*
 
@@ -146,15 +147,36 @@ _ImportDeviceController_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ import_device(req: Request): Response` — riceve la richiesta HTTP di importazione, estrae il file e la sua estensione tramite i metodi ereditati e inoltra il comando al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
+- `+ import_device(req: Request): Response` — riceve la richiesta HTTP di importazione, estrae il file e la sua estensione tramite _UploadFileController_ e inoltra il Command al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
+==== UploadFileController
+
+#figure(
+  image("../uml/png/ImportDevice/UploadFileController.png", width: 40%),
+  caption: [UploadFileController]
+) <fig-upload-file-controller>
+
+*Descrizione*
+
+_UploadFileController_ è una classe di utilità appartenente all'Inbound Adapter che fornisce metodi di supporto per l'estrazione del file dalla request HTTP. Viene utilizzata da _ImportDeviceController_.
+
+*Attributi*
+
+_UploadFileController_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ get_http_file_payload(): BinaryIO` — estrae e restituisce il contenuto binario del file dalla request HTTP.
+- `+ get_http_file_extension(): String` — estrae e restituisce l'estensione del file dalla request HTTP.
 
 #block(breakable: false)[
 ==== ImportDeviceUseCase
+
 #figure(
   image("../uml/png/ImportDevice/ImportDeviceUseCase.png", width: 40%),
   caption: [ImportDeviceUseCase]
-) 
+) <fig-import-device-use-case>
+
 *Descrizione*
 
 _ImportDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'importazione di Dispositivi da file. Viene implementata da _ImportDeviceService_ e utilizzata da _ImportDeviceController_.
@@ -165,15 +187,16 @@ _ImportDeviceUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ import_device(command: ImportDeviceCommand): void` — firma del metodo delegato all'esecuzione della logica di importazione a partire dai dati contenuti nel comando.
+- `+ import_device(command: ImportDeviceCommand): void` — firma del metodo delegato all'esecuzione della logica di importazione a partire dai dati contenuti nel Command.
 ]
 
-
 ==== ImportDeviceCommand
+
 #figure(
   image("../uml/png/ImportDevice/ImportDeviceCommand.png", width: 40%),
   caption: [ImportDeviceCommand]
-) 
+) <fig-import-device-command>
+
 *Descrizione*
 
 _ImportDeviceCommand_ è il Command Object che veicola i dati necessari all'importazione di Dispositivi dal controller al service.
@@ -185,7 +208,7 @@ _ImportDeviceCommand_ è il Command Object che veicola i dati necessari all'impo
 
 *Metodi e funzioni*
 
-_ImportDeviceCommand_ non definisce metodi.
+_ImportDeviceCommand_ non definisce metodi propri.
 
 
 

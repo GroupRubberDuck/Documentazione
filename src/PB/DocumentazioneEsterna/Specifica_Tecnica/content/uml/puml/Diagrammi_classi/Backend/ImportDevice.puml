@@ -1,10 +1,8 @@
 @startuml import-device
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
-skinparam nodesep 80
+skinparam nodesep 200
 skinparam ranksep 100
-skinparam packageStyle rectangle
-skinparam style strictuml
 
 package "Inbound Adapter" {
     !include InboundAdapters/ImportDeviceController.puml
@@ -32,9 +30,14 @@ package "Application Core" {
         + extension: AllowedDeviceFileExtension
     }
 
-    () "FileDeviceImporterFactoryPort"
-    () "FileDeviceImporterPort"
-    () "RegisterDevicePort"
+    () "FileDeviceImporterFactoryPort" as FactoryPort
+    () "FileDeviceImporterPort" as ImporterPort
+    () "RegisterDevicePort" as RegPort
+
+    FactoryPort -[hidden]right--------- ImporterPort
+    ImporterPort -[hidden]right--------- RegPort
+
+    ImportDeviceService .right.> ImportDeviceCommand : legge
 }
 
 package "Outbound Adapter" {
@@ -72,26 +75,28 @@ package "Outbound Adapter" {
     }
 
     !include OutboundAdapters/MongoDeviceAdapter.puml
+
+    ConcreteFileDeviceImporterFactory -[hidden]right--------- FileDeviceImporter
+    FileDeviceImporter -[hidden]right--------- MongoDeviceAdapter
 }
 
 ImportDeviceController -down-> ImportDeviceUseCase : usa
-
 ImportDeviceUseCase -down- ImportDeviceService
 
-ImportDeviceService -down-> FileDeviceImporterFactoryPort : usa
-ImportDeviceService -down-> FileDeviceImporterPort : usa
-ImportDeviceService -down-> RegisterDevicePort : usa
+ImportDeviceService -down-> FactoryPort : usa
+ImportDeviceService -down-> ImporterPort : usa
+ImportDeviceService -down-> RegPort : usa
 
-FileDeviceImporterFactoryPort -down- ConcreteFileDeviceImporterFactory
-ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> JSONFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> XMLFileDeviceImporter : usa
+FactoryPort -down- ConcreteFileDeviceImporterFactory
+ImporterPort -down- FileDeviceImporter
+RegPort -down- MongoDeviceAdapter
 
-FileDeviceImporterPort -down- FileDeviceImporter
+ConcreteFileDeviceImporterFactory .down.> CSVFileDeviceImporter : usa
+ConcreteFileDeviceImporterFactory .down.> JSONFileDeviceImporter : usa
+ConcreteFileDeviceImporterFactory .down.> XMLFileDeviceImporter : usa
+
 FileDeviceImporter <|-down- CSVFileDeviceImporter
 FileDeviceImporter <|-down- JSONFileDeviceImporter
 FileDeviceImporter <|-down- XMLFileDeviceImporter
-
-RegisterDevicePort -down- MongoDeviceAdapter
 
 @enduml

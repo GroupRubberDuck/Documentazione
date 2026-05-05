@@ -73,7 +73,6 @@ Il diagramma illustra l'architettura del modulo dedicato alla valutazione dei re
 Il diagramma illustra l'architettura del modulo dedicato alla registrazione della risposta a un nodo decisionale durante la valutazione di conformità. 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di _EvaluationSheet_, vedere la sezione @EvaluationSheet. 
 - Per la definizione di  _SaveSessionPort_, vedere la sezione @SaveSessionPort. 
 
  
@@ -165,7 +164,7 @@ _AnswerDecisionNodeService_ non definisce attributi propri.
 Il diagramma illustra l'architettura del modulo dedicato al recupero di un requisito di conformità con il relativo albero decisionale e le dipendenze associate.
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di _EvaluationSheet_, vedere la sezione @EvaluationSheet. 
+
  
 
  
@@ -343,7 +342,6 @@ _DependencyResponse_ non definisce metodi.
 Il diagramma illustra l'architettura del modulo dedicato all'inserimento di una giustificazione testuale per un requisito di conformità durante la sessione di valutazione. 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di _EvaluationSheet_, vedere la sezione @EvaluationSheet. 
 - Per la definizione di  _SaveSessionPort_, vedere la sezione @SaveSessionPort. 
 
 Di seguito vengono documentati i componenti introdotti specificamente per questo caso d'uso.
