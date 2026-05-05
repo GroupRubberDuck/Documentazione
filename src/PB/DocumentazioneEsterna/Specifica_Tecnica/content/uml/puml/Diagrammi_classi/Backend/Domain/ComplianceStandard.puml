@@ -4,9 +4,12 @@ skinparam classAttributeIconSize 0
 
 class ComplianceStandard {
     - id: String
-    - code: String
     - name: String
-    - version: String
+    - version_number: String
+    - requirements: Map<String, Requirement>
+
+    + get_requirement(requirement_id: String): Requirement
+    + evaluate_requirement(requirement_id: String, answers: AssetEvidence): EvaluationState
 }
 ComplianceStandard *-- "1..*" Requirement
 

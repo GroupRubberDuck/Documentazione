@@ -3,9 +3,9 @@
 class EvaluationEngine {
  
     + evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult
-    - _evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult
-    - _resolve(requirement_id: str, standard: ComplianceStandard, asset: Asset, cache: dict[str, RequirementResult]): RequirementResult
-    - _aggregate_evaluation_states(states: Sequence<EvaluationState>): EvaluationState
+    - evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult
+    - resolve(requirement_id: String, standard: ComplianceStandard, asset: Asset, cache: Map<String, RequirementEvaluationResult>): RequirementEvaluationResult
+    - aggregate_evaluation_states(states: List<EvaluationState>): EvaluationState
 }
 
 @enduml

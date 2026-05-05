@@ -6,9 +6,9 @@ class RequirementEvaluationDetail {
     - description: String
     - target: String
     - justification: String
-    - node_coiches: MappingProxyType
+    - node_choices: Map<String, Bool>
     - state: EvaluationState
-    - dependencies: tuple[tuple[str, EvaluationState], ...]
+    - dependencies: List<Tuple<String, EvaluationState>>
 }
 
 @enduml

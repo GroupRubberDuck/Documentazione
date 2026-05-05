@@ -3,8 +3,11 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class DecisionTree {
-    ' - root_node_id: String
+    - root: String
+    - nodes: Map<String, Node>
+
+    + evaluate(answers: Map<String, Bool>): EvaluationState
 }
-DecisionTree *-- "root_node" Node
+DecisionTree *-- "1..*" Node
 
 @enduml

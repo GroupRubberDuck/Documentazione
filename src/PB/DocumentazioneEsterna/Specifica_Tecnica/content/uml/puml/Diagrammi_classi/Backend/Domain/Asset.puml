@@ -1,15 +1,17 @@
 @startuml Asset
-skinparam classAttributeIconSize 0
+
 class Asset {
-    - asset_id: String
-    - asset_anagraphic: AssetAnagraphic
-    - asset_proprieties: AssetProprieties
+    - id: String
+    - anagraphic: AssetAnagraphic
+    - proprieties: AssetProprieties
+
     + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
-    + set_justification(requirement_id: String, node_id: String, value: Bool): void
-    + update_anagraphic(name: string, type: AssetType, description: String): void
+    + set_justification(requirement_id: String, justification: String): void
+    + update_anagraphic(name: String, asset_type: AssetType, description: String): Asset
+    + get_evidence(requirement_id: String): AssetEvidence
 }
 
-Asset *-- "1..1" AssetAnagraphic
-Asset *-- "1..1" AssetProprieties
+Asset *-- "1" AssetAnagraphic
+Asset *-- "1" AssetProprieties
 
 @enduml

@@ -1,11 +1,12 @@
 @startuml AssetProprieties
-skinparam classAttributeIconSize 0
- 
+
 class AssetProprieties {
-    - asset_evidence_list: List<AssetEvidence>
+    - evidences: Map<String, AssetEvidence>
+
+    + evidences(): Map<String, AssetEvidence> <<property>>
+    + get_evidence(requirement_id: String): AssetEvidence
     + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
-    + set_justification(requirement_id: String, node_id: String, value: Bool): void
-    + get_evidence(requirement_id: String): AssetEvidence | void
+    + set_justification(requirement_id: String, justification: String): void
 }
 
 AssetProprieties *-- "1..*" AssetEvidence

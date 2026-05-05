@@ -2,8 +2,9 @@
 skinparam classAttributeIconSize 0
 
 enum AllowedDeviceFileExtension <<enum>> {
-        CSV
-        XML
-        JSON
-    }
+    CSV
+    XML
+    JSON
+}
+
 @enduml

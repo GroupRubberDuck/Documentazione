@@ -3,12 +3,16 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class Requirement {
-    - code: String
+    - requirement_id: String
     - name: String
     - description: String
-    - target: String
-    - dependencies: List<String>
+    - target_description: String
+    - dependency_ids: List<String>
+    - decision_tree: DecisionTree
+
+    + evaluate(answer: AssetEvidence, dependency_states: List<Tuple<String, EvaluationState>>): EvaluationState
 }
-Requirement *-- "1" DecisionTree
+
+Requirement *-- "0..1" DecisionTree
 
 @enduml

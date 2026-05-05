@@ -1,10 +1,8 @@
 @startuml AssetType
-skinparam linetype ortho
-skinparam classAttributeIconSize 0
 
 enum AssetType {
-    SECURITY
-    NETWORK
+    SECURITY = "security"
+    NETWORK = "network"
 }
 
 @enduml

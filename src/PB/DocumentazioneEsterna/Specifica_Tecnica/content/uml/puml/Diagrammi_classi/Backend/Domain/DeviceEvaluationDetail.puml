@@ -5,8 +5,8 @@ class DeviceEvaluationDetail {
     - name: String
     - operating_system: String
     - description: String
-    - assets: List<AssetEvaluationDetail>
     - standard_id: String
+    - asset_details: List<AssetEvaluationDetail>
     - verdict: EvaluationState
 }
 
