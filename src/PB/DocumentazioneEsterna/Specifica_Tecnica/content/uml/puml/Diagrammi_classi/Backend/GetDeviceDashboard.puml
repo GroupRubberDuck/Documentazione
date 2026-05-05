@@ -14,6 +14,10 @@ package "Application Core" {
 
     !include ApplicationServices/GetDeviceDashboardService.puml
 
+    class GetDeviceDashboardCommand {
+        + device_id: String
+    }
+
     class DashboardCommand {
         + device_id: String
         + device_name: String
@@ -32,15 +36,12 @@ package "Application Core" {
 
     () "GetSessionPort"
 
-    !include Domain/EvaluationSession.puml
+   
 
-    
-    DashboardCommand -[hidden]right-------- GetSessionPort
-
-    
+    GetDeviceDashboardService .right.> GetDeviceDashboardCommand : legge
     GetDeviceDashboardService .down.> DashboardCommand : popola
-    
-    
+
+    DashboardCommand -[hidden]right-------- GetSessionPort
     DashboardCommand *-down- AssetSummaryCommand
 }
 
@@ -49,11 +50,8 @@ package "Outbound Adapter" {
 }
 
 QueryDashboardController -down-> GetDeviceDashboardUseCase : usa
-
 GetDeviceDashboardUseCase -down- GetDeviceDashboardService
-
 GetDeviceDashboardService -down-> GetSessionPort : usa
-
 GetSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml
