@@ -85,7 +85,7 @@ _EvaluationSessionController_ non definisce attributi propri.
 ]
 
 
-===== OpenEvaluationSessionCommand
+==== OpenEvaluationSessionCommand
 
 #figure(
   image("../uml/png/Session/OpenEvaluationSessionCommand.png", width: 40%),
@@ -105,7 +105,7 @@ _OpenEvaluationSessionCommand_ è il Command Object utilizzato per trasportare i
 
 _OpenEvaluationSessionCommand_ non definisce metodi propri.
 
-=== OpenEvaluationSessionUseCase
+==== OpenEvaluationSessionUseCase
 
 #figure(
   image("../uml/png/Session/OpenEvaluationSessionUseCase.png", width: 45%),

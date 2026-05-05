@@ -1,6 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0   
-    class AnswerNodeCommand <<Command DTO>> {
+    class EvaluateNodeCommand <<Command DTO>> {
         + session_id: String
         + asset_id: String
         + requirement_id: String

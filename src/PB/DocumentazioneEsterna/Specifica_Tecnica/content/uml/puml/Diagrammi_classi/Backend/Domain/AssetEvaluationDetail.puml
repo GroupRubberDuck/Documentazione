@@ -1,5 +1,6 @@
 @startuml AssetEvaluationDetail
-
+skinparam classAttributeIconSize 0
+  
 class AssetEvaluationDetail {
     - asset_id: String
     - name: String
