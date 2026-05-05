@@ -1,0 +1,15 @@
+@startuml DeviceEvaluationDetail
+
+class DeviceEvaluationDetail {
+    - device_id: String
+    - name: String
+    - operating_system: String
+    - description: String
+    - assets: List<AssetEvaluationDetail>
+    - standard_id: String
+    - verdict: EvaluationState
+}
+
+DeviceEvaluationDetail *--"0..*" AssetEvaluationDetail
+
+@enduml

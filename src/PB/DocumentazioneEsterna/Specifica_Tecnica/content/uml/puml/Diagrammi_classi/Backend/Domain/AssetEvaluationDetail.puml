@@ -1,0 +1,14 @@
+@startuml AssetEvaluationDetail
+
+class AssetEvaluationDetail {
+    - asset_id: String
+    - name: String
+    - type: AssetType
+    - description: String
+    - requirement_result: list<RequirementEvaluationDetail>
+    - verdict: EvaluationState
+}
+
+AssetEvaluationDetail *--"1..*" RequirementEvaluationDetail
+
+@enduml
