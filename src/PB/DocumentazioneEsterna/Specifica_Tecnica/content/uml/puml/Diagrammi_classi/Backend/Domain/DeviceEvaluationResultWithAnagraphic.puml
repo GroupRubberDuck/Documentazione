@@ -1,15 +1,15 @@
-@startuml DeviceEvaluationResultWithAnagraphic
+@startuml DeviceEvaluationDetail
 
-class DeviceEvaluationResultWithAnagraphic {
+class DeviceEvaluationDetail {
     - device_id: String
     - name: String
     - operating_system: String
     - description: String
-    - assets: List<AssetEvaluationResultWithAnagraphic>
+    - assets: List<AssetEvaluationDetail>
     - standard_id: String
     - verdict: EvaluationState
 }
 
-DeviceEvaluationResultWithAnagraphic *--"0..*" AssetEvaluationResultWithAnagraphic
+DeviceEvaluationDetail *--"0..*" AssetEvaluationDetail
 
 @enduml
