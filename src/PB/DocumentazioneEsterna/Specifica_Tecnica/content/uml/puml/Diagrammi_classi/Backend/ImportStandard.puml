@@ -19,7 +19,7 @@ package "Application Core" {
         JSON
     }
 
-    class ImportStandardCommand <<Command DTO>> {
+    class ImportStandardCommand {
         + standard_file_content: BinaryIO
         + extension: AllowedStandardFileExtension
     }
@@ -27,6 +27,11 @@ package "Application Core" {
     () "FileStandardImporterPort"
     () "FileStandardImporterFactoryPort"
     () "StandardSavePort"
+
+    FileStandardImporterPort -[hidden]right-------- FileStandardImporterFactoryPort
+    FileStandardImporterFactoryPort -[hidden]right-------- StandardSavePort
+
+    ImportStandardService .right.> ImportStandardCommand : legge
 }
 
 package "Outbound Adapter" {
@@ -49,22 +54,17 @@ package "Outbound Adapter" {
 
     !include OutboundAdapters/ConcreteFileStandardImporterFactory.puml
     !include OutboundAdapters/MongoStandardAdapter.puml
+
+    FileStandardImporter -[hidden]right-------- ConcreteFileStandardImporterFactory
+    ConcreteFileStandardImporterFactory -[hidden]right-------- MongoStandardAdapter
 }
 
 ImportStandardController -right-> ImportStandardUseCase : usa
 ImportStandardUseCase -right- ImportStandardService
 
-' Forza spaziatura orizzontale ESTREMA tra le porte aggiungendo trattini
-FileStandardImporterPort -[hidden]right-------- FileStandardImporterFactoryPort
-FileStandardImporterFactoryPort -[hidden]right-------- StandardSavePort
-
 ImportStandardService -down-> FileStandardImporterPort : usa
 ImportStandardService -down-> FileStandardImporterFactoryPort : usa
 ImportStandardService -down-> StandardSavePort : usa
-
-' Ripetiamo la spaziatura estrema per gli adapter sottostanti
-FileStandardImporter -[hidden]right-------- ConcreteFileStandardImporterFactory
-ConcreteFileStandardImporterFactory -[hidden]right-------- MongoStandardAdapter
 
 FileStandardImporterPort -down- FileStandardImporter
 FileStandardImporterFactoryPort -down- ConcreteFileStandardImporterFactory
