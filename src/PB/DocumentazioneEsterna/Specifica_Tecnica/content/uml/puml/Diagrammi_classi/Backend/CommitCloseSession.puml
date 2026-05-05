@@ -15,17 +15,19 @@ package "Application Core" {
     () "CloseEvaluationSessionUseCase"
 
     !include ApplicationServices/CommitCloseEvaluationSessionService.puml
+    
+    class CommitCloseEvaluationSessionCommand {
+        + session_id: String
+    }
 
-    !include Domain/EvaluationSession.puml
+
     !include Domain/Device.puml
 
     () "SaveDevicePort"
     () "GetSessionPort"
     () "DeleteSessionPort"
 
-    ' ==========================================
-    ' GABBIA STRUTTURALE (ALLINEAMENTO)
-    ' ==========================================
+
     ' Moltiplichiamo i trattini per forzare una separazione orizzontale estrema tra le interfacce
     CommitEvaluationSessionUseCase -[hidden]right---------------- CloseEvaluationSessionUseCase
 
@@ -34,7 +36,6 @@ package "Application Core" {
     GetSessionPort -[hidden]right------------ DeleteSessionPort
 
     ' Mettiamo le entità di dominio da una parte per non farle incrociare con il Service
-    EvaluationSession -[hidden]right- CommitEvaluationSessionUseCase
     Device -[hidden]right- CommitEvaluationSessionUseCase
 
     ' ==========================================
@@ -42,6 +43,8 @@ package "Application Core" {
     ' ==========================================
     CommitEvaluationSessionUseCase -down- CommitCloseEvaluationSessionService
     CloseEvaluationSessionUseCase -down- CommitCloseEvaluationSessionService
+
+    CommitCloseEvaluationSessionService .right.> CommitCloseEvaluationSessionCommand : legge
 
     CommitCloseEvaluationSessionService -down-> SaveDevicePort :  usa
     CommitCloseEvaluationSessionService -down-> GetSessionPort :  usa
