@@ -32,6 +32,10 @@ package "4. Evaluation Output" {
     !include DeviceEvaluationResult.puml
     !include AssetEvaluationResult.puml
     !include RequirementEvaluationResult.puml
+
+    !include DeviceEvaluationResultWithAnagraphic.puml
+    !include AssetEvaluationResultWithAnagraphic.puml
+    !include RequirementEvaluationResultWithAnagraphic.puml
 }
 
 package "5. Session" {
