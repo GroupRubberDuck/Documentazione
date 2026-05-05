@@ -93,7 +93,7 @@ Il documento _Device_ è l'entità centrale del sistema. La sua struttura gerarc
   #tabella_schema(
     "Sub-documento --- evaluations[N]",
     [`id`], [string], [Riferimento al codice del requisito presente nel modello.],
-    [`evaluation_map`], [dictionary], [Mappa chiave-valore delle risposte. La chiave (string) corrisponde al codice del nodo decisionale, il valore (enum) rappresenta l'esito logico: `PASS`, `FAIL`, `NA` (Not Applicable).],
+    [`evaluation_map`], [dictionary], [Mappa chiave-valore delle risposte. La chiave (string) corrisponde al codice del nodo decisionale, il valore `bool` rappresenta la risposta associata.],
     [`justification`], [string], [Testo descrittivo della motivazione. Obbligatorio a livello applicativo in caso di esito `FAIL` o `NA`.]
   )
 ]
