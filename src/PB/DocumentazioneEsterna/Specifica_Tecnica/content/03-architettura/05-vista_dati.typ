@@ -139,8 +139,23 @@ La collection "Modelli" contiene la definizione strutturale degli standard norma
     [`id`], [string], [Identificativo testuale univoco del requisito.],
     [`name`], [string], [Titolo sintetico del requisito.],
     [`description`], [document], [Testo descrittivi del contesto normativo (`norm_description`, `target_description`).],
-    [`root_node`], [document], [Punto d'ingresso dell'albero decisionale per questo requisito.],
+    [`decision_tree`], [document], [Albero decisionale per questo requisito.],
     [`dependencies`], [array], [Elenco di codici di requisiti propedeutici da soddisfare prima della valutazione.]
+  )
+]
+
+
+#figure(
+  caption: [Schema dati: Sub-documento --- DecisionTree],
+)[
+  #tabella_schema(
+    "Sub-documento --- DecisionNode",
+    [`root_node`], [string], [Codice identificativo del nodo logico iniziale.],
+    [`nodes`], [array], [Lista dei nodi che compongono il decision tree.
+    
+    Il node_type funge da discriminante tra nodi di decisione e nodi foglia.
+    
+    Valori ammessi da node_type:decision_node | leaf_node.],
   )
 ]
 
@@ -150,7 +165,9 @@ La collection "Modelli" contiene la definizione strutturale degli standard norma
   #tabella_schema(
     "Sub-documento --- DecisionNode",
     [`id`], [string], [Codice identificativo del nodo logico.],
-    [`description`], [string], [Testo della domanda posta all'utente.],
+    [`node_type`], [enum], [decision_node, identifica un nodo  di decisione.],
+
+    [`question`], [string], [Testo della domanda posta all'utente.],
     [`child_yes`], [document], [Riferimento al nodo successivo sul ramo associato alla risposta affermativa.],
     [`child_no`], [document], [Riferimento al nodo successivo sul ramo associato alla risposta negativa.]
   )
@@ -161,10 +178,10 @@ La collection "Modelli" contiene la definizione strutturale degli standard norma
 )[
   #tabella_schema(
     "Sub-documento --- LeafNode",
+    [`id`], [string], [Codice identificativo del nodo foglia.],
+    [`node_type`], [enum], [leaf_node, identifica un nodo foglia.],
     [`result`], [enum], [Stato terminale del percorso logico. Valori ammessi: `PASS`, `FAIL`, `NA`.],
-    [`not_applicable`], [string], [Testo esplicativo in caso di non applicabilità.],
-    [`pass`], [string], [Messaggio di conferma del soddisfacimento.],
-    [`fail`], [string], [Messaggio di errore o indicazioni di mitigazione.]
+
   )
 ]
 
