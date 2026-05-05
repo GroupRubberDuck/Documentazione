@@ -69,19 +69,8 @@ Il documento _Device_ è l'entità centrale del sistema. La sua struttura gerarc
     [`name`], [string], [Nome assegnato dall'utente al dispositivo. Valore obbligatorio.],
     [`os`], [string], [Sistema operativo o firmware installato.],
     [`description`], [string], [Testo libero descrittivo del dispositivo.],
-    [`evaluation_cs`], [document], [Metadati del modello di riferimento (compliance standard) usato per la valutazione (`id`, `name`, `version`).],
+    [`compliance_standard_id`], [string], [Id del modello di riferimento],
     [`assets`], [array], [Elenco degli asset associati al dispositivo. Può essere inizializzato come array vuoto `[]`.]
-  )
-]
-
-#figure(
-  caption: [Schema dati: Sub-documento --- evaluation_cs],
-)[
-  #tabella_schema(
-    "Sub-documento --- evaluation_cs",
-    [`id`], [string], [Identificativo del modello di riferimento nel sistema esterno.],
-    [`name`], [string], [Nome leggibile del modello.],
-    [`version`], [string], [Versione del modello applicata alla valutazione.]
   )
 ]
 
