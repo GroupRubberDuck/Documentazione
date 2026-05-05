@@ -14,11 +14,31 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero della dashb
 
 
  
+==== GetDeviceDashboardCommand
+
+#figure(
+  image("../uml/png/Dashboard/GetDeviceDashboardCommand.png", width: 40%),
+  caption: [GetDeviceDashboardCommand]
+) <fig-get-device-dashboard-command>
+
+*Descrizione*
+
+_GetDeviceDashboardCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero della dashboard di un Dispositivo. Incapsula i parametri di input del metodo esposto da _GetDeviceDashboardUseCase_.
+
+*Attributi*
+
+- `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare la dashboard.
+
+*Metodi e funzioni*
+
+_GetDeviceDashboardCommand_ non definisce metodi propri.
+
 ==== GetDeviceDashboardUseCase
+
 #figure(
   image("../uml/png/Dashboard/GetDeviceDashboardUseCase.png", width: 40%),
   caption: [GetDeviceDashboardUseCase]
-) 
+) <fig-get-device-dashboard-use-case>
 
 *Descrizione*
 
@@ -30,18 +50,18 @@ _GetDeviceDashboardUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_device_dashboard(session_id: String): DashboardDTO` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione in una vista dashboard.
-
-
+- `+ get_device_dashboard(command: GetDeviceDashboardCommand): DashboardCommand` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione in una vista dashboard.
 
 ==== GetDeviceDashboardService
+
 #figure(
   image("../uml/png/Dashboard/GetDeviceDashboardService.png", width: 50%),
   caption: [GetDeviceDashboardService]
-) 
+) <fig-get-device-dashboard-service>
+
 *Descrizione*
 
-_GetDeviceDashboardService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceDashboardUseCase_, recupera la sessione attiva tramite _GetSessionPort_,  e costruisce il DTO _DashboardCommand_ con le informazioni aggregate.
+_GetDeviceDashboardService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceDashboardUseCase_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il _DashboardCommand_ con le informazioni aggregate.
 
 *Attributi*
 
@@ -49,7 +69,7 @@ _GetDeviceDashboardService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_device_dashboard(session_id: String): DashboardDTO` — concretizza il contratto definito da _GetDeviceDashboardUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DashboardCommand_.
+- `+ get_device_dashboard(command: GetDeviceDashboardCommand): DashboardCommand` — concretizza il contratto definito da _GetDeviceDashboardUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DashboardCommand_.
 
 ==== DashboardCommand
 #figure(
