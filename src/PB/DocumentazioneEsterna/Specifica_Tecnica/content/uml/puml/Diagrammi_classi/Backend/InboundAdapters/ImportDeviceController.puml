@@ -1,4 +1,5 @@
-@startuml ImportDeviceController
+@startuml ImportAndUploadControllers
+skinparam classAttributeIconSize 0
 
 class ImportDeviceController <<Flask Blueprint>> {
     + import_device(req: Request): Response
@@ -6,9 +7,9 @@ class ImportDeviceController <<Flask Blueprint>> {
 
 class UploadFileController <<Utility>> {
     + get_http_file_payload(): BinaryIO
-    + get_http_file_extension(): string
+    + get_http_file_extension(): String
 }
 
-ImportDeviceController .up.> UploadFileController
+ImportDeviceController .right.> UploadFileController : usa
 
 @enduml

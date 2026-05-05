@@ -1,7 +1,7 @@
 @startuml DeleteAssetService
-
-class DeleteAssetService {
-    + delete_asset(device_id: String, session_id: String): void
+skinparam classAttributeIconSize 0
+class DeleteAssetService <<Application Service>> {
+    + delete_asset(command: DeleteAssetCommand): void
 }
 
 @enduml

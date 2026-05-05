@@ -26,7 +26,6 @@ package "Application Core" {
     () "GetSessionPort"
     () "ReportGeneratorPort"
 
-    !include Domain/EvaluationSession.puml
 
     ExportReportService -up- ExportReportUseCase
 

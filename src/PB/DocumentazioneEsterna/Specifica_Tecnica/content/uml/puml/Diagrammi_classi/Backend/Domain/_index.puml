@@ -2,36 +2,49 @@
 skinparam linetype ortho
 skinparam packageStyle rectangle
 
-
 package "1. Evaluation Object" {
     !include Device.puml
-    !include Asset.puml
+    !include AssetAnagraphic.puml
     !include AssetType.puml
-    !include Answer.puml
+    !include Asset.puml
+    !include AssetProprieties.puml
+    !include AssetEvidence.puml
 }
 
-package "3. Compliance Standard" {
+package "2. Compliance Standard" {
     !include ComplianceStandard.puml
     !include DecisionNode.puml
     !include Node.puml
     !include LeafNode.puml
     !include DecisionTree.puml
     !include Requirement.puml
-
-
+    !include StandardVerdict.puml
 }
-package "2. Evaluation" {
-    !include EvaluationSheet.puml
+
+package "3. Evaluation Engine" {
+    !include EvaluationEngine.puml
     !include EvaluationState.puml
-    !include Verdict.puml
+    
 }
 
-package "4. Session" {
-    !include EvaluationSession.puml
+package "4. Evaluation Output" {
+    !include DeviceEvaluationResult.puml
+    !include AssetEvaluationResult.puml
+    !include RequirementEvaluationResult.puml
+
+    !include DeviceEvaluationDetail.puml
+    !include AssetEvaluationDetail.puml
+    !include RequirementEvaluationDetail.puml
+}
+
+package "5. Session" {
     !include SessionType.puml
     !include SessionHandler.puml
+    !include EvaluationSession.puml
 }
 
+
+EvaluationEngine --> DeviceEvaluationResult
 
 
 @enduml

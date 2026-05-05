@@ -1,5 +1,5 @@
 @startuml EvaluationDecisionNodeController
-
+skinparam classAttributeIconSize 0
 class EvaluationDecisionNodeController <<Flask Blueprint>> {
     + insert_answer(req: Request): Response
 }

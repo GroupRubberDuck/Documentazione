@@ -1,5 +1,6 @@
 @startuml OpenEvaluationSession
 
+skinparam linetype ortho
 skinparam nodesep 150
 skinparam ranksep 150
 skinparam classAttributeIconSize 0
@@ -14,6 +15,11 @@ package "Application Core" {
 
     !include ApplicationServices/OpenEvaluationSessionService.puml
 
+    class OpenEvaluationSessionCommand {
+        + device_id: String
+        + session_id: String
+    }
+
     class SessionCoordinator <<Domain Service>> {
         + can_open_session(session_type: SessionType): bool
     }
@@ -22,14 +28,17 @@ package "Application Core" {
     () "FindStandardPort"
     () "CreateSessionPort"
 
-    !include Domain/EvaluationSession.puml
+   
 
     OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
+    OpenEvaluationSessionService .down.> OpenEvaluationSessionCommand : legge
 
-    OpenEvaluationSessionService -right-> FindDevicePort : richiede
-    OpenEvaluationSessionService --> FindStandardPort : richiede
-    OpenEvaluationSessionService --> CreateSessionPort : richiede
+    OpenEvaluationSessionService -right-> FindDevicePort : usa
+    OpenEvaluationSessionService -down-> FindStandardPort :usa
+    OpenEvaluationSessionService -down-> CreateSessionPort :usa
 
+    CreateSessionPort -[hidden]right- OpenEvaluationSessionCommand
+    OpenEvaluationSessionCommand -[hidden]right- FindStandardPort
 }
 
 package "Outbound Adapter" {
@@ -38,9 +47,9 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-EvaluationSessionController -left-> OpenEvaluationSessionUseCase : usa
+EvaluationSessionController -right-> OpenEvaluationSessionUseCase : usa
 MongoDeviceAdapter -up- FindDevicePort
 MongoStandardAdapter -up- FindStandardPort
-InMemoryEvaluationSessionCache -up-- CreateSessionPort
+InMemoryEvaluationSessionCache -up- CreateSessionPort
 
 @enduml

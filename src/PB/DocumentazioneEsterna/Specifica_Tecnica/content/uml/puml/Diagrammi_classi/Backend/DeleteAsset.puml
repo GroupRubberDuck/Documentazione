@@ -9,11 +9,14 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-
     () "DeleteAssetUseCase"
+
+    class DeleteAssetCommand {
+        + asset_id: String
+    }
+
     !include ApplicationServices/DeleteAssetService.puml
     !include Domain/Asset.puml
-    !include Domain/EvaluationSession.puml
     () "SaveSessionPort"
     () "GetSessionPort"
 }
@@ -22,15 +25,15 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
+WriteAssetController -down-> DeleteAssetUseCase : usa
+DeleteAssetUseCase -down- DeleteAssetService
 
-DeleteAssetService - DeleteAssetUseCase
+DeleteAssetService .> DeleteAssetCommand : legge
 
-DeleteAssetService --> SaveSessionPort : usa
-DeleteAssetService --> GetSessionPort : usa
+DeleteAssetService -down-> SaveSessionPort : usa
+DeleteAssetService -down-> GetSessionPort : usa
 
-SaveSessionPort -- InMemoryEvaluationSessionCache
-GetSessionPort -- InMemoryEvaluationSessionCache
-
-WriteAssetController --> DeleteAssetUseCase : usa
+SaveSessionPort -down- InMemoryEvaluationSessionCache
+GetSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

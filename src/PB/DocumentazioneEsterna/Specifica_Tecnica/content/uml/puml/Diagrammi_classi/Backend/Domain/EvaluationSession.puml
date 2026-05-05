@@ -1,11 +1,7 @@
 @startuml EvaluationSession
-skinparam linetype ortho
-skinparam classAttributeIconSize 0
 
 class EvaluationSession {
-    ' - evaluationSheet: EvaluationSheet
-    - session_id: String
+    - device: Device
+    - standard: Standard
+    - device_detail_eval_detail: DeviceEvaluationDetail
 }
-EvaluationSession --> Device
-EvaluationSession --> ComplianceStandard
-@enduml

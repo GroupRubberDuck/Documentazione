@@ -1,7 +1,0 @@
-@startuml SaveAssetService
-
-class SaveAssetService {
-    + save_asset(asset: SaveAssetCommand): bool
-}
-
-@enduml

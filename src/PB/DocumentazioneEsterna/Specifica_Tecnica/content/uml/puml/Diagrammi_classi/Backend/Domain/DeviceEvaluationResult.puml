@@ -1,0 +1,17 @@
+@startuml DeviceEvaluationResult
+
+class DeviceEvaluationResult <<Value Object>> {
+    - device_id: String
+    - standard_id: String
+    - asset_results: List<AssetEvaluationResult>
+    - verdict: EvaluationState
+
+    + get_asset_result(asset_id: String): AssetEvaluationResult
+    + failed_assets(): List<AssetEvaluationResult>
+    + pending_assets(): List<AssetEvaluationResult>
+    + is_complete(): Bool
+}
+
+DeviceEvaluationResult *-- "0..*" AssetEvaluationResult
+
+@enduml

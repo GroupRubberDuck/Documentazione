@@ -1,0 +1,160 @@
+@startuml AssetAll
+skinparam linetype ortho
+skinparam nodesep 140
+skinparam ranksep 160
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/QueryDashboardController.puml
+    !include InboundAdapters/WriteAssetController.puml
+    
+    QueryDashboardController -[hidden]right-------- WriteAssetController
+}
+
+package "Application Core" {
+
+    ' --- USE CASES ---
+    () "GetDeviceDashboardUseCase"
+    () "GetAssetDetailUseCase"
+    () "CreateAssetUseCase"
+    () "SaveAssetUseCase"
+    () "DeleteAssetUseCase"
+
+    ' --- SERVICES ---
+    !include ApplicationServices/GetDeviceDashboardService.puml
+    !include ApplicationServices/GetAssetDetailService.puml
+    !include ApplicationServices/CreateAssetService.puml
+    !include ApplicationServices/UpdateAssetService.puml
+    !include ApplicationServices/DeleteAssetService.puml
+
+    ' --- COMMANDS, DTOs & ENTITIES ---
+    class DashboardCommand {
+        + device_id: String
+        + device_name: String
+        + operating_system: String
+        + description: String
+        + aggregate_status: EvaluationState
+        + asset_list: List<AssetSummaryCommand>
+    }
+
+    class AssetSummaryCommand {
+        + asset_id: String
+        + name: String
+        + type: AssetType
+        + stato_aggregato: EvaluationState
+    }
+
+    class AssetDetail {
+        + asset_id: String
+        + name: String
+        + type: AssetType
+        + description: String
+        + aggregate_status: EvaluationState
+        + requirement_list: List<RequirementEval>
+    }
+
+    class RequirementEval{
+        + codice_requisito: String
+        + stato_valutazione: EvaluationState
+    }
+
+    class CreateAssetCommand {
+        + name: String
+        + type: AssetType
+        + description: String
+        + session_id: String
+    }
+
+    class SaveAssetCommand {
+        + asset_id: String
+        + name: String
+        + type: AssetType
+        + description: String
+        + session_id: String
+    }
+
+    class DeleteAssetCommand {
+        + device_id: String
+        + session_id: String
+    }
+
+    !include Domain/Asset.puml
+
+    ' --- PORTS ---
+    () "GetSessionPort"
+    () "SaveSessionPort"
+
+    GetDeviceDashboardUseCase -[hidden]right-------- GetAssetDetailUseCase
+    GetAssetDetailUseCase -[hidden]right-------- CreateAssetUseCase
+    CreateAssetUseCase -[hidden]right-------- UpdateAssetUseCase
+    UpdateAssetUseCase -[hidden]right-------- DeleteAssetUseCase
+
+    GetDeviceDashboardService -[hidden]right-------- GetAssetDetailService
+    GetAssetDetailService -[hidden]right-------- CreateAssetService
+    CreateAssetService -[hidden]right-------- UpdateAssetService
+    UpdateAssetService -[hidden]right-------- DeleteAssetService
+
+    GetDeviceDashboardService -[hidden]down---- DashboardCommand
+    GetAssetDetailService -[hidden]down---- AssetDetail
+    CreateAssetService -[hidden]down---- CreateAssetCommand
+    UpdateAssetService -[hidden]down---- SaveAssetCommand
+    DeleteAssetService -[hidden]down---- DeleteAssetCommand
+
+    DashboardCommand -[hidden]right-------- AssetDetail
+    AssetDetail -[hidden]right-------- CreateAssetCommand
+    CreateAssetCommand -[hidden]right-------- SaveAssetCommand
+    SaveAssetCommand -[hidden]right-------- DeleteAssetCommand
+
+    DashboardCommand -[hidden]down---- AssetSummaryCommand
+    AssetDetail -[hidden]down---- RequirementEval
+    CreateAssetCommand -[hidden]down---- GetSessionPort
+    SaveAssetCommand -[hidden]down---- SaveSessionPort
+
+    Asset -[hidden]right- EvaluationSession
+    EvaluationSession -[hidden]right- EvaluationSheet
+    EvaluationSheet -[hidden]down- GetSessionPort
+
+    GetSessionPort -[hidden]right------------ SaveSessionPort
+
+    DashboardCommand *-down- AssetSummaryCommand
+    AssetDetail *-down- RequirementEval
+
+    GetDeviceDashboardService .down.> DashboardCommand : popola
+    CreateAssetService .down.> CreateAssetCommand : legge
+    UpdateAssetService .down.> SaveAssetCommand : legge
+    DeleteAssetService .down.> DeleteAssetCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+QueryDashboardController -down-> GetDeviceDashboardUseCase : usa
+QueryDashboardController -down-> GetAssetDetailUseCase : usa
+
+WriteAssetController -down-> CreateAssetUseCase : usa
+WriteAssetController -down-> UpdateAssetUseCase : usa
+WriteAssetController -down-> DeleteAssetUseCase : usa
+
+GetDeviceDashboardUseCase -down- GetDeviceDashboardService
+GetAssetDetailUseCase -down- GetAssetDetailService
+CreateAssetUseCase -down- CreateAssetService
+UpdateAssetUseCase -down- UpdateAssetService
+DeleteAssetUseCase -down- DeleteAssetService
+
+GetDeviceDashboardService ---> GetSessionPort : usa
+GetAssetDetailService ---> GetSessionPort : usa
+
+CreateAssetService ---> GetSessionPort : usa
+CreateAssetService ---> SaveSessionPort : usa
+
+UpdateAssetService ---> GetSessionPort : usa
+UpdateAssetService ---> SaveSessionPort : usa
+
+DeleteAssetService ---> GetSessionPort : usa
+DeleteAssetService ---> SaveSessionPort : usa
+
+GetSessionPort -down- InMemoryEvaluationSessionCache
+SaveSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

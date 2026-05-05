@@ -1,8 +1,8 @@
-@startuml import-device
+@startuml import-standard
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
-skinparam nodesep 80
-skinparam ranksep 100
+skinparam nodesep 250
+skinparam ranksep 120
 
 package "Inbound Adapter" {
     !include InboundAdapters/ImportStandardController.puml
@@ -19,14 +19,19 @@ package "Application Core" {
         JSON
     }
 
-    class ImportStandardCommand <<Command DTO>> {
+    class ImportStandardCommand {
         + standard_file_content: BinaryIO
         + extension: AllowedStandardFileExtension
     }
 
     () "FileStandardImporterPort"
-    () "StandardSavePort"
     () "FileStandardImporterFactoryPort"
+    () "StandardSavePort"
+
+    FileStandardImporterPort -[hidden]right-------- FileStandardImporterFactoryPort
+    FileStandardImporterFactoryPort -[hidden]right-------- StandardSavePort
+
+    ImportStandardService .right.> ImportStandardCommand : legge
 }
 
 package "Outbound Adapter" {
@@ -48,23 +53,27 @@ package "Outbound Adapter" {
     }
 
     !include OutboundAdapters/ConcreteFileStandardImporterFactory.puml
-    !!include OutboundAdapters/MongoStandardAdapter.puml
+    !include OutboundAdapters/MongoStandardAdapter.puml
+
+    FileStandardImporter -[hidden]right-------- ConcreteFileStandardImporterFactory
+    ConcreteFileStandardImporterFactory -[hidden]right-------- MongoStandardAdapter
 }
 
-ImportStandardController --( ImportStandardUseCase : usa
+ImportStandardController -right-> ImportStandardUseCase : usa
+ImportStandardUseCase -right- ImportStandardService
 
-ImportStandardUseCase - ImportStandardService
+ImportStandardService -down-> FileStandardImporterPort : usa
+ImportStandardService -down-> FileStandardImporterFactoryPort : usa
+ImportStandardService -down-> StandardSavePort : usa
 
-ImportStandardService ..> FileStandardImporterPort
-ImportStandardService --( FileStandardImporterFactoryPort
-ImportStandardService --( StandardSavePort
+FileStandardImporterPort -down- FileStandardImporter
+FileStandardImporterFactoryPort -down- ConcreteFileStandardImporterFactory
+StandardSavePort -down- MongoStandardAdapter
 
-FileStandardImporterFactoryPort - ConcreteFileStandardImporterFactory
-ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter
-ConcreteFileStandardImporterFactory .up.> XMLFileStandardImporter
-
-FileStandardImporterPort - FileStandardImporter
 FileStandardImporter <|-down- XMLFileStandardImporter
 FileStandardImporter <|-down- JSONFileStandardImporter
+
+ConcreteFileStandardImporterFactory .up.> JSONFileStandardImporter : usa
+ConcreteFileStandardImporterFactory .up.> XMLFileStandardImporter : usa
 
 @enduml

@@ -1,7 +1,8 @@
 @startuml CommitEvaluationSession
 
-skinparam nodesep 150
-skinparam ranksep 150
+skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
@@ -14,27 +15,37 @@ package "Application Core" {
 
     !include ApplicationServices/CommitEvaluationSessionService.puml
 
+    class CommitEvaluationSessionCommand {
+        + session_id: String
+    }
+
     () "SaveDevicePort"
     () "GetSessionPort"
 
-    !include Domain/EvaluationSession.puml
     !include Domain/Device.puml
 
     CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
+    CommitEvaluationSessionService .right.> CommitEvaluationSessionCommand : legge
 
-    CommitEvaluationSessionService --> SaveDevicePort : richiede
-    CommitEvaluationSessionService --> GetSessionPort : richiede
-
-    CommitEvaluationSessionService .right.> CommitSessionCommand : legge
+    CommitEvaluationSessionService -down-> SaveDevicePort : usa
+    CommitEvaluationSessionService -down-> GetSessionPort : usa
+    
+    ' TRUCCO: Forza le porte a rimanere allineate orizzontalmente (sinistra -> destra)
+    SaveDevicePort -[hidden]right- GetSessionPort
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+    
+    ' TRUCCO: Forza gli adapter a seguire lo stesso identico ordine delle porte
+    MongoDeviceAdapter -[hidden]right- InMemoryEvaluationSessionCache
 }
 
-EvaluationSessionController --> CommitEvaluationSessionUseCase : usa
-MongoDeviceAdapter - SaveDevicePort
+EvaluationSessionController -down-> CommitEvaluationSessionUseCase : usa
+
+' Le connessioni andranno ora dritte verso l'alto senza incrociarsi
+MongoDeviceAdapter -up- SaveDevicePort
 InMemoryEvaluationSessionCache -up- GetSessionPort
 
 @enduml

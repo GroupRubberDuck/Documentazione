@@ -1,5 +1,5 @@
 @startuml QueryDashboardController
-
+skinparam classAttributeIconSize 0
 class QueryDashboardController <<Flask Blueprint>> {
     + get_device_dashboard(req: Request): Response
     + get_asset_detail(req: Request): Response

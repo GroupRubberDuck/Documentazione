@@ -1,5 +1,5 @@
 @startuml WriteAssetController
-
+skinparam classAttributeIconSize 0
 class WriteAssetController <<Flask Blueprint>>{
     + create_asset(req: Request): Response
     + update_asset(req: Request): Response

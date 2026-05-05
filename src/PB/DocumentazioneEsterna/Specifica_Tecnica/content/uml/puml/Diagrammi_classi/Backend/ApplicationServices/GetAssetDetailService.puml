@@ -1,7 +1,7 @@
 @startuml GetAssetDetailService
-
-class  GetAssetDetailService{
-    + get_asset(session_id: String, asset_id: String): AssetDetail
+skinparam classAttributeIconSize 0
+class GetAssetDetailService <<Application Service>> {
+    + get_asset(command: GetAssetDetailCommand): AssetDetail
 }
 
 @enduml

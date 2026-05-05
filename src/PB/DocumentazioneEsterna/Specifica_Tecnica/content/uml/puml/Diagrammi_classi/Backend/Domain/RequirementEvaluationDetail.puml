@@ -1,0 +1,14 @@
+@startuml RequirementEvaluationDetail
+
+class RequirementEvaluationDetail {
+    - requirement_id: String
+    - name: String
+    - description: String
+    - target: String
+    - justification: String
+    - node_choices: Map<String, Bool>
+    - state: EvaluationState
+    - dependencies: List<Tuple<String, EvaluationState>>
+}
+
+@enduml

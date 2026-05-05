@@ -1,0 +1,10 @@
+@startuml 
+skinparam classAttributeIconSize 0
+    class NodeResponse{
+        + node_id: String
+        + type: NodeType
+        + question_text: String
+        + user_answer: Boolean
+        + evaluation_state: EvaluationState
+    }
+@enduml

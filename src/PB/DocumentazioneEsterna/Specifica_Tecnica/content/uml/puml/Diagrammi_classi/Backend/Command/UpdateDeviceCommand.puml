@@ -1,0 +1,9 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class UpdateDeviceCommand <<Command Object>> {
+    + device_name: String
+    + device_os: String
+    + device_description: String
+}
+@enduml

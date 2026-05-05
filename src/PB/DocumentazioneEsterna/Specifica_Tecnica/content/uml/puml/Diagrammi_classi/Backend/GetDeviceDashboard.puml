@@ -1,6 +1,6 @@
 @startuml GetDeviceDashboard
 skinparam linetype ortho
-skinparam nodesep 90
+skinparam nodesep 120
 skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
@@ -13,6 +13,10 @@ package "Application Core" {
     () "GetDeviceDashboardUseCase"
 
     !include ApplicationServices/GetDeviceDashboardService.puml
+
+    class GetDeviceDashboardCommand {
+        + device_id: String
+    }
 
     class DashboardCommand {
         + device_id: String
@@ -32,21 +36,22 @@ package "Application Core" {
 
     () "GetSessionPort"
 
-    !include Domain/EvaluationSession.puml
+   
 
-    GetDeviceDashboardService -up- GetDeviceDashboardUseCase
-    GetDeviceDashboardService --( GetSessionPort : richiede
+    GetDeviceDashboardService .right.> GetDeviceDashboardCommand : legge
+    GetDeviceDashboardService .down.> DashboardCommand : popola
 
-    GetDeviceDashboardService ..> GetDeviceDashboardQuery : "legge"
-    GetDeviceDashboardService ..> DashboardCommand : popola
-    DashboardCommand *-- AssetSummaryCommand
+    DashboardCommand -[hidden]right-------- GetSessionPort
+    DashboardCommand *-down- AssetSummaryCommand
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-QueryDashboardController -down-( GetDeviceDashboardUseCase : usa
-InMemoryEvaluationSessionCache -up- GetSessionPort
+QueryDashboardController -down-> GetDeviceDashboardUseCase : usa
+GetDeviceDashboardUseCase -down- GetDeviceDashboardService
+GetDeviceDashboardService -down-> GetSessionPort : usa
+GetSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

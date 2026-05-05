@@ -1,12 +1,14 @@
 @startuml DecisionNode
-skinparam linetype ortho
-skinparam classAttributeIconSize 0
 
 class DecisionNode {
+    - node_id: String
     - question: String
-    + get_next_node(answer: Boolean): Node
+    - child_on_true_id: String
+    - child_on_false_id: String
+    
+    + next(condition: Bool): String
 }
-DecisionNode *--" yes_child \n no_child" Node
+
 DecisionNode --|> Node
 
 @enduml

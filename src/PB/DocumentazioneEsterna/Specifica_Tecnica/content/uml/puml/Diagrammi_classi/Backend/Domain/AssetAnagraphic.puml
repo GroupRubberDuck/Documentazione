@@ -1,0 +1,10 @@
+@startuml AssetAnagraphic
+skinparam classAttributeIconSize 0
+  
+class AssetAnagraphic {
+    - name: String
+    - asset_type: AssetType
+    - description: String
+}
+
+@enduml

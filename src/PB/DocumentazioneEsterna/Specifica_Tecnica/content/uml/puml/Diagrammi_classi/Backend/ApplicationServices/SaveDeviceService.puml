@@ -1,7 +1,0 @@
-@startuml SaveDeviceService
-
-class SaveDeviceService <<Application Service>> {
-    + save(command: SaveDeviceCommand): void
-}
-
-@enduml

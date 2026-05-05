@@ -1,7 +1,7 @@
 @startuml GetRequirement
 skinparam linetype ortho
-skinparam nodesep 90
-skinparam ranksep 100
+skinparam nodesep 120
+skinparam ranksep 140
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
@@ -11,13 +11,13 @@ package "Inbound Adapter" {
 package "Application Core" {
     () "GetRequirementUseCase"
 
+    !include ApplicationServices/GetRequirementService.puml
+
     class GetRequirementCommand {
         + session_id: String
         + asset_id: String
         + requirement_id: String
     }
-
-    !include ApplicationServices/GetRequirementService.puml
 
     class RequirementResponse{
         + requirement_code: String
@@ -47,26 +47,34 @@ package "Application Core" {
 
     () "GetSessionPort"
 
-    !include Domain/EvaluationSession.puml
-    !include Domain/EvaluationSheet.puml
+    ' Allineiamo Response, Command e Porta sotto il Service per far scendere le frecce dritte
+    RequirementResponse -[hidden]right-------- GetRequirementCommand
+    GetRequirementCommand -[hidden]right-------- GetSessionPort
 
-    GetRequirementService -up- GetRequirementUseCase
+    ' ==========================================
+    ' COLLEGAMENTI INTERNI AL CORE (Top-Down)
+    ' ==========================================
+    GetRequirementUseCase -down- GetRequirementService
     
-    GetRequirementService -down-> GetSessionPort : "richiede sessione"
+    GetRequirementService -down-> GetSessionPort : usa
 
-    GetRequirementService ..> GetRequirementCommand : "legge"
-    GetRequirementService ..> RequirementResponse : "popola"
+    GetRequirementService .down.> GetRequirementCommand : legge
+    GetRequirementService .down.> RequirementResponse : popola
     
-    RequirementResponse *-- DecisionTreeResponse
-    RequirementResponse *-- DependencyResponse
-    DecisionTreeResponse *-- NodeResponse
+    ' Frecce di composizione rigorosamente verso il basso
+    RequirementResponse *-down- DecisionTreeResponse
+    RequirementResponse *-down- DependencyResponse
+    DecisionTreeResponse *-down- NodeResponse
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-QueryEvaluationRequirementsController -down-> GetRequirementUseCase : "usa"
-InMemoryEvaluationSessionCache -up- GetSessionPort
+' ==========================================
+' COLLEGAMENTI ESTERNI (Inbound -> Core -> Outbound)
+' ==========================================
+QueryEvaluationRequirementsController -down-> GetRequirementUseCase : usa
+GetSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

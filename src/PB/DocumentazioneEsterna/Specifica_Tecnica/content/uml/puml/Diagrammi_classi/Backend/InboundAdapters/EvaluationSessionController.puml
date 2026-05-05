@@ -1,5 +1,5 @@
 @startuml EvaluationSessionController
-
+skinparam classAttributeIconSize 0
 class EvaluationSessionController <<Flask Blueprint>> {
     + open_session(req: Request): Response
     + close_session(req: Request): Response

@@ -1,0 +1,15 @@
+@startuml AssetEvaluationDetail
+skinparam classAttributeIconSize 0
+  
+class AssetEvaluationDetail {
+    - asset_id: String
+    - name: String
+    - asset_type: AssetType
+    - description: String
+    - requirement_details: List<RequirementEvaluationDetail>
+    - verdict: EvaluationState
+}
+
+AssetEvaluationDetail *--"1..*" RequirementEvaluationDetail
+
+@enduml
