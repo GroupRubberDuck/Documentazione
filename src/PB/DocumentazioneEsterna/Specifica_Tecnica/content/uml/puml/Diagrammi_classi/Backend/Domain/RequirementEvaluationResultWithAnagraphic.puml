@@ -1,0 +1,14 @@
+@startuml RequirementEvaluationResultWithAnagraphic
+
+class RequirementEvaluationResultWithAnagraphic {
+    - requirement_id: String
+    - name: String
+    - description: String
+    - target: String
+    - justification: String
+    - node_coiches: MappingProxyType
+    - state: EvaluationState
+    - dependencies: tuple[tuple[str, EvaluationState], ...]
+}
+
+@enduml

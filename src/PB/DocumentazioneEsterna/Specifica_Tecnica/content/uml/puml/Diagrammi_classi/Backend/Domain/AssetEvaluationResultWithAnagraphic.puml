@@ -1,0 +1,14 @@
+@startuml AssetEvaluationResultWithAnagraphic
+
+class AssetEvaluationResultWithAnagraphic {
+    - asset_id: String
+    - name: String
+    - type: AssetType
+    - description: String
+    - requirement_result: list<RequirementEvaluationResultWithAnagraphic>
+    - verdict: EvaluationState
+}
+
+AssetEvaluationResultWithAnagraphic *--"1..*" RequirementEvaluationResultWithAnagraphic
+
+@enduml
