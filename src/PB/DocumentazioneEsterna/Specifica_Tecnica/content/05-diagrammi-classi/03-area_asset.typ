@@ -378,11 +378,31 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ]
 
 
+==== DeleteAssetCommand
+
+#figure(
+  image("../uml/png/DeleteAsset/DeleteAssetCommand.png", width: 40%),
+  caption: [DeleteAssetCommand]
+) <fig-delete-asset-command>
+
+*Descrizione*
+
+_DeleteAssetCommand_ è il Command Object utilizzato per trasportare i dati necessari all'eliminazione di un Asset dalla sessione di valutazione. Incapsula i parametri di input del metodo esposto da _DeleteAssetUseCase_.
+
+*Attributi*
+
+- `+ Asset_id: String` — identificativo univoco del Asset da eliminare.
+*Metodi e funzioni*
+
+_DeleteAssetCommand_ non definisce metodi propri.
+
 ==== DeleteAssetUseCase
+
 #figure(
   image("../uml/png/DeleteAsset/DeleteAssetUseCase.png", width: 45%),
   caption: [DeleteAssetUseCase]
 ) <fig-delete-asset-use-case>
+
 *Descrizione*
 
 _DeleteAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'eliminazione di un Asset dalla sessione di valutazione. Viene implementata da _DeleteAssetService_ e utilizzata da _WriteAssetController_.
@@ -393,9 +413,7 @@ _DeleteAssetUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ delete_asset(device_id: String, session_id: String): void` — firma del metodo delegato all'esecuzione della logica di eliminazione a partire dall'identificativo dell'Asset e della sessione.
-
-
+- `+ delete_asset(command: DeleteAssetCommand): void` — firma del metodo delegato all'esecuzione della logica di eliminazione a partire dai dati contenuti nel Command.
 
 ==== DeleteAssetService
 
@@ -406,7 +424,7 @@ _DeleteAssetUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_DeleteAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Asset. Implementa l'interfaccia _DeleteAssetUseCase_ e, a differenza dei service di creazione e modifica, non richiede un Command Object: riceve direttamente gli identificativi necessari, recupera la sessione tramite _GetSessionPort_, rimuove l'Asset corrispondente e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_DeleteAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Asset. Implementa l'interfaccia _DeleteAssetUseCase_, riceve un _DeleteAssetCommand_ contenente gli identificativi necessari, recupera la sessione tramite _GetSessionPort_, rimuove l'Asset corrispondente e persiste la sessione aggiornata tramite _SaveSessionPort_.
 
 *Attributi*
 
@@ -414,14 +432,13 @@ _DeleteAssetService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ delete_asset(device_id: String, session_id: String): void` — concretizza il contratto definito da _DeleteAssetUseCase_. Recupera la sessione attiva, individua e rimuove l'Asset corrispondente e ne persiste lo stato aggiornato.
-
+- `+ delete_asset(command: DeleteAssetCommand): void` — concretizza il contratto definito da _DeleteAssetUseCase_. Recupera la sessione attiva, individua e rimuove l'Asset corrispondente e ne persiste lo stato aggiornato.
 
 === GetAssetDetail <GetAssetDetail>
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetail.png", width: 100%),
-  caption: [Diagramma delle classi — Caso d'uso GetAssetDetail]
+  image("../uml/png/GetAssetDetail/GetAssetDetail.png", width: 90%),
+  caption: [Caso d'uso GetAssetDetail]
 ) <fig-get-asset-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Asset all'interno di una sessione di valutazione attiva. 
@@ -454,25 +471,32 @@ _QueryDashboardController_ non definisce attributi propri.
 
 
 
-==== GetAssetDetailUseCase
- <GetAssetDetailUseCase>
+==== GetAssetDetailCommand
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetailUseCase.png", width: 55%),
-  caption: [GetAssetDetailUseCase]
-) <fig-get-asset-detail-use-case>
+  image("../uml/png/GetAssetDetail/GetAssetDetailCommand.png", width: 30%),
+  caption: [GetAssetDetailCommand]
+) <fig-get-asset-detail-command>
 
 *Descrizione*
 
-_GetAssetDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero delle informazioni dettagliate relative a un singolo Asset. Viene utilizzata per visualizzare i parametri specifici di una risorsa (come sensori o attuatori) all'interno delle dashboard di monitoraggio.
+_GetAssetDetailCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero del dettaglio di un Asset. Incapsula i parametri di input del metodo esposto da _GetAssetDetailUseCase_.
 
 *Attributi*
 
-_GetAssetDetailUseCase_ non definisce attributi.
+- `+ asset_id: String` — identificativo univoco dell'Asset di cui recuperare il dettaglio.
+- `+ session_id: String` — identificativo univoco della sessione di valutazione corrente.
 
 *Metodi e funzioni*
 
-- `+ get_detail(device_id: String, asset_id: String): AssetDetail` — firma del metodo che, dati gli identificativi del Dispositivo e dell'Asset, restituisce un oggetto _AssetDetail_ contenente tutte le informazioni informative e lo stato corrente della risorsa.
+_GetAssetDetailCommand_ non definisce metodi propri.
+
+==== GetAssetDetailUseCase
+
+#figure(
+  image("../uml/png/GetAssetDetail/GetAssetDetailUseCase.png", width: 60%),
+  caption: [GetAssetDetailUseCase]
+) <fig-get-asset-detail-use-case>
 
 *Descrizione*
 
@@ -484,8 +508,7 @@ _GetAssetDetailUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_asset(session_id: String, asset_id: String): AssetDetail` — firma del metodo delegato al recupero del dettaglio dell'Asset corrispondente agli identificativi forniti.
-
+- `+ get_asset(command: GetAssetDetailCommand): AssetDetail` — firma del metodo delegato al recupero del dettaglio dell'Asset corrispondente ai dati contenuti nel Command.
 
 ==== GetAssetDetailService
 
@@ -496,7 +519,7 @@ _GetAssetDetailUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_GetAssetDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero del dettaglio di un Asset. Implementa l'interfaccia _GetAssetDetailUseCase_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il  _AssetDetail_ aggregando le informazioni dell'Asset con il suo stato di valutazione.
+_GetAssetDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero del dettaglio di un Asset. Implementa l'interfaccia _GetAssetDetailUseCase_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il _AssetDetail_ aggregando le informazioni dell'Asset con il suo stato di valutazione.
 
 *Attributi*
 
@@ -504,7 +527,7 @@ _GetAssetDetailService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_asset(session_id: String, asset_id: String): AssetDetail` — concretizza il contratto definito da _GetAssetDetailUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne costruisce la rappresentazione _AssetDetail_.
+- `+ get_asset(command: GetAssetDetailCommand): AssetDetail` — concretizza il contratto definito da _GetAssetDetailUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne costruisce la rappresentazione _AssetDetail_.
 
 
 
@@ -555,24 +578,3 @@ _RequirementEval_ non definisce metodi.
 ]
 
 
-==== EvaluationSheet <EvaluationSheet>
- 
-#figure(
-  image("../uml/png/GetAssetDetail/EvaluationSheet.png", width: 45%),
-  caption: [EvaluationSheet]
-) <fig-evaluation-sheet-domain>
-
-*Descrizione*
-
-_EvaluationSheet_ è l'entità di dominio che coordina la valutazione di conformità di un Asset rispetto a uno standard. Espone i metodi necessari per valutare i requisiti e aggregare lo stato complessivo della valutazione.
-
-*Attributi*
-
-_EvaluationSheet_ non definisce attributi propri nel diagramma.
-
-*Metodi e funzioni*
-
-- `+ __init__(device: Device, standard: ComplianceStandard): EvaluationSheet` — inizializza il foglio di valutazione per il Dispositivo e lo standard forniti.
-- `+ evaluate_requirements(asset_id: String, requirements_id: List<String>): EvaluationState` — valuta i requisiti specificati per l'Asset indicato e restituisce lo stato risultante.
-- `+ evaluate_asset(asset: Asset): EvaluationState` — valuta lo stato complessivo dell'Asset fornito.
-- `+ evaluate_device(): EvaluationState` — valuta lo stato complessivo del Dispositivo associato alla sessione.
