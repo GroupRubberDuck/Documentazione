@@ -4,15 +4,20 @@ skinparam classAttributeIconSize 0
 
 class Device {
     - id: String
+    - standard_id: String
     - name: String
-    - operating_system: String
+    - os: String
     - description: String
-    - assets: List<Asset>
+    - assets: Map<String, Asset>
 
+    + {static} create(device_id: String, standard_id: String, name: String, os: String, description: String, assets: List<Asset>): Device
+    
+    + get_asset(asset_id: String): Asset
+    + update_info(name: String, os: String, description: String): void
     + add_asset(asset: Asset): void
     + remove_asset(asset_id: String): void
 }
 
-Device *-- "1..*" Asset
+Device *-- "0..*" Asset
 
 @enduml

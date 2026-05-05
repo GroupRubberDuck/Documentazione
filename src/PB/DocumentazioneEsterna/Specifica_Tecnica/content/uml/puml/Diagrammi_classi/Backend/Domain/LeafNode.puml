@@ -1,9 +1,10 @@
 @startuml LeafNode
-skinparam linetype ortho
-skinparam classAttributeIconSize 0
 
 class LeafNode {
-    - verdict: Verdict
+    - node_id: String
+    - standard_verdict_value: StandardVerdict
+    
+    + next(condition: Bool): String
 }
 LeafNode --|> Node
 @enduml

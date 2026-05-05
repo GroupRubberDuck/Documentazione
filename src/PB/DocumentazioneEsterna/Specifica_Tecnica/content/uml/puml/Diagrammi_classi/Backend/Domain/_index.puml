@@ -18,14 +18,13 @@ package "2. Compliance Standard" {
     !include LeafNode.puml
     !include DecisionTree.puml
     !include Requirement.puml
+    !include StandardVerdict.puml
 }
 
 package "3. Evaluation Engine" {
     !include EvaluationEngine.puml
     !include EvaluationState.puml
-    !include Verdict.puml
-
-
+    
 }
 
 package "4. Evaluation Output" {
@@ -41,6 +40,7 @@ package "4. Evaluation Output" {
 package "5. Session" {
     !include SessionType.puml
     !include SessionHandler.puml
+    !include EvaluationSession.puml
 }
 
 

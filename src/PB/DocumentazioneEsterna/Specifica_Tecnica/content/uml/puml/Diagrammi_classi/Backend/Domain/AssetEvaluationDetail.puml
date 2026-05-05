@@ -3,9 +3,9 @@
 class AssetEvaluationDetail {
     - asset_id: String
     - name: String
-    - type: AssetType
+    - asset_type: AssetType
     - description: String
-    - requirement_result: list<RequirementEvaluationDetail>
+    - requirement_details: List<RequirementEvaluationDetail>
     - verdict: EvaluationState
 }
 
