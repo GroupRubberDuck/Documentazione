@@ -20,13 +20,17 @@
     Nessuno in particolare.
   ],
   oreProduttive: (
-    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 6, oreEffettive: 8),
-    (persona: persone.ALDO, ruolo: ruoli.Programmatore, orePreviste: 8, oreEffettive: 8),
+    (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 1),
+    (persona: persone.FILIPPO, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 1),
+    (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
+    (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.ALDO, ruolo: ruoli.Programmatore, orePreviste: 5, oreEffettive: 6),
+    (persona: persone.ALDO, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),
     (persona: persone.DL, ruolo: ruoli.Programmatore, orePreviste: 8, oreEffettive: 8),
-    (persona: persone.ANA, ruolo: ruoli.Programmatore, orePreviste: 4, oreEffettive: 6),
-    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.ANA, ruolo: ruoli.Progettista, orePreviste: 4, oreEffettive: 6),
+    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
   ),
   retrospettiva: [
     *Consuntivo di periodo*:
