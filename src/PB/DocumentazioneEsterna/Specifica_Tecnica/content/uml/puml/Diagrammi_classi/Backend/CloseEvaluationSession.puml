@@ -1,5 +1,7 @@
 @startuml CloseEvaluationSession
 
+' Forza le linee ad angolo retto
+skinparam linetype ortho
 skinparam nodesep 150
 skinparam ranksep 150
 skinparam classAttributeIconSize 0
@@ -13,13 +15,17 @@ package "Application Core" {
     () "CloseEvaluationSessionUseCase"
 
     !include ApplicationServices/CloseEvaluationSessionService.puml
+    
+    class CloseEvaluationSessionCommand {
+        + session_id: String
+    }
 
     () "DeleteSessionPort"
 
-    !include Domain/EvaluationSession.puml
-
+ 
     CloseEvaluationSessionService -up- CloseEvaluationSessionUseCase
-    CloseEvaluationSessionService -> DeleteSessionPort : usa
+    CloseEvaluationSessionService .right.> CloseEvaluationSessionCommand : legge
+    CloseEvaluationSessionService -down-> DeleteSessionPort : usa
 }
 
 package "Outbound Adapter" {

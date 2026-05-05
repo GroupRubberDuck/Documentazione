@@ -1,0 +1,7 @@
+@startuml CloseEvaluationSessionCommand
+skinparam classAttributeIconSize 0
+
+class CloseEvaluationSessionCommand {
+    + session_id: String
+}
+@enduml
