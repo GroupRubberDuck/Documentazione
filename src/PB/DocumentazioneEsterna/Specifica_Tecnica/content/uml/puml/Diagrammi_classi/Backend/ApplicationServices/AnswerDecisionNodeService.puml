@@ -1,7 +1,0 @@
-@startuml AnswerDecisionNodeService
-skinparam classAttributeIconSize 0
-class AnswerDecisionNodeService <<Application Service>> {
-    + insert_answer(command: AnswerNodeCommand): void
-}
-
-@enduml

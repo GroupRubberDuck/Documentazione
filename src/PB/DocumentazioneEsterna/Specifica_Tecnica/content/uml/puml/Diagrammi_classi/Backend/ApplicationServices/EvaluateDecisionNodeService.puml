@@ -1,0 +1,8 @@
+@startuml EvaluateDecisionNodeService
+skinparam classAttributeIconSize 0
+
+class EvaluateDecisionNodeService <<Application Service>> {
+    + insert_answer(command: EvaluateDecisionCommand): void
+}
+
+@enduml

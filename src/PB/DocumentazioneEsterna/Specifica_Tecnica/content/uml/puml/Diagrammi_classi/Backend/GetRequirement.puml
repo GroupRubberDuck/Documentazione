@@ -47,15 +47,6 @@ package "Application Core" {
 
     () "GetSessionPort"
 
-    !include Domain/EvaluationSession.puml
-    !include Domain/EvaluationSheet.puml
-
-    ' ==========================================
-    ' GABBIA STRUTTURALE (ALLINEAMENTO)
-    ' ==========================================
-    ' Spingiamo le entità di dominio a sinistra per non intralciare il flusso
-    EvaluationSheet -[hidden]right-------- GetRequirementUseCase
-
     ' Allineiamo Response, Command e Porta sotto il Service per far scendere le frecce dritte
     RequirementResponse -[hidden]right-------- GetRequirementCommand
     GetRequirementCommand -[hidden]right-------- GetSessionPort

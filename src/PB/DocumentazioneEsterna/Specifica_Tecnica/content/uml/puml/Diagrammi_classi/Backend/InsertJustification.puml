@@ -1,47 +1,75 @@
 @startuml InsertJustification
+
 skinparam linetype ortho
-skinparam nodesep 90
-skinparam ranksep 100
+skinparam nodesep 180 
+skinparam ranksep 150
 skinparam classAttributeIconSize 0
+' Questo parametro è fondamentale per evitare che le scritte tocchino i bordi dei package
+skinparam PackagePadding 30 
 
 package "Inbound Adapter" {
-    !include InboundAdapters/EvaluationJustificationController.puml
+    class EvaluationJustificationController <<Flask Blueprint>> {
+        +insert_justification(req: Request): Response
+    }
 }
 
 package "Application Core" {
 
     () "InsertJustificationUseCase"
 
-    class InsertJustificationCommand {
-        + session_id: String
-        + asset_id: String
-        + requirement_id: String
-        + node_id: String
-        + justification: String
+    class EvaluationJustificationService <<Application Service>> {
+        +insert_justification(command: InsertJustificationCommand): void
     }
 
-    !include ApplicationServices/EvaluationJustificationService.puml
+    class InsertJustificationCommand {
+        +session_id: String
+        +asset_id: String
+        +requirement_id: String
+        +node_id: String
+        +justification: String
+    }
 
-    () "SaveSessionPort"
     () "GetSessionPort"
+    () "SaveSessionPort"
 
-    !include Domain/EvaluationSession.puml
-    !include Domain/EvaluationSheet.puml
+    ' ==========================================
+    ' GABBIA STRUTTURALE 
+    ' ==========================================
+    EvaluationJustificationService -[hidden]right-------- InsertJustificationCommand
+    GetSessionPort -[hidden]right-------- SaveSessionPort
 
+    ' ==========================================
+    ' COLLEGAMENTI INTERNI AL CORE
+    ' ==========================================
     EvaluationJustificationService -up- InsertJustificationUseCase
+    EvaluationJustificationService .right.> InsertJustificationCommand : legge
 
-    EvaluationJustificationService -down-> SaveSessionPort : usa
     EvaluationJustificationService -down-> GetSessionPort : usa
-
-    EvaluationJustificationService ..> InsertJustificationCommand : legge
+    EvaluationJustificationService -down-> SaveSessionPort : usa
+    
+    ' Trucco aggiuntivo per creare spazio sotto le porte e non far tagliare le scritte dal bordo
+    hide spacer
+    GetSessionPort -[hidden]down- spacer
+    SaveSessionPort -[hidden]down- spacer
 }
 
 package "Outbound Adapter" {
-    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+    class InMemoryEvaluationSessionCache {
+        -sessions: dictionary[string:EvaluationSession]
+        +create_session(): EvaluationSession
+        +delete_session(session_id: String): void
+        +get_session(session_id: String): EvaluationSession
+        +save_session(session: EvaluationSession): void
+        +has_active_session(device_id: String): bool
+    }
 }
 
+' ==========================================
+' COLLEGAMENTI ESTERNI (Inbound -> Core -> Outbound)
+' ==========================================
 EvaluationJustificationController -down-> InsertJustificationUseCase : usa
-InMemoryEvaluationSessionCache -up- SaveSessionPort
+
 InMemoryEvaluationSessionCache -up- GetSessionPort
+InMemoryEvaluationSessionCache -up- SaveSessionPort
 
 @enduml

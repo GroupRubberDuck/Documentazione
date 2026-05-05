@@ -1,7 +1,8 @@
 @startuml GetRequirementService
 skinparam classAttributeIconSize 0
+
 class GetRequirementService <<Application Service>> {
-    + get_requirement(query: GetRequirementQuery): RequirementResponse
+    + get_requirement(command: GetRequirementCommand): RequirementResponse
 }
 
 @enduml

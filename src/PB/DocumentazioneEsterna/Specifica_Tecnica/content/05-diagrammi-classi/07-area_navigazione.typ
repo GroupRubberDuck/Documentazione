@@ -53,7 +53,7 @@ UC28: Vai al nodoprecedente (gestendo l'eccezione del tentativo di risalire oltr
 UC29: Inserisci giustificazione decision tree.*/
 */
 
-== Valutazione Requisiti
+/*== Valutazione Requisiti
 
 #figure(
   image("../uml/png/Valutazione/RequirementsAndEvaluationSystem.png", width: 100%),
@@ -62,15 +62,16 @@ UC29: Inserisci giustificazione decision tree.*/
 
 Il diagramma illustra l'architettura del modulo dedicato alla valutazione dei requisiti di conformità di un Asset. Il modulo copre tre casi d'uso principali: il recupero dei requisiti tramite _GetRequirementService_, l'importazione di giustificazioni tramite _ImportJustificationService_ e la registrazione delle risposte di valutazione tramite _AnswerDeviceAnswerService_. 
 \ Nei paragrafi seguenti vengono descritti in dettaglio i componenti introdotti specificamente per questo modulo.
-
-=== AnswerDecisionNode
+*/ // DA VEDERE METTERò DIAGRAMA COMPLESSIVO O LO FACCIO A MANO (RPOBABILMENTE A MANO)
+== Valutazione
+=== EvaluateDecisionNode
 
 #figure(
-  image("../uml/png/Valutazione/AnswerDecisionNode.png", width: 100%),
-  caption: [Caso d'uso AnswerDecisionNode]
-) <fig-answer-decision-node>
+  image("../uml/png/Valutazione/EvaluateDecisionNode.png", width: 70%),
+  caption: [Caso d'uso EvaluateDecisionNode]
+) <fig-evaluate-decision-node>
 
-Il diagramma illustra l'architettura del modulo dedicato alla registrazione della risposta a un nodo decisionale durante la valutazione di conformità. 
+Il diagramma illustra l'architettura del modulo dedicato alla valutazione di un nodo decisionale durante la verifica di conformità. 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
 - Per la definizione di  _SaveSessionPort_, vedere la sezione @SaveSessionPort. 
@@ -80,11 +81,11 @@ Il diagramma illustra l'architettura del modulo dedicato alla registrazione dell
 ==== EvaluationDecisionNodeController
 #figure(
   image("../uml/png/Valutazione/EvaluationDecisionNodeController.png", width: 40%),
-  caption: [ EvaluationDecisionNodeController]
+  caption: [EvaluationDecisionNodeController]
 ) 
 *Descrizione*
 
-_EvaluationDecisionNodeController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di inserimento di una risposta a un nodo decisionale e le inoltra al livello applicativo.
+_EvaluationDecisionNodeController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP per la valutazione di un nodo decisionale e le inoltra al livello applicativo.
 
 *Attributi*
 
@@ -92,67 +93,66 @@ _EvaluationDecisionNodeController_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ insert_answer(req: Request): Response` — riceve la richiesta HTTP di inserimento della risposta, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
+- `+ evaluate_node(req: Request): Response` — riceve la richiesta HTTP, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
 
 
-==== AnswerDecisionNodeUseCase
+==== EvaluateDecisionNodeUseCase
 #figure(
-  image("../uml/png/Valutazione/AnswerDecisionNodeUseCase.png", width: 40%),
-  caption: [AnswerDecisionNodeUseCase]
+  image("../uml/png/Valutazione/EvaluateDecisionNodeUseCase.png", width: 40%),
+  caption: [EvaluateDecisionNodeUseCase]
 ) 
 *Descrizione*
 
-_AnswerDecisionNodeUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la registrazione della risposta a un nodo decisionale. Viene implementata da _AnswerDecisionNodeService_ e utilizzata da _EvaluationDecisionNodeController_.
+_EvaluateDecisionNodeUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la valutazione di un nodo decisionale. Viene implementata da _EvaluateDecisionNodeService_ e utilizzata da _EvaluationDecisionNodeController_.
 
 *Attributi*
 
-_AnswerDecisionNodeUseCase_ non definisce attributi.
+_EvaluateDecisionNodeUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ insert_answer(command: AnswerNodeCommand): void` — firma del metodo delegato all'esecuzione della logica di registrazione della risposta a partire dai dati contenuti nel comando.
+- `+ evaluate_node(evaluate_command: EvaluationNodeCommand): void` — firma del metodo delegato all'esecuzione della logica di valutazione a partire dai dati contenuti nel comando.
 
 
 
-==== AnswerNodeCommand
+==== EvaluationNodeCommand
 #figure(
-  image("../uml/png/Valutazione/AnswerNodeCommand.png", width: 30%),
-  caption: [AnswerNodeCommand]
+  image("../uml/png/Valutazione/EvaluationNodeCommand.png", width: 30%),
+  caption: [EvaluateNodeCommand]
 )
 *Descrizione*
 
-_AnswerNodeCommand_ è il Command Object annotato come _Command DTO_ che veicola i dati necessari alla registrazione della risposta a un nodo decisionale dal controller al service.
+_EvaluationNodeCommand_ è il Command Object annotato come _Command DTO_ che veicola i dati necessari alla valutazione di un nodo decisionale dal controller al service.
 
 *Attributi*
 
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 - `+ asset_id: String` — identificativo dell'Asset oggetto di valutazione.
-- `+ requirement_id: String` — identificativo del requisito a cui si sta rispondendo.
+- `+ requirement_id: String` — identificativo del requisito in fase di valutazione.
 - `+ node_id: String` — identificativo del nodo decisionale.
-- `+ answer: Boolean` — valore della risposta al nodo decisionale.
+- `+ answer: Boolean` — valore della risposta fornita per il nodo decisionale.
 
 *Metodi e funzioni*
 
-_AnswerNodeCommand_ non definisce metodi.
+_EvaluationNodeCommand_ non definisce metodi comportamentali, agendo esclusivamente come struttura dati.
 
-==== AnswerDecisionNodeService
+==== EvaluateDecisionNodeService
 #figure(
-  image("../uml/png/Valutazione/AnswerDecisionNodeService.png", width: 50%),
-  caption: [AnswerDecisionNodeService]
+  image("../uml/png/Valutazione/EvaluateDecisionNodeService.png", width: 50%),
+  caption: [EvaluateDecisionNodeService]
 )
 *Descrizione*
 
-_AnswerDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di registrazione della risposta a un nodo decisionale. Implementa l'interfaccia _AnswerDecisionNodeUseCase_, recupera la sessione attiva tramite _GetSessionPort_, registra la risposta tramite _EvaluationSheet_ e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_EvaluateDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di valutazione di un nodo decisionale. Implementa l'interfaccia _EvaluateDecisionNodeUseCase_, recupera la sessione attiva tramite _GetSessionPort_, applica la valutazione al nodo corrispondente e persiste la sessione aggiornata tramite _SaveSessionPort_.
 
 *Attributi*
 
-_AnswerDecisionNodeService_ non definisce attributi propri.
+_EvaluateDecisionNodeService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ insert_answer(command: AnswerNodeCommand): void` — concretizza il contratto definito da _AnswerDecisionNodeUseCase_. Recupera la sessione attiva, individua il nodo decisionale corrispondente, registra la risposta e persiste la sessione aggiornata.
- 
+- `+ evaluate_node(evaluate_command: EvaluationNodeCommand): void` — concretizza il contratto definito da _EvaluateDecisionNodeUseCase_. Recupera la sessione attiva, individua il nodo decisionale corrispondente, elabora la risposta e persiste la sessione aggiornata.
 
 === GetRequirement
 
@@ -204,8 +204,7 @@ _GetRequirementUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_requirement(query: GetRequirementQuery): RequirementResponse` — firma del metodo delegato al recupero del requisito corrispondente ai parametri forniti.
-
+- `+ get_requirement(command: GetRequirementCommand): RequirementResponse` — firma del metodo delegato al recupero del requisito corrispondente ai parametri incapsulati nel comando fornito in input.
 
 
 ==== GetRequirementCommand
@@ -215,7 +214,7 @@ _GetRequirementUseCase_ non definisce attributi.
 )
 *Descrizione*
 
-_GetRequirementCommand_ è il Query Object che veicola i parametri necessari al recupero di un requisito dal controller al service.
+_GetRequirementCommand_ è l'oggetto  che veicola i parametri necessari al recupero di un requisito dal controller al service.
 
 *Attributi*
 
@@ -231,12 +230,12 @@ _GetRequirementCommand_ non definisce metodi.
 
 ==== GetRequirementService
 #figure(
-  image("../uml/png/Valutazione/GetRequirementService.png", width: 60%),
+  image("../uml/png/Valutazione/GetRequirementService.png", width: 70%),
   caption: [GetRequirementService]
 )
 *Descrizione*
 
-_GetRequirementService_ è il service applicativo appartenente all'Application Core responsabile del recupero di un requisito di conformità. Implementa l'interfaccia _GetRequirementUseCase_, legge i parametri dal _GetRequirementCommand_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il DTO _RequirementResponse_ tramite _EvaluationSheet_.
+_GetRequirementService_ è il service applicativo appartenente all'Application Core responsabile del recupero di un requisito di conformità. Implementa l'interfaccia _GetRequirementUseCase_, legge i parametri dal _GetRequirementCommand_, recupera la sessione attiva tramite _GetSessionPort_ e si occupa di costruire il _RequirementResponse_ contenente i dati richiesti.
 
 *Attributi*
 
@@ -244,9 +243,7 @@ _GetRequirementService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_requirement(query: GetRequirementQuery): RequirementResponse` — concretizza il contratto definito da _GetRequirementUseCase_. Recupera la sessione attiva, individua il requisito richiesto tramite _EvaluationSheet_ e ne costruisce la rappresentazione _RequirementResponse_.
-
-
+- `+ get_requirement(command: GetRequirementCommand): RequirementResponse` — concretizza il contratto definito da _GetRequirementUseCase_. Recupera la sessione attiva, individua il requisito richiesto utilizzando i parametri incapsulati nel comando e ne costruisce la relativa rappresentazione sotto forma di _RequirementResponse_.
 
 ==== RequirementResponse
 #figure(
@@ -415,7 +412,7 @@ _InsertJustificationCommand_ non definisce metodi.
 )
 *Descrizione*
 
-_EvaluationJustificationService_ è il service applicativo appartenente all'Application Core responsabile della logica di inserimento di una giustificazione per un requisito di conformità. Implementa l'interfaccia _InsertJustificationUseCase_, recupera la sessione attiva tramite _GetSessionPort_, registra la giustificazione tramite _EvaluationSheet_ e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_EvaluationJustificationService_ è il service applicativo appartenente all'Application Core responsabile della logica di inserimento di una giustificazione per un requisito di conformità. Implementa l'interfaccia _InsertJustificationUseCase_, recupera la sessione attiva tramite _GetSessionPort_, associa la giustificazione al requisito specificato e persiste la sessione aggiornata tramite _SaveSessionPort_.
 
 *Attributi*
 
@@ -423,4 +420,4 @@ _EvaluationJustificationService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ insert_justification(command: InsertJustificationCommand): void` — concretizza il contratto definito da _InsertJustificationUseCase_. Recupera la sessione attiva, individua il requisito corrispondente, registra la giustificazione tramite _EvaluationSheet_ e persiste la sessione aggiornata.
+- `+ insert_justification(command: InsertJustificationCommand): void` — concretizza il contratto definito da _InsertJustificationUseCase_. Recupera la sessione attiva, individua il requisito corrispondente ai parametri incapsulati nel comando, registra la giustificazione fornita e persiste la sessione aggiornata.
