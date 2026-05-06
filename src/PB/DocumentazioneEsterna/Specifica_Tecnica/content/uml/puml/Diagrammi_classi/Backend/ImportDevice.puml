@@ -73,15 +73,9 @@ ImportDeviceController -down-> ImportDeviceUseCase : usa
 
 ImportDeviceUseCase -down- ImportDeviceService
 
-<<<<<<< HEAD
 ImportDeviceService -down-> FileDeviceImporterFactoryPort : usa
-ImportDeviceService -down-> FileDeviceImporterPort : usa
+ImportDeviceService .down.> FileDeviceImporterPort : usa
 ImportDeviceService -down-> RegisterDevicePort : usa
-=======
-ImportDeviceService -down-> FactoryPort : usa
-ImportDeviceService .down.> ImporterPort : usa
-ImportDeviceService -down-> RegPort : usa
->>>>>>> ed0a4ec0 (Feat: modificate relazione in diagramma di import)
 
 FileDeviceImporterFactoryPort -down- ConcreteFileDeviceImporterFactory
 ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter : usa
