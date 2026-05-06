@@ -1,7 +1,7 @@
 @startuml
 skinparam linetype ortho
 skinparam nodesep 80
-skinparam ranksep 80
+skinparam ranksep 100
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
@@ -14,6 +14,11 @@ class NodeDTO << (D,#FF7700) DTO >> {
   + yesChildId: String | null
   + noChildId: String | null
 }
+note bottom of NodeDTO
+  Struttura dati passiva che incapsula
+  le informazioni del nodo necessarie
+  esclusivamente per la visualizzazione.
+end note
 
 ' --- Lo Store (Il "Backend" del Frontend) ---
 class DecisionTreeStore << (S,#FF9900) Pinia Store >> {
@@ -27,6 +32,12 @@ class DecisionTreeStore << (S,#FF9900) Pinia Store >> {
   + setAnswer(nodeId: String, answer: Boolean)
   + selectNode(nodeId: String)
 }
+note right of DecisionTreeStore
+  "Single Source of Truth" reattiva.
+  Mantiene in memoria le risposte dell'utente,
+  gestisce la visibilità della UI e funge da
+  punto di accesso centrale per le azioni.
+end note
 
 ' --- Il Componente Visivo ---
 class TreeSidebar << (V,#41B883) Vue Component >> {
@@ -40,6 +51,13 @@ class TreeSidebar << (V,#41B883) Vue Component >> {
   + goPrevious()
   + goNext()
 }
+note top of TreeSidebar
+  Pannello interattivo contestuale.
+  Intercetta l'input dell'utente (Yes/No)
+  e calcola dinamicamente lo stato corrente
+  (es. se c'è un nodo successivo)
+  basandosi sui dati dello Store.
+end note
 
 ' --- Relazioni ---
 TreeSidebar o-- DecisionTreeStore : legge stato\ne chiama azioni

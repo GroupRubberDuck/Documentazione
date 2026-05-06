@@ -1,5 +1,5 @@
 @startuml PdfReportGeneratorAdapter
-
+skinparam classAttributeIconSize 0
 class PdfReportGeneratorAdapter <<Report Adapter>> {
     + generate_report(session: EvaluationSession): bytes
     # format_header()

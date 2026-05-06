@@ -186,14 +186,14 @@
       [2026-05-03],
       [Ana Maria Draghici],
       [],
-      [Stesura e scomposizione sezioni a partire dalla @classe_disp: Device, Asset e Session ]
+      [Scomposizione sezioni a partire dalla @classe_disp: Device, Asset e Session ]
     ),
     (
       [0.9.0],
-      [2026-05-04],
+      [2026-05-06],
       [Ana Maria Draghici],
       [],
-      [Stesura e scomposizione sezioni a partire dalla @classe_disp: Import, ValutazioneRequisiti, Dashboard ]
+      [Scomposizione sezioni a partire dalla @classe_disp: Import, ValutazioneRequisiti, Dashboard,Export e Frontend ]
     )
 
   )

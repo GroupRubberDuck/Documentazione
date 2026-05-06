@@ -1,5 +1,5 @@
 @startuml FileDeviceExporter
-
+skinparam classAttributeIconSize 0
 abstract class FileDeviceExporter <<Template Method>> {
     + generate_device_file(device_dto: DeviceFileCommand): bytes
     # prepare_structure()

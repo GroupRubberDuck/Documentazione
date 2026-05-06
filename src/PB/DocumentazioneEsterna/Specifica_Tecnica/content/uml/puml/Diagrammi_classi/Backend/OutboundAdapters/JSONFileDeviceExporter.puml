@@ -1,0 +1,16 @@
+@startuml 
+skinparam classAttributeIconSize 0  
+   
+   class JSONFileDeviceExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+    class XMLFileDeviceExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
+@enduml

@@ -1,65 +1,12 @@
-@startuml
-
-skinparam linetype ortho
-skinparam nodesep 100
-skinparam ranksep 80
+@startuml EvaluationEngine
 skinparam classAttributeIconSize 0
-skinparam packageStyle rectangle
 skinparam style strictuml
 
-
-
-' store delle informazioni necessarie a generare i widget, utilizzabile da tutti i widget vue presenti nella pagina
-' Permette ai widget di avere una sorta di comunicazione, un widget modifica un'informazione nello store,
-'  il cambiamento viene letto dagli altri widget che stanno ascoltando lo store
-Interface Node <<Interface>> {
-        + getRenderData() : DTO
-        + getNext(answer:bool):String | null
-        + getPrevious():String | null
-
+class EvaluationEngine {
+  - tree: TreeStructure
+  + constructor(tree: TreeStructure)
+  + getNodeRenderData(nodeId: String): NodeDTO
+  + getEvaluationPath(answers: Map<String, Boolean>): List<String>
 }
-
-class DecisionNode {
-        - id:String
-        - question:String
-        ' necessario a supportare la navigazione verso il nodo precedente
-        - parentId:String | null
-        - yesChildId: String
-        - noChildId:String
-        + getRenderData() : DTO
-        + getNext(answer:bool):String | null
-        + getPrevious():String | null
-}
-
-
-class LeafNode {
-        - result:evaluationStateType
-        + getRenderData() : DTO
-        + getNext(answer:bool):String | null
-        + getPrevious():String | null
-}
-
-class TreeStructure{
-        ' in questo caso viene usata una rappresentazione piatta per semplificare il lookup
-        ' - nodes: Map<String, Node>
-        + getNode(id: String): Node | null
-        + getRootId(): String
-}
-
-
-class EvaluationEngine{
-        ' - tree: TreeStructure
-        + constructor(tree: TreeStructure)
-        + getNodeRenderData(NodeId:String): DTO
-        + getEvaluationPath(map<String,bool>):list[String]
-}
-
-EvaluationEngine --> TreeStructure
-
-
-DecisionNode --|> Node
-LeafNode --|> Node
-
-TreeStructure *-- Node
 
 @enduml

@@ -1,5 +1,5 @@
-@startuml ExportDeviceController
-
+@startuml DownloadFileController
+skinparam classAttributeIconSize 0
 class ExportDeviceController <<Flask Blueprint>> {
     - export_uc: ExportDeviceUseCase
     + export_device(req: Request): Response
