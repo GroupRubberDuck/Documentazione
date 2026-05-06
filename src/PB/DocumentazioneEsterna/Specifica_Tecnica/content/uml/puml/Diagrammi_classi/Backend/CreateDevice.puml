@@ -1,92 +1,39 @@
-@startuml import-device
+@startuml CreateDevice
 skinparam linetype ortho
-skinparam classAttributeIconSize 0
 skinparam nodesep 80
-skinparam ranksep 100
-skinparam packageStyle rectangle
-skinparam style strictuml
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
 
-package "Inbound Adapter" {
-    !include InboundAdapters/ImportDeviceController.puml
+package "Inbound Adapter"{
+    !include InboundAdapters/WriteDeviceController.puml
 }
 
 package "Application Core" {
+    () "CreateDeviceUseCase"
 
-    () "ImportDeviceUseCase"
-
-    !include ApplicationServices/ImportDeviceService.puml
-
-    enum AllowedDeviceFileExtension <<enum>> {
-        CSV
-        XML
-        JSON
+    class CreateDeviceCommand {
+        + device_name: String
+        + device_os: String
+        + device_description: String
+        + compliance_standard_id: String
     }
 
-    class ImportDeviceCommand {
-        + device_file_content: BinaryIO
-        + extension: AllowedDeviceFileExtension
-    }
-
-    () "FileDeviceImporterPort"
+    !include ApplicationServices/CreateDeviceService.puml
+    !include Domain/Device.puml
     () "RegisterDevicePort"
-    () "FileDeviceImporterFactoryPort"
 }
 
 package "Outbound Adapter" {
-    abstract class FileDeviceImporter <<Template Method>> {
-        + parse_device_file(device_file_content: BinaryIO): Device
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
-
-    class CSVFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
-
-    class JSONFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
-
-    class XMLFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
-
-    class ConcreteFileDeviceImporterFactory {
-        + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
-    }
-
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
-ImportDeviceController --> ImportDeviceUseCase : usa
+CreateDeviceService - CreateDeviceUseCase
 
-ImportDeviceUseCase - ImportDeviceService
+CreateDeviceCommand . CreateDeviceService: legge
 
-ImportDeviceService --> FileDeviceImporterPort : usa
-ImportDeviceService --> FileDeviceImporterFactoryPort : usa
-ImportDeviceService --> RegisterDevicePort : usa
+CreateDeviceService --> RegisterDevicePort: usa
 
-FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
-ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> JSONFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> XMLFileDeviceImporter : usa
-
-FileDeviceImporterPort - FileDeviceImporter
-FileDeviceImporter <|-down- CSVFileDeviceImporter
-FileDeviceImporter <|-down- XMLFileDeviceImporter
-FileDeviceImporter <|-down- JSONFileDeviceImporter
-
-RegisterDevicePort - MongoDeviceAdapter
+WriteDeviceController --> CreateDeviceUseCase: usa
+MongoDeviceAdapter - RegisterDevicePort
 
 @enduml
