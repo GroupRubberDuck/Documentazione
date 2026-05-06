@@ -1,7 +1,8 @@
 @startuml ExportDeviceService
+skinparam classAttributeIconSize 0
 
 class ExportDeviceService <<Application Service>> {
-    + export(query: ExportDeviceQuery): bytes
+    + export(command: ExportDeviceCommand): bytes
 }
 
 @enduml

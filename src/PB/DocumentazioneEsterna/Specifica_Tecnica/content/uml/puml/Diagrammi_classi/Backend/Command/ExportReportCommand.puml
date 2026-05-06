@@ -1,0 +1,9 @@
+@startuml
+skinparam classAttributeIconSize 0   
+ 
+ class ExportReportCommand {
+        +session_id: String
+        +format: ReportFormat
+    }
+
+@enduml

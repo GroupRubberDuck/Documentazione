@@ -1,49 +1,75 @@
 @startuml ExportReport
+
 skinparam linetype ortho
-skinparam nodesep 90
-skinparam ranksep 100
+skinparam nodesep 120
+skinparam ranksep 120
 skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
 
 package "Inbound Adapter" {
-    !include InboundAdapters/ExportReportController.puml
+    class ExportReportController {
+        +export_report(req: Request): Response
+    }
+    
+    class DownloadFileController <<Utility>> {
+        +build_file_response(file_bytes: bytes, filename: string): FlaskResponse
+    }
+    
+    ExportReportController .right.> DownloadFileController
 }
 
 package "Application Core" {
 
-    class ExportReportQuery <<Query Command>> {
-        + session_id: String
-        + format: ReportFormat
-    }
-
-    enum ReportFormat <<enum>> {
-        PDF
-    }
-
     () "ExportReportUseCase"
 
-    !include ApplicationServices/ExportReportService.puml
+    class ExportReportService {
+        +export(command: ExportReportCommand): bytes
+    }
 
-    () "GetSessionPort"
+    class ExportReportCommand {
+        +session_id: String
+        +format: ReportFormat
+    }
+
     () "ReportGeneratorPort"
+    () "GetSessionPort"
 
+   
+    ExportReportService -[hidden]right- ExportReportCommand
+    ReportGeneratorPort -[hidden]right- GetSessionPort
 
+ 
     ExportReportService -up- ExportReportUseCase
+    ExportReportService .right.> ExportReportCommand : legge
+    
+    
+    ExportReportService -down-> ReportGeneratorPort : usa
+    ExportReportService -down-> GetSessionPort : usa
+    
 
-    ExportReportService -right-> GetSessionPort : "richiede"
-    ExportReportService -down-> ReportGeneratorPort : "richiede"
-
-    ExportReportService ..> ExportReportQuery : "legge"
 }
 
 package "Outbound Adapter" {
-    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
-    !include OutboundAdapters/PdfReportGeneratorAdapter.puml
+    class PdfReportGeneratorAdapter <<Report Adapter>> {
+        +generate_report(session: EvaluationSession): bytes
+        #format_header()
+        #print_asset_evaluations()
+        #format_footer()
+    }
 
-    PdfReportGeneratorAdapter -up- ReportGeneratorPort : "implementa"
+    class InMemoryEvaluationSessionCache {
+        -sessions: dictionary[string:EvaluationSession]
+        +create_session(): EvaluationSession
+        +delete_session(session_id: String): void
+        +get_session(session_id: String): EvaluationSession
+        +save_session(session: EvaluationSession): void
+        +has_active_session(device_id: String): bool
+    }
 }
+
 
 ExportReportController -down-> ExportReportUseCase : usa
 
-InMemoryEvaluationSessionCache -up-- GetSessionPort
-
+PdfReportGeneratorAdapter -up- ReportGeneratorPort 
+InMemoryEvaluationSessionCache -up- GetSessionPort 
 @enduml

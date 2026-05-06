@@ -1,7 +1,7 @@
 @startuml ExportReportService
 
-class ExportReportService {
-    + export(query: ExportReportQuery): bytes
+class ExportReportService <<Application Service>> {
+    + export(command: ExportReportCommand): bytes
 }
 
 

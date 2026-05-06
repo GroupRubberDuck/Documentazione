@@ -15,3 +15,4 @@
 #include "06-sessione.typ"
 #include "07-area_navigazione.typ"
 #include "08-export.typ"
+#include "09-frontend.typ"

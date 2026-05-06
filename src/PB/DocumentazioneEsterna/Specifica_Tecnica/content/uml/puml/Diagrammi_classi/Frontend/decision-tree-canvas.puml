@@ -1,70 +1,6 @@
-@startuml
-skinparam linetype ortho
-skinparam nodesep 80
-skinparam ranksep 80
+@startuml UiLeafNode
 skinparam classAttributeIconSize 0
-skinparam packageStyle rectangle
 skinparam style strictuml
-
-' --- TIPI E DTO (Data Transfer Objects) ---
-enum NodeType {
-    decision
-    leaf
-}
-
-class NodeDTO << (D,#FF7700) DTO >> {
-  + id: String
-  + type: NodeType
-  + text: String
-  + resultState: String | null
-  + x: Float
-  + y: Float
-}
-
-class EdgeDTO << (D,#FF7700) DTO >> {
-  + id: String
-  + sourceId: String
-  + targetId: String
-  + startX: Float
-  + startY: Float
-  + endX: Float
-  + endY: Float
-}
-
-class LayoutResult << (D,#FF7700) DTO >> {
-  + nodes: List<NodeDTO>
-  + edges: List<EdgeDTO>
-}
-
-' --- MOTORE DI LAYOUT ---
-interface LayoutEngine <<interface>> {
-  + calculateLayout(treeMap: Map<String, Node>, rootId: String): LayoutResult
-}
-
-class D3LayoutEngine {
-  + calculateLayout(treeMap: Map<String, Node>, rootId: String): LayoutResult
-  - extractNodesArray(treeMap: Map): List<Node>
-}
-
-' --- COMPONENTI VUE (UI) ---
-class TreeCanvas << (V,#41B883) Vue Component >> {
-  - store: DecisionTreeStore
-  - layoutEngine: LayoutEngine
-  + layoutResult: LayoutResult <<computed>>
-  + activePath: List<String> <<computed>>
-  + resolveComponent(type: NodeDTO): Component
-  + selectNode(nodeId: String)
-  + isEdgeActive(edge: EdgeDTO): Boolean
-  + generateBezierPath(edge: EdgeDTO): String
-}
-
-class UiDecisionNode << (V,#41B883) Vue Component >> {
-  -- props (dal NodeDTO) --
-  + id: String
-  + text: String
-  + isActive: Boolean
-  + onClick() <<signal >>
-}
 
 class UiLeafNode << (V,#41B883) Vue Component >> {
   -- props (dal NodeDTO) --
@@ -73,17 +9,5 @@ class UiLeafNode << (V,#41B883) Vue Component >> {
   + resultState: String
   + isActive: Boolean
 }
-
-' --- RELAZIONI ---
-LayoutResult *-- NodeDTO
-LayoutResult *-- EdgeDTO
-
-D3LayoutEngine ..|> LayoutEngine
-
-TreeCanvas o-- LayoutEngine : usa
-TreeCanvas ..> LayoutResult : calcola e renderizza
-
-TreeCanvas *-- UiDecisionNode : <component :is>
-TreeCanvas *-- UiLeafNode : <component :is>
 
 @enduml

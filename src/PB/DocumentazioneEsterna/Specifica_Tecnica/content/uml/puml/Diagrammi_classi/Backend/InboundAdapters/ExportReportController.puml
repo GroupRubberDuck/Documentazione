@@ -1,5 +1,5 @@
 @startuml ExportReportController
-
+skinparam classAttributeIconSize 0
 class ExportReportController {
     + export_report(req: Request): Response
 }

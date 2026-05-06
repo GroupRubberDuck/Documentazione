@@ -1,8 +1,9 @@
 @startuml ExportDevice
 skinparam linetype ortho
-skinparam nodesep 90
+skinparam nodesep 100
 skinparam ranksep 100
 skinparam classAttributeIconSize 0
+skinparam packagePadding 20
 
 package "Inbound Adapter" {
     !include InboundAdapters/ExportDeviceController.puml
@@ -10,7 +11,7 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    class ExportDeviceCommand <<Query Command>> {
+    class ExportDeviceCommand {
         + device_id: String
         + extension: AllowedDeviceFileExtension
     }
@@ -20,8 +21,8 @@ package "Application Core" {
         JSON
         CSV
     }
-
-    () "ExportDeviceUseCase"
+    
+    () "ExportDeviceUseCase" as ExportDeviceUseCase
 
     !include ApplicationServices/ExportDeviceService.puml
 
@@ -44,21 +45,25 @@ package "Application Core" {
 
     class AssessmentFileCommand {
         + requirement_code: String
-        + answers: dictionary[String:bool]
+        + answers: Dictionary<String, bool>
     }
 
-    () "FindDevicePort"
-    () "FileDeviceExporterFactoryPort"
-    () "FileDeviceExporterPort"
+    () "FindDevicePort" as FindDevicePort
+    () "FileDeviceExporterFactoryPort" as FileDeviceExporterFactoryPort
+    () "FileDeviceExporterPort" as FileDeviceExporterPort
+
+    FileDeviceExporterFactoryPort -[hidden]right- FileDeviceExporterPort
 
     !include Domain/Device.puml
 
-    ExportDeviceService -up- ExportDeviceUseCase
 
-    ExportDeviceService -right-( FindDevicePort : "richiede"
-    ExportDeviceService -down-( FileDeviceExporterFactoryPort : "richiede"
+    ExportDeviceUseCase -down- ExportDeviceService
+    
+    AllowedDeviceFileExtension -[hidden]left- ExportDeviceUseCase
 
-    ExportDeviceService ---( FileDeviceExporterPort : "usa"
+    ExportDeviceCommand -[hidden]right- ExportDeviceService
+    ExportDeviceService .left.> ExportDeviceCommand : legge
+    ExportDeviceService .down.> DeviceFileCommand : popola
 
     DeviceFileCommand *-- AssetFileCommand
     AssetFileCommand *-- AssessmentFileCommand
@@ -67,7 +72,6 @@ package "Application Core" {
 package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
     !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
-
     !include OutboundAdapters/FileDeviceExporter.puml
 
     class JSONFileDeviceExporter {
@@ -82,19 +86,23 @@ package "Outbound Adapter" {
         # finalize_output()
     }
 
-    FileDeviceExporterPort -- FileDeviceExporter
     FileDeviceExporter <|-down- JSONFileDeviceExporter
     FileDeviceExporter <|-down- XMLFileDeviceExporter
 
-    ConcreteFileDeviceExporterFactory .. FileDeviceExporterPort : "crea"
-
-    ConcreteFileDeviceExporterFactory .up.> JSONFileDeviceExporter
-    ConcreteFileDeviceExporterFactory .up.> XMLFileDeviceExporter
+    ConcreteFileDeviceExporterFactory ..> JSONFileDeviceExporter : crea
+    ConcreteFileDeviceExporterFactory ..> XMLFileDeviceExporter : crea
 }
 
-ExportDeviceController -down-( ExportDeviceUseCase : usa
 
-MongoDeviceAdapter -up-- FindDevicePort
-ConcreteFileDeviceExporterFactory -up- FileDeviceExporterFactoryPort
+ExportDeviceController -down-> ExportDeviceUseCase : usa
+
+ExportDeviceService -right-> FindDevicePort : usa
+ExportDeviceService -down-> FileDeviceExporterFactoryPort : usa
+ExportDeviceService -down---> FileDeviceExporterPort : usa
+
+
+MongoDeviceAdapter -left- FindDevicePort
+ConcreteFileDeviceExporterFactory -left- FileDeviceExporterFactoryPort
+FileDeviceExporter -left- FileDeviceExporterPort
 
 @enduml
