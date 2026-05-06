@@ -35,7 +35,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "Approvato",
+    stato: "In verifica",
     versione: versionNumber,
     autori: ("Davide Lorenzon",),
     verificatori: ("",),
