@@ -39,7 +39,7 @@
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
     verificatori: ("Ana Maria Draghici",),
-    uso: "Interno",
+    uso: "Esterno",
     destinatari: ("Tutto il gruppo",),
   )
 ]
