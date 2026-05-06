@@ -3,15 +3,15 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
 skinparam ranksep 100
+skinparam packageStyle rectangle
 
 package "Inbound Adapter" {
     !include InboundAdapters/ImportDeviceController.puml
 }
 
 package "Application Core" {
-
     () "ImportDeviceUseCase"
-
+    
     !include ApplicationServices/ImportDeviceService.puml
 
     enum AllowedDeviceFileExtension <<enum>> {
@@ -25,21 +25,15 @@ package "Application Core" {
         + extension: AllowedDeviceFileExtension
     }
 
-    () "FileDeviceImporterFactoryPort"
     () "FileDeviceImporterPort"
     () "RegisterDevicePort"
+    () "FileDeviceImporterFactoryPort"
 
     ImportDeviceService .right.> ImportDeviceCommand : legge
 }
 
 package "Outbound Adapter" {
-    abstract class FileDeviceImporter <<Template Method>> {
-        + parse_device_file(device_file_content: BinaryIO): Device
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
-    }
+    !include OutboundAdapters/FileDeviceImporter.puml
 
     class CSVFileDeviceImporter {
         # check_metadata()
@@ -62,31 +56,28 @@ package "Outbound Adapter" {
         # close_stream()
     }
 
-    class ConcreteFileDeviceImporterFactory {
-        + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
-    }
-
+    !include OutboundAdapters/ConcreteFileDeviceImporterFactory.puml
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
-ImportDeviceController -down-> ImportDeviceUseCase : usa
+ImportDeviceController --> ImportDeviceUseCase : usa
+ImportDeviceUseCase - ImportDeviceService
 
-ImportDeviceUseCase -down- ImportDeviceService
+ImportDeviceService --> FileDeviceImporterPort : usa
+ImportDeviceService --> FileDeviceImporterFactoryPort : usa
+ImportDeviceService --> RegisterDevicePort : usa
 
-ImportDeviceService -down-> FileDeviceImporterFactoryPort : usa
-ImportDeviceService .down.> FileDeviceImporterPort : usa
-ImportDeviceService -down-> RegisterDevicePort : usa
+FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
+RegisterDevicePort - MongoDeviceAdapter
 
-FileDeviceImporterFactoryPort -down- ConcreteFileDeviceImporterFactory
-ConcreteFileDeviceImporterFactory .up.> CSVFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> JSONFileDeviceImporter : usa
-ConcreteFileDeviceImporterFactory .up.> XMLFileDeviceImporter : usa
+FileDeviceImporterPort - FileDeviceImporter
 
-FileDeviceImporterPort -down- FileDeviceImporter
-FileDeviceImporter <|-down- CSVFileDeviceImporter
-FileDeviceImporter <|-down- JSONFileDeviceImporter
-FileDeviceImporter <|-down- XMLFileDeviceImporter
+FileDeviceImporter <|-- CSVFileDeviceImporter
+FileDeviceImporter <|-- XMLFileDeviceImporter
+FileDeviceImporter <|-- JSONFileDeviceImporter
 
-RegisterDevicePort -down- MongoDeviceAdapter
+ConcreteFileDeviceImporterFactory ..> CSVFileDeviceImporter : crea
+ConcreteFileDeviceImporterFactory ..> JSONFileDeviceImporter : crea
+ConcreteFileDeviceImporterFactory ..> XMLFileDeviceImporter : crea
 
 @enduml
