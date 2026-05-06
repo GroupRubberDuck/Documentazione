@@ -17,19 +17,7 @@ package "Application Core" {
         + session_id: String
     }
 
-    class AssetDetail {
-        + asset_id: String
-        + name: String
-        + type: AssetType
-        + description: String
-        + aggregate_status: EvaluationState
-        + requirement_list: List<RequirementEval>
-    }
-
-    class RequirementEval{
-        + codice_requisito: String
-        + stato_valutazione: EvaluationState
-    }
+    !include Domain/AssetEvaluationDetail.puml
 
     !include ApplicationServices/GetAssetDetailService.puml
 
@@ -38,7 +26,6 @@ package "Application Core" {
     GetAssetDetailService -up- GetAssetDetailUseCase
     GetAssetDetailService .> GetAssetDetailCommand : legge
     GetAssetDetailService --> GetSessionPort : usa
-    AssetDetail *-- RequirementEval
 }
 
 package "Outbound Adapter" {
