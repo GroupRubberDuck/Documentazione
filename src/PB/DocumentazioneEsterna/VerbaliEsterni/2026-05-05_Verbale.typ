@@ -38,7 +38,7 @@
     stato: "In verifica",
     versione: versionNumber,
     autori: ("Davide Lorenzon",),
-    verificatori: ("",),
+    verificatori: ("Filippo GUerra",),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -55,12 +55,12 @@
 #insertArabicNumberedPages("Informazioni generali", "Verbale esterno", giornoRiunione)[
   = Informazioni generali
   - *Tipo di riunione*: Esterno
-  - *Motivazione*: Aggiornamento della Proponente sullo stato di avanzamento del progetto
+  - *Motivazione*: Aggiornamento della proponente sullo stato di avanzamento del progetto
   - *Data*: #giornoRiunione.display()
   - *Luogo*: Riunione su Zoom
   - *Ora inizio*: 15.00
   - *Ora fine*: 15.30
-  - *Scriba*: Felician Mario Necsulescu
+  - *Scriba*: Davide Lorenzon
   - *Partecipanti*:#align(left)[
       #set list(marker: [--])
       - Filippo Guerra
@@ -87,7 +87,7 @@
 Durante la riunione sono state ricapitolate le scelte architetturali intraprese, ritenute ragionevoli dal referente dell'azienda proponente.
 Lo stesso è stato fatto per la codifica delle classi di dominio, anch'essa ritenuta ragionevole.
 
-Richiesta di chiarimenti sulla struttura del manuale utente e sul livello di dettaglio da adottare, sufficiente un resoconto su questa pagina posso fare questo, con allegate immagini esplicative.
+Richiesta di chiarimenti sulla struttura del manuale utente e sul livello di dettaglio da adottare. È stato chiarito che è sufficiente un manuale utente basilare, corredato di immagini esplicative.
 
 
 
@@ -97,16 +97,16 @@ Richiesta di chiarimenti sulla struttura del manuale utente e sul livello di det
 #insertArabicNumberedPages("Contenuto riunione", "Verbale esterno", giornoRiunione)[
 = Contenuto riunione
 == Struttura del Dominio <domain>
-Il team ha presentato la struttura completa del dominio, ritenuta nel complesso ragionevole, sono state caldamente suggerite delle modifiche ai nomi di alcuni metodi che verranno applicate nello sprint corrente.
+Il team ha presentato la struttura completa del dominio, ritenuta nel complesso ragionevole. Sono state vivamente suggerite delle modifiche ai nomi di alcuni metodi che verranno applicate nello sprint corrente.
 == Progettazione complessiva <progettazione>
 Il team ha nuovamente esposto la progettazione complessiva, illustrando i cambiamenti avvenuti dalla scorsa riunione e ricapitolando nuovamente quali sono le porte del sistema, gli adapter che le implementano e che tecnologia usano
-== Aggiornamento a finire <implementazione>
+== Aggiornamento sullo stato di avanzamento <implementazione>
 Il gruppo ha comunicato la sua intenzione di concludere lo sviluppo nel breve periodo.
 Concordato che ulteriori aggiornamenti saranno forniti tramite comunicazione asincrona(mail o canale telegram) in caso di progessi eccezionali nella fase di codifica, si fissa come argomento della riunione successiva la data della presentazione dell'MVP.
 Chiarite anche la modalità di svolgimento di tale riunione, per l'azienda è indifferente che questa sia svolta in presenza o tramite chiamata zoom. 
 
 == Discussione sul deployment
-Il gruppo ha brevemente esposto il processo di deployment previsto, il referente dell'azienda ha riferito che per loro è poco rilevante.
+Il gruppo ha brevemente esposto il processo di deployment previsto, il referente dell'azienda ha comunicato che per loro è poco rilevante.
 
 == Struttura del Manuale Utente <manuale-utente>
 #upper("è") sufficiente un manuale utente basilare che illustri passo passo le varie funzionalità del prodotto realizzato con l'ausilio di immagini.
