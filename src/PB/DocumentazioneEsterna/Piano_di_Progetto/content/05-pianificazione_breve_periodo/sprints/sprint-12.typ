@@ -10,11 +10,11 @@
     fineEffettiva: datetime(year: 2026, month: 05, day: 04),
   ),
   TODO: [
-    Il focus dello sprint è la ristrutturazione dei diagrammi della Specifica Tecnica verso un modello atomico per use case, garantendo la coerenza con l'architettura esagonale. Parallelamente, l'attività di codifica evolve dall'impostazione iniziale all'implementazione effettiva della persistenza dati e della logica di dominio, introducendo un processo di revisione formale tramite Pull Request.
+    Il focus dello sprint è la ristrutturazione dei diagrammi della Specifica Tecnica verso un modello granulare per casi d'uso, garantendo la coerenza con l'architettura esagonale. Parallelamente, l'attività di codifica è progredita dall'impostazione iniziale all'implementazione effettiva della persistenza dati e della logica di dominio, introducendo un processo di revisione formale tramite Pull Request.
   ],
   rischiAttesi: [
       - *R.O.1 - Pianificazione errata o ottimistica*: la scomposizione dei diagrammi in unità più granulari potrebbe rivelarsi più complessa del previsto, con rischio di sottostima del tempo necessario per garantire la coerenza e la completezza dei nuovi schemi.
-      - *R.T.2 - Inesperienza con le tecnologie*: l'implementazione del database e la gestione della serializzazione dell'albero decisionale richiedono un allineamento tecnico preciso tra frontend e backend.
+      - *R.T.2 - Inesperienza con le tecnologie*: l'implementazione del database e la gestione della serializzazione dell'albero decisionale richiedono un allineamento tecnico preciso tra frontend e backend, con il rischio di errori di integrazione difficili da individuare nelle fasi iniziali.
   ],
   rischiEffettivi: [
     Nessuno in particolare.
@@ -41,7 +41,7 @@
     - *Codifica*:
       - Avanzamento implementazione del dominio dell'MVP.
       - Implementazione del database rispettando le naming convention.
-      - Definizione della struttura per la serializzazione piatta dell'albero decisionale.
+      - Definizione della struttura per la serializzazione in formato lineare dell'albero decisionale.
       - Introduzione delle Pull Request per la revisione del codice.
     - *Documentazione*:
       - Redazione del verbale interno.

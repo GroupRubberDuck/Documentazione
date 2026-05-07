@@ -185,7 +185,7 @@
       [1.4.0],
       [2026-04-28],
       [#persone.FELIX],
-      [],    
+      [#persone.FILIPPO],    
       [Stesura sprint 12],
     ),
   )
