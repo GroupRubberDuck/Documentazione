@@ -110,6 +110,7 @@
    ([1.1.0], [2026-03-31], persone.ANA, [Filippo Guerra], [Correzioni errori segnalati per la Requirements And Technology
 Baseline]),
   ([1.1.1], [2026-05-04], persone.ALDO, "", [Rimosso uc visualizza stato sospeso]),
+  ([1.1.2], [2026-05-04], persone.ALDO, "", [Modifica precondizione di #use-case-label(nome-etichetta: "esporta informazioni dispositivo")]),
   )
 
 #registroModifiche(modifiche)

@@ -1,7 +1,7 @@
 # Configurazione dei casi d'uso
 settings:
   # Percorso dove creare i file (relativo allo script)
-  output_dir: "src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
+  output_dir: "src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/use_case"
 
   # Nome del file aggregatore (se lasciato vuoto, non lo crea)
   index_file: "_index.typ"
@@ -136,7 +136,6 @@ structure:
                     - Visualizza stato PASS requisito
                     - Visualizza stato FAIL requisito
                     - Visualizza stato NA requisito
-                    - Visualizza stato sospeso requisito
                     - Visualizza stato In corso requisito
 
                 - Visualizza lista dipendenze requisito:
