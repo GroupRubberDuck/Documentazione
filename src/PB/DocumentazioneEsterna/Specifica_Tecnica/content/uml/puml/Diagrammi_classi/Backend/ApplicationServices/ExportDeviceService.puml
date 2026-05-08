@@ -2,7 +2,7 @@
 skinparam classAttributeIconSize 0
 
 class ExportDeviceService <<Application Service>> {
-    + export(command: ExportDeviceCommand): bytes
+    + export(command: ExportDeviceCommand): ExportedFile
 }
 
 @enduml

@@ -24,28 +24,12 @@ package "Application Core" {
     
     () "ExportDeviceUseCase" as ExportDeviceUseCase
 
-    !include ApplicationServices/ExportDeviceService.puml
+    !include ApplicationServices/ExportDevic    eService.puml
 
-    class DeviceFileCommand {
-        + device_name: String
-        + device_os_name: String
-        + device_description: String
-        + model_id: String
-        + model_name: String
-        + model_version: String
-        + assets: List<AssetFileCommand>
-    }
-
-    class AssetFileCommand {
-        + asset_name: String
-        + asset_type: AssetType
-        + asset_description: String
-        + assessments: List<AssessmentFileCommand>
-    }
-
-    class AssessmentFileCommand {
-        + requirement_code: String
-        + answers: Dictionary<String, bool>
+    class ExportedFile {
+        + content: Bytes
+        + filename: String
+        + media_type: String
     }
 
     () "FindDevicePort" as FindDevicePort
@@ -63,10 +47,7 @@ package "Application Core" {
 
     ExportDeviceCommand -[hidden]right- ExportDeviceService
     ExportDeviceService .left.> ExportDeviceCommand : legge
-    ExportDeviceService .down.> DeviceFileCommand : popola
-
-    DeviceFileCommand *-- AssetFileCommand
-    AssetFileCommand *-- AssessmentFileCommand
+    ExportDeviceService .down.> ExportedFile : popola
 }
 
 package "Outbound Adapter" {
@@ -86,11 +67,19 @@ package "Outbound Adapter" {
         # finalize_output()
     }
 
+    class CSVFileDeviceExporter {
+        # prepare_structure()
+        # write_data()
+        # finalize_output()
+    }
+
     FileDeviceExporter <|-down- JSONFileDeviceExporter
     FileDeviceExporter <|-down- XMLFileDeviceExporter
+    FileDeviceExporter <|-down- CSVFileDeviceExporter
 
     ConcreteFileDeviceExporterFactory ..> JSONFileDeviceExporter : crea
     ConcreteFileDeviceExporterFactory ..> XMLFileDeviceExporter : crea
+    ConcreteFileDeviceExporterFactory ..> CSVFileDeviceExporter : crea
 }
 
 
