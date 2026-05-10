@@ -31,7 +31,7 @@ package "Application Core" {
         + asset_id: String
         + name: String
         + type: AssetType
-        + stato_aggregato: EvaluationState
+        + aggregate_status: EvaluationState
     }
 
     () "GetSessionPort"
