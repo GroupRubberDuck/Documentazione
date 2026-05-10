@@ -3,5 +3,6 @@
 class EvaluationSession {
     - device: Device
     - standard: Standard
-    - device_detail_eval_detail: DeviceEvaluationDetail
 }
+
+@enduml
