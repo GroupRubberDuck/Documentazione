@@ -1,0 +1,7 @@
+@startuml GetComplianceStandardCommand
+
+class GetComplianceStandardCommand {
+    standard_id: String
+}
+
+@enduml

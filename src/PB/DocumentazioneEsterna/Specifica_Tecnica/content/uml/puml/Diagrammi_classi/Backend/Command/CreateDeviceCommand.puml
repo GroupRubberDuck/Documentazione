@@ -1,10 +1,10 @@
-@startuml
+@startuml CreateDeviceCommand
 skinparam classAttributeIconSize 0
 
 class CreateDeviceCommand {
     + device_name: String
     + device_os: String
     + device_description: String
-    + compliance_standard_id: String
+    + standard_id: String
 }
 @enduml

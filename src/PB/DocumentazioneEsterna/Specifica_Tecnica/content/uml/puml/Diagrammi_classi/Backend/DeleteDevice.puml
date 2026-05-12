@@ -5,15 +5,13 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/WriteDeviceController.puml
+    !include InboundAdapters/FlaskWriteDeviceController.puml
 }
 
 package "Application Core" {
     () "DeleteDeviceUseCase"
 
-    class DeleteDeviceCommand {
-        +device_id: String
-    }
+    !include Command/DeleteDeviceCommand.puml
 
     !include ApplicationServices/DeleteDeviceService.puml
     !include Domain/Device.puml
@@ -30,7 +28,7 @@ DeleteDeviceCommand . DeleteDeviceService: legge
 
 DeleteDeviceService --> DeleteDevicePort: usa
 
-WriteDeviceController --> DeleteDeviceUseCase: usa
+FlaskWriteDeviceController --> DeleteDeviceUseCase: usa
 MongoDeviceAdapter - DeleteDevicePort
 
 @enduml

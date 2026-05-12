@@ -16,6 +16,7 @@ class Device {
     + update_info(name: String, os: String, description: String): void
     + add_asset(asset: Asset): void
     + remove_asset(asset_id: String): void
+    + update_asset(asset: Asset): void
 }
 
 Device *-- "0..*" Asset
