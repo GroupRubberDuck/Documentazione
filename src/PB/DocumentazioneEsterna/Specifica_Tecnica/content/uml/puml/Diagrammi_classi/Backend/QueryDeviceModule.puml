@@ -1,4 +1,4 @@
-@startuml GetDeviceDetail
+@startuml QueryDeviceModule
 skinparam linetype ortho
 skinparam nodesep 80
 skinparam ranksep 80
@@ -9,17 +9,26 @@ package "Inbound Adapter"{
 }
 
 package "Application Core" {
-    () "GetDeviceDetailUseCase"
-    () "GetComplianceStandardUseCase"
+    class DeviceSummary {
+        - name: String
+    }
     !include Command/GetDeviceDetailCommand.puml
     !include Command/GetComplianceStandardCommand.puml
     
+    () "GetDeviceDetailUseCase"
+    () "GetDeviceListUseCase"
+    () "GetComplianceStandardUseCase"
+    !include ApplicationServices/GetDeviceListService.puml
     !include ApplicationServices/GetDeviceDetailService.puml
     !include ApplicationServices/GetComplianceStandardService.puml
     !include Domain/Device.puml
     !include Domain/ComplianceStandard.puml
+    () "FindAllDevicesPort"
     () "FindDevicePort"
+
     () "FindStandardPort"
+
+    GetDeviceListService .left.> DeviceSummary: popola
 }
 
 package "Outbound Adapter" {
@@ -27,18 +36,25 @@ package "Outbound Adapter" {
     !include OutboundAdapters/MongoStandardAdapter.puml
 }
 
+
+GetDeviceListService - GetDeviceListUseCase
 GetDeviceDetailService - GetDeviceDetailUseCase
 GetComplianceStandardService - GetComplianceStandardUseCase
 
 GetDeviceDetailService .> GetDeviceDetailCommand : legge
 GetComplianceStandardService .> GetComplianceStandardCommand: legge
 
+
+GetDeviceListService --> FindAllDevicesPort : usa
 GetDeviceDetailService --> FindDevicePort: usa
 GetComplianceStandardService --> FindStandardPort: usa
 
+QueryDeviceController --> GetDeviceListUseCase : usa
 QueryDeviceController --> GetDeviceDetailUseCase: usa
 QueryDeviceController --> GetComplianceStandardUseCase: usa
+MongoDeviceAdapter - FindAllDevicesPort
 MongoDeviceAdapter - FindDevicePort
+
 MongoStandardAdapter - FindStandardPort
 
 @enduml

@@ -1,4 +1,4 @@
- @startuml
+@startuml GetDeviceDetailCommand
 skinparam classAttributeIconSize 0  
    
     class GetDeviceDetailCommand {

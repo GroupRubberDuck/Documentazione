@@ -57,6 +57,8 @@ Il diagramma illustra l'architettura del modulo dedicato all'apertura di una ses
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 - Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort
+- Per la definizione di _MongoStandardAdapter_, vedere la sezione @MongoStandardAdapter
+- Per la definizione di _FindStandardPort_, vedere la sezione @FindStandardPort
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
@@ -179,46 +181,6 @@ _CreateSessionPort_ non definisce attributi.
 *Metodi e funzioni*
 
 - `+ create_session(): EvaluationSession` — firma del metodo che inizializza e registra una nuova sessione di valutazione nel sistema in memoria.
-
-
-
-
-==== FindStandardPort <FindStandardPort>
-#figure(
-  image("../uml/png/Session/FindStandardPort.png", width: 50%),
-  caption: [FindStandardPort]
-) <fig-find-standard-port>
-*Descrizione*
-
-_FindStandardPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il recupero di uno standard di conformità dal sistema di persistenza. Viene implementata da _MongoStandardAdapter_ e utilizzata da _OpenEvaluationSessionService_.
-
-*Attributi*
-
-_FindStandardPort_ non definisce attributi.
-
-*Metodi e funzioni*
-
-- `+ find_by_id(standard_id: String): ComplianceStandard` — firma del metodo che recupera lo standard di conformità corrispondente all'identificativo fornito.
-
-
-
-==== MongoStandardAdapter <MongoStandardAdapter>
-#figure(
-  image("../uml/png/Session/MongoStandardAdapter.png", width: 50%),
-  caption: [MongoStandardAdapter]
-) <fig-mongo-standard-adapter>
-*Descrizione*
-
-_MongoStandardAdapter_ è la classe dell'Outbound Adapter annotata come _Mongo Repository_ che implementa _FindStandardPort_, traducendo le operazioni di recupero degli standard di conformità in interazioni concrete con MongoDB.
-
-*Attributi*
-
-_MongoStandardAdapter_ non definisce attributi propri nel diagramma.
-
-*Metodi e funzioni*
-
-- `+ save(standard: ComplianceStandard): void` — persiste uno standard di conformità nel database.
-- `+ find_by_id(standard_id: String): ComplianceStandard` — recupera lo standard di conformità corrispondente all'identificativo fornito.
 
 
 === SaveEvaluationSession <SaveEvaluationSession>

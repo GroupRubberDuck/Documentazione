@@ -29,19 +29,19 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 */
 
 #block(breakable: false)[
-=== WriteDeviceModule
-#figure(
-  image("../uml/png/CreateDevice/WriteDeviceModule.png", width: 100%),
-  caption: [ Modulo di scrittura Dispositivi]
-) <fig-write-device-module>
+  === WriteDeviceModule
+  #figure(
+    image("../uml/png/CreateDevice/WriteDeviceModule.png", width: 100%),
+    caption: [ Modulo di scrittura Dispositivi],
+  ) <fig-write-device-module>
 
-Il diagramma offre una visione d'insieme del modulo di scrittura per la gestione dei Dispositivi, mostrando come i tre casi d'uso — _CreateDevice_, _SaveDevice_ e _DeleteDevice_ — condividano gli stessi componenti infrastrutturali (_WriteDeviceController_ e _MongoDeviceAdapter_) pur introducendo ciascuno le proprie interfacce e service dedicati. I componenti sono descritti in dettaglio nelle sezioni seguenti.
+  Il diagramma offre una visione d'insieme del modulo di scrittura per la gestione dei Dispositivi, mostrando come i tre casi d'uso — _CreateDevice_, _SaveDevice_ e _DeleteDevice_ — condividano gli stessi componenti infrastrutturali (_WriteDeviceController_ e _MongoDeviceAdapter_) pur introducendo ciascuno le proprie interfacce e service dedicati. I componenti sono descritti in dettaglio nelle sezioni seguenti.
 ]
 === CreateDevice <CreateDevice>
 
 #figure(
   image("../uml/png/CreateDevice/CreateDevice.png", width: 100%),
-  caption: [ Caso d'uso CreateDevice]
+  caption: [ Caso d'uso CreateDevice],
 ) <fig-create-device>
 
 Il diagramma illustra l'architettura del modulo di scrittura per la gestione dei Dispositivi, coprendo le operazioni di creazione, modifica ed eliminazione secondo i principi dell'architettura esagonale.
@@ -50,7 +50,7 @@ Il diagramma illustra l'architettura del modulo di scrittura per la gestione dei
 
 #figure(
   image("../uml/png/CreateDevice/WriteDeviceController.png", width: 45%),
-  caption: [WriteDeviceController]
+  caption: [WriteDeviceController],
 ) <fig-write-device-controller>
 
 *Descrizione*
@@ -71,7 +71,7 @@ _WriteDeviceController_ non definisce attributi propri.
 
 #figure(
   image("../uml/png/CreateDevice/CreateDeviceUseCase.png", width: 35%),
-  caption: [ CreateDeviceUseCase]
+  caption: [ CreateDeviceUseCase],
 ) <fig-create-device-use-case>
 
 *Descrizione*
@@ -90,7 +90,7 @@ _CreateDeviceUseCase_ non definisce attributi.
 
 #figure(
   image("../uml/png/CreateDevice/CreateDeviceCommand.png", width: 35%),
-  caption: [CreateDeviceCommand]
+  caption: [CreateDeviceCommand],
 ) <fig-create-device-command>
 
 *Descrizione*
@@ -102,7 +102,7 @@ _CreateDeviceCommand_ è il Command Object che veicola i dati necessari alla cre
 - `+ device_name: String` — nome del nuovo Dispositivo.
 - `+ device_os: String` — sistema operativo del Dispositivo.
 - `+ device_description: String` — descrizione testuale del Dispositivo.
-- `+ compliance_standard_id: String` — identificativo dello standard di conformità associato.
+- `+ standard_id: String` — identificativo dello standard di conformità associato.
 
 *Metodi e funzioni*
 
@@ -112,7 +112,7 @@ _CreateDeviceCommand_ non definisce metodi.
 
 #figure(
   image("../uml/png/CreateDevice/CreateDeviceService.png", width: 45%),
-  caption: [CreateDeviceService]
+  caption: [CreateDeviceService],
 ) <fig-create-device-service>
 
 *Descrizione*
@@ -131,7 +131,7 @@ _CreateDeviceService_ è il service applicativo appartenente all'Application Cor
 
 #figure(
   image("../uml/png/CreateDevice/Device.png", width: 35%),
-  caption: [Device]
+  caption: [Device],
 ) <fig-device>
 
 *Descrizione*
@@ -154,12 +154,13 @@ _Device_ è l'entità centrale del dominio che rappresenta il Dispositivo oggett
 - `+ update_info(name: String, os: String, description: String): void` — aggiorna le informazioni anagrafiche del Dispositivo (nome, sistema operativo e descrizione).
 - `+ add_asset(asset: Asset): void` — aggiunge un nuovo _Asset_ alla mappa del Dispositivo.
 - `+ remove_asset(asset_id: String): void` — rimuove l'_Asset_ identificato da `asset_id` dalla mappa del Dispositivo.
+- `+ update_asset(asset: Asset): void` — aggiorna un _Asset_ esistente
 
 ==== RegisterDevicePort <RegisterDevicePort>
 
 #figure(
   image("../uml/png/CreateDevice/RegisterDevicePort.png", width: 35%),
-  caption: [RegisterDevicePort]
+  caption: [RegisterDevicePort],
 ) <fig-register-device-port>
 
 *Descrizione*
@@ -178,7 +179,7 @@ _RegisterDevicePort_ non definisce attributi.
 
 #figure(
   image("../uml/png/CreateDevice/MongoDeviceAdapter.png", width: 45%),
-  caption: [MongoDeviceAdapter]
+  caption: [MongoDeviceAdapter],
 ) <fig-mongo-device-adapter>
 
 *Descrizione*
@@ -201,10 +202,10 @@ _MongoDeviceAdapter_ è la classe dell'Outbound Adapter che implementa le porte 
 
 #figure(
   image("../uml/png/DeleteDevice/DeleteDevice.png", width: 90%),
-  caption: [Caso d'uso DeleteDevice]
+  caption: [Caso d'uso DeleteDevice],
 ) <fig-delete-device>
 
-Il diagramma illustra l'architettura del modulo dedicato all'eliminazione di un Dispositivo. 
+Il diagramma illustra l'architettura del modulo dedicato all'eliminazione di un Dispositivo.
 
 - Per la definizione di _WriteDeviceController_, vedere la sezione @WriteDeviceController. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
@@ -214,7 +215,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ==== DeleteDeviceUseCase
 #figure(
   image("../uml/png/DeleteDevice/DeleteDeviceUseCase.png", width: 40%),
-  caption: [DeleteDeviceUseCase]
+  caption: [DeleteDeviceUseCase],
 ) <fig-delete-device-use-case>
 *Descrizione*
 
@@ -232,12 +233,12 @@ _DeleteDeviceUseCase_ non definisce attributi.
 
 #figure(
   image("../uml/png/DeleteDevice/DeleteDeviceCommand.png", width: 35%),
-  caption: [DeleteDeviceCommand]
+  caption: [DeleteDeviceCommand],
 ) <fig-delete-device-command>
 
 *Descrizione*
 
-_DeleteDeviceCommand_ è il Command Object utilizzato per trasportare i dati necessari all'eliminazione di un Dispositivo. Segue il pattern Command, separando i dati di input dalla logica applicativa del servizio.
+_DeleteDeviceCommand_ è il Command Object utilizzato per trasportare i dati necessari all'eliminazione di un Dispositivo.
 
 *Attributi*
 
@@ -251,7 +252,7 @@ _DeleteDeviceCommand_ non definisce metodi propri.
 
 #figure(
   image("../uml/png/DeleteDevice/DeleteDeviceService.png", width: 45%),
-  caption: [DeleteDeviceService]
+  caption: [DeleteDeviceService],
 ) <fig-delete-device-service>
 
 *Descrizione*
@@ -269,7 +270,7 @@ _DeleteDeviceService_ non definisce attributi propri.
 
 #figure(
   image("../uml/png/DeleteDevice/DeleteDevicePort.png", width: 40%),
-  caption: [DeleteDevicePort]
+  caption: [DeleteDevicePort],
 ) <fig-delete-device-port>
 *Descrizione*
 
@@ -291,10 +292,10 @@ _DeleteDevicePort_ non definisce attributi.
 
 #figure(
   image("../uml/png/SaveDevice/UpdateDevice.png", width: 100%),
-  caption: [Caso d'uso UpdateDevice]
+  caption: [Caso d'uso UpdateDevice],
 ) <fig-save-device>
 
-Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salvataggio dello stato di un Dispositivo esistente. 
+Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salvataggio dello stato di un Dispositivo esistente.
 
 - Per la definizione di _WriteDeviceController_, vedere la sezione @WriteDeviceController. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
@@ -306,7 +307,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 
 #figure(
   image("../uml/png/SaveDevice/UpdateDeviceUseCase.png", width: 40%),
-  caption: [UpdateDeviceUseCase]
+  caption: [UpdateDeviceUseCase],
 ) <fig-save-device-use-case>
 *Descrizione*
 
@@ -324,7 +325,7 @@ _UpdateDeviceUseCase_ non definisce attributi.
 
 #figure(
   image("../uml/png/SaveDevice/UpdateDeviceCommand.png", width: 35%),
-  caption: [UpdateDeviceCommand]
+  caption: [UpdateDeviceCommand],
 ) <fig-save-device-command>
 
 *Descrizione*
@@ -345,7 +346,7 @@ _UpdateDeviceCommand_ non definisce metodi.
 
 #figure(
   image("../uml/png/SaveDevice/UpdateDeviceService.png", width: 45%),
-  caption: [UpdateDeviceService]
+  caption: [UpdateDeviceService],
 ) <fig-save-device-service>
 
 *Descrizione*
@@ -364,7 +365,7 @@ _UpdateDeviceService_ non definisce attributi propri.
 
 #figure(
   image("../uml/png/SaveDevice/SaveDevicePort.png", width: 30%),
-  caption: [SaveDevicePort]
+  caption: [SaveDevicePort],
 ) <fig-save-device-port>
 *Descrizione*
 
@@ -384,10 +385,10 @@ _UpdateDevicePort_ non definisce attributi.
 
 #figure(
   image("../uml/png/GetDeviceDetail/QueryDeviceModule.png", width: 100%),
-  caption: [Modulo di lettura Dispositivi]
+  caption: [Modulo di lettura Dispositivi],
 ) <fig-read-device-module>
 
-Il diagramma illustra l'architettura del modulo di lettura per la gestione dei Dispositivi, coprendo le operazioni di recupero del dettaglio di un singolo Dispositivo e della lista sintetica di tutti i Dispositivi registrati. 
+Il diagramma illustra l'architettura del modulo di lettura per la gestione dei Dispositivi, coprendo le operazioni di recupero del dettaglio di un singolo Dispositivo e della lista sintetica di tutti i Dispositivi registrati.
 
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
@@ -398,19 +399,19 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 
 #figure(
   image("../uml/png/GetDeviceDetail/GetDeviceDetail.png", width: 100%),
-  caption: [GetDeviceDetail]
+  caption: [GetDeviceDetail],
 ) <fig-get-device-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Dispositivo.
- - Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. 
+- Per la definizione di _Device_, vedere la sezione @Device. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 ==== QueryDeviceController <QueryDeviceController>
 
 #figure(
   image("../uml/png/GetDeviceDetail/QueryDeviceController.png", width: 45%),
-  caption: [QueryDeviceController]
+  caption: [QueryDeviceController],
 ) <fig-query-device-controller>
 
 *Descrizione*
@@ -424,12 +425,12 @@ _QueryDeviceController_ non definisce attributi propri.
 *Metodi e funzioni*
 
 - `+ get_device_list(req: Request): Response` — riceve la richiesta HTTP di recupero della lista dei Dispositivi e restituisce una risposta HTTP con l'elenco sintetico.
-- `+ get_device_detail(req: Request): Response` — riceve la richiesta HTTP di recupero del dettaglio di un Dispositivo specifico e restituisce una risposta HTTP con i dati completi.
+- `+ get_device_detail(req: Request): Response` — riceve la richiesta HTTP di recupero del dettaglio di un Dispositivo specifico e restituisce una risposta HTTP con i dati completi, per recuperare questi dati utilizza le porte _GetDeviceDetailUseCase_ per le informazioni del dispositivo e _GetComplianceStandardUseCase_ per recuperare lo standard associato.
 
-=== GetDeviceDetailUseCase
+==== GetDeviceDetailUseCase
 #figure(
   image("../uml/png/GetDeviceDetail/GetDeviceDetailUseCase.png", width: 35%),
-  caption: [GetDeviceDetailUseCase]
+  caption: [GetDeviceDetailUseCase],
 ) <fig-get-device-detail-use-case>
 *Descrizione*
 
@@ -447,7 +448,7 @@ _GetDeviceDetailUseCase_ non definisce attributi.
 
 #figure(
   image("../uml/png/GetDeviceDetail/GetDeviceDetailService.png", width: 45%),
-  caption: [GetDeviceDetailService]
+  caption: [GetDeviceDetailService],
 ) <fig-get-device-detail-service>
 
 *Descrizione*
@@ -466,7 +467,7 @@ _GetDeviceDetailService_ non definisce attributi propri.
 
 #figure(
   image("../uml/png/GetDeviceDetail/GetDeviceDetailCommand.png", width: 35%),
-  caption: [GetDeviceDetailCommand]
+  caption: [GetDeviceDetailCommand],
 ) <fig-get-device-detail-command>
 
 *Descrizione*
@@ -480,10 +481,65 @@ _GetDeviceDetailCommand_ è  utilizzato per trasportare i dati necessari al recu
 *Metodi e funzioni*
 
 _GetDeviceDetailCommand_ non definisce metodi propri.
+
+==== GetComplianceStandardUseCase
+// #figure(
+//   image("../uml/png/GetDeviceDetail/GetComplianceStandardUseCase.png", width: 35%),
+//   caption: [GetComplianceStandardUseCase]
+// ) <fig-get-compliance-standard-use-case>
+*Descrizione*
+
+_GetComplianceStandardUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero dello standard. Viene implementata da _GetComplianceStandardService_ e utilizzata da _QueryDeviceController_.
+
+*Attributi*
+
+_GetComplianceStandardService_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — firma del metodo delegato al recupero dello Standard corrispondente al Command fornito.
+
+==== GetComplianceStandardService
+// #figure(
+//   image("../uml/png/GetDeviceDetail/GetComplianceStandardService.png", width: 45%),
+//   caption: [GetComplianceStandardService]
+// ) <fig-get-compliance-standard-service>
+
+*Descrizione*
+
+_GetComplianceStandardService_ è il service applicativo appartenente all'Application Core responsabile del recupero di un Compliance Standard. Implementa l'interfaccia _GetComplianceStandardUseCase_ e coordina il recupero dei dati tramite la porta outbound _FindStandardPort_.
+
+*Attributi*
+
+_GetDeviceDetailService_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — concretizza il contratto definito da _GetComplianceStandardUseCase_. Recupera il Compliance Standard corrispondente all'identificativo contenuto nel Command tramite _FindStandardPort_.
+
+==== GetComplianceStandardCommand
+// #figure(
+//   image("../uml/png/GetDeviceDetail/GetComplianceStandardCommand.png", width: 35%),
+//   caption: [GetComplianceStandardCommand],
+// ) <fig-get-compliance-standard-command>
+
+*Descrizione*
+
+_GetComplianceStandardCommand_ è  utilizzato per trasportare i dati necessari al recupero del dettaglio di un Compliance Standard. Incapsula i parametri di input del metodo esposto da _GetComplianceStandardUseCase_.
+
+*Attributi*
+
+- `+ standard_id: String` — identificativo univoco dello Standard di cui recuperare il dettaglio.
+
+*Metodi e funzioni*
+
+_GetComplianceStandardCommand_ non definisce metodi propri.
+
+
 ==== FindDevicePort <FindDevicePort>
 #figure(
   image("../uml/png/GetDeviceDetail/FindDevicePort.png", width: 35%),
-  caption: [FindDevicePort]
+  caption: [FindDevicePort],
 ) <fig-find-device-port>
 *Descrizione*
 
@@ -497,15 +553,73 @@ _FindDevicePort_ non definisce attributi.
 
 - `+ find_by_id(device_id: String): Device` — firma del metodo che recupera il Dispositivo corrispondente all'identificativo fornito dal sistema di persistenza.
 
+==== FindStandardPort <FindStandardPort>
+#figure(
+  image("../uml/png/GetDeviceDetail/FindStandardPort.png", width: 50%),
+  caption: [FindStandardPort]
+) <fig-find-standard-port>
+*Descrizione*
+
+_FindStandardPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il recupero di uno standard di conformità dal sistema di persistenza. Viene implementata da _MongoStandardAdapter_ e utilizzata da _OpenEvaluationSessionService_.
+
+*Attributi*
+
+_FindStandardPort_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ find_by_id(standard_id: String): ComplianceStandard` — firma del metodo che recupera lo standard di conformità corrispondente all'identificativo fornito.
+
+==== ComplianceStandard
+
+#figure(
+  image("../uml/png/GetDeviceDetail/ComplianceStandard.png", width: 35%),
+  caption: [ComplianceStandard],
+) <fig-standard>
+
+*Descrizione*
+
+_ComplianceStandard_ rappresenta il documento che contiene le regole alle quali i dispositivi devono sottostare.
+
+*Attributi*
+
+- `- id: String` — identificativo univoco dello standard.
+- `- name: String` — nome dello Standard.
+- `- version_number: String` — versione dello Standard.
+- `- requirements: Map<String, Requirement>` — mappa i requisiti dello standard, indicizzati per il loro identificativo.
+
+*Metodi e funzioni*
+
+- `+ get_requirement(requirement_id: String): Requirement` — recupera il requisito corrispondente all'identificativo fornito.
+- `+ evaluate_requirement(requirement_id: String, answers: AssetEvidence): EvaluationState` — valuta un requisito inserendo le answers, ritorna un _EvaluationState_
+
+==== MongoStandardAdapter <MongoStandardAdapter>
+#figure(
+  image("../uml/png/GetDeviceDetail/MongoStandardAdapter.png", width: 50%),
+  caption: [MongoStandardAdapter]
+) <fig-mongo-standard-adapter>
+*Descrizione*
+
+_MongoStandardAdapter_ è la classe dell'Outbound Adapter annotata come _Mongo Repository_ che implementa _FindStandardPort_, traducendo le operazioni di recupero degli standard di conformità in interazioni concrete con MongoDB.
+
+*Attributi*
+
+_MongoStandardAdapter_ non definisce attributi propri nel diagramma.
+
+*Metodi e funzioni*
+
+- `+ save(standard: ComplianceStandard): void` — persiste uno standard di conformità nel database.
+- `+ find_by_id(standard_id: String): ComplianceStandard` — recupera lo standard di conformità corrispondente all'identificativo fornito.
+
 === GetDeviceList
 
 
 #figure(
   image("../uml/png/GetDeviceList/GetDeviceList.png", width: 100%),
-  caption: [Caso d'uso GetDeviceList]
+  caption: [Caso d'uso GetDeviceList],
 ) <fig-get-device-list>
 
-Il diagramma illustra l'architettura del modulo dedicato al recupero della lista sintetica dei Dispositivi. 
+Il diagramma illustra l'architettura del modulo dedicato al recupero della lista sintetica dei Dispositivi.
 
 Per la definizione di _QueryDeviceController_, vedere la sezione @QueryDeviceController. \
 Per la definizione di _Device_, vedere la sezione @Device. \
@@ -518,7 +632,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ==== GetDeviceListUseCase
 #figure(
   image("../uml/png/GetDeviceList/GetDeviceListUseCase.png", width: 35%),
-  caption: [GetDeviceListUseCase]
+  caption: [GetDeviceListUseCase],
 ) <fig-get-device-list-use-case>
 *Descrizione*
 
@@ -536,7 +650,7 @@ _GetDeviceListUseCase_ non definisce attributi.
 
 #figure(
   image("../uml/png/GetDeviceList/GetDeviceListService.png", width: 45%),
-  caption: [GetDeviceListService]
+  caption: [GetDeviceListService],
 ) <fig-get-device-list-service>
 
 *Descrizione*
@@ -554,7 +668,7 @@ _GetDeviceListService_ è il service applicativo appartenente all'Application Co
 ==== DeviceSummary
 #figure(
   image("../uml/png/GetDeviceList/DeviceSummary.png", width: 30%),
-  caption: [DeviceSummary]
+  caption: [DeviceSummary],
 ) <fig-device-summary>
 *Descrizione*
 
@@ -573,7 +687,7 @@ _DeviceSummary_ non definisce metodi.
 ==== FindAllDevicesPort
 #figure(
   image("../uml/png/GetDeviceList/FindAllDevicesPort.png", width: 45%),
-  caption: [FindAllDevicesPort]
+  caption: [FindAllDevicesPort],
 ) <fig-find-all-devices-port>
 *Descrizione*
 

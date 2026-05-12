@@ -5,7 +5,7 @@ skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/WriteDeviceController.puml
+    !include InboundAdapters/FlaskWriteDeviceController.puml
 }
 
 package "Application Core" {
@@ -23,20 +23,12 @@ package "Application Core" {
     () "UpdateDeviceUseCase"
     () "SaveDevicePort"
 
-    ' ==========================================
-    ' GABBIA STRUTTURALE (ALLINEAMENTO COME DA IMMAGINE)
-    ' ==========================================
-    
-    ' 1. Mettiamo il Dominio a sinistra e il Command al centro
     Device -[hidden]right- UpdateDeviceCommand
     
-    ' 2. Il Service legge il Command da destra verso sinistra
     UpdateDeviceService .left.> UpdateDeviceCommand: legge
-    
-    ' 3. Agganciamo l'interfaccia UseCase a destra del Service
+
     UpdateDeviceService -right- UpdateDeviceUseCase
-    
-    ' 4. Il Service scende verso il basso verso la Porta
+
     UpdateDeviceService -down-> SaveDevicePort: usa
 }
 
@@ -44,14 +36,8 @@ package "Outbound Adapter" {
     !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
-' ==========================================
-' COLLEGAMENTI ESTERNI (Verticali Top-Down)
-' ==========================================
+FlaskWriteDeviceController -down-> UpdateDeviceUseCase: usa
 
-' Il Controller scende esattamente sopra l'UseCase a destra
-WriteDeviceController -down-> UpdateDeviceUseCase: usa
-
-' La Porta scende esattamente sopra l'Adapter in basso a destra
 SaveDevicePort -down- MongoDeviceAdapter
 
 @enduml

@@ -5,18 +5,13 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/WriteDeviceController.puml
+    !include InboundAdapters/FlaskWriteDeviceController.puml
 }
 
 package "Application Core" {
     () "CreateDeviceUseCase"
 
-    class CreateDeviceCommand {
-        + device_name: String
-        + device_os: String
-        + device_description: String
-        + compliance_standard_id: String
-    }
+    !include Command/CreateDeviceCommand.puml
 
     !include ApplicationServices/CreateDeviceService.puml
     !include Domain/Device.puml
@@ -33,7 +28,7 @@ CreateDeviceCommand . CreateDeviceService: legge
 
 CreateDeviceService --> RegisterDevicePort: usa
 
-WriteDeviceController --> CreateDeviceUseCase: usa
+FlaskWriteDeviceController --> CreateDeviceUseCase: usa
 MongoDeviceAdapter - RegisterDevicePort
 
 @enduml
