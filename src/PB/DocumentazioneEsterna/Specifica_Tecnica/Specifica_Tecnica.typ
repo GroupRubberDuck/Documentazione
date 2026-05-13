@@ -114,7 +114,11 @@
       [2026-04-17],
       [#persone.FILIPPO],
       [#persone.DL],
+<<<<<<< HEAD
       [Stesura vista_dati  ]
+=======
+      [Stesura vista_dati]
+>>>>>>> 592aadfa (Chore: refactoring struttura della directory delle classi)
     ),
     (
       [0.6.1],
@@ -146,7 +150,7 @@
       [2026-04-19],
       [#persone.DL],
       [-],
-      [Revisione architetturale della sezione relativa alla modifica degli asset @classe_asset]
+      [Revisione architetturale della sezione relativa alla modifica degli asset]
     ),
 >>>>>>> 9d4ff2f5 (doc: classi device/asset/session st)
 
