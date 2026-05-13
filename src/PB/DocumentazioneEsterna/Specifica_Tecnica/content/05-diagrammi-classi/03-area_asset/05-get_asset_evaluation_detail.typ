@@ -1,0 +1,98 @@
+=== GetAssetEvaluationDetail
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetail.png", width: 100%),
+  caption: [GetAssetEvaluationDetail],
+) <fig-get-device-evaluation-detail>
+
+Il diagramma illustra l'architettura del modulo dedicato al recupero di un _AssetEvaluationDetail_ contenente informazioni anagrafiche e stato di valutazione del dispositivo.
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+
+==== FlaskAssetEvaluationDetailController
+
+
+==== GetAssetEvaluationDetailCommand
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailCommand.png", width: 40%),
+  caption: [GetAssetEvaluationDetailCommand],
+) <fig-get-device-evaluation-detail-command>
+
+*Descrizione*
+
+_GetAssetEvaluationDetailCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero di un _AssetEvaluationDetail_. Incapsula i parametri di input del metodo esposto da _GetAssetEvaluationDetailUseCase_.
+
+*Attributi*
+
+- `+ session_id: String` — identificativo univoco della sessione
+- `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
+
+*Metodi e funzioni*
+
+_GetAssetEvaluationDetailCommand_ non definisce metodi propri.
+
+==== GetAssetEvaluationDetailUseCase
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailUseCase.png", width: 40%),
+  caption: [GetAssetEvaluationDetailUseCase],
+) <fig-get-device-evaluation-detail-use-case>
+
+*Descrizione*
+
+_GetAssetEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero di un _AssetEvaluationDetail_. Viene implementata da _GetAssetEvaluationDetailService_ e utilizzata da _FlaskAssetEvaluationDetailController_.
+
+*Attributi*
+
+_GetAssetEvaluationDetailUseCase_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
+
+==== GetAssetEvaluationDetailService
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailService.png", width: 50%),
+  caption: [GetAssetEvaluationDetailService],
+) <fig-get-device-evaluation-detail-service>
+
+*Descrizione*
+
+Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione di valutazione specificata, esegue la valutazione del dispositivo tramite l'engine e isola i risultati dell'Asset richiesto. Infine, aggrega i dati anagrafici di tale Asset con i risultati della valutazione dei suoi requisiti, restituendo la rappresentazione _AssetEvaluationDetail_
+
+*Attributi*
+
+_GetAssetEvaluationDetailService_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` —
+concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
+
+==== AssetEvaluationDetail
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/AssetEvaluationDetail.png", width: 45%),
+  caption: [AssetEvaluationDetail],
+)
+
+*Descrizione*
+
+_AssetEvaluationDetail_ è l'oggetto di dominio che contiene le informazioni anagrafiche dell'asset ed il suo stato di valutazione attuale.
+
+*Attributi*
+
+- `asset_id: String` è l'identificativo univoco dell'asset
+- `name: String` è il nome dell'asset
+- `asset_type: AssetType` è il tipo dell'asset
+- `description: String` è la descrizione dell'asset
+- `requirement_details: List<RequirementEvaluationDetail>` è la lista di requisiti che appartengono all'asset
+- `verdict: EvaluationState` è lo stato della valutazione dell'asset
+
+
+*Metodi e funzioni*
+
+_AssetEvaluationDetail_ non definisce metodi.
+
+
+
