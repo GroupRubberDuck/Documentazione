@@ -1,7 +1,0 @@
-@startuml GetDeviceDashboardService
-skinparam classAttributeIconSize 0
-class GetDeviceDashboardService <<Application Service>> {
-    + get_device_dashboard(command: GetDeviceDashboardCommand): DashboardCommand
-}
-
-@enduml

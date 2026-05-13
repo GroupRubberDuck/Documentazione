@@ -1,9 +1,9 @@
 @startuml Asset
 skinparam classAttributeIconSize 0
 class Asset {
-    - id: String
-    - anagraphic: AssetAnagraphic
-    - proprieties: AssetProprieties
+    + id: String
+    + anagraphic: AssetAnagraphic
+    + proprieties: AssetProprieties
 
     + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
     + set_justification(requirement_id: String, justification: String): void

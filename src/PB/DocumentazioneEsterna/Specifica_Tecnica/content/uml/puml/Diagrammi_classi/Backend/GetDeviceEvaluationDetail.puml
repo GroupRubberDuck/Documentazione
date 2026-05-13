@@ -1,0 +1,36 @@
+@startuml GetDeviceEvaluationDetail
+skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskQueryDashboardController.puml
+}
+
+package "Application Core" {
+
+    () "GetDeviceEvaluationDetailUseCase"
+
+    !include Domain/DeviceEvaluationDetail.puml
+    !include Domain/EvaluationEngine.puml
+    !include ApplicationServices/GetDeviceEvaluationDetailService.puml
+    !include Command/GetDeviceEvaluationDetailCommand.puml
+
+    () "GetEvaluationSessionPort"
+
+   
+
+    GetDeviceEvaluationDetailService .right.> GetDeviceEvaluationDetailCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskQueryDashboardController -down-> GetDeviceEvaluationDetailUseCase : usa
+GetDeviceEvaluationDetailUseCase -down- GetDeviceEvaluationDetailService
+GetDeviceEvaluationDetailService -down-> GetEvaluationSessionPort : usa
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

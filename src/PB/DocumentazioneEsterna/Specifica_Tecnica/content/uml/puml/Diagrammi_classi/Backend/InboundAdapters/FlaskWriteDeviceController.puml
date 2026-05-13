@@ -2,7 +2,7 @@
 skinparam classAttributeIconSize 0
 class FlaskWriteDeviceController <<Flask Blueprint>> {
     + create_device(req: Request): Response
-    + save_device(req: Request): Response
+    + update_device(req: Request): Response
     + delete_device(req: Request): Response
 }
 

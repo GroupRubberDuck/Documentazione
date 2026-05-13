@@ -5,16 +5,14 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/QueryDeviceController.puml
+    !include InboundAdapters/FlaskQueryDeviceController.puml
 }
 
 package "Application Core" {
-    class DeviceSummary {
-        - name: String
-    }
     () "GetDeviceListUseCase" as GetDeviceListUseCase
     !include ApplicationServices/GetDeviceListService.puml
     !include Domain/Device.puml
+    !include Domain/DeviceSummary.puml
     () "FindAllDevicesPort" as FindAllDevicesPort
 
     GetDeviceListService .left.> DeviceSummary: popola
@@ -30,7 +28,7 @@ GetDeviceListService - GetDeviceListUseCase
 
 GetDeviceListService --> FindAllDevicesPort : usa
 
-QueryDeviceController --> GetDeviceListUseCase : usa
+FlaskQueryDeviceController --> GetDeviceListUseCase : usa
 MongoDeviceAdapter - FindAllDevicesPort
 
 @enduml

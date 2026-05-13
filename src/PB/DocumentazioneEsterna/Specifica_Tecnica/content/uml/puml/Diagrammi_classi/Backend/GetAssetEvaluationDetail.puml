@@ -1,0 +1,35 @@
+@startuml GetAssetEvaluationDetail
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskAssetEvaluationDetailController.puml
+}
+
+package "Application Core" {
+
+    () "GetAssetEvaluationDetailUseCase"
+
+    !include Command/GetAssetEvaluationDetailCommand.puml
+
+    !include Domain/AssetEvaluationDetail.puml
+
+    !include ApplicationServices/GetAssetEvaluationDetailService.puml
+
+    () "GetEvaluationSessionPort"
+
+    GetAssetEvaluationDetailService -up- GetAssetEvaluationDetailUseCase
+    GetAssetEvaluationDetailService .> GetAssetEvaluationDetailCommand : legge
+    GetAssetEvaluationDetailService --> GetEvaluationSessionPort : usa
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskAssetEvaluationDetailController --> GetAssetEvaluationDetailUseCase : usa
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+
+@enduml
