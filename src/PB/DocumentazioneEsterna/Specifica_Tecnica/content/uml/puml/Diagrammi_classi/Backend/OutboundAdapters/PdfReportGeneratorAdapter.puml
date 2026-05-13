@@ -1,9 +1,12 @@
 @startuml PdfReportGeneratorAdapter
 skinparam classAttributeIconSize 0
-class PdfReportGeneratorAdapter <<Report Adapter>> {
-    + generate_report(session: EvaluationSession): bytes
-    # format_header()
-    # print_asset_evaluations()
-    # format_footer()
-}
+class PdfReportGenerator <<Report Adapter>> {
+        + generate_report(device_evaluation: DeviceEvaluationDetail): IO[bytes]
+        # _format_header(pdf: FPDF, device_evaluation: DeviceEvaluationDetail): None
+        # _print_asset_evaluations(pdf: FPDF, detail: DeviceEvaluationDetail): None
+        # _print_asset_section(pdf: FPDF, asset: AssetEvaluationDetail): None
+        # _print_requirement_row(pdf: FPDF, req: RequirementEvaluationDetail): None
+        # _print_state_badge(pdf: FPDF, label: String, state: EvaluationState): None
+        # _format_footer(pdf: FPDF): None
+    }
 @enduml

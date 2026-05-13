@@ -1,7 +1,8 @@
 @startuml InMemoryEvaluationSessionCache
 skinparam classAttributeIconSize 0
+
 class InMemoryEvaluationSessionCache {
-    - session: EvaluationSession | None
+    - session: EvaluationSession
     + create_evaluation_session(standard: ComplianceStandard, device: Device): EvaluationSession
     + get_evaluation_session(session_id: String): EvaluationSession
     + save_evaluation_session(session: EvaluationSession): void

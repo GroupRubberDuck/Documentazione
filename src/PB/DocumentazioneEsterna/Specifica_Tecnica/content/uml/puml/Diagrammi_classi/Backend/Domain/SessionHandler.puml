@@ -1,10 +1,8 @@
 @startuml SessionHandler
-skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class SessionHandler {
-    + can_open_session(requested_type: SessionType, active_session_exists: bool): bool
-
+    + can_open_session(active_session_exists: bool): bool
 }
 <<<<<<< HEAD
 =======

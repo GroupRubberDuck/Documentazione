@@ -1,9 +1,7 @@
 @startuml ImportDeviceService
 skinparam classAttributeIconSize 0
+
 class ImportDeviceService <<Application Service>> {
-    - register_device_port: RegisterDevicePort
-    - device_importer_factory: FileDeviceImporterFactoryPort
-    + __init__(device_importer_factory: FileDeviceImporterFactoryPort, register_device_port: RegisterDevicePort)
     + import_device(command: ImportDeviceCommand): void
 }
 

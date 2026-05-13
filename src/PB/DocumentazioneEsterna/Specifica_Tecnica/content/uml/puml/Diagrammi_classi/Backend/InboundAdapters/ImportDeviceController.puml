@@ -6,8 +6,8 @@ class ImportDeviceController <<Flask Blueprint>> {
 }
 
 class UploadFileController <<Utility>> {
-    + get_http_file_payload(): BinaryIO
-    + get_http_file_extension(): String
+    + get_http_file_payload(file: FileStorage): IO[bytes]
+    + get_http_file_extension(filename: String): AllowedDeviceFileExtension
 }
 
 ImportDeviceController .right.> UploadFileController : usa

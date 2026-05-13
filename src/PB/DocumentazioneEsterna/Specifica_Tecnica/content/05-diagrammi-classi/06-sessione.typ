@@ -101,7 +101,6 @@ _OpenEvaluationSessionCommand_ è il Command Object utilizzato per trasportare i
 *Attributi*
 
 - `+ device_id: String` — identificativo univoco del Dispositivo per cui aprire la sessione.
-- `+ session_id: String` — identificativo univoco della sessione di valutazione da aprire.
 
 *Metodi e funzioni*
 
@@ -135,7 +134,7 @@ _OpenEvaluationSessionUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_OpenEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di apertura di una sessione di valutazione. Implementa l'interfaccia _OpenEvaluationSessionUseCase_ e coordina il recupero del Dispositivo tramite _FindDevicePort_, il recupero dello standard di conformità tramite _FindStandardPort_ e la creazione della sessione tramite _CreateSessionPort_.
+_OpenEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di apertura di una sessione di valutazione. Implementa l'interfaccia _OpenEvaluationSessionUseCase_ e coordina il recupero del Dispositivo tramite _FindDevicePort_, il recupero dello standard di conformità tramite _FindStandardPort_ e la creazione della sessione tramite _CreateEvaluationSessionPort_.
 
 *Attributi*
 
@@ -143,7 +142,7 @@ _OpenEvaluationSessionService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ open(command: OpenEvaluationSessionCommand): String` — concretizza il contratto definito da _OpenEvaluationSessionUseCase_. Recupera il Dispositivo e lo standard associato, inizializza una nuova _EvaluationSession_ e ne richiede la creazione tramite _CreateSessionPort_; restituisce l'identificativo della sessione creata.
+- `+ open(command: OpenEvaluationSessionCommand): String` — concretizza il contratto definito da _OpenEvaluationSessionUseCase_. Recupera il Dispositivo e lo standard associato, inizializza una nuova _EvaluationSession_ e ne richiede la creazione tramite _CreateEvaluationSessionPort_; restituisce l'identificativo della sessione creata.
 
 ==== SessionCoordinator
 #figure(
@@ -164,11 +163,11 @@ _SessionCoordinator_ non definisce attributi propri.
 
 
 
-==== CreateSessionPort
+==== CreateEvaluationSessionPort
 #figure(
-  image("../uml/png/Session/CreateSessionPort.png", width: 45%),
-  caption: [CreateSessionPort]
-) <fig-create-session-port>
+  image("../uml/png/Session/CreateEvaluationSessionPort.png", width: 45%),
+  caption: [CreateEvaluationSessionPort]
+) <fig-create-evaluation-session-port>
 
 *Descrizione*
 
@@ -198,79 +197,6 @@ Il diagramma illustra l'architettura del modulo dedicato al salvataggio dello st
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
-
-
-
-==== SaveEvaluationSessionUseCase
-#figure(
-  image("../uml/png/Session/SaveEvaluationSessionUseCase.png", width: 35%),
-  caption: [SaveEvaluationSessionUseCase]
-) <fig-save-evaluation-session-use-case>
-*Descrizione*
-
-_SaveEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il salvataggio dello stato di una sessione di valutazione attiva. Viene implementata da _SaveEvaluationSessionService_ e utilizzata da _EvaluationSessionController_.
-
-*Attributi*
-
-_SaveEvaluationSessionUseCase_ non definisce attributi.
-
-*Metodi e funzioni*
-
-- `+ save(command: SaveEvaluationSessionCommand): void` — firma del metodo delegato all'esecuzione della logica di salvataggio della sessione a partire dal comando ricevuto in input.
-
-
-==== SaveEvaluationSessionService
-#figure(
-  image("../uml/png/Session/SaveEvaluationSessionService.png", width: 40%),
-  caption: [SaveEvaluationSessionService]
-) <fig-save-evaluation-session-service>
-*Descrizione*
-
-_SaveEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile del coordinamento dell'operazione di salvataggio. Implementa l'interfaccia _SaveEvaluationSessionUseCase_. Recupera la sessione corrente e ne richiede la persistenza aggiornata tramite la porta di uscita _SaveEvaluationSessionPort_.
-
-*Attributi*
-
-_SaveEvaluationSessionService_ non definisce attributi propri.
-
-*Metodi e funzioni*
-
-- `+ save(command: SaveEvaluationSessionCommand): void` — concretizza il contratto definito da _SaveEvaluationSessionUseCase_. Coordina il salvataggio dello stato attuale della sessione di valutazione utilizzando i parametri incapsulati nel comando.
-
-
-==== SaveEvaluationSessionCommand
-#figure(
-  image("../uml/png/Session/SaveEvaluationSessionCommand.png", width: 40%),
-  caption: [SaveEvaluationSessionCommand]
-) <fig-save-evaluation-session-command>
-*Descrizione*
-
-_SaveEvaluationSessionCommand_  incapsula i parametri necessari per richiedere il salvataggio di una sessione di valutazione. Serve a disaccoppiare i dati di input dalle firme dei metodi dei service.
-
-*Attributi*
-
-- `+ session_id: String` — l'identificativo univoco della sessione di valutazione di cui si richiede il salvataggio.
-
-*Metodi e funzioni*
-
-_SaveEvaluationSessionCommand_ non definisce metodi.
-
-==== SaveEvaluationSessionPort
-#figure(
-  image("../uml/png/Session/SaveSessionPort.png", width: 40%),
-  caption: [SaveEvaluationSessionPort]
-) <fig-save-session-port>
-
-_SaveEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la persistenza di una sessione di valutazione nel sistema di archiviazione (in questo caso, la cache in memoria). Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _SaveEvaluationSessionService_.
-
-*Attributi*
-
-_SaveEvaluationSessionPort_ non definisce attributi.
-
-*Metodi e funzioni*
-
-- `+ save_session(session: EvaluationSession): void` — firma del metodo che sovrascrive o aggiorna lo stato di una sessione di valutazione nel sistema di persistenza.
-
-
 
 
 === CloseEvaluationSession <CloseEvaluationSession>

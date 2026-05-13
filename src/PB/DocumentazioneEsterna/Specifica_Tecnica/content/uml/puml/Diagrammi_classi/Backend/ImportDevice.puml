@@ -11,65 +11,51 @@ package "Inbound Adapter" {
 
 package "Application Core" {
     () "ImportDeviceUseCase"
-    
+
     !include ApplicationServices/ImportDeviceService.puml
+    !include Command/ImportDeviceCommand.puml
+    !include Domain/AllowedDeviceFileExtension.puml
 
-    enum AllowedDeviceFileExtension <<enum>> {
-        CSV
-        XML
-        JSON
-    }
-
-    class ImportDeviceCommand {
-        + device_file_content: BinaryIO
-        + extension: AllowedDeviceFileExtension
-    }
-
-    () "FileDeviceImporterPort"
-    () "RegisterDevicePort"
     () "FileDeviceImporterFactoryPort"
+    () "RegisterDevicePort"
+    () "FileDeviceImporterPort"
 
+    ImportDeviceService -up- ImportDeviceUseCase
     ImportDeviceService .right.> ImportDeviceCommand : legge
+    ImportDeviceService -down-> FileDeviceImporterFactoryPort : usa
+    ImportDeviceService -down-> RegisterDevicePort : usa
+    ImportDeviceService -down-> FileDeviceImporterPort : usa
+
+    ImportDeviceCommand -right-> AllowedDeviceFileExtension : usa
+
+    
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/FileDeviceImporter.puml
+    !include OutboundAdapters/ConcreteFileDeviceImporterFactory.puml
+    !include OutboundAdapters/MongoDeviceAdapter.puml
 
     class CSVFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
     }
 
     class JSONFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
     }
 
     class XMLFileDeviceImporter {
-        # check_metadata()
-        # open_stream()
-        # parse_data()
-        # close_stream()
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
     }
-
-    !include OutboundAdapters/ConcreteFileDeviceImporterFactory.puml
-    !include OutboundAdapters/MongoDeviceAdapter.puml
 }
 
 ImportDeviceController --> ImportDeviceUseCase : usa
-ImportDeviceUseCase - ImportDeviceService
-
-ImportDeviceService --> FileDeviceImporterPort : usa
-ImportDeviceService --> FileDeviceImporterFactoryPort : usa
-ImportDeviceService --> RegisterDevicePort : usa
 
 FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
 RegisterDevicePort - MongoDeviceAdapter
-
 FileDeviceImporterPort - FileDeviceImporter
 
 FileDeviceImporter <|-- CSVFileDeviceImporter
