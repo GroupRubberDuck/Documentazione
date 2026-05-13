@@ -19,13 +19,13 @@ package "Application Core" {
         + session_id: String
     }
 
-    () "SaveSessionPort"
+    () "SaveEvaluationSessionPort"
 
 
 
     SaveEvaluationSessionService -up- SaveEvaluationSessionUseCase
     SaveEvaluationSessionService .right.> SaveEvaluationSessionCommand : legge
-    SaveEvaluationSessionService -down-> SaveSessionPort : usa
+    SaveEvaluationSessionService -down-> SaveEvaluationSessionPort : usa
 }
 
 package "Outbound Adapter" {
@@ -33,6 +33,6 @@ package "Outbound Adapter" {
 }
 
 EvaluationSessionController -down-> SaveEvaluationSessionUseCase : usa
-InMemoryEvaluationSessionCache -up- SaveSessionPort
+InMemoryEvaluationSessionCache -up- SaveEvaluationSessionPort
 
 @enduml

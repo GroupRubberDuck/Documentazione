@@ -5,23 +5,18 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/WriteAssetController.puml
+    !include InboundAdapters/FlaskWriteAssetController.puml
 }
 
 package "Application Core" {
 
-    class CreateAssetCommand {
-        + name:String
-        + type:AssetType
-        + description:String
-        + session_id: String
-    }
+    !include Command/CreateAssetCommand.puml
 
     () "CreateAssetUseCase"
     !include ApplicationServices/CreateAssetService.puml
     !include Domain/Asset.puml
-    () "SaveSessionPort"
-    () "GetSessionPort"
+    () "SaveEvaluationSessionPort"
+    () "GetEvaluationSessionPort"
 
     CreateAssetService .left.> CreateAssetCommand: legge
 }
@@ -34,12 +29,12 @@ package "Outbound Adapter" {
 CreateAssetService - CreateAssetUseCase
 
 
-CreateAssetService --> SaveSessionPort : usa
-CreateAssetService --> GetSessionPort : usa
+CreateAssetService --> SaveEvaluationSessionPort : usa
+CreateAssetService --> GetEvaluationSessionPort : usa
 
-SaveSessionPort -- InMemoryEvaluationSessionCache
-GetSessionPort -- InMemoryEvaluationSessionCache
+SaveEvaluationSessionPort -- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -- InMemoryEvaluationSessionCache
 
-WriteAssetController --> CreateAssetUseCase : usa
+FlaskWriteAssetController --> CreateAssetUseCase : usa
 
 @enduml

@@ -45,18 +45,18 @@ package "Application Core" {
         + stato_valutazione: EvaluationState
     }
 
-    () "GetSessionPort"
+    () "GetEvaluationSessionPort"
 
     ' Allineiamo Response, Command e Porta sotto il Service per far scendere le frecce dritte
     RequirementResponse -[hidden]right-------- GetRequirementCommand
-    GetRequirementCommand -[hidden]right-------- GetSessionPort
+    GetRequirementCommand -[hidden]right-------- GetEvaluationSessionPort
 
     ' ==========================================
     ' COLLEGAMENTI INTERNI AL CORE (Top-Down)
     ' ==========================================
     GetRequirementUseCase -down- GetRequirementService
     
-    GetRequirementService -down-> GetSessionPort : usa
+    GetRequirementService -down-> GetEvaluationSessionPort : usa
 
     GetRequirementService .down.> GetRequirementCommand : legge
     GetRequirementService .down.> RequirementResponse : popola
@@ -75,6 +75,6 @@ package "Outbound Adapter" {
 ' COLLEGAMENTI ESTERNI (Inbound -> Core -> Outbound)
 ' ==========================================
 QueryEvaluationRequirementsController -down-> GetRequirementUseCase : usa
-GetSessionPort -down- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

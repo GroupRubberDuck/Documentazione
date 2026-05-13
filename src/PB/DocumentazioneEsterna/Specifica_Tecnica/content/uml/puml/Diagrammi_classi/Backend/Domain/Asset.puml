@@ -1,5 +1,5 @@
 @startuml Asset
-
+skinparam classAttributeIconSize 0
 class Asset {
     - id: String
     - anagraphic: AssetAnagraphic

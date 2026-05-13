@@ -73,8 +73,8 @@ Il diagramma illustra l'architettura del modulo dedicato alla valutazione dei re
 
 Il diagramma illustra l'architettura del modulo dedicato alla valutazione di un nodo decisionale durante la verifica di conformità. 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di  _SaveSessionPort_, vedere la sezione @SaveSessionPort. 
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+- Per la definizione di  _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort. 
 
  
 
@@ -144,7 +144,7 @@ _EvaluationNodeCommand_ non definisce metodi comportamentali, agendo esclusivame
 )
 *Descrizione*
 
-_EvaluateDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di valutazione di un nodo decisionale. Implementa l'interfaccia _EvaluateDecisionNodeUseCase_, recupera la sessione attiva tramite _GetSessionPort_, applica la valutazione al nodo corrispondente e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_EvaluateDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di valutazione di un nodo decisionale. Implementa l'interfaccia _EvaluateDecisionNodeUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_, applica la valutazione al nodo corrispondente e persiste la sessione aggiornata tramite _SaveEvaluationSessionPort_.
 
 *Attributi*
 
@@ -163,7 +163,7 @@ _EvaluateDecisionNodeService_ non definisce attributi propri.
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero di un requisito di conformità con il relativo albero decisionale e le dipendenze associate.
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
 
  
 
@@ -235,7 +235,7 @@ _GetRequirementCommand_ non definisce metodi.
 )
 *Descrizione*
 
-_GetRequirementService_ è il service applicativo appartenente all'Application Core responsabile del recupero di un requisito di conformità. Implementa l'interfaccia _GetRequirementUseCase_, legge i parametri dal _GetRequirementCommand_, recupera la sessione attiva tramite _GetSessionPort_ e si occupa di costruire il _RequirementResponse_ contenente i dati richiesti.
+_GetRequirementService_ è il service applicativo appartenente all'Application Core responsabile del recupero di un requisito di conformità. Implementa l'interfaccia _GetRequirementUseCase_, legge i parametri dal _GetRequirementCommand_, recupera la sessione attiva tramite _GetEvaluationSessionPort_ e si occupa di costruire il _RequirementResponse_ contenente i dati richiesti.
 
 *Attributi*
 
@@ -338,8 +338,8 @@ _DependencyResponse_ non definisce metodi.
 
 Il diagramma illustra l'architettura del modulo dedicato all'inserimento di una giustificazione testuale per un requisito di conformità durante la sessione di valutazione. 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di  _SaveSessionPort_, vedere la sezione @SaveSessionPort. 
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+- Per la definizione di  _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort. 
 
 Di seguito vengono documentati i componenti introdotti specificamente per questo caso d'uso.
 
@@ -412,7 +412,7 @@ _InsertJustificationCommand_ non definisce metodi.
 )
 *Descrizione*
 
-_EvaluationJustificationService_ è il service applicativo appartenente all'Application Core responsabile della logica di inserimento di una giustificazione per un requisito di conformità. Implementa l'interfaccia _InsertJustificationUseCase_, recupera la sessione attiva tramite _GetSessionPort_, associa la giustificazione al requisito specificato e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_EvaluationJustificationService_ è il service applicativo appartenente all'Application Core responsabile della logica di inserimento di una giustificazione per un requisito di conformità. Implementa l'interfaccia _InsertJustificationUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_, associa la giustificazione al requisito specificato e persiste la sessione aggiornata tramite _SaveEvaluationSessionPort_.
 
 *Attributi*
 

@@ -226,7 +226,7 @@ _SaveEvaluationSessionUseCase_ non definisce attributi.
 ) <fig-save-evaluation-session-service>
 *Descrizione*
 
-_SaveEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile del coordinamento dell'operazione di salvataggio. Implementa l'interfaccia _SaveEvaluationSessionUseCase_. Recupera la sessione corrente e ne richiede la persistenza aggiornata tramite la porta di uscita _SaveSessionPort_.
+_SaveEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile del coordinamento dell'operazione di salvataggio. Implementa l'interfaccia _SaveEvaluationSessionUseCase_. Recupera la sessione corrente e ne richiede la persistenza aggiornata tramite la porta di uscita _SaveEvaluationSessionPort_.
 
 *Attributi*
 
@@ -254,17 +254,17 @@ _SaveEvaluationSessionCommand_  incapsula i parametri necessari per richiedere i
 
 _SaveEvaluationSessionCommand_ non definisce metodi.
 
-==== SaveSessionPort
+==== SaveEvaluationSessionPort
 #figure(
   image("../uml/png/Session/SaveSessionPort.png", width: 40%),
-  caption: [SaveSessionPort]
+  caption: [SaveEvaluationSessionPort]
 ) <fig-save-session-port>
 
-_SaveSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la persistenza di una sessione di valutazione nel sistema di archiviazione (in questo caso, la cache in memoria). Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _SaveEvaluationSessionService_.
+_SaveEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la persistenza di una sessione di valutazione nel sistema di archiviazione (in questo caso, la cache in memoria). Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _SaveEvaluationSessionService_.
 
 *Attributi*
 
-_SaveSessionPort_ non definisce attributi.
+_SaveEvaluationSessionPort_ non definisce attributi.
 
 *Metodi e funzioni*
 
@@ -376,7 +376,7 @@ Il diagramma illustra l'architettura del modulo dedicato esclusivamente al conso
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
 - Per la definizione di _SaveDevicePort_, vedere la sezione @SaveDevicePort. \
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort.
 
 Di seguito vengono documentati esclusivamente i componenti specifici introdotti per questo flusso operativo.
 
@@ -388,7 +388,7 @@ block(breakable: false)[
   caption: [CommitEvaluationSessionService]
 ) <fig-commit-evaluation-session-service>
 
-_CommitEvaluationSessionService_ è il service applicativo dell'Application Core responsabile di orchestrare l'operazione di commit. Implementa l'interfaccia _CommitEvaluationSessionUseCase_. Coordina il recupero della sessione attualmente in corso (tramite la porta _GetSessionPort_), legge i dati necessari dal _CommitEvaluationSessionCommand_ e applica le modifiche definitive delegando il salvataggio all'entità dispositivo (tramite _SaveDevicePort_).
+_CommitEvaluationSessionService_ è il service applicativo dell'Application Core responsabile di orchestrare l'operazione di commit. Implementa l'interfaccia _CommitEvaluationSessionUseCase_. Coordina il recupero della sessione attualmente in corso (tramite la porta _GetEvaluationSessionPort_), legge i dati necessari dal _CommitEvaluationSessionCommand_ e applica le modifiche definitive delegando il salvataggio all'entità dispositivo (tramite _SaveDevicePort_).
 
 *Attributi*
 
@@ -462,7 +462,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti o aggregat
 ) <fig-commit-close-evaluation-session-service>
 *Descrizione*
 
-_CommitCloseEvaluationSessionService_ è il service applicativo dell'Application Core responsabile di orchestrare le operazioni combinate. Fungendo da implementazione per i casi d'uso di commit e chiusura, coordina il recupero della sessione in corso (tramite _GetSessionPort_), il salvataggio dei risultati consolidati sul dispositivo (tramite _SaveDevicePort_) e, in caso di successo, la rimozione della sessione attiva (tramite _DeleteSessionPort_).
+_CommitCloseEvaluationSessionService_ è il service applicativo dell'Application Core responsabile di orchestrare le operazioni combinate. Fungendo da implementazione per i casi d'uso di commit e chiusura, coordina il recupero della sessione in corso (tramite _GetEvaluationSessionPort_), il salvataggio dei risultati consolidati sul dispositivo (tramite _SaveDevicePort_) e, in caso di successo, la rimozione della sessione attiva (tramite _DeleteSessionPort_).
 
 *Attributi*
 

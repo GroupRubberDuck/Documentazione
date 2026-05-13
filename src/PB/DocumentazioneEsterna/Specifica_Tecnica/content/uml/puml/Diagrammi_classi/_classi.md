@@ -69,7 +69,7 @@ Inbound Adapter:
 Application Service
 - openService -> comunica con openSessionPort
 - closeService -> comunica con deleteSessionPort
-- commitService -> comuinica con getSessionPort (recupera info device) + saveDevicePort della repo del dispositivo (salva Device su Mongo)
+- commitService -> comuinica con GetEvaluationSessionPort (recupera info device) + saveDevicePort della repo del dispositivo (salva Device su Mongo)
 - commitCloseService -> ha le porte di commit e close
 
 
@@ -77,8 +77,8 @@ Outbound port
 - hasActiveSessionPort
 - deleteSessionPort
 - createSessionPort
-- getSessionPort
-- saveSessionPort (usato per operazioni di modifica quando c'è sessione attiva)
+- GetEvaluationSessionPort
+- SaveEvaluationSessionPort (usato per operazioni di modifica quando c'è sessione attiva)
 
 
 Outbound Adapter

@@ -9,8 +9,7 @@
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero della dashboard di un Dispositivo, che aggrega le informazioni della sessione di valutazione attiva in una vista sintetica.
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
-- Per la definizione di _QueryDashboardController_, vedere la sezione @QueryDashboardController. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
 
 
  
@@ -61,7 +60,7 @@ _GetDeviceDashboardUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_GetDeviceDashboardService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceDashboardUseCase_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il _DashboardCommand_ con le informazioni aggregate.
+_GetDeviceDashboardService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceDashboardUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_ e costruisce il _DashboardCommand_ con le informazioni aggregate.
 
 *Attributi*
 

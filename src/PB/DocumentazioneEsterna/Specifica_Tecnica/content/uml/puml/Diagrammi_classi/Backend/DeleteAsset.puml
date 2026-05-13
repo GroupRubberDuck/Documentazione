@@ -5,35 +5,33 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/WriteAssetController.puml
+    !include InboundAdapters/FlaskWriteAssetController.puml
 }
 
 package "Application Core" {
     () "DeleteAssetUseCase"
 
-    class DeleteAssetCommand {
-        + asset_id: String
-    }
+    !include Command/DeleteAssetCommand.puml
 
     !include ApplicationServices/DeleteAssetService.puml
     !include Domain/Asset.puml
-    () "SaveSessionPort"
-    () "GetSessionPort"
+    () "SaveEvaluationSessionPort"
+    () "GetEvaluationSessionPort"
 }
 
 package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-WriteAssetController -down-> DeleteAssetUseCase : usa
+FlaskWriteAssetController -down-> DeleteAssetUseCase : usa
 DeleteAssetUseCase -down- DeleteAssetService
 
 DeleteAssetService .> DeleteAssetCommand : legge
 
-DeleteAssetService -down-> SaveSessionPort : usa
-DeleteAssetService -down-> GetSessionPort : usa
+DeleteAssetService -down-> SaveEvaluationSessionPort : usa
+DeleteAssetService -down-> GetEvaluationSessionPort : usa
 
-SaveSessionPort -down- InMemoryEvaluationSessionCache
-GetSessionPort -down- InMemoryEvaluationSessionCache
+SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml
