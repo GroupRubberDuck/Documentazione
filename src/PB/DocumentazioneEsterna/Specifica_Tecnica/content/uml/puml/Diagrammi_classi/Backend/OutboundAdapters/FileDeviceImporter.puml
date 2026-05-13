@@ -1,11 +1,14 @@
 @startuml FileDeviceImporter
+skinparam classAttributeIconSize 0
 
-abstract class FileDeviceImporter <<Template Method>> {
-    + parse_device_file(device_file_content: BinaryIO): Device
-    # check_metadata()
-    # open_stream()
-    # parse_data()
-    # close_stream()
+abstract class FileDeviceImporter {
+    + parse_device_file(device_file_content: IO[bytes]): Device
+    # deserialize(device_file_content: IO[bytes]): Any
+    # parse_data(raw: Any): dict
+    - pre_validate(device_file_content: IO[bytes]): void
+    - close_stream(): void
+    - build_device(data: dict): Device
+    - build_asset(asset_data: dict): Asset
 }
 
 @enduml

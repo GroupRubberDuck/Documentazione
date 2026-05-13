@@ -11,26 +11,26 @@ package "Inbound Adapter" {
 
 package "Application Core" {
 
-    class ExportDeviceCommand {
-        + device_id: String
-        + extension: AllowedDeviceFileExtension
-    }
-
     enum AllowedDeviceFileExtension <<enum>> {
         XML
         JSON
         CSV
     }
-    
-    () "ExportDeviceUseCase" as ExportDeviceUseCase
 
-    !include ApplicationServices/ExportDevic    eService.puml
+    class ExportDeviceCommand {
+        + device_id: String
+        + extension: AllowedDeviceFileExtension
+    }
 
     class ExportedFile {
-        + content: Bytes
+        + content: IO[bytes]
         + filename: String
         + media_type: String
     }
+
+    () "ExportDeviceUseCase" as ExportDeviceUseCase
+
+    !include ApplicationServices/ExportDeviceService.puml
 
     () "FindDevicePort" as FindDevicePort
     () "FileDeviceExporterFactoryPort" as FileDeviceExporterFactoryPort
@@ -38,16 +38,12 @@ package "Application Core" {
 
     FileDeviceExporterFactoryPort -[hidden]right- FileDeviceExporterPort
 
-    !include Domain/Device.puml
-
-
     ExportDeviceUseCase -down- ExportDeviceService
-    
     AllowedDeviceFileExtension -[hidden]left- ExportDeviceUseCase
-
     ExportDeviceCommand -[hidden]right- ExportDeviceService
     ExportDeviceService .left.> ExportDeviceCommand : legge
     ExportDeviceService .down.> ExportedFile : popola
+    ExportDeviceCommand ..> AllowedDeviceFileExtension : usa
 }
 
 package "Outbound Adapter" {
@@ -55,22 +51,24 @@ package "Outbound Adapter" {
     !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
     !include OutboundAdapters/FileDeviceExporter.puml
 
+    class CSVFileDeviceExporter {
+        - output: StringIO
+        - writer: Any
+        # _prepare_structure(device: Device): None
+        # _write_data(device: Device): None
+        # _finalize_output(): bytes
+    }
+
     class JSONFileDeviceExporter {
-        # prepare_structure()
-        # write_data()
-        # finalize_output()
+        # _prepare_structure(device: Device): None
+        # _write_data(device: Device): None
+        # _finalize_output(): bytes
     }
 
     class XMLFileDeviceExporter {
-        # prepare_structure()
-        # write_data()
-        # finalize_output()
-    }
-
-    class CSVFileDeviceExporter {
-        # prepare_structure()
-        # write_data()
-        # finalize_output()
+        # _prepare_structure(device: Device): None
+        # _write_data(device: Device): None
+        # _finalize_output(): bytes
     }
 
     FileDeviceExporter <|-down- JSONFileDeviceExporter
@@ -82,13 +80,11 @@ package "Outbound Adapter" {
     ConcreteFileDeviceExporterFactory ..> CSVFileDeviceExporter : crea
 }
 
-
 ExportDeviceController -down-> ExportDeviceUseCase : usa
 
 ExportDeviceService -right-> FindDevicePort : usa
 ExportDeviceService -down-> FileDeviceExporterFactoryPort : usa
 ExportDeviceService -down---> FileDeviceExporterPort : usa
-
 
 MongoDeviceAdapter -left- FindDevicePort
 ConcreteFileDeviceExporterFactory -left- FileDeviceExporterFactoryPort

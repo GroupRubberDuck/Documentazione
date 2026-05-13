@@ -1,12 +1,8 @@
-@startuml DownloadFileController
+@startuml ExportDeviceController
 skinparam classAttributeIconSize 0
+
 class ExportDeviceController <<Flask Blueprint>> {
-    - export_uc: ExportDeviceUseCase
-    + export_device(req: Request): Response
+    + export_device(device_id: String): Response
 }
-class DownloadFileController <<Utility>> {
-    + build_file_response(file_bytes: bytes, filename: string): FlaskResponse
-}
-ExportDeviceController .r.> DownloadFileController
 
 @enduml

@@ -48,20 +48,21 @@ package "Application Core" {
     EvaluationJustificationService -down-> SaveEvaluationSessionPort : usa
     
     ' Trucco aggiuntivo per creare spazio sotto le porte e non far tagliare le scritte dal bordo
-    hide spacer
+    note as spacer
+    end note
+    skinparam note {
+    backgroundColor transparent
+    borderColor transparent
+    fontColor transparent
+    }
     GetEvaluationSessionPort -[hidden]down- spacer
     SaveEvaluationSessionPort -[hidden]down- spacer
+
+
 }
 
 package "Outbound Adapter" {
-    class InMemoryEvaluationSessionCache {
-        -sessions: dictionary[string:EvaluationSession]
-        +create_session(): EvaluationSession
-        +delete_session(session_id: String): void
-        +get_session(session_id: String): EvaluationSession
-        +save_session(session: EvaluationSession): void
-        +has_active_session(device_id: String): bool
-    }
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
 ' ==========================================

@@ -14,30 +14,27 @@ package "Application Core" {
     () "OpenEvaluationSessionUseCase"
 
     !include ApplicationServices/OpenEvaluationSessionService.puml
-
-    class OpenEvaluationSessionCommand {
-        + device_id: String
-        + session_id: String
-    }
-
-    class SessionCoordinator <<Domain Service>> {
-        + can_open_session(session_type: SessionType): bool
-    }
+    !include ApplicationServices/SessionCoordinator.puml
+    !include Domain/SessionHandler.puml
+    !include Command/OpenEvaluationSessionCommand.puml
 
     () "FindDevicePort"
     () "FindStandardPort"
-    () "CreateSessionPort"
-
-   
+    () "CreateEvaluationSessionPort" as CreatePort
+    () "EvaluationSessionExistsPort" as ExistsPort
 
     OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
     OpenEvaluationSessionService .down.> OpenEvaluationSessionCommand : legge
 
     OpenEvaluationSessionService -right-> FindDevicePort : usa
-    OpenEvaluationSessionService -down-> FindStandardPort :usa
-    OpenEvaluationSessionService -down-> CreateSessionPort :usa
+    OpenEvaluationSessionService -down-> FindStandardPort : usa
+    OpenEvaluationSessionService -down-> CreatePort : usa
+    OpenEvaluationSessionService -left-> SessionCoordinator : usa
 
-    CreateSessionPort -[hidden]right- OpenEvaluationSessionCommand
+    SessionCoordinator --> ExistsPort : usa
+    SessionCoordinator --> SessionHandler : usa
+
+    CreatePort -[hidden]right- OpenEvaluationSessionCommand
     OpenEvaluationSessionCommand -[hidden]right- FindStandardPort
 }
 
@@ -49,7 +46,8 @@ package "Outbound Adapter" {
 
 EvaluationSessionController -right-> OpenEvaluationSessionUseCase : usa
 MongoDeviceAdapter -up- FindDevicePort
-MongoStandardAdapter -up- FindStandardPort
-InMemoryEvaluationSessionCache -up- CreateSessionPort
+MongoComplianceStandardAdapter -up- FindStandardPort
+InMemoryEvaluationSessionCache -up- CreatePort
+InMemoryEvaluationSessionCache -up- ExistsPort
 
 @enduml

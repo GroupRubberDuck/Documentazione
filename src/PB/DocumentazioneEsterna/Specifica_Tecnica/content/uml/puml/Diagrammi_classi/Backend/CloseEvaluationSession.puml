@@ -20,12 +20,12 @@ package "Application Core" {
         + session_id: String
     }
 
-    () "DeleteSessionPort"
+    () "CloseEvaluationSessionPort"
 
  
     CloseEvaluationSessionService -up- CloseEvaluationSessionUseCase
     CloseEvaluationSessionService .right.> CloseEvaluationSessionCommand : legge
-    CloseEvaluationSessionService -down-> DeleteSessionPort : usa
+    CloseEvaluationSessionService -down-> CloseEvaluationSessionPort : usa
 }
 
 package "Outbound Adapter" {
@@ -33,6 +33,6 @@ package "Outbound Adapter" {
 }
 
 EvaluationSessionController -left-> CloseEvaluationSessionUseCase : usa
-InMemoryEvaluationSessionCache -up- DeleteSessionPort
+InMemoryEvaluationSessionCache -up- CloseEvaluationSessionPort
 
 @enduml

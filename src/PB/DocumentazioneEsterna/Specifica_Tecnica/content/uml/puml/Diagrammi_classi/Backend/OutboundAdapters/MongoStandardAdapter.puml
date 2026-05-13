@@ -1,8 +1,10 @@
-@startuml MongoStandardAdapter
+@startuml MongoComplianceStandardAdapter
 skinparam classAttributeIconSize 0
-class MongoStandardAdapter <<Mongo Repository>> {
-    + save(standard: ComplianceStandard): void
-    + find_by_id(standard_id: String): ComplianceStandard
+
+class MongoComplianceStandardAdapter <<Mongo Repository>> {
+    - _collection: Collection
+    + find_standard(standard_id: String): ComplianceStandard
+    - _from_document(doc: Dict): ComplianceStandard
 }
 
 @enduml

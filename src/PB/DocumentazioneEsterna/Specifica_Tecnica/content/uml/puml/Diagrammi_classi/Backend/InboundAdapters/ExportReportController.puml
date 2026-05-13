@@ -1,12 +1,8 @@
 @startuml ExportReportController
 skinparam classAttributeIconSize 0
-class ExportReportController {
-    + export_report(req: Request): Response
-}
 
-class DownloadFileController <<Utility>> {
-    + build_file_response(file_bytes: bytes, filename: string): FlaskResponse
+class ExportReportController <<Flask Blueprint>> {
+    + export_report(device_id: String): Response
 }
-ExportReportController .r.> DownloadFileController
 
 @enduml

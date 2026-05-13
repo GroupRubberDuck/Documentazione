@@ -1,7 +1,7 @@
 @startuml CommitEvaluationSession
 
 skinparam linetype ortho
-skinparam nodesep 120
+skinparam nodesep 170
 skinparam ranksep 120
 skinparam classAttributeIconSize 0
 
@@ -22,8 +22,6 @@ package "Application Core" {
     () "SaveDevicePort"
     () "GetEvaluationSessionPort"
 
-    !include Domain/Device.puml
-
     CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
     CommitEvaluationSessionService .right.> CommitEvaluationSessionCommand : legge
 
@@ -32,6 +30,8 @@ package "Application Core" {
     
     ' TRUCCO: Forza le porte a rimanere allineate orizzontalmente (sinistra -> destra)
     SaveDevicePort -[hidden]right- GetEvaluationSessionPort
+
+    
 }
 
 package "Outbound Adapter" {

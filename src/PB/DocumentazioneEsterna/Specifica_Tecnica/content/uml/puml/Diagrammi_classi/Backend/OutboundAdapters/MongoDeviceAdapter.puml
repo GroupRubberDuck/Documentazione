@@ -2,13 +2,14 @@
 skinparam classAttributeIconSize 0
 
 class MongoDeviceAdapter <<Mongo Repository>> {
-    - collection: pymongo.Collection
-    + save(device: Device): void
-    + register(device: Device): void
-    + delete(device_id: String): void
-
+    - _collection: Collection
+    + register(device: Device): None
+    + save_device(device: Device): None
+    + delete(device_id: String): None
     + find_by_id(device_id: String): Device
-    + find_all(): List<DeviceSummary>
+    + find_all(): List[DeviceSummary]
+    - _to_document(device: Device): Dict
+    - _from_document(doc: Dict): Device
 }
 
 @enduml
