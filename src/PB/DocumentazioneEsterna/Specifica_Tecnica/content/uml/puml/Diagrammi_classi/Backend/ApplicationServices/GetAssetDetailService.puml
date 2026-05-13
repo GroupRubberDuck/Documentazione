@@ -1,7 +1,0 @@
-@startuml GetAssetDetailService
-skinparam classAttributeIconSize 0
-class GetAssetDetailService <<Application Service>> {
-    + get_asset(command: GetAssetDetailCommand): AssetDetail
-}
-
-@enduml

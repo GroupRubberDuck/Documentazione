@@ -1,0 +1,7 @@
+@startuml GetDeviceEvaluationDetailCommand
+skinparam ClassAttributeIconSize 0
+
+class GetDeviceEvaluationDetailCommand {
+    + session_id: String
+    + device_id: String
+}

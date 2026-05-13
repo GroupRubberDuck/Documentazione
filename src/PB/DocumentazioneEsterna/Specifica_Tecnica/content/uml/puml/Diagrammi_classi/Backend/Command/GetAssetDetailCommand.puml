@@ -1,8 +1,0 @@
-@startuml
-skinparam classAttributeIconSize 0
-      class GetAssetDetailCommand {
-        + asset_id: String
-        + session_id: String
-    }
-
-@enduml

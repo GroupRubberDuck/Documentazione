@@ -1,5 +1,5 @@
 @startuml EvaluationEngine
-
+skinparam ClassAttributeIconSize 0
 class EvaluationEngine {
  
     + evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult

@@ -12,16 +12,13 @@ package "Application Core" {
     
     !include Domain/Device.puml
     
-    class UpdateDeviceCommand  {
-        + device_name: String
-        + device_os: String
-        + device_description: String
-    }
+    !include Command/UpdateDeviceCommand.puml
     
     !include ApplicationServices/UpdateDeviceService.puml
     
     () "UpdateDeviceUseCase"
     () "SaveDevicePort"
+    () "FindDevicePort"
 
     Device -[hidden]right- UpdateDeviceCommand
     
@@ -30,6 +27,7 @@ package "Application Core" {
     UpdateDeviceService -right- UpdateDeviceUseCase
 
     UpdateDeviceService -down-> SaveDevicePort: usa
+    UpdateDeviceService -down-> FindDevicePort: usa
 }
 
 package "Outbound Adapter" {
@@ -39,5 +37,6 @@ package "Outbound Adapter" {
 FlaskWriteDeviceController -down-> UpdateDeviceUseCase: usa
 
 SaveDevicePort -down- MongoDeviceAdapter
+FindDevicePort -down- MongoDeviceAdapter
 
 @enduml

@@ -1,6 +1,0 @@
-@startuml ConcreteFileDeviceImporterFactory
-skinparam classAttributeIconSize 0
-class ConcreteFileDeviceImporterFactory {
-        + get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort
-    }
-@endumlp

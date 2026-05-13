@@ -35,7 +35,7 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
     caption: [ Modulo di scrittura Dispositivi],
   ) <fig-write-device-module>
 
-  Il diagramma offre una visione d'insieme del modulo di scrittura per la gestione dei Dispositivi, mostrando come i tre casi d'uso — _CreateDevice_, _SaveDevice_ e _DeleteDevice_ — condividano gli stessi componenti infrastrutturali (_WriteDeviceController_ e _MongoDeviceAdapter_) pur introducendo ciascuno le proprie interfacce e service dedicati. I componenti sono descritti in dettaglio nelle sezioni seguenti.
+  Il diagramma offre una visione d'insieme del modulo di scrittura per la gestione dei Dispositivi, mostrando come i tre casi d'uso — _CreateDevice_, _SaveDevice_ e _DeleteDevice_ — condividano gli stessi componenti infrastrutturali (_FlaskWriteDeviceController_ e _MongoDeviceAdapter_) pur introducendo ciascuno le proprie interfacce e service dedicati. I componenti sono descritti in dettaglio nelle sezioni seguenti.
 ]
 === CreateDevice <CreateDevice>
 
@@ -46,25 +46,27 @@ Il diagramma delle classi illustra la progettazione architetturale per il modulo
 
 Il diagramma illustra l'architettura del modulo di scrittura per la gestione dei Dispositivi, coprendo le operazioni di creazione, modifica ed eliminazione secondo i principi dell'architettura esagonale.
 
-==== WriteDeviceController <WriteDeviceController>
+==== FlaskWriteDeviceController <FlaskWriteDeviceController>
 
 #figure(
-  image("../uml/png/CreateDevice/WriteDeviceController.png", width: 45%),
-  caption: [WriteDeviceController],
+  image("../uml/png/CreateDevice/FlaskWriteDeviceController.png", width: 45%),
+  caption: [FlaskWriteDeviceController],
 ) <fig-write-device-controller>
 
 *Descrizione*
 
-_WriteDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP relative alla gestione dei Dispositivi e le inoltra al livello applicativo.
+_FlaskWriteDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP relative alla gestione dei Dispositivi e le inoltra al livello applicativo.
 
 *Attributi*
 
-_WriteDeviceController_ non definisce attributi propri.
+- `- create_device_use_case: CreateDeviceUseCase` — inbound port usata per la creazione di un device
+- `- update_device_use_case: UpdateDeviceUseCase` — inbound port usata per la modifica di un device
+- `- delete_device_use_case: DeleteDeviceUseCase` — inbound port usata per l'eliminazione di un device
 
 *Metodi e funzioni*
 
 - `+ create_device(req: Request): Response` — riceve la richiesta HTTP di creazione di un nuovo Dispositivo, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
-- `+ save_device(req: Request): Response` — riceve la richiesta HTTP di modifica di un Dispositivo esistente, estrae i dati aggiornati e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
+- `+ update_device(req: Request): Response` — riceve la richiesta HTTP di modifica di un Dispositivo esistente, estrae i dati aggiornati e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 - `+ delete_device(req: Request): Response` — riceve la richiesta HTTP di eliminazione di un Dispositivo, estrae l'identificativo dalla richiesta e lo inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
 ==== CreateDeviceUseCase
@@ -76,7 +78,7 @@ _WriteDeviceController_ non definisce attributi propri.
 
 *Descrizione*
 
-_CreateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la creazione di un nuovo Dispositivo. Viene implementata da _CreateDeviceService_ e utilizzata da _WriteDeviceController_.
+_CreateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la creazione di un nuovo Dispositivo. Viene implementata da _CreateDeviceService_ e utilizzata da _FlaskWriteDeviceController_.
 
 *Attributi*
 
@@ -207,7 +209,7 @@ _MongoDeviceAdapter_ è la classe dell'Outbound Adapter che implementa le porte 
 
 Il diagramma illustra l'architettura del modulo dedicato all'eliminazione di un Dispositivo.
 
-- Per la definizione di _WriteDeviceController_, vedere la sezione @WriteDeviceController. \
+- Per la definizione di _FlaskWriteDeviceController_, vedere la sezione @FlaskWriteDeviceController. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
@@ -219,7 +221,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ) <fig-delete-device-use-case>
 *Descrizione*
 
-_DeleteDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'eliminazione di un Dispositivo. Viene implementata da _DeleteDeviceService_ e utilizzata da _WriteDeviceController_.
+_DeleteDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'eliminazione di un Dispositivo. Viene implementata da _DeleteDeviceService_ e utilizzata da _FlaskWriteDeviceController_.
 
 *Attributi*
 
@@ -261,7 +263,7 @@ _DeleteDeviceService_ è il service applicativo appartenente all'Application Cor
 
 *Attributi*
 
-_DeleteDeviceService_ non definisce attributi propri.
+- `- delete_device_port: DeleteDevicePort` — porta outbound utilizzata per eliminare il device
 
 *Metodi e funzioni*
 
@@ -287,17 +289,17 @@ _DeleteDevicePort_ non definisce attributi.
 
 // Update
 
-=== UpdateDevice <SaveDevice>
+=== UpdateDevice <UpdateDevice>
 
 
 #figure(
-  image("../uml/png/SaveDevice/UpdateDevice.png", width: 100%),
+  image("../uml/png/UpdateDevice/UpdateDevice.png", width: 100%),
   caption: [Caso d'uso UpdateDevice],
-) <fig-save-device>
+) <fig-udpate-device>
 
 Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salvataggio dello stato di un Dispositivo esistente.
 
-- Per la definizione di _WriteDeviceController_, vedere la sezione @WriteDeviceController. \
+- Per la definizione di _FlaskWriteDeviceController_, vedere la sezione @FlaskWriteDeviceController. \
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
@@ -306,12 +308,12 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ==== UpdateDeviceUseCase
 
 #figure(
-  image("../uml/png/SaveDevice/UpdateDeviceUseCase.png", width: 40%),
+  image("../uml/png/UpdateDevice/UpdateDeviceUseCase.png", width: 40%),
   caption: [UpdateDeviceUseCase],
-) <fig-save-device-use-case>
+) <fig-update-device-use-case>
 *Descrizione*
 
-_UpdateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Dispositivo esistente. Viene implementata da _UpdateDeviceService_ e utilizzata da _WriteDeviceController_.
+_UpdateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Dispositivo esistente. Viene implementata da _UpdateDeviceService_ e utilizzata da _FlaskWriteDeviceController_.
 
 *Attributi*
 
@@ -319,14 +321,14 @@ _UpdateDeviceUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `save(command: UpdateDeviceCommand)` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
+- `update_device(command: UpdateDeviceCommand)` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
 
-==== SaveDeviceCommand
+==== UpdateDeviceCommand
 
 #figure(
-  image("../uml/png/SaveDevice/UpdateDeviceCommand.png", width: 35%),
+  image("../uml/png/UpdateDevice/UpdateDeviceCommand.png", width: 35%),
   caption: [UpdateDeviceCommand],
-) <fig-save-device-command>
+) <fig-update-device-command>
 
 *Descrizione*
 
@@ -334,6 +336,7 @@ _UpdateDeviceCommand_ è il Command Object che veicola i dati necessari alla mod
 
 *Attributi*
 
+- `+ device_id: String` — identificativo univoco del Dispositivo da aggiornare.
 - `+ device_name: String` — nome aggiornato del Dispositivo.
 - `+ device_os: String` — sistema operativo aggiornato.
 - `+ device_description: String` — descrizione testuale aggiornata.
@@ -345,9 +348,9 @@ _UpdateDeviceCommand_ non definisce metodi.
 ==== UpdateDeviceService
 
 #figure(
-  image("../uml/png/SaveDevice/UpdateDeviceService.png", width: 45%),
+  image("../uml/png/UpdateDevice/UpdateDeviceService.png", width: 45%),
   caption: [UpdateDeviceService],
-) <fig-save-device-service>
+) <fig-udpate-device-service>
 
 *Descrizione*
 
@@ -355,16 +358,17 @@ _UpdateDeviceService_ è il service applicativo appartenente all'Application Cor
 
 *Attributi*
 
-_UpdateDeviceService_ non definisce attributi propri.
-\
+- `- find_device_port: FindDevicePort` — utilizza la porta di outbound per prelevare il device
+- `- save_device_port: SaveDevicePort` — utilizza la porta di outbound per salvare le modifiche
+
 *Metodi e funzioni*
 
-- `+ save(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
+- `+ udpate_device(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
 
 ==== SaveDevicePort <SaveDevicePort>
 
 #figure(
-  image("../uml/png/SaveDevice/SaveDevicePort.png", width: 30%),
+  image("../uml/png/UpdateDevice/SaveDevicePort.png", width: 30%),
   caption: [SaveDevicePort],
 ) <fig-save-device-port>
 *Descrizione*
@@ -379,6 +383,24 @@ _UpdateDevicePort_ non definisce attributi.
 
 - `+ save(device: Device): void` — firma del metodo che esegue l'aggiornamento fisico del Dispositivo nel sistema di persistenza.
 
+==== FindDevicePort <FindDevicePort>
+
+#figure(
+  image("../uml/png/UpdateDevice/FindDevicePort.png", width: 30%),
+  caption: [FindDevicePort],
+) <fig-find-device-port>
+*Descrizione*
+
+_FindDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per prelevare un Device tramite id. Viene implementata da _MongoDeviceAdapter_ e utilizzata da _UpdateDeviceService_.
+
+*Attributi*
+
+_FindDevicePort_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ find_by_id(device_id: String): Device` — firma del metodo che esegue l'aggiornamento fisico del Dispositivo nel sistema di persistenza.
+
 
 === ReadDeviceModule <ReadDeviceModule>
 
@@ -392,6 +414,7 @@ Il diagramma illustra l'architettura del modulo di lettura per la gestione dei D
 
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo modulo.
 
@@ -405,22 +428,26 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Dispositivo.
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort.
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
-==== QueryDeviceController <QueryDeviceController>
+
+==== FlaskQueryDeviceController <FlaskQueryDeviceController>
 
 #figure(
-  image("../uml/png/GetDeviceDetail/QueryDeviceController.png", width: 45%),
-  caption: [QueryDeviceController],
+  image("../uml/png/GetDeviceDetail/FlaskQueryDeviceController.png", width: 45%),
+  caption: [FlaskQueryDeviceController],
 ) <fig-query-device-controller>
 
 *Descrizione*
 
-_QueryDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura relative ai Dispositivi e le inoltra al livello applicativo.
+_FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura relative ai Dispositivi e le inoltra al livello applicativo.
 
 *Attributi*
 
-_QueryDeviceController_ non definisce attributi propri.
+- `- get_device_list_use_case: GetDeviceListUseCase` — inbound port usata per prendere la lista dei dispostivi
+- `- get_device_detail_use_case: GetDeviceDetailUseCase` — inbound port usata per prendere il dettaglio di un dispositivo
+- `- get_compliance_standard_use_case: GetComplianceStandardUseCase` — inbound port usata per prendere lo Standard
 
 *Metodi e funzioni*
 
@@ -434,7 +461,7 @@ _QueryDeviceController_ non definisce attributi propri.
 ) <fig-get-device-detail-use-case>
 *Descrizione*
 
-_GetDeviceDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero del dettaglio di un Dispositivo. Viene implementata da _GetDeviceDetailService_ e utilizzata da _QueryDeviceController_.
+_GetDeviceDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero del dettaglio di un Dispositivo. Viene implementata da _GetDeviceDetailService_ e utilizzata da _FlaskQueryDeviceController_.
 
 *Attributi*
 
@@ -457,7 +484,7 @@ _GetDeviceDetailService_ è il service applicativo appartenente all'Application 
 
 *Attributi*
 
-_GetDeviceDetailService_ non definisce attributi propri.
+- `find_device_port: FindDevicePort` — outbound port usata per prelevare un dispositivo.
 
 *Metodi e funzioni*
 
@@ -483,27 +510,27 @@ _GetDeviceDetailCommand_ è  utilizzato per trasportare i dati necessari al recu
 _GetDeviceDetailCommand_ non definisce metodi propri.
 
 ==== GetComplianceStandardUseCase
-// #figure(
-//   image("../uml/png/GetDeviceDetail/GetComplianceStandardUseCase.png", width: 35%),
-//   caption: [GetComplianceStandardUseCase]
-// ) <fig-get-compliance-standard-use-case>
+#figure(
+  image("../uml/png/GetDeviceDetail/GetComplianceStandardUseCase.png", width: 35%),
+  caption: [GetComplianceStandardUseCase]
+) <fig-get-compliance-standard-use-case>
 *Descrizione*
 
-_GetComplianceStandardUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero dello standard. Viene implementata da _GetComplianceStandardService_ e utilizzata da _QueryDeviceController_.
+_GetComplianceStandardUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero dello standard. Viene implementata da _GetComplianceStandardService_ e utilizzata da _FlaskQueryDeviceController_.
 
 *Attributi*
 
-_GetComplianceStandardService_ non definisce attributi.
+_GetComplianceStandardUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
 - `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — firma del metodo delegato al recupero dello Standard corrispondente al Command fornito.
 
 ==== GetComplianceStandardService
-// #figure(
-//   image("../uml/png/GetDeviceDetail/GetComplianceStandardService.png", width: 45%),
-//   caption: [GetComplianceStandardService]
-// ) <fig-get-compliance-standard-service>
+#figure(
+  image("../uml/png/GetDeviceDetail/GetComplianceStandardService.png", width: 45%),
+  caption: [GetComplianceStandardService]
+) <fig-get-compliance-standard-service>
 
 *Descrizione*
 
@@ -511,17 +538,17 @@ _GetComplianceStandardService_ è il service applicativo appartenente all'Applic
 
 *Attributi*
 
-_GetDeviceDetailService_ non definisce attributi propri.
+- `find_standard_port: FindStandardPort` — outbound port usata per prelevare lo Standard.
 
 *Metodi e funzioni*
 
 - `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — concretizza il contratto definito da _GetComplianceStandardUseCase_. Recupera il Compliance Standard corrispondente all'identificativo contenuto nel Command tramite _FindStandardPort_.
 
 ==== GetComplianceStandardCommand
-// #figure(
-//   image("../uml/png/GetDeviceDetail/GetComplianceStandardCommand.png", width: 35%),
-//   caption: [GetComplianceStandardCommand],
-// ) <fig-get-compliance-standard-command>
+#figure(
+  image("../uml/png/GetDeviceDetail/GetComplianceStandardCommand.png", width: 35%),
+  caption: [GetComplianceStandardCommand],
+) <fig-get-compliance-standard-command>
 
 *Descrizione*
 
@@ -535,28 +562,10 @@ _GetComplianceStandardCommand_ è  utilizzato per trasportare i dati necessari a
 
 _GetComplianceStandardCommand_ non definisce metodi propri.
 
-
-==== FindDevicePort <FindDevicePort>
-#figure(
-  image("../uml/png/GetDeviceDetail/FindDevicePort.png", width: 35%),
-  caption: [FindDevicePort],
-) <fig-find-device-port>
-*Descrizione*
-
-_FindDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per il recupero di un Dispositivo dal sistema di persistenza. Viene implementata da _MongoDeviceAdapter_ e utilizzata da _GetDeviceDetailService_.
-
-*Attributi*
-
-_FindDevicePort_ non definisce attributi.
-
-*Metodi e funzioni*
-
-- `+ find_by_id(device_id: String): Device` — firma del metodo che recupera il Dispositivo corrispondente all'identificativo fornito dal sistema di persistenza.
-
 ==== FindStandardPort <FindStandardPort>
 #figure(
   image("../uml/png/GetDeviceDetail/FindStandardPort.png", width: 50%),
-  caption: [FindStandardPort]
+  caption: [FindStandardPort],
 ) <fig-find-standard-port>
 *Descrizione*
 
@@ -596,7 +605,7 @@ _ComplianceStandard_ rappresenta il documento che contiene le regole alle quali 
 ==== MongoStandardAdapter <MongoStandardAdapter>
 #figure(
   image("../uml/png/GetDeviceDetail/MongoStandardAdapter.png", width: 50%),
-  caption: [MongoStandardAdapter]
+  caption: [MongoStandardAdapter],
 ) <fig-mongo-standard-adapter>
 *Descrizione*
 
@@ -621,7 +630,7 @@ _MongoStandardAdapter_ non definisce attributi propri nel diagramma.
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero della lista sintetica dei Dispositivi.
 
-Per la definizione di _QueryDeviceController_, vedere la sezione @QueryDeviceController. \
+Per la definizione di _FlaskQueryDeviceController_, vedere la sezione @FlaskQueryDeviceController. \
 Per la definizione di _Device_, vedere la sezione @Device. \
 Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 
@@ -636,7 +645,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ) <fig-get-device-list-use-case>
 *Descrizione*
 
-_GetDeviceListUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero della lista sintetica dei Dispositivi. Viene implementata da _GetDeviceListService_ e utilizzata da _QueryDeviceController_.
+_GetDeviceListUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero della lista sintetica dei Dispositivi. Viene implementata da _GetDeviceListService_ e utilizzata da _FlaskQueryDeviceController_.
 
 *Attributi*
 
@@ -676,7 +685,11 @@ _DeviceSummary_ è il Data Transfer Object che veicola la rappresentazione sinte
 
 *Attributi*
 
-- `- name: String` — nome del Dispositivo.
+- `+ device_id: String` — identificativo univoco del dispositivo
+- `+ name: String` — nome del dispositivo
+- `+ os: String` — sistema operativo del dispositivo
+- `+ description: String` — descrizione del dispositivo
+- `+ compliance_standard_id: String` — identificativo univoco dello Standard
 
 *Metodi e funzioni*
 
@@ -702,3 +715,116 @@ _FindAllDevicesPort_ non definisce attributi.
 - `+ find_all(): List<DeviceSummary>` — firma del metodo che recupera la lista sintetica di tutti i Dispositivi presenti nel sistema di persistenza.
 
 
+
+=== GetDeviceEvaluationDetail
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetail.png", width: 100%),
+  caption: [GetDeviceEvaluationDetail],
+) <fig-get-device-evaluation-detail>
+
+Il diagramma illustra l'architettura del modulo dedicato al recupero della dashboard di un Dispositivo, che aggrega le informazioni della sessione di valutazione attiva in una vista sintetica.
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+
+==== FlaskQueryDashboardController
+
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/FlaskQueryDashboardController.png", width: 40%),
+  caption: [FlaskQueryDashboardController],
+) <fig-flask-query-dashboard-controller>
+
+*Descrizione*
+
+_FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura di un device per la dashboard.
+
+*Attributi*
+
+- `- get_device_evaluation_detail_use_case: GetDeviceEvaluationDetailUseCase` — inbound port usata per prelevare un _DeviceEvaluationDetail_.
+
+*Metodi e funzioni*
+
+- `+ get_device_dashboard(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
+
+==== GetDeviceEvaluationDetailCommand
+
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetailCommand.png", width: 40%),
+  caption: [GetDeviceEvaluationDetailCommand],
+) <fig-get-device-evaluation-detail-command>
+
+*Descrizione*
+
+_GetDeviceEvaluationDetailCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero della dashboard di un Dispositivo. Incapsula i parametri di input del metodo esposto da _GetDeviceEvaluationDetailUseCase_.
+
+*Attributi*
+
+- `+ session_id: String` — identificativo univoco della sessione
+- `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
+
+*Metodi e funzioni*
+
+_GetDeviceEvaluationDetailCommand_ non definisce metodi propri.
+
+==== GetDeviceEvaluationDetailUseCase
+
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetailUseCase.png", width: 40%),
+  caption: [GetDeviceEvaluationDetailUseCase],
+) <fig-get-device-evaluation-detail-use-case>
+
+*Descrizione*
+
+_GetDeviceEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero della dashboard di un Dispositivo. Viene implementata da _GetDeviceEvaluationDetailService_ e utilizzata da _FlaskQueryDashboardController_.
+
+*Attributi*
+
+_GetDeviceEvaluationDetailUseCase_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
+
+==== GetDeviceEvaluationDetailService
+
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetailService.png", width: 50%),
+  caption: [GetDeviceEvaluationDetailService],
+) <fig-get-device-evaluation-detail-service>
+
+*Descrizione*
+
+_GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceEvaluationDetailUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_ e costruisce il _EvaluationDetailCommand_ con le informazioni aggregate.
+
+*Attributi*
+
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port per prelevare la sessione di valutaione.
+
+*Metodi e funzioni*
+
+- `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` —
+concretizza il contratto definito da _GetDeviceEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DeviceEvaluationDetail_.
+
+==== DeviceEvaluationDetail
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/DeviceEvaluationDetail.png", width: 45%),
+  caption: [DeviceEvaluationDetail],
+)
+
+*Descrizione*
+
+_DeviceEvaluationDetail_ è l'oggetto di dominio che contiene le informazioni anagrafiche, gli asset e il suo stato di valutazione attuale.
+
+*Attributi*
+
+- `+ device_id: String` — identificativo univoco del Dispositivo.
+- `+ name: String` — nome del Dispositivo.
+- `+ operating_system: String` — sistema operativo del Dispositivo.
+- `+ description: String` — descrizione testuale del Dispositivo.
+- `+ standard_id: String` — identificativo univoco dello Standard associato.
+- `+ asset_details: List<AssetEvaluationDetail>` — lista degli asset con valutazione calcolata.
+- `+ verdict: EvaluationState` — stato di valutazione aggregato del Dispositivo.
+
+
+*Metodi e funzioni*
+
+_EvaluationDetailCommand_ non definisce metodi.
