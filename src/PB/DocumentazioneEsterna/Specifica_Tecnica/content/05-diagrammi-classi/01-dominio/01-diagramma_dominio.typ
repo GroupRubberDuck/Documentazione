@@ -1,7 +1,7 @@
 == Diagramma di dominio<diagdom>
 Il diagramma delle classi illustra il Modello di Dominio del nucleo applicativo. Progettato rispettando i principi del Domain-Driven Design e dell'Architettura Esagonale, il modello incapsula esclusivamente la logica di business pura, risultando del tutto agnostico rispetto ai dettagli infrastrutturali.
 
-#image("../uml/png/Modello_di_Dominio.png")
+//#image("../uml/png/Modello_di_Dominio.png")
 
 Per garantire coerenza logica e separazione delle responsabilità, le classi sono state logicamente organizzate in tre macro-package:
 
