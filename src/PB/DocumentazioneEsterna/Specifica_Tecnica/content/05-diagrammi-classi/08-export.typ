@@ -237,7 +237,7 @@ _FileDeviceExporterPort_ non definisce attributi.
 Il diagramma illustra l'architettura del modulo dedicato alla generazione e all'esportazione dei report riassuntivi di una valutazione. Il flusso permette di recuperare i dati di una sessione e di compilare dinamicamente un documento (ad esempio in formato PDF) da restituire all'utente tramite download.
 
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort.
 - Per la definizione di _DownloadFileController_, vedere la sezione @DownloadFileController
 
 
@@ -313,7 +313,7 @@ _ExportReportService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ export(command: ExportReportCommand): bytes` — concretizza il contratto definito da _ExportReportUseCase_. Legge l'identificativo della sessione dal comando, recupera l'entità della sessione tramite _GetSessionPort_ e delega la creazione materiale del documento a _ReportGeneratorPort_, restituendo l'array di byte finale.
+- `+ export(command: ExportReportCommand): bytes` — concretizza il contratto definito da _ExportReportUseCase_. Legge l'identificativo della sessione dal comando, recupera l'entità della sessione tramite _GetEvaluationSessionPort_ e delega la creazione materiale del documento a _ReportGeneratorPort_, restituendo l'array di byte finale.
 
 
 ==== ReportGeneratorPort
@@ -365,7 +365,7 @@ _PdfReportGeneratorAdapter_ non definisce attributi propri.
 Il diagramma illustra l'architettura del modulo dedicato all'esportazione dei dati relativi a uno Standard di Conformità (inclusi i requisiti e le valutazioni associate) sotto forma di file scaricabile. Analogamente al caso d'uso di esportazione del dispositivo, il sistema supporta l'esportazione in vari formati ricorrendo ai pattern Factory e Template Method nel livello degli Outbound Adapter per garantire flessibilità ed estensibilità.
 
 - Per la definizione di _MongoStandardAdapter_, vedere la sezione @MongoStandardAdapter.
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort.
 - Per la definizione di _DownloadFileController_, vedere la sezione @DownloadFileController
 - Per la definizione di _FindStandardPort_, vedere la sezione @FindStandardPort
 

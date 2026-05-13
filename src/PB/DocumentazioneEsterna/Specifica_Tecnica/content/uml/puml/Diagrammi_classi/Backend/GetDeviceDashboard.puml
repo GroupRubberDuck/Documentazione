@@ -34,14 +34,14 @@ package "Application Core" {
         + aggregate_status: EvaluationState
     }
 
-    () "GetSessionPort"
+    () "GetEvaluationSessionPort"
 
    
 
     GetDeviceDashboardService .right.> GetDeviceDashboardCommand : legge
     GetDeviceDashboardService .down.> DashboardCommand : popola
 
-    DashboardCommand -[hidden]right-------- GetSessionPort
+    DashboardCommand -[hidden]right-------- GetEvaluationSessionPort
     DashboardCommand *-down- AssetSummaryCommand
 }
 
@@ -51,7 +51,7 @@ package "Outbound Adapter" {
 
 QueryDashboardController -down-> GetDeviceDashboardUseCase : usa
 GetDeviceDashboardUseCase -down- GetDeviceDashboardService
-GetDeviceDashboardService -down-> GetSessionPort : usa
-GetSessionPort -down- InMemoryEvaluationSessionCache
+GetDeviceDashboardService -down-> GetEvaluationSessionPort : usa
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

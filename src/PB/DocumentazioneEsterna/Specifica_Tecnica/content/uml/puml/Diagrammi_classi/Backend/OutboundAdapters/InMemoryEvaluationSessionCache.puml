@@ -1,12 +1,12 @@
 @startuml InMemoryEvaluationSessionCache
 skinparam classAttributeIconSize 0
 class InMemoryEvaluationSessionCache {
-    - sessions: dictionary[string:EvaluationSession]
-    + create_session(): EvaluationSession
-    + delete_session(session_id: String): void
-    + get_session(session_id: String): EvaluationSession
-    + save_session(session: EvaluationSession): void
-    + has_active_session(device_id: String): bool
+    - session: EvaluationSession | None
+    + create_evaluation_session(standard: ComplianceStandard, device: Device): EvaluationSession
+    + get_evaluation_session(session_id: String): EvaluationSession
+    + save_evaluation_session(session: EvaluationSession): void
+    + has_active_session(): bool
+    + close_evaluation_session(session_id: String): void
 }
 
 @enduml

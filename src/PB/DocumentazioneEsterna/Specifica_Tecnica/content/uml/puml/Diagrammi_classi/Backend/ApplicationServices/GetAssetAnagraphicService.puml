@@ -1,0 +1,7 @@
+@startuml GetAssetAnagraphicService
+
+class GetAssetAnagraphicService {
+    get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic
+}
+
+@enduml

@@ -1,7 +1,7 @@
 @startuml CreateAssetService
 skinparam classAttributeIconSize 0
 class CreateAssetService {
-    + create_asset(asset: CreateAssetCommand):bool
+    + create_asset(asset: CreateAssetCommand): string
 }
 
 @enduml

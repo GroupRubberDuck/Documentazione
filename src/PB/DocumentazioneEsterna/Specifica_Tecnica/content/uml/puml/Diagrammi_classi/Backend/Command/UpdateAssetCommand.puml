@@ -1,13 +1,14 @@
-@startuml
+@startuml UpdateAssetCommand
 skinparam classAttributeIconSize 0
 
 
-    class UpdateAssetCommand {
-        + asset_id:string
-        + name:String
-        + type:AssetType
-        + description:String
-        + session_id: String
-    }
+class UpdateAssetCommand {
+    + device_id: String
+    + asset_id: String
+    + name: String
+    + asset_type: AssetType
+    + description: String
+    + session_id: String
+}
 
 @enduml

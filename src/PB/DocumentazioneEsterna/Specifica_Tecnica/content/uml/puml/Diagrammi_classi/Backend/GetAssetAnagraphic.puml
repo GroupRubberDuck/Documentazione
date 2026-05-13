@@ -1,31 +1,28 @@
-@startuml GetAssetDetail
+@startuml GetAssetAnagraphic
 skinparam linetype ortho
 skinparam nodesep 100
 skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    !include InboundAdapters/QueryDashboardController.puml
+    class AssetAnagraphicController{}
 }
 
 package "Application Core" {
 
-    () "GetAssetDetailUseCase" as GetAssetDetailUseCase
+    () "GetAssetAnagraphicUseCase"
 
-    class GetAssetDetailCommand {
-        + asset_id: String
-        + session_id: String
-    }
+    !include Command/GetAssetAnagraphicCommand.puml
 
-    !include Domain/AssetEvaluationDetail.puml
+    !include Domain/AssetAnagraphic.puml
 
-    !include ApplicationServices/GetAssetDetailService.puml
+    !include ApplicationServices/GetAssetAnagraphicService.puml
 
     () "GetEvaluationSessionPort"
 
-    GetAssetDetailService -up- GetAssetDetailUseCase
-    GetAssetDetailService .> GetAssetDetailCommand : legge
-    GetAssetDetailService --> GetEvaluationSessionPort : usa
+    GetAssetAnagraphicService -up- GetAssetAnagraphicUseCase
+    GetAssetAnagraphicService .> GetAssetAnagraphicCommand : legge
+    GetAssetAnagraphicService --> GetEvaluationSessionPort : usa
 }
 
 package "Outbound Adapter" {
@@ -38,7 +35,7 @@ package "Outbound Adapter" {
     }
 }
 
-QueryDashboardController --> GetAssetDetailUseCase : usa
+AssetAnagraphicController --> GetAssetAnagraphicUseCase : usa
 InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
 
 @enduml

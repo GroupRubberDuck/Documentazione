@@ -29,14 +29,14 @@ package "Application Core" {
         +justification: String
     }
 
-    () "GetSessionPort"
-    () "SaveSessionPort"
+    () "GetEvaluationSessionPort"
+    () "SaveEvaluationSessionPort"
 
     ' ==========================================
     ' GABBIA STRUTTURALE 
     ' ==========================================
     EvaluationJustificationService -[hidden]right-------- InsertJustificationCommand
-    GetSessionPort -[hidden]right-------- SaveSessionPort
+    GetEvaluationSessionPort -[hidden]right-------- SaveEvaluationSessionPort
 
     ' ==========================================
     ' COLLEGAMENTI INTERNI AL CORE
@@ -44,13 +44,13 @@ package "Application Core" {
     EvaluationJustificationService -up- InsertJustificationUseCase
     EvaluationJustificationService .right.> InsertJustificationCommand : legge
 
-    EvaluationJustificationService -down-> GetSessionPort : usa
-    EvaluationJustificationService -down-> SaveSessionPort : usa
+    EvaluationJustificationService -down-> GetEvaluationSessionPort : usa
+    EvaluationJustificationService -down-> SaveEvaluationSessionPort : usa
     
     ' Trucco aggiuntivo per creare spazio sotto le porte e non far tagliare le scritte dal bordo
     hide spacer
-    GetSessionPort -[hidden]down- spacer
-    SaveSessionPort -[hidden]down- spacer
+    GetEvaluationSessionPort -[hidden]down- spacer
+    SaveEvaluationSessionPort -[hidden]down- spacer
 }
 
 package "Outbound Adapter" {
@@ -69,7 +69,7 @@ package "Outbound Adapter" {
 ' ==========================================
 EvaluationJustificationController -down-> InsertJustificationUseCase : usa
 
-InMemoryEvaluationSessionCache -up- GetSessionPort
-InMemoryEvaluationSessionCache -up- SaveSessionPort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+InMemoryEvaluationSessionCache -up- SaveEvaluationSessionPort
 
 @enduml

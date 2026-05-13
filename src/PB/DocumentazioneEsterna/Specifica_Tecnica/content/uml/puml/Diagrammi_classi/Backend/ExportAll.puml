@@ -83,7 +83,7 @@ package "Export Report Subsystem" {
             PDF
         }
 
-        () "GetSessionPort"
+        () "GetEvaluationSessionPort"
         () "ReportGeneratorPort"
     }
 
@@ -151,9 +151,9 @@ FileDeviceExporter <|-- XMLFileDeviceExporter
 ' --- ER RELATIONS ---
 ExportReportController -down-( ExportReportUseCase
 ExportReportService -up- ExportReportUseCase
-ExportReportService --> GetSessionPort
+ExportReportService --> GetEvaluationSessionPort
 ExportReportService --> ReportGeneratorPort
-InMemoryEvaluationSessionCache -up- GetSessionPort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
 PdfReportGeneratorAdapter -up- ReportGeneratorPort
 
 ' --- ES RELATIONS ---

@@ -63,20 +63,20 @@ Il diagramma illustra l'architettura del modulo di scrittura per la gestione deg
 Il diagramma illustra l'architettura del modulo di creazione di un Asset all'interno di una sessione di valutazione attiva. 
 
 #block(breakable: false)[
-==== WriteAssetController <WriteAssetController>
+==== FlaskWriteAssetController <FlaskWriteAssetController>
 
 #figure(
-  image("../uml/png/CreateAsset/WriteAssetController.png", width: 45%),
-  caption: [WriteAssetController]
+  image("../uml/png/CreateAsset/FlaskWriteAssetController.png", width: 45%),
+  caption: [FlaskWriteAssetController]
 ) <fig-write-asset-controller>
 
 *Descrizione*
 
-_WriteAssetController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP relative alla gestione (scrittura) degli Asset e le inoltra al livello applicativo.
+_FlaskWriteAssetController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP relative alla gestione (scrittura) degli Asset e le inoltra al livello applicativo.
 
 *Attributi*
 
-_WriteAssetController_ non definisce attributi propri.
+_FlaskWriteAssetController_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
@@ -93,7 +93,7 @@ _WriteAssetController_ non definisce attributi propri.
 ) <fig-create-asset-use-case>
 *Descrizione*
 
-_CreateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la creazione di un nuovo Asset all'interno della sessione di valutazione. Viene implementata da _CreateAssetService_ e utilizzata da _WriteAssetController_.
+_CreateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la creazione di un nuovo Asset all'interno della sessione di valutazione. Viene implementata da _CreateAssetService_ e utilizzata da _FlaskWriteAssetController_.
 
 *Attributi*
 
@@ -118,10 +118,12 @@ _CreateAssetCommand_ è il Command Object che veicola i dati necessari alla crea
 
 *Attributi*
 
+- `+ session_id: String` — identificativo della sessione di valutazione attiva a cui l'Asset viene associato.
+- `+ device_id: String` — identificativo del dispositivo che lo contiene.
 - `+ name: String` — nome del nuovo Asset.
 - `+ type: AssetType` — tipo dell'Asset.
 - `+ description: String` — descrizione testuale dell'Asset.
-- `+ session_id: String` — identificativo della sessione di valutazione attiva a cui l'Asset viene associato.
+
 
 *Metodi e funzioni*
 
@@ -138,7 +140,7 @@ _CreateAssetCommand_ non definisce metodi.
 
 *Descrizione*
 
-_CreateAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di creazione di un Asset. Implementa l'interfaccia _CreateAssetUseCase_, recupera la sessione attiva tramite _GetSessionPort_, aggiunge il nuovo _Asset_ e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_CreateAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di creazione di un Asset. Implementa l'interfaccia _CreateAssetUseCase_, recupera la sessione attiva tramite _GetEvaluationSession_, aggiunge il nuovo _Asset_ e persiste la sessione aggiornata tramite _SaveEvaluationSession_.
 
 *Attributi*
 
@@ -146,7 +148,7 @@ _CreateAssetService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ create_asset(asset: CreateAssetCommand): bool` — concretizza il contratto definito da _CreateAssetUseCase_. Recupera la sessione attiva, vi aggiunge il nuovo Asset e ne persiste lo stato aggiornato.
+- `+ create_asset(asset: CreateAssetCommand): string` — concretizza il contratto definito da _CreateAssetUseCase_. Recupera la sessione attiva, vi aggiunge il nuovo Asset e ne persiste lo stato aggiornato. Ritorna l'id dell'asset creato.
 
 
 
@@ -223,56 +225,56 @@ _AssetProprieties_ è l'entità delegata alla gestione dello stato valutativo e 
 
 *Descrizione*
 
-_InMemoryEvaluationSessionCache_ è la classe dell'Outbound Adapter annotata come _Session Cache_ che implementa entrambe le porte outbound _SaveSessionPort_ e _GetSessionPort_. Gestisce la persistenza in memoria delle sessioni di valutazione tramite un dizionario indicizzato per `session_id`.
+_InMemoryEvaluationSessionCache_ è la classe dell'Outbound Adapter annotata come _Session Cache_ che implementa entrambe le porte outbound _SaveEvaluationSession_ e _GetEvaluationSession_. Gestisce la persistenza in memoria delle sessioni di valutazione tramite un dizionario indicizzato per `session_id`.
 
 *Attributi*
 
-- `- sessions: dictionary[string: EvaluationSession]` — struttura dati in memoria che mantiene le sessioni di valutazione attive, indicizzate per `session_id`.
+- `- session: EvaluationSession` — contiene l'oggetto EvaluationSession
 
 *Metodi e funzioni*
 
-- `+ create_session(): EvaluationSession` — crea e registra una nuova sessione di valutazione.
-- `+ delete_session(session_id: String): void` — rimuove la sessione identificata da `session_id`.
-- `+ get_session(session_id: String): EvaluationSession` — recupera la sessione corrispondente all'identificativo fornito.
-- `+ save_session(session: EvaluationSession): void` — aggiorna la sessione nel dizionario in memoria.
-- `+ has_active_session(device_id: String): bool` — verifica se esiste una sessione attiva per il Dispositivo identificato da `device_id`.
+- `+ create_evaluation_session(standard: ComplianceStandard, device: Device): EvaluationSession` — crea e registra una nuova sessione di valutazione.
+- `+ get_evaluation_session(session_id: String): EvaluationSession` — recupera la sessione corrispondente all'identificativo fornito.
+- `+ save_evaluation_session(session: EvaluationSession): void` — aggiorna la sessione in memoria.
+- `+ has_active_session(): bool` — verifica se esiste una sessione attiva.
+- `+ close_evaluation_session(session_id: String): void` — chiude la sessione identificata da `session_id`.
 
 
 
-==== SaveSessionPort <SaveSessionPort>
+==== SaveEvaluationSessionPort <SaveEvaluationSessionPort>
 #figure(
-  image("../uml/png/CreateAsset/SaveSessionPort.png", width: 45%),
-  caption: [SaveSessionPort]
-) <fig-save-session-port>
+  image("../uml/png/CreateAsset/SaveEvaluationSessionPort.png", width: 45%),
+  caption: [SaveEvaluationSessionPort]
+) <fig-save-evaluation-session-port>
 *Descrizione*
 
-_SaveSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il salvataggio della sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da tutti i service del modulo che modificano lo stato della sessione, tra cui _CreateAssetService_, _SaveAssetService_ e _DeleteAssetService_.
+_SaveEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il salvataggio della sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da tutti i service del modulo che modificano lo stato della sessione, tra cui _CreateAssetService_, _SaveAssetService_ e _DeleteAssetService_.
 
 *Attributi*
 
-_SaveSessionPort_ non definisce attributi.
+_SaveEvaluationSessionPort_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ save_session(session: EvaluationSession): void` — firma del metodo che persiste la sessione aggiornata nel sistema in memoria.
+- `+ save_evaluation_session(session: EvaluationSession): void` — firma del metodo che persiste la sessione aggiornata nel sistema in memoria.
 
 
-==== GetSessionPort <GetSessionPort>
+==== GetEvaluationSessionPort <GetEvaluationSessionPort>
 #figure(
-  image("../uml/png/CreateAsset/GetSessionPort.png", width: 45%),
-  caption: [GetSessionPort]
+  image("../uml/png/CreateAsset/GetEvaluationSessionPort.png", width: 45%),
+  caption: [GetEvaluationSessionPort]
 ) <fig-get-session-port>
 *Descrizione*
 
-_GetSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il recupero della sessione di valutazione dal sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da tutti i service del modulo che necessitano di accedere alla sessione corrente, tra cui _CreateAssetService_, _SaveAssetService_, _DeleteAssetService_ e _GetAssetDetailService_.
+_GetEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per il recupero della sessione di valutazione dal sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da tutti i service del modulo che necessitano di accedere alla sessione corrente, tra cui _CreateAssetService_, _SaveAssetService_, _DeleteAssetService_ e _GetAssetAnagraphicService_.
 
 *Attributi*
 
-_GetSessionPort_ non definisce attributi.
+_GetEvaluationSessionPort_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_session(session_id: String): EvaluationSession` — firma del metodo che recupera la sessione di valutazione attiva corrispondente all'identificativo fornito.
+- `+ get_evaluation_session(session_id: String): EvaluationSession` — firma del metodo che recupera la sessione di valutazione attiva corrispondente all'identificativo fornito.
 
 
 === UpdateAsset
@@ -285,10 +287,10 @@ _GetSessionPort_ non definisce attributi.
 
 Il diagramma illustra l'architettura del modulo di modifica di un Asset esistente all'interno di una sessione di valutazione attiva.
 
-- Per la definizione di _WriteAssetController_, vedere la sezione @WriteAssetController. \
+- Per la definizione di _FlaskWriteAssetController_, vedere la sezione @FlaskWriteAssetController. \
 - Per la definizione di _Asset_, vedere la sezione @Asset. \
-- Per la definizione di _SaveSessionPort_, vedere la sezione @SaveSessionPort. \
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
+- Per la definizione di _SaveEvaluationSession_, vedere la sezione @SaveEvaluationSessionPort. \
+- Per la definizione di _GetEvaluationSession_, vedere la sezione @GetEvaluationSessionPort. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
@@ -302,7 +304,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 ) <fig-save-asset-use-case>
 *Descrizione*
 
-_UpdateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Asset esistente all'interno della sessione di valutazione. Viene implementata da _UpdateAssetService_ e utilizzata da _WriteAssetController_.
+_UpdateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la modifica di un Asset esistente all'interno della sessione di valutazione. Viene implementata da _UpdateAssetService_ e utilizzata da _FlaskWriteAssetController_.
 
 *Attributi*
 
@@ -310,7 +312,7 @@ _UpdateAssetUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ save_asset(asset: UpdateAssetCommand): bool` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
+- `+ update_asset(asset: UpdateAssetCommand): void` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
 ]
 
 
@@ -326,9 +328,10 @@ _UpdateAssetCommand_ è il Command Object che veicola i dati necessari alla modi
 
 *Attributi*
 
+- `+ device_id: String` — identificativo del device a cui appartiene.
 - `+ asset_id: String` — identificativo univoco dell'Asset da modificare.
 - `+ name: String` — nome aggiornato dell'Asset.
-- `+ type: AssetType` — tipo aggiornato dell'Asset.
+- `+ asset_type: AssetType` — tipo aggiornato dell'Asset.
 - `+ description: String` — descrizione testuale aggiornata dell'Asset.
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 
@@ -347,7 +350,7 @@ _UpdateAssetCommand_ non definisce metodi.
 
 *Descrizione*
 
-_UpdateAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di aggiornamento di un Asset esistente. Implementa l'interfaccia _UpdateAssetUseCase_, recupera la sessione attiva tramite _GetSessionPort_, aggiorna l'Asset corrispondente e persiste la sessione modificata tramite _SaveSessionPort_.
+_UpdateAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di aggiornamento di un Asset esistente. Implementa l'interfaccia _UpdateAssetUseCase_, recupera la sessione attiva tramite _GetEvaluationSession_, aggiorna l'Asset corrispondente e persiste la sessione modificata tramite _SaveEvaluationSession_.
 
 *Attributi*
 
@@ -355,7 +358,7 @@ _UpdateAssetService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ save_asset(asset: UpdateAssetCommand): bool` — concretizza il contratto definito da _UpdateAssetUseCase_. Recupera la sessione attiva, individua l'Asset da aggiornare tramite `asset_id` e ne persiste lo stato modificato.
+- `+ udpate_asset(asset: UpdateAssetCommand): void` — concretizza il contratto definito da _UpdateAssetUseCase_. Recupera la sessione attiva, individua l'Asset da aggiornare tramite `asset_id` e ne persiste lo stato modificato.
 ]
 
 === DeleteAsset <DeleteAsset>
@@ -368,10 +371,10 @@ _UpdateAssetService_ non definisce attributi propri.
 
 Il diagramma illustra l'architettura del modulo di eliminazione di un Asset esistente all'interno di una sessione di valutazione attiva. 
 
-- Per la definizione di _WriteAssetController_, vedere la sezione @WriteAssetController. \
+- Per la definizione di _FlaskWriteAssetController_, vedere la sezione @FlaskWriteAssetController. \
 - Per la definizione di _Asset_, vedere la sezione @Asset. \
-- Per la definizione di _SaveSessionPort_, vedere la sezione @SaveSessionPort. \
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
+- Per la definizione di _SaveEvaluationSession_, vedere la sezione @SaveEvaluationSessionPort. \
+- Per la definizione di _GetEvaluationSession_, vedere la sezione @GetEvaluationSessionPort. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
@@ -391,7 +394,10 @@ _DeleteAssetCommand_ è il Command Object utilizzato per trasportare i dati nece
 
 *Attributi*
 
-- `+ Asset_id: String` — identificativo univoco del Asset da eliminare.
+- `+ device_id: String` — identificativo univoco del dispositivo che contiene l'asset.
+- `+ asset_id: String` — identificativo univoco del Asset da eliminare.
+- `+ session_id: String` — identificativo univoco della sessione.
+
 *Metodi e funzioni*
 
 _DeleteAssetCommand_ non definisce metodi propri.
@@ -405,7 +411,7 @@ _DeleteAssetCommand_ non definisce metodi propri.
 
 *Descrizione*
 
-_DeleteAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'eliminazione di un Asset dalla sessione di valutazione. Viene implementata da _DeleteAssetService_ e utilizzata da _WriteAssetController_.
+_DeleteAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per l'eliminazione di un Asset dalla sessione di valutazione. Viene implementata da _DeleteAssetService_ e utilizzata da _FlaskWriteAssetController_.
 
 *Attributi*
 
@@ -424,7 +430,7 @@ _DeleteAssetUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_DeleteAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Asset. Implementa l'interfaccia _DeleteAssetUseCase_, riceve un _DeleteAssetCommand_ contenente gli identificativi necessari, recupera la sessione tramite _GetSessionPort_, rimuove l'Asset corrispondente e persiste la sessione aggiornata tramite _SaveSessionPort_.
+_DeleteAssetService_ è il service applicativo appartenente all'Application Core responsabile della logica di eliminazione di un Asset. Implementa l'interfaccia _DeleteAssetUseCase_, riceve un _DeleteAssetCommand_ contenente gli identificativi necessari, recupera la sessione tramite _GetEvaluationSession_, rimuove l'Asset corrispondente e persiste la sessione aggiornata tramite _SaveEvaluationSession_.
 
 *Attributi*
 
@@ -434,147 +440,104 @@ _DeleteAssetService_ non definisce attributi propri.
 
 - `+ delete_asset(command: DeleteAssetCommand): void` — concretizza il contratto definito da _DeleteAssetUseCase_. Recupera la sessione attiva, individua e rimuove l'Asset corrispondente e ne persiste lo stato aggiornato.
 
-=== GetAssetDetail <GetAssetDetail>
+=== GetAssetAnagraphic <GetAssetAnagraphic>
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetail.png", width: 90%),
-  caption: [Caso d'uso GetAssetDetail]
+  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphic.png", width: 90%),
+  caption: [Caso d'uso GetAssetAnagraphic]
 ) <fig-get-asset-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Asset all'interno di una sessione di valutazione attiva. 
 
-
-- Per la definizione di _GetSessionPort_, vedere la sezione @GetSessionPort. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 
-
-==== QueryDashboardController <QueryDashboardController>
-#figure(
-  image("../uml/png/GetAssetDetail/QueryDashboardController.png", width: 45%),
-  caption: [QueryDashboardController]
-) <fig-query-dashboard-controller>
-*Descrizione*
-
-_QueryDashboardController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura relative alla dashboard e agli Asset. Delega la logica applicativa al livello sottostante tramite le rispettive interfacce.
-
-*Attributi*
-
-_QueryDashboardController_ non definisce attributi propri.
-
-*Metodi e funzioni*
-
-- `+ get_device_dashboard(req: Request): Response` — riceve la richiesta HTTP di recupero della dashboard del Dispositivo e restituisce una risposta HTTP con i dati aggregati.
-- `+ get_asset_detail(req: Request): Response` — riceve la richiesta HTTP di recupero del dettaglio di un Asset specifico e restituisce una risposta HTTP con i dati completi.
+//TODO: MANCA IL FLASKCONTROLLER
 
 
 
-==== GetAssetDetailCommand
+==== GetAssetAnagraphicCommand
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetailCommand.png", width: 30%),
-  caption: [GetAssetDetailCommand]
+  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphicCommand.png", width: 30%),
+  caption: [GetAssetAnagraphicCommand]
 ) <fig-get-asset-detail-command>
 
 *Descrizione*
 
-_GetAssetDetailCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero del dettaglio di un Asset. Incapsula i parametri di input del metodo esposto da _GetAssetDetailUseCase_.
+_GetAssetAnagraphicCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero del dettaglio di un Asset. Incapsula i parametri di input del metodo esposto da _GetAssetAnagraphicUseCase_.
 
 *Attributi*
 
+- `+ device_id: String` — identificativo univoco del device che contiene l'asset
 - `+ asset_id: String` — identificativo univoco dell'Asset di cui recuperare il dettaglio.
 - `+ session_id: String` — identificativo univoco della sessione di valutazione corrente.
 
 *Metodi e funzioni*
 
-_GetAssetDetailCommand_ non definisce metodi propri.
+_GetAssetAnagraphicCommand_ non definisce metodi propri.
 
-==== GetAssetDetailUseCase
+==== GetAssetAnagraphicUseCase
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetailUseCase.png", width: 60%),
-  caption: [GetAssetDetailUseCase]
+  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphicUseCase.png", width: 60%),
+  caption: [GetAssetAnagraphicUseCase]
 ) <fig-get-asset-detail-use-case>
 
 *Descrizione*
 
-_GetAssetDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero del dettaglio di un Asset. Viene implementata da _GetAssetDetailService_ e utilizzata da _QueryDashboardController_.
+_GetAssetAnagraphicUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero del dettaglio di un Asset. Viene implementata da _GetAssetAnagraphicService_.
 
 *Attributi*
 
-_GetAssetDetailUseCase_ non definisce attributi.
+_GetAssetAnagraphicUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ get_asset(command: GetAssetDetailCommand): AssetDetail` — firma del metodo delegato al recupero del dettaglio dell'Asset corrispondente ai dati contenuti nel Command.
+- `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — firma del metodo delegato al recupero dedi anagrafica dell'asset ricercato.
 
-==== GetAssetDetailService
+==== GetAssetAnagraphicService
 
 #figure(
-  image("../uml/png/GetAssetDetail/GetAssetDetailService.png", width: 45%),
-  caption: [GetAssetDetailService]
+  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphicService.png", width: 45%),
+  caption: [GetAssetAnagraphicService]
 ) <fig-get-asset-detail-service>
 
 *Descrizione*
 
-_GetAssetDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero del dettaglio di un Asset. Implementa l'interfaccia _GetAssetDetailUseCase_, recupera la sessione attiva tramite _GetSessionPort_ e costruisce il _AssetDetail_ aggregando le informazioni dell'Asset con il suo stato di valutazione.
+_GetAssetAnagraphicService_ è il service applicativo appartenente all'Application Core responsabile del recupero del dettaglio di un Asset. Implementa l'interfaccia _GetAssetAnagraphicUseCase_, recupera la sessione attiva tramite _GetEvaluationSession_ e ritorna l'_AssetAnagraphic_ tramite _Asset_.
 
 *Attributi*
 
-_GetAssetDetailService_ non definisce attributi propri.
+_GetAssetAnagraphicService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_asset(command: GetAssetDetailCommand): AssetDetail` — concretizza il contratto definito da _GetAssetDetailUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne costruisce la rappresentazione _AssetDetail_.
+- `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — concretizza il contratto definito da _GetAssetAnagraphicUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne estrae l'_AssetAnagraphic_.
 
 
 
-==== AssetDetail
+==== AssetAnagraphic
 
 #figure(
-  image("../uml/png/GetAssetDetail/AssetDetail.png", width: 40%),
-  caption: [AssetDetail]
-) <fig-asset-detail>
+  image("../uml/png/GetAssetAnagraphic/AssetAnagraphic.png", width: 40%),
+  caption: [AssetAnagraphic]
+) <fig-asset-anagraphic>
 
 *Descrizione*
 
-_AssetDetail_ è il Data Transfer Object che veicola la rappresentazione completa di un Asset verso il livello di presentazione. Aggrega le informazioni dell'Asset con il suo stato di valutazione e la lista dei requisiti valutati, evitando di esporre direttamente l'entità di dominio.
+_AssetAnagraphic_ è un oggetto di dominio che contiene le informazioni anagrafiche dell'asset.
 
 *Attributi*
 
-- `+ asset_id: String` — identificativo univoco dell'Asset.
 - `+ name: String` — nome dell'Asset.
-- `+ type: AssetType` — tipo dell'Asset.
+- `+ asset_type: AssetType` — tipo dell'Asset.
 - `+ description: String` — descrizione testuale dell'Asset.
-- `+ aggregate_status: EvaluationState` — stato di valutazione aggregato dell'Asset.
-- `+ requirement_list: List<RequirementEval>` — lista dei requisiti valutati associati all'Asset.
 
 *Metodi e funzioni*
 
-_AssetDetail_ non definisce metodi.
-
-
-#block(breakable: false)[
-==== RequirementEval
-#figure(
-  image("../uml/png/GetAssetDetail/RequirementEval.png", width: 35%),
-  caption: [RequirementEval]
-) <fig-requirement-eval-domain>
-
-*Descrizione*
-
-_RequirementEval_ è il Data Transfer Object che rappresenta la valutazione di un singolo requisito di conformità associato all'Asset. È contenuto nella lista `requirement_list` di _AssetDetail_.
-
-*Attributi*
-
-- `+ codice_requisito: String` — codice identificativo del requisito di conformità.
-- `+ stato_valutazione: EvaluationState` — stato di valutazione del requisito.
-
-*Metodi e funzioni*
-
-_RequirementEval_ non definisce metodi.
-]
+_AssetAnagraphic_ non definisce metodi.
 
 

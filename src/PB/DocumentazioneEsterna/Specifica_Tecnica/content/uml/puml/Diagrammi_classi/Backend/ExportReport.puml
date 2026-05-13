@@ -32,11 +32,11 @@ package "Application Core" {
     }
 
     () "ReportGeneratorPort"
-    () "GetSessionPort"
+    () "GetEvaluationSessionPort"
 
    
     ExportReportService -[hidden]right- ExportReportCommand
-    ReportGeneratorPort -[hidden]right- GetSessionPort
+    ReportGeneratorPort -[hidden]right- GetEvaluationSessionPort
 
  
     ExportReportService -up- ExportReportUseCase
@@ -44,7 +44,7 @@ package "Application Core" {
     
     
     ExportReportService -down-> ReportGeneratorPort : usa
-    ExportReportService -down-> GetSessionPort : usa
+    ExportReportService -down-> GetEvaluationSessionPort : usa
     
 
 }
@@ -71,5 +71,5 @@ package "Outbound Adapter" {
 ExportReportController -down-> ExportReportUseCase : usa
 
 PdfReportGeneratorAdapter -up- ReportGeneratorPort 
-InMemoryEvaluationSessionCache -up- GetSessionPort 
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort 
 @enduml

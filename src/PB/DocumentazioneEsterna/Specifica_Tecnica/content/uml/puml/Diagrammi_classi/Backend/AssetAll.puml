@@ -81,8 +81,8 @@ package "Application Core" {
     !include Domain/Asset.puml
 
     ' --- PORTS ---
-    () "GetSessionPort"
-    () "SaveSessionPort"
+    () "GetEvaluationSessionPort"
+    () "SaveEvaluationSessionPort"
 
     GetDeviceDashboardUseCase -[hidden]right-------- GetAssetDetailUseCase
     GetAssetDetailUseCase -[hidden]right-------- CreateAssetUseCase
@@ -107,14 +107,14 @@ package "Application Core" {
 
     DashboardCommand -[hidden]down---- AssetSummaryCommand
     AssetDetail -[hidden]down---- RequirementEval
-    CreateAssetCommand -[hidden]down---- GetSessionPort
-    SaveAssetCommand -[hidden]down---- SaveSessionPort
+    CreateAssetCommand -[hidden]down---- GetEvaluationSessionPort
+    SaveAssetCommand -[hidden]down---- SaveEvaluationSessionPort
 
     Asset -[hidden]right- EvaluationSession
     EvaluationSession -[hidden]right- EvaluationSheet
-    EvaluationSheet -[hidden]down- GetSessionPort
+    EvaluationSheet -[hidden]down- GetEvaluationSessionPort
 
-    GetSessionPort -[hidden]right------------ SaveSessionPort
+    GetEvaluationSessionPort -[hidden]right------------ SaveEvaluationSessionPort
 
     DashboardCommand *-down- AssetSummaryCommand
     AssetDetail *-down- RequirementEval
@@ -142,19 +142,19 @@ CreateAssetUseCase -down- CreateAssetService
 UpdateAssetUseCase -down- UpdateAssetService
 DeleteAssetUseCase -down- DeleteAssetService
 
-GetDeviceDashboardService ---> GetSessionPort : usa
-GetAssetDetailService ---> GetSessionPort : usa
+GetDeviceDashboardService ---> GetEvaluationSessionPort : usa
+GetAssetDetailService ---> GetEvaluationSessionPort : usa
 
-CreateAssetService ---> GetSessionPort : usa
-CreateAssetService ---> SaveSessionPort : usa
+CreateAssetService ---> GetEvaluationSessionPort : usa
+CreateAssetService ---> SaveEvaluationSessionPort : usa
 
-UpdateAssetService ---> GetSessionPort : usa
-UpdateAssetService ---> SaveSessionPort : usa
+UpdateAssetService ---> GetEvaluationSessionPort : usa
+UpdateAssetService ---> SaveEvaluationSessionPort : usa
 
-DeleteAssetService ---> GetSessionPort : usa
-DeleteAssetService ---> SaveSessionPort : usa
+DeleteAssetService ---> GetEvaluationSessionPort : usa
+DeleteAssetService ---> SaveEvaluationSessionPort : usa
 
-GetSessionPort -down- InMemoryEvaluationSessionCache
-SaveSessionPort -down- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml

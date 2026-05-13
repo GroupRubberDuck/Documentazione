@@ -20,7 +20,7 @@ package "Application Core" {
     }
 
     () "SaveDevicePort"
-    () "GetSessionPort"
+    () "GetEvaluationSessionPort"
 
     !include Domain/Device.puml
 
@@ -28,10 +28,10 @@ package "Application Core" {
     CommitEvaluationSessionService .right.> CommitEvaluationSessionCommand : legge
 
     CommitEvaluationSessionService -down-> SaveDevicePort : usa
-    CommitEvaluationSessionService -down-> GetSessionPort : usa
+    CommitEvaluationSessionService -down-> GetEvaluationSessionPort : usa
     
     ' TRUCCO: Forza le porte a rimanere allineate orizzontalmente (sinistra -> destra)
-    SaveDevicePort -[hidden]right- GetSessionPort
+    SaveDevicePort -[hidden]right- GetEvaluationSessionPort
 }
 
 package "Outbound Adapter" {
@@ -46,6 +46,6 @@ EvaluationSessionController -down-> CommitEvaluationSessionUseCase : usa
 
 ' Le connessioni andranno ora dritte verso l'alto senza incrociarsi
 MongoDeviceAdapter -up- SaveDevicePort
-InMemoryEvaluationSessionCache -up- GetSessionPort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
 
 @enduml

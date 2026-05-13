@@ -22,19 +22,19 @@ package "Application Core" {
 
     !include ApplicationServices/EvaluateDecisionNodeService.puml
 
-    () "GetSessionPort"
-    () "SaveSessionPort"
+    () "GetEvaluationSessionPort"
+    () "SaveEvaluationSessionPort"
 
 
-    GetSessionPort -[hidden]right-------- SaveSessionPort
-    SaveSessionPort -[hidden]right-------- EvaluateDecisionNodeCommand
+    GetEvaluationSessionPort -[hidden]right-------- SaveEvaluationSessionPort
+    SaveEvaluationSessionPort -[hidden]right-------- EvaluateDecisionNodeCommand
 
 
 
     EvaluateDecisionNodeUseCase -down- EvaluateDecisionNodeService
     
-    EvaluateDecisionNodeService -down-> GetSessionPort : usa
-    EvaluateDecisionNodeService -down-> SaveSessionPort : usa
+    EvaluateDecisionNodeService -down-> GetEvaluationSessionPort : usa
+    EvaluateDecisionNodeService -down-> SaveEvaluationSessionPort : usa
 
     EvaluateDecisionNodeService .down.> EvaluateDecisionNodeCommand : legge
 }
@@ -46,7 +46,7 @@ package "Outbound Adapter" {
 
 EvaluationDecisionNodeController -down-> EvaluateDecisionNodeUseCase : usa
 
-GetSessionPort -down- InMemoryEvaluationSessionCache
-SaveSessionPort -down- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 
 @enduml
