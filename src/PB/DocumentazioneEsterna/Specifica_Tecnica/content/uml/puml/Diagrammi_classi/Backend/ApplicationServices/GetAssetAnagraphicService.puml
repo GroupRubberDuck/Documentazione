@@ -1,7 +1,7 @@
 @startuml GetAssetAnagraphicService
-
+skinparam ClassAttributeIconSize 0
 class GetAssetAnagraphicService {
-    get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic
+    + get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic
 }
 
 @enduml

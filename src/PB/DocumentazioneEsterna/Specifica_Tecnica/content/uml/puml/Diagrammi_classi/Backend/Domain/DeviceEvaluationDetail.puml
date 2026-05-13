@@ -1,13 +1,14 @@
 @startuml DeviceEvaluationDetail
+skinparam ClassAttributeIconSize 0
 
 class DeviceEvaluationDetail {
-    - device_id: String
-    - name: String
-    - operating_system: String
-    - description: String
-    - standard_id: String
-    - asset_details: List<AssetEvaluationDetail>
-    - verdict: EvaluationState
+    + device_id: String
+    + name: String
+    + operating_system: String
+    + description: String
+    + standard_id: String
+    + asset_details: List<AssetEvaluationDetail>
+    + verdict: EvaluationState
 }
 
 DeviceEvaluationDetail *--"0..*" AssetEvaluationDetail

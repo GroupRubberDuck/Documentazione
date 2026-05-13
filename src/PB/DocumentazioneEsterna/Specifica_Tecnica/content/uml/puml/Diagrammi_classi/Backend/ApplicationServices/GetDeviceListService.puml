@@ -1,8 +1,6 @@
 @startuml GetDeviceListService
 skinparam classAttributeIconSize 0
 class GetDeviceListService <<Application Service>> {
-    - find_port: FindAllDevicesPort
-
     + get_list(): List<DeviceSummary>
 }
 

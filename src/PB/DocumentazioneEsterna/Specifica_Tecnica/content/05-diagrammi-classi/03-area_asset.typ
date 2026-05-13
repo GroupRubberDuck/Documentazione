@@ -87,7 +87,9 @@ _FlaskWriteAssetController_ è il controller Flask appartenente all'Inbound Adap
 
 *Attributi*
 
-_FlaskWriteAssetController_ non definisce attributi propri.
+- `- create_asset_use_case: CreateAssetUseCase` — inbound port usata per la creazione di un asset
+- `- delete_asset_use_case: DeleteAssetUseCase` — inbound port usata per la rimozione di un asset
+- `- update_asset_use_case: UpdateAssetUseCase` — inbound port usata per l'aggiornamento di un asset
 
 *Metodi e funzioni*
 
@@ -155,7 +157,8 @@ _CreateAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-_CreateAssetService_ non definisce attributi propri.
+- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi e funzioni*
 
@@ -218,7 +221,7 @@ _AssetProprieties_ è l'entità delegata alla gestione dello stato valutativo e 
 
 *Attributi*
 
-- `- asset_evidence_list: List<AssetEvidence>` — struttura dati che incapsula e gestisce l'elenco delle evidenze (scelte e giustificazioni) associate all'asset.
+- `+ asset_evidence_list: List<AssetEvidence>` — struttura dati che incapsula e gestisce l'elenco delle evidenze (scelte e giustificazioni) associate all'asset.
 
 *Metodi e funzioni*
 
@@ -292,7 +295,7 @@ _GetEvaluationSessionPort_ non definisce attributi.
 
 #block(breakable: false)[
 #figure(
-  image("../uml/png/SaveAsset/UpdateAsset.png", width: 100%),
+  image("../uml/png/UpdateAsset/UpdateAsset.png", width: 100%),
   caption: [Caso d'uso UpdateAsset]
 ) <fig-save-asset>
 
@@ -310,7 +313,7 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 #block(breakable: false)[
 ==== UpdateAssetUseCase
 #figure(
-  image("../uml/png/SaveAsset/UpdateAssetUseCase.png", width: 40%),
+  image("../uml/png/UpdateAsset/UpdateAssetUseCase.png", width: 40%),
   caption: [UpdateAssetUseCase]
 ) <fig-save-asset-use-case>
 *Descrizione*
@@ -329,7 +332,7 @@ _UpdateAssetUseCase_ non definisce attributi.
 
 ==== UpdateAssetCommand
 #figure(
-  image("../uml/png/SaveAsset/UpdateAssetCommand.png", width: 35%),
+  image("../uml/png/UpdateAsset/UpdateAssetCommand.png", width: 35%),
   caption: [UpdateAssetCommand]
 ) <fig-save-asset-command>
 
@@ -355,7 +358,7 @@ _UpdateAssetCommand_ non definisce metodi.
 ==== UpdateAssetService
 
 #figure(
-  image("../uml/png/SaveAsset/UpdateAssetService.png", width: 45%),
+  image("../uml/png/UpdateAsset/UpdateAssetService.png", width: 45%),
   caption: [UpdateAssetService]
 ) <fig-save-asset-service>
 
@@ -365,7 +368,8 @@ _UpdateAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-_UpdateAssetService_ non definisce attributi propri.
+- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi e funzioni*
 
@@ -445,7 +449,8 @@ _DeleteAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-_DeleteAssetService_ non definisce attributi propri.
+- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi e funzioni*
 
@@ -465,7 +470,7 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero del dettagl
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 
-//TODO: MANCA IL FLASKCONTROLLER
+==== FlaskAssetAnagraphicController
 
 
 
@@ -522,7 +527,7 @@ _GetAssetAnagraphicService_ è il service applicativo appartenente all'Applicati
 
 *Attributi*
 
-_GetAssetAnagraphicService_ non definisce attributi propri.
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi e funzioni*
 
@@ -550,5 +555,102 @@ _AssetAnagraphic_ è un oggetto di dominio che contiene le informazioni anagrafi
 *Metodi e funzioni*
 
 _AssetAnagraphic_ non definisce metodi.
+
+=== GetAssetEvaluationDetail
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetail.png", width: 100%),
+  caption: [GetAssetEvaluationDetail],
+) <fig-get-device-evaluation-detail>
+
+Il diagramma illustra l'architettura del modulo dedicato al recupero di un _AssetEvaluationDetail_ contenente informazioni anagrafiche e stato di valutazione del dispositivo.
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+
+==== FlaskAssetEvaluationDetailController
+
+
+==== GetAssetEvaluationDetailCommand
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailCommand.png", width: 40%),
+  caption: [GetAssetEvaluationDetailCommand],
+) <fig-get-device-evaluation-detail-command>
+
+*Descrizione*
+
+_GetAssetEvaluationDetailCommand_ è il Command Object utilizzato per trasportare i dati necessari al recupero di un _AssetEvaluationDetail_. Incapsula i parametri di input del metodo esposto da _GetAssetEvaluationDetailUseCase_.
+
+*Attributi*
+
+- `+ session_id: String` — identificativo univoco della sessione
+- `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
+
+*Metodi e funzioni*
+
+_GetAssetEvaluationDetailCommand_ non definisce metodi propri.
+
+==== GetAssetEvaluationDetailUseCase
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailUseCase.png", width: 40%),
+  caption: [GetAssetEvaluationDetailUseCase],
+) <fig-get-device-evaluation-detail-use-case>
+
+*Descrizione*
+
+_GetAssetEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per il recupero di un _AssetEvaluationDetail_. Viene implementata da _GetAssetEvaluationDetailService_ e utilizzata da _FlaskAssetEvaluationDetailController_.
+
+*Attributi*
+
+_GetAssetEvaluationDetailUseCase_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
+
+==== GetAssetEvaluationDetailService
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailService.png", width: 50%),
+  caption: [GetAssetEvaluationDetailService],
+) <fig-get-device-evaluation-detail-service>
+
+*Descrizione*
+
+Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione di valutazione specificata, esegue la valutazione del dispositivo tramite l'engine e isola i risultati dell'Asset richiesto. Infine, aggrega i dati anagrafici di tale Asset con i risultati della valutazione dei suoi requisiti, restituendo la rappresentazione _AssetEvaluationDetail_
+
+*Attributi*
+
+_GetAssetEvaluationDetailService_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` —
+concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
+
+==== AssetEvaluationDetail
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/AssetEvaluationDetail.png", width: 45%),
+  caption: [AssetEvaluationDetail],
+)
+
+*Descrizione*
+
+_AssetEvaluationDetail_ è l'oggetto di dominio che contiene le informazioni anagrafiche dell'asset ed il suo stato di valutazione attuale.
+
+*Attributi*
+
+- `asset_id: String` è l'identificativo univoco dell'asset
+- `name: String` è il nome dell'asset
+- `asset_type: AssetType` è il tipo dell'asset
+- `description: String` è la descrizione dell'asset
+- `requirement_details: List<RequirementEvaluationDetail>` è la lista di requisiti che appartengono all'asset
+- `verdict: EvaluationState` è lo stato della valutazione dell'asset
+
+
+*Metodi e funzioni*
+
+_AssetEvaluationDetail_ non definisce metodi.
+
 
 
