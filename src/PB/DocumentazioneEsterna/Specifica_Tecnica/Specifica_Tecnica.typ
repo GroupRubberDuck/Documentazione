@@ -204,11 +204,19 @@
     ),
     (
       [0.11.0],
-      [2026-05-14],
-      [#persone.ALDO],
+      [2026-05-12],
+      [#persone.FELIX],
       [],
-      [Riviste classi di session]
+      [Riviste classi di sessione e valutazione:@classe_valutazione e @Valutazione]
+    ),
+    (
+      [0.12.0],
+      [2026-05-14],
+      [#persone.FELIX],
+      [],
+      [Riviste classi di importazione ed esportazione: @import e @export]
     )
+
 
   )
   #registroModifiche(modifiche)

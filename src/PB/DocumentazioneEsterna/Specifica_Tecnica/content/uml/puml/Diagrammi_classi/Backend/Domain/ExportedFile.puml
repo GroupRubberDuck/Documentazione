@@ -1,0 +1,10 @@
+@startuml ExportedFile
+skinparam classAttributeIconSize 0
+
+class ExportedFile {
+    + content: IO[bytes]
+    + filename: String
+    + media_type: String
+}
+
+@enduml

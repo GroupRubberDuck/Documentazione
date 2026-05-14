@@ -28,9 +28,6 @@ package "Application Core" {
 
     class EvaluationEngine {
     + evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult
-    - evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult
-    - resolve(requirement_id: String, standard: ComplianceStandard, asset: Asset, cache: Dict): RequirementEvaluationResult
-    - aggregate_evaluation_states(states: Sequence): EvaluationState
 }
 
     () "ReportGeneratorPort" as ReportGeneratorPort

@@ -7,6 +7,9 @@ skinparam packageStyle rectangle
 
 package "Inbound Adapter" {
     !include InboundAdapters/ImportDeviceController.puml
+    !include InboundAdapters/UploadFileController.puml
+
+    ImportDeviceController .right.> UploadFileController : usa
 }
 
 package "Application Core" {
@@ -27,8 +30,6 @@ package "Application Core" {
     ImportDeviceService -down-> FileDeviceImporterPort : usa
 
     ImportDeviceCommand -right-> AllowedDeviceFileExtension : usa
-
-    
 }
 
 package "Outbound Adapter" {
