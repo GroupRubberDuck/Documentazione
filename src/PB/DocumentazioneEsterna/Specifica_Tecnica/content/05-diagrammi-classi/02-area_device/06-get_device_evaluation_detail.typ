@@ -1,6 +1,6 @@
 === GetDeviceEvaluationDetail
 #figure(
-  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetail.png", width: 100%),
+  image("../uml/png/GetDeviceEvaluationDetail/GetDeviceEvaluationDetail1.png", width: 100%),
   caption: [GetDeviceEvaluationDetail],
 ) <fig-get-device-evaluation-detail>
 
@@ -8,16 +8,35 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero della dashb
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
 
-==== FlaskQueryDashboardController
+// ==== FlaskQueryDashboardController
+
+// #figure(
+//   image("../uml/png/GetDeviceEvaluationDetail/FlaskQueryDashboardController.png", width: 40%),
+//   caption: [FlaskQueryDashboardController],
+// ) <fig-flask-query-dashboard-controller>
+
+// *Descrizione*
+
+// _FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura di un device per la dashboard.
+
+// *Attributi*
+
+// - `- get_device_evaluation_detail_use_case: GetDeviceEvaluationDetailUseCase` — inbound port usata per prelevare un _DeviceEvaluationDetail_.
+
+// *Metodi e funzioni*
+
+// - `+ get_device_dashboard(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
+
+==== FlaskDeviceEvaluationDetailController
 
 #figure(
-  image("../uml/png/GetDeviceEvaluationDetail/FlaskQueryDashboardController.png", width: 40%),
+  image("../uml/png/GetDeviceEvaluationDetail/FlaskDeviceEvaluationDetailController.png", width: 40%),
   caption: [FlaskQueryDashboardController],
 ) <fig-flask-query-dashboard-controller>
 
 *Descrizione*
 
-_FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura di un device per la dashboard.
+_FlaskDeviceEvaluationDetailController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP di lettura di un device per la dashboard.
 
 *Attributi*
 
@@ -25,7 +44,8 @@ _FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Ada
 
 *Metodi e funzioni*
 
-- `+ get_device_dashboard(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
+- `+ get_device_evaluation_detail(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
+
 
 ==== GetDeviceEvaluationDetailCommand
 
@@ -82,6 +102,7 @@ _GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Ap
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port per prelevare la sessione di valutaione.
 
 *Metodi e funzioni*
+#set par(justify: false)
 
 - `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` —
 concretizza il contratto definito da _GetDeviceEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DeviceEvaluationDetail_.
@@ -110,3 +131,28 @@ _DeviceEvaluationDetail_ è l'oggetto di dominio che contiene le informazioni an
 *Metodi e funzioni*
 
 _EvaluationDetailCommand_ non definisce metodi.
+
+
+==== EvaluationEngine
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/EvaluationEngine.png", width: 100%),
+  caption: [DeviceEvaluationDetail],
+)
+
+*Descrizione*
+
+_EvaluationEngine_ è il componente core del dominio che incapsula la logica di valutazione. Ha la responsabilità di valutare la conformità di un _Device_ rispetto a un _ComplianceStandard_, calcolando iterativamente i verdetti per i suoi asset e risolvendo ricorsivamente i requisiti tramite memoizzazione.
+
+*Attributi*
+
+_EvaluationEngine_ non definisce attributi.
+
+*Metodi e funzioni*
+
+- `+ evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult` — metodo pubblico principale che orchestra la valutazione del dispositivo calcolando e aggregando i risultati dei suoi singoli asset.
+
+- `- evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult` — valuta un singolo asset verificando tutti i requisiti dello standard. Inizializza e gestisce la `cache` per l'elaborazione dei requisiti.
+
+- `- resolve(requirement_id: String, standard: ComplianceStandard, asset: Asset, cache: Map<String, RequirementEvaluationResult>): RequirementEvaluationResult` — risolve e valuta un singolo requisito e le sue dipendenze in modo ricorsivo. Sfrutta la `cache` passata per riferimento per applicare il pattern della memoizzazione ed evitare ricalcoli.
+
+- `- aggregate_evaluation_states(states: List<EvaluationState>): EvaluationState` — funzione di utilità che aggrega una lista di stati in un unico verdetto finale. La priorità del fallimento decreta `FAIL` se presente, seguito da `PENDING` in assenza di evidenze, e infine `PASS`.

@@ -123,6 +123,7 @@ _Asset_ è l'entità di dominio che rappresenta un asset oggetto di valutazione 
 - `+ set_justification(requirement_id: String, node_id: String, value: Bool): void` — imposta la giustificazione per un determinato nodo di un requisito. 
 - `+ update_anagraphic(name: String, type: AssetType, description: String): void` — aggiorna le informazioni anagrafiche dell'asset (nome, tipologia e descrizione), delegando l'aggiornamento all'istanza interna di _AssetAnagraphic_.
 
+==== AssetAnagraphic <AssetAnagraphic>
 #figure(
   image("../uml/png/CreateAsset/AssetAnagraphic.png", width: 20%),
   caption: [AssetAnagraphic]

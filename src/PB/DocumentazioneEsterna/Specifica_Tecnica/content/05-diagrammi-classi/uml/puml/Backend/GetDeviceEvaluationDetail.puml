@@ -5,7 +5,8 @@ skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    !include InboundAdapters/FlaskQueryDashboardController.puml
+    '!include InboundAdapters/FlaskQueryDashboardController.puml
+    !include InboundAdapters/FlaskDeviceEvaluationDetailController.puml
 }
 
 package "Application Core" {
@@ -28,7 +29,8 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-FlaskQueryDashboardController -down-> GetDeviceEvaluationDetailUseCase : usa
+FlaskDeviceEvaluationDetailController -down-> GetDeviceEvaluationDetailUseCase : usa
+'FlaskQueryDashboardController -down-> GetDeviceEvaluationDetailUseCase : usa
 GetDeviceEvaluationDetailUseCase -down- GetDeviceEvaluationDetailService
 GetDeviceEvaluationDetailService -down-> GetEvaluationSessionPort : usa
 GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
