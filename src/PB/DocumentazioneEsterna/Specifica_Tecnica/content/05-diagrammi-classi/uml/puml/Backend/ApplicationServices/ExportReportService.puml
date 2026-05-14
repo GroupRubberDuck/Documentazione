@@ -4,9 +4,5 @@ skinparam classAttributeIconSize 0
 
 class GenerateReportService <<Application Service>> {
     + export_report(command: GenerateReportCommand): ExportedFile
-    - build_device_detail(result: DeviceEvaluationResult, device: Device, standard: ComplianceStandard): DeviceEvaluationDetail
-    - build_asset_detail(result: AssetEvaluationResult, device: Device, standard: ComplianceStandard): AssetEvaluationDetail
-    - build_requirement_detail(result: RequirementEvaluationResult, req: Requirement): RequirementEvaluationDetail
 }
-
 @enduml

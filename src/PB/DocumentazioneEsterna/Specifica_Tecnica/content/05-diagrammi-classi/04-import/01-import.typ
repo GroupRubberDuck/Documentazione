@@ -97,7 +97,7 @@ L'exporter è implementato tramite un template method le cui implementazioni con
 
 Essendo importazione ed esportazione 2 processi strettamente collegati, è stato ritenuto accettabile mantenere una classe condivisa di DTO, in quanto i dati necessari sono gli stessi sia durante il processo di importazione sia di esportazione
 */
-== Import
+== Import <import>
 === ImportDevice
 
 #figure(
@@ -118,7 +118,7 @@ Di seguito vengono documentati i componenti introdotti specificamente per questo
 ) 
 *Descrizione*
 
-_UploadFileController_ è una classe di utilità appartenente all'Inbound Adapter che fornisce i metodi comuni per l'estrazione del contenuto e dell'estensione di un file dalla richiesta HTTP. Viene estesa da _ImportDeviceController_.
+_UploadFileController_ è una classe di utilità appartenente all'Inbound Adapter che fornisce i metodi comuni per l'estrazione del contenuto e dell'estensione di un file dalla richiesta HTTP. Viene utilizzata da _ImportDeviceController_.
 
 *Attributi*
 
@@ -126,8 +126,8 @@ _UploadFileController_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ get_http_file_payload(): BinaryIO` — estrae il contenuto binario del file dalla richiesta HTTP.
-- `+ get_http_file_extension(): String` — estrae l'estensione del file dalla richiesta HTTP.
+- `+ get_http_file_payload(file: FileStorage): IO[bytes]` — estrae il contenuto binario del file dalla richiesta HTTP.
+- `+ get_http_file_extension(filename: String): AllowedDeviceFileExtension` — estrae l'estensione del file dalla richiesta HTTP.
 ]
 
 ==== ImportDeviceController
@@ -149,25 +149,6 @@ _ImportDeviceController_ non definisce attributi propri.
 
 - `+ import_device(req: Request): Response` — riceve la richiesta HTTP di importazione, estrae il file e la sua estensione tramite _UploadFileController_ e inoltra il Command al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
-==== UploadFileController
-
-#figure(
-  image("../uml/png/ImportDevice/UploadFileController.png", width: 40%),
-  caption: [UploadFileController]
-) <fig-upload-file-controller>
-
-*Descrizione*
-
-_UploadFileController_ è una classe di utilità appartenente all'Inbound Adapter che fornisce metodi di supporto per l'estrazione del file dalla request HTTP. Viene utilizzata da _ImportDeviceController_.
-
-*Attributi*
-
-_UploadFileController_ non definisce attributi propri.
-
-*Metodi e funzioni*
-
-- `+ get_http_file_payload(): BinaryIO` — estrae e restituisce il contenuto binario del file dalla request HTTP.
-- `+ get_http_file_extension(): String` — estrae e restituisce l'estensione del file dalla request HTTP.
 
 #block(breakable: false)[
 ==== ImportDeviceUseCase
@@ -212,7 +193,7 @@ _ImportDeviceCommand_ non definisce metodi propri.
 
 
 
-==== AllowedDeviceFileExtension
+==== AllowedDeviceFileExtension <AllowedDeviceFileExtension>
 #figure(
   image("../uml/png/ImportDevice/AllowedDeviceFileExtension.png", width: 40%),
   caption: [AllowedDeviceFileExtension]
@@ -240,12 +221,10 @@ _ImportDeviceService_ è il service applicativo appartenente all'Application Cor
 
 *Attributi*
 
-- `- device_repository: DeviceRepositoryPort` — porta outbound per la persistenza dei Dispositivi importati.
-- `- device_importer_factory: FileDeviceImporterFactoryPort` — porta outbound per l'ottenimento dell'importer appropriato in base al formato del file.
+_ImportDeviceService_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ __init__(device_importer_factory: FileDeviceImporterFactoryPort, device_repository: DeviceRepositoryPort)` — inizializza il service con le dipendenze necessarie.
 - `+ import_device(command: ImportDeviceCommand): void` — concretizza il contratto definito da _ImportDeviceUseCase_. Ottiene l'importer appropriato tramite la factory, effettua il parsing del file e persiste i Dispositivi estratti tramite _DeviceRepositoryPort_.
 
 #block(breakable: false)[
@@ -301,17 +280,17 @@ _FileDeviceImporter_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ parse_device_file(device_file_content: BinaryIO): Device` — metodo pubblico che orchestra l'algoritmo di parsing invocando in sequenza i metodi del template.
-- `# check_metadata()` — metodo protetto che verifica i metadati del file.
-- `# open_stream()` — metodo protetto che apre lo stream di lettura del file.
-- `# parse_data()` — metodo protetto che effettua il parsing dei dati.
-- `# close_stream()` — metodo protetto che chiude lo stream di lettura.
-
-
+- `+ parse_device_file(device_file_content: IO[bytes]): Device` — metodo pubblico che orchestra l'algoritmo di parsing invocando in sequenza i metodi del template; restituisce l'entità _Device_ estratta dal file.
+- `# deserialize(device_file_content: IO[bytes]): Any` — metodo protetto astratto che deserializza il contenuto binario del file nella struttura dati grezza specifica del formato; deve essere implementato dalle sottoclassi.
+- `# parse_data(raw: Any): dict` — metodo protetto astratto che estrae e normalizza i campi necessari dalla struttura dati grezza; deve essere implementato dalle sottoclassi.
+- `- pre_validate(device_file_content: IO[bytes]): void` — metodo privato che verifica che il file non superi la dimensione massima consentita di 10 MB prima di procedere al parsing.
+- `- close_stream(): void` — metodo privato che chiude lo stream di lettura del file.
+- `- build_device(data: dict): Device` — metodo privato che costruisce l'entità _Device_ a partire dal dizionario normalizzato, verificando la presenza dei campi obbligatori.
+- `- build_asset(asset_data: dict): Asset` — metodo privato che costruisce un'entità _Asset_ a partire dai dati del singolo asset estratti dal file.
 
 ==== XMLFileDeviceImporter, JSONFileDeviceImporter, CSVFileDeviceImporter
 #figure(
-  image("../uml/png/ImportDevice/Class.png", width: 60%),
+  image("../uml/png/ImportDevice/FilesDeviceImporter.png", width: 60%),
   caption: [XMLFileDeviceImporter, JSONFileDeviceImporter, CSVFileDeviceImporter]
 ) 
 *Descrizione*
@@ -325,10 +304,9 @@ Le tre classi non definiscono attributi propri.
 *Metodi e funzioni*
 
 Ciascuna classe implementa i metodi ereditati da _FileDeviceImporter_:
-- `# check_metadata()` — verifica i metadati specifici del formato.
-- `# open_stream()` — apre lo stream nel formato appropriato.
-- `# parse_data()` — effettua il parsing dei dati nel formato specifico.
-- `# close_stream()` — chiude lo stream di lettura.
+
+- `# deserialize(device_file_content: IO[bytes]): Any` — metodo protetto che deserializza il contenuto binario del file nel formato specifico della sottoclasse.
+- `# parse_data(raw: Any): dict` — metodo protetto che estrae e normalizza i campi necessari dalla struttura dati grezza prodotta da `deserialize`; la logica di navigazione è specifica per ciascun formato.
 
 
 
@@ -348,6 +326,9 @@ _ConcreteFileDeviceImporterFactory_ non definisce attributi propri.
 *Metodi e funzioni*
 
 - `+ get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort` — restituisce l'istanza dell'importer corrispondente al formato specificato.
+
+
+
 
 
 === ImportStandard
