@@ -201,6 +201,13 @@
       [#persone.ALDO],
       [],
       [Riviste le parti di device e asset]
+    ),
+    (
+      [0.11.0],
+      [2026-05-14],
+      [#persone.ALDO],
+      [],
+      [Riviste classi di session]
     )
 
   )

@@ -21,7 +21,7 @@ package "Application Core" {
     () "FindDevicePort"
     () "FindStandardPort"
     () "CreateEvaluationSessionPort" as CreatePort
-    () "EvaluationSessionExistsPort" as ExistsPort
+    () "EvaluationSessionExistPort" as ExistPort
 
     OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
     OpenEvaluationSessionService .down.> OpenEvaluationSessionCommand : legge
@@ -31,7 +31,7 @@ package "Application Core" {
     OpenEvaluationSessionService -down-> CreatePort : usa
     OpenEvaluationSessionService -left-> SessionCoordinator : usa
 
-    SessionCoordinator --> ExistsPort : usa
+    SessionCoordinator --> ExistPort : usa
     SessionCoordinator --> SessionHandler : usa
 
     CreatePort -[hidden]right- OpenEvaluationSessionCommand
@@ -48,6 +48,6 @@ EvaluationSessionController -right-> OpenEvaluationSessionUseCase : usa
 MongoDeviceAdapter -up- FindDevicePort
 MongoComplianceStandardAdapter -up- FindStandardPort
 InMemoryEvaluationSessionCache -up- CreatePort
-InMemoryEvaluationSessionCache -up- ExistsPort
+InMemoryEvaluationSessionCache -up- ExistPort
 
 @enduml
