@@ -1,0 +1,8 @@
+@startuml FlaskQueryAssetController
+skinparam ClassAttributeIconSize 0
+
+class FlaskQueryAssetController <<Flask Blueprint>> {
+    + edit_asset_page(req: Request): Response
+}
+
+@enduml

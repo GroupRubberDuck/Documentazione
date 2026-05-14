@@ -9,7 +9,22 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero di un _Asse
 - Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
 
 ==== FlaskAssetEvaluationDetailController
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/FlaskAssetEvaluationDetailController.png", width: 45%),
+  caption: [GetAssetEvaluationDetail],
+) <fig-get-device-evaluation-detail>
 
+*Descrizione*
+
+_FlaskAssetEvaluationDetailController_ è un adapter di input (controller) che ha la responsabilità di intercettare le richieste per la visualizzazione del dettaglio di valutazione di un asset, interrogare il core applicativo (attraverso le porte di inbound) e presentare i risultati o gli eventuali errori di dominio alla vista.
+
+*Attributi*
+
+- `- _get_asset_ev_detail_use_case: GetAssetDetailUseCase` — istanza del caso d'uso necessaria per recuperare i dettagli della valutazione dell'asset richiesto.
+
+*Metodi e funzioni*
+
+- `+ get_asset_evaluation_detail(session_id: String, device_id: String, asset_id: String): Response` — preleva tramite la porta di inbound l'oggetto di dominio _AssetEvaluationDetail_.
 
 ==== GetAssetEvaluationDetailCommand
 
@@ -34,7 +49,7 @@ _GetAssetEvaluationDetailCommand_ non definisce metodi propri.
 ==== GetAssetEvaluationDetailUseCase
 
 #figure(
-  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailUseCase.png", width: 40%),
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailUseCase.png", width: 70%),
   caption: [GetAssetEvaluationDetailUseCase],
 ) <fig-get-device-evaluation-detail-use-case>
 
@@ -48,12 +63,13 @@ _GetAssetEvaluationDetailUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
+#set par(justify: false)
 - `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
 
 ==== GetAssetEvaluationDetailService
 
 #figure(
-  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailService.png", width: 50%),
+  image("../uml/png/GetAssetEvaluationDetail/GetAssetEvaluationDetailService.png", width: 70%),
   caption: [GetAssetEvaluationDetailService],
 ) <fig-get-device-evaluation-detail-service>
 
@@ -63,7 +79,7 @@ Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera
 
 *Attributi*
 
-_GetAssetEvaluationDetailService_ non definisce attributi propri.
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per recuperare la sessione.
 
 *Metodi e funzioni*
 

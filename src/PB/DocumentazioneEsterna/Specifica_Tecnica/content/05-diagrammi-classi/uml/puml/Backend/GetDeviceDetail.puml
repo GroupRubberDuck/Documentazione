@@ -5,7 +5,7 @@ skinparam ranksep 80
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter"{
-    !include InboundAdapters/QueryDeviceController.puml
+    !include InboundAdapters/FlaskQueryDeviceController.puml
 }
 
 package "Application Core" {
@@ -27,7 +27,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/MongoStandardAdapter.puml
 }
 
-GetDeviceDetailService - GetDeviceDetailUseCase
+GetDeviceDetailService -up- GetDeviceDetailUseCase
 GetComplianceStandardService - GetComplianceStandardUseCase
 
 GetDeviceDetailService .> GetDeviceDetailCommand : legge
@@ -36,9 +36,9 @@ GetComplianceStandardService .> GetComplianceStandardCommand: legge
 GetDeviceDetailService --> FindDevicePort: usa
 GetComplianceStandardService --> FindStandardPort: usa
 
-QueryDeviceController --> GetDeviceDetailUseCase: usa
-QueryDeviceController --> GetComplianceStandardUseCase: usa
-MongoDeviceAdapter - FindDevicePort
-MongoStandardAdapter - FindStandardPort
+FlaskQueryDeviceController --> GetDeviceDetailUseCase: usa
+FlaskQueryDeviceController --> GetComplianceStandardUseCase: usa
+MongoDeviceAdapter -up- FindDevicePort
+MongoComplianceStandardAdapter -up- FindStandardPort
 
 @enduml

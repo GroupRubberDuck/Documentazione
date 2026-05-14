@@ -14,7 +14,7 @@ Il diagramma illustra l'architettura del modulo dedicato all'eliminazione di un 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ==== DeleteDeviceUseCase
 #figure(
-  image("../uml/png/DeleteDevice/DeleteDeviceUseCase.png", width: 40%),
+  image("../uml/png/DeleteDevice/DeleteDeviceUseCase.png", width: 100%),
   caption: [DeleteDeviceUseCase],
 ) <fig-delete-device-use-case>
 *Descrizione*

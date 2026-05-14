@@ -1,8 +1,0 @@
-@startuml QueryAssetController
-
-class QueryAssetController <<Flask Blueprint>> {
-    + __init__(asset_query_use_case:AssetQueryUseCase)
-    + get_asset_by_id(request:Request):Response
-}
-
-@enduml

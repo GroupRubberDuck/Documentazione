@@ -5,7 +5,7 @@ skinparam ranksep 100
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    class AssetAnagraphicController{}
+    !include InboundAdapters/FlaskQueryAssetController.puml
 }
 
 package "Application Core" {
@@ -35,7 +35,7 @@ package "Outbound Adapter" {
     }
 }
 
-AssetAnagraphicController --> GetAssetAnagraphicUseCase : usa
+FlaskQueryAssetController --> GetAssetAnagraphicUseCase : usa
 InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
 
 @enduml

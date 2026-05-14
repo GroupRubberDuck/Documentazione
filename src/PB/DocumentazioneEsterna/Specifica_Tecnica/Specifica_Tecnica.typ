@@ -189,15 +189,22 @@
       [0.8.0],
       [2026-05-03],
       [Ana Maria Draghici],
-      [],
+      [#persone.ALDO],
       [Scomposizione sezioni a partire dalla @classe_disp: Device, Asset e Session ]
     ),
     (
       [0.9.0],
       [2026-05-06],
       [Ana Maria Draghici],
-      [],
+      [#persone.ALDO],
       [Scomposizione sezioni a partire dalla @classe_disp: Import, ValutazioneRequisiti, Dashboard,Export e Frontend ]
+    ),
+    (
+      [0.10.0],
+      [2026-05-14],
+      [#persone.ALDO],
+      [],
+      [Riviste le parti di device e asset]
     )
 
   )

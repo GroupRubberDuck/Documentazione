@@ -1,3 +1,4 @@
+== Asset <Asset>
 #include "01-create_asset.typ"
 #include "02-update_asset.typ"
 #include "03-delete_asset.typ"
