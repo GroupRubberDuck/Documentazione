@@ -51,25 +51,28 @@ package "Outbound Adapter" {
     !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
     !include OutboundAdapters/FileDeviceExporter.puml
 
-    class CSVFileDeviceExporter {
+     class CSVFileDeviceExporter {
         - output: StringIO
         - writer: Any
-        # _prepare_structure(device: Device): None
-        # _write_data(device: Device): None
-        # _finalize_output(): bytes
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
     }
 
     class JSONFileDeviceExporter {
-        # _prepare_structure(device: Device): None
-        # _write_data(device: Device): None
-        # _finalize_output(): bytes
+        - data: Dict
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
     }
 
     class XMLFileDeviceExporter {
-        # _prepare_structure(device: Device): None
-        # _write_data(device: Device): None
-        # _finalize_output(): bytes
+        - root: ET.Element
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
     }
+
 
     FileDeviceExporter <|-down- JSONFileDeviceExporter
     FileDeviceExporter <|-down- XMLFileDeviceExporter

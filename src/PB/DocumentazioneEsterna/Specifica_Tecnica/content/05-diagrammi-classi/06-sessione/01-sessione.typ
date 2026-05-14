@@ -123,7 +123,7 @@ _OpenEvaluationSessionUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ open(command: OpenEvaluationSessionCommand): String` — firma del metodo delegato all'esecuzione della logica di apertura della sessione a partire dai dati contenuti nel Command.
+- `+ open_evaluation_session(command: OpenEvaluationSessionCommand): String` — firma del metodo delegato all'esecuzione della logica di apertura della sessione a partire dai dati contenuti nel Command.
 
 ==== OpenEvaluationSessionService
 
@@ -134,7 +134,7 @@ _OpenEvaluationSessionUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_OpenEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di apertura di una sessione di valutazione. Implementa l'interfaccia _OpenEvaluationSessionUseCase_ e coordina il recupero del Dispositivo tramite _FindDevicePort_, il recupero dello standard di conformità tramite _FindStandardPort_ e la creazione della sessione tramite _CreateEvaluationSessionPort_.
+_OpenEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di apertura di una sessione di valutazione. Implementa l'interfaccia _OpenEvaluationSessionUseCase_ e coordina il recupero del Dispositivo tramite _FindDevicePort_, il recupero dello standard di conformità tramite _FindStandardPort_, la verifica delle precondizioni tramite _SessionCoordinator_ e la creazione della sessione tramite _CreateEvaluationSessionPort_.
 
 *Attributi*
 
@@ -142,16 +142,16 @@ _OpenEvaluationSessionService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ open(command: OpenEvaluationSessionCommand): String` — concretizza il contratto definito da _OpenEvaluationSessionUseCase_. Recupera il Dispositivo e lo standard associato, inizializza una nuova _EvaluationSession_ e ne richiede la creazione tramite _CreateEvaluationSessionPort_; restituisce l'identificativo della sessione creata.
+- `+ open_evaluation_session(command: OpenEvaluationSessionCommand): String` —  concretizza il contratto definito da _OpenEvaluationSessionUseCase_. Verifica tramite _SessionCoordinator_ che non esistano sessioni attive, recupera il Dispositivo e lo standard associato, inizializza una nuova _EvaluationSession_ e ne richiede la creazione tramite _CreateEvaluationSessionPort_; restituisce l'identificativo della sessione creata.
 
 ==== SessionCoordinator
 #figure(
-  image("../uml/png/Session/SaveAssetService.png", width: 45%),
-  caption: [SaveAssetService]
-) <fig-save-asset-service-session>
+  image("../uml/png/Session/SessionCoordinator.png", width: 45%),
+  caption: [SessionCoordinator]
+) <fig-session-coordinator>
 *Descrizione*
 
-_SessionCoordinator_ è il Domain Service che coordina la logica di dominio relativa alla gestione della sessione di valutazione. Verifica le precondizioni necessarie all'apertura di una sessione, come l'assenza di sessioni attive per il Dispositivo.
+_SessionCoordinator_ è il Domain Service che coordina la logica di dominio relativa alla gestione della sessione di valutazione. Verifica le precondizioni necessarie all'apertura di una sessione delegando la logica di business a _SessionHandler_ e la verifica dell'esistenza di sessioni attive a _EvaluationSessionExistsPort_.
 
 *Attributi*
 
@@ -159,8 +159,44 @@ _SessionCoordinator_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ can_open_session(session_type: SessionType): bool` — verifica se è possibile aprire una nuova sessione del tipo specificato, restituendo `true` se le precondizioni sono soddisfatte.
+- `+ can_open_session(): bool` — verifica se è possibile aprire una nuova sessione interrogando _EvaluationSessionExistsPort_ per conoscere lo stato attuale e delegando la decisione a _SessionHandler_; restituisce true se le precondizioni sono soddisfatte.
 
+==== SessionHandler
+
+#figure(
+  image("../uml/png/Session/SessionHandler.png", width: 45%),
+  caption: [SessionHandler]
+) <fig-session-handler>
+
+*Descrizione*
+
+_SessionHandler_ è il Domain Service che incapsula la logica di business relativa all'apertura di una sessione di valutazione. Riceve lo stato dell'esistenza di sessioni attive e determina se è possibile aprirne una nuova.
+
+*Attributi*
+
+_SessionHandler_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ can_open_session(active_session_exists: bool): bool` —  restituisce true se non esiste già una sessione attiva, false altrimenti.
+
+==== EvaluationSessionExistsPort
+#figure(
+  image("../uml/png/Session/EvaluationSessionExistsPort.png", width: 45%),
+  caption: [EvaluationSessionExistsPort]
+) <fig-evaluation-session-exists-port>
+
+*Descrizione*
+
+_EvaluationSessionExistsPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la verifica dell'esistenza di una sessione attiva. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _SessionCoordinator_.
+
+*Attributi*
+
+_EvaluationSessionExistsPort_ non definisce attributi propri.
+
+*Metodi e funzioni*
+
+- `+ has_active_session(): bool` —  restituisce true se esiste una sessione attiva in memoria, false altrimenti.
 
 
 ==== CreateEvaluationSessionPort
@@ -171,36 +207,18 @@ _SessionCoordinator_ non definisce attributi propri.
 
 *Descrizione*
 
-_CreateSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la creazione di una nuova sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _OpenEvaluationSessionService_.
+_CreateEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la creazione di una nuova sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _OpenEvaluationSessionService_.
 
 *Attributi*
 
-_CreateSessionPort_ non definisce attributi.
+_CreateEvaluationSessionPort_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ create_session(): EvaluationSession` — firma del metodo che inizializza e registra una nuova sessione di valutazione nel sistema in memoria.
-
-
-=== SaveEvaluationSession <SaveEvaluationSession>
-
-
-#figure(
-  image("../uml/png/Session/SaveEvaluationSession.png", width: 80%),
-  caption: [Caso d'uso SaveEvaluationSession]
-) <fig-save-evaluation-session>
-
-Il diagramma illustra l'architettura del modulo dedicato al salvataggio dello stato di una sessione di valutazione corrente.
-
-- Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-
-Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
+- `+ create_evaluation_session(standard: ComplianceStandard, device: Device): EvaluationSession` — inizializza e registra una nuova sessione di valutazione in memoria a partire dallo standard e dal Dispositivo forniti; restituisce la sessione creata.
 
 
 === CloseEvaluationSession <CloseEvaluationSession>
-
 
 #figure(
   image("../uml/png/Session/CloseEvaluationSession.png", width: 100%),
@@ -210,7 +228,6 @@ Di seguito vengono documentati esclusivamente i componenti introdotti specificam
 Il diagramma illustra l'architettura del modulo dedicato alla chiusura e all'eliminazione di una sessione di valutazione. 
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
@@ -233,7 +250,7 @@ _CloseEvaluationSessionUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ close(command: CloseEvaluationSessionCommand): void` — firma del metodo delegato all'esecuzione della logica di chiusura della sessione a partire dal comando ricevuto in input. 
+- `+ close_evaluation_session(command: CloseEvaluationSessionCommand): void` — firma del metodo delegato all'esecuzione della logica di chiusura della sessione a partire dal comando ricevuto in input. 
 
 ==== CloseEvaluationSessionService
 #figure(
@@ -242,7 +259,7 @@ _CloseEvaluationSessionUseCase_ non definisce attributi.
 ) <fig-close-evaluation-session-service>
 *Descrizione*
 
-_CloseEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di chiusura della sessione. Implementa l'interfaccia _CloseEvaluationSessionUseCase_. Una volta eseguite le operazioni di dominio necessarie, richiede la rimozione della sessione dal sistema di persistenza richiamando la porta in uscita _DeleteSessionPort_.
+_CloseEvaluationSessionService_ è il service applicativo appartenente all'Application Core responsabile della logica di chiusura della sessione. Implementa l'interfaccia _CloseEvaluationSessionUseCase_. Una volta eseguite le operazioni di dominio necessarie, richiede la rimozione della sessione dal sistema di persistenza richiamando la porta in uscita _CloseEvaluationSessionPort_.
 
 *Attributi*
 
@@ -250,7 +267,7 @@ _CloseEvaluationSessionService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ close(command: CloseEvaluationSessionCommand): void` — concretizza il contratto definito da _CloseEvaluationSessionUseCase_. Coordina le operazioni di chiusura e inoltra la richiesta di eliminazione della sessione utilizzando i parametri incapsulati nel comando.
+- `+ close_evaluation_session(command: CloseEvaluationSessionCommand): void` — concretizza il contratto definito da _CloseEvaluationSessionUseCase_. Inoltra la richiesta di eliminazione della sessione a _CloseEvaluationSessionPort_ utilizzando il session_id incapsulato nel comando.
 
 
 ==== CloseEvaluationSessionCommand
@@ -264,32 +281,32 @@ _CloseEvaluationSessionCommand_  incapsula i parametri necessari per richiedere 
 
 *Attributi*
 
-- `+ session_id: String` — l'identificativo univoco della sessione di valutazione di cui si richiede la chiusura e l'eliminazione.
+- `+ session_id: String` — l'identificativo univoco della sessione di valutazione di cui si richiede la chiusura.
 
 *Metodi e funzioni*
 
 _CloseEvaluationSessionCommand_ non definisce metodi.
 
-==== DeleteSessionPort <DeleteSessionPort>
+==== CloseEvaluationSessionPort <CloseEvaluationSessionPort>
 #figure(
-  image("../uml/png/Session/DeleteSessionPort.png", width: 35%),
-  caption: [DeleteSessionPort]
-) <fig-delete-session-port>
+  image("../uml/png/Session/CloseEvaluationSessionPort.png", width: 35%),
+  caption: [CloseEvaluationSessionPort]
+) <fig-close-evaluation-session-port>
+
 *Descrizione*
 
-_DeleteSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per l'eliminazione di una sessione di valutazione dal sistema di archiviazione (es. la cache in memoria). Viene utilizzata da _CloseEvaluationSessionService_ e implementata nel livello di adapter da _InMemoryEvaluationSessionCache_.
+_CloseEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la chiusura di una sessione di valutazione nel sistema di persistenza in memoria. Viene utilizzata da _CloseEvaluationSessionService_ e implementata da _InMemoryEvaluationSessionCache_.
 
 *Attributi*
 
-_DeleteSessionPort_ non definisce attributi.
+_CloseEvaluationSessionPort_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ delete_session(session_id: String): void` — firma del metodo che si occupa di rimuovere o invalidare lo stato di una specifica sessione di valutazione dal sistema di persistenza.
+- `+ close_evaluation_session(session_id: String): void` — firma del metodo che si occupa di rimuovere la sessione di valutazione specificata dal sistema di persistenza in memoria.
+
 
 === CommitEvaluationSession <CommitEvaluationSession>
-
-
 #figure(
   image("../uml/png/Session/CommitEvaluationSession.png", width: 100%),
   caption: [Caso d'uso CommitEvaluationSession]
@@ -298,7 +315,6 @@ _DeleteSessionPort_ non definisce attributi.
 Il diagramma illustra l'architettura del modulo dedicato esclusivamente al consolidamento (commit) dei dati di una sessione di valutazione verso il dispositivo, senza richiederne la chiusura o l'eliminazione dalla memoria temporanea. 
 
 - Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
 - Per la definizione di _SaveDevicePort_, vedere la sezione @SaveDevicePort. \
@@ -307,7 +323,6 @@ Il diagramma illustra l'architettura del modulo dedicato esclusivamente al conso
 Di seguito vengono documentati esclusivamente i componenti specifici introdotti per questo flusso operativo.
 
 
-block(breakable: false)[
 ==== CommitEvaluationSessionService
 #figure(
   image("../uml/png/Session/CommitEvaluationSessionService.png", width: 35%),
@@ -332,7 +347,7 @@ _CommitEvaluationSessionService_ non definisce attributi propri.
 ) <fig-commit-evaluation-session-use-case>
 *Descrizione*
 
-_CommitEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per eseguire il consolidamento (commit) dei dati di una sessione di valutazione attiva, applicando definitivamente le modifiche all'entità dispositivo associata. Viene implementata a livello applicativo e utilizzata dal controller _EvaluationSessionController_.
+_CommitEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per eseguire il consolidamento (commit) dei dati di una sessione di valutazione attiva, applicando definitivamente le modifiche all'entità dispositivo associata. Viene implementata da _CommitEvaluationSessionService_ e utilizzata dal controller _EvaluationSessionController_.
 
 *Attributi*
 
@@ -359,43 +374,3 @@ _CommitEvaluationSessionCommand_ incapsula i parametri necessari per richiedere 
 *Metodi e funzioni*
 
 _CommitEvaluationSessionCommand_ non definisce metodi.
-==== CommitCloseSession <CommitCloseSession>
-
-
-#figure(
-  image("../uml/png/Session/CommitCloseEvaluationSession.png", width: 100%),
-  caption: [Caso d'uso CommitCloseSession]
-) <fig-commit-close-session>
-
-Il diagramma illustra l'architettura del modulo dedicato al consolidamento (commit) e alla contestuale chiusura di una sessione di valutazione.
-
-- Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
-- Per la definizione di _CloseEvaluationSessionUseCase_, vedere la sezione @CloseEvaluationSessionUseCase. \
-- Per la definizione di _DeleteSessionPort_, vedere la sezione @DeleteSessionPort. \
-- Per la definizione di _SaveDevicePort_, vedere la sezione @SaveDevicePort. \
-- Per la definizione di _CommitEvaluationSessionUseCase_, vedere la sezione @CommitEvaluationSessionUseCase.
-Di seguito vengono documentati esclusivamente i componenti introdotti o aggregati specificamente per questo flusso operativo.
-
-
-#block(breakable: false)[
-==== CommitCloseEvaluationSessionService
-#figure(
-  image("../uml/png/Session/CommitCloseEvaluationSessionService.png", width: 40%),
-  caption: [CommitCloseEvaluationSessionService]
-) <fig-commit-close-evaluation-session-service>
-*Descrizione*
-
-_CommitCloseEvaluationSessionService_ è il service applicativo dell'Application Core responsabile di orchestrare le operazioni combinate. Fungendo da implementazione per i casi d'uso di commit e chiusura, coordina il recupero della sessione in corso (tramite _GetEvaluationSessionPort_), il salvataggio dei risultati consolidati sul dispositivo (tramite _SaveDevicePort_) e, in caso di successo, la rimozione della sessione attiva (tramite _DeleteSessionPort_).
-
-*Attributi*
-
-_CommitCloseEvaluationSessionService_ non definisce attributi propri.
-
-*Metodi e funzioni*
-
-- `+ commit_and_close(session_id: String): void` — concretizza la logica di business principale. Prende in input l'identificativo della sessione, ne effettua il commit dei dati sull'entità _Device_ e successivamente procede con l'eliminazione della sessione dalla memoria temporanea.
-]
-

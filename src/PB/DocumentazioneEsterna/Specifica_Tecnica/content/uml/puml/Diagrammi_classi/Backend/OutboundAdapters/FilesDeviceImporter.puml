@@ -1,0 +1,19 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class CSVFileDeviceImporter {
+    # deserialize(device_file_content: IO[bytes]): Any
+    # parse_data(raw: Any): dict
+}
+
+class JSONFileDeviceImporter {
+    # deserialize(device_file_content: IO[bytes]): Any
+    # parse_data(raw: Any): dict
+}
+
+class XMLFileDeviceImporter {
+    # deserialize(device_file_content: IO[bytes]): Any
+    # parse_data(raw: Any): dict
+}
+
+@enduml

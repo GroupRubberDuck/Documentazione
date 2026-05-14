@@ -1,23 +1,24 @@
-== Valutazione
-=== EvaluateDecisionNode
+=== EvaluateDecisionNode <Valutazione>
 
 #figure(
   image("../uml/png/Valutazione/EvaluateDecisionNode.png", width: 70%),
   caption: [Caso d'uso EvaluateDecisionNode]
 ) <fig-evaluate-decision-node>
 
-Il diagramma illustra l'architettura del modulo dedicato alla valutazione di un nodo decisionale durante la verifica di conformità. 
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di  _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort. 
+Il diagramma illustra l'architettura del modulo dedicato alla valutazione di un nodo decisionale durante la verifica di conformità.
 
- 
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+- Per la definizione di _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort.
+
+Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 ==== EvaluationDecisionNodeController
 #figure(
   image("../uml/png/Valutazione/EvaluationDecisionNodeController.png", width: 40%),
   caption: [EvaluationDecisionNodeController]
-) 
+)
+
 *Descrizione*
 
 _EvaluationDecisionNodeController_ è il controller Flask appartenente all'Inbound Adapter che riceve le richieste HTTP per la valutazione di un nodo decisionale e le inoltra al livello applicativo.
@@ -28,15 +29,14 @@ _EvaluationDecisionNodeController_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ evaluate_node(req: Request): Response` — riceve la richiesta HTTP, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
-
-
+- `+ insert_answer(req: Request): Response` — riceve la richiesta HTTP, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
 ==== EvaluateDecisionNodeUseCase
 #figure(
   image("../uml/png/Valutazione/EvaluateDecisionNodeUseCase.png", width: 40%),
   caption: [EvaluateDecisionNodeUseCase]
-) 
+)
+
 *Descrizione*
 
 _EvaluateDecisionNodeUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto per la valutazione di un nodo decisionale. Viene implementata da _EvaluateDecisionNodeService_ e utilizzata da _EvaluationDecisionNodeController_.
@@ -47,22 +47,22 @@ _EvaluateDecisionNodeUseCase_ non definisce attributi.
 
 *Metodi e funzioni*
 
-- `+ evaluate_node(evaluate_command: EvaluationNodeCommand): void` — firma del metodo delegato all'esecuzione della logica di valutazione a partire dai dati contenuti nel comando.
+- `+ evaluate_node(command: EvaluateDecisionNodeCommand): void` — firma del metodo delegato all'esecuzione della logica di valutazione a partire dai dati contenuti nel comando.
 
-
-
-==== EvaluationNodeCommand
+==== EvaluateDecisionNodeCommand
 #figure(
-  image("../uml/png/Valutazione/EvaluationNodeCommand.png", width: 30%),
-  caption: [EvaluateNodeCommand]
+  image("../uml/png/Valutazione/EvaluateDecisionNodeCommand.png", width: 30%),
+  caption: [EvaluateDecisionNodeCommand]
 )
+
 *Descrizione*
 
-_EvaluationNodeCommand_ è il Command Object annotato come _Command DTO_ che veicola i dati necessari alla valutazione di un nodo decisionale dal controller al service.
+_EvaluateDecisionNodeCommand_ è il Command Object che veicola i dati necessari alla valutazione di un nodo decisionale dal controller al service. 
 
 *Attributi*
 
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
+- `+ device_id: String` — identificativo del dispositivo oggetto di valutazione.
 - `+ asset_id: String` — identificativo dell'Asset oggetto di valutazione.
 - `+ requirement_id: String` — identificativo del requisito in fase di valutazione.
 - `+ node_id: String` — identificativo del nodo decisionale.
@@ -70,16 +70,17 @@ _EvaluationNodeCommand_ è il Command Object annotato come _Command DTO_ che vei
 
 *Metodi e funzioni*
 
-_EvaluationNodeCommand_ non definisce metodi comportamentali, agendo esclusivamente come struttura dati.
+_EvaluateDecisionNodeCommand_ non definisce metodi propri.
 
 ==== EvaluateDecisionNodeService
 #figure(
   image("../uml/png/Valutazione/EvaluateDecisionNodeService.png", width: 50%),
   caption: [EvaluateDecisionNodeService]
 )
+
 *Descrizione*
 
-_EvaluateDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di valutazione di un nodo decisionale. Implementa l'interfaccia _EvaluateDecisionNodeUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_, applica la valutazione al nodo corrispondente e persiste la sessione aggiornata tramite _SaveEvaluationSessionPort_.
+_EvaluateDecisionNodeService_ è il service applicativo appartenente all'Application Core responsabile della logica di valutazione di un nodo decisionale. Implementa l'interfaccia _EvaluateDecisionNodeUseCase_. Recupera la sessione attiva tramite _GetEvaluationSessionPort_, individua l'Asset corrispondente all'interno del dispositivo, registra la risposta sul nodo decisionale e persiste la sessione aggiornata tramite _SaveEvaluationSessionPort_. In caso di sessione non trovata, asset non trovato o errore di salvataggio, propaga un'eccezione di tipo `EvaluateNodeFailure`.
 
 *Attributi*
 
@@ -87,7 +88,7 @@ _EvaluateDecisionNodeService_ non definisce attributi propri.
 
 *Metodi e funzioni*
 
-- `+ evaluate_node(evaluate_command: EvaluationNodeCommand): void` — concretizza il contratto definito da _EvaluateDecisionNodeUseCase_. Recupera la sessione attiva, individua il nodo decisionale corrispondente, elabora la risposta e persiste la sessione aggiornata.
+- `+ evaluate_node(command: EvaluateDecisionNodeCommand): void` — concretizza il contratto definito da _EvaluateDecisionNodeUseCase_. Recupera la sessione attiva, individua l'Asset nel dispositivo, registra la risposta al nodo decisionale e persiste la sessione aggiornata.
 
 === GetRequirement
 
