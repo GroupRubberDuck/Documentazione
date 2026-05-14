@@ -206,6 +206,7 @@
       [],
       [Riviste le parti di device e asset]
     ),
+<<<<<<< HEAD
 
     (
       [0.11.0],
@@ -221,6 +222,15 @@
       [],
       [Riviste le parti di importazione ed esportazione: @import e @export]
     ),
+=======
+    (
+      [0.11.0],
+      [2026-05-14],
+      [#persone.ALDO],
+      [],
+      [Riviste classi di session]
+    )
+>>>>>>> 202d7847 (Fix: riviste classi di session)
 
   )
   #registroModifiche(modifiche)
