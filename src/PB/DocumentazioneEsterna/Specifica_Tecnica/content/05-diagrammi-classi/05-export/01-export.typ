@@ -277,7 +277,7 @@ _GenerateReportUseCase_ non definisce attributi.
 
 ==== GenerateReportCommand
 #figure(
-  image("../uml/png/Export/ExportReportCommand.png", width: 30%),
+  image("../uml/png/Export/GenerateReportCommand.png", width: 30%),
   caption: [GenerateReportCommand]
 )
 

@@ -202,21 +202,21 @@
       [],
       [Riviste le parti di device e asset]
     ),
-
     (
       [0.11.0],
       [2026-05-12],
       [#persone.FELIX],
       [],
-      [Riviste le parti di sessione e valutazione: @classe_valutazione e @Valutazione]
+      [Riviste classi di sessione e valutazione:@classe_valutazione e @Valutazione]
     ),
     (
       [0.12.0],
       [2026-05-14],
       [#persone.FELIX],
       [],
-      [Riviste le parti di importazione ed esportazione: @import e @export]
-    ),
+      [Riviste classi di importazione ed esportazione: @import e @export]
+    )
+
 
   )
   #registroModifiche(modifiche)
