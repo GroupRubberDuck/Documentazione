@@ -1,0 +1,15 @@
+@startuml FlaskImportDeviceController
+skinparam classAttributeIconSize 0
+
+class FlaskImportDeviceController <<Flask Blueprint>> {
+    + import_device(req: Request): Response
+}
+
+class UploadFileController <<Utils>> {
+    + get_http_file_payload(file: FileStorage): IO[bytes]
+    + get_http_file_extension(filename: String): AllowedDeviceFileExtension
+}
+
+FlaskImportDeviceController .right..>"usa" UploadFileController
+
+@enduml
