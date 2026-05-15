@@ -1,8 +1,0 @@
-@startuml ImportDeviceController
-skinparam classAttributeIconSize 0
-
-class ImportDeviceController <<Flask Blueprint>> {
-    + import_device(req: Request): Response
-}
-
-@enduml

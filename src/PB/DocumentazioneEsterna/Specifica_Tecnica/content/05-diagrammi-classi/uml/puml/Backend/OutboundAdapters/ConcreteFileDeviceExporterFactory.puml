@@ -1,7 +1,6 @@
 @startuml ConcreteFileDeviceExporterFactory
 skinparam classAttributeIconSize 0
 class ConcreteFileDeviceExporterFactory <<Factory Adapter>> {
-    - exporters: Dict[AllowedDeviceFileExtension, FileDeviceExporterPort]
     + get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort
 }
 

@@ -1,4 +1,4 @@
-@startuml import-device
+@startuml ImportDevice
 skinparam linetype ortho
 skinparam classAttributeIconSize 0
 skinparam nodesep 80
@@ -6,10 +6,7 @@ skinparam ranksep 100
 skinparam packageStyle rectangle
 
 package "Inbound Adapter" {
-    !include InboundAdapters/ImportDeviceController.puml
-    !include InboundAdapters/UploadFileController.puml
-
-    ImportDeviceController .right.> UploadFileController : usa
+    !include InboundAdapters/FlaskImportDeviceController.puml
 }
 
 package "Application Core" {
@@ -53,7 +50,7 @@ package "Outbound Adapter" {
     }
 }
 
-ImportDeviceController --> ImportDeviceUseCase : usa
+FlaskImportDeviceController --> ImportDeviceUseCase : usa
 
 FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
 RegisterDevicePort - MongoDeviceAdapter

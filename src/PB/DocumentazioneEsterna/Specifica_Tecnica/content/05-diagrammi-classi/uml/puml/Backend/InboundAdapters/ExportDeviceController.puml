@@ -1,8 +1,0 @@
-@startuml ExportDeviceController
-skinparam classAttributeIconSize 0
-
-class ExportDeviceController <<Flask Blueprint>> {
-    + export_device(device_id: String): Response
-}
-
-@enduml

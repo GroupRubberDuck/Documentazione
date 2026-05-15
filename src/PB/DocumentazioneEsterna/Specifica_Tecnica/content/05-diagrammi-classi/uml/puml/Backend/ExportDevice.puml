@@ -6,7 +6,7 @@ skinparam classAttributeIconSize 0
 skinparam packagePadding 20
 
 package "Inbound Adapter" {
-    !include InboundAdapters/ExportDeviceController.puml
+    !include InboundAdapters/FlaskExportDeviceController.puml
 }
 
 package "Application Core" {
@@ -83,7 +83,7 @@ package "Outbound Adapter" {
     ConcreteFileDeviceExporterFactory ..> CSVFileDeviceExporter : crea
 }
 
-ExportDeviceController -down-> ExportDeviceUseCase : usa
+FlaskExportDeviceController -down-> ExportDeviceUseCase : usa
 
 ExportDeviceService -right-> FindDevicePort : usa
 ExportDeviceService -down-> FileDeviceExporterFactoryPort : usa
