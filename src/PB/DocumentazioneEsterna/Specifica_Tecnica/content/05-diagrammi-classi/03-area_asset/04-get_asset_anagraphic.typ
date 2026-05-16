@@ -76,7 +76,7 @@ _GetAssetAnagraphicUseCase_ non definisce attributi.
 ==== GetAssetAnagraphicService
 
 #figure(
-  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphicService.png", width: 45%),
+  image("../uml/png/GetAssetAnagraphic/GetAssetAnagraphicService.png", width: 60%),
   caption: [GetAssetAnagraphicService]
 ) <fig-get-asset-detail-service>
 
@@ -91,27 +91,4 @@ _GetAssetAnagraphicService_ è il service applicativo appartenente all'Applicati
 *Metodi e funzioni*
 #set par(justify: false)
 - `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — concretizza il contratto definito da _GetAssetAnagraphicUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne estrae l'_AssetAnagraphic_.
-
-
-
-==== AssetAnagraphic
-
-#figure(
-  image("../uml/png/GetAssetAnagraphic/AssetAnagraphic.png", width: 40%),
-  caption: [AssetAnagraphic]
-) <fig-asset-anagraphic>
-
-*Descrizione*
-
-_AssetAnagraphic_ è un oggetto di dominio che contiene le informazioni anagrafiche dell'asset.
-
-*Attributi*
-
-- `+ name: String` — nome dell'Asset.
-- `+ asset_type: AssetType` — tipo dell'Asset.
-- `+ description: String` — descrizione testuale dell'Asset.
-
-*Metodi e funzioni*
-
-_AssetAnagraphic_ non definisce metodi.
 

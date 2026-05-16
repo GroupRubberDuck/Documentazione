@@ -1,8 +1,10 @@
 @startuml EvaluationSession
+skinparam ClassAttributeIconSize 0
 
 class EvaluationSession {
-    - device: Device
-    - standard: Standard
+    + session_id: String
+    + standard: ComplianceStandard
+    + device: Device
 }
 
 @enduml

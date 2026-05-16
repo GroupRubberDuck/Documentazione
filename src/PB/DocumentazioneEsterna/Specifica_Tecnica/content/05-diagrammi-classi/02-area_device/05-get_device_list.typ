@@ -8,9 +8,10 @@
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero della lista sintetica dei Dispositivi.
 
-Per la definizione di _FlaskQueryDeviceController_, vedere la sezione @FlaskQueryDeviceController. \
-Per la definizione di _Device_, vedere la sezione @Device. \
-Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _FlaskQueryDeviceController_, vedere la sezione @FlaskQueryDeviceController. \
+- Per la definizione di _Device_, vedere la sezione @Device. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _DeviceSummary_, vedere la sezione @DeviceSummary
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 

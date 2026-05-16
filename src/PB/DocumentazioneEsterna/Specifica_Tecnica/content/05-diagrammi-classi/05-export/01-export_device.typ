@@ -10,6 +10,7 @@ Il diagramma illustra l'architettura del modulo dedicato all'esportazione dei da
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
 - Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort. \
 - Per la definizione di _AllowedDeviceFileExtension_, vedere la sezione @AllowedDeviceFileExtension.
+- Per la definizione di _ExportedFile_, vedere la sezione @ExportedFile
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
@@ -67,26 +68,6 @@ _ExportDeviceCommand_ è il Command Object che veicola i parametri della richies
 *Metodi e funzioni*
 
 _ExportDeviceCommand_ non definisce metodi propri.
-
-==== ExportedFile <ExportedFile>
-#figure(
-  image("../uml/png/ExportDevice/ExportedFile.png", width: 30%),
-  caption: [ExportedFile]
-)
-
-*Descrizione*
-
-_ExportedFile_ è l'oggetto che incapsula il risultato dell'operazione di esportazione. Viene popolato dal service e restituito al controller per la costruzione della risposta HTTP.
-
-*Attributi*
-
-- `+ content: IO[bytes]` — contenuto binario del file generato.
-- `+ filename: String` — nome del file da utilizzare nell'header della risposta HTTP.
-- `+ media_type: String` — tipo MIME del file generato.
-
-*Metodi e funzioni*
-
-_ExportedFile_ non definisce metodi propri.
 
 ==== ExportDeviceService
 #figure(
@@ -166,7 +147,7 @@ _FileDeviceExporter_ non definisce attributi propri.
 
 ==== ConcreteFileDeviceExporterFactory
 #figure(
-  image("../uml/png/ExportDevice/ConcreteFileDeviceExporterFactory.png", width: 50%),
+  image("../uml/png/ExportDevice/ConcreteFileDeviceExporterFactory.png", width:60%),
   caption: [ConcreteFileDeviceExporterFactory]
 )
 

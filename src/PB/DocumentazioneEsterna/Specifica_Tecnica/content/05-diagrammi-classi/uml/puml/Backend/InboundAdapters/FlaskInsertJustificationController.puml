@@ -1,0 +1,5 @@
+@startuml FlaskInsertJustificationController
+skinparam ClassAttributeIconSize 0
+class FlaskInsertJustificationController {
+    + insert_justificstion(req: Request): Response
+}

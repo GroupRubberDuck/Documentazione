@@ -6,6 +6,8 @@
 ) <fig-create-asset>
 
 Il diagramma illustra l'architettura del modulo di creazione di un Asset all'interno di una sessione di valutazione attiva. 
+- per la definizione di _Asset_, vedere la sezione di @Asset
+
 
 #block(breakable: false)[
 ==== FlaskWriteAssetController <FlaskWriteAssetController>
@@ -81,7 +83,7 @@ _CreateAssetCommand_ non definisce metodi.
 
 
 #figure(
-  image("../uml/png/CreateAsset/CreateAssetService.png", width: 40%),
+  image("../uml/png/CreateAsset/CreateAssetService.png", width: 60%),
   caption: [CreateAssetService]
 ) <fig-create-asset-service>
 
@@ -99,76 +101,10 @@ _CreateAssetService_ è il service applicativo appartenente all'Application Core
 - `+ create_asset(asset: CreateAssetCommand): string` — concretizza il contratto definito da _CreateAssetUseCase_. Recupera la sessione attiva, vi aggiunge il nuovo Asset e ne persiste lo stato aggiornato. Ritorna l'id dell'asset creato.
 
 
-
-==== Asset <Asset>
-
-#figure(
-  image("../uml/png/CreateAsset/Asset.png", width: 45%),
-  caption: [Asset]
-) <fig-asset-domain>
-
-*Descrizione*
-
-_Asset_ è l'entità di dominio che rappresenta un asset oggetto di valutazione di conformità all'interno di una sessione.
-
-*Attributi*
-
-- `- asset_id: String` — identificativo univoco dell'Asset.
-- `- asset_anagraphic: AssetAnagraphic` — oggetto che incapsula i dati anagrafici dell'asset.
-- `- asset_proprieties: AssetProprieties` — oggetto che incapsula le proprietà e lo stato valutativo dell'asset.
-
-*Metodi e funzioni*
-
-- `+ set_node_choice(requirement_id: String, node_id: String, value: Bool): void` — imposta o aggiorna la scelta (risposta) effettuata per un determinato nodo decisionale relativo a un requisito.
-- `+ set_justification(requirement_id: String, node_id: String, value: Bool): void` — imposta la giustificazione per un determinato nodo di un requisito. 
-- `+ update_anagraphic(name: String, type: AssetType, description: String): void` — aggiorna le informazioni anagrafiche dell'asset (nome, tipologia e descrizione), delegando l'aggiornamento all'istanza interna di _AssetAnagraphic_.
-
-==== AssetAnagraphic <AssetAnagraphic>
-#figure(
-  image("../uml/png/CreateAsset/AssetAnagraphic.png", width: 20%),
-  caption: [AssetAnagraphic]
-) <fig-asset-domain>
-*Descrizione*
-
-_AssetAnagraphic_ è l'entità delegata alla gestione e all'incapsulamento delle informazioni anagrafiche e dei metadati di base di un generico asset. 
-
-*Attributi*
-
-- `- name: String` --- stringa di testo che rappresenta il nome identificativo dell'asset.
-- `- type: AssetType` --- attributo che definisce la tipologia o la categoria di appartenenza dell'asset.
-- `- description: String` --- stringa di testo destinata a contenere una descrizione estesa, note o dettagli aggiuntivi riguardanti le caratteristiche fisiche o logiche dell'asset.
-
-*Metodi e funzioni*
-
-_AssetAnagraphic_ non definisce metodi.
-
-
-==== AssetProprieties <AssetProprieties>
-
-#figure(
-  image("../uml/png/CreateAsset/AssetProprieties.png", width: 45%),
-  caption: [AssetProprieties]
-) <fig-asset-proprieties-domain>
-
-*Descrizione*
-
-_AssetProprieties_ è l'entità delegata alla gestione dello stato valutativo e delle proprietà specifiche di un asset. Presenta una relazione di composizione con la classe _AssetEvidence_ con cardinalità `1..*`, gestendone il ciclo di vita all'interno di una lista.
-
-*Attributi*
-
-- `+ asset_evidence_list: List<AssetEvidence>` — struttura dati che incapsula e gestisce l'elenco delle evidenze (scelte e giustificazioni) associate all'asset.
-
-*Metodi e funzioni*
-
-- `+ set_node_choice(requirement_id: String, node_id: String, value: Bool): void` — imposta o aggiorna la scelta (risposta) effettuata per un determinato nodo decisionale relativo a un requisito.
-- `+ set_justification(requirement_id: String, node_id: String, value: Bool): void` — imposta o aggiorna la giustificazione testuale per un determinato nodo di un requisito.
-- `+ get_evidence(requirement_id: String): AssetEvidence | void` — recupera l'oggetto _AssetEvidence_ associato a un determinato identificativo di requisito. Restituisce l'evidenza se presente, altrimenti `void` (nessun valore/null).
-
-
 ==== InMemoryEvaluationSessionCache <InMemoryEvaluationSessionCache>
 
 #figure(
-  image("../uml/png/CreateAsset/InMemoryEvaluationSessionCache.png", width: 45%),
+  image("../uml/png/CreateAsset/InMemoryEvaluationSessionCache.png", width: 70%),
   caption: [InMemoryEvaluationSessionCache]
 ) <fig-in-memory-evaluation-session-cache>
 

@@ -101,7 +101,7 @@
       [2026-04-16],
       [#persone.ALDO],
       [#persone.DL],
-      [Stesura @diagdom e @classe_disp]
+      [Stesura diagramma dominio e @classe_disp]
     ),
     (
       [0.5.0],

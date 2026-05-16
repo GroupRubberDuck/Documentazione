@@ -9,7 +9,7 @@
 Il diagramma illustra l'architettura del modulo di eliminazione di un Asset esistente all'interno di una sessione di valutazione attiva. 
 
 - Per la definizione di _FlaskWriteAssetController_, vedere la sezione @FlaskWriteAssetController. \
-- Per la definizione di _Asset_, vedere la sezione //@Asset. \
+- Per la definizione di _Asset_, vedere la sezione @Asset. \
 - Per la definizione di _SaveEvaluationSession_, vedere la sezione @SaveEvaluationSessionPort. \
 - Per la definizione di _GetEvaluationSession_, vedere la sezione @GetEvaluationSessionPort. \
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.

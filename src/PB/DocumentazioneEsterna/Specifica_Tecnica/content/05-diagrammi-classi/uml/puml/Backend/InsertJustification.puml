@@ -4,11 +4,10 @@ skinparam linetype ortho
 skinparam nodesep 180 
 skinparam ranksep 150
 skinparam classAttributeIconSize 0
-' Questo parametro è fondamentale per evitare che le scritte tocchino i bordi dei package
 skinparam PackagePadding 30 
 
 package "Inbound Adapter" {
-    class EvaluationJustificationController <<Flask Blueprint>> {
+    class FlaskInsertJustificationController <<Flask Blueprint>> {
         +insert_justification(req: Request): Response
     }
 }
@@ -17,37 +16,21 @@ package "Application Core" {
 
     () "InsertJustificationUseCase"
 
-    class EvaluationJustificationService <<Application Service>> {
-        +insert_justification(command: InsertJustificationCommand): void
-    }
-
-    class InsertJustificationCommand {
-        +session_id: String
-        +asset_id: String
-        +requirement_id: String
-        +node_id: String
-        +justification: String
-    }
+    !include Command/InsertJustificationCommand.puml
+    !include ApplicationServices/InsertJustificationService.puml
 
     () "GetEvaluationSessionPort"
     () "SaveEvaluationSessionPort"
 
-    ' ==========================================
-    ' GABBIA STRUTTURALE 
-    ' ==========================================
-    EvaluationJustificationService -[hidden]right-------- InsertJustificationCommand
+    InsertJustificationService -[hidden]right-------- InsertJustificationCommand
     GetEvaluationSessionPort -[hidden]right-------- SaveEvaluationSessionPort
 
-    ' ==========================================
-    ' COLLEGAMENTI INTERNI AL CORE
-    ' ==========================================
-    EvaluationJustificationService -up- InsertJustificationUseCase
-    EvaluationJustificationService .right.> InsertJustificationCommand : legge
+    InsertJustificationService -up- InsertJustificationUseCase
+    InsertJustificationService .right.> InsertJustificationCommand : legge
 
-    EvaluationJustificationService -down-> GetEvaluationSessionPort : usa
-    EvaluationJustificationService -down-> SaveEvaluationSessionPort : usa
+    InsertJustificationService -down-> GetEvaluationSessionPort : usa
+    InsertJustificationService -down-> SaveEvaluationSessionPort : usa
     
-    ' Trucco aggiuntivo per creare spazio sotto le porte e non far tagliare le scritte dal bordo
     note as spacer
     end note
     skinparam note {
@@ -65,10 +48,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-' ==========================================
-' COLLEGAMENTI ESTERNI (Inbound -> Core -> Outbound)
-' ==========================================
-EvaluationJustificationController -down-> InsertJustificationUseCase : usa
+FlaskInsertJustificationController -down-> InsertJustificationUseCase : usa
 
 InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
 InMemoryEvaluationSessionCache -up- SaveEvaluationSessionPort
