@@ -1,6 +1,0 @@
-@startuml 
-skinparam classAttributeIconSize 0
-    enum ReportFormat <<enum>> {
-        PDF
-    }
-@enduml

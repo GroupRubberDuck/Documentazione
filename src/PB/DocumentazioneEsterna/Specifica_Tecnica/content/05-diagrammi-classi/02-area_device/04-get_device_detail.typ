@@ -9,6 +9,7 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero del dettagl
 - Per la definizione di _Device_, vedere la sezione @Device. \
 - Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
 - Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort.
+- Per la definizione di _ComplianceStandard_, vedere la sezione @ComplianceStandard
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 
@@ -108,7 +109,7 @@ _GetComplianceStandardUseCase_ non definisce attributi.
 
 ==== GetComplianceStandardService
 #figure(
-  image("../uml/png/GetDeviceDetail/GetComplianceStandardService.png", width: 45%),
+  image("../uml/png/GetDeviceDetail/GetComplianceStandardService.png", width: 60%),
   caption: [GetComplianceStandardService]
 ) <fig-get-compliance-standard-service>
 
@@ -159,28 +160,6 @@ _FindStandardPort_ non definisce attributi.
 
 - `+ find_by_id(standard_id: String): ComplianceStandard` — firma del metodo che recupera lo standard di conformità corrispondente all'identificativo fornito.
 
-==== ComplianceStandard
-
-#figure(
-  image("../uml/png/GetDeviceDetail/ComplianceStandard.png", width: 35%),
-  caption: [ComplianceStandard],
-) <fig-standard>
-
-*Descrizione*
-
-_ComplianceStandard_ rappresenta il documento che contiene le regole alle quali i dispositivi devono sottostare.
-
-*Attributi*
-
-- `- id: String` — identificativo univoco dello standard.
-- `- name: String` — nome dello Standard.
-- `- version_number: String` — versione dello Standard.
-- `- requirements: Map<String, Requirement>` — mappa i requisiti dello standard, indicizzati per il loro identificativo.
-
-*Metodi e funzioni*
-
-- `+ get_requirement(requirement_id: String): Requirement` — recupera il requisito corrispondente all'identificativo fornito.
-- `+ evaluate_requirement(requirement_id: String, answers: AssetEvidence): EvaluationState` — valuta un requisito inserendo le answers, ritorna un _EvaluationState_
 
 ==== MongoStandardAdapter <MongoStandardAdapter>
 #figure(

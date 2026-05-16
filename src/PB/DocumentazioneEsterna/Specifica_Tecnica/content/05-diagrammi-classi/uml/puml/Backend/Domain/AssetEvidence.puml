@@ -1,4 +1,5 @@
 @startuml AssetEvidence
+skinparam ClassAttributeIconSize 0
 
 class AssetEvidence {
     - requirement_id: String

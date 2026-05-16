@@ -1,4 +1,4 @@
-@startuml
+@startuml EvaluateDecisionNodeCommand
 skinparam classAttributeIconSize 0   
     class EvaluateDecisionNodeCommand {
         + session_id: String

@@ -35,16 +35,23 @@ package "4. Evaluation Output" {
     !include DeviceEvaluationDetail.puml
     !include AssetEvaluationDetail.puml
     !include RequirementEvaluationDetail.puml
+    !include NodeDetail.puml
 }
 
 package "5. Session" {
-    !include SessionType.puml
     !include SessionHandler.puml
     !include EvaluationSession.puml
 }
 
+package "6. Utils" {
+    !include ExportedFile.puml
+    !include DeviceSummary.puml
+}
+
 
 EvaluationEngine --> DeviceEvaluationResult
+
+"5. Session" -[hidden]down- "6. Utils"
 
 
 @enduml

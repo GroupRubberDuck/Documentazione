@@ -95,7 +95,7 @@ _UpdateDevicePort_ non definisce attributi.
 ==== FindDevicePort <FindDevicePort>
 
 #figure(
-  image("../uml/png/UpdateDevice/FindDevicePort.png", width: 30%),
+  image("../uml/png/UpdateDevice/FindDevicePort.png", width: 50%),
   caption: [FindDevicePort],
 ) <fig-find-device-port>
 *Descrizione*

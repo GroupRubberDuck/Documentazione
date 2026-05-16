@@ -13,7 +13,7 @@ Di seguito vengono documentati i componenti introdotti specificamente per questo
 #block(breakable: false)[
 ==== UploadFileController <UploadFileController>
 #figure(
-  image("../uml/png/ImportDevice/UploadFileController.png", width: 40%),
+  image("../uml/png/ImportDevice/UploadFileController.png", width: 60%),
   caption: [UploadFileController]
 ) 
 *Descrizione*
@@ -128,7 +128,7 @@ _ImportDeviceService_ è il service applicativo appartenente all'Application Cor
 
 ==== FileDeviceImporterPort
 #figure(
-  image("../uml/png/ImportDevice/FileDeviceImporterPort.png", width: 40%),
+  image("../uml/png/ImportDevice/FileDeviceImporterPort.png", width: 60%),
   caption: [FileDeviceImporterPort]
 ) 
 *Descrizione*

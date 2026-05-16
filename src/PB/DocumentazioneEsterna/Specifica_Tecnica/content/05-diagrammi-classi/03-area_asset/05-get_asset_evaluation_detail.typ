@@ -7,6 +7,7 @@
 Il diagramma illustra l'architettura del modulo dedicato al recupero di un _AssetEvaluationDetail_ contenente informazioni anagrafiche e stato di valutazione del dispositivo.
 - Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
 - Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
+- Per la definizione di _AssetEvaluationDetail_, vedere la sezione @AssetEvaluationDetail
 
 ==== FlaskAssetEvaluationDetailController
 #figure(
@@ -85,30 +86,6 @@ Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera
 
 - `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` —
 concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
-
-==== AssetEvaluationDetail
-#figure(
-  image("../uml/png/GetAssetEvaluationDetail/AssetEvaluationDetail.png", width: 45%),
-  caption: [AssetEvaluationDetail],
-)
-
-*Descrizione*
-
-_AssetEvaluationDetail_ è l'oggetto di dominio che contiene le informazioni anagrafiche dell'asset ed il suo stato di valutazione attuale.
-
-*Attributi*
-
-- `asset_id: String` è l'identificativo univoco dell'asset
-- `name: String` è il nome dell'asset
-- `asset_type: AssetType` è il tipo dell'asset
-- `description: String` è la descrizione dell'asset
-- `requirement_details: List<RequirementEvaluationDetail>` è la lista di requisiti che appartengono all'asset
-- `verdict: EvaluationState` è lo stato della valutazione dell'asset
-
-
-*Metodi e funzioni*
-
-_AssetEvaluationDetail_ non definisce metodi.
 
 
 

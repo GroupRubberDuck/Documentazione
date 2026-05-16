@@ -6,6 +6,7 @@
 ) <fig-create-device>
 
 Il diagramma illustra l'architettura del modulo di scrittura per la gestione dei Dispositivi, coprendo le operazioni di creazione, modifica ed eliminazione secondo i principi dell'architettura esagonale.
+- Per la definizione di _Device_, vedere la sezione @Device. \
 
 ==== FlaskWriteDeviceController <FlaskWriteDeviceController>
 
@@ -89,35 +90,6 @@ _CreateDeviceService_ è il service applicativo appartenente all'Application Cor
 *Metodi e funzioni*
 
 - `+ create(command: CreateDeviceCommand): void` — concretizza il contratto definito da _CreateDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede la registrazione tramite _RegisterDevicePort_.
-
-==== Device <Device>
-
-#figure(
-  image("../uml/png/CreateDevice/Device.png", width: 35%),
-  caption: [Device],
-) <fig-device>
-
-*Descrizione*
-
-_Device_ è l'entità centrale del dominio che rappresenta il Dispositivo oggetto della valutazione di conformità. È associata alla classe _Asset_ con una relazione di composizione avente cardinalità `0..*`.
-
-*Attributi*
-
-- `- id: String` — identificativo univoco del Dispositivo.
-- `- standard_id: String` — identificativo dello standard di conformità associato al dispositivo.
-- `- name: String` — nome del Dispositivo.
-- `- os: String` — sistema operativo del Dispositivo.
-- `- description: String` — descrizione testuale del Dispositivo.
-- `- assets: Map<String, Asset>` — mappa degli asset associati al Dispositivo, indicizzati per il loro identificativo.
-
-*Metodi e funzioni*
-
-- `+ create(device_id: String, standard_id: String, name: String, os: String, description: String, assets: List<Asset>): Device` — metodo per la creazione e istanziazione di un nuovo oggetto Dispositivo.
-- `+ get_asset(asset_id: String): Asset` — recupera l'Asset corrispondente all'identificativo fornito.
-- `+ update_info(name: String, os: String, description: String): void` — aggiorna le informazioni anagrafiche del Dispositivo (nome, sistema operativo e descrizione).
-- `+ add_asset(asset: Asset): void` — aggiunge un nuovo _Asset_ alla mappa del Dispositivo.
-- `+ remove_asset(asset_id: String): void` — rimuove l'_Asset_ identificato da `asset_id` dalla mappa del Dispositivo.
-- `+ update_asset(asset: Asset): void` — aggiorna un _Asset_ esistente
 
 ==== RegisterDevicePort <RegisterDevicePort>
 

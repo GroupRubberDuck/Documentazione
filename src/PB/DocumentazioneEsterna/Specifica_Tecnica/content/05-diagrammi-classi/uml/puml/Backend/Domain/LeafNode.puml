@@ -1,4 +1,5 @@
 @startuml LeafNode
+skinparam ClassAttributeIconSize 0
 
 class LeafNode {
     - node_id: String

@@ -1,4 +1,4 @@
-@startuml
+@startuml InsertJustificationCommand
 skinparam classAttributeIconSize 0
   class InsertJustificationCommand {
         + session_id: String

@@ -1,4 +1,5 @@
 @startuml DecisionNode
+skinparam ClassAttributeIconSize 0
 
 class DecisionNode {
     - node_id: String

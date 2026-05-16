@@ -1,10 +1,11 @@
 @startuml DeviceEvaluationResult
+skinparam ClassAttributeIconSize 0
 
 class DeviceEvaluationResult <<Value Object>> {
-    - device_id: String
-    - standard_id: String
-    - asset_results: List<AssetEvaluationResult>
-    - verdict: EvaluationState
+    + device_id: String
+    + standard_id: String
+    + asset_results: List<AssetEvaluationResult>
+    + verdict: EvaluationState
 
     + get_asset_result(asset_id: String): AssetEvaluationResult
     + failed_assets(): List<AssetEvaluationResult>

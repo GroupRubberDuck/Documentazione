@@ -15,6 +15,7 @@ Il diagramma illustra l'architettura del modulo dedicato all'apertura di una ses
 - Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort
 - Per la definizione di _MongoStandardAdapter_, vedere la sezione @MongoStandardAdapter
 - Per la definizione di _FindStandardPort_, vedere la sezione @FindStandardPort
+- Per la definizione di _SessionHandler_, vedere la sezione @SessionHandler
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
@@ -86,7 +87,7 @@ _OpenEvaluationSessionUseCase_ non definisce attributi.
 ==== OpenEvaluationSessionService
 
 #figure(
-  image("../uml/png/OpenSession/OpenEvaluationSessionService.png", width: 45%),
+  image("../uml/png/OpenSession/OpenEvaluationSessionService.png", width: 60%),
   caption: [OpenEvaluationSessionService]
 ) <fig-open-evaluation-session-service>
 
@@ -125,19 +126,6 @@ _SessionCoordinator_ è il Service che coordina la logica di dominio relativa al
 *Metodi e funzioni*
 
 - `+ can_open_session(session_type: SessionType): bool` — verifica se è possibile aprire una nuova sessione del tipo specificato, restituendo `true` se le precondizioni sono soddisfatte.
-
-==== SessionHandler
-#figure(
-  image("../uml/png/OpenSession/SessionHandler.png", width: 60%),
-  caption: [SessionHandler]
-) <fig-save-asset-service-session>
-*Descrizione*
-
-_SessionHandler_ è il componente di dominio che incapsula le regole di business fondamentali relative all'apertura di una sessione di valutazione. Valuta la fattibilità dell'operazione basandosi sulla presenza di eventuali sessioni già attive nel sistema.
-
-*Attributi*
-
-La classe _SessionHandler_ non definisce attributi di stato interni.
 
 *Metodi e funzioni*
 

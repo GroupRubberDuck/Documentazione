@@ -5,7 +5,7 @@ skinparam ranksep 140
 skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
-    !include InboundAdapters/EvaluationDecisionNodeController.puml
+    !include InboundAdapters/FlaskEvaluateDecisionNodeController.puml
 }
 
 package "Application Core" {
@@ -45,7 +45,7 @@ package "Outbound Adapter" {
 }
 
 
-EvaluationDecisionNodeController -down-> EvaluateDecisionNodeUseCase : usa
+FlaskEvaluateDecisionNodeController -down-> EvaluateDecisionNodeUseCase : usa
 
 GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
 SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
