@@ -93,8 +93,8 @@
   ([0.5.0],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
   ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
   ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
-  ([1.1.0],[2026-04-16],[#persone.DL],[Ana Maria Draghici],[Aggiunti termini relativi alla vista dati]
-    ),
+  ([1.1.0],[2026-04-16],[#persone.DL],[Ana Maria Draghici],[Aggiunti termini relativi alla vista dati]),
+  ([1.2.0],[2026-04-16],[Ana Maria Draghici],[-],[Aggiornato con i termini della specifica tecnica]),
 )
 
 #registroModifiche(modifiche)
