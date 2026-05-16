@@ -245,6 +245,7 @@
       [0.12.0],
       [2026-05-16],
       [#persone.ALDO],
+      [],
       [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
 >>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
     )
