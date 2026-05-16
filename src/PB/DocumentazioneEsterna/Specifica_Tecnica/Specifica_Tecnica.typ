@@ -121,30 +121,28 @@
       [0.6.1],
       [2026-04-17],
       [#persone.FILIPPO],
-      [-],
+      [#persone.ALDO],
       [Bozza della classe valutazione @classe_valutazione ]
     ),
     (
       [0.6.2],
       [2026-04-19],
       [#persone.DL],
-      [-],
-      [Bozza delle classi relative a import ed export tramite file di dispositivo e modello /*@import-export-device e @import-export-model*/
-      ]
+      [#persone.ALDO],
+      [Bozza delle classi relative a import ed export tramite file di dispositivo e modello]
     ),
     (
       [0.6.3],
       [2026-04-19],
       [#persone.DL],
-      [-],
-      [Bozza delle classi relative alla generazione del report di conformità
-      /*@report-generator*/]
+      [#persone.ALDO],
+      [Bozza delle classi relative alla generazione del report di conformità]
     ),
     (
       [0.6.4],
       [2026-04-19],
       [#persone.DL],
-      [-],
+      [#persone.ALDO],
       [Revisione architetturale della sezione relativa alla modifica degli asset]
     ),
 
