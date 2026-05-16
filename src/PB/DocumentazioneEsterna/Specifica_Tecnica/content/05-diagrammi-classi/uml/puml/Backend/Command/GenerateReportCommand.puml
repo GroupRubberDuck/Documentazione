@@ -7,4 +7,10 @@ class GenerateReportCommand {
     + report_format: ReportFormat
 }
 
+enum ReportFormat {
+    + PDF
+}
+
+GenerateReportCommand -> ReportFormat
+
 @enduml

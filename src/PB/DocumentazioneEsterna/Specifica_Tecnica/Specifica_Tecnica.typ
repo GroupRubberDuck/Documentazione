@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 9,
+  minor: 12,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -201,6 +201,7 @@
     ),
     (
       [0.10.0],
+<<<<<<< HEAD
       [2026-05-14],
       [#persone.ALDO],
       [],
@@ -214,11 +215,18 @@
       [#persone.FELIX],
       [],
       [Riviste le parti di sessione e valutazione: @classe_valutazione e @Valutazione]
+=======
+      [2026-05-12],
+      [#persone.FELIX],
+      [#persone.ALDO],
+      [Riviste classi di sessione e valutazione:@classe_valutazione e @Valutazione]
+>>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
     ),
     (
-      [0.12.0],
+      [0.11.0],
       [2026-05-14],
       [#persone.FELIX],
+<<<<<<< HEAD
       [],
       [Riviste le parti di importazione ed esportazione: @import e @export]
     ),
@@ -229,6 +237,16 @@
       [#persone.ALDO],
       [],
       [Riviste classi di session]
+=======
+      [#persone.ALDO],
+      [Riviste classi di importazione ed esportazione: @import e @export]
+    ),
+    (
+      [0.12.0],
+      [2026-05-16],
+      [#persone.ALDO],
+      [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
+>>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
     )
 >>>>>>> 202d7847 (Fix: riviste classi di session)
 
