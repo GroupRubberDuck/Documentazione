@@ -87,5 +87,44 @@ Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera
 - `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` —
 concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
 
+==== DTO
+Qui vengono elencati i dto usati dal controller per gestire ed esporre i dettagli della valutazione di un asset verso l'interfaccia frontend o le API.
+
+#figure(
+  image("../uml/png/GetAssetEvaluationDetail/AssetEvaluationDTO.png", width: 70%),
+  caption: [AssetEvaluationDTO]
+) <fig-asset-evaluation-dto>
+
+===== AssetEvaluationDTO <AssetEvaluationDTO>
+
+*Descrizione*
+
+_AssetEvaluationDTO_ è il Data Transfer Object principale utilizzato per esporre all'interfaccia utente i dettagli anagrafici e l'esito complessivo della valutazione di uno specifico asset. Agisce come aggregatore, includendo al suo interno una lista sintetica dello stato di tutti i requisiti ad esso associati.
+
+*Attributi*
+
+- `+ name: String` — nome dell'asset valutato.
+- `+ type: AssetType` — categoria o tipologia a cui appartiene l'asset.
+- `+ evaluation: EvaluationState` — stato globale e finale della valutazione di conformità per l'intero asset.
+- `+ description: String` — descrizione testuale aggiuntiva dell'asset.
+- `+ requirements: Tuple<RequirementEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun requisito associato all'asset.
+
+*Metodi e funzioni*
+
+_AssetEvaluationDTO_ non definisce metodi.
 
 
+===== RequirementEvaluationSummaryDTO <RequirementEvaluationSummaryDTO>
+
+*Descrizione*
+
+_RequirementEvaluationSummaryDTO_ è un Data Transfer Object estremamente leggero e di supporto, istanziato esclusivamente per popolare la lista dei requisiti all'interno di un _AssetEvaluationDTO_. Fornisce una vista sintetica limitata all'identificativo e al verdetto, ideale per le visualizzazioni a elenco o in forma di tabella.
+
+*Attributi*
+
+- `+ id: String` — identificativo univoco del requisito valutato.
+- `+ evaluation: EvaluationState` — stato corrente della valutazione specifica per questo requisito.
+
+*Metodi e funzioni*
+
+_RequirementEvaluationSummaryDTO_ non definisce metodi.

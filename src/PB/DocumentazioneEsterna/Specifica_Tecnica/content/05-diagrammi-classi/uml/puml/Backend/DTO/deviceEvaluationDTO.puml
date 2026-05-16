@@ -1,0 +1,22 @@
+@startuml DeviceEvaluationDTO
+skinparam linetype ortho
+skinparam ClassAttributeIconSize 0
+
+class AssetEvaluationSummaryDTO {
+    + asset_id: String
+    + asset_name: String
+    + asset_type: AssetType
+    + asset_evaluation: EvaluationState
+}
+
+class DeviceEvaluationDTO {
+    + device_name: String
+    + device_os: String
+    + device_description: String
+    + device_evaluation_result: EvaluationState
+    + asset_list: tuple[AssetEvaluationSummaryDTO, ...]
+}
+
+DeviceEvaluationDTO "1" *-- "0..*" AssetEvaluationSummaryDTO : contains
+
+@enduml

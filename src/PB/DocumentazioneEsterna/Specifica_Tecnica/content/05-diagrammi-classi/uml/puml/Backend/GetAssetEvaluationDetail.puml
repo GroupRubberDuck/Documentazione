@@ -6,6 +6,7 @@ skinparam classAttributeIconSize 0
 
 package "Inbound Adapter" {
     !include InboundAdapters/FlaskAssetEvaluationDetailController.puml
+    FlaskAssetEvaluationDetailController ..> AssetEvaluationDTO
 }
 
 package "Application Core" {
