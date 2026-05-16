@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 9,
+  minor: 12,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -197,24 +197,23 @@
     ),
     (
       [0.10.0],
-      [2026-05-14],
-      [#persone.ALDO],
-      [],
-      [Riviste le parti di device e asset]
-    ),
-    (
-      [0.11.0],
       [2026-05-12],
       [#persone.FELIX],
-      [],
+      [#persone.ALDO],
       [Riviste classi di sessione e valutazione:@classe_valutazione e @Valutazione]
     ),
     (
-      [0.12.0],
+      [0.11.0],
       [2026-05-14],
       [#persone.FELIX],
-      [],
+      [#persone.ALDO],
       [Riviste classi di importazione ed esportazione: @import e @export]
+    ),
+    (
+      [0.12.0],
+      [2026-05-16],
+      [#persone.ALDO],
+      [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
     )
 
 

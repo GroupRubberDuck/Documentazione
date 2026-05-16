@@ -1,4 +1,4 @@
-@startuml ExportReport
+@startuml GenerateReport
 skinparam linetype ortho
 skinparam nodesep 150
 skinparam ranksep 120
@@ -6,29 +6,18 @@ skinparam classAttributeIconSize 0
 skinparam PackagePadding 30
 
 package "Inbound Adapter" {
-    !include InboundAdapters/ExportReportController.puml
+    !include InboundAdapters/FlaskExportReportController.puml
 }
 
 package "Application Core" {
 
     () "GenerateReportUseCase" 
 
-    !include ApplicationServices/ExportReportService.puml
-    !include Command/ExportReportCommand.puml
+    !include ApplicationServices/GenerateReportService.puml
+    !include Command/GenerateReportCommand.puml
 
-    enum ReportFormat <<enum>> {
-        PDF
-    }
-
-    class ExportedFile {
-        + content: IO[bytes]
-        + filename: String
-        + media_type: String
-    }
-
-    class EvaluationEngine {
-    + evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult
-}
+    !include Domain/EvaluationEngine.puml
+    !include Domain/ExportedFile.puml
 
     () "ReportGeneratorPort" as ReportGeneratorPort
     () "GetEvaluationSessionPort" as GetEvaluationSessionPort
@@ -42,7 +31,6 @@ package "Application Core" {
     GenerateReportService -down-> GetEvaluationSessionPort : usa
     GenerateReportService ..> EvaluationEngine : usa
 
-    GenerateReportCommand ..> ReportFormat : usa
 }
 
 package "Outbound Adapter" {
@@ -50,7 +38,7 @@ package "Outbound Adapter" {
     !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
 }
 
-ExportReportController -down-> GenerateReportUseCase : usa
+FlaskExportReportController -down-> GenerateReportUseCase : usa
 
 PdfReportGenerator -up- ReportGeneratorPort
 InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort

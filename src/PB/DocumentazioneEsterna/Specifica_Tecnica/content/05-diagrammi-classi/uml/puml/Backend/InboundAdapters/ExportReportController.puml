@@ -1,8 +1,0 @@
-@startuml ExportReportController
-skinparam classAttributeIconSize 0
-
-class ExportReportController <<Flask Blueprint>> {
-    + export_report(session_id: String, device_id: String, fmt: String): Response
-}
-
-@enduml
