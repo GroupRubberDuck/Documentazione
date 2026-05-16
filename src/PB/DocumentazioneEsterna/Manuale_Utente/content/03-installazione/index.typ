@@ -23,6 +23,7 @@ Una volta clonato il repository è necessario seguire i seguenti step per avviar
   ```sh
   docker compose up --build -d
   ```
++ Collegarsi con un browser a propria scelta all'indirizzo #link("http://localhost:8080")
 
 == Spegnimento
 Per fermare l'applicazione e i servizi ad essa connessi è sufficiente eseguire il seguente comando nella cartella del repository:

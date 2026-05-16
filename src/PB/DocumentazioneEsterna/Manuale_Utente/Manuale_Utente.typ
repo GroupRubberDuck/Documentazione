@@ -24,7 +24,7 @@
 
 #let currentVersion = (
   major: 0,
-  minor: 4,
+  minor: 5,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -79,6 +79,13 @@
       [-],
       [Stesura @Installazione],
     ),
+    (
+      [0.5.0],
+      [2026-05-16],
+      persone.DT,
+      [-],
+      [Stesura @Istruzioni_uso],
+    ),
   )
   #registroModifiche(modifiche)
 ]
@@ -91,6 +98,13 @@
   #outline(
     title: [Lista delle tabelle],
     target: figure.where(kind: table),
+  )
+]
+
+#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
+  #outline(
+    title: [Lista delle immagini],
+    target: figure.where(kind: image),
   )
 ]
 
