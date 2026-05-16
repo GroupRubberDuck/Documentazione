@@ -108,3 +108,48 @@ _GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Ap
 
 - `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` —
 concretizza il contratto definito da _GetDeviceEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DeviceEvaluationDetail_.
+
+==== DTO
+Qui vengono elencati i dto usati dal controller per gestire ed esporre i dettagli della valutazione di un dispositivo.
+
+#figure(
+  image("../uml/png/GetDeviceEvaluationDetail/DeviceEvaluationDTO.png", width: 50%),
+  caption: [DeviceEvaluationDTO]
+) <fig-device-evaluation-dto>
+
+
+===== DeviceEvaluationDTO <DeviceEvaluationDTO>
+
+*Descrizione*
+
+_DeviceEvaluationDTO_ è il Data Transfer Object principale utilizzato per consolidare e trasportare le informazioni anagrafiche e l'esito complessivo della valutazione di un intero dispositivo. Funge da aggregatore principale per la vista dashboard, includendo al suo interno una lista sintetica dello stato di tutti gli asset ad esso associati.
+
+*Attributi*
+
+- `+ device_name: String` — nome assegnato al dispositivo.
+- `+ device_os: String` — sistema operativo in uso sul dispositivo.
+- `+ device_description: String` — breve descrizione testuale del dispositivo.
+- `+ device_evaluation_result: EvaluationState` — stato globale e finale della valutazione di conformità per l'intero dispositivo.
+- `+ asset_list: Tuple<AssetEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun asset analizzato all'interno del dispositivo.
+
+*Metodi e funzioni*
+
+_DeviceEvaluationDTO_ non definisce metodi.
+
+
+===== AssetEvaluationSummaryDTO <AssetEvaluationSummaryDTO>
+
+*Descrizione*
+
+_AssetEvaluationSummaryDTO_ è un Data Transfer Object leggero e di supporto, istanziato esclusivamente per popolare la lista degli asset all'interno di un _DeviceEvaluationDTO_. Fornisce una vista sintetica contenente le informazioni essenziali e il verdetto di un singolo asset, risultando ottimale per le visualizzazioni a elenco o per le tabelle riassuntive nella dashboard.
+
+*Attributi*
+
+- `+ asset_id: String` — identificativo univoco dell'asset valutato.
+- `+ asset_name: String` — nome dell'asset.
+- `+ asset_type: AssetType` — categoria o tipologia a cui appartiene l'asset.
+- `+ asset_evaluation: EvaluationState` — stato corrente e finale della valutazione specifica per questo asset.
+
+*Metodi e funzioni*
+
+_AssetEvaluationSummaryDTO_ non definisce metodi.
