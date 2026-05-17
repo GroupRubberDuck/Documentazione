@@ -23,6 +23,9 @@
   ],
   oreProduttive: (
     (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
+    (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 7, oreEffettive: 7),
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
@@ -40,7 +43,7 @@
     *Consuntivo di periodo*:
     Nel corso dello sprint 13 sono state svolte le seguenti attività:
     - *Progettazione*:
-      - #upper(è) stata rifinita la progettazione del frontend
+      - #upper("è") stata rifinita la progettazione del frontend
     - *Codifica*:
       - Implementazione del sistema backend completo.
       - Implementazione del database rispettando le naming convention.
