@@ -31,3 +31,4 @@ Questo metodo consente di mantenere il testo chiaro e tecnicamente corretto, per
 #pad(left: 1em)[
   - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf")[Glossario]; \ _Ultima consultazione: 13 aprile 2026_; \
 ]
+

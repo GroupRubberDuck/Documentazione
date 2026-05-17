@@ -1,38 +1,44 @@
-Questa sezione spiega come installare correttamente la versione MVP del prodotto.
+Questa sezione spiega come installare e avviare correttamente la versione MVP del prodotto.
 
-== Clonare il repository
+== Clonare il Repository
 
-+ Avviare il terminale
-+ Spostarsi nella cartella in cui si desidera clonare il repository
++ Aprire il terminale e spostarsi nella cartella in cui si desidera clonare il repository.
 + Eseguire:
-  ```sh
-  git https://github.com/GroupRubberDuck/MVP.git
-  ```
+```sh
+  git clone https://github.com/GroupRubberDuck/MVP.git
+```
++ Spostarsi nella cartella del repository appena clonato:
+```sh
+  cd MVP
+```
 
 == Avvio
-Una volta clonato il repository è necessario seguire i seguenti step per avviare l'applicazione:
 
-+ Assicurarsi di avere Docker e Docker Compose installati
-+ Aprire il terminale all'interno della cartella del repository precedentemente clonato
-+ Impostare le variabili di ambiente richieste (`DB_USER` e `DB_PASSWORD`) per il database MongoDB, per esempio con:
-  ```sh
-  export DB_USER=mongo
-  export DB_PASSWORD=passwordsegreta
-  ```
-+ Avviare l'applicazione eseguendo:
-  ```sh
+L'applicazione richiede *Docker* e *Docker Compose* installati e in esecuzione in background sul proprio sistema prima di procedere.
+
+1. Creare un file `.env` nella cartella radice del repository con le credenziali per il database MongoDB:
+```sh
+  DB_USER=root
+  DB_PASSWORD=grouprubberduckpoc2026
+```
+Il file `.env` è già escluso dal controllo di versione tramite `.gitignore`.
+
+2. Avviare l'applicazione eseguendo:
+```sh
   docker compose up --build -d
-  ```
-+ Collegarsi con un browser a propria scelta all'indirizzo #link("http://localhost:8080")
+```
+Una volta completato l'avvio, aprire un browser e collegarsi all'indirizzo #link("http://localhost:8080").
 
 == Spegnimento
-Per fermare l'applicazione e i servizi ad essa connessi è sufficiente eseguire il seguente comando nella cartella del repository:
+
+Per fermare l'applicazione e tutti i servizi ad essa connessi, eseguire nella cartella del repository:
 ```sh
 docker compose down
 ```
 
 == Riavvio
-Per riavviare l'applicazione e i servizi ad essa connessi invece è sufficiente eseguire:
+
+Per riavviare completamente l'applicazione, rimuovendo i volumi e i container orfani:
 ```sh
-docker compose down -v --remove-orphans && dоcker compose up -d --build
+docker compose down -v --remove-orphans && docker compose up --build -d
 ```

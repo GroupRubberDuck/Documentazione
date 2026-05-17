@@ -23,8 +23,8 @@
 #let doc = "Manuale Utente"
 
 #let currentVersion = (
-  major: 0,
-  minor: 5,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -42,7 +42,7 @@
     stato: "In lavorazione",
     versione: versionNumber,
     autori: (persone.DT, persone.FILIPPO),
-    verificatori: (),
+    verificatori: (persone.ANA),
     uso: "Esterno",
     destinatari: ("Utenti finali",),
   )
@@ -76,15 +76,22 @@
       [0.4.0],
       [2026-05-14],
       persone.DT,
-      [-],
+      [Ana Maria Draghici],
       [Stesura @Installazione],
     ),
     (
       [0.5.0],
       [2026-05-16],
       [#persone.DT,\ #persone.FILIPPO],
-      [-],
+      [Ana Maria Draghici],
       [Stesura @Istruzioni_uso],
+    ),
+    (
+      [1.0.0],
+      [2026-05-18],
+      [#persone.ANA],
+      [-],
+      [Approvazione],
     ),
   )
   #registroModifiche(modifiche)
