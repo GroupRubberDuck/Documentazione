@@ -79,7 +79,7 @@ Dopo aver cliccato "Vai al requisito $arrow.r$", si viene reindirizzati alla pag
 La pagina è composta da tre aree principali :
   - *Intestazione del requisito* : mostra l'identificativo (es. REQ-001), il nome, la descrizione normativa, il target di applicazione e l'eventuale lista di dipendenze da altri requisiti. Ogni dipendenza è cliccabile per navigare direttamente al requisito collegato.\ È inoltre presente un badge che indica lo stato corrente della valutazione (Pending, Pass, Fail, N.A.)
   - *Canvas del Decision Tree* : Visualizzazione grafica dell' albero decisionale del requisito.\ L'albero è interattivo ed è possibile cliccare su un nodo attivo (evidenziato in azzurro) per visualizzare la domanda nel pannello laterale.
-  - *Pannello laterale delle domande* : Questo pannello mostra il testo completo della domanda relativa al nodo selezionato, due pulsanti di risposta (Yes, No) e i pulsanti di navigazione per spostarsi lungo il percorso già risposto.\ Sotto di esso è presente un campo di testo Justification in cui è possibile inserire una nota giustificativa a supporto della valutazione eseguita. Il campo è opzionale.
+  - *Pannello laterale delle domande* : Questo pannello mostra il testo completo della domanda relativa al nodo selezionato, due pulsanti di risposta (Yes, No) e i pulsanti di navigazione per spostarsi lungo il percorso già risposto.\ Sotto di esso è presente un campo di testo Justification in cui è possibile inserire una nota giustificativa a supporto della valutazione eseguita e salvarla attraverso l'apposito pulsante. Il campo è opzionale. 
 
 
 #figure(

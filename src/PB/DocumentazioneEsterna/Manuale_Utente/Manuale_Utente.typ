@@ -82,7 +82,7 @@
     (
       [0.5.0],
       [2026-05-16],
-      persone.DT,
+      [#persone.DT,\ #persone.FILIPPO],
       [-],
       [Stesura @Istruzioni_uso],
     ),
