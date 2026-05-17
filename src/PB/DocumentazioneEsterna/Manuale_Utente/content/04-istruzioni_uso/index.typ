@@ -72,3 +72,24 @@ Cliccando sul pulsante "Valuta" nella lista degli asset è possibile visualizzar
   image("../../screenshot/schermata_dettaglio_asset.png", width: 60%),
   caption: [Schermata riassuntiva dell'asset],
 )
+
+== Valutazione di un Requisito tramite Decision Tree
+
+Dopo aver cliccato "Vai al requisito $arrow.r$", si viene reindirizzati alla pagina di dettaglio del requisito, da cui è possibile eseguire la valutazione interattiva tramite il Decision Tree.\
+La pagina è composta da tre aree principali :
+  - *Intestazione del requisito* : mostra l'identificativo (es. REQ-001), il nome, la descrizione normativa, il target di applicazione e l'eventuale lista di dipendenze da altri requisiti. Ogni dipendenza è cliccabile per navigare direttamente al requisito collegato.\ È inoltre presente un badge che indica lo stato corrente della valutazione (Pending, Pass, Fail, N.A.)
+  - *Canvas del Decision Tree* : Visualizzazione grafica dell' albero decisionale del requisito.\ L'albero è interattivo ed è possibile cliccare su un nodo attivo (evidenziato in azzurro) per visualizzare la domanda nel pannello laterale.
+  - *Pannello laterale delle domande* : Questo pannello mostra il testo completo della domanda relativa al nodo selezionato, due pulsanti di risposta (Yes, No) e i pulsanti di navigazione per spostarsi lungo il percorso già risposto.\ Sotto di esso è presente un campo di testo Justification in cui è possibile inserire una nota giustificativa a supporto della valutazione eseguita. Il campo è opzionale.
+
+
+#figure(
+  image("../../screenshot/schermata_valutazione_requisito.png", width: 100%),
+  caption: [Schermata di valutazione del Requisito],
+)\
+
+Una volta raggiunto un nodo foglia, il pannello laterale mostra il risultato della valutazione (Pass, Fail o Not Applicable) e un link «Torna alla lista Requisiti» per tornare alla schermata riassuntiva dell'asset.
+
+#figure(
+  image("../../screenshot/schermata_fine_valutazione_requisito.png", width: 40%),
+  caption: [Schermata di valutazione del Requisito],
+)
