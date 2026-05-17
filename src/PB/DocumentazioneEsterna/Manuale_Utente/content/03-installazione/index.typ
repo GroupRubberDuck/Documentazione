@@ -16,12 +16,11 @@ Questa sezione spiega come installare e avviare correttamente la versione MVP de
 
 L'applicazione richiede *Docker* e *Docker Compose* installati e in esecuzione in background sul proprio sistema prima di procedere.
 
-1. Creare un file `.env` nella cartella radice del repository con le credenziali per il database MongoDB:
-```sh
-  DB_USER=root
-  DB_PASSWORD=grouprubberduckpoc2026
-```
-Il file `.env` è già escluso dal controllo di versione tramite `.gitignore`.
+1.  Impostare le variabili di ambiente richieste (`DB_USER` e `DB_PASSWORD`) per il database MongoDB, per esempio con:
+  ```sh
+  export DB_USER=mongo
+  export DB_PASSWORD=passwordsegreta
+  ```
 
 2. Avviare l'applicazione eseguendo:
 ```sh
