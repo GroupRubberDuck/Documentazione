@@ -40,7 +40,7 @@ _DecisionTreeStore_ è il modulo basato su Pinia che funge da "Single Source of 
 - `+ answers: Map<String, Boolean>` — dizionario che associa l'ID di ogni nodo decisionale alla rispettiva risposta (Yes/No) fornita dall'utente.
 - `+ layoutResult: LayoutResult` — struttura dati che incapsula i risultati del calcolo geometrico (nodi e archi) necessari a renderizzare l'albero.
 
-*Metodi e funzioni (Actions)*
+*Metodi (Actions)*
 
 - `+ closeSideBar()` — azione per chiudere il pannello laterale.
 - `+ setAnswer(nodeId: String, answer: Boolean)` — registra o aggiorna la risposta dell'utente per un dato nodo decisionale.
@@ -62,7 +62,7 @@ _TreeSidebar_ è il componente Vue.js che implementa il pannello laterale intera
 - `+ currentAnswer: Boolean | undefined` — estrae dallo Store la risposta precedentemente data (se presente) per il nodo corrente.
 - `+ hasNextNode: Boolean` — calcola dinamicamente se esiste un nodo successivo navigabile partendo dalla situazione corrente.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ submit(answer: Boolean)` — gestisce l'invio della risposta per la domanda a schermo, delegandone il salvataggio all'azione dello Store.
 - `+ goPrevious()` — innesca la navigazione per tornare al nodo precedente lungo il percorso di valutazione.
@@ -86,7 +86,7 @@ _NodeDTO_ (Data Transfer Object) è una struttura dati passiva utilizzata esclus
 - `+ yesChildId: String | null` — riferimento all'ID del nodo figlio in caso di risposta affermativa.
 - `+ noChildId: String | null` — riferimento all'ID del nodo figlio in caso di risposta negativa.
 
-*Metodi e funzioni*
+*Metodi*
 
 _NodeDTO_ non espone metodi, trattandosi di un oggetto dedicato al solo trasporto dati.
 
@@ -137,7 +137,7 @@ Questi Data Transfer Object (DTO) rappresentano le strutture dati arricchite con
 
 _LayoutEngine_ è l'interfaccia che definisce il contratto per il calcolo spaziale. _D3LayoutEngine_ ne è l'implementazione concreta, che sfrutta la libreria matematica D3.js per trasformare la struttura logica e gerarchica dell'albero in coordinate cartesiane bidimensionali, evitando sovrapposizioni tra i nodi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ calculateLayout(treeMap: Map<String, Node>, rootId: String): LayoutResult` — riceve la mappa logica dei nodi e restituisce il `LayoutResult` contenente nodi e archi con le coordinate X e Y calcolate.
 - `- extractNodesArray(treeMap: Map): List<Node>` — metodo di utilità interno per la conversione della mappa in array.
@@ -159,7 +159,7 @@ _TreeCanvas_ è il componente Vue.js principale per la visualizzazione dell'albe
 - `+ layoutResult: LayoutResult` — (computed) si aggiorna automaticamente se l'albero cambia, innescando un nuovo ricalcolo geometrico.
 - `+ activePath: List<String>` — (computed) recupera l'elenco degli ID dei nodi correntemente attivi in base alle risposte dell'utente.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ resolveComponent(type: NodeDTO): Component` — determina dinamicamente quale sotto-componente Vue renderizzare (_UiDecisionNode_ o _UiLeafNode_) in base al tipo del nodo.
 - `+ selectNode(nodeId: String)` — gestisce il click su un nodo della mappa, notificando lo Store.
@@ -208,7 +208,7 @@ Il "Cervello" del modulo frontend risiede in una gerarchia di classi che impleme
 
 _Node_ è l'interfaccia (o contratto) base che definisce il comportamento comune a tutti i tipi di nodi presenti nell'albero. Garantisce che ogni nodo, indipendentemente dalla sua natura, possa fornire i propri dati di rendering e gestire la navigazione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ getRenderData(): NodeDTO` — restituisce i dati necessari al componente visivo per mostrare il nodo.
 - `+ getNext(answer: Boolean): String | null` — calcola l'ID del nodo successivo in base alla risposta ricevuta.
@@ -230,7 +230,7 @@ _DecisionNode_ è la classe che implementa un nodo intermedio (domanda). Contien
 - `- parentId: String | null` — riferimento al nodo precedente.
 - `- yesChildId, - noChildId: String` — riferimenti ai due possibili nodi successivi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ getNext(answer: Boolean)` — implementazione concreta che restituisce `yesChildId` se la risposta è `true`, altrimenti `noChildId`.
 
@@ -248,7 +248,7 @@ _LeafNode_ rappresenta il punto terminale di un ramo dell'albero (foglia). Non p
 
 - `- result: evaluationStateType` — definisce l'esito finale (es. "Conforme", "Non Conforme").
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ getNext(answer: Boolean)` — restituisce sempre `null`, segnando la fine del percorso.
 
@@ -266,7 +266,7 @@ _TreeStructure_ funge da contenitore organizzato per l'intero albero decisionale
 
 - `- nodes: Map<String, Node>` — mappa che indicizza tutti i nodi tramite il loro ID univoco per un accesso immediato ($O(1)$).
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ getNode(id: String): Node | null` — recupera l'oggetto nodo corrispondente all'ID fornito.
 - `+ getRootId(): String` — restituisce l'ID del punto di partenza della valutazione.
@@ -285,7 +285,7 @@ _EvaluationEngine_ è il motore logico principale che orchestra la valutazione. 
 
 - `- tree: TreeStructure` — la struttura dell'albero su cui operare.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ getEvaluationPath(answers: Map<String, Boolean>): List<String>` — incrocia la mappa delle risposte fornite dall'utente con la struttura dell'albero per generare la lista ordinata di ID che compongono l'attuale "Percorso Attivo" (Active Path).
 - `+ getNodeRenderData(nodeId: String): NodeDTO` — metodo di utilità per ottenere i dati grafici di un nodo specifico tramite il motore.
@@ -307,7 +307,7 @@ _DecisionTreeStore_ rappresenta il cuore reattivo dell'applicazione. È lo Store
 - `- activePath: ref<List<String>>` — lista reattiva degli ID dei nodi che compongono il percorso corrente, aggiornata automaticamente al variare delle risposte.
 - `- apiClient: ApiClient` — riferimento al client per le chiamate verso le API del backend.
 
-*Metodi e funzioni (Actions)*
+*Metodi (Actions)*
 
 - `+ init(data, savedAnswers)` — inizializza lo store caricando la struttura dell'albero e le eventuali risposte già salvate nel database.
 - `+ setAnswer(nodeId, answer)` — aggiorna una risposta nello stato locale, invoca il ricalcolo del percorso e avvia la persistenza asincrona tramite l'API.
@@ -327,7 +327,7 @@ _EvaluationApiClient_ è l'Outbound Adapter del frontend. Questa classe incapsul
 
 - `- baseUrl: String` — l'indirizzo radice del server API.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ saveAnswer(answer, device_id, asset_id, requirement_id, node_id): Promise<JSON>` — invia una richiesta asincrona al server per salvare la risposta fornita a un determinato nodo dell'albero. Riceve tutti i parametri di contesto necessari (dispositivo, asset e requisito) per garantire la corretta associazione dei dati nel database.
 - `+ fetchRequirementEvaluationState(device_id, asset_id, requirement_id): Promise<JSON>` — recupera dal backend lo stato attuale della valutazione per un determinato requisito. Questo metodo è fondamentale durante la fase di inizializzazione per ripristinare il "Percorso Attivo" basandosi sui dati salvati in precedenza.

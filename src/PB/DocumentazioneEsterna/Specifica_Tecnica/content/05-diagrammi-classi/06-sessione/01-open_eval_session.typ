@@ -36,7 +36,7 @@ _EvaluationSessionController_ è il controller Flask appartenente all'Inbound Ad
 - `- close_use_case: CloseEvaluationSessionUseCase` — inbound port usata per chiudere la sessione
 - `- commit_use_case: CommitEvaluationSessionUseCase` — inbound port usata per salvare la sessione in memoria
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ open_session(req: Request): Response` — riceve la richiesta HTTP di apertura di una nuova sessione di valutazione e restituisce una risposta HTTP con l'identificativo della sessione creata.
 - `+ close_session(req: Request): Response` — riceve la richiesta HTTP di chiusura della sessione corrente e restituisce una risposta HTTP con l'esito dell'operazione.
@@ -60,7 +60,7 @@ _OpenEvaluationSessionCommand_ è il Command Object utilizzato per trasportare i
 
 - `+ device_id: String` — identificativo univoco del Dispositivo per cui aprire la sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 _OpenEvaluationSessionCommand_ non definisce metodi propri.
 
@@ -79,7 +79,7 @@ _OpenEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce il 
 
 _OpenEvaluationSessionUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 #set par(justify: false)
 - `+ open_evaluation_session(command: OpenEvaluationSessionCommand): String` — firma del metodo delegato all'esecuzione della logica di apertura della sessione a partire dai dati contenuti nel Command.
@@ -105,7 +105,7 @@ _OpenEvaluationSessionService_ è il service applicativo appartenente all'Applic
 
 - `- find_standard_port: FindStandardPort` — outbound port usata per trovare lo Standard
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ open_evaluation_session(command: OpenEvaluationSessionCommand): String` — concretizza il contratto definito da _OpenEvaluationSessionUseCase_. Recupera il Dispositivo e lo standard associato, inizializza una nuova _EvaluationSession_ e ne richiede la creazione tramite _CreateEvaluationSessionPort_; restituisce l'identificativo della sessione creata.
 
@@ -123,11 +123,11 @@ _SessionCoordinator_ è il Service che coordina la logica di dominio relativa al
 - `- exist_port: EvaluationSessionExistPort` — Outbound port per verificare l'esistenza di sessioni attive nel sistema.
 - `- session_handler: SessionHandler` — Componente di dominio che incapsula le regole di business per l'apertura delle sessioni.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ can_open_session(session_type: SessionType): bool` — verifica se è possibile aprire una nuova sessione del tipo specificato, restituendo `true` se le precondizioni sono soddisfatte.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ can_open_session(active_session_exists: bool): bool` — verifica se è possibile avviare una nuova sessione, restituendo `false` nel caso in cui esista già una sessione attiva, altrimenti `true`.
 
@@ -144,7 +144,7 @@ _EvaluationSessionExistPort_ è l'interfaccia (Outbound Port) che definisce il c
 
 La classe _EvaluationSessionExistPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ has_active_session(): bool` — interroga il sistema per determinare se esiste già una sessione attiva, restituendo il risultato come valore booleano.
 
@@ -162,7 +162,7 @@ _CreateSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto 
 
 _CreateSessionPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_session(): EvaluationSession` — firma del metodo che inizializza e registra una nuova sessione di valutazione nel sistema in memoria.
 

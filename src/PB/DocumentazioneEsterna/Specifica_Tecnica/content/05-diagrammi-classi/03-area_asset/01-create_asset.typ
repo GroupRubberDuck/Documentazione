@@ -27,7 +27,7 @@ _FlaskWriteAssetController_ è il controller Flask appartenente all'Inbound Adap
 - `- delete_asset_use_case: DeleteAssetUseCase` — inbound port usata per la rimozione di un asset
 - `- update_asset_use_case: UpdateAssetUseCase` — inbound port usata per l'aggiornamento di un asset
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_asset(req: Request): Response` — riceve la richiesta HTTP di creazione di un nuovo Asset, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 - `+ update_asset(req: Request): Response` — riceve la richiesta HTTP di aggiornamento di un Asset esistente, estrae i dati modificati e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
@@ -48,7 +48,7 @@ _CreateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto 
 
 _CreateAssetUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_asset(asset: CreateAssetCommand): bool` — firma del metodo delegato all'esecuzione della logica di creazione a partire dai dati contenuti nel comando.
 
@@ -74,7 +74,7 @@ _CreateAssetCommand_ è il Command Object che veicola i dati necessari alla crea
 - `+ description: String` — descrizione testuale dell'Asset.
 
 
-*Metodi e funzioni*
+*Metodi*
 
 _CreateAssetCommand_ non definisce metodi.
 
@@ -96,7 +96,7 @@ _CreateAssetService_ è il service applicativo appartenente all'Application Core
 - `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_asset(asset: CreateAssetCommand): string` — concretizza il contratto definito da _CreateAssetUseCase_. Recupera la sessione attiva, vi aggiunge il nuovo Asset e ne persiste lo stato aggiornato. Ritorna l'id dell'asset creato.
 
@@ -116,7 +116,7 @@ _InMemoryEvaluationSessionCache_ è la classe dell'Outbound Adapter annotata com
 
 - `- session: EvaluationSession` — contiene l'oggetto EvaluationSession
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_evaluation_session(standard: ComplianceStandard, device: Device): EvaluationSession` — crea e registra una nuova sessione di valutazione.
 - `+ get_evaluation_session(session_id: String): EvaluationSession` — recupera la sessione corrispondente all'identificativo fornito.
@@ -139,7 +139,7 @@ _SaveEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il co
 
 _SaveEvaluationSessionPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ save_evaluation_session(session: EvaluationSession): void` — firma del metodo che persiste la sessione aggiornata nel sistema in memoria.
 
@@ -157,7 +157,7 @@ _GetEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il con
 
 _GetEvaluationSessionPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_evaluation_session(session_id: String): EvaluationSession` — firma del metodo che recupera la sessione di valutazione attiva corrispondente all'identificativo fornito.
 

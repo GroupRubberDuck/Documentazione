@@ -28,7 +28,7 @@ _FlaskQueryAssetController_ è un adapter di input (controller) basato su Flask.
 
 - `- _get_asset_anagraphic_use_case: GetAssetAnagraphicUseCase` — istanza del caso d'uso iniettata a runtime, necessaria per recuperare le informazioni anagrafiche di un asset specifico.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ edit_asset_page(session_id: String, device_id: String, asset_id: String): Response` — delega al caso d'uso il recupero dell'anagrafica dell'asset, mappa le informazioni di dominio in un `AssetAnagraphicDTO` e restituisce il template HTML precompilato per la visualizzazione/modifica.
 
@@ -50,7 +50,7 @@ _GetAssetAnagraphicCommand_ è il Command Object utilizzato per trasportare i da
 - `+ asset_id: String` — identificativo univoco dell'Asset di cui recuperare il dettaglio.
 - `+ session_id: String` — identificativo univoco della sessione di valutazione corrente.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetAssetAnagraphicCommand_ non definisce metodi propri.
 
@@ -69,7 +69,7 @@ _GetAssetAnagraphicUseCase_ è l'interfaccia (Inbound Port) che definisce il con
 
 _GetAssetAnagraphicUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — firma del metodo delegato al recupero dedi anagrafica dell'asset ricercato.
 
@@ -88,7 +88,7 @@ _GetAssetAnagraphicService_ è il service applicativo appartenente all'Applicati
 
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
-*Metodi e funzioni*
+*Metodi*
 #set par(justify: false)
 - `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — concretizza il contratto definito da _GetAssetAnagraphicUseCase_. Recupera la sessione attiva, individua l'Asset richiesto e ne estrae l'_AssetAnagraphic_.
 

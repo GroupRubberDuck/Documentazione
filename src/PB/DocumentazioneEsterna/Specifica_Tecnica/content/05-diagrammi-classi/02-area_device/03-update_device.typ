@@ -28,7 +28,7 @@ _UpdateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto
 
 _UpdateDeviceUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `update_device(command: UpdateDeviceCommand)` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
 
@@ -50,7 +50,7 @@ _UpdateDeviceCommand_ è il Command Object che veicola i dati necessari alla mod
 - `+ device_os: String` — sistema operativo aggiornato.
 - `+ device_description: String` — descrizione testuale aggiornata.
 
-*Metodi e funzioni*
+*Metodi*
 
 _UpdateDeviceCommand_ non definisce metodi.
 
@@ -70,7 +70,7 @@ _UpdateDeviceService_ è il service applicativo appartenente all'Application Cor
 - `- find_device_port: FindDevicePort` — utilizza la porta di outbound per prelevare il device
 - `- save_device_port: SaveDevicePort` — utilizza la porta di outbound per salvare le modifiche
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ udpate_device(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
 
@@ -88,7 +88,7 @@ _SaveDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per
 
 _UpdateDevicePort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ save(device: Device): void` — firma del metodo che esegue l'aggiornamento fisico del Dispositivo nel sistema di persistenza.
 
@@ -106,6 +106,6 @@ _FindDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto per
 
 _FindDevicePort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ find_by_id(device_id: String): Device` — firma del metodo che esegue l'aggiornamento fisico del Dispositivo nel sistema di persistenza.

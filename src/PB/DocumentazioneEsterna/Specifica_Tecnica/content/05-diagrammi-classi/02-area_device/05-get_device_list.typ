@@ -30,7 +30,7 @@ _GetDeviceListUseCase_ è l'interfaccia (Inbound Port) che definisce il contratt
 
 _GetDeviceListUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_list(): List<DeviceSummary>` — firma del metodo delegato al recupero della lista sintetica di tutti i Dispositivi presenti nel sistema.
 
@@ -49,7 +49,7 @@ _GetDeviceListService_ è il service applicativo appartenente all'Application Co
 
 - `- find_port: FindAllDevicesPort` — porta outbound utilizzata per il recupero della lista dei Dispositivi dal sistema di persistenza.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_list(): List<DeviceSummary>` — concretizza il contratto definito da _GetDeviceListUseCase_. Recupera la lista sintetica di tutti i Dispositivi tramite _FindAllDevicesPort_.
 
@@ -70,7 +70,7 @@ _DeviceSummary_ è il Data Transfer Object che veicola la rappresentazione sinte
 - `+ description: String` — descrizione del dispositivo
 - `+ compliance_standard_id: String` — identificativo univoco dello Standard
 
-*Metodi e funzioni*
+*Metodi*
 
 _DeviceSummary_ non definisce metodi.
 
@@ -89,7 +89,7 @@ _FindAllDevicesPort_ è l'interfaccia (Outbound Port) che definisce il contratto
 
 _FindAllDevicesPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ find_all(): List<DeviceSummary>` — firma del metodo che recupera la lista sintetica di tutti i Dispositivi presenti nel sistema di persistenza.
 

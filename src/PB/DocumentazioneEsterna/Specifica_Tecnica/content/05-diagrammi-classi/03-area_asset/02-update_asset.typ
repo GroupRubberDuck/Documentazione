@@ -31,7 +31,7 @@ _UpdateAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto 
 
 _UpdateAssetUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ update_asset(asset: UpdateAssetCommand): void` — firma del metodo delegato all'esecuzione della logica di aggiornamento a partire dai dati contenuti nel comando.
 ]
@@ -56,7 +56,7 @@ _UpdateAssetCommand_ è il Command Object che veicola i dati necessari alla modi
 - `+ description: String` — descrizione testuale aggiornata dell'Asset.
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 
-*Metodi e funzioni*
+*Metodi*
 
 _UpdateAssetCommand_ non definisce metodi.
 
@@ -78,7 +78,7 @@ _UpdateAssetService_ è il service applicativo appartenente all'Application Core
 - `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ udpate_asset(asset: UpdateAssetCommand): void` — concretizza il contratto definito da _UpdateAssetUseCase_. Recupera la sessione attiva, individua l'Asset da aggiornare tramite `asset_id` e ne persiste lo stato modificato.
 ]

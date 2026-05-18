@@ -25,7 +25,7 @@ _DeleteDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto
 
 _DeleteDeviceUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete(device_id: String): void` — firma del metodo delegato all'esecuzione della logica di eliminazione a partire dall'identificativo del Dispositivo.
 
@@ -44,7 +44,7 @@ _DeleteDeviceCommand_ è il Command Object utilizzato per trasportare i dati nec
 
 - `+ device_id: String` — identificativo univoco del Dispositivo da eliminare.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DeleteDeviceCommand_ non definisce metodi propri.
 
@@ -63,7 +63,7 @@ _DeleteDeviceService_ è il service applicativo appartenente all'Application Cor
 
 - `- delete_device_port: DeleteDevicePort` — porta outbound utilizzata per eliminare il device
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete(command: DeleteDeviceCommand): void` — riceve il Command Object contenente l'identificativo univoco del Dispositivo e ne coordina la rimozione tramite _DeleteDevicePort_.
 ==== DeleteDevicePort
@@ -80,7 +80,7 @@ _DeleteDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto p
 
 _DeleteDevicePort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete(device_id: String): void` — firma del metodo che esegue la rimozione fisica del Dispositivo identificato da `device_id` dal sistema di persistenza.
 

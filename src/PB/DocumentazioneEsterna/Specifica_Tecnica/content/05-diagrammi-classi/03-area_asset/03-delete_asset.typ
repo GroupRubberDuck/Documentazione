@@ -35,7 +35,7 @@ _DeleteAssetCommand_ è il Command Object utilizzato per trasportare i dati nece
 - `+ asset_id: String` — identificativo univoco del Asset da eliminare.
 - `+ session_id: String` — identificativo univoco della sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DeleteAssetCommand_ non definisce metodi propri.
 
@@ -54,7 +54,7 @@ _DeleteAssetUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto 
 
 _DeleteAssetUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete_asset(command: DeleteAssetCommand): void` — firma del metodo delegato all'esecuzione della logica di eliminazione a partire dai dati contenuti nel Command.
 
@@ -74,7 +74,7 @@ _DeleteAssetService_ è il service applicativo appartenente all'Application Core
 - `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete_asset(command: DeleteAssetCommand): void` — concretizza il contratto definito da _DeleteAssetUseCase_. Recupera la sessione attiva, individua e rimuove l'Asset corrispondente e ne persiste lo stato aggiornato.
 

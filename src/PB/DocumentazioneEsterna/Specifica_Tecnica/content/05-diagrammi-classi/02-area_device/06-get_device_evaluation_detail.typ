@@ -25,7 +25,7 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero della dashb
 
 // - `- get_device_evaluation_detail_use_case: GetDeviceEvaluationDetailUseCase` — inbound port usata per prelevare un _DeviceEvaluationDetail_.
 
-// *Metodi e funzioni*
+// *Metodi*
 
 // - `+ get_device_dashboard(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
 
@@ -44,7 +44,7 @@ _FlaskDeviceEvaluationDetailController_ è il controller Flask appartenente all'
 
 - `- get_device_evaluation_detail_use_case: GetDeviceEvaluationDetailUseCase` — inbound port usata per prelevare un _DeviceEvaluationDetail_.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_device_evaluation_detail(req: Request): Response` — riceve la richiesta HTTP di recupero di un _DeviceEvaluationDetail_ per la dashboard.
 
@@ -65,7 +65,7 @@ _GetDeviceEvaluationDetailCommand_ è il Command Object utilizzato per trasporta
 - `+ session_id: String` — identificativo univoco della sessione
 - `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetDeviceEvaluationDetailCommand_ non definisce metodi propri.
 
@@ -84,7 +84,7 @@ _GetDeviceEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che definisce
 
 _GetDeviceEvaluationDetailUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 #set par(justify: false)
 - `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
 
@@ -103,7 +103,7 @@ _GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Ap
 
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port per prelevare la sessione di valutaione.
 
-*Metodi e funzioni*
+*Metodi*
 #set par(justify: false)
 
 - `+ get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail` —
@@ -132,7 +132,7 @@ _DeviceEvaluationDTO_ è il Data Transfer Object principale utilizzato per conso
 - `+ device_evaluation_result: EvaluationState` — stato globale e finale della valutazione di conformità per l'intero dispositivo.
 - `+ asset_list: Tuple<AssetEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun asset analizzato all'interno del dispositivo.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DeviceEvaluationDTO_ non definisce metodi.
 
@@ -150,6 +150,6 @@ _AssetEvaluationSummaryDTO_ è un Data Transfer Object leggero e di supporto, is
 - `+ asset_type: AssetType` — categoria o tipologia a cui appartiene l'asset.
 - `+ asset_evaluation: EvaluationState` — stato corrente e finale della valutazione specifica per questo asset.
 
-*Metodi e funzioni*
+*Metodi*
 
 _AssetEvaluationSummaryDTO_ non definisce metodi.

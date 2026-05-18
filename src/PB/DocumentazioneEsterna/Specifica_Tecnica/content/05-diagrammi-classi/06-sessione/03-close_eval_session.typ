@@ -28,7 +28,7 @@ _CloseEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce il
 
 _CloseEvaluationSessionUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ close(command: CloseEvaluationSessionCommand): void` — firma del metodo delegato all'esecuzione della logica di chiusura della sessione a partire dal comando ricevuto in input. 
 
@@ -45,7 +45,7 @@ _CloseEvaluationSessionService_ è il service applicativo appartenente all'Appli
 
 - `- delete_session_port: DeleteSessionPort` — outbound port usata per eliminare la sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ close(command: CloseEvaluationSessionCommand): void` — concretizza il contratto definito da _CloseEvaluationSessionUseCase_. Coordina le operazioni di chiusura e inoltra la richiesta di eliminazione della sessione utilizzando i parametri incapsulati nel comando.
 
@@ -63,7 +63,7 @@ _CloseEvaluationSessionCommand_  incapsula i parametri necessari per richiedere 
 
 - `+ session_id: String` — l'identificativo univoco della sessione di valutazione di cui si richiede la chiusura e l'eliminazione.
 
-*Metodi e funzioni*
+*Metodi*
 
 _CloseEvaluationSessionCommand_ non definisce metodi.
 
@@ -80,7 +80,7 @@ _DeleteSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto 
 
 _DeleteSessionPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ delete_session(session_id: String): void` — firma del metodo che si occupa di rimuovere o invalidare lo stato di una specifica sessione di valutazione dal sistema di persistenza.
 

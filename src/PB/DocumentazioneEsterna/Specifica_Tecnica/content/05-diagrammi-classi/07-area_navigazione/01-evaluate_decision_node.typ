@@ -27,7 +27,7 @@ _EvaluateDecisionNodeController_ è il controller Flask appartenente all'Inbound
 
 - `- evaluate_decision_node_use_case: EvaluateDecisionNodeUseCase` — outbound port usata per valutare un nodo
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ insert_decision_node_evaluation(req: Request): Response` — riceve la richiesta HTTP, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
@@ -45,7 +45,7 @@ _EvaluateDecisionNodeUseCase_ è l'interfaccia (Inbound Port) che definisce il c
 
 _EvaluateDecisionNodeUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ evaluate_node(command: EvaluateDecisionNodeCommand): void` — firma del metodo delegato all'esecuzione della logica di valutazione a partire dai dati contenuti nel comando.
 
@@ -68,7 +68,7 @@ _EvaluateDecisionNodeCommand_ è il Command Object che veicola i dati necessari 
 - `+ node_id: String` — identificativo del nodo decisionale.
 - `+ answer: Boolean` — valore della risposta fornita per il nodo decisionale.
 
-*Metodi e funzioni*
+*Metodi*
 
 _EvaluateDecisionNodeCommand_ non definisce metodi propri.
 
@@ -87,6 +87,6 @@ _EvaluateDecisionNodeService_ è il service applicativo appartenente all'Applica
 - `get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per recuperare la sessione di valutazione.
 - `save_evaluation_session_port: SaveEvaluationSessionPort` — outbound port usata per salvare le modifiche applicate alla sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ evaluate_node(command: EvaluateDecisionNodeCommand): void` — concretizza il contratto definito da _EvaluateDecisionNodeUseCase_. Recupera la sessione attiva, individua l'Asset nel dispositivo, registra la risposta al nodo decisionale e persiste la sessione aggiornata.

@@ -29,7 +29,7 @@ _CommitEvaluationSessionUseCase_ è l'interfaccia (Inbound Port) che definisce i
 
 _CommitEvaluationSessionUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ commit(command: CommitEvaluationSessionCommand): void` — firma del metodo delegato all'esecuzione della logica di consolidamento dei dati della sessione di valutazione a partire dal comando ricevuto in input.
 
@@ -46,7 +46,7 @@ _CommitEvaluationSessionService_ è il service applicativo dell'Application Core
 - `save_device_port: SaveDevicePort` — outbound port usata per salvare il dispositivo in memoria
 - `get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la _EvaluationSession_
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ commit(command: CommitEvaluationSessionCommand): void` — concretizza la logica di business relativa al consolidamento dei dati. Utilizza i parametri incapsulati nel comando per applicare le modifiche allo stato persistente del dispositivo.
 
@@ -64,7 +64,7 @@ _CommitEvaluationSessionCommand_ incapsula i parametri necessari per richiedere 
 
 - `+ session_id: String` — l'identificativo univoco della sessione di valutazione di cui si richiede il consolidamento dei dati.
 
-*Metodi e funzioni*
+*Metodi*
 
 _CommitEvaluationSessionCommand_ non definisce metodi.
 

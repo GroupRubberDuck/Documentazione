@@ -13,7 +13,7 @@ _EvaluationEngine_ è il componente del dominio responsabile di orchestrare il p
 
 La classe non definisce attributi di stato interni, agendo come puro gestore della logica di business.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult` — valuta il dispositivo calcolando e aggregando i risultati di tutti i suoi asset, restituendo infine l'esito globale.
 - `- _evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult` — metodo privato che valuta un singolo asset contro tutti i requisiti dello standard, avvalendosi di una cache per mantenere i risultati e supportare la memoizzazione.
@@ -39,6 +39,6 @@ _EvaluationState_ è un'enumerazione di stringhe (`StrEnum`) che definisce forma
 - `- NA: String` — indica che il requisito non è applicabile al contesto valutato ("not_applicable").
 - `- PENDING: String` — indica che la valutazione è attualmente in sospeso per mancanza di evidenze o risposte complete ("pending").
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ from_verdict(verdict: StandardVerdict): EvaluationState` — metodo di classe che converte un `StandardVerdict` nel corrispondente `EvaluationState`, sollevando un `ValueError` qualora non esista una mappatura definita.
