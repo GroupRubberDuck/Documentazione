@@ -167,9 +167,7 @@
       [2026-04-20],
       [#persone.FELIX],
       [#persone.DL],
-      [Stesura dei design pattern comportamentali e architetturali
-      @design-pattern-comportamentali,
-      @design-pattern-architetturali      
+      [Stesura dei design pattern comportamentali e architetturali  
       ]
     ),
     (
@@ -267,25 +265,7 @@
 
   #include "content/06-tracciamento/_index.typ"
 ]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
-  = Qualità architetturale <qualita-architetturale>
-
-  #include "content/07-qualita-architetturale/_index.typ"
-]
 #insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
-  = Gestione Errori e Logging <gestione-errori-logging>
-
-
-  #include "content/08-gestione-errori/_index.typ"
-]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Sicurezza", documentType: doc)[
-  = Sicurezza <sicurezza>
-
-  #include "content/09-sicurezza/_index.typ"
-]
-
-#insertArabicNumberedPagesSenzaData(PageTitle: "Performance e Scalabilità", documentType: doc)[
-  = Performance e Scalabilità <Performance-Scalabilita>
-
-  #include "content/10-performance-scalabilita/_index.typ"
+  = Gestione degli Errori <gestione-errori>
+  #include "content/07-gestione-errori/_index.typ"
 ]

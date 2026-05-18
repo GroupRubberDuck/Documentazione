@@ -2,7 +2,9 @@
 La seguente sezione illustra il comportamento dinamico del sistema tramite diagrammi di sequenza, focalizzandosi sui casi d'uso di maggiore interesse. Questi modelli descrivono l'ordine cronologico dei messaggi scambiati tra gli attori esterni, i componenti infrastrutturali e il nucleo applicativo.
 
 === UC05 - Importazione dispositivo
-#image("Diagrammi_sequenza/Importazione_dispositivo_uc05_06.png");
+#image("Diagrammi_sequenza/Importazione_dispositivo_uc05_06.png")
+
+Il caso d'uso consente all'utente di caricare un file (CSV, JSON o XML) contenente i dati di un dispositivo e di registrarlo nel sistema. Il flusso coinvolge tre componenti principali: il controller HTTP, il servizio applicativo e il repository.
 
 Flusso Principale
 + *Ricezione della richiesta HTTP*:\
@@ -27,7 +29,7 @@ Se il file non è leggibile, ha una struttura malformata, o contiene dati semant
 Se un dispositivo con lo stesso identificatore è già presente nel repository, register() solleva una DuplicateDeviceError. Il servizio la traduce in un DeviceRegistrationFailure, che il controller mappa in HTTP 409 Conflict.
 
 === UC26, UC27 - Valutazione di un nodo e transizione di stato
-#image("Diagrammi_sequenza/Valutazione_e_transizione_stato_uc26_27.png")
+#image("Diagrammi_sequenza/Valutazione.png")
 
 Il caso d'uso consente all'utente di registrare la risposta a un nodo decisionale nell'albero di valutazione di un requisito. Il flusso coinvolge il controller HTTP, il servizio applicativo, due port distinte per la sessione e gli oggetti di dominio EvaluationSession e Asset.
 
@@ -48,45 +50,17 @@ Flusso principale:
   Il service restituisce None. Il controller risponde con HTTP 200 OK e il messaggio {"message": "valutazione registrata con successo."}.
 
 Flussi alternativi:
-- [Body JSON mancante o non valido]
-Se il body della richiesta è assente o node_id/answer non rispettano i tipi attesi da EvaluateDecisionNodeCommand, il controller restituisce HTTP 400 Bad Request. Il service non viene mai invocato.
+- *[Body JSON mancante o non valido]*
+Se il body della richiesta è assente o node_id/answer non rispettano i tipi attesi da _EvaluateDecisionNodeCommand_, il controller restituisce HTTP 400 Bad Request. Il service non viene mai invocato.
 
-- [Sessione non trovata]
-Se la GetEvaluationSessionPort non trova una sessione con l'identificatore fornito, solleva EvaluationSessionNotFoundError. Il service cattura l'eccezione e la traduce in EvaluateNodeFailure. Il controller restituisce HTTP 400 Bad Request.
+- *[Sessione non trovata]*
+Se la _GetEvaluationSessionPort_ non trova una sessione con l'identificatore fornito, solleva _EvaluationSessionNotFoundError_. Il service cattura l'eccezione e la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-- [Asset non trovato]
-Se il device nella sessione non contiene un asset con l'identificatore fornito, il dominio solleva AssetNotFoundError. Il service la traduce in EvaluateNodeFailure. Il controller restituisce HTTP 400 Bad Request.
+- *[Asset non trovato]*
+Se il device nella sessione non contiene un asset con l'identificatore fornito, il dominio solleva _AssetNotFoundError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-- [Risposta non valida per il nodo]
-Se set_node_choice riceve un valore non ammesso per il nodo specificato, il dominio solleva ValueError. Il service la traduce in EvaluateNodeFailure. Il controller restituisce HTTP 400 Bad Request.
+- *[Risposta non valida per il nodo]*
+Se _set_node_choice_ riceve un valore non ammesso per il nodo specificato, il dominio solleva _ValueError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-- [Errore di salvataggio]
-Se la SaveEvaluationSessionPort non riesce a persistere la sessione, solleva EvaluationSessionSaveError. Il service la traduce in EvaluateNodeFailure. Il controller restituisce HTTP 400 Bad Request.
-
-=== UC30 - Esportazione report di conformità
-#image("Diagrammi_sequenza/Esportazione_report_uc30.png")
-
-Il diagramma di sequenza illustra il processo di generazione ed esportazione del resoconto finale di conformità per un dispositivo valutato.
-
-Il flusso è innescato da una chiamata HTTP gestita dall'Adattatore Inbound. Il Servizio applicativo avvia il recupero del documento che viene effettuato grazie all'outbound adapter (PyMongo) che estrae i dati dal database.
-
-Una volta recuperato il dispositivo, il Servizio invoca l'aggregazione dei verdetti sul Dominio, il quale restituisce una struttura dati esclusivamente logica (Pass/Fail/NA) senza possedere alcuna conoscenza del rendering finale. Per la creazione del file fisico il Servizio usa la porta di generazione del pdf che traduce i dati puri in un layout grafico, restituendo il file che arriverà all'utente.
-
-
-== Diagrammi di attività
-
-=== Navigazione degli alberi
-
-#image("Diagrammi_attività/Attività_navigazione.drawio.png", width: 80%)
-
-Il diagramma di attività illustra l'algoritmo di navigazione dell'albero normativo.
-
-Il flusso si basa su un ciclo continuo il cui innesco principale è la risposta dell'utente a uno specifico nodo (Sì/No). Dopo l'inserimento dell'input, il sistema calcola il nodo successivo e ne verifica la natura tramite un blocco decisionale ("è foglia?"):
-
-Se il nodo non è una foglia (nodo intermedio), il flusso torna indietro per sottoporre all'utente la nuova domanda appena calcolata.
-
-Se il nodo è una foglia (ramo di valutazione concluso), il sistema innesca la logica di avanzamento gerarchico.
-
-La fase di avanzamento procede per livelli. Dapprima, il sistema calcola e verifica se vi sono ulteriori requisiti da valutare per l'asset corrente ("trovo requisiti?"). In caso positivo, il nuovo requisito viene caricato e il ciclo di domande riparte dall'inizio. In caso negativo, il sistema sale di livello verificando l'esistenza di ulteriori asset non ancora esaminati nel dispositivo ("trovo asset?"). Se viene individuato un nuovo asset, ne vengono calcolati i relativi requisiti, che vengono caricati per riavviare la compilazione.
-
-L'algoritmo fuoriesce da questo ciclo annidato solo ed esclusivamente quando sia i requisiti sia gli asset del dispositivo sono stati completamente esauriti. In questo scenario conclusivo, il sistema torna alla pagina di dashboard.
+- *[Errore di salvataggio]*
+Se la _SaveEvaluationSessionPort_ non riesce a persistere la sessione, solleva _EvaluationSessionSaveError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
