@@ -188,6 +188,20 @@
       [#persone.FILIPPO],    
       [Stesura sprint 12],
     ),
+    (
+      [1.4.0],
+      [2026-04-28],
+      [#persone.DL],
+      [#persone.ANA],    
+      [Stesura sprint 13],
+    ),
+    (
+      [1.5.0],
+      [2026-04-28],
+      [#persone.ANA],
+      [-],    
+      [Aggiornamento finale della pianificazione di lungo periodo TB],
+    ),
   )
   #registroModifiche(modifiche)
 ]

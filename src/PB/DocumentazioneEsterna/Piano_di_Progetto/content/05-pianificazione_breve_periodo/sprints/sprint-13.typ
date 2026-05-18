@@ -10,7 +10,7 @@
     fineEffettiva: datetime(year: 2026, month: 05, day: 11),
   ),
   TODO: [
-    Il focus dello sprint è stato il completamento della fase di codifica del backend e una buona parte del front end
+    Il focus dello sprint è stato il completamento della fase di codifica del backend e una buona parte del frontend.
   ],
   rischiAttesi: [
       - *R.O.1 - Pianificazione errata o ottimistica*: L'implementazione delle classi potrebbe essere più complessa del previsto, se qualcuno trova difficoltà eccessive nella codifica di una parte del sistema backend dovrà parlarne con gli altri componenti del gruppo in modo da poter risolvere il problema.
@@ -25,7 +25,6 @@
     (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
-    (persona: persone.FELIX, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 7, oreEffettive: 7),
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
