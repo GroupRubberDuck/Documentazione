@@ -4,7 +4,7 @@
 cd "$(git rev-parse --show-toplevel)"
 
 REPO_DOC="$(pwd)"
-REPO_POC="$(dirname "$REPO_DOC")/PoC"
+REPO_POC="$(dirname "$REPO_DOC")/MVP"
 
 # Chiede in input i dati dello Sprint
 read -p "Inserisci il nome dello Sprint (es. Sprint1): " NOME_SPRINT

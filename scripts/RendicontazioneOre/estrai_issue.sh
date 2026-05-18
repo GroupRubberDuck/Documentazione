@@ -4,7 +4,6 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$(git rev-parse --show-toplevel)"
 REPO_ROOT="$(pwd)"
 TEMP_ALL="$REPO_ROOT/temp_all_issues.txt"
-TEMP_ALL_2="$REPO_ROOT/temp_all_issues_2.txt"
 TEMP_FILTERED="$REPO_ROOT/temp_filtered_issues.txt"
 
 read -p "Inserisci il nome dello Sprint (es. Sprint1): " NOME_SPRINT
@@ -12,8 +11,6 @@ read -p "Inserisci la data di INIZIO sprint (YYYY-MM-DD): " DATA_INIZIO
 read -p "Inserisci la data di FINE sprint (YYYY-MM-DD): " DATA_FINE
 
 OWNER="GroupRubberDuck"
-PROJECT_NUMBER_DOC=2
-PROJECT_NUMBER_POC=7
 
 DIR_DESTINAZIONE="scripts/RendicontazioneOre/Output"
 mkdir -p "$DIR_DESTINAZIONE"
@@ -21,82 +18,56 @@ FILE_OUTPUT="$DIR_DESTINAZIONE/estrazione_issue_${NOME_SPRINT}.csv"
 
 echo "Title|URL|Autore|Verificatore|Start date|End date|Size" > "$FILE_OUTPUT"
 
-echo "Scaricamento dati da Documentazione (board $PROJECT_NUMBER_DOC)..."
+# Pulisco il file temporaneo principale (nel caso esista da esecuzioni precedenti)
+> "$TEMP_ALL"
 
-gh api graphql --paginate -f query='
-query($endCursor: String) {
-  organization(login: "'"$OWNER"'") {
-    projectV2(number: '"$PROJECT_NUMBER_DOC"') {
-      items(first: 100, after: $endCursor) {
-        pageInfo { hasNextPage endCursor }
-        nodes {
-          content {
-            ... on Issue {
-              title
-              url
-              body
-              createdAt
-              closedAt
-              assignees(first: 10) { nodes { login } }
-            }
-          }
-          fieldValues(first: 20) {
+# === FUNZIONE PER SCARICARE I DATI DI UN PROGETTO ===
+fetch_project_issues() {
+    local project_number=$1
+    local project_name=$2
+    echo "Scaricamento dati da $project_name (board $project_number)..."
+
+    gh api graphql --paginate -f query='
+    query($endCursor: String) {
+      organization(login: "'"$OWNER"'") {
+        projectV2(number: '"$project_number"') {
+          items(first: 100, after: $endCursor) {
+            pageInfo { hasNextPage endCursor }
             nodes {
-              ... on ProjectV2ItemFieldSingleSelectValue {
-                name
-                field { ... on ProjectV2SingleSelectField { name } }
+              content {
+                ... on Issue {
+                  title
+                  url
+                  body
+                  createdAt
+                  closedAt
+                  assignees(first: 10) { nodes { login } }
+                }
               }
-              ... on ProjectV2ItemFieldDateValue {
-                date
-                field { ... on ProjectV2Field { name } }
+              fieldValues(first: 20) {
+                nodes {
+                  ... on ProjectV2ItemFieldSingleSelectValue {
+                    name
+                    field { ... on ProjectV2SingleSelectField { name } }
+                  }
+                  ... on ProjectV2ItemFieldDateValue {
+                    date
+                    field { ... on ProjectV2Field { name } }
+                  }
+                }
               }
             }
           }
         }
       }
-    }
-  }
-}' | jq -r -f "$SCRIPT_DIR/jq_filter.jq" > "$TEMP_ALL"
+    }' | jq -r -f "$SCRIPT_DIR/jq_filter.jq" >> "$TEMP_ALL"
+}
+# ====================================================
 
-echo "Scaricamento dati da PoC (board $PROJECT_NUMBER_POC)..."
-
-gh api graphql --paginate -f query='
-query($endCursor: String) {
-  organization(login: "'"$OWNER"'") {
-    projectV2(number: '"$PROJECT_NUMBER_POC"') {
-      items(first: 100, after: $endCursor) {
-        pageInfo { hasNextPage endCursor }
-        nodes {
-          content {
-            ... on Issue {
-              title
-              url
-              body
-              createdAt
-              closedAt
-              assignees(first: 10) { nodes { login } }
-            }
-          }
-          fieldValues(first: 20) {
-            nodes {
-              ... on ProjectV2ItemFieldSingleSelectValue {
-                name
-                field { ... on ProjectV2SingleSelectField { name } }
-              }
-              ... on ProjectV2ItemFieldDateValue {
-                date
-                field { ... on ProjectV2Field { name } }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}' | jq -r -f "$SCRIPT_DIR/jq_filter.jq" > "$TEMP_ALL_2"
-
-cat "$TEMP_ALL_2" >> "$TEMP_ALL"
-rm "$TEMP_ALL_2"
+# Eseguo il fetch per tutte le board richieste
+fetch_project_issues 2 "Documentazione"
+fetch_project_issues 7 "PoC"
+fetch_project_issues 9 "Nuova Board (Progetto 9)"
 
 NUM_ISSUE=$(wc -l < "$TEMP_ALL")
 echo "Scaricamento completato: $NUM_ISSUE issue totali elaborate."
