@@ -1,5 +1,3 @@
-== Gestione delle Eccezioni
-
 L'applicazione adotta una strategia di gestione degli errori stratificata. Le eccezioni non attraversano liberamente i confini architetturali, vengono invece intercettate, contestualizzate e tradotte man mano che si propagano dai livelli più profondi verso l'esterno.
 Per garantire chiarezza d'intenti e manutenibilità del codice, l'implementazione si basa su una netta distinzione semantica definita dai suffissi delle classi:
 
