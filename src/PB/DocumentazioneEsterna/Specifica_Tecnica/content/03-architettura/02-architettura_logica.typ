@@ -8,6 +8,8 @@ Il sistema è strutturato in livelli concentrici, organizzati come segue:
 
 - *Domain (Core)*: Rappresenta il nucleo centrale dell'applicazione. Contiene la logica di business pura ed è rigorosamente privo di dipendenze esterne.
 
+- *Services*: Definiscono i casi d'uso dell'applicazione (Application Services) e fungono da orchestratori. Implementano le Inbound Ports per gestire le richieste in ingresso, coordinano gli oggetti del Domain affinché eseguano la logica di business pura e utilizzano le Outbound Ports per delegare all'esterno operazioni infrastrutturali (come il salvataggio su database).
+
 - *Ports*: Costituiscono il punto di connessione tra il nucleo e il mondo esterno, permettendo una comunicazione strutturata senza creare accoppiamento. Si suddividono in Inbound Ports (definiscono i casi d'uso accessibili dall'esterno) e Outbound Ports (permettono al nucleo di definire interfacce per interagire con i servizi esterni).
 
 - *Adapters*: Rappresentano lo strato più esterno e fungono da traduttori tra le tecnologie specifiche e il nucleo. Si suddividono in Driving/Input Adapters (adattatori in entrata, che guidano l'applicazione ricevendo input e invocando le Inbound Ports) e Driven/Output Adapters (adattatori in uscita, che vengono guidati dall'applicazione per interagire con l'infrastruttura esterna tramite le Outbound Ports).
@@ -26,7 +28,7 @@ Gli aspetti negativi di questa scelta sono:
 - *Elevato overhead iniziale*: La ferrea separazione dei livelli impone la stesura di un'abbondante quantità di codice infrastrutturale (boilerplate). Risulta necessario definire contratti astratti (Porte), implementazioni concrete (Adattatori) e orchestratori (Servizi), allungando i tempi di sviluppo nelle prime fasi del progetto. Il gruppo ha tuttavia accettato questo costo iniziale, ritenendolo un investimento necessario a fronte del drastico abbattimento dei futuri costi di manutenzione e della massima testabilità garantita al nucleo applicativo.
 
 === Diagramma dei package
-#image("Diagrammi_package/Diagramma_Package.png")
+#image("Diagrammi_package/Diagramma_Package.png", width: 110%)
 Il diagramma illustra l'organizzazione logica del sistema Automated EN18031 Compliance Verification, fondata sull'architettura esagonale. Il sistema è strutturalmente ripartito in un livello di presentazione esterno (Frontend Client), sviluppato tramite il framework Vue.js, e un nucleo applicativo (Backend), implementato in Python.
 
 Per garantire una rigorosa separazione delle responsabilità e il pieno rispetto del principio di Inversione delle Dipendenze, il Backend si articola nei seguenti livelli tipici dell'architettura esagonale:

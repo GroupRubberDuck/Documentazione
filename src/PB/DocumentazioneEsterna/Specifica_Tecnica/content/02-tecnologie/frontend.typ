@@ -10,7 +10,7 @@
   "Dipendenze principali":
     (
       ([pinia],[],[Gestore dello stato ufficiale e leggero per Vue.]),
-      ([axios],[],[Client HTTP flessibile. Preferito alla Fetch API nativa per l'ergonomia nella gestione automatica del JSON, la gestione degli errori e l'uso degli interceptor per le chiamate verso le API di Flask.]),
+      // ([axios],[],[Client HTTP flessibile. Preferito alla Fetch API nativa per l'ergonomia nella gestione automatica del JSON, la gestione degli errori e l'uso degli interceptor per le chiamate verso le API di Flask.]),
       ([tailwindcss],[],[Framework CSS utility-first per un'agile stilizzazione dell'interfaccia.]),
     ),
   "Dynamic Testing":
