@@ -28,7 +28,7 @@ _FlaskExportDeviceController_ è il controller Flask appartenente all'Inbound Ad
 
 - `- export_device_use_case: ExportDeviceUseCase` — inbound port usata per esportare un dispositivo.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_device(req: Request): Response` — riceve la richiesta HTTP, estrae l'identificativo del dispositivo e il formato desiderato come query parameter, invoca il caso d'uso di esportazione e restituisce il file generato come risposta HTTP scaricabile.
 
@@ -46,7 +46,7 @@ _ExportDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto
 
 _ExportDeviceUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_device(command: ExportDeviceCommand): ExportedFile` — firma del metodo delegato all'esecuzione della logica di esportazione a partire dai dati contenuti nel Command.
 
@@ -65,7 +65,7 @@ _ExportDeviceCommand_ è il Command Object che veicola i parametri della richies
 - `+ device_id: String` — identificativo univoco del dispositivo da esportare.
 - `+ extension: AllowedDeviceFileExtension` — formato del file richiesto per l'esportazione, vincolato ai valori dell'enumerazione _AllowedDeviceFileExtension_.
 
-*Metodi e funzioni*
+*Metodi*
 
 _ExportDeviceCommand_ non definisce metodi propri.
 
@@ -84,7 +84,7 @@ _ExportDeviceService_ è il service applicativo appartenente all'Application Cor
 - `- find_device: FindDevicePort` — outbound port usata per prelevare il dispositivo.
 - `- exporter_factory: FileDeviceExporterFactoryPort` — outbound port usata per ottenere l'exporter desiderato.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_device(command: ExportDeviceCommand): ExportedFile` — concretizza il contratto definito da _ExportDeviceUseCase_. Recupera il dispositivo, ottiene l'esportatore corretto tramite la factory e restituisce il file generato incapsulato in _ExportedFile_.
 
@@ -102,7 +102,7 @@ _FileDeviceExporterFactoryPort_ è l'interfaccia (Outbound Port) che definisce i
 
 _FileDeviceExporterFactoryPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort` — restituisce l'istanza dell'esportatore corrispondente al formato specificato.
 
@@ -120,7 +120,7 @@ _FileDeviceExporterPort_ è l'interfaccia (Outbound Port) che definisce il contr
 
 _FileDeviceExporterPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ generate_device_file(device: Device): bytes` — firma del metodo delegato alla generazione del file; riceve l'entità _Device_ e restituisce il file generato come bytes.
 
@@ -138,7 +138,7 @@ _FileDeviceExporter_ è la classe astratta appartenente all'Outbound Adapter che
 
 _FileDeviceExporter_ non definisce attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ generate_device_file(device: Device): bytes` — metodo pubblico che orchestra l'algoritmo di esportazione invocando in sequenza i metodi protetti del template.
 - `# prepare_structure(device: Device): void` — metodo protetto astratto che inizializza la struttura del documento nel formato specifico.
@@ -159,7 +159,7 @@ _ConcreteFileDeviceExporterFactory_ è la classe dell'Outbound Adapter che imple
 
 - `- exporters: Dict[AllowedDeviceFileExtension, FileDeviceExporterPort]` — dizionario che mappa ogni estensione supportata alla corrispondente istanza dell'esportatore.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort` — restituisce l'istanza dell'esportatore corrispondente al formato specificato.
 
@@ -179,7 +179,7 @@ _CSVFileDeviceExporter_, _JSONFileDeviceExporter_ e _XMLFileDeviceExporter_ sono
 - `JSONFileDeviceExporter`: `- data: Dict` — dizionario che accumula incrementalmente la struttura JSON del dispositivo durante `write_data` e viene serializzato in `finalize_output`.
 - `XMLFileDeviceExporter`: `- root: ET.Element` — nodo radice dell'albero XML costruito durante `write_data` e serializzato in `finalize_output`.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `# prepare_structure(device: Device): void` — inizializza la struttura del documento nel formato specifico.
 - `# write_data(device: Device): void` — scrive i dati del dispositivo nella struttura inizializzata.

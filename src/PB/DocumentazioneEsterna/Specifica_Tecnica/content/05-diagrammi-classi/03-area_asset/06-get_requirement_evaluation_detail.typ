@@ -25,7 +25,7 @@ _FlaskRequirementEvaluationDetailController_ è il controller Flask appartenente
 
 - `- get_requirement_ev_detail_use_case: GetRequirementEvaluationDetailUseCase` — inbound port usata per recuperare l'oggetto _RequirementEvaluationDetail_
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_requirement_evaluation_detail(req: Request): Response` — endpoint GET che restituisce l'intera pagina HTML con il dettaglio completo del requisito valutato.
 
@@ -47,7 +47,7 @@ _GetRequirementEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che defi
 
 _GetRequirementEvaluationDetailUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 #set par(justify: false)
 - `+ get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementResponse` — firma del metodo delegato al recupero del requisito corrispondente ai parametri incapsulati nel comando fornito in input.
 
@@ -68,7 +68,7 @@ _GetRequirementEvaluationDetailCommand_ è l'oggetto  che veicola i parametri ne
 - `+ device_id: String` — identificativo del dispositivo contenente l'asset.
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetRequirementEvaluationDetailCommand_ non definisce metodi.
 
@@ -87,7 +87,7 @@ _GetRequirementEvaluationDetailService_ è il service applicativo appartenente a
 - `get_evaluation_session_port: GetEvaluationSessionPort`
 - `evaluation_engine: EvaluationEngine`
 
-*Metodi e funzioni*
+*Metodi*
 #set par(justify: false)
 - `+ get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementEvaluationDetail` — concretizza il contratto definito da _GetRequirementEvaluationDetailUseCase_. Recupera la sessione attiva, individua il requisito richiesto utilizzando i parametri incapsulati nel comando e ne costruisce la relativa rappresentazione sotto forma di _RequirementEvaluationDetail_.
 
@@ -115,7 +115,7 @@ _RequirementEvaluationDTO_ è il Data Transfer Object principale che consolida t
 - `+ answer: Map<String, Bool>` — mappa che associa gli ID dei nodi decisionali alle risposte fornite.
 - `+ justification: String | None` — eventuale giustificazione testuale fornita durante la valutazione.
 
-*Metodi e funzioni*
+*Metodi*
 
 _RequirementEvaluationDTO_ non definisce metodi.
 
@@ -131,7 +131,7 @@ _DependencySummaryDTO_ è un Data Transfer Object leggero utilizzato per esporre
 - `+ id: String` — identificativo del requisito dipendente.
 - `+ evaluation: EvaluationState` — stato attuale della valutazione della dipendenza.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DependencySummaryDTO_ non definisce metodi.
 
@@ -147,7 +147,7 @@ _DecisionTreeDTO_ è il DTO responsabile di incapsulare l'intera struttura dell'
 - `+ root_node_id: String` — identificativo del nodo radice da cui inizia la navigazione dell'albero.
 - `+ nodes: Map<String, AnyNodeDTO>` — dizionario che associa gli identificativi univoci dei nodi ai rispettivi oggetti DTO (che possono essere istanze di _DecisionNodeDTO_ o _LeafNodeDTO_).
 
-*Metodi e funzioni*
+*Metodi*
 
 _DecisionTreeDTO_ non definisce metodi.
 
@@ -164,7 +164,7 @@ _LeafNodeDTO_ estende _NodeBaseDTO_ e rappresenta un nodo terminale (foglia) del
 - `+ node_type: String` — costante valorizzata a "leaf", utilizzata come discriminatore dal frontend e dai validatori per distinguere il tipo di nodo.
 - `+ verdict: StandardVerdict` — verdetto di conformità finale associato alla foglia.
 
-*Metodi e funzioni*
+*Metodi*
 
 _LeafNodeDTO_ non definisce metodi.
 
@@ -183,7 +183,7 @@ _DecisionNodeDTO_ estende _NodeBaseDTO_ e rappresenta uno snodo intermedio dell'
 - `+ yes_child_id: String | None` — identificativo del nodo figlio da visitare nel caso la risposta sia affermativa.
 - `+ no_child_id: String | None` — identificativo del nodo figlio da visitare nel caso la risposta sia negativa.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DecisionNodeDTO_ non definisce metodi.
 
@@ -198,7 +198,7 @@ _NodeBaseDTO_ è la classe base per i DTO che rappresentano i nodi dell'albero d
 
 - `+ parent_id: String | None` — identificativo del nodo genitore, necessario per permettere la navigazione a ritroso dell'albero da parte dell'interfaccia utente.
 
-*Metodi e funzioni*
+*Metodi*
 
 _NodeBaseDTO_ non definisce metodi.
 

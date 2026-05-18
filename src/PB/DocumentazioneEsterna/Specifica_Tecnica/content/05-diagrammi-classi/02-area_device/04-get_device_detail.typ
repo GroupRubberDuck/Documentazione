@@ -30,7 +30,7 @@ _FlaskQueryDeviceController_ è il controller Flask appartenente all'Inbound Ada
 - `- get_device_detail_use_case: GetDeviceDetailUseCase` — inbound port usata per prendere il dettaglio di un dispositivo
 - `- get_compliance_standard_use_case: GetComplianceStandardUseCase` — inbound port usata per prendere lo Standard
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_device_list(req: Request): Response` — riceve la richiesta HTTP di recupero della lista dei Dispositivi e restituisce una risposta HTTP con l'elenco sintetico.
 - `+ get_device_detail(req: Request): Response` — riceve la richiesta HTTP di recupero del dettaglio di un Dispositivo specifico e restituisce una risposta HTTP con i dati completi, per recuperare questi dati utilizza le porte _GetDeviceDetailUseCase_ per le informazioni del dispositivo e _GetComplianceStandardUseCase_ per recuperare lo standard associato.
@@ -48,7 +48,7 @@ _GetDeviceDetailUseCase_ è l'interfaccia (Inbound Port) che definisce il contra
 
 _GetDeviceDetailUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_device(command: GetDeviceDetailCommand): Device` — firma del metodo delegato al recupero del Dispositivo corrispondente al Command fornito.
 
@@ -67,7 +67,7 @@ _GetDeviceDetailService_ è il service applicativo appartenente all'Application 
 
 - `find_device_port: FindDevicePort` — outbound port usata per prelevare un dispositivo.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_device(command: GetDeviceDetailCommand): Device` — concretizza il contratto definito da _GetDeviceDetailUseCase_. Recupera il Dispositivo corrispondente all'identificativo contenuto nel Command tramite _FindDevicePort_.
 
@@ -86,7 +86,7 @@ _GetDeviceDetailCommand_ è  utilizzato per trasportare i dati necessari al recu
 
 - `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare il dettaglio.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetDeviceDetailCommand_ non definisce metodi propri.
 
@@ -103,7 +103,7 @@ _GetComplianceStandardUseCase_ è l'interfaccia (Inbound Port) che definisce il 
 
 _GetComplianceStandardUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — firma del metodo delegato al recupero dello Standard corrispondente al Command fornito.
 
@@ -121,7 +121,7 @@ _GetComplianceStandardService_ è il service applicativo appartenente all'Applic
 
 - `find_standard_port: FindStandardPort` — outbound port usata per prelevare lo Standard.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard` — concretizza il contratto definito da _GetComplianceStandardUseCase_. Recupera il Compliance Standard corrispondente all'identificativo contenuto nel Command tramite _FindStandardPort_.
 
@@ -139,7 +139,7 @@ _GetComplianceStandardCommand_ è  utilizzato per trasportare i dati necessari a
 
 - `+ standard_id: String` — identificativo univoco dello Standard di cui recuperare il dettaglio.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetComplianceStandardCommand_ non definisce metodi propri.
 
@@ -156,7 +156,7 @@ _FindStandardPort_ è l'interfaccia (Outbound Port) che definisce il contratto p
 
 _FindStandardPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ find_by_id(standard_id: String): ComplianceStandard` — firma del metodo che recupera lo standard di conformità corrispondente all'identificativo fornito.
 
@@ -174,7 +174,7 @@ _MongoStandardAdapter_ è la classe dell'Outbound Adapter annotata come _Mongo R
 
 _MongoStandardAdapter_ non definisce attributi propri nel diagramma.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ save(standard: ComplianceStandard): void` — persiste uno standard di conformità nel database.
 - `+ find_by_id(standard_id: String): ComplianceStandard` — recupera lo standard di conformità corrispondente all'identificativo fornito.

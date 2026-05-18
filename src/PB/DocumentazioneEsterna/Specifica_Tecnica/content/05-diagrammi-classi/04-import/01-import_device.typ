@@ -24,7 +24,7 @@ _UploadFileController_ è una classe di utilità appartenente all'Inbound Adapte
 
 _UploadFileController_ non definisce attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_http_file_payload(file: FileStorage): IO[bytes]` — estrae il contenuto binario del file dalla richiesta HTTP.
 - `+ get_http_file_extension(filename: String): AllowedDeviceFileExtension` — estrae l'estensione del file dalla richiesta HTTP.
@@ -45,7 +45,7 @@ _FlaskImportDeviceController_ è il controller Flask appartenente all'Inbound Ad
 
 - `- _service: ImportDeviceUseCase` — riferimento alla porta di Inbound (caso d'uso) responsabile della logica applicativa di importazione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ import_device(req: Request): Response` — riceve la richiesta HTTP di importazione, estrae il file e la sua estensione tramite _UploadFileController_ e inoltra il Command al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
@@ -65,7 +65,7 @@ _ImportDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto
 
 _ImportDeviceUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ import_device(command: ImportDeviceCommand): void` — firma del metodo delegato all'esecuzione della logica di importazione a partire dai dati contenuti nel Command.
 
@@ -86,7 +86,7 @@ _ImportDeviceCommand_ è il Command Object che veicola i dati necessari all'impo
 - `+ device_file_content: BinaryIO` — contenuto binario del file da importare.
 - `+ extension: AllowedDeviceFileExtension` — estensione del file, vincolata ai valori dell'enumerazione _AllowedDeviceFileExtension_.
 
-*Metodi e funzioni*
+*Metodi*
 
 _ImportDeviceCommand_ non definisce metodi propri.
 
@@ -122,7 +122,7 @@ _ImportDeviceService_ è il service applicativo appartenente all'Application Cor
 - `device_importer_factory: FileDEviceImporterFactoryPort`
 - `register_device_port = RegisterDevicePort`
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ import_device(command: ImportDeviceCommand): void` — concretizza il contratto definito da _ImportDeviceUseCase_. Ottiene l'importer appropriato tramite la factory, effettua il parsing del file e persiste i Dispositivi estratti tramite _DeviceRepositoryPort_.
 
@@ -139,7 +139,7 @@ _FileDeviceImporterPort_ è l'interfaccia (Outbound Port) che definisce il contr
 
 _FileDeviceImporterPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ parse_device_file(device_file_content: BinaryIO): Device` — firma del metodo che effettua il parsing del contenuto binario del file e restituisce l'entità _Device_ estratta.
 
@@ -157,7 +157,7 @@ _FileDeviceImporter_ è la classe astratta appartenente all'Outbound Adapter che
 
 _FileDeviceImporter_ non definisce attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ parse_device_file(device_file_content: IO[bytes]): Device` — metodo pubblico che orchestra l'algoritmo di parsing invocando in sequenza i metodi del template; restituisce l'entità _Device_ estratta dal file.
 - `# deserialize(device_file_content: IO[bytes]): Any` — metodo protetto astratto che deserializza il contenuto binario del file nella struttura dati grezza specifica del formato; deve essere implementato dalle sottoclassi.
@@ -180,7 +180,7 @@ _XMLFileDeviceImporter_, _JSONFileDeviceImporter_ e _CSVFileDeviceImporter_ sono
 
 Le tre classi non definiscono attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 Ciascuna classe implementa i metodi ereditati da _FileDeviceImporter_:
 
@@ -200,7 +200,7 @@ _FileDeviceImporterFactoryPort_ è l'interfaccia (Outbound Port) che definisce i
 
 _FileDeviceImporterFactoryPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort` — restituisce l'istanza dell'importer appropriato per il formato specificato.
 
@@ -217,6 +217,6 @@ _ConcreteFileDeviceImporterFactory_ è la classe dell'Outbound Adapter che imple
 
 _ConcreteFileDeviceImporterFactory_ non definisce attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_file_device_importer(extension: AllowedDeviceFileExtension): FileDeviceImporterPort` — restituisce l'istanza dell'importer corrispondente al formato specificato.

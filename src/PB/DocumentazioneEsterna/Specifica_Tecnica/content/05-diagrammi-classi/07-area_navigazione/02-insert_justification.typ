@@ -26,7 +26,7 @@ _FlaskInsertJustificationController_ è il controller Flask appartenente all'Inb
 
 - `insert_justification_use_case: InsertJustificationUseCase` — inbound port usata per inserire la giustificazione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ insert_justification(req: Request): Response` — riceve la richiesta HTTP di inserimento della giustificazione, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 
@@ -45,7 +45,7 @@ _InsertJustificationUseCase_ è l'interfaccia (Inbound Port) che definisce il co
 
 _InsertJustificationUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ insert_justification(command: InsertJustificationCommand): void` — firma del metodo delegato all'esecuzione della logica di inserimento della giustificazione a partire dai dati contenuti nel comando.
 
@@ -68,7 +68,7 @@ _InsertJustificationCommand_ è l'oggetto che veicola i dati necessari all'inser
 - `+ node_id: String` — identificativo del nodo decisionale correlato.
 - `+ justification: String` — testo della giustificazione da inserire.
 
-*Metodi e funzioni*
+*Metodi*
 
 _InsertJustificationCommand_ non definisce metodi.
 
@@ -87,7 +87,7 @@ _InsertJustificationService_ è il service applicativo appartenente all'Applicat
 - `get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per recuperare la sessione di valutazione.
 - `save_evaluation_session_port: SaveEvaluationSessionPort` — outbound port usata per salvare le modifiche applicate alla sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ insert_justification(command: InsertJustificationCommand): void` — concretizza il contratto definito da _InsertJustificationUseCase_. Recupera la sessione attiva, individua il requisito corrispondente ai parametri incapsulati nel comando, registra la giustificazione fornita e persiste la sessione aggiornata.
 

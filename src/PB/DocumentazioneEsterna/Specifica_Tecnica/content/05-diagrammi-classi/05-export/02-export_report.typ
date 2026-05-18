@@ -28,7 +28,7 @@ _ExportReportController_ è il controller Flask appartenente all'Inbound Adapter
 
 - `generate_report_use_case: GenerateReportUseCase` — porta di inbound usata per generare un Report.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_report(session_id: String, device_id: String, fmt: String): Response` — riceve la richiesta HTTP, valida il formato richiesto, costruisce il _GenerateReportCommand_ e invoca il caso d'uso; restituisce il file generato come risposta HTTP scaricabile.
 
@@ -46,7 +46,7 @@ _GenerateReportUseCase_ è l'interfaccia (Inbound Port) che definisce il contrat
 
 _GenerateReportUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_report(command: GenerateReportCommand): ExportedFile` — firma del metodo delegato all'esecuzione della logica di generazione del report a partire dai dati contenuti nel Command; restituisce un oggetto _ExportedFile_ contenente il file generato, il nome del file e il tipo MIME necessari alla costruzione della risposta HTTP.
 
@@ -66,7 +66,7 @@ _GenerateReportCommand_ è il Command Object che veicola i parametri necessari a
 - `+ device_id: String` — identificativo univoco del dispositivo oggetto del report.
 - `+ report_format: ReportFormat` — formato desiderato per il report in uscita, vincolato ai valori dell'enumerazione _ReportFormat_.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GenerateReportCommand_ non definisce metodi propri.
 
@@ -96,7 +96,7 @@ _GenerateReportService_ è il service applicativo appartenente all'Application C
 - `report_generator_port: ReportGeneratorPort` — outbound port usata per generare il Report.
 - `evaluation_engine: EvaluationEngine` — oggetto di dominio usato per calcolare il _DeviceResult_ i cui dati saranno immessi nel Report.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ export_report(command: GenerateReportCommand): ExportedFile` — concretizza il contratto definito da _GenerateReportUseCase_. Recupera la sessione, valuta il dispositivo tramite _EvaluationEngine_, costruisce il dettaglio della valutazione e restituisce il file generato incapsulato in _ExportedFile_.
 
@@ -114,7 +114,7 @@ _ReportGeneratorPort_ è l'interfaccia (Outbound Port) che definisce il contratt
 
 _ReportGeneratorPort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ generate_report(device_evaluation: DeviceEvaluationDetail): IO[bytes]` — firma del metodo delegato alla generazione del file del report a partire dal dettaglio della valutazione del dispositivo.
 
@@ -132,6 +132,6 @@ _PdfReportGenerator_ è l'Outbound Adapter che implementa _ReportGeneratorPort_.
 
 _PdfReportGenerator_ non definisce attributi propri.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ generate_report(device_evaluation: DeviceEvaluationDetail): IO[bytes]` — implementa il metodo dell'interfaccia, avviando il processo di creazione del PDF e restituendo lo stream di byte generato

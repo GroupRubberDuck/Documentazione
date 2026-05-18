@@ -5,7 +5,7 @@
   caption: [ Caso d'uso CreateDevice],
 ) <fig-create-device>
 
-Il diagramma illustra l'architettura del modulo di scrittura per la gestione dei Dispositivi, coprendo le operazioni di creazione, modifica ed eliminazione secondo i principi dell'architettura esagonale.
+Il diagramma illustra l'architettura del modulo di creazione dei Dispositivi secondo i principi dell'architettura esagonale.
 - Per la definizione di _Device_, vedere la sezione @Device. \
 
 ==== FlaskWriteDeviceController <FlaskWriteDeviceController>
@@ -25,7 +25,7 @@ _FlaskWriteDeviceController_ è il controller Flask appartenente all'Inbound Ada
 - `- update_device_use_case: UpdateDeviceUseCase` — inbound port usata per la modifica di un device
 - `- delete_device_use_case: DeleteDeviceUseCase` — inbound port usata per l'eliminazione di un device
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create_device(req: Request): Response` — riceve la richiesta HTTP di creazione di un nuovo Dispositivo, estrae i dati dal corpo della richiesta e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
 - `+ update_device(req: Request): Response` — riceve la richiesta HTTP di modifica di un Dispositivo esistente, estrae i dati aggiornati e li inoltra al livello applicativo; restituisce una risposta HTTP con l'esito dell'operazione.
@@ -46,7 +46,7 @@ _CreateDeviceUseCase_ è l'interfaccia (Inbound Port) che definisce il contratto
 
 _CreateDeviceUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create(command: CreateDeviceCommand): void` — firma del metodo delegato all'esecuzione della logica di creazione a partire dai dati contenuti nel comando.
 
@@ -68,7 +68,7 @@ _CreateDeviceCommand_ è il Command Object che veicola i dati necessari alla cre
 - `+ device_description: String` — descrizione testuale del Dispositivo.
 - `+ standard_id: String` — identificativo dello standard di conformità associato.
 
-*Metodi e funzioni*
+*Metodi*
 
 _CreateDeviceCommand_ non definisce metodi.
 
@@ -87,7 +87,7 @@ _CreateDeviceService_ è il service applicativo appartenente all'Application Cor
 
 - `- register_device_port: RegisterDevicePort` — porta outbound utilizzata per la persistenza del nuovo Dispositivo.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ create(command: CreateDeviceCommand): void` — concretizza il contratto definito da _CreateDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede la registrazione tramite _RegisterDevicePort_.
 
@@ -106,7 +106,7 @@ _RegisterDevicePort_ è l'interfaccia (Outbound Port) che definisce il contratto
 
 _RegisterDevicePort_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ register(device: Device): void` — firma del metodo che esegue l'inserimento fisico del Dispositivo nel sistema di persistenza.
 
@@ -125,7 +125,7 @@ _MongoDeviceAdapter_ è la classe dell'Outbound Adapter che implementa le porte 
 
 - `- collection: pymongo.Collection` — riferimento alla collezione MongoDB su cui vengono eseguite le operazioni di persistenza.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ save(device: Device): void` — salva le modifiche a un Dispositivo esistente nella collezione.
 - `+ register(device: Device): void` — inserisce un nuovo Dispositivo nella collezione.

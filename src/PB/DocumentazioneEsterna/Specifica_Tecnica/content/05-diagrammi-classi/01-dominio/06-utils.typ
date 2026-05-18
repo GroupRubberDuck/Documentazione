@@ -7,7 +7,7 @@
 
 *Descrizione*
 
-_ExportedFile_ è un oggetto immutabile (`@dataclass(frozen=True)`) utilizzato per incapsulare in un'unica struttura il contenuto binario e i metadati di un file pronto per l'esportazione o il download.
+_ExportedFile_ è un oggetto immutabile utilizzato per incapsulare in un'unica struttura il contenuto binario e i metadati di un file pronto per l'esportazione o il download.
 
 *Attributi*
 
@@ -15,7 +15,7 @@ _ExportedFile_ è un oggetto immutabile (`@dataclass(frozen=True)`) utilizzato p
 - `+ filename: String` — nome del file, comprensivo della relativa estensione.
 - `+ media_type: String` — tipo di media o formato MIME (ad esempio, "application/pdf" o "application/json") associato al file.
 
-*Metodi e funzioni*
+*Metodi*
 
 _ExportedFile_ non definisce metodi.
 
@@ -28,7 +28,7 @@ _ExportedFile_ non definisce metodi.
 
 *Descrizione*
 
-_DeviceSummary_ è un oggetto immutabile (`@dataclass(frozen=True)`) utilizzato per incapsulare e trasportare una vista sintetica e leggera delle informazioni anagrafiche di un dispositivo. È progettato per fornire i dati essenziali senza esporre l'intera struttura complessa o gli asset associati, risultando ideale per le operazioni di visualizzazione o per la generazione di elenchi.
+_DeviceSummary_ è un oggetto immutabile  utilizzato per incapsulare e trasportare una vista sintetica e leggera delle informazioni anagrafiche di un dispositivo. È progettato per fornire i dati essenziali senza esporre l'intera struttura complessa o gli asset associati, risultando ideale per le operazioni di visualizzazione o per la generazione di elenchi.
 
 *Attributi*
 
@@ -38,6 +38,6 @@ _DeviceSummary_ è un oggetto immutabile (`@dataclass(frozen=True)`) utilizzato 
 - `+ description: String` — breve descrizione testuale del dispositivo.
 - `+ compliance_standard_id: String` — identificativo dello standard di conformità a cui il dispositivo fa riferimento.
 
-*Metodi e funzioni*
+*Metodi*
 
 _DeviceSummary_ non definisce metodi.

@@ -23,7 +23,7 @@ _FlaskAssetEvaluationDetailController_ è un adapter di input (controller) che h
 
 - `- _get_asset_ev_detail_use_case: GetAssetDetailUseCase` — istanza del caso d'uso necessaria per recuperare i dettagli della valutazione dell'asset richiesto.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_asset_evaluation_detail(session_id: String, device_id: String, asset_id: String): Response` — preleva tramite la porta di inbound l'oggetto di dominio _AssetEvaluationDetail_.
 
@@ -43,7 +43,7 @@ _GetAssetEvaluationDetailCommand_ è il Command Object utilizzato per trasportar
 - `+ session_id: String` — identificativo univoco della sessione
 - `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
 
-*Metodi e funzioni*
+*Metodi*
 
 _GetAssetEvaluationDetailCommand_ non definisce metodi propri.
 
@@ -62,7 +62,7 @@ _GetAssetEvaluationDetailUseCase_ è l'interfaccia (Inbound Port) che definisce 
 
 _GetAssetEvaluationDetailUseCase_ non definisce attributi.
 
-*Metodi e funzioni*
+*Metodi*
 
 #set par(justify: false)
 - `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` — firma del metodo delegato al recupero e all'aggregazione delle informazioni della sessione di valutazione.
@@ -82,7 +82,7 @@ Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera
 
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per recuperare la sessione.
 
-*Metodi e funzioni*
+*Metodi*
 
 - `+ get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail` —
 concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
@@ -109,7 +109,7 @@ _AssetEvaluationDTO_ è il Data Transfer Object principale utilizzato per esporr
 - `+ description: String` — descrizione testuale aggiuntiva dell'asset.
 - `+ requirements: Tuple<RequirementEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun requisito associato all'asset.
 
-*Metodi e funzioni*
+*Metodi*
 
 _AssetEvaluationDTO_ non definisce metodi.
 
@@ -125,6 +125,6 @@ _RequirementEvaluationSummaryDTO_ è un Data Transfer Object estremamente legger
 - `+ id: String` — identificativo univoco del requisito valutato.
 - `+ evaluation: EvaluationState` — stato corrente della valutazione specifica per questo requisito.
 
-*Metodi e funzioni*
+*Metodi*
 
 _RequirementEvaluationSummaryDTO_ non definisce metodi.
