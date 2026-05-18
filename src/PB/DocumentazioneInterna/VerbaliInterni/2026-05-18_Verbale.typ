@@ -20,8 +20,8 @@
 
 // Info documento
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 
@@ -35,10 +35,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.FILIPPO,),
-    verificatori: ("-"),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -79,7 +79,6 @@
   - Retrospettiva dello sprint e redicontazione delle ore.
   - Pianificazione delle approvazioni dei documenti e dei merge su develop.
   - Discussione problemi tecnici riscontrati.
-  - Chiarimento sulla gestione dello standard nel processo di import.
   
 ]
 
@@ -91,28 +90,26 @@
 ]
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
-  = Pecifica Tecnica <st>
+  = Specifica Tecnica <st>
 
-  È stato deciso di aggiornare la sezione sulla gestione degli errori,
-  rimuovere le sezioni non utilizzate, pulire i pattern, i diagrammi di attività e
-  sequenza e le tecnologie. Inoltre sarà necessario occuparsi dell'aggiornamento della parte frontend.
-  
+  È stata discussa una revisione della sezione relativa alla gestione degli errori, con l’obiettivo di migliorarne la chiarezza e l’allineamento con l’implementazione attuale.
+  Si è inoltre deciso di procedere con la rimozione delle parti non più utilizzate, la pulizia dei pattern architetturali e l’aggiornamento dei diagrammi di attività e di sequenza.
+  È stata infine evidenziata la necessità di un riallineamento della documentazione rispetto alle modifiche introdotte nel frontend.
+
   = Norme di Progetto <ndp>
-  È necessario spostare il ciclo PDCA nella posizione corretta.
+  È stato confermato lo spostamento del ciclo PDCA nella sezione corretta del documento, al fine di garantire maggiore coerenza strutturale.
 
   = Piano di Progetto <pdp>
-  Il documento verrà aggiornato con i dati dello sprint 14; è prevista inoltre una verifica di tutti gli sprint precedenti e una
-   revisione della sezione relativa al lungo termine.  
+  Il documento verrà aggiornato con i dati relativi allo sprint 14; contestualmente verrà effettuata una revisione degli sprint precedenti per assicurare coerenza e continuità.
+  È stata inoltre prevista una revisione della sezione di pianificazione a lungo termine.
 
   = Piano di Qualifica <pdq>
-  Per quanto riguarda il documento Piano di Qualifica, il gruppo ha deciso che è necessaria una 
-  revisione delle metriche ,con rimozione di quelle relative al frontend. 
-  È stato anche deciso di aggiornare il documento con il nuovo file di test di inclusione e la sezione relativa ai test di frontend. 
-  
-  = Analisi dei Requisiti <adr>
-  È stato deciso di rimuovere la precondizione di sessione dalle schermate lista dispositivi e dettaglio dispositivi.
-]
+  È stata discussa una revisione del Piano di Qualifica, con particolare attenzione alle metriche, alcune delle quali saranno rimosse in quanto riferite esclusivamente al frontend.
+  Il documento verrà inoltre aggiornato con il nuovo file di test di inclusione e con l’integrazione dei test relativi al frontend.
 
+  = Analisi dei Requisiti <adr>
+  È stata approvata la rimozione della precondizione di sessione dalle schermate di lista dispositivi e dettaglio dispositivo, al fine di semplificare il flusso applicativo e ridurre le dipendenze tra le componenti.
+]
 #insertArabicNumberedPages("Decisioni", "Verbale interno", giornoRiunione)[
   = Decisioni
 
@@ -122,23 +119,11 @@
 
   #let decisioni = (
     (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Merge su develop per i documenti approvati],
-      [Garantire che su develop siano presenti solo documenti valutati e approvati],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Contattare Cardin per fissare la riunione di PB],
-      [Presentazione della prima parte della PB],
-      [-],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
-      [Preparare presentazione per Vardanega],
-      [Scrivere la presentazione per la seconda parte della PB],
-      [-],
-    ),
+    [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+    [Completamento e approvazione finale dei documenti],
+    [Completare le ultime modifiche ai documenti e procedere con le approvazioni necessarie al fine di sostenere il colloquio con Cardin e Vardanega],
+    [-],
+  ),
 
   )
 
@@ -148,7 +133,7 @@
 #insertArabicNumberedPages("TODO", "Verbale interno", giornoRiunione)[
   = TODO
 
-  #let prefisso = "TD.33."
+  #let prefisso = "TD.35."
   #let contatoreTodo = counter("todo")
   #contatoreTodo.update(1)
 
@@ -158,50 +143,54 @@
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.FILIPPO],
-      [PDP: tenere aggiornato (Sprint 14); \
-      PDQ: aggiornare con il nuovo file di test; \
-      NDP: approvazione e merge su develop],
-      [],
+      [PdP: tenere aggiornato (Sprint 14)],
+      [VI.28.1],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [#persone.FILIPPO],
+      [
+      PdQ: aggiornare con il nuovo file di test ],
+      [VI.28.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [ST: aggiornare sezione gestione errori, rimuovere sezioni non usate, pulizia pattern, pulizia diagrammi attività-sequenza, pulizia tecnologie;],
-      [],
+      [VI.28.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ALDO],
       [Preparare presentazione per riunione con Cardin],
-      [],
+      [VI.28.1],
     ),
+
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.ANA],
-      [NDP: spostare ciclo PDCA;\
-       PDP: rivedere sezione lungo termine;\ 
-       PDQ: test di frontend, aggiornare metriche precedenti; 
-       MU: approvazione e merge su develop],
-      [],
+      [NdP: spostare ciclo PDCA],
+      [VI.28.1],
+    ),
+
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [#persone.ANA],
+      [
+       PdQ: test di frontend, aggiornare metriche precedenti],
+      [VI.28.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.DL],
       [ST: aggiornare parte del frontend],
-      [],
-    ),
-    (
-      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
-      [#persone.DT],
-      [PDQ: rivedere metriche (rimuovere metriche di frontend)],
-      [],
+      [VI.28.1],
     ),
     (
       [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
       [#persone.FELIX],
-      [ADR: rimuovere precondizione sessione da lista dispositivi e dettaglio dispositivi;\
-       verifica verbali interno ed esterno 2026-05-18],
-      [],
+      [AdR: rimuovere precondizione sessione da lista dispositivi e dettaglio dispositivi ],
+      [VI.28.1],
     ),
   )
 
