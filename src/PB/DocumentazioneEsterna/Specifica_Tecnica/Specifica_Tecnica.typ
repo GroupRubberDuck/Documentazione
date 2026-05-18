@@ -172,8 +172,12 @@
       [2026-04-20],
       [#persone.FELIX],
       [#persone.DL],
+<<<<<<< HEAD
       [Stesura dei design pattern comportamentali e architetturali
       @design-pattern-comportamentali,      
+=======
+      [Stesura dei design pattern comportamentali e architetturali  
+>>>>>>> d11d5c91 (Sezione gestione errori.#204)
       ]
     ),
     (
@@ -299,8 +303,14 @@
 
   #include "content/06-tracciamento/_index.typ"
 ]
+<<<<<<< HEAD
 #insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
   = Qualità architetturale <qualita-architetturale>
 
 
+=======
+#insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
+  = Gestione degli Errori <gestione-errori>
+  #include "content/07-gestione-errori/_index.typ"
+>>>>>>> d11d5c91 (Sezione gestione errori.#204)
 ]
