@@ -39,10 +39,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT, persone.FILIPPO),
-    verificatori: (persone.ANA),
+    verificatori: (persone.ANA,persone.DL,),
     uso: "Esterno",
     destinatari: ("Utenti finali",),
   )
@@ -89,8 +89,8 @@
     (
       [1.0.0],
       [2026-05-18],
-      [#persone.ANA],
-      [-],
+      [#persone.FILIPPO],
+      [#persone.FILIPPO],
       [Approvazione],
     ),
   )

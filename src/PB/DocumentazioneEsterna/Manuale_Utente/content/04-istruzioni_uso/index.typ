@@ -78,6 +78,10 @@ Per modificare un dispositivo, cliccare su *Modifica Dispositivo*: si apre una f
   caption: [Schermata di modifica di un dispositivo],
 ) <fig:modifica-device>
 
+#block(fill: luma(230), inset: 8pt, radius: 4pt)[
+  *Nota:* La funzione di modifica è pensata per aggiornare le informazioni anagrafiche di un dispositivo esistente, non per crearne uno nuovo ripartendo da zero con una nuova valutazione. Qualora si necessiti di una copia del dispositivo per avviare una valutazione simile ma indipendente, è possibile esportare il dispositivo nel formato desiderato, modificare manualmente l'identificativo univoco nel file esportato e re-importarlo nel sistema: in questo modo si ottiene rapidamente un duplicato distinto, pronto per una nuova sessione di valutazione.
+]
+
 === Esportazione del Dispositivo
 
 Per esportare il dispositivo, cliccare su *Esporta Dispositivo*, selezionare il formato desiderato tra JSON, XML o CSV tramite il menu a tendina e confermare l'operazione.
@@ -131,10 +135,16 @@ Cliccando su *Valuta* nella lista degli asset della sessione, l'utente accede al
 Dalla stessa pagina è possibile gestire l'asset tramite i pulsanti in fondo alla schermata:
 
 - *Modifica Asset:* Apre una form precompilata con i dati attuali dell'asset (nome, tipologia e descrizione), modificabili e salvabili tramite *Salva Asset* o annullabili tramite *Annulla*.
+
 #figure(
   image("../../screenshot/pagina_modifica_asset.png", width: 50%),
   caption: [Form di modifica di un asset],
 ) <fig:modifica-asset>
+
+#block(fill: luma(230), inset: 8pt, radius: 4pt)[
+  *Nota:* Analogamente alla modifica del dispositivo, questa funzione è pensata per aggiornare le informazioni anagrafiche di un asset esistente. Non comporta la perdita dei dati di valutazione già compilati: modificare nome, tipologia o descrizione non azzera lo stato dei requisiti associati all'asset.
+]
+
 - *Elimina:* Mostra una finestra di conferma che avvisa dell'irreversibilità dell'operazione, richiedendo una conferma esplicita prima di procedere con la cancellazione.
 
 #figure(
