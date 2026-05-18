@@ -87,7 +87,7 @@
       [2026-02-24],
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
-      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione]
     ),
     (
       [0.5.0],
@@ -181,11 +181,7 @@
 
 
 ]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
-  = Automiglioramento <miglioramento>
-  #include "content/06-automiglioramento/index.typ"
 
-]
 //#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
 
