@@ -22,7 +22,7 @@
 // 
 #let currentVersion=(
   major:1,
-  minor:3,
+  minor:4,
   patch:0,
 )
 //converte dizionario in stringa
@@ -77,7 +77,8 @@
   ([1.0.0],[2026-04-01],[Felician Mario \ Necsulescu],[Aldo Bettega],[Approvazione]),
   ([1.1.0],[2026-04-21],[Filippo Guerra],[Felician Mario \ Necsulescu],[Aggiunta alla sezione @sviluppo_primario la parte di Naming Convention]),
   ([1.2.0],[2026-05-03],[Felician Mario \ Necsulescu],[Ana Maria Draghici],[Aggiunti Specifica Tecnica e Manuale Utente alla sezione @struttura]),
-  ([1.3.0],[2026-05-18],[Aldo Bettega],[],[Aggiunte sezioni di codifica e progettazione]),
+  ([1.3.0],[2026-05-18],[Aldo Bettega],[Ana Maria Draghici],[Aggiunte sezioni di codifica e progettazione]),
+  ([1.4.0],[2026-05-18],[Ana Maria Draghici],[-],[Spostato da Pdq e integrato la sezione di automiglioramento @processo_miglioramento]),
 )
 #registroModifiche(modifiche)
 
