@@ -22,7 +22,7 @@
 
 == Design Patterns Comportamentali <design-pattern-comportamentali>
 
-#include "strategy.typ"
+// #include "strategy.typ"
 #include "template-method.typ"
 
 

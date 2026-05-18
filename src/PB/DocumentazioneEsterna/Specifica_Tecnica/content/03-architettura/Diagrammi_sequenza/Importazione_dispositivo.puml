@@ -2,65 +2,74 @@
 
 actor "Utente" as utente
 participant "<<Boundary>>\nVue.js" as vue
-participant "<<Inbound Adapter>>\nImportDeviceController" as controller
-participant "<<Utility>>\nHttpRequestHelper" as helper
+participant "<<Inbound Adapter>>\nFlaskImportDeviceController" as controller
+participant "<<Utility>>\nUploadFileController" as helper
 participant "<<Service>>\nImportDeviceService" as service
-participant "<<Outbound Adapter>>\nConcreteFileImporterFactory" as factory
-participant "<<Outbound Adapter>>\nFileDeviceImporter (es. CSV)" as parser
-participant "<<Domain>>\nDeviceBuilder" as builder
+participant "<<Outbound Adapter>>\nFileDeviceImporterFactoryPort" as factory
+participant "<<Outbound Adapter>>\nFileDeviceImporterPort" as parser
 participant "<<Outbound Adapter>>\nMongoDeviceAdapter" as repo
 
 utente -> vue: Carica file (CSV/XML/JSON)
 activate vue
 
-vue -> controller: POST /api/devices/import
+vue -> controller: POST /api/devices/import (multipart/form-data)
 activate controller
 
-controller -> helper: estrai_payload_e_estensione()
+alt Nessun file nella request o filename vuoto
+    controller --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: nessun file selezionato
+end
+
+controller -> helper: get_http_file_extension(filename)
 activate helper
-helper --> controller: file_content, ext
+alt Estensione non supportata
+    helper --> controller: ValueError
+    controller --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: formato non supportato
+end
+helper --> controller: extension
 deactivate helper
 
-controller -> service: import_device(file_content, ext)
+controller -> helper: get_http_file_payload(file_storage)
+activate helper
+helper --> controller: file_payload (IO[bytes])
+deactivate helper
+
+controller -> service: import_device(ImportDeviceCommand)
 activate service
 
-service -> factory: get_file_device_importer(ext)
+service -> factory: get_file_device_importer(extension)
 activate factory
-factory --> service: parser_corretto
+factory --> service: importer (FileDeviceImporterPort)
 deactivate factory
 
-service -> parser: parse_device_file(file_content)
+service -> parser: parse_device_file(file_payload)
 activate parser
-alt UC06 - Errore formato file (es. CSV corrotto)
-    parser --> service: ParseException
-    service --> controller: Errore di parsing
-    controller --> vue: HTTP 400 Bad Request
-    vue --> utente: Errore: formato del file non valido
-else Sintassi Corretta
-    parser --> service: DeviceFileDTO (Dati estratti)
+
+alt UC06 - Errore parsing o semantica (DeviceImportError)
+    parser --> service: DeviceImportError
+    service --> controller: ImportDeviceFailure
+    controller --> vue: HTTP 422 Unprocessable Entity
+    vue --> utente: Errore: file non valido
+else File valido
+    parser --> service: Device
 end
 deactivate parser
 
-service -> builder: device_DTO_to_device(DeviceFileDTO)
-activate builder
-builder -> builder: valida_regole_business()
-
-alt UC06 - Errore semantica (es. Mac Address invalido)
-    builder --> service: Device nullo, ErrorLog (popolato)
-    service --> controller: ErrorLog
-    controller --> vue: HTTP 422 Unprocessable Entity (con ErrorLog)
-    vue --> utente: Mostra lista di tutti gli errori nel file
-else L'entità rispetta le regole
-    builder --> service: nuovo_dispositivo, ErrorLog (vuoto)
-end
-deactivate builder
-
-service -> repo: save(nuovo_dispositivo)
+service -> repo: register(device)
 activate repo
-repo --> service: success
+
+alt Dispositivo già esistente (DuplicateDeviceError)
+    repo --> service: DuplicateDeviceError
+    service --> controller: DeviceRegistrationFailure
+    controller --> vue: HTTP 409 Conflict
+    vue --> utente: Errore: dispositivo già presente
+else Registrazione riuscita
+    repo --> service: None
+end
 deactivate repo
 
-service --> controller: success (ErrorLog vuoto)
+service --> controller: None
 deactivate service
 
 controller --> vue: HTTP 201 Created

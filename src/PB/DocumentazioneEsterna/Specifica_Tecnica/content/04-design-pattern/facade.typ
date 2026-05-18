@@ -9,7 +9,7 @@
     In un'architettura a livelli, i Facade evitano che i layer esterni (come i controller o le interfacce utente) debbano orchestrare manualmente le dipendenze e la logica applicativa. Questo permette di mantenere i moduli di ingresso "sottili"  e disaccoppiati dalle dinamiche interne del dominio.
   ],
   utilizzo: [
-    Nel progetto, questo pattern si riflette nei Service, come ad esempio il `FileImporterService`. Anche se espone un'interfaccia minimale, agisce da Facade orchestrando diverse operazioni sottostanti: riceve la richiesta, coordina i servizi di estrazione e parsing del file, e istruisce il sistema di persistenza per il salvataggio, nascondendo l'intera complessità della sequenza al chiamante.
+    Nel progetto, questo pattern si riflette nei Service, come ad esempio il `ImportDeviceService`. Anche se espone un'interfaccia minimale, agisce da Facade orchestrando diverse operazioni sottostanti: riceve la richiesta, coordina i servizi di estrazione e parsing del file, e istruisce il sistema di persistenza per il salvataggio, nascondendo l'intera complessità della sequenza al chiamante.
   ],
 )
 
