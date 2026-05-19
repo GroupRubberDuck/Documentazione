@@ -73,8 +73,89 @@ esclusivamente nel livello di integrazione.
 
 === Shared
 
+==== Validation Rule
+#figure(caption:"Shared - ValidationRule")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/shared/ValidationRule.drawio.png")
+]
+*Descrizione*:
 
+Viene utilizzato per la validazione dei dati inseriti dall'utente.
+Rappresenta un contratto, un oggetto deve esporre un metodo validate che accetta un valore primitivo, effettua un controllo, ritorna un messaggio di errore che indica perché non ha superato il controllo, se lo ha superato non ritorna nulla.
 
+*Attributi*:
+
+Le interfacce non hanno attributi
+
+*Metodi*:
+- `+ validate(value:String|Number|Boolean):String|null`:Accetta un valore primitivo, effettua un controllo, ritorna un messaggio di errore che indica perché non ha superato il controllo, se lo ha superato non ritorna nulla.
+
+==== Field Definition
+#figure(caption: "Shared - FieldDefinition")[
+#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/shared/FieldDefinition.drawio.png")
+]
+
+*Descrizione*:
+Rappresenta un contratto strutturale che definisce i campi che una oggetto deve esporre per poter essere usato nel model di un form. 
+
+*Attributi*:
+L'interfaccia non ha attributi.
+
+*Metodi*:
+- `+ initialValue():String|Number|Boolean`:Il valore primitivo di default con cui il campo deve essere inizializzato nel DOM e a cui deve essere ripristinato in fase di reset.
+- `+ rules(): ValidationRule[]` :Un array di elementi che implementano l'interfaccia `ValidationRule`, contenente l'elenco delle funzioni di validazione associate al campo.
+
+==== Use Form Model
+#figure(caption: "Shared - UseFormModel")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/shared/UseFormModel.png")
+]
+
+*Descrizione*:
+
+Inizializza e gestisce lo stato reattivo di un form di dominio a partire dalle sue definizioni. Si occupa della validazione client-side e dell'integrazione degli errori inviati dal server, isolando completamente la logica di business dal template visivo.
+
+*Attributi*:
+
+- `- fieldDefinitions : Map<String, FieldDefinition>`: Conserva internamente le field definition ricevute alla costruzione e le usa per usarlo nelle funzioni.
+- `+ fields: Map<String, String | Number | Boolean>` : Mappa reattiva che memorizza i valori correnti inseriti dall'utente per ciascun campo del form.
+- `+ errors: Map<String, String | null>` : Mappa reattiva che associa a ogni campo il relativo messaggio di errore (impostato a `null` se il campo è valido).
+- `+ isValid: Boolean` : Proprietà calcolata (computed). Restituisce `true` solo se tutti gli elementi all'interno di `errors` sono pari a `null`.
+
+*Metodi*:
+- `+ useFormModel(fieldDefinitions: Map<String, FieldDefinition>)` : Costruttore/Funzione di inizializzazione. Riceve la configurazione dei campi e genera le strutture reattive per `fields` ed `errors` impostando i valori iniziali.
+- `+ validate(): Boolean` : Esegue la validazione su tutti i campi del form. Restituisce `true` se l'intero modulo è valido, altrimenti aggiorna la mappa degli errori e restituisce `false`.
+- `+ validateField(name: String): Boolean` : Invocato per convalidare un singolo campo (es. all'evento di *blur* o di *input*). Applica le regole in ordine sequenziale e si interrompe al primo fallimento.
+- `+ setServerErrors(serverErrors: Map<String, String>): void` : Riceve una mappa di errori generati dalle API di Flask (backend) e li inietta direttamente nello stato `errors` per mostrarli all'utente.
+- `+ reset(): void` : Svuota tutti i messaggi di errore e ripristina i valori di `fields` allo stato iniziale definito in `FieldDefinition`.
+
+==== Definizioni di Dominio (Constants)
+#figure(caption: "Shared - Form Fields Configurations")[
+#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/shared/DomainConstants.png")
+]
+
+*Descrizione*:
+
+Oggetti JavaScript esportati come costanti,  che fungono da singolo punto di configurazione per le regole di validazione degli input utente nei form. 
+
+Rappresentano una  `map<String, FieldDefinition>`, questi oggetti isolano le regole di validazione) e i valori iniziali dal resto del codice.
+Essendo condivisi, garantiscono una rigorosa simmetria di validazione tra le interfacce di creazione e di modifica.
+
+*Attributi*:
+
+Ogni attributo di questi oggetti rappresenta uno specifico campo del dominio e rispetta rigorosamente la forma definita da `FieldDefinition`:
+
+*Per `deviceFormFields`:*
+- `+ deviceName: FieldDefinition`
+- `+ deviceOs: FieldDefinition`
+- `+ deviceDescription: FieldDefinition`
+
+*Per `assetFormFields`:*
+- `+ name: FieldDefinition`
+- `+ assetType: FieldDefinition`
+- `+ description: FieldDefinition`
+
+*Metodi*:
+
+Trattandosi di oggetti di pura configurazione statica dei dati, non espongono alcun metodo operativo.
 
 
 === Component
@@ -196,3 +277,79 @@ Componente generico che realizza un'area di caricamento file con supporto per dr
 - `+ reset()`:  Metodo pubblico esposto al padre tramite template ref. Resetta lo stato del componente rimuovendo il file selezionato.
 - `+ select(file:File)`: Evento emesso quando un file valido viene selezionato o trascinato.
 - `+ error(message:String)`: Evento emesso quando il file trascinato non supera la validazione del formato.
+
+==== Device Form
+
+#figure(caption: "Component - DeviceForm")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/componenti/DeviceForm.png")
+]
+*Descrizione*:
+
+Componente di presentazione specifico per il dominio dei dispositivi. Si occupa esclusivamente di renderizzare l'interfaccia utente del modulo e di stabilire un binding bidirezionale con i dati forniti dal componente genitore. È agnostico rispetto al contesto: non sa se sta creando un nuovo dispositivo o modificandone uno esistente, e non esegue alcuna logica di validazione o salvataggio.
+
+*Attributi*:
+- `+ fields: Object`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
+- `+ errors: Object`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
+
+
+*Metodi*:
+
+Il componente è puramente dichiarativo e non espone metodi operativi.
+Espone unicamente il costruttore:
+- `+ DeviceForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)`
+
+==== Asset Form
+#figure(caption: "Component - AssetForm")[
+#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/componenti/AssetForm.png")
+]
+
+*Descrizione*:
+Componente di presentazione (Dumb Component) delegato al rendering del modulo per la gestione degli Asset. 
+ Si occupa esclusivamente di renderizzare l'interfaccia utente del modulo e di stabilire un binding bidirezionale con i dati forniti dal componente genitore. È agnostico rispetto al contesto: non sa se sta creando un nuovo asset o modificandone uno esistente, e non esegue alcuna logica di validazione o salvataggio.
+
+*Attributi*:
+- `+ fields: Object`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
+- `+ errors: Object`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
+
+
+*Metodi*:
+
+Il componente è puramente dichiarativo e non espone metodi operativi.
+Espone unicamente il costruttore:
+- `+ AssetForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)`
+
+
+=== Widget
+
+==== AssetCreateWidget
+#figure(caption: "Widget - AssetCreateWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetCreateWidget.png")
+]
+*Descrizione*:
+Rappresenta un'isola applicativa responsabile di orchestrare la creazione di un nuovo Asset. Agisce come controller di facciata: funge da ponte tra il livello di presentazione e il livello di comunicazione col backend. Detiene la logica di business specifica per questa casistica, ma delega il rendering grafico e la gestione reattiva ai componenti e ai composable sottostanti.
+
+*Attributi*:
+- `+ submitUrl: String` : L'endpoint Flask a cui inviare il payload POST.
+- `+ cancelUrl: String` : L'URL di fallback in caso di annullamento dell'operazione.
+- `+ redirectUrl: String` : L'URL a cui reindirizzare l'utente in caso di successo.
+- `- formModel: UseFormModel` : Model di riferimento per il componente.
+- `- assetForm:AssetForm` : Componente che mostra graficamente il form degli asset.
+- `- confirmButton:AsyncButton` : Componente che mostra graficamente il pulsante di conferma.
+
+*Metodi*:
+
+- `AssetCreateWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)` :Costruttore che riceve esternamente gli url a cui corrispondono le azioni.
+- `- createAsset(): Promise<Object>` : Metodo asincrono invocato dal bottone di salvataggio. Esegue la validazione invocando il composable, compone il payload JSON e gestisce la chiamata di rete, catturando e smistando eventuali errori server-side, ritorna un oggetto json contente la risposta.
+- `- onSuccess(data: Object): void` : Callback eseguita al completamento positivo della chiamata.
+
+
+
+
+
+==== AssetUpdateWidget
+
+
+
+
+==== AssetDeleteWidget
+

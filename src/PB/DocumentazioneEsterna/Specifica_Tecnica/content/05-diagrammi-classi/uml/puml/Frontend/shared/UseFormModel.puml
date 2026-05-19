@@ -7,6 +7,7 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class useFormModel <<composable>> {
+  - fieldDefinitions : Map<String, FieldDefinition>
   + fields : Map<String, String | Number | Boolean>
   + errors : Map<String, String | null>
   + isValid : Boolean

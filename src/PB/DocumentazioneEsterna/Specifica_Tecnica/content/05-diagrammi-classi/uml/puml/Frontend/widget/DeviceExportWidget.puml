@@ -6,11 +6,11 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
+class DeviceExportWidget{
+        + deviceName:String
+        + exportBaseUrl:String
+        -isModalOpen:Boolean
+} 
 
-class FormField <<component>> {
-  + content : Slot
-  + label : String
-  + error: String
-  + FormField(label : String, error : String)
-}
+
 @enduml

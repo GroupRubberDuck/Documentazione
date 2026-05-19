@@ -7,8 +7,8 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class Toast <<component>> {
-  - message : String
-  - duration : String
+  + message : String
+  + duration : String
   + Toast(message : String, duration : Number)
   + close() <<emit>>
 }

@@ -1,0 +1,26 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class AssetEditWidget{
+        + submitUrl:String
+        + cancelUrl:String
+        + redirectUrl:String
+        + initialName:String
+        + initialAssetType:String
+        + initialDescription:String
+        - formModel:UseFormModel
+        - assetForm:AssetForm
+        - confirmButton: AsyncButton 
+
+        +AssetEditWidget(submitUrl:String,cancelUrl:String,redirectUrl:String,initialName:String,initialAssetType:String,initialDescription:String )
+        - updateAsset:Promise<Object>
+        - onSuccess
+}
+AssetEditWidget ..> assetFormFields : <<use>>
+
+@enduml

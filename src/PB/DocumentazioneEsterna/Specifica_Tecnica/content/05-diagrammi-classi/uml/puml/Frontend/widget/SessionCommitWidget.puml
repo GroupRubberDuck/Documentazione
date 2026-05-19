@@ -7,10 +7,8 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 
-class FormField <<component>> {
-  + content : Slot
-  + label : String
-  + error: String
-  + FormField(label : String, error : String)
+class SessionCommitWidget{
+        
 }
+
 @enduml
