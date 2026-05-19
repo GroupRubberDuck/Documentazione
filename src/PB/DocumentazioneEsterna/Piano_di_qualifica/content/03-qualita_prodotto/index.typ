@@ -47,22 +47,6 @@ Misura la capacità del software di operare senza guasti in condizioni previste,
   ),
 ),[Metriche affidabilità del prodotto])
 
-== Usabilità
-Rileva quanto il software sia intuitivo e facile da utilizzare, considerando la semplicità delle interazioni, la facilità di apprendimento e la correttezza delle operazioni da parte degli utenti.
-
-#tabellaMetriche((
-  (codice: "MPD-07",
-    nome: "User Error Rate",
-    accettabile: $<= 3 percent$,
-    preferibile: $<= 1 percent$
-  ),
-  (codice: "MPD-08",
-    nome: "Time to Complete Task",
-    accettabile: "<= 30 sec",
-    preferibile: "<= 60 sec"
-  ),
-),[Metriche usabilità del prodotto])
-
 == Efficienza 
 Indica l’ottimizzazione delle risorse e la rapidità di risposta del software alle richieste, valutando tempi di esecuzione, throughput e utilizzo delle risorse disponibili.
 
