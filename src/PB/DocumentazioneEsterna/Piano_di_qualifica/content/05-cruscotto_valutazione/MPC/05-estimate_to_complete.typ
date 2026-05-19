@@ -20,22 +20,17 @@
 #let data-time-eac  = csv("../../../data/MPC/15-process_lead_time.csv").slice(1)
 #let values-time-eac = data-time-eac.map(row => float(row.at(1)))
 #let threshold-time  = data-time-eac.map(row => 24.0)
-#let x-labels        = data-time-eac.map(row => row.at(0))
+#let x-labels-full   = data-time-eac.map(row => row.at(0))
+#let x-labels-short  = x-labels-full.map(s => s.replace("Sprint ", "S"))
 
 #let giudizio-time(v) = {
   let delta = v - 24.0
-  if delta <= 0.0 {
-    "In anticipo / in linea"
-  } else if delta <= 0.5 {
-    "Lieve ritardo"
-  } else if delta <= 1.0 {
-    "Ritardo moderato"
-  } else {
-    "Ritardo significativo"
-  }
+  if delta <= 0.0 { "In anticipo / in linea" }
+  else if delta <= 0.5 { "Lieve ritardo" }
+  else if delta <= 1.0 { "Ritardo moderato" }
+  else { "Ritardo significativo" }
 }
 
-// Tabella TimeEAC
 #figure(
   table(
     columns: (auto, 1fr, 1fr, 2.5fr),
@@ -47,7 +42,7 @@
       text(fill: white, weight: "bold")[Scostamento],
       text(fill: white, weight: "bold")[Giudizio],
     ),
-    ..x-labels.enumerate().map(((i, sprint)) => {
+    ..x-labels-full.enumerate().map(((i, sprint)) => {
       let v = values-time-eac.at(i)
       let delta = v - 24.0
       let delta-str = if delta >= 0 { "+" + fmt(delta) } else { fmt(delta) }
@@ -57,37 +52,35 @@
   caption: [TimeEAC per sprint],
 )
 
-// Grafico TimeEAC
-#grafico-multi-linea(
-  (
-    x-labels: x-labels,
-    TimeEAC: values-time-eac,
-    Pianificato: threshold-time,
-    series-names: ("TimeEAC", "Pianificato"),
-    show-labels: true,
-    label-size: 6pt,
-    grid-opacity: 20%,
-  ),
-  "Stima Durata Finale del Progetto (Time EAC)",
-  y-label: "Settimane",
-  x-label: "Sprint",
-  y-min: 23,
-  y-max: 26,
-  series-colors: (
-    rgb("#1a73e8"),      // TimeEAC — blu
-    rgb(180, 180, 180),  // Pianificato — grigio tenue
-  ),
-  series-thickness: (2pt, 0.8pt),
-)
-
+#pad(x: -2cm)[
+  #grafico-multi-linea(
+    (
+      x-labels: x-labels-short,
+      TimeEAC: values-time-eac,
+      Pianificato: threshold-time,
+      series-names: ("TimeEAC", "Pianificato"),
+      show-labels: true,
+      label-size: 6pt,
+      grid-opacity: 20%,
+      x-tick-angle: -45deg,
+    ),
+    "Stima Durata Finale del Progetto (Time EAC)",
+    y-label: "Settimane",
+    x-label: "Sprint",
+    y-min: 23,
+    y-max: 37,
+    series-colors: (rgb("#1a73e8"), rgb(180, 180, 180)),
+    series-thickness: (2pt, 0.8pt),
+  )
+]
 Il TimeEAC si mantiene generalmente allineato al pianificato, con scostamenti contenuti
 riconducibili a rallentamenti puntuali come la sessione esami, seguiti da parziali recuperi
 negli sprint successivi. Il dato va tuttavia letto con cautela: il completamento delle task
 nei tempi previsti non riflette necessariamente la qualità del lavoro svolto. Task chiuse
 parzialmente hanno generato attività correttive negli sprint successivi, come evidenziato
-anche dall'andamento documentato nel
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
-
+anche dall'andamento documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+#line(length: 100%, stroke: 0.5pt + luma(180))
+Il TimeEAC si è mantenuto allineato alla pianificazione fino all'avvio della Product Baseline (S9). A partire da tale sprint, si è consolidato un ritardo complessivo di circa un mese rispetto al termine originale. Tale slittamento è imputabile ai debiti accumulati nelle fasi precedenti, in particolare alla curva di apprendimento tecnologico e alla sottostima dell'impegno richiesto dalle attività di verifica e analisi. L'andamento è documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
 
 // ═══════════════════════════════════════════════════════════════════════════
 // GRAFICO 2: AC vs ETC vs EAC (COSTI)
@@ -100,10 +93,10 @@ anche dall'andamento documentato nel
 #let values-etc = values-ac.zip(values-eac).map(pair => pair.at(1) - pair.at(0))
 
 #let x-labels-cost = data-ac.map(row => row.at(0))
+#let x-labels-cost-short = x-labels-cost.map(s => s.replace("Sprint ", "S"))
 #let bac-value = 11610
 #let values-bac = x-labels-cost.map(_ => float(bac-value))
 
-// Tabella AC / ETC / EAC
 #figure(
   table(
     columns: (auto, 1fr, 1fr, 1fr, 1fr),
@@ -128,33 +121,30 @@ anche dall'andamento documentato nel
   caption: [AC, ETC ed EAC per sprint],
 )
 
-// Grafico AC / ETC / EAC
-#grafico-multi-linea(
-  (
-    x-labels: x-labels-cost,
-    AC: values-ac,
-    ETC: values-etc,
-    EAC: values-eac,
-    BAC: values-bac,
-    series-names: ("AC", "ETC", "EAC", "BAC"),
-    show-labels: true,
-    label-size: 6pt,
-    grid-opacity: 20%,
-  ),
-  "Actual Cost, Estimate To Complete e Estimate At Completion",
-  y-label: "Valore (€)",
-  x-label: "Sprint",
-  series-colors: (
-    rgb("#e8541a"),      // AC — arancione
-    rgb("#2ecc71"),      // ETC — verde
-    rgb("#1a73e8"),      // EAC — blu
-    rgb(180, 180, 180),  // BAC — grigio tenue
-  ),
-  series-thickness: (2pt, 2pt, 2pt, 0.8pt),
-)
-
+#pad(x: -2cm)[
+  #grafico-multi-linea(
+    (
+      x-labels: x-labels-cost-short,
+      AC: values-ac,
+      ETC: values-etc,
+      EAC: values-eac,
+      BAC: values-bac,
+      series-names: ("AC", "ETC", "EAC", "BAC"),
+      show-labels: true,
+      label-size: 6pt,
+      grid-opacity: 20%,
+      x-tick-angle: -45deg,
+    ),
+    "Actual Cost, Estimate To Complete e Estimate At Completion",
+    y-label: "Valore (€)",
+    x-label: "Sprint",
+    series-colors: (rgb("#e8541a"), rgb("#2ecc71"), rgb("#1a73e8"), rgb(180, 180, 180)),
+    series-thickness: (2pt, 2pt, 2pt, 0.8pt),
+  )
+]
 Il grafico illustra la composizione del budget nel corso del progetto. I costi effettivi (AC)
-mostrano una crescita controllata e lineare, mentre il lavoro rimanente stimato (ETC)
-diminuisce progressivamente, mantenendo il budget totale (EAC) generalmente stabile.
-Il BAC (€#str(bac-value)) è riportato come riferimento per valutare lo scostamento proiettato.
-
+mostrano una crescita controllata e lineare, mentre il lavoro rimanente stimato (ETC) diminuisce progressivamente, mantenendo il budget totale (EAC) generalmente stabile.
+Il BAC (€#str(bac-value)) è riportato come riferimento per valutare lo scostamento proiettato. 
+#line(length: 100%, stroke: 0.5pt + luma(180))
+Il progetto si conclude con uno slittamento temporale di un mese rispetto alla pianificazione originaria. Sotto il profilo economico, è importante evidenziare che il costo effettivo sostenuto (Actual Cost, AC) si mantiene al di sotto del budget totale pianificato (BAC di 11.610€), pur attestandosi su valori prossimi a quest'ultimo. 
+Tuttavia, a partire dallo Sprint 9 (Product Baseline), l'adozione di un workflow di approvazione strutturato e l'integrazione di pipeline di Continuous Integration hanno stabilizzato l'efficienza operativa del gruppo. Gli indicatori di performance (CPI e SPI) mostrano un trend di miglioramento costante, a conferma che le azioni correttive hanno reso il ritmo di lavoro sostenibile e la qualità del codice conforme agli standard prefissati.

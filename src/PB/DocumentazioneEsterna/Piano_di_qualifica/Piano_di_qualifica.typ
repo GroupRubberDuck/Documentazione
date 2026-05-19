@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 1,
+  minor: 2,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -122,6 +122,13 @@
       [#persone.FILIPPO],
       [-],
       [Aggiornata sezione Test di Integrazione]
+    ),
+    (
+      [1.2.0],
+      [2026-05-19],
+      [#persone.ANA],
+      [-],
+      [Aggiornato i grafici già presenti nel cruscotto valutazione con i valori di fine TB @valutazione ]
     ),
   )
   #registroModifiche(modifiche)

@@ -36,7 +36,8 @@ let fragments = clean_text.split(regex("[.?!;\n]+"))
   let raw_text = extract_text_smart(content)
   
   // 2. Pulizia preliminare (normalizzazione spazi)
-  let clean_text = raw_text.replace(regex(" +"), " ").trim()
+  let raw_str = if type(raw_text) == str { raw_text } else { "" }
+  let clean_text = raw_str.replace(regex(" +"), " ").trim()
   
   // 3. Utilizzo delle funzioni modulari
   let num_parole = count_words(clean_text)
