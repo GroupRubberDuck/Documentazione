@@ -20,8 +20,8 @@
 
 // Info documento
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 
@@ -35,7 +35,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu",),
     verificatori: (persone.ANA,),
