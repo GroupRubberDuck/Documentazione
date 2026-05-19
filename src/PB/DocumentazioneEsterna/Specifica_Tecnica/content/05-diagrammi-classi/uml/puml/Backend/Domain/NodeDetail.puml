@@ -1,0 +1,12 @@
+@startuml NodeDetail
+skinparam ClassAttributeIconSize 0
+
+class NodeDetail {
+    + node_id: string
+    + node_type: string
+    + question: string
+    + child_on_true_id: string
+    + child_on_false_id: string
+    + verdict: StandardVerdict
+    + parent_id: string
+}

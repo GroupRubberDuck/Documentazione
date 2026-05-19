@@ -1,0 +1,15 @@
+@startuml RequirementEvaluationResult
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class RequirementEvaluationResult <<Value Object>> {
+    + requirement_id: String
+    + justification: String
+    + node_choices: Map<String, Bool>
+    + state: EvaluationState
+    + dependencies: List<Tuple<String, EvaluationState>>
+
+    + was_blocked_by_dependencies(): Bool
+}
+
+@enduml

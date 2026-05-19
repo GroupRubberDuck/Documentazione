@@ -1,0 +1,10 @@
+@startuml DeleteAssetCommand
+skinparam classAttributeIconSize 0
+
+class DeleteAssetCommand {
+    + device_id: String
+    + asset_id: String
+    + session_id: String
+
+}
+@enduml

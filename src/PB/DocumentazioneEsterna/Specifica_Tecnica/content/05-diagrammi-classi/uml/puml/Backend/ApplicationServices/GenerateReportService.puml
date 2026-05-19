@@ -1,0 +1,8 @@
+@startuml ExportReportService
+
+skinparam classAttributeIconSize 0
+
+class GenerateReportService <<Application Service>> {
+    + export_report(command: GenerateReportCommand): ExportedFile
+}
+@enduml

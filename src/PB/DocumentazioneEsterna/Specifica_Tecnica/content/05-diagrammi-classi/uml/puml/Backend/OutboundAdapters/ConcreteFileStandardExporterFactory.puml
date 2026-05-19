@@ -1,0 +1,7 @@
+@startuml ConcreteFileStandardExporterFactory
+
+class ConcreteFileStandardExporterFactory <<Factory Adapter>> {
+    + get_file_standard_exporter(extension: AllowedStandardFileExtension): FileStandardExporterPort
+}
+
+@enduml

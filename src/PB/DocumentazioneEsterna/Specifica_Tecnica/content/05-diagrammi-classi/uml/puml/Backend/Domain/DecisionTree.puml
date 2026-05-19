@@ -1,0 +1,13 @@
+@startuml DecisionTree
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class DecisionTree {
+    - root: String
+    - nodes: Map<String, Node>
+
+    + evaluate(answers: Map<String, Bool>): EvaluationState
+}
+DecisionTree *-- "1..*" Node
+
+@enduml

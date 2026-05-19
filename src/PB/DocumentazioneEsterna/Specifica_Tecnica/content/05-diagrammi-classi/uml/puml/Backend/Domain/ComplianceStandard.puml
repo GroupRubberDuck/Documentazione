@@ -1,0 +1,16 @@
+@startuml ComplianceStandard
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class ComplianceStandard {
+    - id: String
+    - name: String
+    - version_number: String
+    - requirements: Map<String, Requirement>
+
+    + get_requirement(requirement_id: String): Requirement
+    + evaluate_requirement(requirement_id: String, answers: AssetEvidence): EvaluationState
+}
+ComplianceStandard *-- "1..*" Requirement
+
+@enduml

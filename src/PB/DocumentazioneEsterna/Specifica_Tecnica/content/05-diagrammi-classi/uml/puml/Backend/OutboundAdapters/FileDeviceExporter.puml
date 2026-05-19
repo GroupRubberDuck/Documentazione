@@ -1,0 +1,10 @@
+@startuml FileDeviceExporter
+skinparam classAttributeIconSize 0
+abstract class FileDeviceExporter <<Template Method>> {
+    + generate_device_file(device: Device): bytes
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+}
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml FlaskWriteAssetController
+
+class FlaskWriteAssetController <<Flask Blueprint>>{
+    + create_asset(req: Request): Response
+    + update_asset(req: Request): Response
+    + delete_asset(req: Request): Response
+}
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml 
+skinparam classAttributeIconSize 0  
+   
+    class CSVFileDeviceExporter {
+        - output: StringIO
+        - writer: Any
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+    class JSONFileDeviceExporter {
+        - data: Dict
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+    class XMLFileDeviceExporter {
+        - root: ET.Element
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml GenerateReportCommand
+skinparam classAttributeIconSize 0
+
+class GenerateReportCommand {
+    + session_id: String
+    + device_id: String
+    + report_format: ReportFormat
+}
+
+enum ReportFormat {
+    + PDF
+}
+
+GenerateReportCommand -> ReportFormat
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml AssetEvidence
+skinparam ClassAttributeIconSize 0
+
+class AssetEvidence {
+    - requirement_id: String
+    - node_choices: Map<String, Bool>
+    - justification: String
+
+    + with_node_choice(node_id: String, value: Bool): AssetEvidence
+    + with_justification(justification: String): AssetEvidence
+}
+
+@enduml

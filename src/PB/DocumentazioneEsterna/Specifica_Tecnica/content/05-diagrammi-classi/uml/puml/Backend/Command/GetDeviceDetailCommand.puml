@@ -1,0 +1,8 @@
+@startuml GetDeviceDetailCommand
+skinparam classAttributeIconSize 0  
+   
+    class GetDeviceDetailCommand {
+        + device_id: String
+    }
+
+@enduml

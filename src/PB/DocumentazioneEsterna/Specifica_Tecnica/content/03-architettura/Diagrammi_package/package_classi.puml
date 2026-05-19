@@ -1,0 +1,68 @@
+@startuml Diagramma_Package
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+package "Frontend Client" as FC {
+    package "Vue.js App" {
+        component "Pinia (State)" as Pinia
+        component "Componenti UI" as UI
+    }
+}
+
+database "MongoDB" as Mongo #D5E8D4
+
+package "Backend (Python)" {
+
+    package "Inbound Adapters (Presentation)" as iadapter #E8F2FC {
+        component "Flask REST Controllers" as FlaskAPI
+        component "Flask Web" as FlaskWEB
+        component "UploadFileController" as UpCtrl
+        component "DownloadFileController" as DownCtrl
+    }
+
+    package "Core (Application & Domain)" as Core #E2F0D9 {
+
+        package "Inbound Ports" as iport #FFF2CC {
+            interface "Use Cases (ABC)" as InboundPort
+            component "Commands (Pydantic)" as Commands
+        }
+
+        package "Services" as services {
+            component "Use Case Implementations" as UseCaseImpl
+        }
+
+        package "Domain" as dominio {
+            component "Entità e Regole EN18031" as Entita
+        }
+
+        package "Outbound Ports" as oport #FFF2CC {
+            interface "Repository (Outbound)" as RepoPort
+            interface "Cache (Outbound)" as CachePort
+            interface "Import (Outbound)" as ImportPort
+            interface "Export (Outbound)" as ExportPort
+            interface "Report (Outbound)" as ReportPort
+        }
+    }
+
+    package "Outbound Adapters (Infrastructure)" as oadapter #E8F2FC {
+        package "PyMongo" as Pymongo {
+            component "Device Repository" as RepoDisp
+            component "Model Repository" as RepoMod
+        }
+        component "InMemory Session Cache" as Cache
+        component "CSV/JSON/XML Importers" as ImpAdapter
+        component "CSV/JSON/XML Exporters" as ExpAdapter
+        component "FPDF Report Generator" as FPDF
+    }
+}
+
+iadapter --> iport : "usa"
+services ..|> iport : "implementa"
+services --> oport : "usa"
+services --> dominio : "usa"
+oadapter ..|> oport : "implementa"
+
+FC --down-> iadapter: "HTTP"
+Pymongo -left-> Mongo : "BSON"
+
+@enduml

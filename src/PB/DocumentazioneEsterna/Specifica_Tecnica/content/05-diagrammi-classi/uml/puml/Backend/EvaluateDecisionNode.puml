@@ -1,0 +1,53 @@
+@startuml EvaluateDecisionNode
+skinparam linetype ortho
+skinparam nodesep 170
+skinparam ranksep 140
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskEvaluateDecisionNodeController.puml
+}
+
+package "Application Core" {
+
+    () "EvaluateDecisionNodeUseCase"
+
+    class EvaluateDecisionNodeCommand <<Command>> {
+        + session_id: String
+        + asset_id: String
+        + device_id: String
+        + requirement_id: String
+        + node_id: String
+        + answer: Boolean
+    }
+
+    !include ApplicationServices/EvaluateDecisionNodeService.puml
+
+    () "GetEvaluationSessionPort"
+    () "SaveEvaluationSessionPort"
+
+
+    GetEvaluationSessionPort -[hidden]right-------- SaveEvaluationSessionPort
+    SaveEvaluationSessionPort -[hidden]right-------- EvaluateDecisionNodeCommand
+
+
+
+    EvaluateDecisionNodeUseCase -down- EvaluateDecisionNodeService
+    
+    EvaluateDecisionNodeService -down-> GetEvaluationSessionPort : usa
+    EvaluateDecisionNodeService -down-> SaveEvaluationSessionPort : usa
+
+    EvaluateDecisionNodeService .down.> EvaluateDecisionNodeCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+
+FlaskEvaluateDecisionNodeController -down-> EvaluateDecisionNodeUseCase : usa
+
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

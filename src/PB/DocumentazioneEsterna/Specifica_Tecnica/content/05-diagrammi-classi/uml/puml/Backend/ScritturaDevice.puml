@@ -1,0 +1,75 @@
+@startuml WriteDeviceModule
+skinparam linetype ortho
+skinparam nodesep 50
+skinparam ranksep 50
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/WriteDeviceController.puml
+}
+
+package "Application Core" {
+
+    () "CreateDeviceUseCase" as CreateUC
+    () "UpdateDeviceUseCase" as SaveUC
+    () "DeleteDeviceUseCase" as DeleteUC
+
+    !include ApplicationServices/CreateDeviceService.puml
+    !include ApplicationServices/UpdateDeviceService.puml
+    !include ApplicationServices/DeleteDeviceService.puml
+
+    class CreateDeviceCommand {
+        + device_name: String
+        + device_os: String
+        + device_description: String
+        + compliance_standard_id: String
+    }
+
+    class UpdateDeviceCommand {
+        + device_id: String
+        + device_name: String
+        + device_os: String
+        + device_description: String
+    }
+
+    class DeleteDeviceCommand {
+        + device_id: String
+    }
+
+    () "RegisterDevicePort" as RegPort
+    () "SaveDevicePort" as SavePort
+    () "DeleteDevicePort" as DeletePort
+
+    !include Domain/Device.puml
+
+    DeleteDeviceService -[hidden]right- UpdateDeviceService
+    UpdateDeviceService -[hidden]right- CreateDeviceService
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+WriteDeviceController -down-> CreateUC
+WriteDeviceController -down-> SaveUC
+WriteDeviceController -down-> DeleteUC
+
+CreateUC -down- CreateDeviceService
+SaveUC -down- UpdateDeviceService
+DeleteUC -down- DeleteDeviceService
+
+DeleteDeviceService -left.> DeleteDeviceCommand : legge
+UpdateDeviceService -up.> UpdateDeviceCommand : legge
+CreateDeviceService -right.> CreateDeviceCommand : legge
+
+CreateDeviceService -down-> RegPort : usa
+UpdateDeviceService -down-> SavePort : usa
+DeleteDeviceService -down-> DeletePort : usa
+
+RegPort -down- MongoDeviceAdapter
+SavePort -down- MongoDeviceAdapter
+DeletePort -down- MongoDeviceAdapter
+
+Device -[hidden]left- CreateDeviceService
+
+@enduml

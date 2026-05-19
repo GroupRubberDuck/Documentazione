@@ -1,0 +1,15 @@
+@startuml MongoDeviceAdapter
+skinparam classAttributeIconSize 0
+
+class MongoDeviceAdapter <<Mongo Repository>> {
+    - _collection: Collection
+    + register(device: Device): None
+    + save_device(device: Device): None
+    + delete(device_id: String): None
+    + find_by_id(device_id: String): Device
+    + find_all(): List[DeviceSummary]
+    - _to_document(device: Device): Dict
+    - _from_document(doc: Dict): Device
+}
+
+@enduml

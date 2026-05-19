@@ -1,0 +1,7 @@
+@startuml GetComplianceStandardCommand
+skinparam ClassAttributeIconSize 0
+class GetComplianceStandardCommand {
+    + standard_id: String
+}
+
+@enduml

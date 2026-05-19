@@ -1,0 +1,8 @@
+@startuml ImportDeviceService
+skinparam classAttributeIconSize 0
+
+class ImportDeviceService <<Application Service>> {
+    + import_device(command: ImportDeviceCommand): void
+}
+
+@enduml

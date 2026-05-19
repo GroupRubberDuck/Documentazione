@@ -1,0 +1,10 @@
+@startuml DeviceSummary
+skinparam ClassAttributeIconSize 0
+
+class DeviceSummary {
+    + device_id: String
+    + name: String
+    + os: String
+    + description: String
+    + compliance_standard_id: String
+}

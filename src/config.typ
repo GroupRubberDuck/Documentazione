@@ -19,7 +19,7 @@
 #let danger_icon = images_dir + "/danger_icon.webp"
 #let question_mark_icon = images_dir + "/question_mark_icon.png"
 
-#let flagMarcaturaAutoamticaTerminiGlossario=true
+#let flagMarcaturaAutoamticaTerminiGlossario=false
 #let enfasi(doc) = {
   align()[
     #set text(weight: "bold", size: 14pt)
@@ -42,7 +42,7 @@
   DT:"Davide Testolin",
   ANA:"Ana Maria Draghici",
   ALDO:"Aldo Bettega",
-  FELIX:[Felician Mario \ Necsulescu],
+  FELIX:"Felician Mario \n Necsulescu",
   FILIPPO:"Filippo Guerra"
 )
 
@@ -61,3 +61,6 @@
   // Crea l'heading e gli attacca la label dinamica
   [#heading(level: level, body) #label(tag)]
 }
+
+
+#let nome-progetto="Automated EN18031 Compliance Verification"

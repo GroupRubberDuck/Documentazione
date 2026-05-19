@@ -1,0 +1,46 @@
+@startuml GenerateReport
+skinparam linetype ortho
+skinparam nodesep 150
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskExportReportController.puml
+}
+
+package "Application Core" {
+
+    () "GenerateReportUseCase" 
+
+    !include ApplicationServices/GenerateReportService.puml
+    !include Command/GenerateReportCommand.puml
+
+    !include Domain/EvaluationEngine.puml
+    !include Domain/ExportedFile.puml
+
+    () "ReportGeneratorPort" as ReportGeneratorPort
+    () "GetEvaluationSessionPort" as GetEvaluationSessionPort
+
+    ReportGeneratorPort -[hidden]right- GetEvaluationSessionPort
+
+    GenerateReportService -up- GenerateReportUseCase
+    GenerateReportService .right.> GenerateReportCommand : legge
+    GenerateReportService .down.> ExportedFile : popola
+    GenerateReportService -down-> ReportGeneratorPort : usa
+    GenerateReportService -down-> GetEvaluationSessionPort : usa
+    GenerateReportService ..> EvaluationEngine : usa
+
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/PdfReportGeneratorAdapter.puml
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskExportReportController -down-> GenerateReportUseCase : usa
+
+PdfReportGenerator -up- ReportGeneratorPort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+
+@enduml

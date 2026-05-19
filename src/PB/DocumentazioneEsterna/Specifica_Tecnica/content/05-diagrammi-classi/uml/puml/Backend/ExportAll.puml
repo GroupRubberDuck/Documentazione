@@ -1,0 +1,171 @@
+@startuml Comprehensive-Export-Diagram
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+' --- SHARED ELEMENTS ---
+enum AssetType <<enum>> {
+    HARDWARE
+    SOFTWARE
+    SERVICE
+}
+
+' ==========================================
+' 1. EXPORT DEVICE SECTION
+' ==========================================
+package "Export Device Subsystem" {
+    package "ED Inbound" {
+        !include InboundAdapters/ExportDeviceController.puml
+    }
+
+    package "ED Core" {
+        () "ExportDeviceUseCase"
+        !include ApplicationServices/ExportDeviceService.puml
+        !include Domain/Device.puml
+
+        class ExportDeviceCommand <<Query Command>> {
+            + device_id: String
+            + extension: AllowedDeviceFileExtension
+        }
+
+        enum AllowedDeviceFileExtension <<enum>> {
+            XML
+            JSON
+            CSV
+        }
+
+        class DeviceFileCommand {
+            + device_name: String
+            + assets: List<AssetFileCommand>
+        }
+
+        () "FindDevicePort"
+        () "FileDeviceExporterFactoryPort"
+        () "FileDeviceExporterPort"
+    }
+
+    package "ED Outbound" {
+        !include OutboundAdapters/MongoDeviceAdapter.puml
+        !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
+        !include OutboundAdapters/FileDeviceExporter.puml
+
+        class JSONFileDeviceExporter {
+            # prepare_structure()
+            # write_data()
+        }
+        class XMLFileDeviceExporter {
+            # prepare_structure()
+            # write_data()
+        }
+    }
+}
+
+' ==========================================
+' 2. EXPORT REPORT SECTION
+' ==========================================
+package "Export Report Subsystem" {
+    package "ER Inbound" {
+        !include InboundAdapters/ExportReportController.puml
+    }
+
+    package "ER Core" {
+        () "ExportReportUseCase"
+        !include ApplicationServices/ExportReportService.puml
+
+        class ExportReportQuery <<Query Command>> {
+            + session_id: String
+            + format: ReportFormat
+        }
+
+        enum ReportFormat <<enum>> {
+            PDF
+        }
+
+        () "GetEvaluationSessionPort"
+        () "ReportGeneratorPort"
+    }
+
+    package "ER Outbound" {
+        !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+        !include OutboundAdapters/PdfReportGeneratorAdapter.puml
+    }
+}
+
+' ==========================================
+' 3. EXPORT STANDARD SECTION
+' ==========================================
+package "Export Standard Subsystem" {
+    package "ES Inbound" {
+        !include InboundAdapters/ExportStandardController.puml
+    }
+
+    package "ES Core" {
+        () "ExportStandardUseCase"
+        !include ApplicationServices/ExportStandardService.puml
+        !include Domain/ComplianceStandard.puml
+
+        class ExportStandardCommand {
+            + standard_id: String
+            + extension: AllowedStandardFileExtension
+        }
+
+        enum AllowedStandardFileExtension <<enum>> {
+            XML
+            JSON
+        }
+
+        () "FindStandardPort"
+        () "FileStandardExporterFactoryPort"
+        () "FileStandardExporterPort"
+    }
+
+    package "ES Outbound" {
+        !include OutboundAdapters/MongoStandardAdapter.puml
+        !include OutboundAdapters/ConcreteFileStandardExporterFactory.puml
+
+        abstract class FileStandardExporter <<Template Method>> {
+            + generate_device_file(dto: StandardFileCommand): bytes
+            # prepare_structure()
+            # write_data()
+        }
+
+        class JSONFileStandardExporter
+        class XMLFileStandardExporter
+    }
+}
+
+' --- ED RELATIONS ---
+ExportDeviceController -down-( ExportDeviceUseCase
+ExportDeviceService -up- ExportDeviceUseCase
+ExportDeviceService --( FindDevicePort
+ExportDeviceService --( FileDeviceExporterFactoryPort
+ExportDeviceService --( FileDeviceExporterPort
+MongoDeviceAdapter -up- FindDevicePort
+ConcreteFileDeviceExporterFactory -up- FileDeviceExporterFactoryPort
+FileDeviceExporterPort -- FileDeviceExporter
+FileDeviceExporter <|-- JSONFileDeviceExporter
+FileDeviceExporter <|-- XMLFileDeviceExporter
+
+' --- ER RELATIONS ---
+ExportReportController -down-( ExportReportUseCase
+ExportReportService -up- ExportReportUseCase
+ExportReportService --> GetEvaluationSessionPort
+ExportReportService --> ReportGeneratorPort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+PdfReportGeneratorAdapter -up- ReportGeneratorPort
+
+' --- ES RELATIONS ---
+ExportStandardController -down-( ExportStandardUseCase
+ExportStandardService -up- ExportStandardUseCase
+ExportStandardService --> FindStandardPort
+ExportStandardService --> FileStandardExporterFactoryPort
+ExportStandardService --> FileStandardExporterPort
+MongoStandardAdapter -up- FindStandardPort
+ConcreteFileStandardExporterFactory -up- FileStandardExporterFactoryPort
+FileStandardExporterPort -- FileStandardExporter
+FileStandardExporter <|-- JSONFileStandardExporter
+FileStandardExporter <|-- XMLFileStandardExporter
+
+@enduml

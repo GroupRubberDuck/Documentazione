@@ -1,0 +1,65 @@
+@startuml compliance-standard-query
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class FlaskStandardQueryController <<Flask Blueprint>> {
+        - query_service: StandardQueryUseCase
+        
+        + get_standards(): Response
+        + get_standard_detail(): Response
+        ' + get_requirement_detail(standard_id: String, req_code: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface StandardQueryUseCase <<Inbound Port>> {
+        + get_standard_list(): List<ComplianceStandard>
+        + get_standard_detail(standard_id: String): ComplianceStandard
+        ' + get_requirement_detail(standard_id: String, req_code: String): Requirement
+    }
+
+    !include ports/out/StandardReadRepositoryPort.puml
+
+    class StandardQueryService <<Application Service>> {
+        - repository: StandardRepositoryPort
+        
+        + get_standard_list(): List<ComplianceStandardSummaryDTO>
+        + get_standard_detail(standard_id: String): ComplianceStandard
+        ' + get_requirement_detail(standard_id: String, req_code: String): Requirement
+    }
+
+    class ComplianceStandardSummaryDTO {
+        - id: String
+        - name: String
+        - version_number: String
+    }
+
+    '!include Dominio/ComplianceStandard.puml
+    '!include Dominio/Requirement.puml
+
+    StandardQueryUseCase <|.. StandardQueryService : "implementa"
+    StandardQueryService -down-( StandardReadRepositoryPort : "richiede"
+
+    StandardQueryService ..> ComplianceStandard : "legge"
+    StandardQueryService ..> Requirement : "legge"
+}
+
+package "Outbound Adapter" {
+    class MongoStandardAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        
+        + save(standard: ComplianceStandard): void
+        + find_by_id(standard_id: String): ComplianceStandard
+        + find_all(): List<ComplianceStandardSummaryDTO>
+        + delete_by_id(standard_id: String): void
+    }
+}
+
+FlaskStandardQueryController -( StandardQueryUseCase : "usa"
+StandardReadRepositoryPort -down- MongoStandardAdapter : "implementa"
+
+@enduml

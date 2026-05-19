@@ -1,0 +1,7 @@
+@startuml DeleteDeviceService
+skinparam classAttributeIconSize 0
+class DeleteDeviceService <<Application Service>> {
+    + delete(command: DeleteDeviceCommand): void
+}
+
+@enduml

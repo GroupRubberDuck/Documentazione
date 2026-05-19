@@ -1,0 +1,30 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class FileDropZone <<component>> {
+  - accept : String[]
+  -  placeholder : String
+  -  hint : String
+  -  disabled : Boolean
+  - isDragging : Boolean
+  - selectedFile : File
+
+
+  + FileDropZone(accept : String[], placeholder : String, hint : String, disabled : Boolean)
+  - handleFileChange(event : Event) : void
+  - handleDrop(event : DragEvent) : void
+  - isFileAccepted(file : File) : Boolean
+  - formatSize(bytes : Number) : String
+  + reset() : void
+  + select(file : File) <<emit>>
+  + error(message : String) <<emit>>
+}
+
+
+@enduml

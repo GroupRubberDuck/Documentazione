@@ -1,0 +1,8 @@
+@startuml FlaskExportReportController
+skinparam classAttributeIconSize 0
+
+class FlaskExportReportController <<Flask Blueprint>> {
+    + export_report(req: Request): Response
+}
+
+@enduml

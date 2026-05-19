@@ -1,0 +1,6 @@
+@startuml CommitCloseEvaluationSessionService
+skinparam classAttributeIconSize 0
+class CommitCloseEvaluationSessionService {
+    + commit_and_close(command: CommitCloseEvaluationSessionCommand): void
+}
+@enduml

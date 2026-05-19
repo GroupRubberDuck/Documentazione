@@ -1,0 +1,14 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+interface ValidationRule <<interface>> {
+  + validate(value : String | Number | Boolean) : String | null
+}
+
+@enduml
