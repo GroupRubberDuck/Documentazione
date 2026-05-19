@@ -90,12 +90,9 @@
   )
 ]
 Il CPI si mantiene costantemente al di sotto della soglia accettabile per tutti
-gli sprint, a indicare un utilizzo del budget superiore al previsto. L'SPI invece
-rimane prossimo a 1, dimostrando che il team ha rispettato la pianificazione
-temporale. Il miglioramento del CPI osservato a partire dai sprint centrali è
+gli sprint, a indicare un utilizzo del budget superiore al previsto. Il miglioramento del CPI osservato a partire dai sprint centrali è
 parzialmente riconducibile a una riorganizzazione del lavoro successiva alla
-sessione esami. Le cause degli scostamenti sono documentate nel
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+sessione esami.
 #line(length: 100%, stroke: 0.5pt + luma(180))
-A partire dallo Sprint 9, coincidente con l'avvio della Product Baseline (PB), si osserva un graduale miglioramento dell'efficienza grazie alla riorganizzazione del lavoro post-sessione esami e all'adozione di nuove pratiche di sviluppo. Tuttavia, la consegna finale del progetto è avvenuta con un mese di ritardo rispetto alla pianificazione iniziale; tale slittamento è dovuto principalmente ai debiti accumulati nelle fasi precedenti — in particolare la curva di apprendimento tecnologico e la sottostima delle attività di verifica — che hanno condizionato la sostenibilità dei ritmi operativi. Le analisi dettagliate delle cause e le strategie di mitigazione adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+A partire dallo Sprint 9, coincidente con l'avvio della Product Baseline (PB), si osserva un graduale miglioramento dell'efficienza grazie alla riorganizzazione del lavoro post-sessione esami e all'adozione di nuove pratiche di sviluppo. Tuttavia, la consegna finale del progetto è avvenuta con un mese di ritardo rispetto alla pianificazione iniziale; tale slittamento è dovuto principalmente ai debiti accumulati nelle fasi precedenti, che hanno condizionato la sostenibilità dei ritmi operativi. Le analisi dettagliate delle cause e le strategie di mitigazione adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
 

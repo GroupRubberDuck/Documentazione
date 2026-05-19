@@ -37,11 +37,15 @@ I Test di Unità verificano il corretto funzionamento delle singole unità softw
 
 === Test di Unità Frontend
 Essendo generalmente usato l'approccio Server Side Rendering i test relativi al Frontend sono relativamente pochi rispetto a quelli di Backend 
-
+#include "unita/frontend/index.typ"
 == Test di Integrazione
 I Test di Integrazione verificano il corretto funzionamento delle interazioni tra i diversi componenti o moduli del sistema, assicurando che le interfacce tra essi si comportino come atteso. La loro definizione è demandata alle attività previste per la Product Baseline (PB).
 
 === Test di Integrazione Backend
 
 #include "integrazione/backend/index.typ"
+
+=== Test di Integrazione Frontend
+
+#include "integrazione/frontend/index.typ"
 

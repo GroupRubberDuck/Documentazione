@@ -142,9 +142,8 @@ Il TimeEAC si è mantenuto allineato alla pianificazione fino all'avvio della Pr
     series-thickness: (2pt, 2pt, 2pt, 0.8pt),
   )
 ]
-Il grafico illustra la composizione del budget nel corso del progetto. I costi effettivi (AC)
-mostrano una crescita controllata e lineare, mentre il lavoro rimanente stimato (ETC) diminuisce progressivamente, mantenendo il budget totale (EAC) generalmente stabile.
-Il BAC (€#str(bac-value)) è riportato come riferimento per valutare lo scostamento proiettato. 
-#line(length: 100%, stroke: 0.5pt + luma(180))
+
+
 Il progetto si conclude con uno slittamento temporale di un mese rispetto alla pianificazione originaria. Sotto il profilo economico, è importante evidenziare che il costo effettivo sostenuto (Actual Cost, AC) si mantiene al di sotto del budget totale pianificato (BAC di 11.610€), pur attestandosi su valori prossimi a quest'ultimo. 
+#line(length: 100%, stroke: 0.5pt + luma(180))
 Tuttavia, a partire dallo Sprint 9 (Product Baseline), l'adozione di un workflow di approvazione strutturato e l'integrazione di pipeline di Continuous Integration hanno stabilizzato l'efficienza operativa del gruppo. Gli indicatori di performance (CPI e SPI) mostrano un trend di miglioramento costante, a conferma che le azioni correttive hanno reso il ritmo di lavoro sostenibile e la qualità del codice conforme agli standard prefissati.

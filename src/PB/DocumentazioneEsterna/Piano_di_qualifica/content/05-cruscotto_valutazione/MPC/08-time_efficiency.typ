@@ -84,7 +84,9 @@ gli sprint, con valori compresi tra 0.8 e 0.95, attestandosi leggermente al
 di sotto della soglia ottimale per l'intera durata del progetto.
 Nella RTB (S1--S8) i valori risultano più variabili, con un picco
 intorno a S5 e alcune oscillazioni, riflettendo la minor esperienza iniziale
-nelle stime. A partire da S9, corrispondente alla PB, l'andamento
+nelle stime. 
+#line(length: 100%, stroke: 0.5pt + luma(180))
+A partire da S9, corrispondente alla PB, l'andamento
 diventa più stabile e mostra un lieve miglioramento progressivo, con eT che
 si avvicina maggiormente alla soglia ottimale negli sprint finali (S13--S14).
 Ciò indica un affinamento delle capacità di stima del team nel corso del

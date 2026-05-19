@@ -53,6 +53,5 @@ A partire da S9, l'EAC mostra un trend discendente costante, passando dai valori
 registrati intorno a S8 fino ad attestarsi in prossimità del BAC negli sprint finali (S13--S14).
 Questo andamento riflette un miglioramento progressivo del CPI nella fase PB, con il team
 che ha saputo contenere i costi effettivi e rientrare gradualmente entro i limiti di budget
-pianificati. Il valore finale di EAC risulta molto prossimo al BAC, confermando una gestione
-dei costi sostanzialmente in linea con le aspettative a conclusione del progetto.
+pianificati.
 
