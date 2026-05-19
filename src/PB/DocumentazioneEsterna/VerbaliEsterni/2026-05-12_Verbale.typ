@@ -23,13 +23,13 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
 #metadata(versionNumber)<versionNumber>
-#let giornoRiunione = datetime(year: 2026, month: 05, day: 05)
+#let giornoRiunione = datetime(year: 2026, month: 05, day: 12)
 #let doctype = "Verbale esterno"
 #frontPage([Verbale riunione], giornoRiunione)
 
