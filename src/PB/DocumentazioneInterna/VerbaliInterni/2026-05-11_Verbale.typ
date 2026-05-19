@@ -20,8 +20,8 @@
 
 // Info documento
 #let currentVersion = (
-  major: 0,
-  minor: 1,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 
@@ -35,10 +35,10 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In verifica",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.FILIPPO,),
-    verificatori: ("-"),
+    verificatori: ("Felician Mario Necsulescu",),
     uso: "Interno",
     destinatari: ("Tutto il gruppo",),
   )
@@ -106,16 +106,15 @@
 = Retrospettiva Sprint <rt>
 
   Durante la retrospettiva è stata effettuata la rendicontazione delle ore per ciascun membro del gruppo. È emerso che una parte significativa del lavoro svolto ha riguardato la comprensione e l'apprendimento delle tecnologie utilizzate, in particolare per il frontend (Vue, Vite).
-  È stato aggiornato lo script di raccolta delle issue dal Project Board, che non includeva correttamente tutte le issue del progetto.
-  Il gruppo ha concordato infine di mantenere il totale delle ore per ciascun membro entro il limite di 95 ore complessive, effettuando gli aggiustamenti necessari nel piano di progetto.
+  Il gruppo ha inoltre concordato infine di mantenere il totale delle ore per ciascun membro entro il limite di 95 ore complessive.
 
 = Pianificazione Sprint 14 <sprint>
   Per lo sprint 14 sono stati definiti i seguenti obiettivi:
     - Completamento del frontend MVP: navigazione del decision tree (valutazione), dashboard e funzionalità di export dei dispositivi.
     - Redazione del manuale utente: il documento includerà istruzioni di installazione, configurazione di Docker e guida operativa all'utilizzo dell'applicazione.
-    - Aggiornamento della Specifica Tecnica: revisione dei diagrammi delle classi per renderli coerenti con il codice prodotto. I diagrammi più complessi saranno migrati da PlantUML a draw.io.
+    - Aggiornamento della Specifica Tecnica: revisione dei diagrammi delle classi per renderli coerenti con il codice prodotto. I diagrammi più complessi saranno migrati da PlantUML a Draw.io.
     - Test di integrazione: verifica delle interazioni tra i componenti principali e il database MongoDB.
-    - Riunione con l'azienda: presentazione dello stato dell'MVP in ottica di UAT, con indicazione delle funzionalità ancora mancanti.
+    - Riunione con l'azienda: presentazione dello stato del sistema, con indicazione delle funzionalità ancora mancanti.
 
 ]
 

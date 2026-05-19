@@ -23,8 +23,8 @@
 //Info del documento
 //
 #let currentVersion = (
-  major: 1,
-  minor: 0,
+  major: 0,
+  minor: 1,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -37,7 +37,7 @@
   #statusTab(
     stato: "In approvazione",
     versione: versionNumber,
-    autori: (persone.FELIX,),
+    autori: ("Felician Mario Necsulescu",),
     verificatori: (persone.FILIPPO,),
     uso: "Esterno",
     destinatari: ("Tutto il gruppo",),

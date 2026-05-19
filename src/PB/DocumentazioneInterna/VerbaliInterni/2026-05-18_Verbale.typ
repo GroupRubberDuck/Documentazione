@@ -86,7 +86,7 @@
   = Riassunto della Riunione
 
   La riunione ha avuto inizio con un aggiornamento individuale sulle attività completate durante lo sprint, dove ogni membro ha illustrato i propri contributi.
-  Si è poi parlato della distribuzione della modifica, verifica e approvazione dei documenti in vista della riunione di PB con il professor Cardin. 
+  Si è poi parlato della distribuzione delle rimanenti modifiche, verifica e approvazione dei documenti in vista della riunione di PB con il professor Cardin. 
 ]
 
 #insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
