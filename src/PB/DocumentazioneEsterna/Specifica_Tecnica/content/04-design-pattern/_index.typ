@@ -17,4 +17,3 @@
 #include "template-method.typ"
 #include "model_view_viewmodel.typ"
 
-

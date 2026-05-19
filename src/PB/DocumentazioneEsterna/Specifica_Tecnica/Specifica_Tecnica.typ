@@ -249,7 +249,17 @@
       [#persone.ALDO],
       [],
       [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
+<<<<<<< HEAD
 >>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
+=======
+    ),
+    (
+      [0.13.0],
+      [2026-05-19],
+      [#persone.ALDO],
+      [],
+      [Scrittura sezione MVVM]
+>>>>>>> 5ad3b238 (Feat: scritta sezione MVVM in st)
     )
 >>>>>>> 202d7847 (Fix: riviste classi di session)
 
