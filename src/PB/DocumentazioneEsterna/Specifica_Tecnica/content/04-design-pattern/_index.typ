@@ -2,12 +2,6 @@
 #include "dependency-injection.typ"
 
 
-== Pattern Architetturali <design-pattern-architetturali>
-#include "repository.typ"
-
-#include "unit-of-work.typ"
-
-
 == Design Patterns Creazionali <design-pattern-creazionali>
 
 #include "factory.typ"
@@ -17,12 +11,9 @@
 
 #include "adapter.typ"
 
-#include "facade.typ"
-
 
 == Design Patterns Comportamentali <design-pattern-comportamentali>
 
-#include "strategy.typ"
 #include "template-method.typ"
-
+#include "model_view_viewmodel.typ"
 

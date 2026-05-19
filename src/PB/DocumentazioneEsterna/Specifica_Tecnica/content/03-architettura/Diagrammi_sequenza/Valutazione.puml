@@ -1,0 +1,81 @@
+@startuml Valutazione
+
+actor "Utente" as utente
+participant "<<Boundary>>\nVue.js" as vue
+participant "<<Inbound Adapter>>\nFlaskEvaluateDecisionNodeController" as controller
+participant "<<Service>>\nEvaluateDecisionNodeService" as service
+participant "<<Domain>>\nEvaluationSession" as domain
+participant "<<Outbound Port>>\nGetEvaluationSessionPort" as getPort
+participant "<<Outbound Port>>\nSaveEvaluationSessionPort" as savePort
+
+utente -> vue: Seleziona risposta (true/false)
+activate vue
+
+vue -> controller: PUT /api/sessions/{session_id}/devices/{device_id}/\nassets/{asset_id}/requirements/{req_id}\nBody: {node_id, answer}
+activate controller
+
+alt Body JSON mancante o ValidationError
+    controller --> vue: HTTP 400 Bad Request
+end
+
+controller -> service: evaluate_node(command: EvaluateDecisionNodeCommand)
+activate service
+
+service -> getPort: get_evaluation_session(command.session_id)
+activate getPort
+
+alt EvaluationSessionNotFoundError
+    getPort --> service: raise EvaluationSessionNotFoundError
+    service --> controller: raise EvaluateNodeFailure
+    controller --> vue: HTTP 400 Bad Request
+end
+
+getPort --> service: EvaluationSession
+deactivate getPort
+
+service -> domain: device.get_asset(command.asset_id)
+activate domain
+
+alt AssetNotFoundError
+    domain --> service: raise AssetNotFoundError
+    service --> controller: raise EvaluateNodeFailure
+    controller --> vue: HTTP 400 Bad Request
+end
+
+domain --> service: Asset
+deactivate domain
+
+service -> domain: asset.set_node_choice(\n  requirement_id, node_id, answer)
+activate domain
+
+alt ValueError (risposta non valida)
+    domain --> service: raise ValueError
+    service --> controller: raise EvaluateNodeFailure
+    controller --> vue: HTTP 400 Bad Request
+end
+
+domain --> service: None
+deactivate domain
+
+service -> savePort: save_evaluation_session(session)
+activate savePort
+
+alt EvaluationSessionSaveError
+    savePort --> service: raise EvaluationSessionSaveError
+    service --> controller: raise EvaluateNodeFailure
+    controller --> vue: HTTP 400 Bad Request
+end
+
+savePort --> service: None
+deactivate savePort
+
+service --> controller: None
+deactivate service
+
+controller --> vue: HTTP 200 OK\n{"message": "valutazione registrata con successo."}
+deactivate controller
+
+vue --> utente: Aggiorna UI
+deactivate vue
+
+@enduml

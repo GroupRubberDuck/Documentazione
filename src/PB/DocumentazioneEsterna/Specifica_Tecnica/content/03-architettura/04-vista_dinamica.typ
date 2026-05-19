@@ -2,49 +2,65 @@
 La seguente sezione illustra il comportamento dinamico del sistema tramite diagrammi di sequenza, focalizzandosi sui casi d'uso di maggiore interesse. Questi modelli descrivono l'ordine cronologico dei messaggi scambiati tra gli attori esterni, i componenti infrastrutturali e il nucleo applicativo.
 
 === UC05 - Importazione dispositivo
-//#image("../uml/png/importazione_dispositivo_uc05-06.png");
+#image("Diagrammi_sequenza/Importazione_dispositivo_uc05_06.png")
 
-Il diagramma illustra il processo di importazione e validazione strutturale di un dispositivo attraverso i layer dell'Architettura Esagonale. Il flusso adotta un approccio Fail-Fast diviso in due fasi. Inizialmente, l'Adattatore Inbound utilizza un Data Transfer Object (DTO) per eseguire una validazione strutturale sul formato del file in ingresso. Successivamente, il Servizio estrae i dati validati e li passa al Dominio, a cui è delegata esclusivamente la verifica delle regole normative.
+Il caso d'uso consente all'utente di caricare un file (CSV, JSON o XML) contenente i dati di un dispositivo e di registrarlo nel sistema. Il flusso coinvolge tre componenti principali: il controller HTTP, il servizio applicativo e il repository.
 
-Tramite le due aree alt viene modellata la gestione degli errori del caso (UC06): il primo blocco respinge i payload malformati fermandoli al confine del sistema (HTTP 400); il secondo gestisce le violazioni delle regole di business sollevate dal nucleo applicativo (HTTP 422). Solo se l'entità supera entrambi i controlli, il Servizio invoca l'Adattatore di persistenza per il salvataggio e completa l'operazione.
+Flusso Principale
++ *Ricezione della richiesta HTTP*:\
+  il FlaskImportDeviceController riceve una richiesta POST /devices/import. Prima di delegare al servizio, verifica la presenza del file nella richiesta e l'estensione dello stesso. Se il file è assente o l'estensione non è supportata, restituisce immediatamente HTTP 400 senza propagare la richiesta al layer applicativo.
++ *Costruzione del Command*:\
+  Se la validazione HTTP supera il controllo, il controller costruisce un ImportDeviceCommand contenente il percorso del file e il formato dichiarato, e lo passa all'ImportDeviceService.
++ *Parsing del file*:\
+  il servizio delega il parsing al FileDeviceImporterPort tramite il metodo parse_device_file. Il port è implementato dall'adapter corretto in base al formato del file (CSV, JSON, XML). Il parser legge il file e, se il formato è valido e i dati sono semanticamente corretti, restituisce direttamente un oggetto Device del dominio.
++ *Registrazione del dispositivo*:\
+  il Device restituito dal parser viene passato al DeviceRepositoryPort tramite il metodo register. Il repository persiste il dispositivo nel database.
++ *Risposta di successo*:\
+  Al termine del flusso, il controller restituisce HTTP 201 Created.
+
+Flussi alternativi
+- *[File non valido o formato non supportato]*
+Se il file è assente nella richiesta o l'estensione non rientra tra quelle accettate (csv, json, xml), il FlaskImportDeviceController restituisce HTTP 400 Bad Request. Il servizio non viene mai invocato.
+
+- *[Errore di parsing o dati non validi]*
+Se il file non è leggibile, ha una struttura malformata, o contiene dati semanticamente non validi (es. campo obbligatorio mancante, tipo non riconosciuto), il FileDeviceImporterPort solleva una DeviceImportError. Il servizio cattura l'eccezione e la traduce in un ImportDeviceFailure, che il controller mappa in HTTP 422 Unprocessable Entity.
+
+- *[Dispositivo già registrato]*
+Se un dispositivo con lo stesso identificatore è già presente nel repository, register() solleva una DuplicateDeviceError. Il servizio la traduce in un DeviceRegistrationFailure, che il controller mappa in HTTP 409 Conflict.
 
 === UC26, UC27 - Valutazione di un nodo e transizione di stato
-//#image("../uml/png/Valutazione_e_transizione_stato_uc26_27.png")
+#image("Diagrammi_sequenza/Valutazione.png")
 
-Il diagramma di sequenza illustra il flusso principale di interazione durante la valutazione di un dispositivo secondo la norma EN18031.
-Il diagramma evidenzia il rigoroso attraversamento dei layer architettonici, dal Boundary (Vue.js) fino al driver di persistenza (PyMongo).
+Il caso d'uso consente all'utente di registrare la risposta a un nodo decisionale nell'albero di valutazione di un requisito. Il flusso coinvolge il controller HTTP, il servizio applicativo, due port distinte per la sessione e gli oggetti di dominio EvaluationSession e Asset.
 
-Degno di nota è l'isolamento del livello Domain: il frontend e gli adapter non conoscono le regole normative.
-È il Servizio applicativo che recupera lo stato, lo inietta nel Dominio, e si affida al calcolo di quest'ultimo.
-Tramite l'uso di una sezione alt, il diagramma modella il comportamento polimorfico del flusso:
-se la risposta porta a un nodo intermedio, il sistema salva il progresso e restituisce la domanda successiva;
-se la risposta raggiunge una foglia dell'albero normativo, il sistema calcola la conformità finale (Pass/Fail) e chiude lo stato della valutazione.
+Flusso principale:
++ *Ricezione della richiesta HTTP*:\
+  Il FlaskEvaluateDecisionNodeController riceve una richiesta PUT sull'endpoint /api/sessions/{session_id}/devices/{device_id}/assets/{asset_id}/requirements/{req_id}. Prima di procedere, verifica la presenza del body JSON. Se assente, restituisce immediatamente HTTP 400 senza invocare il service.
++ *Costruzione del Command*:\
+  Il controller istanzia un EvaluateDecisionNodeCommand (modello Pydantic) con i parametri di path e i campi node_id e answer estratti dal body. Se la validazione Pydantic fallisce per campi mancanti o tipo non valido, restituisce HTTP 400 senza propagare la richiesta al layer applicativo.
++ *Recupero della sessione*:\
+  Il EvaluateDecisionNodeService riceve il command e delega il recupero della sessione alla GetEvaluationSessionPort tramite get_evaluation_session(session_id). La port restituisce l'EvaluationSession completa, incluso il device e i suoi asset.
++ *Navigazione al dominio*:\
+  Il service naviga l'aggregato di dominio per recuperare l'asset su cui operare tramite session.device.get_asset(asset_id), ottenendo l'oggetto Asset corrispondente.
++ *Registrazione della scelta*:\
+  Il service invoca asset.set_node_choice(requirement_id, node_id, answer) sull'oggetto Asset. Questa chiamata registra in memoria la risposta dell'utente per il nodo specificato all'interno del requisito.
++ *Persistenza della sessione*:\
+  Il service passa la EvaluationSession aggiornata alla SaveEvaluationSessionPort tramite save_evaluation_session(session). La responsabilità di persistere l'intera sessione è delegata alla port: il service non conosce il meccanismo di storage.
++ *Risposta di successo*:\
+  Il service restituisce None. Il controller risponde con HTTP 200 OK e il messaggio {"message": "valutazione registrata con successo."}.
 
-=== UC30 - Esportazione report di conformità
-//#image("../uml/png/Esportazione_report_uc30.png")
+Flussi alternativi:
+- *[Body JSON mancante o non valido]*
+Se il body della richiesta è assente o node_id/answer non rispettano i tipi attesi da _EvaluateDecisionNodeCommand_, il controller restituisce HTTP 400 Bad Request. Il service non viene mai invocato.
 
-Il diagramma di sequenza illustra il processo di generazione ed esportazione del resoconto finale di conformità per un dispositivo valutato.
+- *[Sessione non trovata]*
+Se la _GetEvaluationSessionPort_ non trova una sessione con l'identificatore fornito, solleva _EvaluationSessionNotFoundError_. Il service cattura l'eccezione e la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-Il flusso è innescato da una chiamata HTTP gestita dall'Adattatore Inbound. Il Servizio applicativo avvia il recupero del documento che viene effettuato grazie all'outbound adapter (PyMongo) che estrae i dati dal database.
+- *[Asset non trovato]*
+Se il device nella sessione non contiene un asset con l'identificatore fornito, il dominio solleva _AssetNotFoundError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-Una volta recuperato il dispositivo, il Servizio invoca l'aggregazione dei verdetti sul Dominio, il quale restituisce una struttura dati esclusivamente logica (Pass/Fail/NA) senza possedere alcuna conoscenza del rendering finale. Per la creazione del file fisico il Servizio usa la porta di generazione del pdf che traduce i dati puri in un layout grafico, restituendo il file che arriverà all'utente.
+- *[Risposta non valida per il nodo]*
+Se _set_node_choice_ riceve un valore non ammesso per il nodo specificato, il dominio solleva _ValueError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
 
-// altri papabili: uc11, uc23, UC33.3
-
-== Diagrammi di attività
-
-=== Navigazione degli alberi
-
-//#image("../uml/png/Attività_navigazione.drawio.png", width: 80%)
-
-Il diagramma di attività illustra l'algoritmo di navigazione dell'albero normativo.
-
-Il flusso si basa su un ciclo continuo il cui innesco principale è la risposta dell'utente a uno specifico nodo (Sì/No). Dopo l'inserimento dell'input, il sistema calcola il nodo successivo e ne verifica la natura tramite un blocco decisionale ("è foglia?"):
-
-Se il nodo non è una foglia (nodo intermedio), il flusso torna indietro per sottoporre all'utente la nuova domanda appena calcolata.
-
-Se il nodo è una foglia (ramo di valutazione concluso), il sistema innesca la logica di avanzamento gerarchico.
-
-La fase di avanzamento procede per livelli. Dapprima, il sistema calcola e verifica se vi sono ulteriori requisiti da valutare per l'asset corrente ("trovo requisiti?"). In caso positivo, il nuovo requisito viene caricato e il ciclo di domande riparte dall'inizio. In caso negativo, il sistema sale di livello verificando l'esistenza di ulteriori asset non ancora esaminati nel dispositivo ("trovo asset?"). Se viene individuato un nuovo asset, ne vengono calcolati i relativi requisiti, che vengono caricati per riavviare la compilazione.
-
-L'algoritmo fuoriesce da questo ciclo annidato solo ed esclusivamente quando sia i requisiti sia gli asset del dispositivo sono stati completamente esauriti. In questo scenario conclusivo, il sistema torna alla pagina di dashboard.
+- *[Errore di salvataggio]*
+Se la _SaveEvaluationSessionPort_ non riesce a persistere la sessione, solleva _EvaluationSessionSaveError_. Il service la traduce in _EvaluateNodeFailure_. Il controller restituisce HTTP 400 Bad Request.
