@@ -24,6 +24,7 @@
   oreProduttive: (
      (persona: persone.ALDO, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 10),
     (persona: persone.ANA, ruolo: ruoli.Analista, orePreviste: 2, oreEffettive: 2),
+    (persona: persone.ANA, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 5),
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 5),
     (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
