@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 0,
+  minor: 1,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -42,7 +42,7 @@
   #statusTab(
     stato: "In progress",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT),
+    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT, persone.FILIPPO),
     verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -115,6 +115,13 @@
       [#persone.DL],
       [#persone.ALDO],
       [Approvazione]
+    ),
+    (
+      [1.1.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [-],
+      [Aggiornata sezione Test di Integrazione]
     ),
   )
   #registroModifiche(modifiche)
