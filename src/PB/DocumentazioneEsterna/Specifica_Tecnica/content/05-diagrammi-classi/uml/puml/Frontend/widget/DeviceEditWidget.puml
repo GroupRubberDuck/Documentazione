@@ -1,0 +1,28 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class DeviceEditWidget{
+        + submitUrl:String
+        + cancelUrl:String
+        + initialName:String
+        + initialOs:String
+        + initialDescription:String
+        + defaultStandard:String
+        - formModel:UseFormModel
+        - DeviceForm:DeviceForm
+        - confirmButton:AsyncButton
+
+        + DeviceEditWidget(submitUrl:String, cancelUrl:String, defaultStandard:String,+ initialName:String,+ initialOs:String,+ initialDescription:String)
+        - updateDevice():Promise<Object>
+        - onSuccess()
+}
+
+
+
+
+@enduml

@@ -6,18 +6,11 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class AsyncButton <<component>> {
-  - action : Function
-  - label : String
-  - loadingLabel : String
-  - buttonClass : String
-  - isLoading : Boolean
-  - error : String
-  --
-  + AsyncButton(action : Function, label : String, loadingLabel : String, buttonClass : String)
-  - handleClick() : void
-  + success(result) <<emit>>
-  + error(err) <<emit>>
+class DeviceForm <<Component>> {
+  + fields: Map<String, String | Number | Boolean>
+  + errors: Map<String, String | null>
+  - fieldComponents: FormField[]
+  
+  + DeviceForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)
 }
-
 @enduml

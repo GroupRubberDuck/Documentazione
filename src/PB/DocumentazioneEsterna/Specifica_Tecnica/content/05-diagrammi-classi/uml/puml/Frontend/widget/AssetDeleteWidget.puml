@@ -1,0 +1,26 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+
+class AssetDeleteWidget  {
+  + submitUrl : String
+  + redirectUrl : String
+  - deleteButton : AsyncButton
+  - deleteModal : BaseModal
+  - isModalOpen: Boolean
+  --
+  + AssetDeleteWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)
+  - openModal()
+  - closeModal()
+  - deleteAsset():Promise<Object>
+  - onSuccess()
+  
+  }
+
+@enduml
