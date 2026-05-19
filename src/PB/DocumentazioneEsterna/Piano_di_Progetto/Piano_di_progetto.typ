@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 6,
+  minor: 9,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -175,38 +175,38 @@
       [Stesura sprint 11],
     ),
     (
-      [1.4.0],
+      [1.5.0],
       [2026-04-28],
       [#persone.FELIX],
       [#persone.ANA],    
       [Stesura miglioramenti pianificazione sprint 10 e 11],
     ),
     (
-      [1.4.0],
+      [1.6.0],
       [2026-04-28],
       [#persone.FELIX],
       [#persone.FILIPPO],    
       [Stesura sprint 12],
     ),
     (
-      [1.5.0],
-      [2026-04-28],
+      [1.7.0],
+      [2026-05-11],
       [#persone.DL],
       [#persone.ANA],    
       [Stesura sprint 13],
     ),
     (
-      [1.6.0],
-      [2026-04-28],
+      [1.8.0],
+      [2026-05-18],
       [#persone.ANA],
       [-],    
       [Aggiornamento finale della pianificazione di lungo periodo TB],
     ),
     (
-      [1.7.0],
+      [1.9.0],
       [2026-05-19],
       [#persone.FILIPPO],
-      [],
+      [#persone.ANA],
       [Stesura sprint 14],
     ),
   )

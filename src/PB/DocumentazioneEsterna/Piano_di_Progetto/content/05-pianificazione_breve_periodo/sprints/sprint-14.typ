@@ -17,13 +17,14 @@
     - *R.P.2 - Disponibilità variabile per impegni pianificati*: La prossimità della scadenza finale e degli impegni accademici può ridurre la disponibilità di alcuni membri del team.
   ],
   rischiEffettivi: [
-    - *R.T.3 - Errori nel codice*: Come previsto si sono verificati errori nel codice durante lo sviluppo del frontend; questi sono stati individuati tramite la pipeline di Continuous Integration e risolti in modo incrementale attraverso fix mirati e revisione tramite Pull Request.
+    - *R.T.3 - Errori nel codice*: Come previsto si sono verificati errori nel codice durante lo sviluppo del frontend; questi sono stati risolti in modo incrementale attraverso fix mirati e revisione tramite Pull Request.
     - *R.O.1 - Pianificazione errata o ottimistica*: A fronte di un carico di lavoro documentale superiore alle attese, in particolare per le attività di analisi e revisione della Specifica Tecnica, il gruppo ha redistribuito alcune attività tra i membri disponibili, garantendo il completamento degli obiettivi principali entro la fine dello sprint.
   ],
   oreProduttive: (
     (persona: persone.ALDO,    ruolo: ruoli.Amministratore, orePreviste: 2,  oreEffettive: 2),
     (persona: persone.ALDO,    ruolo: ruoli.Progettista,    orePreviste: 2,  oreEffettive: 2),
-    (persona: persone.ANA,     ruolo: ruoli.Programmatore,  orePreviste: 3,  oreEffettive: 12),
+    (persona: persone.ANA,     ruolo: ruoli.Programmatore,  orePreviste: 12,  oreEffettive: 12),
+    (persona: persone.ANA,     ruolo: ruoli.Verificatore,  orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FELIX,   ruolo: ruoli.Progettista,    orePreviste: 10, oreEffettive: 10),
     (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista,    orePreviste: 8,  oreEffettive: 8),
@@ -42,8 +43,8 @@
       - Aggiornamento della parte relativa al frontend.
     - *Codifica*:
       - Completamento del frontend del MVP (pagine dashboard valutazione, dettaglio asset, aggiunta asset, modifica asset, dettaglio requisito, decision tree).
-      - Scrittura dei test di integrazione del frontend.
-      - Aggiunta di test di unità per il backend.
+      - Scrittura dei test di integrazione del backend e frontend.
+      - Aggiunta di test di unità per il backend e frontend.
       - Refactoring e pulizia del codice (ruff format, fix import/export, rinomina controller per coerenza).
     - *Documentazione*:
       - Aggiornamento del Manuale Utente (sezioni installazione, istruzioni d'uso, valutazione del requisito).
@@ -51,10 +52,8 @@
       - Aggiornamento del Piano di Qualifica (revisione metriche, test di frontend, aggiornamento file di test).
       - Aggiornamento dell'Analisi dei Requisiti (rimozione precondizione sessione da lista e dettaglio dispositivi).
       - Stesura del verbale interno 2026-05-11 e del verbale esterno 2026-05-12.
-      - Aggiornamento del Piano di Progetto (sprint 13 e 14).
     - *Incontri*:
-      - Svolta riunione con il Prof. Cardin; preparata la relativa presentazione.
-      - Svolta riunione con il Prof. Vardanega.
+      - Svolta riunione con l'azienda, in cui è stata presentata l'MVP.
 
     *Miglioramento della pianificazione futura*:
     - *Breve termine*:
