@@ -202,6 +202,13 @@
       [-],    
       [Aggiornamento finale della pianificazione di lungo periodo TB],
     ),
+    (
+      [1.7.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [],
+      [Stesura sprint 14],
+    ),
   )
   #registroModifiche(modifiche)
 ]
