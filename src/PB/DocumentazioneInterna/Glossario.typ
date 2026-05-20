@@ -45,8 +45,8 @@
 // 
 // 
 #let currentVersion=(
-  major: 1,
-  minor: 2,
+  major: 2,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -71,7 +71,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DL, persone.ANA, persone.FILIPPO, persone.DT),
     verificatori: (persone.ANA, persone.FILIPPO, persone.FELIX),
@@ -95,6 +95,7 @@
   ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
   ([1.1.0],[2026-04-16],[#persone.DL],[Ana Maria Draghici],[Aggiunti termini relativi alla vista dati]),
   ([1.2.0],[2026-04-16],[Ana Maria Draghici],[#persone.DT],[Aggiornato con i termini della specifica tecnica]),
+  ([2.0.0],[2026-05-20],[#persone.FILIPPO],[#persone.DT],[Approvazione documento]),
 )
 
 #registroModifiche(modifiche)
