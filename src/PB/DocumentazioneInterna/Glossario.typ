@@ -44,14 +44,14 @@
 // 
 // 
 // 
-// #let currentVersion=(
-//   major:0,
-//   minor:13,
-//   patch:1,
-// )
-// //converte dizionario in stringa
-// #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
-// #metadata(versionNumber)<versionNumber>
+#let currentVersion=(
+  major: 1,
+  minor: 2,
+  patch: 0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
 
 
 
@@ -72,9 +72,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "In lavorazione",
-    versione: "1.1.0",
-    autori: ("Davide Lorenzon, Ana Maria Draghici, Filippo Guerra",),
-    verificatori: ("Ana Maria Draghici, Filippo Guerra","Felician Mario Necsulescu"),
+    versione: versionNumber,
+    autori: (persone.DL, persone.ANA, persone.FILIPPO, persone.DT),
+    verificatori: (persone.ANA, persone.FILIPPO, persone.FELIX),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
   )
@@ -94,7 +94,7 @@
   ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
   ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
   ([1.1.0],[2026-04-16],[#persone.DL],[Ana Maria Draghici],[Aggiunti termini relativi alla vista dati]),
-  ([1.2.0],[2026-04-16],[Ana Maria Draghici],[-],[Aggiornato con i termini della specifica tecnica]),
+  ([1.2.0],[2026-04-16],[Ana Maria Draghici],[#persone.DT],[Aggiornato con i termini della specifica tecnica]),
 )
 
 #registroModifiche(modifiche)
