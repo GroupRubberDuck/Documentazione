@@ -30,7 +30,7 @@ I test di accettazione verificano che il sistema soddisfi i requisiti dal punto 
 I Test di Regressione hanno lo scopo di rilevare eventuali anomalie introdotte durante lo sviluppo di nuove funzionalità. A tal fine, il gruppo adotterà un approccio di *integrazione continua*: ogni commit sul repository avvierà automaticamente l'esecuzione della suite di test, garantendo un controllo costante sulla stabilità del codice prima dell'integrazione nel branch principale. \ Le suite di test di unità e di integrazione saranno definite e configurate nell'ambito delle attività di sviluppo previste per la Product Baseline (PB).
 \ \ \ 
 == Test di Unità
-I Test di Unità verificano il corretto funzionamento delle singole unità software in isolamento, assicurando che ciascun componente si comporti come previsto indipendentemente dal resto del sistema. La loro definizione è demandata alle attività previste per la Product Baseline (PB).
+I Test di Unità verificano il corretto funzionamento delle singole unità software in isolamento, assicurando che ciascun componente si comporti come previsto indipendentemente dal resto del sistema. La loro definizione è richiesta dalle attività previste per la Product Baseline (PB).
 === Test di Unità Backend
 
 #include "unita/backend/index.typ"

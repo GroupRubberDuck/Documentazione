@@ -120,21 +120,21 @@
       [1.1.0],
       [2026-05-19],
       [#persone.FILIPPO],
-      [-],
+      [#persone.DT],
       [Aggiornata sezione Test di Integrazione]
     ),
     (
       [1.2.0],
       [2026-05-19],
       [#persone.ANA],
-      [-],
-      [Aggiornato i grafici già presenti nel cruscotto valutazione con i valori di fine TB "@valutazione ]
+      [#persone.DT],
+      [Aggiornato i grafici già presenti nel cruscotto valutazione con i valori di fine PB @valutazione]
     ),
     (
       [1.3.0],
       [2026-05-19],
       [#persone.ANA],
-      [-],
+      [#persone.DT],
       [Aggiornato sezione Test Unità Frontend e Test di Integrazione Frontend ]
     ),
   )
