@@ -35,7 +35,7 @@
 
 #insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
   #statusTab(
-    stato: "In approvazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.FILIPPO,),
     verificatori: ("Felician Mario Necsulescu",),
@@ -174,4 +174,5 @@ columns: (auto, auto, 1fr, auto),
    Il confronto avvenuto durante la riunione ha permesso di chiarire dubbi e punti critici, rappresentando un'importante occasione di condivisione e collaborazione tra le parti.
 
   Con la firma riportata in seguito, il proponente esterno *attesta l'approvazione del documento* nella sua versione corrente.
+  #place(right)[#image(images_dir+"/approvazione_Bluewind_Tobia.png")]
  ]
