@@ -18,7 +18,7 @@ Verificare che l'Utente possa eliminare un dispositivo registrato nel sistema
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

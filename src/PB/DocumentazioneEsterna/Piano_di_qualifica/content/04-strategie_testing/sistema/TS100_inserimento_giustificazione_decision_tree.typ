@@ -18,7 +18,7 @@ Verificare che l'Utente possa inserire una giustificazione al percorso decisiona
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

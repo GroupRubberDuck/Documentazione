@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare il codice del singolo nodo di decisio
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

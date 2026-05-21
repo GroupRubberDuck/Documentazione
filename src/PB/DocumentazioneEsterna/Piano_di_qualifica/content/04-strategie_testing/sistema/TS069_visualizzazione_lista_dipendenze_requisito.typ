@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare la lista delle dipendenze del requisi
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

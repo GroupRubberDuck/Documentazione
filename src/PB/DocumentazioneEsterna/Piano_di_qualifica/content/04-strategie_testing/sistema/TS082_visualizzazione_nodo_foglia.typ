@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare le informazioni generali di un nodo f
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

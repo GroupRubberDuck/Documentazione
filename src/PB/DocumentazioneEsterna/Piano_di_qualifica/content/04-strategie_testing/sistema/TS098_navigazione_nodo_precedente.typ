@@ -18,7 +18,7 @@ Verificare che l'Utente possa passare alla visualizzazione del nodo precedente
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

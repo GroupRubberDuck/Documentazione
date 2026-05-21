@@ -18,7 +18,7 @@ Verificare che l'Utente possa salvare e chiudere la sessione di valutazione
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che l'Utente possa inserire e salvare una descrizione per l'asset
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

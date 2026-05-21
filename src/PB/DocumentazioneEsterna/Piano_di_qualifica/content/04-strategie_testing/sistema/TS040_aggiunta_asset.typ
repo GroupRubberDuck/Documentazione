@@ -18,7 +18,7 @@ Verificare che l'Utente possa aggiungere un asset alle informazioni del disposit
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

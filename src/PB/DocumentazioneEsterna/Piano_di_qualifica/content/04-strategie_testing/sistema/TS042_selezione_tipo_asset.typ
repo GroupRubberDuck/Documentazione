@@ -18,7 +18,7 @@ Verificare che l'Utente possa selezionare un tipo da associare all'asset in fase
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

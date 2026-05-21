@@ -18,7 +18,7 @@ Verificare che l'Utente veda lo stato FAIL quando il percorso nel decision tree 
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

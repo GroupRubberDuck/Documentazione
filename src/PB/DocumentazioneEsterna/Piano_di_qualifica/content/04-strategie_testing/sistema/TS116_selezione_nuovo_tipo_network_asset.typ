@@ -19,7 +19,7 @@ Verificare che l'utente possa selezionare il tipo network asset da associare all
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

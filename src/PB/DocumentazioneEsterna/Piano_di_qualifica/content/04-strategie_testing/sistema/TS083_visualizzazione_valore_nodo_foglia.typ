@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare il risultato associato al singolo nod
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

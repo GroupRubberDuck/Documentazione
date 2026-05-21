@@ -18,7 +18,7 @@ Verificare che l'Utente, consultando la lista dei dispositivi registrati, visual
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

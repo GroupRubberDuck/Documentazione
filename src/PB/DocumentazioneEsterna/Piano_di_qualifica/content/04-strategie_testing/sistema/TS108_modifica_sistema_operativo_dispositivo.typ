@@ -18,7 +18,7 @@ Verificare che l'Utente possa modificare il nome del sistema operativo associato
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

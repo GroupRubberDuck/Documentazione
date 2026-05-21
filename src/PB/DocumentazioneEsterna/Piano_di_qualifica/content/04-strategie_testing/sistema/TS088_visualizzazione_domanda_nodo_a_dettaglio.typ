@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare la domanda del nodo di decisione dura
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

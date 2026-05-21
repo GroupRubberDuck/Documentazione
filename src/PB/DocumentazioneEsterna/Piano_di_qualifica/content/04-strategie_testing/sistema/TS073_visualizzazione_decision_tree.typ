@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare il decision tree associato a un requi
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

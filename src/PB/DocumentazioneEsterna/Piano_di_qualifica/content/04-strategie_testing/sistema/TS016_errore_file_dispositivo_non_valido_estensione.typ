@@ -18,7 +18,7 @@
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

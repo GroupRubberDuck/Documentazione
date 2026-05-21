@@ -18,7 +18,7 @@ Verificare che l'Utente possa annullare il processo di modifica dei dati del dis
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

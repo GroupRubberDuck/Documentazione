@@ -19,7 +19,7 @@ Verificare che l'Utente visualizzi l'assenza di una risposta associata al nodo d
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

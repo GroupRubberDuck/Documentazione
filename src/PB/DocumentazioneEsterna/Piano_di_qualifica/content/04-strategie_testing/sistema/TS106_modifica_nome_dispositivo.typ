@@ -20,7 +20,7 @@ Verificare che l'Utente abbia inserito un nome valido per il dispositivo in fase
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

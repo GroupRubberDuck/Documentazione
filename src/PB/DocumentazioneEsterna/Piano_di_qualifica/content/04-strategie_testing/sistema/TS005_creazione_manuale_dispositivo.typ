@@ -18,7 +18,7 @@ Verificare che l'Utente possa aggiungere e inserire manualmente le informazioni 
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

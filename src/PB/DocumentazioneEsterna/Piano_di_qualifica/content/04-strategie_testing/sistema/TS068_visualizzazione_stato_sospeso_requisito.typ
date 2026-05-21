@@ -19,7 +19,7 @@ Verificare che l'Utente veda lo stato In corso quando la valutazione di una dipe
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

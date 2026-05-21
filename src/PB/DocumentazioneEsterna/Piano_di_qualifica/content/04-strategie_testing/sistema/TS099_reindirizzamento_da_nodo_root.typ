@@ -18,7 +18,7 @@ Verificare che il sistema mostri un avviso e reindirizzi l'Utente alla visualizz
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 

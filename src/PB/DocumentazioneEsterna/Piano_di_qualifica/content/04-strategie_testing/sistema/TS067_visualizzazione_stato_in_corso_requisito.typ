@@ -19,7 +19,7 @@ Verificare che l'Utente veda lo stato "In corso" quando il percorso nel decision
     test-name
   ),
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 
