@@ -209,14 +209,14 @@
       [0.12.0],
       [2026-05-16],
       [#persone.ALDO],
-      [],
+      [#persone.DL],
       [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
     ),
     (
       [0.13.0],
       [2026-05-19],
       [#persone.ALDO],
-      [],
+      [#persone.DL],
       [Scrittura sezione MVVM]
     )
 
