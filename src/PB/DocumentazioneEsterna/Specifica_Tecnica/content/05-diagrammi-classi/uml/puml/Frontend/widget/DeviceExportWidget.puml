@@ -7,9 +7,17 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class DeviceExportWidget{
-        + deviceName:String
-        + exportBaseUrl:String
+        - deviceName:String
+        - exportBaseUrl:String
         -isModalOpen:Boolean
+        -exportFormat:String
+
+        -openModal()
+        -closeModal()
+        -downloadFile()
+
+        + DeviceExportWidget(deviceName:String,exportBaseUrl:String)
+
 } 
 
 

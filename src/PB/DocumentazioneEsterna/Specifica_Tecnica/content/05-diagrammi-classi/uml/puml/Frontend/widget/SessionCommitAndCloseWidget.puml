@@ -8,15 +8,17 @@ skinparam style strictuml
 
 
 class SessionCommitAndCloseWidget{
-        + commitAndCloseUrl:String
-        +redirectUrl:String
+        - commitAndCloseUrl:String
+        - redirectUrl:String
 
         -button:AsyncButton
 
 
 
-        -commitAndCloseSession():Promise<Object>
+        -commitAndCloseSession():Promise<JSON>
         -onSuccess()
+
+        + SessionCommitAndCloseWidget(commitAndCloseUrl:String,redirectUrl:String)
 }
 
 @enduml

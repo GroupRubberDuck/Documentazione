@@ -6,11 +6,14 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class Toast <<component>> {
-  - message : String
-  - duration : String
-  + Toast(message : String, duration : Number)
-  + close() <<emit>>
+
+
+
+class AssetFormFields <<constant>> {
+  + name : FieldDefinition
+  + assetType : FieldDefinition
+  + description : FieldDefinition
 }
+
 
 @enduml

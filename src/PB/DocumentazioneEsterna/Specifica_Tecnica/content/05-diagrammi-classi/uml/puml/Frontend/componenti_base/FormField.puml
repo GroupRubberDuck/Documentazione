@@ -8,9 +8,9 @@ skinparam style strictuml
 
 
 class FormField <<component>> {
-  + content : Slot
-  + label : String
-  + error: String
+  - content : Slot
+  - label : String
+  - error: String
   + FormField(label : String, error : String)
 }
 @enduml

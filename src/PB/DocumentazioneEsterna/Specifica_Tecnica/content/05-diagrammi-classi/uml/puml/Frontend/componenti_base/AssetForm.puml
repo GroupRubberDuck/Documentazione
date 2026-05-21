@@ -7,8 +7,8 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class AssetForm <<Component>> {
-  + fields: Map<String, String | Number | Boolean>
-  + errors: Map<String, String | null>
+  - fields: Map<String, String | Number | Boolean>
+  - errors: Map<String, String | null>
   - fieldComponents: FormField[]
   
   + AssetForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)

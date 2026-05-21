@@ -7,17 +7,20 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class DeviceCreateWidget{
-        + submitUrl:String
-        + cancelUrl:String
-        + defaultStandard:String
+        - submitUrl:String
+        - cancelUrl:String
+        - defaultStandard:String
         - formModel:UseFormModel
         - DeviceForm:DeviceForm
         - confirmButton:AsyncButton
 
         + DeviceCreateWidget(submitUrl:String, cancelUrl:String, defaultStandard:String)
-        - createDevice():Promise<Object>
+        - createDevice():Promise<JSON>
         - onSuccess()
 }
+!include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/shared/DeviceFormFields.puml
+
+DeviceCreateWidget ..> DeviceFormFields : <<use>>
 
 
 @enduml

@@ -8,7 +8,17 @@ skinparam style strictuml
 
 
 class SessionCommitWidget{
-        
+        - commitUrl:String
+        - toastMessage:String
+
+        - saveButton:AsyncButton
+        - toast:Toast
+        - commitSession()
+        - onSuccess()
+        - clearToast()
+
+        + SessionCommitWidget(commitUrl:String)
+
 }
 
 @enduml

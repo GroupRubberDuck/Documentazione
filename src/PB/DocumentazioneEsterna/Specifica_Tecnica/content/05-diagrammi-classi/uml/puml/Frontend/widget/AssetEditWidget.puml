@@ -7,20 +7,22 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class AssetEditWidget{
-        + submitUrl:String
-        + cancelUrl:String
-        + redirectUrl:String
-        + initialName:String
-        + initialAssetType:String
-        + initialDescription:String
+        - submitUrl:String
+        - cancelUrl:String
+        - redirectUrl:String
+        - initialName:String
+        - initialAssetType:String
+        - initialDescription:String
         - formModel:UseFormModel
         - assetForm:AssetForm
         - confirmButton: AsyncButton 
 
         +AssetEditWidget(submitUrl:String,cancelUrl:String,redirectUrl:String,initialName:String,initialAssetType:String,initialDescription:String )
-        - updateAsset:Promise<Object>
-        - onSuccess
+        - updateAsset():Promise<JSON>
+        - onSuccess()
 }
-AssetEditWidget ..> assetFormFields : <<use>>
+
+!include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/shared/AssetFormFields.puml
+AssetEditWidget ..> AssetFormFields : <<use>>
 
 @enduml

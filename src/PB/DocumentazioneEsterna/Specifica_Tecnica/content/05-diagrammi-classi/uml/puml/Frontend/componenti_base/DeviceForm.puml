@@ -7,8 +7,8 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class DeviceForm <<Component>> {
-  + fields: Map<String, String | Number | Boolean>
-  + errors: Map<String, String | null>
+  - fields: Map<String, String | Number | Boolean>
+  - errors: Map<String, String | null>
   - fieldComponents: FormField[]
   
   + DeviceForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)

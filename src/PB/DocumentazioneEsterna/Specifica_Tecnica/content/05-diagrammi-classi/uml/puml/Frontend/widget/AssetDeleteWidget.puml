@@ -9,16 +9,16 @@ skinparam style strictuml
 
 
 class AssetDeleteWidget  {
-  + submitUrl : String
-  + redirectUrl : String
+  - submitUrl : String
+  - redirectUrl : String
   - deleteButton : AsyncButton
   - deleteModal : BaseModal
   - isModalOpen: Boolean
   --
-  + AssetDeleteWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)
+  + AssetDeleteWidget(submitUrl : String, redirectUrl : String)
   - openModal()
   - closeModal()
-  - deleteAsset():Promise<Object>
+  - deleteAsset():Promise<JSON>
   - onSuccess()
   
   }
