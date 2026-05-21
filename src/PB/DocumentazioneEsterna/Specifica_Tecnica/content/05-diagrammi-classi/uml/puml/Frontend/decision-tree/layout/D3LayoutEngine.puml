@@ -1,0 +1,18 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class D3LayoutEngine {
+    - config: LayoutConfig
+    + constructor(config: LayoutConfig)
+    + calculateLayout(treeMap: Map, rootId: string): LayoutResult
+    - buildHierarchy(treeMap: Map, nodeId: string): HierarchyNode | null
+    - extractNodes(root: Object): NodeDTO[]
+    - extractEdges(root: Object): EdgeDTO[]
+}
+
+@enduml

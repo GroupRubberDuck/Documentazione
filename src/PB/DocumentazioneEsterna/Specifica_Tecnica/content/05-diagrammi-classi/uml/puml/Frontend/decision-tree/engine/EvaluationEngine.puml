@@ -1,0 +1,18 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class EvaluationEngine {
+    - tree: TreeStructure
+    + constructor(tree: TreeStructure)
+    + getNodeRenderData(nodeId: string): NodeDTO | null
+    + getEvaluationPath(answers: Map<string, boolean>): string[]
+    + getTree(): TreeStructure
+}
+
+@enduml
