@@ -65,7 +65,6 @@ _InsertJustificationCommand_ è l'oggetto che veicola i dati necessari all'inser
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 - `+ asset_id: String` — identificativo dell'Asset oggetto di valutazione.
 - `+ requirement_id: String` — identificativo del requisito a cui si associa la giustificazione.
-- `+ node_id: String` — identificativo del nodo decisionale correlato.
 - `+ justification: String` — testo della giustificazione da inserire.
 
 *Metodi*

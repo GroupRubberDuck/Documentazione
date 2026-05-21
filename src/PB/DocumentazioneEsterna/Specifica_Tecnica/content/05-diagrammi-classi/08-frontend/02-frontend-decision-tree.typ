@@ -306,6 +306,7 @@ _DecisionTreeStore_ rappresenta il cuore reattivo dell'applicazione. È lo Store
 
 - `- evaluationEngine: EvaluationEngine` — istanza del motore logico utilizzata per i calcoli di navigazione.
 - `- answers: ref<Map<String, Boolean>>` — stato reattivo delle risposte fornite dall'utente durante la sessione corrente.
+- `- isSidebarOpen: Boolean` — stato di apertura della sidebar.
 - `- selectedNodeId: String` — identifica il nodo su cui l'utente sta interagendo o che ha cliccato nel Canvas.
 - `- activePath: ref<List<String>>` — lista reattiva degli ID dei nodi che compongono il percorso corrente, aggiornata automaticamente al variare delle risposte.
 - `- apiClient: ApiClient` — riferimento al client per le chiamate verso le API del backend.
