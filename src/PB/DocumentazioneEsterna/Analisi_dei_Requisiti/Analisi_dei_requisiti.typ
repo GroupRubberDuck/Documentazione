@@ -34,8 +34,8 @@
 // 
 #let doc="Analisi dei requisiti"
 #let currentVersion=(
-  major:1,
-  minor:1,
+  major:2,
+  minor:0,
   patch:0,
 )
 //converte dizionario in stringa
@@ -48,8 +48,8 @@
   #statusTab(
     stato: "Approvato",
     versione: versionNumber,
-    autori: ("Felician Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega", "Filippo Guerra"),
-    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin","Filippo GUerra"),
+    autori: ("Felician Mario Necsulescu", "Ana Maria Draghici","Davide Lorenzon", "Aldo Bettega", "Filippo Guerra"),
+    verificatori:("Davide Lorenzon","Aldo Bettega", "Ana Maria Draghici","Davide Testolin","Filippo Guerra","Felician Mario Necsulescu"),
     uso: "Esterno",
     destinatari: ("Team di progetto, Bluwind S.r.l",),
   )
@@ -108,7 +108,11 @@
   ([0.12.20], [2026-03-20], persone.FELIX,persone.ALDO, [Scritti requisiti di vincolo e di qualità]),
   ([1.0.0], [2026-03-22], persone.DT, [Aldo Bettega, \ Davide Lorenzon], [Approvazione]),
    ([1.1.0], [2026-03-31], persone.ANA, [Filippo Guerra], [Correzioni errori segnalati per la Requirements And Technology
-Baseline])
+Baseline]),
+  ([1.2.0], [2026-05-04], persone.ALDO, persone.FELIX, [Eliminato caso d'uso "Visualizza stato sospeso requisito" e aggiornato di conseguenza i requisiti]),
+  ([1.3.0], [2026-05-18], persone.FELIX, persone.ALDO, [Modificate precondizioni dei casi d'uso #use-case-label(nome-etichetta: "Visualizza lista dispositivi") e #use-case-label(nome-etichetta: "Visualizza elemento lista dispositivi")]),
+  ([2.0.0], [2026-05-19], persone.FELIX, persone.FELIX, [Approvazione]),
+
   )
 
 #registroModifiche(modifiche)

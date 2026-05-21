@@ -7,9 +7,9 @@
     #label(deps.get-req-code(nome-etichetta:req-name))
     ],
   descrizione:[
-  L'Utente deve poter visualizzare lo stato Sospeso per la valutazione del requisito quando un altro requisito, da cui il requisito corrente dipende, è stato valutato NA.
+  L'utente deve poter visualizzare lo stato in corso per la valutazione del requisito Quando la valutazione di una dipendenza è fallita o non è stata completata risolta.
   ],
   fonti:(
-    "Visualizza stato sospeso requisito",
+    "Visualizza stato in corso requisito",
     )
 )

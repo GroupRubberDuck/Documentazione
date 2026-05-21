@@ -38,8 +38,6 @@
     
     pre-condizioni:[
         - Il sistema è attivo
-        - Non sono attive sessioni di modifica del modello
-        - Non sono attive sessioni di valutazione
         - L'utente sta visualizzando la lista dei dispositivi #sym.arrow #use-case-label(nome-etichetta: "Visualizza lista dispositivi")
     ],
     

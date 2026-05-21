@@ -39,8 +39,6 @@
     
     pre-condizioni:[
         - Il sistema è attivo
-        - Non sono attive sessioni di modifica del modello
-        - Non sono attive sessioni di valutazione
     ],
     
     post-condizioni:[
