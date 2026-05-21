@@ -1,0 +1,21 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class HierarchyNode  {
+    + id: string
+    + type: string
+    + text: string
+    + resultState: string | null
+    + parentId: string | null
+    + yesChildId: string | null
+    + noChildId: string | null
+    + _edgeLabel: string <<optional>>
+    + children: HierarchyNode[] <<optional>>
+}
+@enduml

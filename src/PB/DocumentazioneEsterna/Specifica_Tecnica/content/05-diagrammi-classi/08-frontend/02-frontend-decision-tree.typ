@@ -1,14 +1,17 @@
 \
 == Architettura Frontend: Modulo Decision Tree
 
-Il frontend per la valutazione dei requisiti è progettato per essere reattivo e disaccoppiato. Per evitare di sovraccaricare il server a ogni interazione, una porzione della logica di dominio viene eseguita direttamente lato client, orchestrata da uno State Management centralizzato.
+Per via della differenza di complessità tra i widget semplici e l'albero di decisione interattivo, abbiamo ritenuto opportuno dedicare a quest'ultimo una sezione apposita.
+
+Il frontend per la valutazione dei requisiti è progettato per essere reattivo e disaccoppiato. 
+Per evitare di sovraccaricare il server a ogni interazione e permettere un'esperienza più fluida, una porzione della logica di dominio viene eseguita direttamente lato client,  tale logica si limita unicamente alla navigazione e alla presentazione grafica dell'albero  di decisione. Lo riteniamo accettabile perché il sistema backend fornisce dati  grezzi e il sistema frontend li organizza in un'interfaccia comprensibile all'utente.
 
 L'architettura si articola su quattro pilastri:
 
-1. *Core di Valutazione (`EvaluationEngine`)*: Il client non si limita a mostrare dati passivi, ma ricalcola istantaneamente il percorso attivo dell'albero in base alle risposte dell'utente, offrendo un feedback visivo immediato tramite una struttura a oggetti polimorfica.
-2. *Gestione dello Stato (`DecisionTreeStore`)*: Basato su Pinia, funge da "Single Source of Truth". Mantiene in memoria le risposte, lo stato dell'interfaccia, il nodo selezionato e delega i calcoli complessi all'`EvaluationEngine`.
-3. *Interfaccia Utente (UI)*: Suddivisa in due macro-aree cooperanti. Il *Tree Canvas* disegna la topologia dell'albero delegando i calcoli geometrici al `D3LayoutEngine`, mentre la *Tree Sidebar* funge da pannello interattivo per leggere le domande e inserire le risposte, comunicando esclusivamente con lo Store.
-4. *Integrazione Backend (`EvaluationApiClient`)*: Astrattizza la comunicazione HTTP con il server, assicurando che lo stato locale dell'applicazione sia costantemente sincronizzato con il database remoto in modo asincrono.
++ *Core di Valutazione (`EvaluationEngine`)*: Il widget del sistema frontend calcola il percorso attivo dell'albero in base alle risposte dell'utente, offrendo un feedback visivo.
++ *Gestione dello Stato (`DecisionTreeStore`)*: Basato su Pinia, funge da "Single Source of Truth" o Model del MVVM. \ Contiene le logiche di business, salva i dati ed effettua le chiamate API, tramite l'API client.
++ *Interfaccia Utente*: Suddivisa in due macro-aree cooperanti. Il *Tree Canvas* disegna la topologia dell'albero delegando i calcoli geometrici al `D3LayoutEngine`, mentre la *Tree Sidebar* funge da pannello interattivo per leggere le domande e inserire le risposte, realizza la parte di View del MVVM.
++ *Integrazione Backend (`EvaluationApiClient`)*: Incapsula la comunicazione con il server.
 
 Nei paragrafi successivi verranno analizzati nel dettaglio i diagrammi delle classi dei singoli sottosistemi.
 

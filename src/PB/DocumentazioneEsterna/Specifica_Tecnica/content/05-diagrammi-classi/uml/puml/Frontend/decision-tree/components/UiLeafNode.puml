@@ -1,0 +1,16 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class UiLeafNode <<component>> {
+  --
+  + UiLeafNode(id : String, text : String, resultState : String, isActive : Boolean)
+  - formatLabel(state : String) : String
+}
+
+
+@enduml
