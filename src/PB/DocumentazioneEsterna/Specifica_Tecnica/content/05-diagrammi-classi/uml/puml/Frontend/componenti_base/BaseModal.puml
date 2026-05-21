@@ -7,8 +7,8 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class BaseModal <<component>> {
-  + content : Slot
-  + contentClass : String
+  - content : Slot
+  - contentClass : String
   --
   + BaseModal(contentClass : String)
   - onKeydown(event : KeyboardEvent) : void

@@ -8,10 +8,10 @@ skinparam style strictuml
 
 
 class FileDropZone <<component>> {
-  + accept : String[]
-  +  placeholder : String
-  +  hint : String
-  +  disabled : Boolean
+  - accept : String[]
+  -  placeholder : String
+  -  hint : String
+  -  disabled : Boolean
   - isDragging : Boolean
   - selectedFile : File
 

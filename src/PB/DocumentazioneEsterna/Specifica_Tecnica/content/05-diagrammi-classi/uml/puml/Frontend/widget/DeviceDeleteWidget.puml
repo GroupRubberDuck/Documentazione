@@ -8,10 +8,10 @@ skinparam style strictuml
 
 
 class DeviceDeleteWidget{
-        + deviceName:String
-        + deleteUrl:String
-        + redirectUrl:String
-        + ExportBaseUrl:String
+        - deviceName:String
+        - deleteUrl:String
+        - redirectUrl:String
+        - ExportBaseUrl:String
         -isModalOpen:Boolean
         -ExportFormat:String
 
@@ -19,8 +19,8 @@ class DeviceDeleteWidget{
         + DeviceDeleteWidget(deviceName:String, deleteUrl:String, redirectUrl:String, ExportBaseUrl:String)
         -openModal()
         -closeModal()
-        -deleteDevice():Promise<Object>
-        - exportDevice():Promise<Object>
+        -deleteDevice():Promise<JSON>
+        - exportDevice():Promise<JSON>
         - onDeleteSuccess()
 }
 

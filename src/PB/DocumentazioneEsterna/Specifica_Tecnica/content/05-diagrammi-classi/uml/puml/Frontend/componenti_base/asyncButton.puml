@@ -7,13 +7,13 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class AsyncButton <<component>> {
-  + action : Function
-  + label : String
-  + loadingLabel : String
-  + buttonClass : String
+  - action : Function
+  - label : String
+  - loadingLabel : String
+  - buttonClass : String
   - isLoading : Boolean
   - error : String
-  --
+
   + AsyncButton(action : Function, label : String, loadingLabel : String, buttonClass : String)
   - handleClick() : void
   + success(result) <<emit>>

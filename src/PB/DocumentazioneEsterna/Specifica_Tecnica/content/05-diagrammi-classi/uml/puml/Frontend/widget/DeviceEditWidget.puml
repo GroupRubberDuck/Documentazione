@@ -7,21 +7,24 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class DeviceEditWidget{
-        + submitUrl:String
-        + cancelUrl:String
-        + initialName:String
-        + initialOs:String
-        + initialDescription:String
-        + defaultStandard:String
+        - submitUrl:String
+        - cancelUrl:String
+        - initialName:String
+        - initialOs:String
+        - initialDescription:String
         - formModel:UseFormModel
         - DeviceForm:DeviceForm
         - confirmButton:AsyncButton
 
-        + DeviceEditWidget(submitUrl:String, cancelUrl:String, defaultStandard:String,+ initialName:String,+ initialOs:String,+ initialDescription:String)
-        - updateDevice():Promise<Object>
+        + DeviceEditWidget(submitUrl:String, cancelUrl:String,initialName:String,initialOs:String,+ initialDescription:String)
+        - updateDevice():Promise<JSON>
         - onSuccess()
 }
 
+
+!include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/shared/DeviceFormFields.puml
+
+DeviceEditWidget ..> DeviceFormFields : <<use>>
 
 
 

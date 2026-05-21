@@ -79,6 +79,7 @@ esclusivamente nel livello di integrazione.
 ]
 *Descrizione*:
 
+
 Viene utilizzato per la validazione dei dati inseriti dall'utente.
 Rappresenta un contratto, un oggetto deve esporre un metodo validate che accetta un valore primitivo, effettua un controllo, ritorna un messaggio di errore che indica perché non ha superato il controllo, se lo ha superato non ritorna nulla.
 
@@ -95,6 +96,7 @@ Le interfacce non hanno attributi
 ]
 
 *Descrizione*:
+
 Rappresenta un contratto strutturale che definisce i campi che una oggetto deve esporre per poter essere usato nel model di un form. 
 
 *Attributi*:
@@ -110,6 +112,7 @@ L'interfaccia non ha attributi.
 ]
 
 *Descrizione*:
+
 
 Inizializza e gestisce lo stato reattivo di un form di dominio a partire dalle sue definizioni. Si occupa della validazione client-side e dell'integrazione degli errori inviati dal server, isolando completamente la logica di business dal template visivo.
 
@@ -133,6 +136,7 @@ Inizializza e gestisce lo stato reattivo di un form di dominio a partire dalle s
 ]
 
 *Descrizione*:
+
 
 Oggetti JavaScript esportati come costanti,  che fungono da singolo punto di configurazione per le regole di validazione degli input utente nei form. 
 
@@ -178,7 +182,7 @@ Non possiede alcuna conoscenza del dominio applicativo: riceve la funzione da es
 
 - `- isLoading : Boolean` — indica se la funzione asincrona è in esecuzione. Durante il caricamento il bottone è disabilitato per prevenire click multipli.
 
-- `error : String` — contiene il messaggio dell'ultimo errore verificatosi, null se l'ultima esecuzione ha avuto successo.
+- `-error : String` — contiene il messaggio dell'ultimo errore verificatosi, null se l'ultima esecuzione ha avuto successo.
 
 *Metodi*
 - `+ AsyncButton(action:Function, label:string, loadingLabel:String, buttonClass:String)` — costruttore. Riceve la funzione asincrona da eseguire, il testo del bottone nei due stati (default e caricamento), e una classe CSS opzionale per lo stile.
@@ -215,6 +219,7 @@ La decisione di quando il modale debba apparire o scomparire è responsabilità 
 ]
 *Descrizione*:
 
+
 Componente generico che funge da wrapper per un singolo campo di un form. Si occupa di mostrare la label associata al campo e l'eventuale messaggio di errore di validazione. Non conosce il tipo di input che ospita — il campo vero e proprio (text, select, textarea, radio) è delegato allo slot.
 
 *Attributi*:
@@ -237,6 +242,7 @@ Costruttore. Riceve il testo della label e l'eventuale messaggio di errore. Se e
 
 *Descrizione*:
 
+
 Componente generico che mostra un messaggio temporaneo a schermo sotto forma di notifica. Scompare automaticamente dopo un tempo definito senza richiedere interazione da parte dell'utente. Non mantiene stato interno — il padre lo monta quando serve mostrare un messaggio e lo smonta quando riceve l'evento di chiusura.
 
 *Attributi*:
@@ -256,6 +262,7 @@ Componente generico che mostra un messaggio temporaneo a schermo sotto forma di 
 ]
 
 *Descrizione*:
+
 
 Componente generico che realizza un'area di caricamento file con supporto per drag & drop e selezione tramite click. Gestisce il feedback visivo durante il trascinamento, valida il tipo di file in base alle estensioni accettate e comunica il file selezionato al padre tramite evento. Non conosce cosa verrà fatto del file — l'upload o l'elaborazione sono responsabilità del widget che lo utilizza.
 
@@ -285,11 +292,12 @@ Componente generico che realizza un'area di caricamento file con supporto per dr
 ]
 *Descrizione*:
 
+
 Componente di presentazione specifico per il dominio dei dispositivi. Si occupa esclusivamente di renderizzare l'interfaccia utente del modulo e di stabilire un binding bidirezionale con i dati forniti dal componente genitore. È agnostico rispetto al contesto: non sa se sta creando un nuovo dispositivo o modificandone uno esistente, e non esegue alcuna logica di validazione o salvataggio.
 
 *Attributi*:
-- `+ fields: Object`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
-- `+ errors: Object`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
+- `+ fields: JSON`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
+- `+ errors: JSON`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
 
 
 *Metodi*:
@@ -304,12 +312,13 @@ Espone unicamente il costruttore:
 ]
 
 *Descrizione*:
-Componente di presentazione (Dumb Component) delegato al rendering del modulo per la gestione degli Asset. 
+
+Componente di presentazione delegato al rendering del modulo per la gestione degli Asset. 
  Si occupa esclusivamente di renderizzare l'interfaccia utente del modulo e di stabilire un binding bidirezionale con i dati forniti dal componente genitore. È agnostico rispetto al contesto: non sa se sta creando un nuovo asset o modificandone uno esistente, e non esegue alcuna logica di validazione o salvataggio.
 
 *Attributi*:
-- `+ fields: Object`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
-- `+ errors: Object`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
+- `+ fields: JSON`: Oggetto reattivo iniettato dal padre contenente i valori dei campi del dispositivo.
+- `+ errors: JSON`: Oggetto iniettato dal padre contenente gli eventuali messaggi di errore da visualizzare per ciascun campo.
 
 
 *Metodi*:
@@ -326,6 +335,7 @@ Espone unicamente il costruttore:
   #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetCreateWidget.png")
 ]
 *Descrizione*:
+
 Rappresenta un'isola applicativa responsabile di orchestrare la creazione di un nuovo Asset. Agisce come controller di facciata: funge da ponte tra il livello di presentazione e il livello di comunicazione col backend. Detiene la logica di business specifica per questa casistica, ma delega il rendering grafico e la gestione reattiva ai componenti e ai composable sottostanti.
 
 *Attributi*:
@@ -338,18 +348,369 @@ Rappresenta un'isola applicativa responsabile di orchestrare la creazione di un 
 
 *Metodi*:
 
-- `AssetCreateWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)` :Costruttore che riceve esternamente gli url a cui corrispondono le azioni.
-- `- createAsset(): Promise<Object>` : Metodo asincrono invocato dal bottone di salvataggio. Esegue la validazione invocando il composable, compone il payload JSON e gestisce la chiamata di rete, catturando e smistando eventuali errori server-side, ritorna un oggetto json contente la risposta.
-- `- onSuccess(data: Object): void` : Callback eseguita al completamento positivo della chiamata.
-
-
-
-
-
-==== AssetUpdateWidget
-
-
+- `+AssetCreateWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)` :Costruttore che riceve esternamente gli url a cui corrispondono le azioni.
+- `- createAsset(): Promise<JSON>` : Metodo asincrono invocato dal bottone di salvataggio. Esegue la validazione invocando il composable, compone il payload JSON e gestisce la chiamata di rete, catturando e smistando eventuali errori server-side, ritorna un oggetto json contente la risposta.
+- `- onSuccess(data: JSON): void` : Callback eseguita al completamento positivo della chiamata.
 
 
 ==== AssetDeleteWidget
+#figure(caption: "Widget - AssetDeleteWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetDeleteWidget.png")
+]
+*Descrizione*:
+
+Rappresenta un'isola applicativa responsabile di chiedere conferma del'eliminazione ed effettuare la chiamata API di eliminazione dell'asset
+
+
+
+*Attributi*:
+- `+ submitUrl:String`: Url a cui fare la chiamata API per eliminare un asset, passato tramite props
+- `+ redirectUrl:String`: Url della pagina a cui reindirizzare dopo l'esecuzione dell'operazione.
+- `- deleteButton:AsyncButton`: Componente reattivo che rappresenta un pulsante di eliminazione
+- `- deleteModal: BaseModal`: Componente reattivo che rappresenta un modale per richiedere la conferma di eliminazione.
+- `- isModalOpen:Boolean`:Indica se il modale deve essere mostrato a schermo o meno
+
+
+
+*Metodi*:
+- `+ AssetDeleteWidget(submitUrl:string,redirectUrl:String)`:Costruttore che riceve dall'esterno gli url da utilizzare.
+- `-openModal()`: Mostra a schermo il modale di conferma.
+
+- `-closeModal()`:Nasconde il modale di conferma.
+- `+DeleteAsset():Promise<JSON>`:Esegue la chiamata API di eliminazione dell'asset, ritorna un oggetto ch rappresenta l'esito dell'operazione
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+==== AssetEditWidget
+#figure(caption: "Widget - AssetEditWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetEditWidget.png")
+]
+
+*Descrizione*:
+
+Rappresenta l'isola applicativa che l'utente usa per modificare i dati di un asset, rappresenta il viewModel del MVVM
+
+*Attributi*:
+- `-submitUrl:String`:Url a cui effettuare la chiamata API di modifica.
+
+- `-cancelUrl:String`:Url a cui reindirizzare l'utente in caso di annullamento.
+
+- `-redirectUrl:String`:Url a cui reindirizzare l'utente dopo la modifica.
+
+- `-initialName`:Valore a cui inizializzare i campo del form relativo al nome dell'asset.
+- `-initialAssetType`:Valore a cui inizializzare i campo del form relativo al tipo dell'asset.
+- `-initialDescription`:Valore a cui inizializzare i campo del form relativo alla descrizione dell'asset.
+
+- `- formModel`:Model di riferimento che tiene traccia dello stato interno.
+
+- `-assetForm:AssetForm`: Componente che visualizza il form per l'inserimento dei dati dell'asset
+
+- `-confirmButton:AsyncButton`:Pulsante per confermare il salvataggio delle modifiche.
+
+
+
+
+*Metodi*:
+
+- `+AssetEditWidget(- submitUrl:String,cancelUrl:String,redirectUrl:String,initialName:String,initialAssetType:String,initialDescription:String)`:Costruttore che riceve dall'esterno i valori a cui inizializzare il form  e gli endpoint a cui effettuare le chiamate e reindirizzare l'utente. 
+
+- `-updateAsset():Promise<JSON>`:Effettua la chiamata API per la modifica dell' asset
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+==== DeviceCreateWidget
+#figure(caption: "Widget - DeviceCreateWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceCreateWidget.png")
+]
+
+*Descrizione*:
+
+Rappresenta il widget per la creazione di un nuovo dispositivo.
+
+
+*Attributi*:
+- `-submitUrl:String`:Url a cui effettuare la chiamata API.
+
+- `-cancelUrl`:Url a cui reindirizzare l'utente in caso di annullamento dell'operazione.
+
+- `-defaultStandard:String`:Id dello standard di da usare di default durante la valutazione.
+
+- `-formModel:useFormModel`:Model di riferimento che tiene traccia dello stato interno.
+- `-deviceForm:DeviceForm`:Componente che permette all'utente di visualizzare il form per la creazione del dispositivo.
+
+- `-confirmButton:AsyncButton`:Bottone per la conferma della creazione del dispositivo.
+
+
+
+*Metodi*:
+- `+DeviceCreateWidget(submitUrl:String,cancelUrl:String,defaultStandard:String)`:Costruttore che riceve gli url per gli endpoint e a cui fare i redirect dall'esterno.
+
+- `createDevice():Promise<JSON>`:Effettua la chiamata API per la creazione di un nuovo dispositivo.
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+
+==== DeviceEditWidget
+#figure(caption: "Widget - DeviceEditWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceEditWidget.png")
+]
+
+*Descrizione*:
+
+
+Rappresenta Il widget per la modifica dei dati del dispositivo.
+
+
+
+
+*Attributi*:
+- `-submitUrl:String`:Url a cui effettuare la chiamata API.
+
+- `-cancelUrl`:Url a cui reindirizzare l'utente in caso di annullamento dell'operazione.
+
+- `-initialName:String`:Valore a cui inizializzare il nome del dispositivo.
+- `-initialOs:String`:Valore a cui inizializzare il nome del sistema operativo  del dispositivo. 
+- `-initialDescription:String`:Valore a cui inizializzare la descrizione del dispositivo. 
+- `-formModel:useFormModel`:Model di riferimento che tiene traccia dello stato interno.
+- `-deviceForm:DeviceForm`:Componente che permette all'utente di visualizzare il form per la creazione del dispositivo.
+
+- `-confirmButton:AsyncButton`:Bottone per la conferma della modifica del dispositivo.
+
+
+
+*Metodi*:
+- `+DeviceEditWidget(submitUrl:String,cancelUrl:String,initialName:String,initialOs:String,initialDescription:String)`:
+Costruttore che riceve gli url come dipendenze dall'esterno.
+
+- `-updateDevice():Promise<JSON>`:Effettua la chiamata API.
+
+
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+
+
+==== DeviceExportWidget
+#figure(caption: "Widget - DeviceExportWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceExportWidget.png")
+]
+
+*Descrizione*:
+
+Rappresenta il widget che permette di esportare il dispositivo come file e di selezionare l'estensione desiderata.
+
+
+
+*Attributi*:
+- `- deviceName:String`:Nome del dispositivo da esportare.
+
+- `- exportBaseUrl:String`:Url per la chiamata API per ricevere il file rappresentante le informazioni del dispositivo.
+
+
+- `- isModalOpen:Boolean`:Serve a gestire la visibilità del modale a schermo.
+
+- `-exportFormat:String`:Tiene traccia del formato per l'esportazione selezionato dall'utente.
+
+
+
+
+
+*Metodi*:
+- `-openModal()`:Apre il modale per l'esportazione del dispositivo.
+
+- `-closeModal()`:Chiude il modale per l'esportazione.
+
+- `-downloadFile():Promise<JSON>`:Esegue la chiamata API per scaricare il file.
+
+
+
+
+==== DeviceImportWidget
+#figure(caption: "Widget - DeviceImportWidget")[
+    #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceImportWidget.png")
+]
+
+*Descrizione*:
+
+Rappresenta un widget usato durante l'importazioni delle informazioni legate ad un dispositivo tramite file.
+
+
+*Attributi*:
+- `-importUrl:String`:Url da usare per la chiamata API relativa all'importazione del file.
+
+- `-redirectUrl:String`:Url della pagina verso ui reindirizzare l'utente dopo l'importazione.
+
+- `-dropZoneModal:BaseModal`:Modal per l'import del file
+- `-dropZone:FileDropZone`:File drop zone per il caricamento di file.
+- `-confirmButton:AsyncButton`:Pulsante per la conferma 
+- `-isModalOpen:Boolean`:Viene usato per gestire la visibilità del modale
+- `- selectedFile:File`:Tiene traccia del file caricato dall'utente.
+- `- errorMessage:String`:Messaggio di errore da visualizzare a schermo. 
+
+
+
+*Metodi*:
+- `+DeviceImportWidget(importUrl:String,redirectUrl:String)`:Costruttore che riceve gli url per chiamate e redirect dall'esterno.
+
+- `-openModal()`:Mostra a schermo il modale per l'importazione.
+
+- `-closeModal()`:Nasconde il modale per l'importazione.
+- `-onFileSelect()`:Funzione eseguita al caricamento del file per aggiornare lo stato del widget.
+- `-onFileError()`:Funzione eseguita in caso di errori nel caricamento del file.
+
+- `-uploadFile()`:Funzione che esegue la chiamata API di importazione.
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+==== SessionCloseWidget
+
+
+#figure(caption: "Widget - SessionCloseWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionCloseWidget.png")
+]
+
+
+*Descrizione*:
+
+Rappresenta il widget che permette all'utente di chiudere una sessione di valutazione di un dispositivo.
+
+
+*Attributi*:
+- `- closeUrl:String`:Url a cui effettuare la chiamata API per la chiusura della sessione di valutazione.
+
+- `- redirectUrl:String`:Url a cui reindirizzare l'utente dopo la chiusura della sessione.
+
+- `-warningModal:BaseModal`:Modale mostrato all'utente per chiedere conferma della chiusura della sessione.
+
+- `-confirmButton:AsyncButton`:Pulsante per chiudere la sessione.
+
+- `-isModalOpen:Boolean`:Gestisce la visibilità del modale.
+
+
+
+*Metodi*:
+- `SessionCloseWidget(closeUrl:String,redirectUrl:String)`:Costruttore che riceve gli url per le chiamate API e per reindirizzare l'utente.
+- `-openModal()`:Apre il modale di conferma.
+
+- `-closeModal()`:Chiude il modale di conferma.
+
+- `-closeSession():Promise<JSON>`:Effettua la chiamata per chiudere la sessione.
+
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+
+==== SessionCommitAndCloseWidget
+#figure(caption: "Widget - SessionCommitAndCloseWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionCommitAndCloseWidget.png")
+]
+
+
+*Descrizione*:
+
+Rappresenta il widget che permette di salvare e chiudere la sessione.
+
+
+
+*Attributi*:
+- `- SessionCommitAndClose(commitAndCloseUrl:String,redirectUrl:String)`:Costruttore che riceve gli url a cui effettuare le chiamate API e i redirect dall'esterno.
+- `-commitAndCloseUrl:String`:Url a cui fare la chiamata API per salvare e chiudere la sessione.
+
+- `-redirectUrl:String`:Url a cui reindirizzare l'utente dopo il salvataggio e la chiusura della sessione.
+
+
+
+- `-confirmButton:AsyncButton`:Pulsante con cui l'utente salva e chiude la sessione.
+
+
+
+
+
+*Metodi*:
+- `+ SessionCommitAndCloseWidget(commitAndCloseUrl:String,redirectUrl:String)`:Costruttore che riceve gli url per le chiamate API e  i redirect dall'esterno.
+
+- `-commitAndCloseSession():Promise<JSON>`:Effettua la chiamata API per il salvataggio e chiusura della sessione.
+
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+
+==== SessionCommitWidget
+#figure(caption: "Widget - SessionCommitWidget")[
+  #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionCommitWidget.png")
+]
+
+*Descrizione*:
+
+Rappresenta il widget che permette all'utente di salvare la session
+
+
+*Attributi*:
+- `-commitUrl:String`:Url a cui fare la chiamata API per il salvataggio della sessione di modifica.
+
+
+- `-toastMessage:String`:Messaggio da visualizzare tramite toast.
+
+
+- `-saveButton:AsyncButton`:Pulsante per salvare la sessione
+
+- `-toast:Toast`:Componente visivo  che mostra temporaneamente un messaggio
+
+
+
+*Metodi*:
+- `+SessionCommitWidget(commitUrl:String)`:Costruttore che riceve gli url a cui effettuare le chiamate API dall'esterno
+
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
+- `-clearToast()`:Funzione che nasconde il messaggio temporaneo.
+
+- `-commitSession():Promise<JSON>`:Funzione che esegue la chiamata API per il salvataggio della sessione.
+
+
+
+
+==== SessionOpenWidget
+#figure(caption: "Widget - SessionOpenWidget")[
+#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionOpenWidget.png")
+]
+
+
+
+*Descrizione*:
+
+Rappresenta il widget per l'apertura di una nuova sessione di valutazione.
+
+
+*Attributi*:
+- `-createSessionUrl:String`:Url a cui effettuare la chiamata API per aprire una nuova sessione.
+- `-redirectUrl:String`:Url a cui reindirizzare l'utente dopo l'apertura della sessione.
+
+- `-deviceId:String`:Id del dispositivo a cui associare la sessione di valutazione.
+
+
+- `-confirmButton:AsyncButton`:Pulsante per aprire una nuova sessione.
+
+- `-errorMessage:String`:Messaggio di errore da far visualizzare all'utente.
+
+
+
+*Metodi*:
+- `+SessionOpenWidget(createSessionUrl:String,deviceId:String, redirectUrl:String)`:Costruttore che riceve gli url per chiamate API e redirect dall'esterno.
+
+- `-openSession():Promise<JSON>`:Funzione per eseguire la chiamata API per aprire una nuova sessione.
+
+- `-onError()`:Funzione eseguita in caso di errori durante l'apertura della sessione.
+
+
+- `-onSuccess()`:Callback eseguita al completamento positivo della chiamata.
+
+
 

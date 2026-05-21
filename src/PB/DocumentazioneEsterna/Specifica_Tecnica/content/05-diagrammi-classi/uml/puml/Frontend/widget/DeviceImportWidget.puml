@@ -8,22 +8,24 @@ skinparam style strictuml
 
 
 class DeviceImportWidget{
-        + importUrl:String
-        + redirectUrl:String
+        - importUrl:String
+        - redirectUrl:String
 
         - dropZoneModal:BaseModal
         - confirmButton:AsyncButton
         - dropZone:FileDropZone
 
         - isModalOpen:Boolean
-        - selectedFile:Object
+        - selectedFile:File
         - errorMessage :String
 
         -openModal()
         - closeModal()
-        - onFieError()
+        - onFileSelect()
+        - onFileError()
         - uploadFile()
         - onSuccess()
+        +DeviceImportWidget(importUrl:String, redirectUrl:String)
 
 }
 

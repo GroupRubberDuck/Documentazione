@@ -7,18 +7,18 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class SessionOpenWidget{
-        + createSessionUrl:String
-        + deviceId:String
-        + redirectUrlTemplate:String
+        - createSessionUrl:String
+        - deviceId:String
+        - redirectUrlTemplate:String
 
-        -ConfirmButton:AsyncButton
+        -confirmButton:AsyncButton
 
         - errorMessage:String
-        -openSession()
+        -openSession():Promise<JSON>
         -onSuccess()
         -onError()
 
-
+        + SessionOpenWidget(createSessionUrl:String, deviceId:String, redirectUrlTemplate:String)
 }
 
 

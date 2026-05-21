@@ -7,19 +7,19 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class SessionCloseWidget{
-        +closeUrl:String
-        +redirectUrl:String
+        -closeUrl:String
+        -redirectUrl:String
 
         -warningModal:BaseModal
         -confirmButton:AsyncButton
 
-        -isModalOpen
+        -isModalOpen:Boolean
 
         -openModal()
         -closeModal()
-        -closeSession()
+        -closeSession():Promise<JSON>
         -onSuccess()
-
+        SessionCloseWidget(closeUrl:String, redirectUrl:String)
 }
 
 
