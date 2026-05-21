@@ -16,7 +16,7 @@
 
 
 
-  stato:"NI"
+  stato:"Pass"
 
 )
 
