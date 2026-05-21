@@ -12,7 +12,7 @@ class AssetEvaluationDTO {
     + type: AssetType
     + evaluation: EvaluationState
     + description: String
-    + requirements: tuple[RequirementEvaluationSummaryDTO, ...]
+    + requirements: List<RequirementEvaluationSummaryDTO>
 }
 
 AssetEvaluationDTO *-- "0..*" RequirementEvaluationSummaryDTO

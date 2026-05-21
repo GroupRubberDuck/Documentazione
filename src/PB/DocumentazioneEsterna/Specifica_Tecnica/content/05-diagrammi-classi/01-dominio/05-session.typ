@@ -31,7 +31,7 @@ _EvaluationSession_ non definisce metodi.
 
 _SessionHandler_ è il componente di dominio che incapsula le regole di business fondamentali relative all'apertura di una nuova sessione. Valuta la fattibilità dell'operazione controllando le precondizioni del sistema.
 
-Tale contesto viene passato tramite parametro di funzione, al momento è logica molto semplice, tuttavia è utile ad estensioni future.
+Tale contesto viene passato tramite parametro di funzione. Sebbene al momento la logica sia molto semplice, questa struttura risulterà utile per estensioni future.
 
 *Attributi*
 

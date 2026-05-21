@@ -4,13 +4,13 @@
 #figure(
   image("../uml/png/UpdateDevice/UpdateDevice.png", width: 100%),
   caption: [Caso d'uso UpdateDevice],
-) <fig-udpate-device>
+) <fig-update-device>
 
 Il diagramma illustra l'architettura del modulo dedicato alla modifica e al salvataggio dello stato di un Dispositivo esistente.
 
-- Per la definizione di _FlaskWriteDeviceController_, vedere la sezione @FlaskWriteDeviceController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _FlaskWriteDeviceController_, vedere la @FlaskWriteDeviceController. \
+- Per la definizione di _Device_, vedere la @Device. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
@@ -59,7 +59,7 @@ _UpdateDeviceCommand_ non definisce metodi.
 #figure(
   image("../uml/png/UpdateDevice/UpdateDeviceService.png", width: 45%),
   caption: [UpdateDeviceService],
-) <fig-udpate-device-service>
+) <fig-update-device-service>
 
 *Descrizione*
 
@@ -72,7 +72,7 @@ _UpdateDeviceService_ è il service applicativo appartenente all'Application Cor
 
 *Metodi*
 
-- `+ udpate_device(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
+- `+ update_device(command: UpdateDeviceCommand): void` — concretizza il contratto definito da _SaveDeviceUseCase_. Mappa i dati del comando nell'entità _Device_ e ne richiede l'aggiornamento tramite _SaveDevicePort_.
 
 ==== SaveDevicePort <SaveDevicePort>
 

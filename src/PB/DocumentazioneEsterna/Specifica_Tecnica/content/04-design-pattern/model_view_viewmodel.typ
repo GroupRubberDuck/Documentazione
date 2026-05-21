@@ -1,5 +1,5 @@
 == Pattern MVVM nel Frontend
-Il frontend adotta il pattern Model-View-ViewModel tramite la CompositionAPI di Vue 3. Le responsabilità sono distribuite esplicitamente tra tre categorie differenti con una separazione netta tra logica e presentazione.
+Il frontend adotta il pattern Model-View-ViewModel tramite la Composition API di Vue 3. Le responsabilità sono distribuite esplicitamente tra tre categorie differenti con una separazione netta tra logica e presentazione.
 
 === Model
 Il Model rappresenta i dati dell'applicazione e le regole che li governano, indipendentemente da qualsiasi elemento visivo. Questa responsabilità è affidata a file di

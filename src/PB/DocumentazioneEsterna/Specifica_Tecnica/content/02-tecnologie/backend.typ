@@ -13,25 +13,25 @@
     ]),
   "Dipendenze principali":
     (
-      ([waitress],[3.0.2],[
+      ([Waitress],[3.0.2],[
         Server WSGI leggero. \ Gestisce la concorrenza delle richieste in modo affidabile.]),
-      ([fpdf],[],[Libreria per la generazione dinamica di documenti e reportistica in formato PDF direttamente lato server.]),
-      ([pymongo],[],[Driver ufficiale per l'integrazione con MongoDB.]),
-      ([pydantic],[],[Utilizzato per la validazione rigida e type-safe dei dati in ingresso e delle variabili d'ambiente di sistema.]),
-      ([python-dotenv],[],[Gestione semplificata delle configurazioni e delle variabili d'ambiente.]),
+      ([Fpdf],[],[Libreria per la generazione dinamica di documenti e reportistica in formato PDF direttamente lato server.]),
+      ([Pymongo],[],[Driver ufficiale per l'integrazione con MongoDB.]),
+      ([Pydantic],[],[Utilizzato per la validazione rigida e type-safe dei dati in ingresso e delle variabili d'ambiente di sistema.]),
+      ([Python-dotenv],[],[Gestione semplificata delle configurazioni e delle variabili d'ambiente.]),
       ([Jinja2],[],[Template engine HTML con un'ottima integrazione con Flask.]),
-      ([werkzeug],[],[Server di sviluppo locale.]),
-      ([watchdog],[],[Permette l'hot reloading, passando le modifiche al server di sviluppo senza necessità di riavvio e preservando lo stato dell'applicazione.]),
+      ([Werkzeug],[],[Server di sviluppo locale.]),
+      ([Watchdog],[],[Permette l'hot reloading, passando le modifiche al server di sviluppo senza necessità di riavvio e preservando lo stato dell'applicazione.]),
     ),
   "Dynamic Testing":(
-      ([pytest],[],[Framework di testing adottato per la sua sintassi concisa. Utilizzato per automatizzare i "Sanity Tests" e validare l'integrazione di sistema alla radice del progetto.]),
+      ([Pytest],[],[Framework di testing adottato per la sua sintassi concisa. Utilizzato per automatizzare i "Sanity Tests" e validare l'integrazione di sistema alla radice del progetto.]),
   ),
   "Static Testing":(
-      ([ruff],[],[Linter e formatter estremamente veloce (scritto in Rust). Impone e garantisce standard di codice puliti e uniformi senza rallentare lo sviluppo.]),
-      ([mypy],[],[Analizzatore statico basato sul Type Hinting. Previene i bug e gli errori di tipo a tempo di sviluppo prima ancora dell'esecuzione]),
+      ([Ruff],[],[Linter e formatter estremamente veloce (scritto in Rust). Impone e garantisce standard di codice puliti e uniformi senza rallentare lo sviluppo.]),
+      ([Mypy],[],[Analizzatore statico basato sul Type Hinting. Previene i bug e gli errori di tipo a tempo di sviluppo prima ancora dell'esecuzione]),
   ),
   "Sviluppo":(
-      ([poetry],[],[Gestore moderno delle dipendenze e degli ambienti virtuali (.venv). Garantisce build riproducibili tra i vari sviluppatori tramite il file di blocco (poetry.lock).]),
+      ([Poetry],[],[Gestore moderno delle dipendenze e degli ambienti virtuali (.venv). Garantisce build riproducibili tra i vari sviluppatori tramite il file di blocco (poetry.lock).]),
   ),
 
 )

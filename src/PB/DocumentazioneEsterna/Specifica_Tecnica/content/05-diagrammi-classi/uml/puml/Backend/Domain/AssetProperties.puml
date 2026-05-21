@@ -1,6 +1,6 @@
-@startuml AssetProprieties
+@startuml AssetProperties
 skinparam ClassAttributeIconSize 0
-class AssetProprieties {
+class AssetProperties {
     - evidences: Map<String, AssetEvidence>
 
     + evidences(): Map<String, AssetEvidence> <<property>>
@@ -9,6 +9,6 @@ class AssetProprieties {
     + set_justification(requirement_id: String, justification: String): void
 }
 
-AssetProprieties *-- "1..*" AssetEvidence
+AssetProperties *-- "1..*" AssetEvidence
 
 @enduml

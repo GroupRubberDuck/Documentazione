@@ -10,7 +10,7 @@ class Requirement {
     - dependency_ids: List<String>
     - decision_tree: DecisionTree
 
-    + evaluate(answer: AssetEvidence, dependency_states: List<Tuple<String, EvaluationState>>): EvaluationState
+    + evaluate(answer: AssetEvidence, dependency_states: List<List<String, EvaluationState>>): EvaluationState
 }
 
 Requirement *-- "0..1" DecisionTree

@@ -76,7 +76,7 @@ Application Service
 Outbound port
 - hasActiveSessionPort
 - deleteSessionPort
-- createSessionPort
+- CreateEvaluationSessionPort
 - GetEvaluationSessionPort
 - SaveEvaluationSessionPort (usato per operazioni di modifica quando c'è sessione attiva)
 

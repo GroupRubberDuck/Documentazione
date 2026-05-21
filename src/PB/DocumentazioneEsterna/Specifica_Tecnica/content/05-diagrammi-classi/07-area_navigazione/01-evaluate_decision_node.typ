@@ -7,9 +7,9 @@
 
 Il diagramma illustra l'architettura del modulo dedicato alla valutazione di un nodo decisionale durante la verifica di conformità.
 
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort.
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _SaveEvaluationSessionPort_, vedere la @SaveEvaluationSessionPort.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 

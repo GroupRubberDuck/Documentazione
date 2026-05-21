@@ -11,10 +11,10 @@ _ComplianceStandard_ è l'entità radice che rappresenta una norma o standard di
 
 *Attributi*
 
-- `- id: String` — identificativo univoco dello standard.
+- `- standard_id: String` — identificativo univoco dello standard.
 - `- name: String` — nome descrittivo dello standard.
 - `- version_number: String` — versione specifica dello standard.
-- `- requirements: Tuple<Requirement>` — tupla immutabile contenente tutti i requisiti associati allo standard.
+- `- requirements: List<Requirement>` — tupla immutabile contenente tutti i requisiti associati allo standard.
 
 *Metodi*
 
@@ -40,12 +40,12 @@ _Requirement_ è un'entità immutabile che definisce un singolo requisito di con
 - `- description: String` — descrizione completa del requisito.
 - `- target_description: String` — descrizione dell'obiettivo del requisito.
 - `- decision_tree: DecisionTree` — albero decisionale contenente la logica per la valutazione.
-- `- dependency_ids: Tuple<String>` — tupla contenente gli ID di altri requisiti da cui questo dipende.
+- `- dependency_ids: List<String>` — tupla contenente gli ID di altri requisiti da cui questo dipende.
 
 *Metodi*
 
-- `+ evaluate(answer: AssetEvidence, dependency_states: Tuple): EvaluationState` — calcola lo stato di valutazione controllando prima lo stato delle dipendenze e poi interrogando l'albero decisionale.
-- `- _check_dependencies(dependencies: Tuple): EvaluationState | None` — metodo privato che verifica le dipendenze: se una fallisce, blocca la valutazione in `FAIL` o `PENDING`.
+- `+ evaluate(answer: AssetEvidence, dependency_states: List): EvaluationState` — calcola lo stato di valutazione controllando prima lo stato delle dipendenze e poi interrogando l'albero decisionale.
+- `- _check_dependencies(dependencies: List): EvaluationState | None` — metodo privato che verifica le dipendenze: se una fallisce, blocca la valutazione in `FAIL` o `PENDING`.
 
 
 === DecisionTree <DecisionTree>

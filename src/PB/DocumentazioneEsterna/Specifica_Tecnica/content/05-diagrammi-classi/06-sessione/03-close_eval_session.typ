@@ -7,8 +7,8 @@
 
 Il diagramma illustra l'architettura del modulo dedicato alla chiusura e all'eliminazione di una sessione di valutazione. 
 
-- Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _EvaluationSessionController_, vedere la @EvaluationSessionController. \
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 

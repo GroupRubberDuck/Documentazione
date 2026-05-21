@@ -7,10 +7,10 @@
 
 Il diagramma illustra l'architettura del modulo dedicato alla generazione e all'esportazione dei report riassuntivi di una valutazione. Il flusso permette di recuperare i dati di una sessione, valutare il dispositivo tramite _EvaluationEngine_ e compilare dinamicamente un documento PDF da restituire all'utente tramite download.
 
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _ExportedFile_, vedere la sezione @ExportedFile.
-- Per la definizione di _EvaluationEngine_, vedere la sezione @EvaluationEngine
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _ExportedFile_, vedere la @ExportedFile.
+- Per la definizione di _EvaluationEngine_, vedere la @EvaluationEngine
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 

@@ -6,7 +6,7 @@
 ) <fig-create-asset>
 
 Il diagramma illustra l'architettura del modulo di creazione di un Asset all'interno di una sessione di valutazione attiva. 
-- per la definizione di _Asset_, vedere la sezione di @Asset
+- per la definizione di _Asset_, vedere la di @Asset
 
 
 #block(breakable: false)[
@@ -37,7 +37,7 @@ _FlaskWriteAssetController_ è il controller Flask appartenente all'Inbound Adap
 
 ==== CreateAssetUseCase
 #figure(
-  image("../uml/png/CreateAsset/CreateAssetUseCase.png", width: 45%),
+  image("../uml/png/CreateAsset/CreateAssetUseCase.png", width: 55%),
   caption: [CreateAssetUseCase]
 ) <fig-create-asset-use-case>
 *Descrizione*
@@ -50,7 +50,7 @@ _CreateAssetUseCase_ non definisce attributi.
 
 *Metodi*
 
-- `+ create_asset(asset: CreateAssetCommand): bool` — firma del metodo delegato all'esecuzione della logica di creazione a partire dai dati contenuti nel comando.
+- `+ create_asset(asset: CreateAssetCommand): String` — firma del metodo delegato all'esecuzione della logica di creazione a partire dai dati contenuti nel comando.
 
 
 
@@ -93,7 +93,7 @@ _CreateAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
+- `- save_evaluation_session_port: SaveEvaluationSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi*
@@ -110,7 +110,7 @@ _CreateAssetService_ è il service applicativo appartenente all'Application Core
 
 *Descrizione*
 
-_InMemoryEvaluationSessionCache_ è la classe dell'Outbound Adapter annotata come _Session Cache_ che implementa entrambe le porte outbound _SaveEvaluationSession_ e _GetEvaluationSession_. Gestisce la persistenza in memoria delle sessioni di valutazione tramite un dizionario indicizzato per `session_id`.
+_InMemoryEvaluationSessionCache_ è l'Outbound Adapter che funge da Session Cache. Poiché il sistema prevede un utilizzo mono-utente, la classe gestisce in memoria una singola sessione di valutazione attiva per volta.
 
 *Attributi*
 

@@ -43,7 +43,7 @@ Per la modellazione visiva non si utilizzano diagrammi Entity-Relationship, in q
 Si adotta invece il formalismo di Hackolade (consultabile al link: #link("https://hackolade.com/schemas/Yelp_Challenge_dataset_documentation.html")), che descrive chiaramente la gerarchia dei campi, i tipi di dato e le nidificazioni.
 
 *Nota sulla validazione dei dati:*
-Benché i documenti vengano illustrati con tipi logici (incluso il tipo `enum` per chiarezza espositiva), la validazione strutturale di base sarà garantita dall'adapter predisposto alle comunicazioni col database
+Benché i documenti vengano illustrati con tipi logici (incluso il tipo `enum` per chiarezza espositiva), la validazione strutturale di base sarà garantita dall'adapter predisposto alle comunicazioni col database.
 
 Le due _collection_ principali del database sono:
 - *Collection "Compliance Standards"*: Catalogo di sola lettura dei template. Contiene le definizioni degli standard, le versioni e la logica degli alberi decisionali.

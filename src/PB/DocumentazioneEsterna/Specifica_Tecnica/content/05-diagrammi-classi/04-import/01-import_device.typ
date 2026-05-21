@@ -6,8 +6,8 @@
 ) <fig-import-device>
 
 Il diagramma illustra l'architettura del modulo dedicato all'importazione di Dispositivi tramite file. Il modulo supporta tre formati — CSV, XML e JSON — gestiti tramite il pattern _Template Method_ e una factory dedicata. Il componente _MongoDeviceAdapter_ è già descritto nella sezione _CreateDevice_ . 
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
-- Per la definizione di _RegisterDevicePort_, vedere la sezione @RegisterDevicePort
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter.
+- Per la definizione di _RegisterDevicePort_, vedere la @RegisterDevicePort
 Di seguito vengono documentati i componenti introdotti specificamente per questo caso d'uso.
 
 #block(breakable: false)[
@@ -30,7 +30,7 @@ _UploadFileController_ non definisce attributi propri.
 - `+ get_http_file_extension(filename: String): AllowedDeviceFileExtension` — estrae l'estensione del file dalla richiesta HTTP.
 ]
 
-==== FlaskFlaskImportDeviceController
+==== FlaskImportDeviceController
 
 #figure(
   image("../uml/png/ImportDevice/FlaskImportDeviceController.png", width: 40%),
@@ -119,8 +119,8 @@ _ImportDeviceService_ è il service applicativo appartenente all'Application Cor
 
 *Attributi*
 
-- `device_importer_factory: FileDEviceImporterFactoryPort`
-- `register_device_port = RegisterDevicePort`
+- `device_importer_factory: FileDeviceImporterFactoryPort`: outbound port usata per ottenere l'importer corretto in base al formato del file (CSV, JSON o XML).
+- `register_device_port: RegisterDevicePort`: outbound port usata per registrare il dispositivo nel sistema di persistenza.
 
 *Metodi*
 

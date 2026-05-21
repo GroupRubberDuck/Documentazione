@@ -6,10 +6,10 @@
 ) <fig-get-device-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Dispositivo.
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
-- Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort.
-- Per la definizione di _ComplianceStandard_, vedere la sezione @ComplianceStandard
+- Per la definizione di _Device_, vedere la @Device. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter.
+- Per la definizione di _FindDevicePort_, vedere la @FindDevicePort.
+- Per la definizione di _ComplianceStandard_, vedere la @ComplianceStandard
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
 
