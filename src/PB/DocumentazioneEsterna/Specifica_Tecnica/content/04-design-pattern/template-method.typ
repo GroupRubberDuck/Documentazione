@@ -43,11 +43,11 @@
 // *Applicazione nel progetto*
 
 // La classe astratta `FileDeviceExporter` definisce il metodo pubblico
-// `generate_device_file(dto)` come sequenza fissa di tre passi: `prepare_structure()`,
-// `write_data(dto)` e `finalize_output()`. Ogni exporter concreto ---
+// `generate_device_file(DTO)` come sequenza fissa di tre passi: `prepare_structure()`,
+// `write_data(DTO)` e `finalize_output()`. Ogni exporter concreto ---
 // `CsvFileDeviceExporter`, `XmlFileDeviceExporter`, `JSONFileDeviceExporter` --- eredita
 // la sequenza e implementa solo i tre passi specifici del proprio formato.
-// `ExportDeviceService` chiama unicamente `generate_device_file(dto)` attraverso la porta
+// `ExportDeviceService` chiama unicamente `generate_device_file(DTO)` attraverso la porta
 // `FileDeviceExporterPort`, senza conoscere né la sequenza interna né il formato prodotto.
 // Lo stesso schema si applica simmetricamente agli importer tramite la classe astratta
 // `FileDeviceImporter`.

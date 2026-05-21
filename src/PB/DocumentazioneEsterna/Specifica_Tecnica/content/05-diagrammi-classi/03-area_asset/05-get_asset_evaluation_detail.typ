@@ -5,9 +5,9 @@
 ) <fig-get-device-evaluation-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero di un _AssetEvaluationDetail_ contenente informazioni anagrafiche e stato di valutazione del dispositivo.
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _AssetEvaluationDetail_, vedere la sezione @AssetEvaluationDetail
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _AssetEvaluationDetail_, vedere la @AssetEvaluationDetail.
 
 ==== FlaskAssetEvaluationDetailController
 #figure(
@@ -21,7 +21,7 @@ _FlaskAssetEvaluationDetailController_ è un adapter di input (controller) che h
 
 *Attributi*
 
-- `- _get_asset_ev_detail_use_case: GetAssetDetailUseCase` — istanza del caso d'uso necessaria per recuperare i dettagli della valutazione dell'asset richiesto.
+- `- _get_asset_ev_detail_use_case: GetAssetEvaluationDetailUseCase` — istanza del caso d'uso necessaria per recuperare i dettagli della valutazione dell'asset richiesto.
 
 *Metodi*
 
@@ -40,8 +40,9 @@ _GetAssetEvaluationDetailCommand_ è il Command Object utilizzato per trasportar
 
 *Attributi*
 
-- `+ session_id: String` — identificativo univoco della sessione
 - `+ device_id: String` — identificativo univoco del Dispositivo di cui recuperare le informazioni.
+- `+ asset_id: String` — identificativo univoco dell'Asset.
+- `+ session_id: String` — identificativo univoco della sessione.
 
 *Metodi*
 
@@ -76,7 +77,7 @@ _GetAssetEvaluationDetailUseCase_ non definisce attributi.
 
 *Descrizione*
 
-Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione di valutazione specificata, esegue la valutazione del dispositivo tramite l'engine e isola i risultati dell'Asset richiesto. Infine, aggrega i dati anagrafici di tale Asset con i risultati della valutazione dei suoi requisiti, restituendo la rappresentazione _AssetEvaluationDetail_
+Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione di valutazione specificata, esegue la valutazione del dispositivo tramite l'engine e isola i risultati dell'Asset richiesto. Infine, aggrega i dati anagrafici di tale Asset con i risultati della valutazione dei suoi requisiti, restituendo la rappresentazione _AssetEvaluationDetail_.
 
 *Attributi*
 
@@ -88,12 +89,12 @@ Concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera
 concretizza il contratto definito da _GetAssetEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _AssetEvaluationDetail_.
 
 ==== DTO
-Qui vengono elencati i dto usati dal controller per gestire ed esporre i dettagli della valutazione di un asset verso l'interfaccia frontend o le API.
+Qui vengono elencati i DTO usati dal controller per gestire ed esporre i dettagli della valutazione di un asset verso l'interfaccia frontend o le API.
 
 #figure(
   image("../uml/png/GetAssetEvaluationDetail/AssetEvaluationDTO.png", width: 70%),
   caption: [AssetEvaluationDTO]
-) <fig-asset-evaluation-dto>
+) <fig-asset-evaluation-DTO>
 
 ===== AssetEvaluationDTO <AssetEvaluationDTO>
 
@@ -107,7 +108,7 @@ _AssetEvaluationDTO_ è il Data Transfer Object principale utilizzato per esporr
 - `+ type: AssetType` — categoria o tipologia a cui appartiene l'asset.
 - `+ evaluation: EvaluationState` — stato globale e finale della valutazione di conformità per l'intero asset.
 - `+ description: String` — descrizione testuale aggiuntiva dell'asset.
-- `+ requirements: Tuple<RequirementEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun requisito associato all'asset.
+- `+ requirements: List<RequirementEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun requisito associato all'asset.
 
 *Metodi*
 

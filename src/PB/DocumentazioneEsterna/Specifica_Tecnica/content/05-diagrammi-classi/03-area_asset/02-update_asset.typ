@@ -8,11 +8,11 @@
 
 Il diagramma illustra l'architettura del modulo di modifica di un Asset esistente all'interno di una sessione di valutazione attiva.
 
-- Per la definizione di _FlaskWriteAssetController_, vedere la sezione @FlaskWriteAssetController. \
-- Per la definizione di _Asset_, vedere la sezione @Asset.
-- Per la definizione di _SaveEvaluationSession_, vedere la sezione @SaveEvaluationSessionPort. \
-- Per la definizione di _GetEvaluationSession_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _FlaskWriteAssetController_, vedere la @FlaskWriteAssetController. \
+- Per la definizione di _Asset_, vedere la @Asset.
+- Per la definizione di _SaveEvaluationSession_, vedere la @SaveEvaluationSessionPort. \
+- Per la definizione di _GetEvaluationSession_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
@@ -75,11 +75,11 @@ _UpdateAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
+- `- save_evaluation_session_port: SaveEvaluationSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
 - `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
 
 *Metodi*
 
-- `+ udpate_asset(asset: UpdateAssetCommand): void` — concretizza il contratto definito da _UpdateAssetUseCase_. Recupera la sessione attiva, individua l'Asset da aggiornare tramite `asset_id` e ne persiste lo stato modificato.
+- `+ update_asset(asset: UpdateAssetCommand): void` — concretizza il contratto definito da _UpdateAssetUseCase_. Recupera la sessione attiva, individua l'Asset da aggiornare tramite `asset_id` e ne persiste lo stato modificato.
 ]
 

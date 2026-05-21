@@ -14,7 +14,7 @@ class DeviceEvaluationDTO {
     + device_os: String
     + device_description: String
     + device_evaluation_result: EvaluationState
-    + asset_list: tuple[AssetEvaluationSummaryDTO, ...]
+    + asset_list: list<AssetEvaluationSummaryDTO>
 }
 
 DeviceEvaluationDTO "1" *-- "0..*" AssetEvaluationSummaryDTO : contains

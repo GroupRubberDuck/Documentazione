@@ -28,8 +28,8 @@ package "Application Core" {
     }
 
     interface RequirementEditorUseCase <<Inbound Port>> {
-        + add_requirement(session_id: String, dto: RequirementCreateDTO): void
-        + update_requirement(session_id: String, req_code: String, dto: RequirementUpdateDTO): void
+        + add_requirement(session_id: String, DTO: RequirementCreateDTO): void
+        + update_requirement(session_id: String, req_code: String, DTO: RequirementUpdateDTO): void
         + remove_requirement(session_id: String, req_code: String): void
     }
 
@@ -43,8 +43,8 @@ package "Application Core" {
         - cache: EditingSessionCachePort
         - session_handler: SessionHandler
 
-        + add_requirement(session_id: String, dto: RequirementCreateDTO): void
-        + update_requirement(session_id: String, req_code: String, dto: RequirementUpdateDTO): void
+        + add_requirement(session_id: String, DTO: RequirementCreateDTO): void
+        + update_requirement(session_id: String, req_code: String, DTO: RequirementUpdateDTO): void
         + remove_requirement(session_id: String, req_code: String): void
     }
 
@@ -91,7 +91,7 @@ EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
 
 ' UC44: Modifica anagrafica requisito
 '     1. StandardEditorController riceve i dati dal client, li valida e crea RequirementUpdateDTO
-'     2. il controller chiama update_requirement(session_id, req_code, dto) di RequirementEditorService
+'     2. il controller chiama update_requirement(session_id, req_code, DTO) di RequirementEditorService
 '     3. il service recupera il modello dalla cache e legge i dati da RequirementUpdateDTO
 '     4. il dominio verifica la validità
 '     5. se tutto ok, l'anagrafica viene aggiornata nella sessione dal service con EditingSessionCachePort.save_standard

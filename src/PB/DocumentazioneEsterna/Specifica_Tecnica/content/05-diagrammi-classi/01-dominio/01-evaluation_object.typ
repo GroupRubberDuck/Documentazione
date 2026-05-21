@@ -43,7 +43,7 @@ _Asset_ è l'entità di dominio che rappresenta un asset oggetto di valutazione 
 
 - `- asset_id: String` — identificativo univoco dell'Asset.
 - `- asset_anagraphic: AssetAnagraphic` — oggetto che incapsula i dati anagrafici dell'asset.
-- `- asset_proprieties: AssetProprieties` — oggetto che incapsula le proprietà dell'asset.
+- `- asset_proprieties: AssetProperties` — oggetto che incapsula le proprietà dell'asset.
 
 *Metodi*
 
@@ -72,16 +72,16 @@ _AssetAnagraphic_ è l'entità delegata all'incapsulamento delle informazioni an
 _AssetAnagraphic_ definisce dei semplici getter, qui omessi per poca rilevanza.
 
 
-=== AssetProprieties <AssetProprieties>
+=== AssetProperties <AssetProperties>
 
 #figure(
-  image("../uml/png/Dominio/AssetProprieties.png", width: 70%),
-  caption: [AssetProprieties]
+  image("../uml/png/Dominio/AssetProperties.png", width: 70%),
+  caption: [AssetProperties]
 ) <fig-asset-proprieties-domain>
 
 *Descrizione*
 
-_AssetProprieties_ è l'entità delegata alla gestione dello stato valutativo e delle proprietà specifiche di un asset. Presenta una relazione di composizione con la classe _AssetEvidence_ con cardinalità `1..*`, gestendone il ciclo di vita all'interno di una lista.
+_AssetProperties_ è l'entità delegata alla gestione dello stato valutativo e delle proprietà specifiche di un asset. Presenta una relazione di composizione con la classe _AssetEvidence_ con cardinalità `1..*`, gestendone il ciclo di vita all'interno di una lista.
 
 *Attributi*
 

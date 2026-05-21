@@ -8,17 +8,17 @@
   #heading(pattern-name, depth: depth)
   
   #if descrizione!=none [
-    #strong("Descrizione del pattern")
+    #strong("Descrizione del pattern") \
     #descrizione
   ]
   
   #if motivazione!=none [
-    #strong("Motivazioni dell’utilizzo del pattern")
+    #strong("Motivazioni dell’utilizzo del pattern") \
     #motivazione
   ]
   
   #if descrizione!=none [
-    #strong("Utilizzo del pattern nel progetto")
+    #strong("Utilizzo del pattern nel progetto") \
     #utilizzo
   ]
 ]

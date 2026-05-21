@@ -6,7 +6,7 @@
 ) <fig-create-device>
 
 Il diagramma illustra l'architettura del modulo di creazione dei Dispositivi secondo i principi dell'architettura esagonale.
-- Per la definizione di _Device_, vedere la sezione @Device. \
+- Per la definizione di _Device_, vedere la @Device. \
 
 ==== FlaskWriteDeviceController <FlaskWriteDeviceController>
 
@@ -21,9 +21,9 @@ _FlaskWriteDeviceController_ è il controller Flask appartenente all'Inbound Ada
 
 *Attributi*
 
-- `- create_device_use_case: CreateDeviceUseCase` — inbound port usata per la creazione di un device
-- `- update_device_use_case: UpdateDeviceUseCase` — inbound port usata per la modifica di un device
-- `- delete_device_use_case: DeleteDeviceUseCase` — inbound port usata per l'eliminazione di un device
+- `- create_device_use_case: CreateDeviceUseCase` — inbound port usata per la creazione di un device.
+- `- update_device_use_case: UpdateDeviceUseCase` — inbound port usata per la modifica di un device.
+- `- delete_device_use_case: DeleteDeviceUseCase` — inbound port usata per l'eliminazione di un device.
 
 *Metodi*
 

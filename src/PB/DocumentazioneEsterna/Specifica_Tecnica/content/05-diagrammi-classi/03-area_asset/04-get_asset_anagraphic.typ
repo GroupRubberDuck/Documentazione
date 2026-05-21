@@ -7,9 +7,9 @@
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero del dettaglio di un Asset all'interno di una sessione di valutazione attiva. 
 
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort
-- Per la definizione di _AssetAnagraphic_, vedere la sezione @AssetAnagraphic
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort.
+- Per la definizione di _AssetAnagraphic_, vedere la @AssetAnagraphic.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
@@ -46,7 +46,7 @@ _GetAssetAnagraphicCommand_ è il Command Object utilizzato per trasportare i da
 
 *Attributi*
 
-- `+ device_id: String` — identificativo univoco del device che contiene l'asset
+- `+ device_id: String` — identificativo univoco del device che contiene l'asset.
 - `+ asset_id: String` — identificativo univoco dell'Asset di cui recuperare il dettaglio.
 - `+ session_id: String` — identificativo univoco della sessione di valutazione corrente.
 
@@ -71,7 +71,7 @@ _GetAssetAnagraphicUseCase_ non definisce attributi.
 
 *Metodi*
 
-- `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — firma del metodo delegato al recupero dedi anagrafica dell'asset ricercato.
+- `+ get_asset_anagraphic(command: GetAssetAnagraphicCommand): AssetAnagraphic` — firma del metodo delegato al recupero dell'anagrafica dell'asset ricercato.
 
 ==== GetAssetAnagraphicService
 
@@ -86,7 +86,7 @@ _GetAssetAnagraphicService_ è il service applicativo appartenente all'Applicati
 
 *Attributi*
 
-- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione.
 
 *Metodi*
 #set par(justify: false)

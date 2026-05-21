@@ -6,10 +6,10 @@
 ) <fig-get-requirement>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero di un requisito di conformità con il relativo albero decisionale e le dipendenze associate.
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _EvaluationEngine_, vedere la sezione @EvaluationEngine
-- Per la definizione di _RequirementEvaluationDetail_, vedere la sezione @RequirementEvaluationDetail
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _EvaluationEngine_, vedere la @EvaluationEngine
+- Per la definizione di _RequirementEvaluationDetail_, vedere la @RequirementEvaluationDetail
 
  
 ==== FlaskRequirementEvaluationDetailController
@@ -49,7 +49,7 @@ _GetRequirementEvaluationDetailUseCase_ non definisce attributi.
 
 *Metodi*
 #set par(justify: false)
-- `+ get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementResponse` — firma del metodo delegato al recupero del requisito corrispondente ai parametri incapsulati nel comando fornito in input.
+- `+ get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementEvaluationDetail` — firma del metodo delegato al recupero del requisito corrispondente ai parametri incapsulati nel comando fornito in input.
 
 
 ==== GetRequirementEvaluationDetailCommand
@@ -92,7 +92,7 @@ _GetRequirementEvaluationDetailService_ è il service applicativo appartenente a
 - `+ get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementEvaluationDetail` — concretizza il contratto definito da _GetRequirementEvaluationDetailUseCase_. Recupera la sessione attiva, individua il requisito richiesto utilizzando i parametri incapsulati nel comando e ne costruisce la relativa rappresentazione sotto forma di _RequirementEvaluationDetail_.
 
 ==== DTO
-Qui vengono elencati i dto usati dal controller per gestire ed esporre i dettagli della valutazione di un requisito.
+Qui vengono elencati i DTO usati dal controller per gestire ed esporre i dettagli della valutazione di un requisito.
 #figure(
   image("../uml/png/GetRequirementEvaluationDetail/RequirementEvaluationDTO.png", width: 70%),
   caption: [RequirementEvaluationDTO]
@@ -110,7 +110,7 @@ _RequirementEvaluationDTO_ è il Data Transfer Object principale che consolida t
 - `+ norm_description: String` — descrizione normativa estesa del requisito.
 - `+ target_description: String` — descrizione dell'obiettivo del requisito.
 - `+ evaluation: EvaluationState` — stato corrente e complessivo della valutazione.
-- `+ dependencies: Tuple<DependencySummaryDTO>` — collezione di DTO che riepilogano lo stato dei requisiti da cui questo dipende.
+- `+ dependencies: List<DependencySummaryDTO>` — collezione di DTO che riepilogano lo stato dei requisiti da cui questo dipende.
 - `+ decision_tree: DecisionTreeDTO` — DTO che mappa la struttura dell'albero decisionale associato al requisito.
 - `+ answer: Map<String, Bool>` — mappa che associa gli ID dei nodi decisionali alle risposte fornite.
 - `+ justification: String | None` — eventuale giustificazione testuale fornita durante la valutazione.

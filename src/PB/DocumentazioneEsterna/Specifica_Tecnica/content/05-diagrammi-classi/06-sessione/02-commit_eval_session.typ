@@ -7,12 +7,12 @@
 
 Il diagramma illustra l'architettura del modulo dedicato esclusivamente al consolidamento (commit) dei dati di una sessione di valutazione verso il dispositivo, senza richiederne la chiusura o l'eliminazione dalla memoria temporanea. 
 
-- Per la definizione di _EvaluationSessionController_, vedere la sezione @EvaluationSessionController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
-- Per la definizione di _SaveDevicePort_, vedere la sezione @SaveDevicePort. \
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort.
+- Per la definizione di _EvaluationSessionController_, vedere la @EvaluationSessionController. \
+- Per la definizione di _Device_, vedere la @Device. \
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter. \
+- Per la definizione di _SaveDevicePort_, vedere la @SaveDevicePort. \
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort.
 
 Di seguito vengono documentati esclusivamente i componenti specifici introdotti per questo flusso operativo.
 

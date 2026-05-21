@@ -18,7 +18,7 @@ La classe non definisce attributi di stato interni, agendo come puro gestore del
 - `+ evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult` — valuta il dispositivo calcolando e aggregando i risultati di tutti i suoi asset, restituendo infine l'esito globale.
 - `- _evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult` — metodo privato che valuta un singolo asset contro tutti i requisiti dello standard, avvalendosi di una cache per mantenere i risultati e supportare la memoizzazione.
 - `- _resolve(requirement_id: String, standard: ComplianceStandard, asset: Asset, cache: Map): RequirementEvaluationResult` — risolve la valutazione di uno specifico requisito verificando prima ricorsivamente le sue dipendenze. Se l'asset non presenta evidenze per il requisito, imposta forzatamente lo stato su `PENDING`. Successivamente, salva il risultato nella cache.
-- `- _aggregate_evaluation_states(states: Sequence<EvaluationState>): EvaluationState` — analizza una serie di stati e ne calcola il verdetto aggregato: restituisce `FAIL` se rileva almeno un fallimento, `PENDING` se vi sono valutazioni incomplete, altrimenti restituisce `PASS`.
+- `- _aggregate_evaluation_states(states: List<EvaluationState>): EvaluationState` — analizza una serie di stati e ne calcola il verdetto aggregato: restituisce `FAIL` se rileva almeno un fallimento, `PENDING` se vi sono valutazioni incomplete, altrimenti restituisce `PASS`.
 
 
 === EvaluationState <EvaluationState>

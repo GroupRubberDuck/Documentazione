@@ -8,11 +8,11 @@
 
 Il diagramma illustra l'architettura del modulo di eliminazione di un Asset esistente all'interno di una sessione di valutazione attiva. 
 
-- Per la definizione di _FlaskWriteAssetController_, vedere la sezione @FlaskWriteAssetController. \
-- Per la definizione di _Asset_, vedere la sezione @Asset. \
-- Per la definizione di _SaveEvaluationSession_, vedere la sezione @SaveEvaluationSessionPort. \
-- Per la definizione di _GetEvaluationSession_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
+- Per la definizione di _FlaskWriteAssetController_, vedere la @FlaskWriteAssetController. \
+- Per la definizione di _Asset_, vedere la @Asset. \
+- Per la definizione di _SaveEvaluationSession_, vedere la @SaveEvaluationSessionPort. \
+- Per la definizione di _GetEvaluationSession_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
@@ -32,7 +32,7 @@ _DeleteAssetCommand_ è il Command Object utilizzato per trasportare i dati nece
 *Attributi*
 
 - `+ device_id: String` — identificativo univoco del dispositivo che contiene l'asset.
-- `+ asset_id: String` — identificativo univoco del Asset da eliminare.
+- `+ asset_id: String` — identificativo univoco dell' Asset da eliminare.
 - `+ session_id: String` — identificativo univoco della sessione.
 
 *Metodi*
@@ -71,8 +71,8 @@ _DeleteAssetService_ è il service applicativo appartenente all'Application Core
 
 *Attributi*
 
-- `- save_evaluation_session_port: SaveSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione
-- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione
+- `- save_evaluation_session_port: SaveEvaluationSessionPort` — outbound port usata per il salvataggio delle modifiche nella sessione.
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port usata per prelevare la sessione di valutazione.
 
 *Metodi*
 

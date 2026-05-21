@@ -298,8 +298,8 @@
 
   #include "content/03-architettura/_index.typ"
 ]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Design Patterns", documentType: doc)[
-  = Design Patterns <design-patterns>
+#insertArabicNumberedPagesSenzaData(PageTitle: "Design Pattern", documentType: doc)[
+  = Design Pattern <design-patterns>
 
   #include "content/04-design-pattern/_index.typ"
 ]

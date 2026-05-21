@@ -126,7 +126,7 @@ package "Export Standard Subsystem" {
         !include OutboundAdapters/ConcreteFileStandardExporterFactory.puml
 
         abstract class FileStandardExporter <<Template Method>> {
-            + generate_device_file(dto: StandardFileCommand): bytes
+            + generate_device_file(DTO: StandardFileCommand): bytes
             # prepare_structure()
             # write_data()
         }

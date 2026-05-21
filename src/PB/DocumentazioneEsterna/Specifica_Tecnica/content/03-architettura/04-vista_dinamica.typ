@@ -39,7 +39,7 @@ Flusso principale:
 + *Costruzione del Command*:\
   Il controller istanzia un EvaluateDecisionNodeCommand (modello Pydantic) con i parametri di path e i campi node_id e answer estratti dal body. Se la validazione Pydantic fallisce per campi mancanti o tipo non valido, restituisce HTTP 400 senza propagare la richiesta al layer applicativo.
 + *Recupero della sessione*:\
-  Il EvaluateDecisionNodeService riceve il command e delega il recupero della sessione alla GetEvaluationSessionPort tramite get_evaluation_session(session_id). La port restituisce l'EvaluationSession completa, incluso il device e i suoi asset.
+  L'EvaluateDecisionNodeService riceve il command e delega il recupero della sessione alla GetEvaluationSessionPort tramite get_evaluation_session(session_id). La port restituisce l'EvaluationSession completa, incluso il device e i suoi asset.
 + *Navigazione al dominio*:\
   Il service naviga l'aggregato di dominio per recuperare l'asset su cui operare tramite session.device.get_asset(asset_id), ottenendo l'oggetto Asset corrispondente.
 + *Registrazione della scelta*:\
