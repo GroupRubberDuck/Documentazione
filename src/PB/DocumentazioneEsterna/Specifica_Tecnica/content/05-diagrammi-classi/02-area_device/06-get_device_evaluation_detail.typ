@@ -5,10 +5,10 @@
 ) <fig-get-device-evaluation-detail>
 
 Il diagramma illustra l'architettura del modulo dedicato al recupero della dashboard di un Dispositivo, che aggrega le informazioni della sessione di valutazione attiva in una vista sintetica.
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort.
-- Per la definizione di _EvaluationEngine_, vedere la sezione @EvaluationEngine
-- per la definizione di _DeviceEvaluationDetail_, vedere la sezione di @DeviceEvaluationDetail
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort.
+- Per la definizione di _EvaluationEngine_, vedere la @EvaluationEngine
+- per la definizione di _DeviceEvaluationDetail_, vedere la di @DeviceEvaluationDetail
 
 // ==== FlaskQueryDashboardController
 
@@ -33,8 +33,8 @@ Il diagramma illustra l'architettura del modulo dedicato al recupero della dashb
 
 #figure(
   image("../uml/png/GetDeviceEvaluationDetail/FlaskDeviceEvaluationDetailController.png", width: 40%),
-  caption: [FlaskQueryDashboardController],
-) <fig-flask-query-dashboard-controller>
+  caption: [FlaskDeviceEvaluationDetailController],
+) <fig-flask-device-evaluation-detail-controller>
 
 *Descrizione*
 
@@ -97,11 +97,11 @@ _GetDeviceEvaluationDetailUseCase_ non definisce attributi.
 
 *Descrizione*
 
-_GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceEvaluationDetailUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_ e costruisce il _EvaluationDetailCommand_ con le informazioni aggregate.
+_GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Application Core responsabile del recupero della dashboard di un Dispositivo. Implementa l'interfaccia _GetDeviceEvaluationDetailUseCase_, recupera la sessione attiva tramite _GetEvaluationSessionPort_ e costruisce l' _EvaluationDetailCommand_ con le informazioni aggregate.
 
 *Attributi*
 
-- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port per prelevare la sessione di valutaione.
+- `- get_evaluation_session_port: GetEvaluationSessionPort` — outbound port per prelevare la sessione di valutazione.
 
 *Metodi*
 #set par(justify: false)
@@ -110,12 +110,12 @@ _GetDeviceEvaluationDetailService_ è il service applicativo appartenente all'Ap
 concretizza il contratto definito da _GetDeviceEvaluationDetailUseCase_. Recupera la sessione attiva, aggrega le informazioni del Dispositivo e dei suoi Asset e restituisce la rappresentazione _DeviceEvaluationDetail_.
 
 ==== DTO
-Qui vengono elencati i dto usati dal controller per gestire ed esporre i dettagli della valutazione di un dispositivo.
+Qui vengono elencati i DTO usati dal controller per gestire ed esporre i dettagli della valutazione di un dispositivo.
 
 #figure(
   image("../uml/png/GetDeviceEvaluationDetail/DeviceEvaluationDTO.png", width: 50%),
   caption: [DeviceEvaluationDTO]
-) <fig-device-evaluation-dto>
+) <fig-device-evaluation-DTO>
 
 
 ===== DeviceEvaluationDTO <DeviceEvaluationDTO>
@@ -130,7 +130,7 @@ _DeviceEvaluationDTO_ è il Data Transfer Object principale utilizzato per conso
 - `+ device_os: String` — sistema operativo in uso sul dispositivo.
 - `+ device_description: String` — breve descrizione testuale del dispositivo.
 - `+ device_evaluation_result: EvaluationState` — stato globale e finale della valutazione di conformità per l'intero dispositivo.
-- `+ asset_list: Tuple<AssetEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun asset analizzato all'interno del dispositivo.
+- `+ asset_list: List<AssetEvaluationSummaryDTO>` — tupla contenente i DTO di riepilogo per ciascun asset analizzato all'interno del dispositivo.
 
 *Metodi*
 

@@ -33,7 +33,7 @@ class RequirementEvaluationDTO {
     + norm_description: String
     + target_description: String
     + evaluation: EvaluationState
-    + dependencies: tuple[DependencySummaryDTO, ...]
+    + dependencies: List<DependencySummaryDTO>
     + decision_tree: DecisionTreeDTO
     + answer: Mapping[String, bool]
     + justification: String

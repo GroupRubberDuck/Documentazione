@@ -7,7 +7,7 @@ package "1. Evaluation Object" {
     !include AssetAnagraphic.puml
     !include AssetType.puml
     !include Asset.puml
-    !include AssetProprieties.puml
+    !include AssetProperties.puml
     !include AssetEvidence.puml
 }
 

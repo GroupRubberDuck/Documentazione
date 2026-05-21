@@ -9,13 +9,13 @@
 Il diagramma illustra l'architettura del modulo dedicato all'apertura di una sessione di valutazione. 
 
 
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
-- Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort
-- Per la definizione di _MongoStandardAdapter_, vedere la sezione @MongoStandardAdapter
-- Per la definizione di _FindStandardPort_, vedere la sezione @FindStandardPort
-- Per la definizione di _SessionHandler_, vedere la sezione @SessionHandler
+- Per la definizione di _Device_, vedere la @Device. \
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter.
+- Per la definizione di _FindDevicePort_, vedere la @FindDevicePort.
+- Per la definizione di _MongoStandardAdapter_, vedere la @MongoStandardAdapter.
+- Per la definizione di _FindStandardPort_, vedere la @FindStandardPort.
+- Per la definizione di _SessionHandler_, vedere la @SessionHandler.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ]
@@ -32,16 +32,16 @@ _EvaluationSessionController_ è il controller Flask appartenente all'Inbound Ad
 
 *Attributi*
 
-- `- open_use_case: OpenEvaluationSessionUseCase` — inbound port usata per aprire la sessione
-- `- close_use_case: CloseEvaluationSessionUseCase` — inbound port usata per chiudere la sessione
-- `- commit_use_case: CommitEvaluationSessionUseCase` — inbound port usata per salvare la sessione in memoria
+- `- open_use_case: OpenEvaluationSessionUseCase` — inbound port usata per aprire la sessione.
+- `- close_use_case: CloseEvaluationSessionUseCase` — inbound port usata per chiudere la sessione.
+- `- commit_use_case: CommitEvaluationSessionUseCase` — inbound port usata per salvare la sessione in memoria.
 
 *Metodi*
 
 - `+ open_session(req: Request): Response` — riceve la richiesta HTTP di apertura di una nuova sessione di valutazione e restituisce una risposta HTTP con l'identificativo della sessione creata.
 - `+ close_session(req: Request): Response` — riceve la richiesta HTTP di chiusura della sessione corrente e restituisce una risposta HTTP con l'esito dell'operazione.
-- `+ commit_session(req: Request): Response` — riceve la richiesta HTTP di commit della sessione e restituisce una risposta HTTP con l'esito dell'operazione.
-- `+ commit_and_close(req: Request): Response` — riceve la richiesta HTTP di commit e chiusura contestuale della sessione e restituisce una risposta HTTP con l'esito dell'operazione.
+- `+ commit_session(req: Request): Response` — riceve la richiesta HTTP di salvataggio definitivo della sessione e restituisce una risposta HTTP con l'esito dell'operazione.
+- `+ commit_and_close(req: Request): Response` — riceve la richiesta HTTP di salvataggio definitivo e chiusura contestuale della sessione e restituisce una risposta HTTP con l'esito dell'operazione.
 ]
 
 
@@ -97,13 +97,13 @@ _OpenEvaluationSessionService_ è il service applicativo appartenente all'Applic
 
 *Attributi*
 
-- `- session_coordinator: SessionCoordinator` — classe allo stato applicativo che centralizza le regole di business per autorizzare l'apertura di una nuova sessione 
+- `- session_coordinator: SessionCoordinator` — classe allo stato applicativo che centralizza le regole di business per autorizzare l'apertura di una nuova sessione.
 
-- `- create_session_port: CreateSessionPort` — outbound port usata per creare una sessione
+- `- create_session_port: CreateEvaluationSessionPort` — outbound port usata per creare una sessione.
 
-- `- find_device_port: FindDevicePort` — outbound port usata per trovare il dispositivo
+- `- find_device_port: FindDevicePort` — outbound port usata per trovare il dispositivo.
 
-- `- find_standard_port: FindStandardPort` — outbound port usata per trovare lo Standard
+- `- find_standard_port: FindStandardPort` — outbound port usata per trovare lo Standard.
 
 *Metodi*
 
@@ -125,11 +125,7 @@ _SessionCoordinator_ è il Service che coordina la logica di dominio relativa al
 
 *Metodi*
 
-- `+ can_open_session(session_type: SessionType): bool` — verifica se è possibile aprire una nuova sessione del tipo specificato, restituendo `true` se le precondizioni sono soddisfatte.
-
-*Metodi*
-
-- `+ can_open_session(active_session_exists: bool): bool` — verifica se è possibile avviare una nuova sessione, restituendo `false` nel caso in cui esista già una sessione attiva, altrimenti `true`.
+- `+ can_open_session(): bool` — verifica se è possibile aprire una nuova sessione, restituendo `true` se le precondizioni sono soddisfatte.
 
 ==== EvaluationSessionExistPort
 #figure(
@@ -156,11 +152,11 @@ La classe _EvaluationSessionExistPort_ non definisce attributi.
 
 *Descrizione*
 
-_CreateSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la creazione di una nuova sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _OpenEvaluationSessionService_.
+_CreateEvaluationSessionPort_ è l'interfaccia (Outbound Port) che definisce il contratto per la creazione di una nuova sessione di valutazione nel sistema di persistenza in memoria. Viene implementata da _InMemoryEvaluationSessionCache_ e utilizzata da _OpenEvaluationSessionService_.
 
 *Attributi*
 
-_CreateSessionPort_ non definisce attributi.
+_CreateEvaluationSessionPort_ non definisce attributi.
 
 *Metodi*
 

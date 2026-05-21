@@ -7,9 +7,9 @@
 
 Il diagramma illustra l'architettura del modulo dedicato all'eliminazione di un Dispositivo.
 
-- Per la definizione di _FlaskWriteDeviceController_, vedere la sezione @FlaskWriteDeviceController. \
-- Per la definizione di _Device_, vedere la sezione @Device. \
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter.
+- Per la definizione di _FlaskWriteDeviceController_, vedere la @FlaskWriteDeviceController. \
+- Per la definizione di _Device_, vedere la @Device. \
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter.
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 ==== DeleteDeviceUseCase

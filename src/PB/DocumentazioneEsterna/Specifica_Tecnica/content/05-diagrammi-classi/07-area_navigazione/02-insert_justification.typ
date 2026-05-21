@@ -6,9 +6,9 @@
 ) <fig-insert-justification>
 
 Il diagramma illustra l'architettura del modulo dedicato all'inserimento di una giustificazione testuale per un requisito di conformità durante la sessione di valutazione. 
-- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la sezione @InMemoryEvaluationSessionCache.
-- Per la definizione di _GetEvaluationSessionPort_, vedere la sezione @GetEvaluationSessionPort. \
-- Per la definizione di  _SaveEvaluationSessionPort_, vedere la sezione @SaveEvaluationSessionPort. 
+- Per la definizione di _InMemoryEvaluationSessionCache_, vedere la @InMemoryEvaluationSessionCache.
+- Per la definizione di _GetEvaluationSessionPort_, vedere la @GetEvaluationSessionPort. \
+- Per la definizione di  _SaveEvaluationSessionPort_, vedere la @SaveEvaluationSessionPort. 
 
 Di seguito vengono documentati i componenti introdotti specificamente per questo caso d'uso.
 
@@ -24,7 +24,7 @@ _FlaskInsertJustificationController_ è il controller Flask appartenente all'Inb
 
 *Attributi*
 
-- `insert_justification_use_case: InsertJustificationUseCase` — inbound port usata per inserire la giustificazione.
+- `- insert_justification_use_case: InsertJustificationUseCase` — inbound port usata per inserire la giustificazione.
 
 *Metodi*
 
@@ -65,7 +65,6 @@ _InsertJustificationCommand_ è l'oggetto che veicola i dati necessari all'inser
 - `+ session_id: String` — identificativo della sessione di valutazione attiva.
 - `+ asset_id: String` — identificativo dell'Asset oggetto di valutazione.
 - `+ requirement_id: String` — identificativo del requisito a cui si associa la giustificazione.
-- `+ node_id: String` — identificativo del nodo decisionale correlato.
 - `+ justification: String` — testo della giustificazione da inserire.
 
 *Metodi*

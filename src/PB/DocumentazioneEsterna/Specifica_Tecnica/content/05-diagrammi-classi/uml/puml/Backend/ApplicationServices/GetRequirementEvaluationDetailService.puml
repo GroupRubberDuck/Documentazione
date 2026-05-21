@@ -2,7 +2,7 @@
 skinparam classAttributeIconSize 0
 
 class GetRequirementEvaluationDetailService <<Application Service>> {
-    + get_evaluation_detail(command: GetRequirementCommand): RequirementEvaluationDetail
+    + get_evaluation_detail(command: GetRequirementEvaluationDetailCommand): RequirementEvaluationDetail
 }
 
 @enduml

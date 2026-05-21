@@ -11,7 +11,7 @@ In questo contesto un'architettura a monolite modulare, rispetto all'architettur
 - *Semplicità di Deployment*: tutte le funzionalità sono contenute nella singola unità operativa;
 - *Latenze ridotte*: lo scambio di informazioni avviene completamente in locale.
 
-Non si è optato per una architettura monolitica tradizionale in cui spesso il codice è fortemente accoppiato.
+Non si è optato per un'architettura monolitica tradizionale in cui spesso il codice è fortemente accoppiato.
 
 La rigorosa divisione in moduli logici isolati permette di coniugare la semplicità di rilascio dell'applicazione come singola unità con alcuni dei vantaggi organizzativi tipici delle architetture a microservizi:
 
@@ -42,7 +42,7 @@ Per la distribuzione viene usato Docker come tool di containerizzazione  e Docke
       ]
       ]),
       (
-        [#sym.bullet Mongodb],[Basato sull'immagine ufficiale di MongoDB. Per prevenire la perdita dei dati questo container è agganciato a un Docker Volume locale.]
+        [#sym.bullet MongoDB],[Basato sull'immagine ufficiale di MongoDB. Per prevenire la perdita dei dati questo container è agganciato a un Docker Volume locale.]
       )
     )
     

@@ -3,10 +3,10 @@ skinparam linetype ortho
 skinparam classAttributeIconSize 0
 
 class ComplianceStandard {
-    - id: String
+    - standard_id: String
     - name: String
     - version_number: String
-    - requirements: Map<String, Requirement>
+    - requirements: List<Requirement>
 
     + get_requirement(requirement_id: String): Requirement
     + evaluate_requirement(requirement_id: String, answers: AssetEvidence): EvaluationState

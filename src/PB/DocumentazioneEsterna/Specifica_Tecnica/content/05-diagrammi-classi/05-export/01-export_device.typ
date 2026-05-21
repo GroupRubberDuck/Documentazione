@@ -7,10 +7,10 @@
 
 Il diagramma illustra l'architettura del modulo dedicato all'esportazione dei dati di un dispositivo (inclusi i suoi asset e le relative valutazioni di conformità) in un file scaricabile. Il sistema supporta tre formati — CSV, XML e JSON — gestiti tramite il pattern _Factory_ per la selezione dell'esportatore corretto e il pattern _Template Method_ per standardizzare l'algoritmo di generazione del file.
 
-- Per la definizione di _MongoDeviceAdapter_, vedere la sezione @MongoDeviceAdapter. \
-- Per la definizione di _FindDevicePort_, vedere la sezione @FindDevicePort. \
-- Per la definizione di _AllowedDeviceFileExtension_, vedere la sezione @AllowedDeviceFileExtension.
-- Per la definizione di _ExportedFile_, vedere la sezione @ExportedFile
+- Per la definizione di _MongoDeviceAdapter_, vedere la @MongoDeviceAdapter. \
+- Per la definizione di _FindDevicePort_, vedere la @FindDevicePort. \
+- Per la definizione di _AllowedDeviceFileExtension_, vedere la @AllowedDeviceFileExtension.
+- Per la definizione di _ExportedFile_, vedere la @ExportedFile
 
 Di seguito vengono documentati esclusivamente i componenti introdotti specificamente per questo caso d'uso.
 
@@ -156,7 +156,6 @@ _FileDeviceExporter_ non definisce attributi propri.
 _ConcreteFileDeviceExporterFactory_ è la classe dell'Outbound Adapter che implementa _FileDeviceExporterFactoryPort_. Istanzia e restituisce l'esportatore appropriato in base al formato richiesto, selezionando tra _CSVFileDeviceExporter_, _JSONFileDeviceExporter_ e _XMLFileDeviceExporter_.
 
 *Attributi*
-
 - `- exporters: Dict[AllowedDeviceFileExtension, FileDeviceExporterPort]` — dizionario che mappa ogni estensione supportata alla corrispondente istanza dell'esportatore.
 
 *Metodi*
