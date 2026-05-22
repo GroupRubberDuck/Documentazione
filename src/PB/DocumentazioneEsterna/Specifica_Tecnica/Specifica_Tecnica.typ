@@ -23,8 +23,8 @@
 #let doc = "Specifica Tecnica"
 
 #let currentVersion = (
-  major: 0,
-  minor: 12,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -218,6 +218,13 @@
       [#persone.ALDO],
       [#persone.DL],
       [Scrittura sezione MVVM]
+    ),
+    (
+      [1.0.0],
+      [2026-05-22],
+      [#persone.ALDO],
+      [#persone.ALDO],
+      [Approvazione]
     )
 
 
