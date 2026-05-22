@@ -1,0 +1,7 @@
+#include "01-introduzione.typ"
+#include "02-scopo_del_processo.typ"
+#include "03-attività_del_processo.typ"
+#include "04-inquadramento_del_processo.typ"
+#include "05-procedure_operative.typ"
+#include "06-progettazione.typ"
+#include "07-codifica.typ"

@@ -1,0 +1,13 @@
+@startuml UiLeafNode
+skinparam classAttributeIconSize 0
+skinparam style strictuml
+
+class UiLeafNode << (V,#41B883) Vue Component >> {
+  -- props (dal NodeDTO) --
+  + id: String
+  + text: String
+  + resultState: String
+  + isActive: Boolean
+}
+
+@enduml

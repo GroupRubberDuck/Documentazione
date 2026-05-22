@@ -1,0 +1,6 @@
+@startuml
+skinparam classAttributeIconSize 0
+    class OpenEvaluationSessionCommand {
+        + device_id: String
+    }
+@enduml

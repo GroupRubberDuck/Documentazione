@@ -1,0 +1,56 @@
+@startuml InsertJustification
+
+skinparam linetype ortho
+skinparam nodesep 180 
+skinparam ranksep 150
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30 
+
+package "Inbound Adapter" {
+    class FlaskInsertJustificationController <<Flask Blueprint>> {
+        +insert_justification(req: Request): Response
+    }
+}
+
+package "Application Core" {
+
+    () "InsertJustificationUseCase"
+
+    !include Command/InsertJustificationCommand.puml
+    !include ApplicationServices/InsertJustificationService.puml
+
+    () "GetEvaluationSessionPort"
+    () "SaveEvaluationSessionPort"
+
+    InsertJustificationService -[hidden]right-------- InsertJustificationCommand
+    GetEvaluationSessionPort -[hidden]right-------- SaveEvaluationSessionPort
+
+    InsertJustificationService -up- InsertJustificationUseCase
+    InsertJustificationService .right.> InsertJustificationCommand : legge
+
+    InsertJustificationService -down-> GetEvaluationSessionPort : usa
+    InsertJustificationService -down-> SaveEvaluationSessionPort : usa
+    
+    note as spacer
+    end note
+    skinparam note {
+    backgroundColor transparent
+    borderColor transparent
+    fontColor transparent
+    }
+    GetEvaluationSessionPort -[hidden]down- spacer
+    SaveEvaluationSessionPort -[hidden]down- spacer
+
+
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskInsertJustificationController -down-> InsertJustificationUseCase : usa
+
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+InMemoryEvaluationSessionCache -up- SaveEvaluationSessionPort
+
+@enduml

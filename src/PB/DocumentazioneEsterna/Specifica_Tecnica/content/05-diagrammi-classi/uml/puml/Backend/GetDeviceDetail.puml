@@ -1,0 +1,44 @@
+@startuml GetDeviceDetail
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/FlaskQueryDeviceController.puml
+}
+
+package "Application Core" {
+    () "GetDeviceDetailUseCase"
+    () "GetComplianceStandardUseCase"
+    !include Command/GetDeviceDetailCommand.puml
+    !include Command/GetComplianceStandardCommand.puml
+    
+    !include ApplicationServices/GetDeviceDetailService.puml
+    !include ApplicationServices/GetComplianceStandardService.puml
+    !include Domain/Device.puml
+    !include Domain/ComplianceStandard.puml
+    () "FindDevicePort"
+    () "FindStandardPort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/MongoStandardAdapter.puml
+}
+
+GetDeviceDetailService -up- GetDeviceDetailUseCase
+GetComplianceStandardService - GetComplianceStandardUseCase
+
+GetDeviceDetailService .> GetDeviceDetailCommand : legge
+GetComplianceStandardService .> GetComplianceStandardCommand: legge
+
+GetDeviceDetailService --> FindDevicePort: usa
+GetComplianceStandardService --> FindStandardPort: usa
+
+FlaskQueryDeviceController --> GetDeviceDetailUseCase: usa
+FlaskQueryDeviceController --> GetComplianceStandardUseCase: usa
+MongoDeviceAdapter -up- FindDevicePort
+MongoComplianceStandardAdapter -up- FindStandardPort
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml EvaluateDecisionNodeCommand
+skinparam classAttributeIconSize 0   
+    class EvaluateDecisionNodeCommand {
+        + session_id: String
+        + device_id: String
+        + asset_id: String
+        + requirement_id: String
+        + node_id: String
+        + answer: Boolean
+    }
+@enduml

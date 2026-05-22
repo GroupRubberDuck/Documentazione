@@ -1,0 +1,16 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class DeviceForm <<Component>> {
+  - fields: Map<String, String | Number | Boolean>
+  - errors: Map<String, String | null>
+  - fieldComponents: FormField[]
+  
+  + DeviceForm(fields: Map<String, String | Number | Boolean>, errors: Map<String, String | null>)
+}
+@enduml

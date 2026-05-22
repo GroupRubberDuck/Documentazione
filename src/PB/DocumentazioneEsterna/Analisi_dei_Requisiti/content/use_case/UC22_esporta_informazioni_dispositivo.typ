@@ -42,7 +42,7 @@
     ],
     
     pre-condizioni:[
-        - L'utente sta visualizzando la dashboard del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dashboard dispositivo")
+        - L'utente sta visualizzando il dettaglio del dispositivo #sym.arrow #use-case-label(nome-etichetta: "Visualizza dati dispositivo")
     ],
     
     post-condizioni:[

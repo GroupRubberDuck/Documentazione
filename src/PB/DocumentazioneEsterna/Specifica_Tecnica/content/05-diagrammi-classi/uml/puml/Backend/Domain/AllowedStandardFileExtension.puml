@@ -1,0 +1,7 @@
+@startuml AllowedStandardFileExtension
+
+enum AllowedStandardFileExtension <<enum>> {
+    XML
+    JSON
+}
+@enduml

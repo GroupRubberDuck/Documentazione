@@ -1,0 +1,6 @@
+@startuml SaveEvaluationSessionService
+skinparam classAttributeIconSize 0
+class SaveEvaluationSessionService {
+        + save(command: SaveEvaluationSessionCommand): void
+    }
+@enduml

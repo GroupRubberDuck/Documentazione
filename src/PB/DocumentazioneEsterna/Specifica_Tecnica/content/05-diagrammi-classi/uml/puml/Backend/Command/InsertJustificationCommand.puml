@@ -1,0 +1,9 @@
+@startuml InsertJustificationCommand
+skinparam classAttributeIconSize 0
+  class InsertJustificationCommand {
+        + session_id: String
+        + asset_id: String
+        + requirement_id: String
+        + justification: String
+    }
+@enduml

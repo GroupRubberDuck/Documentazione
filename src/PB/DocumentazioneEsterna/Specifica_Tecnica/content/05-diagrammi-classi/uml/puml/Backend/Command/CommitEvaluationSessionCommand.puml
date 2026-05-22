@@ -1,0 +1,7 @@
+@startuml CommitEvaluationSessionCommand
+skinparam classAttributeIconSize 0
+ 
+ class CommitEvaluationSessionCommand {
+        + session_id: String
+    }
+@enduml

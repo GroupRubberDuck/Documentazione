@@ -1,0 +1,11 @@
+@startuml api-client
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+class EvaluationApiClient{
+        - baseUrl:String
+        + saveAnswer(answer:bool, device_id:String, asset_id:String, requirement_id:String,node_id:String):Promise<JSON>
+        + fetchRequirementEvaluationState(device_id:String, asset_id:String, requirement_id:String):Promise<JSON>
+}
+
+
+@enduml

@@ -14,8 +14,8 @@ Secondo lo *standard ISO/IEC 12207*, i principali processi primari sono:
 
 == *Processo di fornitura* <fornitura>
 
-#include "01-fornitura.typ"
+#include "01-fornitura/01-fornitura.typ"
 
 == *Processo di sviluppo* <sviluppo_primario>
 
-#include "02-sviluppo.typ"
+#include "02-sviluppo/_index.typ"

@@ -1,0 +1,7 @@
+@startuml UpdateAssetService
+skinparam classAttributeIconSize 0
+class UpdateAssetService {
+    + update_asset(asset: UpdateAssetCommand): void
+}
+
+@enduml

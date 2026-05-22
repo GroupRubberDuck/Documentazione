@@ -1,0 +1,195 @@
+@startuml calsse_asset
+skinparam linetype ortho
+<<<<<<< HEAD
+=======
+skinparam nodesep 120
+skinparam ranksep 120
+>>>>>>> 01595f06 (Feat: aggiornamento diagrammi con ballsocket)
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+<<<<<<< HEAD
+package "Business Logic" {
+
+  package "Logica di Dominio" {
+
+    class Session {
+      - session_id: string
+      - session_type: SessionType
+      - report: Report
+      + get_report(): Report
+    }
+
+    class Report {
+      - device: Device
+      - model: Model
+      + answer_node(node_code: string, answer: bool): void
+      + add_justification(asset_id: string, requirement_code: string, text: string): void
+      + add_asset(name: string, asset_type: AssetType, description: string): void
+      + update_asset(asset_id: string, name: string, asset_type: AssetType, description: string): void
+      + remove_asset(asset_id: string): void
+      + get_all_assets(): list[Asset]
+    }
+
+    class Device <<Aggregate Root>> {
+    }
+
+    class Model {
+    }
+
+    enum SessionType <<enum>> {
+      VALUTAZIONE
+      EDITING_MODELLO
+    }
+  }
+
+  package "Logica Applicativa" {
+
+
+    class AssetSessionService <<Application Service>> {
+      - session_cache: SessionCachePort
+      + __init__(session_cache: SessionCachePort)
+      + add_asset(session_id: string, dto: CreaAssetDTO): bool
+      + update_asset(session_id: string, asset_id: string, dto: ModificaAssetDTO): bool
+      + delete_asset(session_id: string, asset_id: string): void
+      + get_lista_asset(session_id: string): list[AssetSummaryDTO]
+      + get_dettaglio_asset(session_id: string, asset_id: string): AssetDetailDTO
+    }
+  }
+
+  package "Inbound Ports" {
+
+
+
+    interface AssetSessionPort <<interface>> {
+      + add_asset(session_id: string, dto: CreaAssetDTO): bool
+      + update_asset(session_id: string, asset_id: string, dto: ModificaAssetDTO): bool
+      + delete_asset(session_id: string, asset_id: string): void
+      + get_lista_asset(session_id: string): list[AssetSummaryDTO]
+      + get_dettaglio_asset(session_id: string, asset_id: string): AssetDetailDTO
+    }
+  }
+
+  package "Outbound Ports" {
+    interface SessionCachePort <<interface>> {
+      + save_session(session: Session): void
+      + get_session(session_id: string): Session
+      + delete_session(session_id: string): void
+      + has_active_session(): bool
+    }
+
+
+  }
+}
+
+package "Inbound Adapter" {
+
+
+
+  class FlaskAssetSessionRequestHandler <<Flask Blueprint>> {
+    - asset_session_port: AssetSessionPort
+    + __init__(asset_session_port: AssetSessionPort)
+    + add_asset(session_id: string): Response
+    + update_asset(session_id: string, asset_id: string): Response
+    + delete_asset(session_id: string, asset_id: string): Response
+    + get_lista_asset(session_id: string): Response
+    + get_dettaglio_asset(session_id: string, asset_id: string): Response
+  }
+
+  class Request <<Flask>> {
+  }
+
+  note right of Request
+    Oggetto globale di Flask.
+    Accessibile tramite import
+    nei metodi dei request handler
+    per estrarre i dati della
+    richiesta HTTP corrente.
+  end note
+}
+
+package "Outbound Adapter" {
+  class InMemorySessionCache {
+    - sessions: dictionary[string:Session]
+    + save_session(session: Session): void
+    + get_session(session_id: string): Session
+    + delete_session(session_id: string): void
+    + has_active_session(): bool
+  }
+}
+
+' --- Relazioni ---
+
+' Inbound Adapter -> Ports
+FlaskAssetSessionRequestHandler --> AssetSessionPort : " usa"
+FlaskAssetSessionRequestHandler ..> Request
+
+' Inbound Ports -> Services
+AssetSessionPort <|.. AssetSessionService
+
+' Services -> Outbound Ports
+AssetSessionService --> SessionCachePort
+
+' Service -> Domain
+
+AssetSessionService ..> Report : "modifica"
+
+' Domain interno
+Session o-- Report
+Report o-- Device
+Report o-- Model
+
+' Outbound Adapter -> Port
+SessionCachePort <|.. InMemorySessionCache
+
+=======
+package "Inbound Adapter" {
+    class AssetController <<Flask Blueprint>> {
+        +getListaAsset(device_id: String, req: Request): Response
+        +creaAsset(device_id: String, req: Request): Response
+        +getDettaglioAsset(device_id: String, asset_id: String): Response
+        +modificaAsset(device_id: String, asset_id: String, req: Request): Response
+        +eliminaAsset(device_id: String, asset_id: String): Response
+    }
+}
+
+package "Application Core" {
+    
+    () "InterfaceAssetUseCase" as InboundPort
+
+    class AssetService <<Application Service>> {
+        +getListaAsset(device_id: String): List<Asset>
+        +creaAsset(device_id: String, dto: CreaAssetDTO): Asset
+        +getDettaglioAsset(device_id: String, asset_id: String): Asset
+        +modificaAsset(device_id: String, asset_id: String, dto: ModificaAssetDTO): Asset
+        +eliminaAsset(device_id: String, asset_id: String): void
+        -validaRegoleBusiness(a: Asset): void
+    }
+
+    class Asset <<Entity>> {    }
+
+    InboundPort -down- AssetService : "fornisce"
+    AssetService -down-( OutboundPort : "richiede"
+    AssetService ..> Asset : "crea e modifica"
+}
+
+package "Outbound Adapter" {
+    class MongoAssetAdapter <<Mongo Repository>> {
+        -collection: pymongo.Collection
+        +save(device_id: String, a: Asset): void
+        +findById(device_id: String, asset_id: String): Asset
+        +findAllByDevice(device_id: String): List<Asset>
+        +deleteById(device_id: String, asset_id: String): void
+    }
+}
+
+
+AssetController -( InboundPort : "utilizza"
+
+OutboundPort -down- MongoAssetAdapter : "implementa"
+
+>>>>>>> 01595f06 (Feat: aggiornamento diagrammi con ballsocket)
+@enduml

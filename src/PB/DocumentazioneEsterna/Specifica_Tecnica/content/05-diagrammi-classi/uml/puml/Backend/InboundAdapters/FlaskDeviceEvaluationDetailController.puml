@@ -1,0 +1,6 @@
+@startuml FlaskDeviceEvaluationDetailController
+skinparam ClassAttributeIconSize 0
+
+class FlaskDeviceEvaluationDetailController {
+    + get_device_evaluation_detail(req: Request): Response
+}

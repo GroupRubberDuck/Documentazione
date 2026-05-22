@@ -1,0 +1,34 @@
+@startuml CreateDevice
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/FlaskWriteDeviceController.puml
+}
+
+package "Application Core" {
+    () "CreateDeviceUseCase"
+
+    !include Command/CreateDeviceCommand.puml
+
+    !include ApplicationServices/CreateDeviceService.puml
+    !include Domain/Device.puml
+    () "RegisterDevicePort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+CreateDeviceService - CreateDeviceUseCase
+
+CreateDeviceCommand . CreateDeviceService: legge
+
+CreateDeviceService --> RegisterDevicePort: usa
+
+FlaskWriteDeviceController --> CreateDeviceUseCase: usa
+MongoDeviceAdapter - RegisterDevicePort
+
+@enduml

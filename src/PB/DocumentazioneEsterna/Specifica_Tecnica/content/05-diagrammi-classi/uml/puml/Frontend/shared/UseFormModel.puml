@@ -1,0 +1,25 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class useFormModel <<composable>> {
+  - fieldDefinitions : Map<String, FieldDefinition>
+  + fields : Map<String, String | Number | Boolean>
+  + errors : Map<String, String | null>
+  + isValid : Boolean
+  --
+  + useFormModel(fieldDefinitions : Map<String, FieldDefinition>)
+  + validate() : Boolean
+  + validateField(name : String) : Boolean
+  + setServerErrors(serverErrors : Map<String, String>) : void
+  + reset() : void
+}
+
+' useFormModel ..> FieldDefinition : <<use>>
+' FieldDefinition ..> ValidationRule : <<use>>
+
+@enduml

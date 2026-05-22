@@ -43,8 +43,8 @@ Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro 
 - Standard ISO/IEC/IEEE 12207:1995 \ https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf \
   _Ultima consultazione: 10 gennaio 2026_
 
-- Glossario, versione 1.0.0  \ https://grouprubberduck.github.io/Documentazione/glossario.html \
-  _Ultima consultazione: 11 marzo 2026_
+- Glossario, versione 2.0.0  \ https://grouprubberduck.github.io/Documentazione/glossario.html \
+  _Ultima consultazione: 20 marzo 2026_
 
 
 

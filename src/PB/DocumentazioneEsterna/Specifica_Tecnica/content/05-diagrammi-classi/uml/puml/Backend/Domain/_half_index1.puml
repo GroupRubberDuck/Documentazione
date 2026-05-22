@@ -1,0 +1,24 @@
+@startuml Modello_di_Dominio_1
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "1. Evaluation Object" {
+    !include Device.puml
+    !include AssetAnagraphic.puml
+    !include AssetType.puml
+    !include Asset.puml
+    !include AssetProperties.puml
+    !include AssetEvidence.puml
+}
+
+package "2. Compliance Standard" {
+    !include ComplianceStandard.puml
+    !include DecisionNode.puml
+    !include Node.puml
+    !include LeafNode.puml
+    !include DecisionTree.puml
+    !include Requirement.puml
+    !include StandardVerdict.puml
+}
+
+@enduml

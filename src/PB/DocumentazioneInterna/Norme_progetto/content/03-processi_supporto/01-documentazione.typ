@@ -423,6 +423,68 @@ Per *favorire la tracciabilità e la consultazione immediata*, all’interno dei
 
 ]
 
+#figure(kind:"documenti",supplement: "Documento", caption:"Specifica Tecnica")[
+#box(width: 100%,stroke:1pt,inset: 1em)[
+
+==== Specifica Tecnica
+
+#align(left)[
+
+La Specifica Tecnica ha il compito di descrivere in modo completo, chiaro e dettagliato l'architettura software e le scelte implementative del sistema.
+
+Il documento definisce i principali componenti, i moduli, le interfacce e la logica applicativa, garantendo la tracciabilità rispetto all'analisi dei requisiti e la conformità ai vincoli progettuali.
+Rappresenta un riferimento stabile per sviluppatori e manutentori durante tutte le fasi di implementazione del sistema.
+
+Destinatari : stakeholder interni ed esterni al progetto (BlueWind S.r.l., docenti e gruppo interno)
+
+===== Struttura principale
+Il documento comprende:
+#pad(left: 1em)[
+
+- Architettura del sistema e scomposizione in moduli;
+
+- Diagrammi delle classi e interfacce;
+
+- Dettaglio delle tecnologie e dei pattern progettuali adottati;
+
+- Verificabilità e tracciabilità con i requisiti.
+
+]
+]
+
+]
+]
+
+#figure(kind:"documenti",supplement: "Documento", caption:"Manuale Utente")[
+#box(width: 100%,stroke:1pt,inset: 1em)[
+
+==== Manuale Utente
+
+#align(left)[
+
+Il Manuale Utente ha il compito di descrivere in modo chiaro, accessibile e completo le funzionalità del sistema dal punto di vista dell'utente finale.
+
+Il documento fornisce le istruzioni per l'installazione e la configurazione iniziale, una guida passo-passo per l'utilizzo delle funzionalità principali.
+
+Rappresenta un punto di riferimento per gli utilizzatori del software, facilitando l'apprendimento e l'adozione dello strumento.
+
+Destinatari : utenti finali del sistema e stakeholder.
+
+===== Struttura principale
+Il documento comprende:
+#pad(left: 1em)[
+
+- Introduzione e panoramica delle funzionalità di base;
+
+- Requisiti di sistema e istruzioni di configurazione;
+
+- Guide operative e scenari d'uso guidati;
+
+]
+]
+
+]
+]
 
  
 

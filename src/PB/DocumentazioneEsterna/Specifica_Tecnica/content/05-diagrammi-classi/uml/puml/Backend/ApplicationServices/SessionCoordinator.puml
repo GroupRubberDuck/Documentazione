@@ -1,0 +1,8 @@
+@startuml SessionCoordinator
+skinparam classAttributeIconSize 0
+
+class SessionCoordinator <<Application Service>> {
+    + can_open_session(): bool
+}
+
+@enduml

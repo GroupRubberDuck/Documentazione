@@ -1,0 +1,18 @@
+@startuml AssetEvaluationDTO
+skinparam linetype ortho
+skinparam ClassAttributeIconSize 0
+
+class RequirementEvaluationSummaryDTO {
+    + id: String
+    + evaluation: EvaluationState
+}
+
+class AssetEvaluationDTO {
+    + name: String
+    + type: AssetType
+    + evaluation: EvaluationState
+    + description: String
+    + requirements: List<RequirementEvaluationSummaryDTO>
+}
+
+AssetEvaluationDTO *-- "0..*" RequirementEvaluationSummaryDTO

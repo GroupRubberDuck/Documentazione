@@ -1,0 +1,87 @@
+@startuml compliance-standard-node-editor
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 130
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardEditorController <<Flask Blueprint>> {
+        - node_editor_use_case: NodeEditorUseCase
+        
+        ' Metodi filtrati per il dominio "Nodi"
+        + add_node(session_id: String, parent_id: String, node_data: dict): Response
+        + update_node(session_id: String, node_id: String, data: dict): Response
+        + remove_node(session_id: String, node_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface NodeEditorUseCase <<Inbound Port>> {
+        + add_node(session_id: String, parent_id: String, node_data: dict): void
+        + update_node(session_id: String, node_id: String, data: dict): void
+        + remove_node(session_id: String, node_id: String): void
+    }
+
+    interface EditingSessionCachePort <<Outbound Port>> {
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    class NodeEditorService <<Application Service>> {
+        - cache: EditingSessionCachePort
+        - session_handler: SessionHandler
+        
+        + add_node(session_id: String, parent_id: String, node_data: dict): void
+        + update_node(session_id: String, node_id: String, data: dict): void
+        + remove_node(session_id: String, node_id: String): void
+    }
+
+    !include Dominio/ComplianceStandard.puml
+    !include Dominio/SessionHandler.puml
+
+    NodeEditorUseCase <|.. NodeEditorService : "implementa"
+
+    NodeEditorService -down-( EditingSessionCachePort : "richiede"
+
+    NodeEditorService ..> SessionHandler : "valida regole"
+    NodeEditorService ..> ComplianceStandard : "manipola nodi"
+}
+
+package "Outbound Adapter" {
+    class InMemoryStandardCache <<Cache Adapter>> {
+        - storage: dict[String: ComplianceStandard]
+        
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+}
+
+StandardEditorController -( NodeEditorUseCase : "usa"
+
+EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
+
+@enduml
+
+' UC47,48: Aggiungi nodo figlio (figlio yes/no) / nodo (decisione, foglia)
+'     1. client chiama endpoint adapter passando session_id, parent_id, node_data e il controller ci invoca add_node(...)
+'     2. NodeEditorService riceve la richiesta, estrae ComplianceStandard dalla sessione con EditingSessionCachePort.get_standard
+'     3. il service delega al dominio ComplianceStandard la creazione e validazione
+'     4. se tutto ok, il sistema crea
+'     5. il service salva l'albero con EditingSessionCachePort.save_standard
+
+' UC49: Modifica nodo
+'     1. client invia dati da aggiornare al controller che chiama update_node(session_id, node_id, data)
+'     2. viene invocato il service NodeEditorService che recupera il modello dalla sessione
+'     3. il service delega al dominio ComplianceStandard validazione e modifica
+'     4. se tutto ok, il sistema modifica
+'     5. il service salva con EditingSessionCachePort.save_standardEditingSessionCachePort.save_standard
+
+' UC50,51: rimuovi nodo
+'     1. client chiama endpoint adapter che invoca remove_node(session_id, node_id)
+'     2. NodeEditorService riceve il comando e delega rimozione al dominio ComplianceStandard
+'     3. ComplianceStandard valida se rimozione è possibile
+'     4. se tutto ok, il sistema rimuove
+'     5. il service salva l'albero con EditingSessionCachePort.save_standardEditingSessionCachePort.save_standard

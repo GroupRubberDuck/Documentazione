@@ -1,0 +1,7 @@
+@startuml ExportStandardService
+
+class ExportStandardService <<Application Service>> {
+    + export(query: ExportStandardQuery): bytes
+}
+
+@enduml

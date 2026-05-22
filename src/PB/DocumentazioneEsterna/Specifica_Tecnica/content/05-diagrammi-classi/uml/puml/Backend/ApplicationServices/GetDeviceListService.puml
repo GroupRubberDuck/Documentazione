@@ -1,0 +1,7 @@
+@startuml GetDeviceListService
+skinparam classAttributeIconSize 0
+class GetDeviceListService <<Application Service>> {
+    + get_list(): List<DeviceSummary>
+}
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml ValutazioneGiustificazione
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Componente Vue" {
+    !include ../decision-tree/components/JustificationForm.puml
+}
+
+package "Pinia Store" {
+    !include ../decision-tree/store/DecisionTreeStore.puml
+}
+
+package "API" {
+    !include ../decision-tree/api/EvaluationAPIClient.puml
+}
+
+JustificationForm ..> DecisionTreeStore   : chiama saveJustification()
+DecisionTreeStore ..> EvaluationAPIClient : saveJustification()
+
+@enduml

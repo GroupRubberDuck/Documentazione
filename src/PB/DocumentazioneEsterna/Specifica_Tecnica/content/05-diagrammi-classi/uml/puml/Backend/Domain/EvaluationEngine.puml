@@ -1,0 +1,11 @@
+@startuml EvaluationEngine
+skinparam ClassAttributeIconSize 0
+class EvaluationEngine {
+ 
+    + evaluate(device: Device, standard: ComplianceStandard): DeviceEvaluationResult
+    - evaluate_asset(asset: Asset, standard: ComplianceStandard): AssetEvaluationResult
+    - resolve(requirement_id: String, standard: ComplianceStandard, asset: Asset, cache: Map<String, RequirementEvaluationResult>): RequirementEvaluationResult
+    - aggregate_evaluation_states(states: List<EvaluationState>): EvaluationState
+}
+
+@enduml

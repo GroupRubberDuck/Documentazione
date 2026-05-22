@@ -1,0 +1,41 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam linetype ortho
+
+package "Inbound Adapter" {
+    class QueryDeviceController <<Flask Blueprint>> {
+        + get_device_detail(req: Request): Response
+    }
+}
+
+package "Application Core" {
+
+    () "GetDeviceDetailUseCase"
+
+    class GetDeviceDetailService <<Application Service>> {
+        + get_device(device_id: String): Device
+    }
+
+    () "FindDevicePort"
+
+    GetDeviceDetailService - GetDeviceDetailUseCase
+
+    GetDeviceDetailService --( FindDevicePort
+}
+
+package "Outbound Adapter" {
+    class MongoDeviceAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        + save(device: Device): void
+        + register(device: Device): void
+        + delete(device_id: String): void
+        + find(device_id: String): Device
+    }
+}
+
+QueryDeviceController --( GetDeviceDetailUseCase: usa
+MongoDeviceAdapter - FindDevicePort
+
+@enduml

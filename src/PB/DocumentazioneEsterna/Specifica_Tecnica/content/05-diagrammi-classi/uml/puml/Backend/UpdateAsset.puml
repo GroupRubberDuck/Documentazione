@@ -1,0 +1,40 @@
+@startuml UpdateAsset
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/FlaskWriteAssetController.puml
+}
+
+package "Application Core" {
+
+    !include Command/UpdateAssetCommand.puml
+
+    () "UpdateAssetUseCase"
+    !include ApplicationServices/UpdateAssetService.puml
+    !include Domain/Asset.puml
+
+    () "SaveEvaluationSessionPort"
+    () "GetEvaluationSessionPort"
+
+    UpdateAssetService .left.> UpdateAssetCommand: legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+
+UpdateAssetService - UpdateAssetUseCase
+
+UpdateAssetService --> SaveEvaluationSessionPort : usa
+UpdateAssetService --> GetEvaluationSessionPort : usa
+
+SaveEvaluationSessionPort -- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -- InMemoryEvaluationSessionCache
+
+FlaskWriteAssetController --> UpdateAssetUseCase : usa
+
+@enduml

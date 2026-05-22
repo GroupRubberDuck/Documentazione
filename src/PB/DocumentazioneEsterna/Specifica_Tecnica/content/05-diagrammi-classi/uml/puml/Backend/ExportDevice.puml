@@ -1,0 +1,96 @@
+@startuml ExportDevice
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packagePadding 20
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskExportDeviceController.puml
+}
+
+package "Application Core" {
+
+    enum AllowedDeviceFileExtension <<enum>> {
+        XML
+        JSON
+        CSV
+    }
+
+    class ExportDeviceCommand {
+        + device_id: String
+        + extension: AllowedDeviceFileExtension
+    }
+
+    class ExportedFile {
+        + content: IO[bytes]
+        + filename: String
+        + media_type: String
+    }
+
+    () "ExportDeviceUseCase" as ExportDeviceUseCase
+
+    !include ApplicationServices/ExportDeviceService.puml
+
+    () "FindDevicePort" as FindDevicePort
+    () "FileDeviceExporterFactoryPort" as FileDeviceExporterFactoryPort
+    () "FileDeviceExporterPort" as FileDeviceExporterPort
+
+    FileDeviceExporterFactoryPort -[hidden]right- FileDeviceExporterPort
+
+    ExportDeviceUseCase -down- ExportDeviceService
+    AllowedDeviceFileExtension -[hidden]left- ExportDeviceUseCase
+    ExportDeviceCommand -[hidden]right- ExportDeviceService
+    ExportDeviceService .left.> ExportDeviceCommand : legge
+    ExportDeviceService .down.> ExportedFile : popola
+    ExportDeviceCommand ..> AllowedDeviceFileExtension : usa
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/ConcreteFileDeviceExporterFactory.puml
+    !include OutboundAdapters/FileDeviceExporter.puml
+
+     class CSVFileDeviceExporter {
+        - output: StringIO
+        - writer: Any
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+    class JSONFileDeviceExporter {
+        - data: Dict
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+    class XMLFileDeviceExporter {
+        - root: ET.Element
+        # prepare_structure(device: Device): void
+        # write_data(device: Device): void
+        # finalize_output(): bytes
+    }
+
+
+    FileDeviceExporter <|-down- JSONFileDeviceExporter
+    FileDeviceExporter <|-down- XMLFileDeviceExporter
+    FileDeviceExporter <|-down- CSVFileDeviceExporter
+
+    ConcreteFileDeviceExporterFactory ..> JSONFileDeviceExporter : crea
+    ConcreteFileDeviceExporterFactory ..> XMLFileDeviceExporter : crea
+    ConcreteFileDeviceExporterFactory ..> CSVFileDeviceExporter : crea
+}
+
+FlaskExportDeviceController -down-> ExportDeviceUseCase : usa
+
+ExportDeviceService -right-> FindDevicePort : usa
+ExportDeviceService -down-> FileDeviceExporterFactoryPort : usa
+ExportDeviceService -down---> FileDeviceExporterPort : usa
+
+MongoDeviceAdapter -left- FindDevicePort
+ConcreteFileDeviceExporterFactory -left- FileDeviceExporterFactoryPort
+FileDeviceExporter -left- FileDeviceExporterPort
+
+@enduml

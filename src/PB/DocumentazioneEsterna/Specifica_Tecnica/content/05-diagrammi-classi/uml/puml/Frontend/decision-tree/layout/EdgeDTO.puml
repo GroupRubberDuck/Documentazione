@@ -1,0 +1,19 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class EdgeDTO << (T,#87CEFA) typedef >> {
+    + id: string
+    + sourceId: string
+    + targetId: string
+    + startX: number
+    + startY: number
+    + endX: number
+    + endY: number
+    + label: string
+}
+@enduml

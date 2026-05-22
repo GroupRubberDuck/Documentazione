@@ -1,0 +1,38 @@
+@startuml Modello_di_Dominio_2
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+package "3. Evaluation Engine" {
+    !include EvaluationEngine.puml
+    !include EvaluationState.puml
+    
+}
+
+package "4. Evaluation Output" {
+    !include DeviceEvaluationResult.puml
+    !include AssetEvaluationResult.puml
+    !include RequirementEvaluationResult.puml
+
+    !include DeviceEvaluationDetail.puml
+    !include AssetEvaluationDetail.puml
+    !include RequirementEvaluationDetail.puml
+    !include NodeDetail.puml
+}
+
+package "5. Session" {
+    !include SessionHandler.puml
+    !include EvaluationSession.puml
+}
+
+package "6. Utils" {
+    !include ExportedFile.puml
+    !include DeviceSummary.puml
+}
+
+
+EvaluationEngine --> DeviceEvaluationResult
+
+"5. Session" -[hidden]down- "6. Utils"
+
+
+@enduml

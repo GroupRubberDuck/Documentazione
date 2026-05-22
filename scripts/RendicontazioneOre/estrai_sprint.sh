@@ -52,7 +52,7 @@ extract_commits() {
         esac
 
         # ESTRAZIONE RIGHE SOLO PER FILE SPECIFICI
-        stats=$(git -C "$REPO_PATH" show --shortstat --format="" $fullhash -- "*.typ" "*.py" "*.html" "*.sh" "*.md")
+        stats=$(git -C "$REPO_PATH" show --shortstat --format="" $fullhash -- "*.typ" "*.py" "*.html" "*.sh" "*.md" "*.puml")
 
         aggiunte=$(echo "$stats" | grep -Eo '[0-9]+ insertion' | grep -Eo '[0-9]+')
         tolte=$(echo "$stats" | grep -Eo '[0-9]+ deletion' | grep -Eo '[0-9]+')

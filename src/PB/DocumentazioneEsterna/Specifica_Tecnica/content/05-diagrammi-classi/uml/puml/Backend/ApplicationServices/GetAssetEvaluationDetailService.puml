@@ -1,0 +1,7 @@
+@startuml GetAssetEvaluationDetailService
+skinparam classAttributeIconSize 0
+class GetAssetEvaluationDetailService <<Application Service>> {
+    + get_asset(command: GetAssetEvaluationDetailCommand): AssetEvaluationDetail
+}
+
+@enduml

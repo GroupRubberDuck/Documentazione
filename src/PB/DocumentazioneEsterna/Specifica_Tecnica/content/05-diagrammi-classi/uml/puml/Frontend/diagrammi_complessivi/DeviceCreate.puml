@@ -1,0 +1,34 @@
+@startuml DeviceCreate
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Entry Point" {
+    note "main.js legge attributi data-*\ndal DOM e monta DeviceCreateWidget" as EntryNote
+}
+
+package "Smart Widget" {
+    !include ../widget/DeviceCreateWidget.puml
+}
+
+package "Shared" {
+    !include ../shared/UseFormModel.puml
+    !include ../shared/DeviceFormFields.puml
+}
+
+package "Componenti Dumb" {
+    !include ../componenti_base/DeviceForm.puml
+    !include ../componenti_base/asyncButton.puml
+}
+
+DeviceCreateWidget ..> useFormModel       : usa
+DeviceCreateWidget *-- DeviceForm         : compone
+DeviceCreateWidget *-- AsyncButton        : compone
+
+useFormModel ..> DeviceFormFields : riceve
+
+@enduml
