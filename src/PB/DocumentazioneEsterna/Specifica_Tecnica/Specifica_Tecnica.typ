@@ -23,8 +23,8 @@
 #let doc = "Piano di Progetto"
 
 #let currentVersion = (
-  major: 0,
-  minor: 12,
+  major: 1,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -259,7 +259,17 @@
       [#persone.ALDO],
       [#persone.DL],
       [Scrittura sezione MVVM]
+<<<<<<< HEAD
 >>>>>>> 5ad3b238 (Feat: scritta sezione MVVM in st)
+=======
+    ),
+    (
+      [1.0.0],
+      [2026-05-22],
+      [#persone.ALDO],
+      [#persone.ALDO],
+      [Approvazione]
+>>>>>>> 39a467fb (approvazione)
     )
 >>>>>>> 202d7847 (Fix: riviste classi di session)
 
