@@ -40,10 +40,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.ALDO, persone.DL,persone.ANA, persone.FILIPPO, persone.FELIX.replace("\n",""), persone.DT),
-    verificatori: (persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
+    verificatori: (persone.ALDO, persone.DL,persone.FILIPPO,persone.FELIX.replace("\n","")),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
