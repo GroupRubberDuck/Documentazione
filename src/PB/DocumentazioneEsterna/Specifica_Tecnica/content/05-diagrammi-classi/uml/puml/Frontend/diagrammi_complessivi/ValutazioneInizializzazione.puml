@@ -1,0 +1,45 @@
+@startuml ValutazioneInizializzazione
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Entry Point" {
+    note "main.js legge data-* dal DOM,\ncrea Pinia e monta\nRequirementEvaluationWidget" as EntryNote
+}
+
+package "Smart Widget" {
+    class RequirementEvaluationWidget <<component>> {
+        + treeData: Object
+        + savedAnswers: Object
+        + evaluationState: String
+        + justification: String
+        + urls: Object
+    }
+}
+
+package "Pinia Store" {
+    !include ../decision-tree/store/DecisionTreeStore.puml
+}
+
+package "Domain Model" {
+    !include ../decision-tree/models/TreeStructure.puml
+}
+
+package "Engine" {
+    !include ../decision-tree/engine/EvaluationEngine.puml
+}
+
+package "Layout" {
+    !include ../decision-tree/layout/D3LayoutEngine.puml
+}
+
+RequirementEvaluationWidget ..> DecisionTreeStore : chiama init()
+DecisionTreeStore ..> TreeStructure              : crea
+DecisionTreeStore ..> EvaluationEngine           : crea
+DecisionTreeStore ..> D3LayoutEngine             : crea
+
+@enduml
