@@ -1,0 +1,24 @@
+@startuml Valutazione-RenderingCanvas
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Pinia Store" {
+    !include ../decision-tree/store/DecisionTreeStore.puml
+}
+
+package "Componenti Vue" {
+    !include ../decision-tree/components/TreeCanvas.puml
+    !include ../decision-tree/components/UiDecisionNode.puml
+    !include ../decision-tree/components/UiLeafNode.puml
+}
+
+DecisionTreeStore --> TreeCanvas    : layoutResult\nactivePath
+TreeCanvas        *-- UiDecisionNode : renderizza
+TreeCanvas        *-- UiLeafNode     : renderizza
+
+@enduml
