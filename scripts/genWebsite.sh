@@ -34,6 +34,7 @@ replaceInFile "output/PB/DocumentazioneEsterna/Manuale_Utente/" "PB_MU"
 replaceInFile "output/PB/DocumentazioneEsterna/Piano_di_Progetto/" "PB_PDP"
 replaceInFile "output/PB/DocumentazioneEsterna/Piano_di_qualifica/" "PB_PDQ"
 replaceInFile "output/PB/DocumentazioneInterna/Norme_progetto/" "PB_NDP"
+replaceInFile "output/PB/DocumentazioneEsterna/Specifica_Tecnica/" "PB_ST"
 
 # RTB
 replaceInFile "output/RTB/DocumentazioneEsterna/VerbaliEsterni/" "RTB_VERBALI_ESTERNI"
