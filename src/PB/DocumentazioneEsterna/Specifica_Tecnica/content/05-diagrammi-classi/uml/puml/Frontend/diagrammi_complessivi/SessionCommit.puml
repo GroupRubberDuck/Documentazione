@@ -1,4 +1,4 @@
-@startuml SessionCommitWidget
+@startuml SessionCommit
 
 skinparam linetype ortho
 skinparam nodesep 100

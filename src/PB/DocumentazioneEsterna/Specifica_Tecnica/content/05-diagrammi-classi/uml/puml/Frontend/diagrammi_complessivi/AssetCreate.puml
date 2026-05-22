@@ -1,4 +1,4 @@
-@startuml AssetCreateWidget
+@startuml AssetCreate
 
 skinparam linetype ortho
 skinparam nodesep 100
@@ -26,7 +26,6 @@ package "Componenti Dumb" {
 }
 
 AssetCreateWidget ..> useFormModel     : usa
-AssetCreateWidget ..> AssetFormFields  : <<use>>
 AssetCreateWidget *-- AssetForm        : compone
 AssetCreateWidget *-- AsyncButton      : compone
 

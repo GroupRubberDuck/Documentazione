@@ -352,7 +352,16 @@ Espone unicamente il costruttore:
 
 === Widget
 
-==== AssetCreateWidget
+==== AssetCreate
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/AssetCreate.png", width: 130%),
+  caption: [AssetCreate],
+) <fig-asset-create>
+
+Il diagramma illustra l'architettura del widget dedicato alla creazione di un nuovo asset, che segue il medesimo pattern del widget dispositivo adattando le definizioni di campo e il componente di presentazione al dominio degli asset.
+
+
+===== AssetCreateWidget
 #figure(caption: "Widget - AssetCreateWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetCreateWidget.png",
@@ -376,8 +385,16 @@ Rappresenta un'isola applicativa responsabile di orchestrare la creazione di un 
 - `- createAsset(): Promise<JSON>` : Metodo asincrono invocato dal bottone di salvataggio. Esegue la validazione invocando il composable, compone il payload JSON e gestisce la chiamata di rete, catturando e smistando eventuali errori server-side, ritorna un oggetto json contenente la risposta.
 - `- onSuccess(data: JSON): void` : Callback eseguita al completamento positivo della chiamata.
 
+==== AssetDelete
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/AssetDelete.png", width: 120%),
+  caption: [AssetDelete],
+) <fig-asset-delete>
 
-==== AssetDeleteWidget
+Il diagramma illustra l'architettura del widget dedicato all'eliminazione di un asset, che interpone un modale di conferma prima di eseguire la chiamata di cancellazione e gestisce il reindirizzamento al completamento.
+
+
+===== AssetDeleteWidget
 #figure(caption: "Widget - AssetDeleteWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetDeleteWidget.png",
@@ -409,6 +426,14 @@ Rappresenta un'isola applicativa responsabile di chiedere conferma dell'eliminaz
 
 
 ==== AssetEditWidget
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/AssetEdit.png", width: 130%),
+  caption: [AssetEdit],
+) <fig-asset-edit>
+
+Il diagramma illustra l'architettura del widget dedicato alla modifica di un asset esistente, che precarica i valori iniziali nel form condiviso e orchestra la chiamata di aggiornamento verso il backend.
+
+===== AssetEditWidget
 #figure(caption: "Widget - AssetEditWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/AssetEditWidget.png",
@@ -448,7 +473,16 @@ Rappresenta l'isola applicativa che l'utente usa per modificare i dati di un ass
 - `- onSuccess()`: Callback eseguita al completamento positivo della chiamata.
 
 
-==== DeviceCreateWidget
+==== DeviceCreate
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/DeviceCreate.png", width: 130%),
+  caption: [DeviceCreate],
+) <fig-device-create>
+
+Il diagramma illustra l'architettura del widget dedicato alla creazione di un nuovo dispositivo, mostrando come il componente smart orchestri il composable di gestione form, le definizioni di campo e i componenti dumb di presentazione e conferma.
+
+
+===== DeviceCreateWidget
 #figure(caption: "Widget - DeviceCreateWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceCreateWidget.png",
@@ -482,8 +516,15 @@ Rappresenta il widget per la creazione di un nuovo dispositivo.
 - `-onSuccess()`: Callback eseguita al completamento positivo della chiamata.
 
 
+==== DeviceEdit
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/DeviceEdit.png", width: 130%),
+  caption: [DeviceEdit],
+) <fig-device-edit>
 
-==== DeviceEditWidget
+Il diagramma illustra l'architettura del widget dedicato alla modifica di un dispositivo esistente, che inizializza il form con i valori correnti ricevuti dal server e delega la validazione e il rendering agli stessi layer condivisi del widget di creazione.
+
+===== DeviceEditWidget
 #figure(caption: "Widget - DeviceEditWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceEditWidget.png",
@@ -524,8 +565,6 @@ Costruttore che riceve gli url come dipendenze dall'esterno.
 - `- onSuccess()`: Callback eseguita al completamento positivo della chiamata.
 
 
-
-
 ==== DeviceExportWidget
 #figure(caption: "Widget - DeviceExportWidget")[
   #image(
@@ -561,9 +600,17 @@ Rappresenta il widget che permette di esportare il dispositivo come file e di se
 - `- downloadFile(): Promise<JSON>`: Esegue la chiamata API per scaricare il file.
 
 
+==== DeviceImport
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/DeviceImport.png", width: 130%),
+  caption: [DeviceImport],
+) <fig-device-import>
+Il diagramma illustra l'architettura del widget dedicato all'importazione di un dispositivo da file, che compone un modale contenente un'area di drag-and-drop per la selezione del file e un pulsante asincrono per l'invio al backend.
 
 
-==== DeviceImportWidget
+
+
+===== DeviceImportWidget
 #figure(caption: "Widget - DeviceImportWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/DeviceImportWidget.png",
@@ -601,7 +648,18 @@ Rappresenta un widget usato durante l'importazioni delle informazioni legate ad 
 - `- uploadFile()`: Funzione che esegue la chiamata API di importazione.
 
 - `- onSuccess()`: Callback eseguita al completamento positivo della chiamata.
-==== SessionCloseWidget
+
+
+==== SessionClose
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/SessionClose.png", width: 100%),
+  caption: [SessionClose],
+) <fig-session-close>
+Il diagramma illustra l'architettura del widget dedicato alla chiusura di una sessione di valutazione, che richiede conferma esplicita tramite modale prima di eseguire la chiamata di terminazione e reindirizzare l'utente.
+
+
+
+===== SessionCloseWidget
 
 
 #figure(caption: "Widget - SessionCloseWidget")[
@@ -641,8 +699,16 @@ Rappresenta il widget che permette all'utente di chiudere una sessione di valuta
 - `- onSuccess()`: Callback eseguita al completamento positivo della chiamata.
 
 
+==== SessionCommitAndClose
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/SessionCommitAndClose.png", width: 100%),
+  caption: [SessionCommitAndClose],
+) <fig-session-commit-and-close>
+Il diagramma illustra l'architettura del widget dedicato al salvataggio e alla chiusura contestuale della sessione, che consolida le due operazioni in un'unica azione delegata al pulsante asincrono.
 
-==== SessionCommitAndCloseWidget
+
+
+===== SessionCommitAndCloseWidget
 #figure(caption: "Widget - SessionCommitAndCloseWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionCommitAndCloseWidget.png",
@@ -679,7 +745,16 @@ Rappresenta il widget che permette di salvare e chiudere la sessione.
 
 
 
-==== SessionCommitWidget
+==== SessionCommit
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/SessionCommit.png", width: 100%),
+  caption: [SessionCommit],
+) <fig-session-commit>
+Il diagramma illustra l'architettura del widget dedicato al salvataggio della sessione attiva, che al completamento positivo della chiamata mostra un messaggio temporaneo tramite il componente Toast.
+
+
+
+===== SessionCommitWidget
 #figure(caption: "Widget - SessionCommitWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionCommitWidget.png",
@@ -716,9 +791,17 @@ Rappresenta il widget che permette all'utente di salvare la session
 - `- commitSession():Promise<JSON>`:Funzione che esegue la chiamata API per il salvataggio della sessione.
 
 
+==== SessionOpen
+#figure(
+  image("../uml/png/frontend/diagrammi_complessivi/SessionOpen.png", width: 100%),
+  caption: [SessionOpen],
+) <fig-session-open>
+Il diagramma illustra l'architettura del widget dedicato all'apertura di una nuova sessione di valutazione, che delega l'esecuzione della chiamata al pulsante asincrono e gestisce la visualizzazione di eventuali errori di apertura.
 
 
-==== SessionOpenWidget
+===== SessionOpenWidget
+
+
 #figure(caption: "Widget - SessionOpenWidget")[
   #image(
     "/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/widget/SessionOpenWidget.png",
