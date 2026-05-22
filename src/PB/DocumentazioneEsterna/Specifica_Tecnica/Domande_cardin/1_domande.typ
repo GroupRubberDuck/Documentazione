@@ -144,8 +144,3 @@ In generale si preferisce mantenere i dati come raw byte o classi della libreria
 Javascript non supporta le interfacce.
 
 #upper("è") accettabile dichiarare un'interfaccia nel diagramma UML per dire che si può inserire una qualsiasi classe che implementa i metodi dichiarati dall'interfaccia
-
-
-#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/png/Diagrammi_classi/frontend/decision-tree-canvas.png")
-
-#image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/uml/png/Diagrammi_classi/frontend/domain.png")
