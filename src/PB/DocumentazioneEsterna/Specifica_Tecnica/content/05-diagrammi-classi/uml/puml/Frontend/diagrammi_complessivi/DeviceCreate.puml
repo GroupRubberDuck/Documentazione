@@ -26,7 +26,6 @@ package "Componenti Dumb" {
 }
 
 DeviceCreateWidget ..> useFormModel       : usa
-DeviceCreateWidget ..> DeviceFormFields   : <<use>>
 DeviceCreateWidget *-- DeviceForm         : compone
 DeviceCreateWidget *-- AsyncButton        : compone
 

@@ -1,4 +1,4 @@
-@startuml AssetEditWidget
+@startuml AssetEdit
 
 skinparam linetype ortho
 skinparam nodesep 100
@@ -26,7 +26,6 @@ package "Componenti Dumb" {
 }
 
 AssetEditWidget ..> useFormModel     : usa
-AssetEditWidget ..> AssetFormFields  : <<use>>
 AssetEditWidget *-- AssetForm        : compone
 AssetEditWidget *-- AsyncButton      : compone
 
