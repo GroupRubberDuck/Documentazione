@@ -16,17 +16,18 @@
   underline()[#body]
 }
 
-// ---------------------------------------------------------
-// Info del documento e Versione
-// ---------------------------------------------------------
 
-#let doc = "Piano di Progetto"
+//
+//Info del documento
+//
+#let doc = "Specifica Tecnica"
 
 #let currentVersion = (
   major: 1,
   minor: 0,
   patch: 0,
 )
+//converte dizionario in stringa
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
 #metadata(versionNumber)<versionNumber>
 
@@ -54,23 +55,23 @@
     (
       [0.0.1],
       [2026-04-08],
-      [Davide Lorenzon,\ Aldo Bettega ],
-      [-],
+      [#persone.DL],
+      [#persone.ALDO],
       [Creazione del documento],
     ),
     (
       [0.1.0],
       [2026-04-08],
-      [Aldo Bettega],
-      [-],
-      [Creazione del documento e stesura introduzione],
+      [#persone.ALDO],
+      [Felician Mario \ Necsulescu],
+      [Stesura introduzione],
     ),
     (
       [0.1.1],
       [2026-04-08],
-      [Davide Lorenzon],
-      [-],
-      [Bozza iniziale della  Tecnologie.
+      [#persone.DL],
+      [#persone.ALDO],
+      [Bozza iniziale della @tecnologie Tecnologie.
       ],
     ),
     (
@@ -114,11 +115,7 @@
       [2026-04-17],
       [#persone.FILIPPO],
       [#persone.DL],
-<<<<<<< HEAD
-      [Stesura vista_dati  ]
-=======
       [Stesura vista_dati]
->>>>>>> 592aadfa (Chore: refactoring struttura della directory delle classi)
     ),
     (
       [0.6.1],
@@ -127,8 +124,6 @@
       [#persone.ALDO],
       [Bozza della classe valutazione @classe_valutazione ]
     ),
-<<<<<<< HEAD
-=======
     (
       [0.6.2],
       [2026-04-19],
@@ -150,7 +145,6 @@
       [#persone.ALDO],
       [Revisione architetturale della sezione relativa alla modifica degli asset]
     ),
->>>>>>> 9d4ff2f5 (doc: classi device/asset/session st)
 
     (
       [0.7.0],
@@ -158,6 +152,7 @@
       [#persone.FELIX],
       [#persone.DL],
       [Stesura dei principi di design
+      @principi-design
       ]
     ),
     (
@@ -172,12 +167,7 @@
       [2026-04-20],
       [#persone.FELIX],
       [#persone.DL],
-<<<<<<< HEAD
-      [Stesura dei design pattern comportamentali e architetturali
-      @design-pattern-comportamentali,      
-=======
       [Stesura dei design pattern comportamentali e architetturali  
->>>>>>> d11d5c91 (Sezione gestione errori.#204)
       ]
     ),
     (
@@ -203,43 +193,15 @@
     ),
     (
       [0.10.0],
-<<<<<<< HEAD
-      [2026-05-14],
-      [#persone.ALDO],
-      [],
-      [Riviste le parti di device e asset]
-    ),
-<<<<<<< HEAD
-
-    (
-      [0.11.0],
-      [2026-05-12],
-      [#persone.FELIX],
-      [],
-      [Riviste le parti di sessione e valutazione: @classe_valutazione e @Valutazione]
-=======
       [2026-05-12],
       [#persone.FELIX],
       [#persone.ALDO],
       [Riviste classi di sessione e valutazione:@classe_valutazione e @Valutazione]
->>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
     ),
     (
       [0.11.0],
       [2026-05-14],
       [#persone.FELIX],
-<<<<<<< HEAD
-      [],
-      [Riviste le parti di importazione ed esportazione: @import e @export]
-    ),
-=======
-    (
-      [0.11.0],
-      [2026-05-14],
-      [#persone.ALDO],
-      [],
-      [Riviste classi di session]
-=======
       [#persone.ALDO],
       [Riviste classi di importazione ed esportazione: @import e @export]
     ),
@@ -249,9 +211,6 @@
       [#persone.ALDO],
       [#persone.DL],
       [Rivisitazione complessiva dei diagrammi e creazione dei diagrammi di dominio, asset, device e generazione report]
-<<<<<<< HEAD
->>>>>>> 55b24103 (Terminata revisione dei diagrammi e creazione diagrammi per report)
-=======
     ),
     (
       [0.13.0],
@@ -259,9 +218,6 @@
       [#persone.ALDO],
       [#persone.DL],
       [Scrittura sezione MVVM]
-<<<<<<< HEAD
->>>>>>> 5ad3b238 (Feat: scritta sezione MVVM in st)
-=======
     ),
     (
       [1.0.0],
@@ -269,9 +225,8 @@
       [#persone.ALDO],
       [#persone.ALDO],
       [Approvazione]
->>>>>>> 39a467fb (approvazione)
     )
->>>>>>> 202d7847 (Fix: riviste classi di session)
+
 
   )
   #registroModifiche(modifiche)
@@ -279,20 +234,21 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Indice", documentType: doc)[
   #outline(title: "Indice")
-]
 
-#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
+]#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle tabelle", documentType: doc)[
   #outline(
     title: [Lista delle tabelle],
     target: figure.where(kind: table),
   )
+
 ]
-
-// ---------------------------------------------------------
-// Contenuto del Documento
-// ---------------------------------------------------------
+#insertRomanNumberedPagesSenzaData(PageTitle: "Lista delle immagini", documentType: doc)[
+  #outline(
+    title: [Lista delle immagini],
+    target: figure.where(kind: image),
+  )
+]
 #context counter(page).update(1)
-
 #insertArabicNumberedPagesSenzaData(PageTitle: "Introduzione", documentType: doc)[
   = Introduzione <introduzione>
 
@@ -323,14 +279,7 @@
 
   #include "content/06-tracciamento/_index.typ"
 ]
-<<<<<<< HEAD
-#insertArabicNumberedPagesSenzaData(PageTitle: "Qualità architetturale", documentType: doc)[
-  = Qualità architetturale <qualita-architetturale>
-
-
-=======
 #insertArabicNumberedPagesSenzaData(PageTitle: "Gestione Errori e Logging", documentType: doc)[
   = Gestione degli Errori <gestione-errori>
   #include "content/07-gestione-errori/_index.typ"
->>>>>>> d11d5c91 (Sezione gestione errori.#204)
 ]

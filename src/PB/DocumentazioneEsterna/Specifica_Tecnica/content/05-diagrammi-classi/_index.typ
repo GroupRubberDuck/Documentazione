@@ -1,3 +1,4 @@
+
 #include "01-dominio/_index.typ"
 #include "02-area_device/_index.typ"
 #include "03-area_asset/_index.typ"
