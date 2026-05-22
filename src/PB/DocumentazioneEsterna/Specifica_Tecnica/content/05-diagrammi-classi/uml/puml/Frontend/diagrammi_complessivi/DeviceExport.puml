@@ -1,0 +1,25 @@
+@startuml DeviceExportWidget
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Entry Point" {
+    note "main.js legge attributi data-*\ndal DOM e monta DeviceExportWidget" as EntryNote
+}
+
+package "Smart Widget" {
+    !include ../widget/DeviceExportWidget.puml
+}
+
+note bottom of DeviceExportWidget
+  Il modale e il download sono gestiti
+  internamente senza componenti dumb.
+  Il download avviene tramite link
+  generato dinamicamente.
+end note
+
+@enduml
