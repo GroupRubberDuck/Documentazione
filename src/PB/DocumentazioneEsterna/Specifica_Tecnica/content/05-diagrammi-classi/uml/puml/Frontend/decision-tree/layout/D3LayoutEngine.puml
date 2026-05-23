@@ -11,7 +11,7 @@ class D3LayoutEngine {
     + D3LayoutEngine(config: LayoutConfig)
     + calculateLayout(treeMap: Map, rootId: string): LayoutResult
     - buildHierarchy(treeMap: Map, nodeId: string): HierarchyNode | null
-    - extractNodes(root: Object): NodeDTO[]
+    - extractNodes(root: Object): LayoutNodeDTO[]
     - extractEdges(root: Object): EdgeDTO[]
 }
 

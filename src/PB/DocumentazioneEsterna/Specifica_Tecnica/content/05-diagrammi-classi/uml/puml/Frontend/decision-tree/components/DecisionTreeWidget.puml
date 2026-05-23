@@ -11,4 +11,8 @@ class DecisionTreeWidget <<Component>> {
         - treeCanvas:TreeCanvas
         + DecisionTreeWidget(nodes : LayoutNodeDTO[], edges : EdgeDTO[], activePath : String[])
 }
+!include TreeCanvas.puml
+ 
+DecisionTreeWidget *-- TreeCanvas
+
 @enduml
