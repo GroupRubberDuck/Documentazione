@@ -145,7 +145,7 @@ _DecisionTreeDTO_ è il DTO responsabile di incapsulare l'intera struttura dell'
 *Attributi*
 
 - `+ root_node_id: String` — identificativo del nodo radice da cui inizia la navigazione dell'albero.
-- `+ nodes: Map<String, AnyNodeDTO>` — dizionario che associa gli identificativi univoci dei nodi ai rispettivi oggetti DTO (che possono essere istanze di _DecisionNodeDTO_ o _LeafNodeDTO_).
+- `+ nodes: Map<String, NodeDTO>` — dizionario che associa gli identificativi univoci dei nodi ai rispettivi oggetti DTO (che possono essere istanze di _DecisionNodeDTO_ o _LeafNodeDTO_).
 
 *Metodi*
 

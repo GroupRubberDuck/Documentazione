@@ -11,11 +11,11 @@ class HierarchyNode  {
     + id: string
     + type: string
     + text: string
-    + resultState: string | null
+    + resultState: NodeType | null
     + parentId: string | null
     + yesChildId: string | null
     + noChildId: string | null
-    + _edgeLabel: string <<optional>>
-    + children: HierarchyNode[] <<optional>>
+    + edgeLabel: string | null
+    + children: HierarchyNode[] | null
 }
 @enduml

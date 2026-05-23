@@ -6,14 +6,14 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class EdgeDTO << (T,#87CEFA) typedef >> {
+class EdgeDTO  {
     + id: string
     + sourceId: string
     + targetId: string
-    + startX: number
-    + startY: number
-    + endX: number
-    + endY: number
+    + startX: Number
+    + startY: Number
+    + endX: Number
+    + endY: Number
     + label: string
 }
 @enduml

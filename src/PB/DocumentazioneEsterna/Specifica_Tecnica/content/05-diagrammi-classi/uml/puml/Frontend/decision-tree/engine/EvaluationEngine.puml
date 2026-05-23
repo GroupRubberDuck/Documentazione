@@ -9,7 +9,7 @@ skinparam style strictuml
 
 class EvaluationEngine {
     - tree: TreeStructure
-    + constructor(tree: TreeStructure)
+    + EvaluationEngine(tree: TreeStructure)
     + getNodeRenderData(nodeId: string): NodeDTO | null
     + getEvaluationPath(answers: Map<string, boolean>): string[]
     + getTree(): TreeStructure

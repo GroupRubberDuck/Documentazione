@@ -6,8 +6,8 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class LayoutResult << (T,#87CEFA) typedef >> {
-    + nodes: NodeDTO[]
+class LayoutResult{
+    + nodes: LayoutNodeDTO[]
     + edges: EdgeDTO[]
 }
 

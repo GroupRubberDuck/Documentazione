@@ -9,14 +9,12 @@ skinparam style strictuml
 class  DecisionNode{
         
         - id:String
-        - type:NodeType
         - text:String
-        - resultState:EvaluationResult
         - parentId:String|null
         - yesChild:String
         - noChild:String
 
-        + DecisionNode(id:String,type:NodeType,text:String,resultState:EvaluationResult,parentId:String|null,yesChild:String,noChild:String)
+        + DecisionNode(id:String,text:String, parentId:String|null,yesChild:String,noChild:String)
 
 
         + getRenderData():NodeDTO

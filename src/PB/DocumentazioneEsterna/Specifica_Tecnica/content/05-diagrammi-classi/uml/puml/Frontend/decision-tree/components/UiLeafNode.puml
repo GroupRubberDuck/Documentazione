@@ -7,9 +7,13 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class UiLeafNode <<component>> {
-  --
+  - id : String
+  - text : String
+  - resultState : String
+  - isActive : Boolean
+
+
   + UiLeafNode(id : String, text : String, resultState : String, isActive : Boolean)
-  - formatLabel(state : String) : String
 }
 
 

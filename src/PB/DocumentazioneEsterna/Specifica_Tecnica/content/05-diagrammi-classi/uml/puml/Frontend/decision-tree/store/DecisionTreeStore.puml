@@ -8,8 +8,8 @@ skinparam style strictuml
 
 class DecisionTreeStore{
 
-        - evaluationEngine: EvaluationEngine | null
-        - apiClient: Object | null
+        - evaluationEngine: EvaluationEngine 
+        - apiClient: EvaluationAPIClient 
 + answers: Map<string, boolean>
     + selectedNodeId: string | null
     + isSideBarOpen: boolean
@@ -19,17 +19,15 @@ class DecisionTreeStore{
     + justification: string
     + justificationStatus: string
     + requirementsUrl: string
-    + selectedNodeData: Object | null
+    + selectedNodeData: NodeDTO | null
 
     - refreshPath()
     - calculateLayout()
-
-    + init(opts: Object): void
-    + setAnswer(nodeId: string, answer: boolean): Promise<JSON>
-    + selectNode(nodeId: string): void
-    + closeSideBar(): void
-    + saveJustification(text: string): Promise<JSON>
-    + setEvaluationState(state: string | Object): void
+    + init(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,justification:String,apiClient:EvaluationAPIClient,requirementsUrl:String)
+    + setAnswer(nodeId: string, answer: boolean)
+    + selectNode(nodeId: string
+    + closeSideBar()
+    + saveJustification(text: string)
 
 }
 

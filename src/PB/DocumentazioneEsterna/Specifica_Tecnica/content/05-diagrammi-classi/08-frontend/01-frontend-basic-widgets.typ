@@ -35,7 +35,7 @@ su tre livelli:
   [
     *Entry Point (Mount Point)*
 
-    Livello di integrazione tra il mondo Flask/Jinja e Vue. Ogni entry
+    Livello di integrazione tra Flask/Jinja e Vue. Ogni entry
     point legge i dati iniettati dal server tramite attributi data-\* del
     DOM, li converte nel formato atteso dal widget e monta l'applicazione
     Vue sul nodo HTML corrispondente. Non contiene logica di business
@@ -44,8 +44,7 @@ su tre livelli:
 )
 
 *Logica Condivisa (Shared)*
-Trasversalmente ai tre livelli, la cartella shared contiene logica
-riutilizzabile che non è legata a un singolo widget né costituisce
+Trasversalmente ai tre livelli, vi è logica shared riutilizzabile che non è legata a un singolo widget né costituisce
 un componente visuale:
 
 - *Composable* — Funzioni che incapsulano stato reattivo e logica
@@ -63,7 +62,7 @@ un componente visuale:
   che gestisce il blocco di navigazione per le pagine con dati
   non salvati.
 
-Questa separazione garantisce che i componenti dumb siano riutilizzabili
+Questa separazione garantisce che i componenti semplici siano riutilizzabili
 tra widget diversi, che i widget siano testabili in isolamento, e che
 la dipendenza dagli URL e dai dati del server sia confinata
 esclusivamente nel livello di integrazione.
@@ -101,7 +100,7 @@ Le interfacce non hanno attributi
 
 *Descrizione*:
 
-Rappresenta un contratto strutturale che definisce i campi che una oggetto deve esporre per poter essere usato nel model di un form.
+Rappresenta un contratto strutturale che definisce i campi che un oggetto deve esporre per poter essere usato nel model di un form.
 
 *Attributi*:
 L'interfaccia non ha attributi.
@@ -132,7 +131,7 @@ Inizializza e gestisce lo stato reattivo di un form di dominio a partire dalle s
 *Metodi*:
 - `+ useFormModel(fieldDefinitions: Map<String, FieldDefinition>)` : Costruttore/Funzione di inizializzazione. Riceve la configurazione dei campi e genera le strutture reattive per `fields` ed `errors` impostando i valori iniziali.
 - `+ validate(): Boolean` : Esegue la validazione su tutti i campi del form. Restituisce `true` se l'intero modulo è valido, altrimenti aggiorna la mappa degli errori e restituisce `false`.
-- `+ validateField(name: String): Boolean` : Invocato per convalidare un singolo campo (es. all'evento di *blur* o di *input*). Applica le regole in ordine sequenziale e si interrompe al primo fallimento.
+- `+ validateField(name: String): Boolean` : Invocato per convalidare un singolo campo. Applica le regole in ordine sequenziale e si interrompe al primo fallimento.
 - `+ setServerErrors(serverErrors: Map<String, String>): void` : Riceve una mappa di errori generati dalle API di Flask (backend) e li inietta direttamente nello stato `errors` per mostrarli all'utente.
 - `+ reset(): void` : Svuota tutti i messaggi di errore e ripristina i valori di `fields` allo stato iniziale definito in `FieldDefinition`.
 

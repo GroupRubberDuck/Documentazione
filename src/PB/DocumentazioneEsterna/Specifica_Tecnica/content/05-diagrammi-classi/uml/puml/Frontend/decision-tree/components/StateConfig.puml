@@ -7,9 +7,9 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class StateConfig{
-        label:String
-        icon:String
-        cssClass:String
+        +label:String
+        +icon:String
+        +cssClass:String
 }
 
 @enduml

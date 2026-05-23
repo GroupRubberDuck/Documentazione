@@ -10,11 +10,14 @@ class UiDecisionNode {
   - {static} NODE_WIDTH : Number
   - {static} TEXT_PADDING : Number
   - {static} LINE_HEIGHT : Number
-  --
+  - id : String
+  - text : String
+  - isActive : Boolean 
+  - fontSize : Number
   + UiDecisionNode(id : String, text : String, isActive : Boolean, fontSize : Number)
   - estimatedLines() : Number 
   - nodeHeight() : Number
   - onClick() : void
   + select(nodeId : String) <<emit>>
-
+}
 @enduml
