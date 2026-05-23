@@ -484,7 +484,7 @@ Fa parte della view.
 ==== DecisionTreeWidget
 
 #figure(caption:"DecisionTreeWidget")[
-  #image("../uml/png/frontend/DecisionTreeWidget.png", ),
+  #image("../uml/png/frontend/DecisionTreeWidget.png", )
 ]
 *Descrizione*:
 
@@ -508,7 +508,7 @@ Wrapper del decision tree canvas.
 
 ==== TreeCanvas
 #figure(
-  image("../uml/png/frontend/TreeCanvas.png", ),
+  image("../uml/png/frontend/TreeCanvasComplessivo.png", ),
   caption: [TreeCanvas]
 )
 
@@ -548,7 +548,7 @@ Riceve gli oggetti reattivi da osservare alla costruzione, comunica con l'estern
 
 ==== EvaluationBadge
 #figure(
-  image("../uml/png/frontend/EvaluationBadge.png", ),
+  image("../uml/png/frontend/EvaluationBadgeComplessivo.png", ),
   caption: [EvaluationBadge]
 )
 
