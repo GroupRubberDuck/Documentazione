@@ -11,13 +11,13 @@ package "Entry Point" {
     note "main.js legge data-* dal DOM,\ncrea Pinia e monta\nRequirementEvaluationWidget" as EntryNote
 }
 
-package "Smart Widget" {
+package " Widget" {
     class RequirementEvaluationWidget <<component>> {
-        + treeData: Object
-        + savedAnswers: Object
+        + treeData: JSON
+        + savedAnswers: JSON
         + evaluationState: String
         + justification: String
-        + urls: Object
+        + urls: JSON
     }
 }
 

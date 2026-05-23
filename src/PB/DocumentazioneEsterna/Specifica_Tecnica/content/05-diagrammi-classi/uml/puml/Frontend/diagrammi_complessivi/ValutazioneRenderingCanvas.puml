@@ -13,8 +13,8 @@ package "Pinia Store" {
 
 package "Componenti Vue" {
     !include ../decision-tree/components/TreeCanvas.puml
-    !include ../decision-tree/components/UiDecisionNode.puml
     !include ../decision-tree/components/UiLeafNode.puml
+    !include ../decision-tree/components/UiDecisionNode.puml
 }
 
 DecisionTreeStore --> TreeCanvas    : layoutResult\nactivePath

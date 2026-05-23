@@ -1,0 +1,32 @@
+
+
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+!include ../engine/EvaluationEngine.puml
+!include ../models/TreeStructure.puml
+!include ../models/NodeDTO.puml
+!include ../models/NodeType.puml
+!include ../models/DecisionNode.puml
+!include ../models/LeafNode.puml
+!include ../models/LeafNodeValue.puml
+
+() "Node"
+
+EvaluationEngine -->TreeStructure
+TreeStructure --> Node
+
+Node ..> NodeDTO
+NodeDTO --> NodeType
+Node -- LeafNode 
+LeafNode --> LeafNodeValue 
+
+Node -- DecisionNode 
+
+@enduml

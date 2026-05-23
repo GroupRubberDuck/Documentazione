@@ -10,7 +10,7 @@ class TreeStructure{
         - rootId:String
         - Map<String,Node>
 
-        + TreeStructure(rootId:String,Map<String,Node>)
+        + TreeStructure(rootId:String,nodes:Map<String,Node>)
         + getNode(nodeId:String):Node
         + getRootId():String
         + getAllNodes():Map<String,Node>

@@ -8,7 +8,6 @@ skinparam style strictuml
 
 
 class TreeCanvas <<component>> {
-  - store : DecisionTreeStore
   - viewBox : ViewBox
   - isPanning : Boolean
   - panStart : Point
@@ -17,18 +16,16 @@ class TreeCanvas <<component>> {
   - {static} NODE_MAX_HALF_HEIGHT : Number
   - decisionNodes : UiDecisionNode[]
   - leafNodes : UiLeafNode[]
-  --
-  + TreeCanvas()
-  - nodes : NodeDTO[]
-  - edges : EdgeDTO[]
-  - activePathSet : Set<String>
+  + TreeCanvas(nodes : LayoutNodeDTO[], edges : EdgeDTO[], activePath : String[])
+  - activePath:String[]
   - viewBoxStr : String
-  - onPointerDown(event : PointerEvent) : void
-  - onPointerMove(event : PointerEvent) : void
-  - onPointerUp() : void
+  - onPointerDown(event : PointerEvent) 
+  - onPointerMove(event : PointerEvent) 
+  - onPointerUp(event : PointerEvent) 
   - isEdgeActive(edge : EdgeDTO) : Boolean
   - generateBezierPath(edge : EdgeDTO) : String
   - resolveComponent(type : String) : Component
-  - selectNode(nodeId : String) : void
+  + selectNode(nodeId : String) <<emit>>
 }
+
 @enduml

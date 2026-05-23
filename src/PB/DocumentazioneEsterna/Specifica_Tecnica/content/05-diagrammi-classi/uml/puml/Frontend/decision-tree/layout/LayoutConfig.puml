@@ -7,10 +7,10 @@ skinparam packageStyle rectangle
 skinparam style strictuml
 
 class LayoutConfig {
-        -width:Number
-        -height:Number
-        -nodeWidth:Number
-        -nodeHeight:Number
+        + width:Number
+        + height:Number
+        + nodeWidth:Number
+        + nodeHeight:Number
 
 }
 

@@ -6,7 +6,7 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-enum EvaluationResult{
+enum LeafNodeValue{
         Pass
         Fail
         Not Applicable

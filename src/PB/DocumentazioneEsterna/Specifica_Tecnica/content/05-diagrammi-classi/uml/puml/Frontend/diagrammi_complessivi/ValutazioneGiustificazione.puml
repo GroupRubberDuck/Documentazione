@@ -19,7 +19,7 @@ package "API" {
     !include ../decision-tree/api/EvaluationAPIClient.puml
 }
 
-JustificationForm ..> DecisionTreeStore   : chiama saveJustification()
-DecisionTreeStore ..> EvaluationAPIClient : saveJustification()
+JustificationForm --> DecisionTreeStore   : chiama saveJustification()
+DecisionTreeStore --> EvaluationAPIClient : saveJustification()
 
 @enduml

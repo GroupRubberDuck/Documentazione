@@ -10,9 +10,9 @@ interface LeafNode{
 
 
         -id:String
-        -result:EvaluationResult
+        -result:LeafNodeValue
         -parentId:String
-        +LeafNode(id:String, result:EvaluationResult, parentId:String)
+        +LeafNode(id:String, result:LeafNodeValue, parentId:String)
 
         + getRenderData():NodeDTO
         + getNext():String

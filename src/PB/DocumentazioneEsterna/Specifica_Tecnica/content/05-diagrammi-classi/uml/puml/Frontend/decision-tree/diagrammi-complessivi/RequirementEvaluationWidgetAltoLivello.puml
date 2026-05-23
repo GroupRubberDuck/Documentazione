@@ -1,0 +1,28 @@
+
+
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+!include ../RequirementEvaluationWidget.puml
+!include ../store/DecisionTreeStore.puml
+!include ../components/DecisionTreeWidget.puml
+!include ../components/TreeSideBar.puml
+!include ../components/EvaluationBadge.puml
+!include ../components/JustificationForm.puml
+
+RequirementEvaluationWidget -d->DecisionTreeStore
+RequirementEvaluationWidget *-l- DecisionTreeWidget
+DecisionTreeWidget -[hidden]- EvaluationBadge
+DecisionTreeWidget -[hidden]-- JustificationForm
+RequirementEvaluationWidget *-l- EvaluationBadge
+RequirementEvaluationWidget *-l- JustificationForm
+
+RequirementEvaluationWidget *-u- TreeSidebar
+
+@enduml

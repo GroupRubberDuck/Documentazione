@@ -6,14 +6,16 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class JustificationForm{
-        -store:DecisionTreeSore
-        - justificationField:FormField
+class JustificationForm <<Component>>{
+        - justificationInitialValue:String
+        - justificationField:FieldDefinition
         -localText:String
         -isDirty:Boolean
 
+        + JustificationForm(justificationInitialValue:String)
         -handleSubmit()
         -handleReset()
+        + save(justificationString)<<emit>>
 
 }
 
