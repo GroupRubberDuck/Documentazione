@@ -1,0 +1,23 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+
+!include ../components/TreeCanvas.puml
+!include ../components/UiDecisionNode.puml
+!include ../components/UiLeafNode.puml
+!include ../components/ViewBox.puml
+!include ../components/Point.puml
+
+TreeCanvas -u-> ViewBox
+TreeCanvas -u-> Point
+TreeCanvas *-- UiDecisionNode
+TreeCanvas *-- UiLeafNode
+
+
+@enduml
