@@ -7,9 +7,9 @@ skinparam classAttributeIconSize 0
 skinparam PackagePadding 30
 skinparam style strictuml
 
-package "Componente Vue" {
-    !include ../decision-tree/components/TreeSideBar.puml
-}
+' package "Componente Vue" {
+'     !include ../decision-tree/components/TreeSideBar.puml
+' }
 
 package "Pinia Store" {
     !include ../decision-tree/store/DecisionTreeStore.puml
@@ -23,8 +23,8 @@ package "API" {
     !include ../decision-tree/api/EvaluationAPIClient.puml
 }
 
-TreeSideBar    ..> DecisionTreeStore  : chiama setAnswer()
-DecisionTreeStore ..> EvaluationEngine   : getEvaluationPath()
-DecisionTreeStore ..> EvaluationAPIClient : saveAnswer()\nfetchState()
+' TreeSideBar    --> DecisionTreeStore 
+DecisionTreeStore --> EvaluationEngine   
+DecisionTreeStore --> EvaluationAPIClient 
 
 @enduml

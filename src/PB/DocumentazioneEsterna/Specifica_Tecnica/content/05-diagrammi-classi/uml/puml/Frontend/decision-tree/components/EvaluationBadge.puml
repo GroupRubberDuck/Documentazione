@@ -6,14 +6,14 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-!include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/decision-tree/components/StateConfig.puml
+' !include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/decision-tree/components/StateConfig.puml
 
 
 
 class EvaluationBadge{
-        -store:DecisionTreeSore
+        ' -store:DecisionTreeSore
         -{static}stateConfig:map<String,StateConfig>
-
-        + EvaluationBadge()
+        - state:EvaluationResult
+        + EvaluationBadge(state:EvaluationResult)
 }
 @enduml

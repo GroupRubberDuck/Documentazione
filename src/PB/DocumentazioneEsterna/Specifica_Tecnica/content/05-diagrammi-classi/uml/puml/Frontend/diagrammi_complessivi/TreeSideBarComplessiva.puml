@@ -1,0 +1,26 @@
+@startuml Valutazione-RenderingCanvas
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Pinia Store" {
+    !include ../decision-tree/store/DecisionTreeStore.puml
+}
+
+package "Domain Model" {
+    !include ../decision-tree/models/TreeStructure.puml
+}
+
+package "Engine" {
+    !include ../decision-tree/engine/EvaluationEngine.puml
+}
+
+package "Components" {
+    !include ../decision-tree/components/TreeSideBar.puml
+}
+
+@enduml

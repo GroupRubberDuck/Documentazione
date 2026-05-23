@@ -1,0 +1,29 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class RequirementEvaluationWidget <<widget>> {
+  - store : DecisionTreeStore
+  - decisionTreeWidget : DecisionTreeWidget
+  - treeSidebar : TreeSidebar
+  - evaluationBadge : EvaluationBadge
+  - justificationForm : JustificationForm
+
+  + RequirementEvaluationWidget(treeData:TreeStructure,savedAnswers:Map<String,Boolean>,evaluationState:EvaluationResult,
+  justification:String,answerUrl:String,stateUrl:String,justificationUrl:String,detailUrl:String,requirementsUrl:String)
+  - currentAnswer : Boolean
+  - hasPrevious : Boolean
+  - hasNext : Boolean
+  - onSelectNode(nodeId : String)
+  - onSubmitAnswer(answer : Boolean)
+  - onGoPrevious() 
+  - onGoNext() 
+  - onCloseSidebar() 
+  - onSaveJustification(text : String)
+}
+@enduml

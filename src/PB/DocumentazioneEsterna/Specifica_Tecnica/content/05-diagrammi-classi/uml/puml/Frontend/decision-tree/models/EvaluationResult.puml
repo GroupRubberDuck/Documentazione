@@ -6,14 +6,11 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-
-
-class NodeDTO << (T,#87CEFA) typedef >> {
-    + id: string
-    + type: string
-    + text: string
-    + resultState: string | null
-    + x: number
-    + y: number
+enum EvaluationResult{
+        Pass
+        Fail
+        Not Applicable
+        Pending
 }
+
 @enduml
