@@ -23,7 +23,8 @@ class DecisionTreeStore{
 
     - refreshPath()
     - calculateLayout()
-    + init(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,justification:String,apiClient:EvaluationAPIClient,requirementsUrl:String)
+    + init(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,
+    justification:String,apiClient:EvaluationAPIClient,requirementsUrl:String)
     + setAnswer(nodeId: string, answer: boolean)
     + selectNode(nodeId: string
     + closeSideBar()
