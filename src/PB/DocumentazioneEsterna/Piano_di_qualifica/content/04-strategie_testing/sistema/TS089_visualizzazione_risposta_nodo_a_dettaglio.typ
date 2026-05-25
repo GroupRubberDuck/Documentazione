@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare la risposta alla domanda del nodo di 
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

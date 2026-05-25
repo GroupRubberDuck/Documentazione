@@ -21,7 +21,7 @@ Il nome deve avere una lunghezza compresa tra 1 e 32 caratteri
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

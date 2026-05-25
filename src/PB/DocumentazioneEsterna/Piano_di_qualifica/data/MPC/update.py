@@ -25,9 +25,16 @@ SPRINT_BOUNDARIES = [
     (date(2025, 12,  8), 2),
     (date(2025, 12, 23), 3),
     (date(2026,  2,  4), 4),
-    (date(2026,  2, 18), 5),
-    (date(2026,  3, 10), 6),
-    (date(2026,  3, 24), 7),  # Sprint 7: 10/03/2026 – 24/03/2026
+    (date(2026,  2, 24), 5),
+    (date(2026,  3,  9), 6),
+    (date(2026,  3, 24), 7),
+    (date(2026,  4,  6), 8),
+    (date(2026,  4, 13), 9),
+    (date(2026,  4, 20), 10),
+    (date(2026,  4, 27), 11),
+    (date(2026,  5,  4), 12),
+    (date(2026,  5, 11), 13),
+    (date(2026,  5, 18), 14),
 ]
 
 DATE_FORMATS = ['%Y-%m-%d', '%b %d, %Y', '%d/%m/%Y', '%Y-%d-%m']
@@ -307,8 +314,8 @@ def update_metrics():
         etc = max(0, eac - cum_ac)
 
         # MPC-07 TCPI = (BAC - EV) / (BAC - AC)  (∼1.0 accettabile, ≤1.0 ottimo)
-        tcpi_denom = BAC_FISSO - cum_ac
-        tcpi = (BAC_FISSO - cum_ev) / tcpi_denom if tcpi_denom > 0 else 1.0
+        denom_bac = BAC_FISSO - cum_ac
+        tcpi = (BAC_FISSO - cum_ev) / denom_bac if denom_bac > 0 else 1.0
 
         # Varianze
         sv = cum_ev - cum_pv   # Schedule Variance = EV - PV

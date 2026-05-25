@@ -89,7 +89,7 @@ test=>get-test-label(nome-etichetta: test)
     stroke: 0.5pt + black,
     inset: 8pt,
     align: left + horizon,
-    fill: (col, row) => if row == 0 { header-color } else { none },
+    fill: (col, row) => if row == 0 { rgb("#008080b0") } else { none },
 
     table.header(
       strong("Codice"),

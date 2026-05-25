@@ -18,7 +18,7 @@ Verificare che l'utente possa inserire una nuova descrizione da associare all'as
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

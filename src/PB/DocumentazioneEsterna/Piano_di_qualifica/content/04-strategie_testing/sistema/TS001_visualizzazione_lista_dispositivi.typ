@@ -16,7 +16,7 @@ Verificare che l'Utente visualizzi correttamente la lista contenente tutti i dis
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 #data.requisito-riferimento

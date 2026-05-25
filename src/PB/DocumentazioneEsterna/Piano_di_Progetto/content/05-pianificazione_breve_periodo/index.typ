@@ -9,3 +9,15 @@ In questa sezione vengono elencati nel dettaglio gli sprint, analizzandoli con l
 - Risorse rimanenti.
 
 #include "01-RTB.typ"
+
+== Product Baseline
+
+In questa sezione vengono elencati nel dettaglio gli sprint, analizzandoli con la seguente struttura:
+- Attività da svolgere;
+- Rischi attesi;
+- Preventivo;
+- Consuntivo;
+- Retrospettiva;
+- Risorse rimanenti.
+
+#include "02-PB.typ"

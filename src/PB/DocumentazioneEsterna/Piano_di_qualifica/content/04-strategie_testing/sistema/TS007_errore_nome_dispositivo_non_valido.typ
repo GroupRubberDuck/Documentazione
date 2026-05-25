@@ -20,7 +20,7 @@ Verificare che il sistema blocchi il salvataggio e mostri un messaggio di errore
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

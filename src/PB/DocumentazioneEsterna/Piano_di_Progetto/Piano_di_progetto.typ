@@ -28,7 +28,7 @@
 
 #let currentVersion = (
   major: 1,
-  minor: 1,
+  minor: 9,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -43,10 +43,10 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "Approvato",
+    stato: "In lavorazione",
     versione: versionNumber,
-    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
-    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
+    autori: (persone.DT, "Felician Mario Necsulescu", persone.ANA, persone.ALDO, persone.FILIPPO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, "Felician Mario Necsulescu"),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -116,7 +116,7 @@
       [2026-03-05],
       [#persone.ALDO],
       [#persone.FILIPPO],
-      [Aggiunta parte di classicazione e gestione rischi ROAM],
+      [Aggiunta parte di classificazione e gestione rischi ROAM],
     ),
     (
       [0.8.0],
@@ -152,6 +152,62 @@
       [#persone.ALDO],
       [#persone.ANA],
       [Stesura retrospettiva sprint 8],
+    ),
+    (
+      [1.2.0],
+      [2026-04-14],
+      [#persone.FILIPPO],
+      [#persone.DL],
+      [Aggiunta sezione PB, stesura sprint 9],
+    ),
+    (
+      [1.3.0],
+      [2026-04-16],
+      [#persone.DT],
+      [#persone.FILIPPO],
+      [Stesura sprint 10],
+    ),
+    (
+      [1.4.0],
+      [2026-04-25],
+      [#persone.ANA],
+      [#persone.FELIX],
+      [Stesura sprint 11],
+    ),
+    (
+      [1.5.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [#persone.ANA],    
+      [Stesura miglioramenti pianificazione sprint 10 e 11],
+    ),
+    (
+      [1.6.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [#persone.FILIPPO],    
+      [Stesura sprint 12],
+    ),
+    (
+      [1.7.0],
+      [2026-05-11],
+      [#persone.DL],
+      [#persone.ANA],    
+      [Stesura sprint 13],
+    ),
+    (
+      [1.8.0],
+      [2026-05-18],
+      [#persone.ANA],
+      [-],    
+      [Aggiornamento finale della pianificazione di lungo periodo TB],
+    ),
+    (
+      [1.9.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.ANA],
+      [Stesura sprint 14],
     ),
   )
   #registroModifiche(modifiche)

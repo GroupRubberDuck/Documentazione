@@ -12,14 +12,14 @@
 
   descrizione:[
 
-Verificare che l'Utente veda lo stato "Sospeso" quando tutti i requisiti da cui dipende il requisito corrente sono in stato NA
+Verificare che l'Utente veda lo stato In corso quando la valutazione di una dipendenza è fallita o non è stata completata.
   ],
 
   requisito-riferimento:get-req-code(
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

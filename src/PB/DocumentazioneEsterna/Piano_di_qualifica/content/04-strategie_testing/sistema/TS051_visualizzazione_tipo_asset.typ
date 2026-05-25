@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare il tipo dell'asset durante la visuali
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

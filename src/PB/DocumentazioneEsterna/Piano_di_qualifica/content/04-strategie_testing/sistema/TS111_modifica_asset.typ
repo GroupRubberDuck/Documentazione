@@ -18,7 +18,7 @@ Verificare che l'Utente possa modificare i dati di uno specifico asset
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

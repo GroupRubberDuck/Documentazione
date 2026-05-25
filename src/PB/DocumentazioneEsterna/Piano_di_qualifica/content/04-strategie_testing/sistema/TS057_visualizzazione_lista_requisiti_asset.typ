@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare la lista dei requisiti
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

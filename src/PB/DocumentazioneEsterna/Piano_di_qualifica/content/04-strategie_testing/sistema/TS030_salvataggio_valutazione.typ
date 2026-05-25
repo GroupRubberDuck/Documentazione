@@ -18,7 +18,7 @@ Verificare che l'Utente possa salvare le modifiche apportate durante la valutazi
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che l'Utente possa esportare le informazioni relative al dispositivo 
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

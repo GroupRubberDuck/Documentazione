@@ -18,7 +18,7 @@ Verificare che l'Utente possa modificare la descrizione associata a un dispositi
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 
