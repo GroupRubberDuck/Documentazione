@@ -19,7 +19,7 @@
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

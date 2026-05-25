@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare lo stato di attività del singolo nod
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

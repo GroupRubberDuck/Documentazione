@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare le informazioni dettagliate di un ass
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che l'Utente possa valutare uno specifico asset
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -19,7 +19,7 @@ Verificare che l'Utente inserisca e salvi  un nome valido durante l'aggiunta di 
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

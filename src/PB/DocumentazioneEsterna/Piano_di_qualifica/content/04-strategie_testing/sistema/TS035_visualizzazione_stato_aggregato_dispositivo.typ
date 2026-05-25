@@ -18,7 +18,7 @@ Verificare che il sistema calcoli correttamente lo stato aggregato rappresentati
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

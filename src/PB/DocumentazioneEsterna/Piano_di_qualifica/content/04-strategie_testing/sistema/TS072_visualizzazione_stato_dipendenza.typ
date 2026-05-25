@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare lo stato dei valutazione del singolo 
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

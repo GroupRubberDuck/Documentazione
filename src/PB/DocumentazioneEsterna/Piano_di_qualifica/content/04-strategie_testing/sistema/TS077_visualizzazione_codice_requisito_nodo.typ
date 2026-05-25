@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare il codice del requisito a cui è asso
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

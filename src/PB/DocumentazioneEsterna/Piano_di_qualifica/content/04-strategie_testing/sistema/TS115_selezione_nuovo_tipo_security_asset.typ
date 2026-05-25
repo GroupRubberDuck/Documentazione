@@ -18,7 +18,7 @@ Verificare che l'utente possa selezionare il tipo security asset da associare al
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

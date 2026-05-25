@@ -18,7 +18,7 @@ Verificare  che l'Utente possa visualizzare la lista degli asset associati al di
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

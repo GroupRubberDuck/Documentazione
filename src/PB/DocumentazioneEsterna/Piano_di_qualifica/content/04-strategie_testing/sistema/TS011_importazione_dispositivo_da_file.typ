@@ -18,7 +18,7 @@ Verifica che l'Utente possa inserire un nuovo dispositivo nel sistema tramite im
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

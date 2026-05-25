@@ -14,7 +14,7 @@
 
 
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare la giustificazione associata al decis
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

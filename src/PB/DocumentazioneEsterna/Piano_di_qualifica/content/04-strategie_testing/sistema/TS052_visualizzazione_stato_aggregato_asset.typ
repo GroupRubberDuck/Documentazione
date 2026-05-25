@@ -19,7 +19,7 @@ Verificare che il sistema calcoli correttamente lo stato dell'asset l'Utente pos
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare l'assenza di una risposta associata a
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -19,7 +19,7 @@ Verificare che l'Utente possa eliminare un dispositivo e scaricare un back up in
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

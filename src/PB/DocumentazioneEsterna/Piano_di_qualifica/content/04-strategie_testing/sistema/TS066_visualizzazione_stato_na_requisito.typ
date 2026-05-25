@@ -19,7 +19,7 @@ Verificare che l'Utente veda lo stato NA quando il percorso nel decision tree te
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

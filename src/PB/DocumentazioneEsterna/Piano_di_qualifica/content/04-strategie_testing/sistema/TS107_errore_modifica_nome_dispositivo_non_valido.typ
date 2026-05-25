@@ -20,7 +20,7 @@ Verificare che l'Utente possa visualizzare un messaggio di errore se inserisce u
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

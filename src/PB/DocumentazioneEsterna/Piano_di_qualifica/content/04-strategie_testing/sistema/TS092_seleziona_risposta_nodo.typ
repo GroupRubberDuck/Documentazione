@@ -18,7 +18,7 @@ Verificare che l'Utente possa selezionare una risposta alla domanda del nodo
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

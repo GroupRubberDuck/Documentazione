@@ -27,8 +27,8 @@
 #let doc = "Piano di qualifica"
 
 #let currentVersion = (
-  major: 1,
-  minor: 3,
+  major: 2,
+  minor: 0,
   patch: 0,
 )
 //converte dizionario in stringa
@@ -40,7 +40,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: versionNumber,
     autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT, persone.FILIPPO),
     verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
@@ -136,6 +136,20 @@
       [#persone.ANA],
       [#persone.DT],
       [Aggiornato sezione Test Unità Frontend e Test di Integrazione Frontend ]
+    ),
+    (
+      [1.4.0],
+      [2026-05-21],
+      [#persone.FILIPPO],
+      [#persone.DT],
+      [Aggiornati test di sistema e test di approvazione]
+    ),
+    (
+      [2.0.0],
+      [2026-05-21],
+      [#persone.DT],
+      [#persone.FILIPPO],
+      [Approvazione]
     ),
   )
   #registroModifiche(modifiche)

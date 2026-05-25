@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare la risposta associata al singolo nodo
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -18,7 +18,7 @@ Verificare che il sistema mostri un messaggio di errore e blocchi l'operazione d
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

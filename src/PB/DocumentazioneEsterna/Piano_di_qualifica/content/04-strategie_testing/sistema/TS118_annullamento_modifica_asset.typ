@@ -18,7 +18,7 @@ Verificare che l'Utente possa annullare in qualsiasi momento la fase di modifica
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

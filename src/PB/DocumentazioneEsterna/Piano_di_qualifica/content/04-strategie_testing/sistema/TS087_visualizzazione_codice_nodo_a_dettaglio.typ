@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare il codice del nodo di decisione duran
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare la domanda del singolo nodo di decisi
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

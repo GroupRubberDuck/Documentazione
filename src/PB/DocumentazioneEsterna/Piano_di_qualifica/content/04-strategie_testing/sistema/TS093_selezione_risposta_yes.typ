@@ -19,7 +19,7 @@ Verificare che l'Utente possa selezionare la risposta YES alla domanda del nodo
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

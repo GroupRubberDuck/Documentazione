@@ -18,7 +18,7 @@ Verificare che l'Utente possa esportare i dati relativi a uno specifico disposit
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

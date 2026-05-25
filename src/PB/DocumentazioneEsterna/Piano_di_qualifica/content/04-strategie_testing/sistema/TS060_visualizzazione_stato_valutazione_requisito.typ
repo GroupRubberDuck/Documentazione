@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare lo stato di valutazione del singolo r
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

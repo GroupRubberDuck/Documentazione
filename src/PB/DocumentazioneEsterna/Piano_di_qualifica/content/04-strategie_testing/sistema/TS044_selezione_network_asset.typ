@@ -19,7 +19,7 @@ Verificare che l'Utente possa selezionare il tipo network asset
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

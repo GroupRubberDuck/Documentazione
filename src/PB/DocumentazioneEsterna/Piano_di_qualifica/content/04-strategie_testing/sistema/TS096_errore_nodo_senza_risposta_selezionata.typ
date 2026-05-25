@@ -18,7 +18,7 @@ Verificare che il sistema blocchi la navigazione dell'Utente verso un nodo succe
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

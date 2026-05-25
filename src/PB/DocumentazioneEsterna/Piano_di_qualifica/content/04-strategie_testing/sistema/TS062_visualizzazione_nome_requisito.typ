@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare il nome del requisito durante la visu
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

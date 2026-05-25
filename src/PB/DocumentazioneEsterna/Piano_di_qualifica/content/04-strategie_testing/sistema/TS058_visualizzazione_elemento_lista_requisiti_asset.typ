@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare le informazioni generali del singolo 
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

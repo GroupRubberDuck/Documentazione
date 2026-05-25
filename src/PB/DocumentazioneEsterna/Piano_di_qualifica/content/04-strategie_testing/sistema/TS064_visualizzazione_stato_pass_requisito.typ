@@ -18,7 +18,7 @@ Verificare che l'Utente veda lo stato PASS quando il percorso nel decision tree 
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 

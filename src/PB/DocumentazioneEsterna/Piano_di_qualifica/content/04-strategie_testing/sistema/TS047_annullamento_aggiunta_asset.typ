@@ -18,7 +18,7 @@ Verificare che l'Utente possa annullare l'aggiunta dell'asset
     test-name
   ),
 
-  stato:"Pass"
+  stato:"passed"
 
 )
 
