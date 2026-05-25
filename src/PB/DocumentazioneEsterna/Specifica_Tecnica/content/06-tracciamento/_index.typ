@@ -2,6 +2,49 @@
 #import "/src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_desiderabili/_index.typ": table-cells as req_desiderabili
 #import "/src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/content/requisiti/requisiti_opzionali/_index.typ": table-cells as req_opzionali
 
+#import "@preview/cetz:0.5.2"
+#import "@preview/cetz-plot:0.1.3": plot, chart
+
+#let pie-chart(data, radius: 3, inner-radius: 0) = {
+  // 1. Estraiamo la palette dai dati (il colore è il terzo elemento, indice 2)
+  let palette = data.map(item => item.at(2))
+  
+  // 2. Calcoliamo il totale per formattare correttamente le percentuali
+  let total = data.fold(0.0, (acc, item) => acc + item.at(1))
+
+  align(center)[
+    #cetz.canvas({
+      import cetz.draw: *
+
+      // 3. DISEGNO DEL GRAFICO
+      chart.piechart(
+        data,
+        outset:none,
+        value-key: 1,      // Il valore numerico è all'indice 1
+        label-key: 0,      // Il nome è all'indice 0
+        radius: radius,
+        stroke:black+1pt,
+        slice-style: palette,
+        // Passiamo l'inner-radius solo se richiesto (per fare la ciambella)
+        ..if inner-radius > 0 { (inner-radius: inner-radius) } else { (:) },
+        
+        // Formattazione del testo sullo spicchio
+        inner-label: (content: (value, label) => {
+          // Trasforma il valore grezzo in percentuale
+          let perc = calc.round((value / total) * 100)
+          text(fill: white, weight: "bold")[#perc%]
+        }),
+        
+        // Nascondiamo le etichette esterne predefinite
+        outer-label: (content: none) 
+      )
+
+
+    })
+  ]
+}
+
+
 #let stampa_tabella_requisiti(dati_grezzi, stato_impostato, implementati: ()) = {
   
   let dati_piatti = dati_grezzi.map(it => {
@@ -43,11 +86,26 @@
 #stampa_tabella_requisiti(req_obbligatori, "Implementato")
 
 #v(1em)
+#figure(caption:"Diagramma dei requisiti obbligatori soddisfatti")[
+#pie-chart((
+  ("Soddisfatti", 100, rgb("#4facf7")),
+))
+]
+#v(1em)
+
 
 === Requisiti Desiderabili
 #stampa_tabella_requisiti(req_desiderabili, "Implementato")
 
 #v(1em)
+#figure(caption:"Diagramma dei requisiti desiderabili soddisfatti")[
+#pie-chart((
+  ("Soddisfatti", 100, rgb("#4facf7")),
+), )
+]
+#v(1em)
+#v(1em)
+
 
 === Requisiti Opzionali
 #stampa_tabella_requisiti(
@@ -72,3 +130,12 @@
     "ROpz-016",
   ) 
 )
+
+#v(1em)
+#figure(caption:"Diagramma dei requisiti opzionali soddisfatti")[
+#pie-chart((
+  ("Soddisfatti", 16, rgb("#4facf7")),
+  ("Non Implementato", 112-16, rgb(color.red)),
+), )
+]
+#v(1em)
