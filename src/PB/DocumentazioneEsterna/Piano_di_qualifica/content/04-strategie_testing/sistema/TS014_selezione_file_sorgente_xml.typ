@@ -18,7 +18,7 @@ Verificare che l'Utente possa selezionare un file in formato XML
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

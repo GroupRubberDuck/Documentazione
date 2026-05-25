@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare le informazioni dettagliate del requi
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

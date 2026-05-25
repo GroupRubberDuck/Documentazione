@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare i dati generali dell'asset durante la
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

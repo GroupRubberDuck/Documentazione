@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare nel dettaglio il nodo del decision tr
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

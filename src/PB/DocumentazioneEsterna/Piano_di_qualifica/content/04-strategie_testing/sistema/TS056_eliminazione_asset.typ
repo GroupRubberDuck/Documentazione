@@ -18,7 +18,7 @@ Verificare che l'Utente possa eliminare un asset
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

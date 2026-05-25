@@ -19,7 +19,7 @@ Verificare che l'Utente possa visualizzare il codice del singolo requisito all'i
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

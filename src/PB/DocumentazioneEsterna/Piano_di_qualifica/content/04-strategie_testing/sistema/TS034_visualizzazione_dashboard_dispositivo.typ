@@ -18,7 +18,7 @@ L'Utente deve poter visualizzare la dashboard riepilogativa della valutazione de
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

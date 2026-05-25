@@ -18,7 +18,7 @@ Verificare che l'Utente possa selezionare il tipo security asset
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

@@ -5,7 +5,10 @@
 #let data-cpi = csv("../../../data/MPC/05-cost_performance_index.csv").slice(1)
 #let data-spi = csv("../../../data/MPC/04-schedule_performance_index.csv").slice(1)
 
-#let x-labels   = data-cpi.map(row => row.at(0))
+// Estrazione etichette abbreviate (es. "S1", "S2") per il grafico
+#let x-labels-full = data-cpi.map(row => row.at(0))
+#let x-labels-short = data-cpi.map(row => row.at(0).replace("Sprint ", "S"))
+
 #let values-cpi = data-cpi.map(row => float(row.at(1)))
 #let values-spi = data-spi.map(row => float(row.at(1)))
 
@@ -28,23 +31,12 @@
 
 // Giudizio combinato CPI + SPI
 #let giudizio(cpi, spi) = {
-  if cpi >= 1.0 and spi >= 1.0 {
-    "Ottimo"
-  } else if cpi >= 1.0 and spi < 1.0 {
-    "Sotto budget, scheduling da monitorare"
-  } else if cpi >= 0.9 and spi >= 1.0 {
-    "Scheduling in linea, costi accettabili"
-  } else if cpi >= 0.9 and spi >= 0.95 {
-    "Accettabile"
-  } else if cpi >= 0.8 and spi >= 1.0 {
-    "Scheduling in linea, costi da ridurre"
-  } else if cpi >= 0.8 and spi >= 0.95 {
-    "Costi elevati, scheduling quasi in linea"
-  } else if cpi >= 0.8 and spi < 0.95 {
-    "Costi elevati e ritardo accumulato"
-  } else {
-    "Critico — intervento necessario"
-  }
+  if cpi >= 1.0 and spi >= 1.0 { "Ottimo" }
+  else if cpi >= 0.8 and spi >= 0.95 { "Costi elevati, scheduling quasi in linea" }
+  else if cpi >= 0.8 and spi >= 1.0 { "Scheduling in linea, costi da ridurre" }
+  else if cpi >= 0.9 and spi >= 1.0 { "Scheduling in linea, costi accettabili" }
+  else if cpi >= 0.8 and spi < 0.95 { "Costi elevati e ritardo accumulato" }
+  else { "Critico — intervento necessario" }
 }
 
 // ── Tabella ──────────────────────────────────────────────────────────────────
@@ -61,7 +53,7 @@
       text(fill: white, weight: "bold")[Giudizio],
     ),
 
-    ..x-labels.enumerate().map(((i, sprint)) => (
+    ..x-labels-full.enumerate().map(((i, sprint)) => (
       sprint,
       fmt(values-cpi.at(i)),
       fmt(values-spi.at(i)),
@@ -72,37 +64,35 @@
 )
 
 // ── Grafico ───────────────────────────────────────────────────────────────────
-#grafico-multi-linea(
-  (
-    x-labels: x-labels,
-    CPI: values-cpi,
-    SPI: values-spi,
-    Ottimo: threshold-ottimo,
-    Accettabile: threshold-accettabile,
-    series-names: ("CPI", "SPI", "Ottimo", "Accettabile"),
-    show-labels: true,
-    label-size: 7pt,
-    grid-opacity: 10%,
-  ),
-  "Cost Performance Index e Schedule Performance Index",
-  y-label: "Indice",
-  x-label: "Sprint",
-  y-min: 0.8,
-  y-max: 1.05,
-  series-colors: (
-    rgb("#1a73e8"),      // CPI — blu
-    rgb("#e8541a"),      // SPI — arancione
-    rgb(150, 200, 150),  // Ottimo — verde tenue
-    rgb(220, 180, 120),  // Accettabile — giallo tenue
-  ),
-  series-thickness: (2pt, 2pt, 0.8pt, 0.8pt),
-)
-
+#pad(x: -2cm)[
+  #grafico-multi-linea(
+    (
+      x-labels: x-labels-short, // Etichette abbreviate S1, S2...
+      CPI: values-cpi,
+      SPI: values-spi,
+      Ottimo: threshold-ottimo,
+      Accettabile: threshold-accettabile,
+      series-names: ("CPI", "SPI", "Ottimo", "Accettabile"),
+      show-labels: true,
+      label-size: 6pt,
+      grid-opacity: 10%,
+      x-tick-angle: -45deg,    // Rotazione per evitare sovrapposizioni
+    ),
+    "Cost Performance Index e Schedule Performance Index",
+    y-label: "Indice",
+    x-label: "Sprint",
+    y-min: 0.5,
+    y-max: 1.05,
+    series-colors: (
+      rgb("#1a73e8"), rgb("#e8541a"), rgb(150, 200, 150), rgb(220, 180, 120),
+    ),
+    series-thickness: (2pt, 2pt, 0.8pt, 0.8pt),
+  )
+]
 Il CPI si mantiene costantemente al di sotto della soglia accettabile per tutti
-gli sprint, a indicare un utilizzo del budget superiore al previsto. L'SPI invece
-rimane prossimo a 1, dimostrando che il team ha rispettato la pianificazione
-temporale. Il miglioramento del CPI osservato a partire dai sprint centrali è
+gli sprint, a indicare un utilizzo del budget superiore al previsto. Il miglioramento del CPI osservato a partire dai sprint centrali è
 parzialmente riconducibile a una riorganizzazione del lavoro successiva alla
-sessione esami. Le cause degli scostamenti sono documentate nel
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+sessione esami.
+#line(length: 100%, stroke: 0.5pt + luma(180))
+A partire dallo Sprint 9, coincidente con l'avvio della Product Baseline (PB), si osserva un graduale miglioramento dell'efficienza grazie alla riorganizzazione del lavoro post-sessione esami e all'adozione di nuove pratiche di sviluppo. Tuttavia, la consegna finale del progetto è avvenuta con un mese di ritardo rispetto alla pianificazione iniziale; tale slittamento è dovuto principalmente ai debiti accumulati nelle fasi precedenti, che hanno condizionato la sostenibilità dei ritmi operativi. Le analisi dettagliate delle cause e le strategie di mitigazione adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
 

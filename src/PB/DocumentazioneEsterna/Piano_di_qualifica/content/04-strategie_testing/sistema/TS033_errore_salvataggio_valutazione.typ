@@ -18,7 +18,7 @@ Verificare che l'Utente possa vedere un messaggio di avviso se durante il salvat
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 
