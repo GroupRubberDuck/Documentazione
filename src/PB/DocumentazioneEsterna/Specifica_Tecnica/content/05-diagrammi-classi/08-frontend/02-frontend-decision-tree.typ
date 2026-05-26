@@ -367,6 +367,7 @@ Incapsula i calcoli e le altre operazioni relative alla costruzione del layout.
   #image("/src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/png/frontend/DecisionTreeComplessivo.png")
 ]
 
+
 ==== DecisionTreeStore <decision-tree-store>
 #figure(
   caption: [DecisionTreeStore]
@@ -432,6 +433,7 @@ Le responsabilità all'interno del componente sono separate come da convenzione 
 
 *Attributi*:
   - `- store : DecisionTreeStore` — Riferimento allo store Pinia, unico punto di accesso allo stato.
+  - `- layoutEngine: D3LayoutEngine` — Layout engine usato per calcolare la disposizione di archi e nodi sullo schermo.
   - `- decisionTreeWidget : DecisionTreeWidget` —  Componente che contiene il canvas dell'albero.
   - `- treeSidebar : TreeSidebar`   —  Pannello laterale per l'interazione con i nodi.
   - `- evaluationBadge : EvaluationBadge`   — Badge che mostra lo stato corrente della valutazione.

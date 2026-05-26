@@ -11,16 +11,20 @@ skinparam style strictuml
 
 !include ../RequirementEvaluationWidget.puml
 !include ../store/DecisionTreeStore.puml
+!include ../layout/LayoutResult.puml
+!include ../layout/D3LayoutEngine.puml
 !include ../components/DecisionTreeWidget.puml
 !include ../components/TreeSideBar.puml
 !include ../components/EvaluationBadge.puml
 !include ../components/JustificationForm.puml
 
 RequirementEvaluationWidget -d->DecisionTreeStore
+RequirementEvaluationWidget -d->D3LayoutEngine
 RequirementEvaluationWidget *-l- DecisionTreeWidget
 DecisionTreeWidget -[hidden]- EvaluationBadge
 DecisionTreeWidget -[hidden]-- JustificationForm
 RequirementEvaluationWidget *-l- EvaluationBadge
+RequirementEvaluationWidget -l-> LayoutResult
 RequirementEvaluationWidget *-l- JustificationForm
 
 RequirementEvaluationWidget *-u- TreeSidebar

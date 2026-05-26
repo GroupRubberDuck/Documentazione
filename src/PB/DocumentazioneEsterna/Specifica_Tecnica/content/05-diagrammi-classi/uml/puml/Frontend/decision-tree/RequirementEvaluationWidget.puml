@@ -8,6 +8,7 @@ skinparam style strictuml
 
 class RequirementEvaluationWidget  {
     - store: DecisionTreeStore
+    - layoutEngine: D3LayoutEngine
     - decisionTreeWidget : DecisionTreeWidget
     - treeSidebar : TreeSidebar
     - evaluationBadge : EvaluationBadge
