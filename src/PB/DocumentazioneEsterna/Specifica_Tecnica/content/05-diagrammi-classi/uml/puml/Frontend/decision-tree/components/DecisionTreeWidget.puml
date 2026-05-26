@@ -10,6 +10,7 @@ skinparam style strictuml
 class DecisionTreeWidget <<Component>> {
         - treeCanvas:TreeCanvas
         + DecisionTreeWidget(nodes : LayoutNodeDTO[], edges : EdgeDTO[], activePath : String[])
+        + selectNode(nodeId: String) <<emit>>
 }
 !include TreeCanvas.puml
  

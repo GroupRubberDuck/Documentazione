@@ -6,29 +6,28 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class DecisionTreeStore{
+class DecisionTreeStore <<Store / Model>> {
+    - evaluationEngine: EvaluationEngine 
+    - apiClient: EvaluationAPIClient 
 
-        - evaluationEngine: EvaluationEngine 
-        - apiClient: EvaluationAPIClient 
-+ answers: Map<string, boolean>
-    + selectedNodeId: string | null
-    + isSideBarOpen: boolean
-    + activePath: string[]
-    + layoutResult: LayoutResult | null
-    + evaluationState: string | null
-    + justification: string
-    + justificationStatus: string
-    + requirementsUrl: string
+    + answers: Map<String, Boolean>
+    + selectedNodeId: String | null
+    + activePath: String[]
+    + evaluationState: String | null
+    + justification: String
+    + justificationStatus: String
+    + requirementsUrl: String
+    
+
     + selectedNodeData: NodeDTO | null
+    + treeMap: Map<String, Node>
+    + rootId: String
 
     - refreshPath()
-    - calculateLayout()
-    + init(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,justification:String,apiClient:EvaluationAPIClient,requirementsUrl:String)
-    + setAnswer(nodeId: string, answer: boolean)
-    + selectNode(nodeId: string
-    + closeSideBar()
-    + saveJustification(text: string)
-
+    + init(treeData: TreeStructure, savedAnswers: Map, evaluationState: String, justification: String, apiClient: EvaluationAPIClient, requirementsUrl: String)
+    + setAnswer(nodeId: String, answer: Boolean)
+    + selectNode(nodeId: String)
+    + clearSelection()
+    + saveJustification(text: String)
 }
-
 @enduml

@@ -6,17 +6,16 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class JustificationForm <<Component>>{
-        - justificationInitialValue:String
-        - justificationField:FieldDefinition
-        -localText:String
-        -isDirty:Boolean
+class JustificationForm <<Component>> {
+  - justificationInitialValue: String
+  - justificationField:FieldDefinition
+  - status: String
+  - localText: String
+  - isDirty: Boolean
 
-        + JustificationForm(justificationInitialValue:String)
-        -handleSubmit()
-        -handleReset()
-        + save(justificationString)<<emit>>
-
+  + JustificationForm(justificationInitialValue: String, status: String)
+  - handleSubmit()
+  - handleReset()
+  + save(justificationString: String) <<emit>>
 }
-
 @enduml
