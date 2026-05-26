@@ -11,7 +11,7 @@ skinparam style strictuml
 
 
 class EvaluationBadge{
-        ' -store:DecisionTreeSore
+        
         -{static}stateConfig:map<String,StateConfig>
         - state:EvaluationResult
         + EvaluationBadge(state:EvaluationResult)

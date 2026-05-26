@@ -6,20 +6,20 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam style strictuml
 
-class TreeSidebar <<component>> {
+class TreeSidebar <<Component>> {
+  - isOpen: Boolean
+  - currentNode: NodeDTO
+  - currentAnswer: Boolean
+  - hasPrevious: Boolean
+  - hasNext: Boolean
+  - requirementsUrl: String
 
-        -currentNode : NodeDTO
-        - currentAnswer : Boolean
-        - hasPrevious : Boolean
-        -  hasNext : Boolean
-        - requirementsUrl : String
-
-  + TreeSidebar(currentNode : NodeDTO, currentAnswer : Boolean, hasPrevious : Boolean, hasNext : Boolean, requirementsUrl : String)
-  - formatResult(state : String) : String
-  + submit(answer : Boolean) <<emit>>
-  + previous() <<emit>>
-  + next() <<emit>>
+  + TreeSidebar(isOpen: Boolean, currentNode: NodeDTO, currentAnswer: Boolean, hasPrevious: Boolean, hasNext: Boolean, requirementsUrl: String)
+  - formatResult(state: String): String
+  
+  + submit(answer: Boolean) <<emit>>
+  + goPrevious() <<emit>>
+  + goNext() <<emit>>
   + close() <<emit>>
 }
-
 @enduml

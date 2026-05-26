@@ -387,25 +387,24 @@ Funge da model del MVVM.
 - `- apiClient:EvaluationAPIClient ` — Istanza dell'API client per effettuare le chiamate col backend.
 - `+ answers: Map<String, Boolean>` — Stato reattivo delle risposte fornite dall'utente durante la sessione corrente.
 - `+ selectedNodeId:String|null`— Id del nodo selezionato al momento.
-- `+ isSidebarOpen: Boolean` — Stato di apertura della sidebar.
 - `+ activePath: String[]` — Lista reattiva degli ID dei nodi che compongono il percorso corrente, aggiornata automaticamente al variare delle risposte.
-- `+ layoutResult:LayoutResult` — Oggetto reattivo contente tutte le informazioni per la visualizzazione. 
 - `+ evaluationState:LeafNodeValue` — oggetto reattivo che rappresenta lo stato della valutazione.
 - `+ justification:String` — Giustificazione per il requisito sottoposto a valutazione.
 - `+ justificationStatus:String` — Stato del salvataggio della giustificazione da mostrare all'utente
 - `+ requirementsUrl:String` — Url della lista requisiti. 
 - `+ selectedNodeData:NodeDTO` — Oggetto reattivo che tiene traccia dei dati del nodo selezionato.
+- `+ treeMap:Map<String,Node>` — Mantiene l'elenco dei nodi in memoria e facilmente accessibile.
+- `+ rootId:String` — Root dell'albero decisionale.
 
 
 *Metodi (Actions)*
 
 - `- refreshPath()` — metodo privato invocato internamente per aggiornare l'attributo `activePath` interpellando l'_EvaluationEngine_.
-- `- calculateLayout() ` — funzione chiamata internamente per l'inizializzazione del layout.
 - `+ init(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,justification:String,apiClient:EvaluationAPIClient,requirementsUrl:String)
 ` — inizializza lo store caricando la struttura dell'albero e le eventuali risposte già salvate, la giustificazione, lo stato della valutazione, l'api client e l'url della lista dei requisiti per il inserirlo in un link.
 - `+ setAnswer(nodeId, answer)` — aggiorna una risposta nello stato locale, invoca il ricalcolo del percorso e avvia la persistenza asincrona tramite l'API.
 - `+ selectNode(nodeId)` — aggiorna il nodo selezionato, permettendo alla Sidebar di mostrare le informazioni contestuali corrette.
-- `+ closeSidebar() ` — aggiorna lo stato interno per chiudere la sidebar.
+- `+ clearSelection() ` — aggiorna lo stato interno per togliere il focus dal nodo corrente.
 - `+ saveJustification(text:String) ` — Salva la giustificazione inserita tramite il backend. 
 
 
@@ -432,23 +431,26 @@ Rappresenta il widget per la valutazione el requisito, funge da ViewModel e mont
 Le responsabilità all'interno del componente sono separate come da convenzione di Vue (tag \<script> per la parte di ViewModel e tag \<template> per la parte di view).
 
 *Attributi*:
-  - `- store : DecisionTreeStore` — Riferimento allo store Pinia, unico punto di accesso allo stato condiviso.
+  - `- store : DecisionTreeStore` — Riferimento allo store Pinia, unico punto di accesso allo stato.
+  - `- layoutEngine: D3LayoutEngine` — Layout engine usato per calcolare la disposizione di archi e nodi sullo schermo.
   - `- decisionTreeWidget : DecisionTreeWidget` —  Componente che contiene il canvas dell'albero.
   - `- treeSidebar : TreeSidebar`   —  Pannello laterale per l'interazione con i nodi.
   - `- evaluationBadge : EvaluationBadge`   — Badge che mostra lo stato corrente della valutazione.
   - `- justificationForm : JustificationForm`   —  Form per l'inserimento della giustificazione.
+  - `- isSidebarOpen:Boolean`   —  Flag che mantiene lo stato della iu e visualizzazione della sidebar per la visualizzazione del nodo.
+  - `- layoutResult:LayoutResult`   —  Mantiene il layout che il decision tree deve rispettare.
+  - `- currentAnswer:Boolean|null`  —  Mantiene la risposta associata al nodo corrente, elabora i dati del modello e li espone in un formato facilmente leggibile dalla View.
+  - `- hasNextNode:Boolean` — Indica se un nodo ha un successore nel path attivo, espone questa informazione in un formato facilmente leggibile dalla View.  
+  - `- hasPrevious:Boolean`   —  Indica se un nodo ha un predecessore, espone questa informazione in un formato facilmente leggibile dalla View.
 
 *Metodi*
-  - `+ RequirementEvaluationWidget(treeData:TreeStructure,savedAnswers:Map\<String,Boolean>,evaluationState:EvaluationResult,justification:String,answerUrl:String,stateUrl:String,justificationUrl:String,detailUrl:String,requirementsUrl:String)`—   costruttore. Riceve i dati dal livello di integrazione, crea l'API client e inizializza lo store.
-  - `- currentAnswer : Boolean` — Restituisce la risposta corrente per il nodo selezionato, derivata dallo store.
-  - `- hasPrevious : Boolean` — Indica se esiste un nodo precedente nel path attivo.
-  - `- hasNext : Boolean` — Indica se il nodo selezionato ha una risposta e quindi un nodo successivo.
-  - `- onSelectNode(nodeId : String)` — Handler che riceve l'emit dal canvas e chiama store.selectNode.
-  - `- onSubmitAnswer(answer : Boolean)` — Handler che riceve l'emit dalla sidebar e chiama store.setAnswer.
-  - `- onGoPrevious() ` —  Handler che calcola il nodo precedente nel path attivo e chiama store.selectNode.
-  - `- onGoNext() ` —  Handler che calcola il nodo successivo in base alla risposta corrente e chiama store.selectNode.
-  - `- onCloseSidebar() ` — Handler che chiama store.closeSideBar.
-  - `- onSaveJustification(text : String)` — Handler che chiama store.saveJustification.
+  - `+ RequirementEvaluationWidget(treeData:TreeStructure, savedAnswers:Map<String,Boolean>,evaluationState:EvaluationResult,justification:String,answerUrl:String,stateUrl:String,justificationUrl:String,detailUrl:String,requirementsUrl:String)`—   costruttore. Riceve i dati dal livello di integrazione, crea l'API client e inizializza lo store.
+  - `- handleNodeSelect(nodeId : String)` — Handler che riceve l'emit dal canvas e chiama store.
+  - `- handleSidebarClose()` — Handler che riceve l'emit dalla sidebar e chiama store.
+  - `- handleSidebarSubmit(answer : Boolean)` — Handler che riceve l'emit dalla sidebar e chiama store.
+  - `- handleSidebarPrevious() ` —  Handler che recupera il nodo precedente nel path attivo chiamando lo store.
+  - `- handleSidebarNext() ` —  Handler che recupera il nodo successivo nel path attivo chiamando lo store.
+  - `- handleJustificationSave(text : String)` — Handler che chiama lo store per salvare la nuova giustificazione.
 
 
 
@@ -456,16 +458,16 @@ Le responsabilità all'interno del componente sono separate come da convenzione 
 ==== TreeSidebar
 #figure(
   image("../uml/png/frontend/TreeSideBar.png", ),
-  caption: [TreeSidebar]
+  caption: [TreeSideBar]
 )
 *Descrizione*
 
 _TreeSidebar_ è il componente Vue che implementa il pannello laterale interattivo. Il suo compito è intercettare l'input dell'utente e presentare le informazioni del nodo selezionato.
 Comunica con l'esterno tramite gli emit.
-Fa parte della view.
 
 *Attributi*:
 
+- `- isOpen:Boolean` — Flag che gestisce la visualizzazione della sidebar, il riferimento viene passato alla costruzione.
 - `- currentNode: NodeDTO | null` — Oggetto reattivo che racchiude le informazioni da mostrare, viene aggiornato al cambiamento del nodo selezionato, la side bar rileva questo cambiamento e si aggiorna di conseguenza.
 - `- currentAnswer: Boolean` — La risposta per il nodo corrente, se presente.
 - `- hasPrevious:Boolean` — Indica se il nodo corrente ha un predecessore.
@@ -581,13 +583,14 @@ Componente che mostra a schermo un form per modificare la descrizione.
 
 *Attributi*:
 - `- justificationInitialValue:String` —  Testo della giustificazione salvato.
-- `- justificationField:FieldDefinition` —  Oggetto che gestisce il singolo campo del form.
+- `- justificationField:FieldDefinition` —  Oggetto che gestisce il singolo campo del form,con le relative regole di validazione.
+- `- status:String` —  Stato della modifica della giustificazione.
 - `- localText:String` —  Testo attualmente inserito dall'utente.
 - `- isDirty:Boolean` —  Flag che traccia lo stato di aggiornamento della giustificazione.
 
 
 *Metodi*:
-- `+ JustificationForm(justificationInitialValue:String)` —  Costruttore che riceve dall'esterno il valore della giustificazione salvato sullo stato.
+- `+ JustificationForm(justificationInitialValue:String,status:String)` —  Costruttore che riceve dall'esterno il valore della giustificazione salvato sullo store.
 - `- handleSubmit()` —  Gestisce il salvataggio della nuova giustificazione.
 - `- handleReset()` —  Ripristina il testo al valore dell'initial value.
 - `+ save(justification:String) <<emit>>` —  Evento emesso quando l'utente cerca di salvare una giustificazione.

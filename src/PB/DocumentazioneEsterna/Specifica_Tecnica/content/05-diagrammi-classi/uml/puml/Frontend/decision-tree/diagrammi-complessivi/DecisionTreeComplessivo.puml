@@ -12,14 +12,10 @@ skinparam style strictuml
 !include ../store/DecisionTreeStore.puml
 !include ../api/EvaluationAPIClient.puml
 !include ../engine/EvaluationEngine.puml
-!include ../layout/D3LayoutEngine.puml
-!include ../layout/LayoutResult.puml
 !include ../models/NodeDTO.puml
 
 DecisionTreeStore --> EvaluationAPIClient
 DecisionTreeStore --> EvaluationEngine
-DecisionTreeStore ..> D3LayoutEngine
-DecisionTreeStore .l.> LayoutResult
 DecisionTreeStore .l.> NodeDTO
 
 
