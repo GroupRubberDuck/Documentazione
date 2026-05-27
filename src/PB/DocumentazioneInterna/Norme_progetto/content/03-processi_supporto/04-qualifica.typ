@@ -219,13 +219,13 @@ La seguente *Definition of Done* non è statica, ma dinamica: evolve in base all
 I processi di verifica e validazione si appoggiano ai seguenti documenti:
 
 - *Analisi dei Requisiti*: definisce i requisiti funzionali e non funzionali concordati con BlueWind Srl. Costituisce la base di riferimento per la progettazione dei test di sistema e di accettazione, e per il tracciamento della copertura dei requisiti.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf")[Riferimento all'Analisi dei Requisiti.]
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v2.0.0.pdf")[Riferimento all'Analisi dei Requisiti.]
 
 - *Piano di Qualifica*: raccoglie le metriche di qualità adottate, i test pianificati ed eseguiti e i loro esiti. È il documento operativo di riferimento per il monitoraggio dell'avanzamento delle attività di verifica.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf")[Riferimento al Piano di Qualifica]
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v2.0.0.pdf")[Riferimento al Piano di Qualifica]
 
 - *Piano di Progetto*: definisce la pianificazione temporale delle attività, incluse quelle di verifica. Consente di contestualizzare i risultati dei test rispetto agli sprint in cui sono stati eseguiti.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Riferimento al Piano di Progetto.]  
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Riferimento al Piano di Progetto.]  
 
 - *Norme di Progetto*: definisce le modalità operative di verifica e validazione adottate dal gruppo, incluse le checklist di ispezione, la classificazione dei test e i criteri di accettazione.
 #link("https://grouprubberduck.github.io/Documentazione/")[Riferimento alle Norme di Progetto.]  

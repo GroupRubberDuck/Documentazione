@@ -47,7 +47,7 @@ L'EAC supera il BAC (11610€) per tutti gli sprint, con oscillazioni legate all
 di CPI e SPI nel corso del progetto. Lo sforamento proiettato è da ricondurre
 principalmente a imprecisioni nelle stime iniziali delle ore per ruolo. La soglia ottimale
 è fissata al 110% del BAC (12771€) come margine di tolleranza. Il consuntivo effettivo
-resta però sotto il BAC, come documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto] e nella sezione @budget-progress-bar.
+resta però sotto il BAC, come documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto] e nella sezione @budget-progress-bar.
 #line(length: 100%, stroke: 0.5pt + luma(180))
 A partire da S9, l'EAC mostra un trend discendente costante, passando dai valori di picco
 registrati intorno a S8 fino ad attestarsi in prossimità del BAC negli sprint finali (S13--S14).

@@ -31,7 +31,7 @@ Le modifiche sostanziali ai requisiti comportano l'incremento della versione pri
 === Riferimenti normativi
 #pad(left: 1em)[
   - #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v" + versionNumber + ".pdf",
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v2.0.0.pdf",
     )[Norme di Progetto] \ _Ultima consultazione: 20 maggio 2026_; \
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf",
@@ -43,12 +43,12 @@ Le modifiche sostanziali ai requisiti comportano l'incremento della versione pri
 === Riferimenti informativi
 #pad(left: 1em)[
   - #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf",
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf",
     )[Glossario] \ _Ultima consultazione: 20 maggio 2026_; \
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf",
     )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti] \ _Ultima consultazione: 10 gennaio 2026_; \
-  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni] \ _Ultima consultazione: 20 maggio 2026_; \
-  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni] \ _Ultima consultazione: 20 maggio 2026_; \
+  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/")[Verbali interni] \ _Ultima consultazione: 20 maggio 2026_; \
+  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/")[Verbali esterni] \ _Ultima consultazione: 20 maggio 2026_; \
 ]
 
