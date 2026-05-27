@@ -201,7 +201,7 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf")[Glossario v2.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf)] \ _Ultima consultazione: 20 maggio 2026_; \
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf")[Glossario v2.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf)] \ _Ultima consultazione: 20 maggio 2026_; \
     - #inserisciLink(url:"https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[Diagrammi dei casi d'uso (https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)] \ _Ultima consultazione: 10 gennaio 2026_; \
     - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf)] \ _Ultima consultazione: 10 gennaio 2026_; \
     - #inserisciLink(url:"https://drive.google.com/file/d/1irvFvrXyRsF3ELZAuNre4y3bLHFmszvz/view?usp=sharing")[Software Engineering, Sommerville, edizione X] \ _Ultima consultazione: 10 gennaio 2026_; \
