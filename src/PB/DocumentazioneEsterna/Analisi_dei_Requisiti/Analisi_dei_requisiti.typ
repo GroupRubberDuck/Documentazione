@@ -156,7 +156,7 @@ Il documento esplicita le funzionalità che il prodotto finale deve offrire e id
 
 I casi d’uso sono documentati secondo la notazione UML  e comprendono nome, attori principali, precondizioni, trigger, scenario principale e scenari alternativi. Queste informazioni permettono di rappresentare in modo chiaro le interazioni tra utenti e sistema, facilitando lo sviluppo, i test e la manutenzione futura.
 
-
+]
   
 ==  Scopo del documento <sec-scopo-doc>
 
