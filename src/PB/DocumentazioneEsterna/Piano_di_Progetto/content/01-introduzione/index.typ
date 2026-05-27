@@ -27,32 +27,28 @@ Il presente documento è soggetto a revisioni periodiche durante tutto il ciclo 
 Le modifiche sostanziali ai requisiti comportano l'incremento della versione principale (es. da 1.0.0 a 2.0.0), mentre chiarimenti incrementano la versione secondaria (es. da 1.0.0 a 1.1.0). La correzione ortografica o di parti errate relative a una versione secondaria incrementerà la versione terziaria (es. da 1.1.0 a 1.1.1).\
 
 
-== Riferimenti
 
 === Riferimenti normativi
 #pad(left: 1em)[
   - #inserisciLink(
       url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v" + versionNumber + ".pdf",
-    )[Norme di Progetto];\
+    )[Norme di Progetto] \ _Ultima consultazione: 20 maggio 2026_; \
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T04.pdf",
-    )[Slide del corso di Ingegneria del Software A.A.2025/2026 - Regolamento del progetto didattico]; \
+    )[Slide del corso di Ingegneria del Software A.A.2025/2026 - Regolamento del progetto didattico] \ _Ultima consultazione: 8 aprile 2026_; \
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf",
-    )[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification]; \
+    )[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification] \ _Ultima consultazione: 8 aprile 2026 _; \
 ]
 === Riferimenti informativi
 #pad(left: 1em)[
   - #inserisciLink(
       url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf",
-    )[Glossario]; \
-  - #inserisciLink(
-      url: "https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf",
-    )[Diagrammi dei casi d'uso]; \
+    )[Glossario] \ _Ultima consultazione: 20 maggio 2026_; \
   - #inserisciLink(
       url: "https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf",
-    )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti ];\
-  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni]; \
-  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni]; \
+    )[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti] \ _Ultima consultazione: 10 gennaio 2026_; \
+  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali interni] \ _Ultima consultazione: 20 maggio 2026_; \
+  - #inserisciLink(url: "https://grouprubberduck.github.io/Documentazione/output/")[Verbali esterni] \ _Ultima consultazione: 20 maggio 2026_; \
 ]
 

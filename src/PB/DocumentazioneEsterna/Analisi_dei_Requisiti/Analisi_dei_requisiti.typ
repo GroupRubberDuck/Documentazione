@@ -194,22 +194,19 @@ Le modifiche sostanziali ai requisiti comportano l’incremento della versione p
  == Riferimenti  
   === Riferimenti normativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v0.13.1.pdf")[Norme di Progetto v1.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v1.0.0.pdf)];\ 
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf)]; \
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification (https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf)]; \
-    - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031 (https://www.evs.ee/en/evs-en-18031-1-2024)]
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v2.0.0.pdf")[Norme di Progetto v2.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto-v2.0.0.pdf)] \ _Ultima consultazione: 20 maggio 2026_; \ 
+    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Regolamento del progetto didattico (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf)] \ _Ultima consultazione: 8 aprile 2026_; \
+    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification (https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf)] \ _Ultima consultazione: 8 aprile 2026_; \
+    - #inserisciLink(url:"https://www.evs.ee/en/evs-en-18031-1-2024")[European Standard EN18031 (https://www.evs.ee/en/evs-en-18031-1-2024)] \ _Ultima consultazione: 8 aprile 2026_; \
   ]
   === Riferimenti informativi
   #pad(left: 1em)[
-    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf")[Glossario v1.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf)]; \
-    - #inserisciLink(url:"https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[Diagrammi dei casi d'uso (https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)]; \
-    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf)];\
-    - #inserisciLink(url:"https://drive.google.com/file/d/1irvFvrXyRsF3ELZAuNre4y3bLHFmszvz/view?usp=sharing")[Software Engineering, Sommerville, edizione X]
-    - #inserisciLink(url:"https://github.com/zealience/IoT-Cybersecurity-Compliance")[IoT-Cybersecurity-Compliance (https://github.com/zealience/IoT-Cybersecurity-Compliance)]
-  
-  
+    - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf")[Glossario v2.0.0 (https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf)] \ _Ultima consultazione: 20 maggio 2026_; \
+    - #inserisciLink(url:"https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[Diagrammi dei casi d'uso (https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)] \ _Ultima consultazione: 10 gennaio 2026_; \
+    - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Slide del corso di Ingegneria del Software A.A. 2025/2026 - Analisi dei requisiti (https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf)] \ _Ultima consultazione: 10 gennaio 2026_; \
+    - #inserisciLink(url:"https://drive.google.com/file/d/1irvFvrXyRsF3ELZAuNre4y3bLHFmszvz/view?usp=sharing")[Software Engineering, Sommerville, edizione X] \ _Ultima consultazione: 10 gennaio 2026_; \
+    - #inserisciLink(url:"https://github.com/zealience/IoT-Cybersecurity-Compliance")[IoT-Cybersecurity-Compliance (https://github.com/zealience/IoT-Cybersecurity-Compliance)] \ _Ultima consultazione: 20 maggio 2026_; \
   ]
-]
 
 
 #insertArabicNumberedPagesSenzaData(PageTitle: "Descrizione generale", documentType: doc)[

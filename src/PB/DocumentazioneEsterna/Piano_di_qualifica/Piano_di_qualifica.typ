@@ -148,7 +148,7 @@
       [2.0.0],
       [2026-05-21],
       [#persone.DT],
-      [#persone.FILIPPO],
+      [#persone.DT],
       [Approvazione]
     ),
   )

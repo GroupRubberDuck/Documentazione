@@ -26,8 +26,8 @@
 
 === Riferimenti normativi
 #pad(left: 1em)[
-  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \ _Ultima consultazione: 11 novembre 2025_; \
-  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \ _Ultima consultazione: 11 novembre 2025_; \
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \ _Ultima consultazione: 8 aprile 2026_; \
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \ _Ultima consultazione: 8 aprile 2026_; \
   - #inserisciLink(url:"https://www.iso.org/standard/63712.html")[Standard ISO/IEC/IEEE 12207:2017] \ _Ultima consultazione: 10 gennaio 2026_; \
   - #inserisciLink(url:"https://en.wikipedia.org/wiki/ISO/IEC_9126")[Standard ISO/IEC 9126] \ _Ultima consultazione: 10 gennaio 2026_; \
 ]

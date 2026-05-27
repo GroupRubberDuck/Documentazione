@@ -79,7 +79,7 @@
   ([1.2.0],[2026-05-03],[Felician Mario \ Necsulescu],[Ana Maria Draghici],[Aggiunti Specifica Tecnica e Manuale Utente alla sezione @struttura]),
   ([1.3.0],[2026-05-18],[Aldo Bettega],[Ana Maria Draghici],[Aggiunte sezioni di codifica e progettazione]),
   ([1.4.0],[2026-05-18],[Ana Maria Draghici],[Filippo Guerra],[Spostato da Pdq e integrato la sezione di automiglioramento @processo_miglioramento]),
-  ([2.0.0],[2026-05-20],[Filippo Guerra],[Davide Testolin],[Approvazione]),
+  ([2.0.0],[2026-05-20],[Filippo Guerra],[Filippo Guerra],[Approvazione]),
 )
 #registroModifiche(modifiche)
 
