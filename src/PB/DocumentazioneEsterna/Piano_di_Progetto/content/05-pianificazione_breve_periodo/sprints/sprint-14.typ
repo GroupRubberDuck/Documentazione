@@ -26,6 +26,7 @@
     (persona: persone.ANA,     ruolo: ruoli.Programmatore,  orePreviste: 12,  oreEffettive: 12),
     (persona: persone.ANA,     ruolo: ruoli.Verificatore,  orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FELIX,   ruolo: ruoli.Progettista,    orePreviste: 10, oreEffettive: 10),
+    (persona: persone.FELIX,   ruolo: ruoli.Programmatore,    orePreviste: 4, oreEffettive: 4),
     (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista,    orePreviste: 8,  oreEffettive: 8),
     (persona: persone.DT,      ruolo: ruoli.Progettista,    orePreviste: 2,  oreEffettive: 2),
