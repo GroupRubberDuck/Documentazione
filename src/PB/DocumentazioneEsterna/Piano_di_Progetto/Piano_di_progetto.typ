@@ -27,8 +27,8 @@
 #let doc = "Piano di Progetto"
 
 #let currentVersion = (
-  major: 1,
-  minor: 9,
+  major: 2,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -43,7 +43,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT, "Felician Mario Necsulescu", persone.ANA, persone.ALDO, persone.FILIPPO),
     verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, "Felician Mario Necsulescu"),
@@ -199,7 +199,7 @@
       [1.8.0],
       [2026-05-18],
       [#persone.ANA],
-      [-],    
+      [#persone.ALDO],    
       [Aggiornamento finale della pianificazione di lungo periodo TB],
     ),
     (
@@ -209,6 +209,15 @@
       [#persone.ANA],
       [Stesura sprint 14],
     ),
+    (
+      [1.9.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.ANA],
+      [Stesura sprint 14],
+    ),
+     ([2.0.0],[2026-05-20],[#persone.ANA],[#persone.ANA],[Approvazione]),
+)
   )
   #registroModifiche(modifiche)
 ]

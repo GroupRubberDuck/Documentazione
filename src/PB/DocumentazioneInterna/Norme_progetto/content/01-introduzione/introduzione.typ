@@ -23,10 +23,10 @@ Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro 
 === Riferimenti normativi
 
 - Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl \ https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf  \
-  _Ultima consultazione: 14 gennaio 2025_
+  _Ultima consultazione: 8 aprile 2026_
 
 - Regolamento del progetto \ https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf \
-  _Ultima consultazione: 11 dicembre 2025_
+  _Ultima consultazione: 8 aprile 2026_
 
 
 
