@@ -228,7 +228,7 @@ Ogni nuova issue deve includere le seguenti informazioni:
   Generalmente coincide con la fine dello sprint di riferimento o con una milestone pianificata.
 
 
-===== Creazione e struttura di un’issue - Documentazione
+//===== Creazione e struttura di un’issue - Documentazione
 // TODO_PB
 
 
