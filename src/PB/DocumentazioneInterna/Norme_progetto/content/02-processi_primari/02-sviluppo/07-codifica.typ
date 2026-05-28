@@ -20,7 +20,7 @@ La codifica deve seguire le convenzioni e le norme definite in questo documento 
 
 Per lo sviluppo del software, il gruppo utilizza strumenti mirati a garantire qualità, tracciabilità e collaborazione:
 
-- *Linguaggio e ambiente di sviluppo*: Python 3.x come linguaggio principale per le componenti software.
+- *Linguaggio e ambiente di sviluppo*: Python 3.x come linguaggio principale per le componenti software del sistema backend, Vue 3.X per il frontend.
 
 - *Versionamento del codice*: Git/GitHub per gestione dei repository, branch, commit, issue e pull request.
 
@@ -107,6 +107,19 @@ a tempo di sviluppo.
 - `pytest-cov` (≥7.1.0): per misurare la copertura del codice da parte dei test;
 - Configurato per generare report in formato HTML, XML e JSON;
 - Target di copertura: branch coverage incluso.
+===== Strumenti per il frontend (js + Vue)
+
+*Vue*(v3.5.32):l framework progressivo principale utilizzato per la creazione dell'interfaccia utente e dei componenti.
+
+*Pinia*(v3.0.4): Lo standard per la gestione dello stato globale in Vue 3, utilizzato nel tuo progetto per gestire l'albero decisionale, le valutazioni e la sincronizzazione della UI.
+
+*D3* (v7.9.0): Libreria per la manipolazione di documenti basati sui dati, essenziale per il rendering e il layout del canvas SVG dell'albero decisionale
+
+*Vite* (v8.0.9): Il bundler e dev-server che orchestra la compilazione del frontend.
+
+*@\Vitejs/plugin-vue* (v6.0.6): Il plugin ufficiale che permette a Vite di comprendere e compilare correttamente i file Single-File Component (SFC) con estensione .vue.
+
+
 
 ===== Automazione tramite CI/CD
 
@@ -138,8 +151,11 @@ poetry run mypy backend/src
 
 # Test con copertura
 poetry run pytest
-```
 
+
+#Test relativi al frontend
+npx vitest run
+```
 
 
 

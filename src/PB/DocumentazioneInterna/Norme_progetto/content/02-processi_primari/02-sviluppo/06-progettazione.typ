@@ -31,7 +31,7 @@ La progettazione del sistema deve conformarsi agli standard UML e ai design patt
 
 Per la rappresentazione della progettazione si adottano le convenzioni UML definite nelle slide del corso:
 
-- *Diagrammi delle classi* (slide P4 - Diagrammi delle Classi): per la struttura statica del sistema, le relazioni tra classi e le dipendenze;
+- *Diagrammi delle classi* : per la struttura statica del sistema, le relazioni tra classi e le dipendenze;
 
 - *Diagrammi di sequenza*: per le interazioni dinamiche tra componenti durante l'esecuzione di casi d'uso;
 
@@ -41,10 +41,10 @@ Per la rappresentazione della progettazione si adottano le convenzioni UML defin
 
 I design pattern da considerare durante la progettazione sono documentati nelle slide del corso:
 
-- *Pattern architetturali* (slide P5 - Design Pattern Architetturali - Dependency Injection): per l'organizzazione dell'architettura e la 
+- *Pattern architetturali* : per l'organizzazione dell'architettura e la 
   gestione delle dipendenze;
 
-- *Pattern comportamentali* (slide P9 - Design Pattern Comportamentali): per la definizione della comunicazione tra oggetti.
+- *Pattern comportamentali* : per la definizione della comunicazione tra oggetti.
 
 I pattern concretamente applicati nel progetto sono documentati nella Specifica Tecnica (Sezione Design Patterns).
 
