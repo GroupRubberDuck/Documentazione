@@ -89,10 +89,6 @@
     series-thickness: (2pt, 2pt, 0.8pt, 0.8pt),
   )
 ]
-Il CPI si mantiene costantemente al di sotto della soglia accettabile per tutti
-gli sprint, a indicare un utilizzo del budget superiore al previsto. Il miglioramento del CPI osservato a partire dai sprint centrali è
-parzialmente riconducibile a una riorganizzazione del lavoro successiva alla
-sessione esami.
+Il CPI si mantiene sotto la soglia per tutti gli sprint, indicando un consumo del budget superiore al previsto, seppur con un lieve recupero nei periodi centrali.
 #line(length: 100%, stroke: 0.5pt + luma(180))
-A partire dallo Sprint 9, coincidente con l'avvio della Product Baseline (PB), si osserva un graduale miglioramento dell'efficienza grazie alla riorganizzazione del lavoro post-sessione esami e all'adozione di nuove pratiche di sviluppo. Tuttavia, la consegna finale del progetto è avvenuta con un mese di ritardo rispetto alla pianificazione iniziale; tale slittamento è dovuto principalmente ai debiti accumulati nelle fasi precedenti, che hanno condizionato la sostenibilità dei ritmi operativi. Le analisi dettagliate delle cause e le strategie di mitigazione adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto].
-
+Dallo S9 (inizio PB) l'efficienza migliora grazie alla riorganizzazione post-esami e a nuove pratiche. Tuttavia, i debiti pregressi hanno generato uno slittamento di un mese sulla consegna finale. Analisi e mitigazioni sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto].

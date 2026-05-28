@@ -73,14 +73,9 @@
     series-thickness: (2pt, 0.8pt),
   )
 ]
-Il TimeEAC si mantiene generalmente allineato al pianificato, con scostamenti contenuti
-riconducibili a rallentamenti puntuali come la sessione esami, seguiti da parziali recuperi
-negli sprint successivi. Il dato va tuttavia letto con cautela: il completamento delle task
-nei tempi previsti non riflette necessariamente la qualità del lavoro svolto. Task chiuse
-parzialmente hanno generato attività correttive negli sprint successivi, come evidenziato
-anche dall'andamento documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+Il TimeEAC si mantiene allineato al pianificato, salvo rallentamenti temporanei come la sessione esami. La puntualità non ha però rispecchiato sempre la qualità: la chiusura parziale di alcune task ha generato rilavorazioni nei periodi successivi (#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto]).
 #line(length: 100%, stroke: 0.5pt + luma(180))
-Il TimeEAC si è mantenuto allineato alla pianificazione fino all'avvio della Product Baseline (S9). A partire da tale sprint, si è consolidato un ritardo complessivo di circa un mese rispetto al termine originale. Tale slittamento è imputabile ai debiti accumulati nelle fasi precedenti, in particolare alla curva di apprendimento tecnologico e alla sottostima dell'impegno richiesto dalle attività di verifica e analisi. L'andamento è documentato nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+In linea fino allo S9, il TimeEAC ha poi registrato un ritardo complessivo di circa un mese. Lo slittamento è dovuto ai debiti pregressi accumulati a causa della curva di apprendimento tecnologico e della sottostima delle attività di verifica e analisi (#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto]).
 
 // ═══════════════════════════════════════════════════════════════════════════
 // GRAFICO 2: AC vs ETC vs EAC (COSTI)
@@ -144,6 +139,6 @@ Il TimeEAC si è mantenuto allineato alla pianificazione fino all'avvio della Pr
 ]
 
 
-Il progetto si conclude con uno slittamento temporale di un mese rispetto alla pianificazione originaria. Sotto il profilo economico, è importante evidenziare che il costo effettivo sostenuto (Actual Cost, AC) si mantiene al di sotto del budget totale pianificato (BAC di 11.610€), pur attestandosi su valori prossimi a quest'ultimo. 
+Il progetto si conclude con un mese di ritardo rispetto alle stime originarie, ma il costo effettivo finale (AC) è stato contenuto, mantenendosi al di sotto del budget totale pianificato (BAC di 11.610€).
 #line(length: 100%, stroke: 0.5pt + luma(180))
-Tuttavia, a partire dallo Sprint 9 (Product Baseline), l'adozione di un workflow di approvazione strutturato e l'integrazione di pipeline di Continuous Integration hanno stabilizzato l'efficienza operativa del gruppo. Gli indicatori di performance (CPI e SPI) mostrano un trend di miglioramento costante, a conferma che le azioni correttive hanno reso il ritmo di lavoro sostenibile e la qualità del codice conforme agli standard prefissati.
+Dallo S9 (inizio PB), l'introduzione di un workflow strutturato e della Continuous Integration ha stabilizzato l'efficienza. Il costante miglioramento degli indicatori CPI e SPI conferma il successo delle azioni correttive, che hanno garantito ritmi di lavoro sostenibili e una qualità del codice conforme agli standard.

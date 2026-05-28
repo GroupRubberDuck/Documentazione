@@ -24,5 +24,3 @@
 L'indice è stato calcolato sui documenti con struttura narrativa più estesa. Sono stati esclusi documenti come verbali e glossario, la cui natura sintetica non si presta a una valutazione significativa della leggibilità.
 
 I valori ottenuti si attestano nella fascia accettabile per documentazione tecnica: la presenza di terminologia specialistica abbassa il punteggio rispetto a testi divulgativi. L'*Analisi dei Requisiti* raggiunge il valore più alto grazie a uno stile più discorsivo e frasi mediamente più brevi. Il *Manuale Utente*, pur destinato a un pubblico non tecnico, presenta un punteggio nella fascia media a causa dell'elevato numero di immagini che riducono la densità testuale analizzabile.
-
-#pagebreak()

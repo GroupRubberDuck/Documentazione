@@ -76,9 +76,6 @@
   )
 ]
 
-Il team ha mantenuto un ritmo di avanzamento coerente con la pianificazione, con EV e PV
-molto vicini. L'AC ha tuttavia superato costantemente entrambi,
-evidenziando una tendenza strutturale a spendere più del previsto. Le cause e le contromisure adottate sono documentate nel
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto].
+Il team ha mantenuto EV e PV ravvicinati, pur con un AC costantemente superiore che indica una tendenza alla sovraspesa (cause e contromisure nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto]).
 #line(length: 100%, stroke: 0.5pt + luma(180))
-A partire da S9, corrispondente all'inizio della  PB, si osserva un'accelerazione nella crescita di EV, che tende a ridurre progressivamente il divario con PV. Questo segnala un miglioramento nell'efficacia del lavoro svolto rispetto alla pianificazione. L'AC continua a crescere a un ritmo sostenuto, ma nella parte finale del progetto (S12--S14) la sua pendenza si avvicina maggiormente a quella di EV, indicando una maggiore efficienza nella gestione dei costi rispetto agli sprint iniziali.
+Dallo S9 l'EV accelera, riducendo il distacco dal PV. Negli sprint finali (S12--S14) la curva dell'AC si stabilizza allineandosi a quella dell'EV, confermando un netto recupero nell'efficienza e un miglior controllo dei costi.

@@ -128,7 +128,7 @@
       [2026-05-19],
       [#persone.ANA],
       [#persone.DT],
-      [Aggiornato i grafici già presenti nel cruscotto valutazione con i valori di fine PB @valutazione]
+      [Aggiornato cruscotto valutazione con i valori di fine PB @valutazione]
     ),
     (
       [1.3.0],
