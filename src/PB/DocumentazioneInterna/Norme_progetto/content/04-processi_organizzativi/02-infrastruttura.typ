@@ -49,7 +49,7 @@ Per facilitare il lavoro del gruppo, in particolare la comunicazione asincrona e
 *Google Drive* – Sistema di file sharing per materiali di progetto.
 
 *Python* – Linguaggio di programmazione usato per gestire alcuni script di automazione.
-
+// TODO_PB
 
 #he(body:"Creazione",level:4)
 In questa sezione viene descritto il processo di creazione e configurazione degli strumenti ritenuti significativi per il supporto alle attività di progetto.
@@ -120,7 +120,7 @@ Google Sheets richiede invece operazioni più complesse per l’implementazione 
 
 [Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Inoltre crea eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli elementi.]
 )
-
+// TODO_PB
 ]
 
 ==== Manutenzione

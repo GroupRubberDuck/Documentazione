@@ -9,5 +9,5 @@ Le principali attività previste sono le seguenti:
 + *Codifica* \ Implementazione del software secondo quanto definito in fase di progettazione, adottando convenzioni di stile e buone pratiche di programmazione per garantire leggibilità, manutenibilità e qualità del codice.
 + *Test e Integrazione * \ Verifica del corretto funzionamento tramite i test di sistema e successiva integrazione delle componenti, accompagnata da test di integrazione per individuare eventuali difetti.
 
-+ *Installazione e supporto all’accettazione* \ Consegna del prodotto software nelle modalità concordate e supporto alla proponente nelle attività di accettazione, al fine di verificare il soddisfacimento dei requisiti contrattuali.
++ *Rilascio e Distribuzione* \ Consegna del prodotto software nelle modalità concordate e supporto alla proponente nelle attività di accettazione, al fine di verificare il soddisfacimento dei requisiti contrattuali.
 ]
