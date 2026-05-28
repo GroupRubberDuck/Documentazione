@@ -79,16 +79,6 @@
   )
 ]
 
-Il team ha mantenuto una Time Efficiency costantemente prossima a 1 per tutti
-gli sprint, con valori compresi tra 0.8 e 0.95, attestandosi leggermente al
-di sotto della soglia ottimale per l'intera durata del progetto.
-Nella RTB (S1--S8) i valori risultano più variabili, con un picco
-intorno a S5 e alcune oscillazioni, riflettendo la minor esperienza iniziale
-nelle stime. 
+La Time Efficiency si è mantenuta tra 0,8 e 0,95, restando costantemente prossima alla soglia ottimale. Nella fase RTB (S1--S8) l'andamento è risultato più instabile a causa della fisiologica inesperienza iniziale nella formulazione delle stime.
 #line(length: 100%, stroke: 0.5pt + luma(180))
-A partire da S9, corrispondente alla PB, l'andamento
-diventa più stabile e mostra un lieve miglioramento progressivo, con eT che
-si avvicina maggiormente alla soglia ottimale negli sprint finali (S13--S14).
-Ciò indica un affinamento delle capacità di stima del team nel corso del
-progetto, pur mantenendo un leggero scostamento strutturale dovuto alla
-natura sperimentale del progetto per il team.
+Dallo S9 (inizio PB), l'indicatore si è stabilizzato mostrando un progressivo miglioramento. L'avvicinamento all'ottimo negli sprint finali (S13--S14) conferma un netto affinamento nelle capacità di stima del team, pur mantenendo un lieve scostamento strutturale dovuto alla natura inedita del progetto.

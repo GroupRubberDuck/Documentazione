@@ -81,16 +81,6 @@ Misura quanto facilmente il software può essere modificato o esteso senza intro
     accettabile: $<= 10$,
     preferibile: $<= 8$
   ),
-  (codice: "MPD-13",
-    nome: "Instability Index",
-    accettabile: [$I>= 0.7 $\ $or $ \ $I<=0,30$],
-    preferibile: [$I>= 0.85 $\ $or $\ $I<=0,15$],
-  ),
-  (codice: "MPD-14",
-    nome: "Coefficient of Coupling",
-    accettabile: $<= 0.4$,
-    preferibile: $<= 0.2$
-  ),
   (codice: "MPD-15",
     nome: "Code Smells",
     accettabile: $<= 10$ ,
