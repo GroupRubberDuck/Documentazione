@@ -21,6 +21,7 @@
   ],
   oreProduttive: (
     (persona: persone.FELIX, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 1),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),
     (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 1),

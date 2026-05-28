@@ -65,7 +65,7 @@
       Il gruppo ha riscontrato alcune difficoltà, in particolare nella *stima dei tempi* e nella *definizione delle task*. Inoltre, la comunicazione interna non risultava ancora pienamente strutturata. Le attività di mitigazione dei rischi adottate sono state valutate come mediamente efficaci: trattandosi di una fase iniziale del progetto, non è stato possibile ottenere risultati pienamente consolidati, che si prevede emergeranno nei prossimi sprint.
 
     - *Aree di miglioramento*:
-      Alla luce di queste considerazioni, il gruppo ha deciso che nel prossimo sprint si lavorerà in modo mirato sul *miglioramento della pianificazione*, sulla *scomposizione delle attività* e sul *rafforzamento della comunicazione interna*. Questi aspetti rappresentano infatti aree di miglioramento su cui il gruppo deve migliorare.
+      Alla luce di queste considerazioni, il gruppo ha deciso che nel prossimo sprint si lavorerà in modo mirato sul *miglioramento della pianificazione*, sulla *scomposizione delle attività* e sul *rafforzamento della comunicazione interna*. Questi aspetti rappresentano infatti aree di miglioramento su cui il gruppo deve intervenire.
 
     - *Pianificazione operativa futura*:
       Di conseguenza, nel prossimo sprint si prevede un maggiore impegno nelle *attività di verifica*, dato che il metodo di lavoro non è ancora completamente strutturato, e nel ruolo di amministratore. Parallelamente, continueranno le attività principali di analisi e studio.
