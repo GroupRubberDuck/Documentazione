@@ -166,6 +166,7 @@ Inoltre, il sistema di gestione delle issue prevede:
 Questo approccio consente una gestione strutturata, trasparente e verificabile dell’intero ciclo di vita delle attività di progetto.
 
 ===== Creazione e struttura di un’issue
+====== Creazione e struttura di un’issue - Documentazione
 
 La creazione delle issue avviene a seguito di riunioni interne o incontri con la proponente, durante i quali il gruppo individua le attività su cui concentrarsi.
 L’*amministratore* è responsabile della creazione delle issue nel sistema, utilizzando l’apposito *template* definito dal gruppo.
@@ -225,6 +226,11 @@ Ogni nuova issue deve includere le seguenti informazioni:
 
 + *Data di scadenza* \
   Generalmente coincide con la fine dello sprint di riferimento o con una milestone pianificata.
+
+
+===== Creazione e struttura di un’issue - Documentazione
+// TODO_PB
+
 
 ===== Flusso operativo
 
