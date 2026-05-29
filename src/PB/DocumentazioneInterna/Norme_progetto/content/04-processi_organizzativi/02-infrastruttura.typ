@@ -102,7 +102,10 @@ Sono stati definiti due branch principali:
 
 #terms(
   separator:[: \ ], hanging-indent: 0em ,spacing:1.5em,
-  ([GitHub Actions],[Sono state configurate delle GitHub Actions per la compilazione automatica dei file Typst e per l’aggiornamento automatico del sito web.]),
+  ([GitHub Actions],[Sono state configurate delle GitHub Actions per la compilazione automatica dei file Typst e per l’aggiornamento automatico del sito web.
+  
+  Utilizzate anche per realizzare la continuos integration del repository del codice.
+  ]),
   ([GitHub Pages],[#upper("è") stata attivata la funzionalità *GitHub Pages* per l’hosting del sito web del progetto.]),
   ([GitHub Issue Tracking System],[Il gruppo ha deciso di avvalersi dell’issue tracking system offerto da GitHub; maggiori dettagli sono disponibili nella sezione dedicata alla guida operativa @issue-tracking.]),
 )
@@ -118,9 +121,15 @@ Google Drive e Google Docs non richiedono particolari operazioni di configurazio
 Google Sheets richiede invece operazioni più complesse per l’implementazione delle metriche e degli indicatori stabiliti.
 ],
 
-[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Inoltre crea eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli elementi.]
+[Script python <python>],[],[Insieme alla numerazione automatica realizzata tramite funzioni Typst è stato predisposto uno script python per mantenere ordinati e coerenti con la numerazione i file all'interno della cartella di lavoro. Inoltre crea eventuali file mancanti partendo da un template configurabile e aggiorna il file index usato per l'aggregazione dei singoli elementi.
+
+Usato anche per la raccolta delle metriche.
+],
+[Docker \ Docker Compose],[],[Al fine di standardizzare l'ambiente di sviluppo si è deciso di configurare un ambiente di sviluppo containerizzato con docker e orchestrato con docker compose.],
+[Vite],[],[Tool utilizzato solo in ambito di sviluppo per testare, analizzare e compilare le parti reattive di frontend.],
+[Watcher.sh],[],[Container che usa vite per generare un compile down in javascript puro che permette semplifica l'integrazione sul frontend.],
+[Poetry],[],[Tool usato per la risoluzione e gestione delle dipendenze python.],
 )
-// TODO_PB
 ]
 
 ==== Manutenzione
