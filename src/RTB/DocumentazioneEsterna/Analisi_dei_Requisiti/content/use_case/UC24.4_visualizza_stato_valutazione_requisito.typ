@@ -18,7 +18,6 @@
                     "Visualizza stato FAIL requisito ",
                     "Visualizza stato NA requisito ",
                     "Visualizza stato In corso requisito ",
-                    "Visualizza stato Sospeso requisito ",
   ),
   spacing: (0.1cm, 2cm), 
   diagram-scale: 50%,
@@ -63,7 +62,6 @@
                     - #use-case-label(nome-etichetta: "Visualizza stato PASS requisito ")
                     - #use-case-label(nome-etichetta: "Visualizza stato FAIL requisito ")
                     - #use-case-label(nome-etichetta: "Visualizza stato NA requisito ")
-                    - #use-case-label(nome-etichetta: "Visualizza stato Sospeso requisito ")
                     - #use-case-label(nome-etichetta: "Visualizza stato In corso requisito ")
     ],
     
