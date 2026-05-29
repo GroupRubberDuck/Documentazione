@@ -228,8 +228,76 @@ Ogni nuova issue deve includere le seguenti informazioni:
   Generalmente coincide con la fine dello sprint di riferimento o con una milestone pianificata.
 
 
-//===== Creazione e struttura di un’issue - Documentazione
-// TODO_PB
+===== Creazione e struttura di un’issue - Codice
+
+La creazione delle issue avviene a seguito di riunioni interne o incontri con la proponente, durante i quali il gruppo individua nuove attività.
+L’*amministratore* è responsabile della creazione delle issue nel sistema, utilizzando l’apposito *template* definito dal gruppo.
+
+A seguito delle attività di progettazione sono state create un cospicuo numero di issue, una per ogni classe progettata. Queste sono state inserite nel backlog e solo quelle pronte sono state inserite in ready, lo spostamento avviene periodicamente.
+
+Ogni nuova issue deve includere le seguenti informazioni:
+
++ *Assegnatario/i* \
+  Generalmente l’issue viene assegnata a una singola persona.
+  In casi particolari, come attività di formazione o di esercitazione (*palestra*), l’issue può essere assegnata a più membri o all’intero gruppo.
+
++ *Descrizione* \
+  Una descrizione chiara, dettagliata e non ambigua delle attività da svolgere.
+
++ *Autore* \
+  Il membro del gruppo incaricato di svolgere l’issue.
+
+  Deve allegare al codice creato anche dei test.
+
++ *Verificatore* \
+  Il membro incaricato di verificare il corretto completamento dell’issue secondo i criteri definiti nella  *Definition of Done* (@DOD).
+  Per garantire l'oggettività della verifica e l'assenza di conflitti di interesse, il verificatore deve essere necessariamente una figura diversa dall'autore.
+
+  Deve aggiungere test mancanti se lo ritiene necessario.
+
+
++ *Label (ambito/destinazione)*  #footnote()[
+    Le label possono essere aggiornate nel corso del progetto: label non più utili possono essere rimosse e nuove label introdotte in base alle esigenze. ]\ #[
+    Le label permettono di classificare le issue in base al loro ambito all’interno del progetto, facilitandone l’organizzazione e la ricerca.
+    Le principali label adottate sono le seguenti:
+    #terms( indent: 0em, hanging-indent: 0em,
+      ([Bug],[Indica un bug da correggere]),
+      ([Documentation],[Segnala la necessità dell'aggiornamento della documentazione]),
+      ([Frontend],[Indica un issue relativo all'implementazione del sistema frontend]),
+      ([Inbound adapter/controller],[Indica un issue relativo all'implementazione di un controller del sistema backend]),
+      ([Inbound port],[Indica un issue relativo alla definizione di una porta inbound.]),
+      ([Service],[Indica un issue relativo all'implementazione di un service]),
+      ([Outbound port],[Indica un issue relativo alla definizione di una outbound port]),
+      ([Outbound adapter],[Indica un issue relativo all'implementazione di un outbound adapter]),
+      ([Vue component],[Indica un issue relativo all'implementazione di un componente Vue]),
+      ([Vue store],[Indica un issue relativo all'implementazione di una parte dello store Vue]),
+    )
+  
+  
+
+  ]
+
++ *Tipo di issue (Type)* \ #[
+    Consente di distinguere la natura dell’attività:
+    - *Palestra* → attività formative non rendicontate;
+    - *Produttivo* → attività rendicontate che producono risultati concreti;
+    - *Bug* → individuazione e risoluzione di errori o malfunzionamenti;
+    - *Correzione* → modifiche e miglioramenti a materiali o documenti esistenti.
+
+  ]
+
++ *Priorità* (Bassa, Media, Alta) \ #[
+    La priorità ha un duplice scopo:
+    - supportare la valutazione dell’importanza dell’issue;
+    - comunicare all’assegnatario il livello di urgenza dell’attività.
+  ]
+
++ *Dimensione* (ExtraSmall, Small, Medium, Large) \
+  Fornisce una stima indicativa della quantità di lavoro necessaria per completare l’issue.
+
++ *Data di scadenza* \
+  Generalmente coincide con la fine dello sprint di riferimento o con una milestone pianificata.
+
 
 
 ===== Flusso operativo
