@@ -228,7 +228,7 @@ Ogni nuova issue deve includere le seguenti informazioni:
   Generalmente coincide con la fine dello sprint di riferimento o con una milestone pianificata.
 
 
-===== Creazione e struttura di un’issue - Codice
+====== Creazione e struttura di un’issue - Codice
 
 La creazione delle issue avviene a seguito di riunioni interne o incontri con la proponente, durante i quali il gruppo individua nuove attività.
 L’*amministratore* è responsabile della creazione delle issue nel sistema, utilizzando l’apposito *template* definito dal gruppo.
