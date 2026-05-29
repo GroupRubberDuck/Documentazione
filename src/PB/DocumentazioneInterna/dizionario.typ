@@ -503,6 +503,292 @@
   "Soluzione web-based":[
     Applicazione accessibile tramite browser web, che non richiede installazione locale e può essere utilizzata da qualsiasi dispositivo connesso a internet.
   ],
+  "Schema-flexible":[
+    Caratteristica architetturale tipica dei database NoSQL orientati ai documenti (come MongoDB) che consente di memorizzare dati senza la necessità di definire a priori una struttura rigida. In un ambiente schema-flexible, documenti appartenenti alla medesima collezione possono presentare campi, tipi di dato e gerarchie (nidificazioni) differenti tra loro, garantendo un'elevata agilità nell'evoluzione del modello dati.
+  ],
+  "NoSQL":[
+    *Not Only SQL*.
+
+    Indica una categoria di sistemi di gestione di basi di dati che, a differenza dei tradizionali database relazionali, non utilizza un modello basato su tabelle, righe e colonne con schemi rigidi. Progettati per offrire elevata flessibilità e scalabilità orizzontale, i database NoSQL sono ottimizzati per la gestione di grandi volumi di dati eterogenei, non strutturati o semi-strutturati, utilizzando diversi modelli di archiviazione.
+  ],
+  "Database orientato ai documenti":[
+      Specifica tipologia di database NoSQL progettata per memorizzare, recuperare e gestire informazioni sotto forma di documenti (tipicamente formattati in JSON, BSON o XML). A differenza dei database relazionali, in cui le informazioni sono distribuite su più tabelle normalizzate, in questo modello tutti i dati correlati a una singola entità logica vengono incapsulati all'interno di un unico documento gerarchico. Questo approccio favorisce l'adozione di un design Schema-flexible e si allinea in modo naturale con le strutture dati dei moderni linguaggi di programmazione.
+  ],
+  "Specifica tecnica": [
+    Documento che definisce in modo rigoroso e dettagliato i requisiti tecnici, l'architettura, i vincoli e le tecnologie che il sistema deve adottare per soddisfare le esigenze del progetto.
+  ],
+
+  "Design pattern": [
+    Soluzione progettuale generale, riutilizzabile e ottimizzata a un problema architetturale o logico che si presenta frequentemente nello sviluppo del software.
+  ],
+
+  Deployment: [
+    L'insieme dei processi e delle attività necessarie per rilasciare, installare e configurare un'applicazione software in un ambiente di esecuzione (es. server di produzione), rendendola accessibile agli utenti.
+  ],
+
+  Framework: [
+    Infrastruttura software di supporto che fornisce una base generica su cui sviluppare un'applicazione. Impone un'architettura predefinita e semplifica operazioni comuni fornendo librerie e strumenti integrati.
+  ],
+
+  Python: [
+    Linguaggio di programmazione ad alto livello, interpretato e orientato agli oggetti. Nel progetto viene utilizzato per lo sviluppo della logica applicativa del backend.
+  ],
+
+  Flask: [
+    Micro-framework web scritto in Python, scelto per il progetto per la sua leggerezza e modularità. Viene utilizzato per realizzare le API e gestire la logica di business lato server.
+  ],
+
+  Waitress: [
+    Server WSGI (Web Server Gateway Interface) in puro Python, impiegato per servire l'applicazione Flask in ambiente di produzione garantendo stabilità e buone performance.
+  ],
+
+  FPDF: [
+    Libreria Python utilizzata per la generazione programmatica e la formattazione dei documenti in formato PDF, impiegata nel progetto per la creazione dei report di valutazione finale.
+  ],
+
+  PyMongo: [
+    Driver ufficiale di MongoDB per Python, utilizzato per gestire la comunicazione a basso livello, le query e le operazioni CRUD tra il backend Flask e il database NoSQL.
+  ],
+
+  Pydantic: [
+    Libreria Python per la validazione dei dati e la gestione delle impostazioni tramite l'uso di annotazioni di tipo, che garantisce la correttezza delle strutture dati gestite dall'applicazione.
+  ],
+
+  "python-dotenv": [
+    Libreria Python utilizzata per leggere coppie chiave-valore da un file di configurazione `.env` e impostarle automaticamente come variabili d'ambiente nel sistema.
+  ],
+
+  Jinja2: [
+    Motore di templating per Python integrato in Flask. Permette di generare testo dinamico o documenti interpolando variabili all'interno di file di template.
+  ],
+
+  Werkzeug: [
+    Libreria WSGI per Python che fornisce le fondamenta per Flask. Gestisce operazioni web di basso livello come il routing, l'astrazione delle richieste HTTP e la gestione degli errori.
+  ],
+
+  Watchdog: [
+    Libreria Python utilizzata per monitorare gli eventi del file system in tempo reale. In ambiente di sviluppo è utile per ricaricare automaticamente i servizi in seguito alla modifica dei sorgenti.
+  ],
+
+  Pytest: [
+    Framework avanzato per il testing in Python, utilizzato nel progetto per scrivere, organizzare ed eseguire in modo efficiente i test di unità e di integrazione del backend.
+  ],
+
+  JavaScript: [
+    Linguaggio di programmazione orientato agli eventi, utilizzato principalmente per lo sviluppo della logica interattiva e dinamica lato client (frontend).
+  ],
+
+  "Vue.js": [
+    Framework JavaScript progressivo e reattivo, utilizzato per la costruzione dell'interfaccia utente e della single-page application (SPA) nel frontend del progetto.
+  ],
+
+  Pinia: [
+    Libreria ufficiale per la gestione dello stato (state management) in Vue.js. Consente di condividere e sincronizzare i dati tra i vari componenti dell'interfaccia utente.
+  ],
+
+  Axios: [
+    Libreria JavaScript basata su Promise utilizzata per effettuare richieste HTTP asincrone dal frontend verso le API esposte dal backend.
+  ],
+
+  "Tailwind CSS": [
+    Framework CSS di tipo "utility-first" che fornisce classi a basso livello per costruire interfacce utente personalizzate direttamente all'interno del markup HTML/Vue.
+  ],
+
+  Vitest: [
+    Framework di testing nativo per Vite, estremamente veloce e compatibile con l'ecosistema Vue, utilizzato per eseguire i test automatici del frontend.
+  ],
+
+  "Vue Test Utils": [
+    Libreria ufficiale di utility per il testing dei componenti Vue.js, che semplifica il montaggio, la simulazione degli eventi e l'interazione con i componenti durante i test.
+  ],
+
+  ESLint: [
+    Strumento di analisi statica per JavaScript e Vue che identifica pattern problematici nel codice e assicura il rispetto delle linee guida di stile definite dal team.
+  ],
+
+  Vite: [
+    Strumento di build per frontend di nuova generazione che offre un ambiente di sviluppo istantaneo e un bundler ottimizzato per preparare il codice per la produzione.
+  ],
+
+  MongoDB: [
+    Sistema di gestione di database NoSQL orientato ai documenti. Memorizza i dati in formato BSON, garantendo alta flessibilità (schema-flexible) ed eccellente scalabilità.
+  ],
+
+
+  "Design-to-cost": [
+    Metodologia di progettazione e sviluppo in cui il budget (in termini economici, di tempo o di risorse) assume il ruolo di vincolo primario attorno al quale si definiscono le funzionalità del sistema.
+  ],
+
+  "Top-down": [
+    Approccio alla progettazione e all'analisi che parte dalla scomposizione del sistema nel suo complesso (visione macroscopica) per poi scendere gradualmente verso i dettagli implementativi e i componenti elementari.
+  ],
+
+  "Architettura esagonale": [
+    Pattern architetturale (noto anche come Ports and Adapters) che isola il nucleo della logica di business dalle tecnologie esterne (database, interfacce utente) tramite un sistema di porte e adattatori.
+  ],
+
+  "Logica di business": [
+    Il nucleo dell'applicazione che contiene le regole di dominio, i vincoli normativi, i calcoli e i processi specifici del problema reale che il software è progettato per risolvere.
+  ],
+
+  "Inbound ports": [
+    Nell'architettura esagonale, sono le interfacce definite dalla logica di business che espongono i casi d'uso del sistema agli attori esterni (es. chiamate API).
+  ],
+
+  "Outbound ports": [
+    Nell'architettura esagonale, sono le interfacce definite dalla logica di business che specificano i contratti per i servizi esterni di cui il dominio ha bisogno (es. salvataggio su database).
+  ],
+
+  "Inbound adapters": [
+    Componenti architetturali (es. i controller Flask) che ricevono input dal mondo esterno e lo traducono in chiamate comprensibili per le inbound ports della logica di business.
+  ],
+
+  "Outbound adapters": [
+    Componenti architetturali (es. i repository MongoDB) che implementano le outbound ports, traducendo le richieste interne della logica di business in azioni concrete su sistemi e database esterni.
+  ],
+
+  "Fail-fast": [
+    Principio di progettazione secondo il quale un sistema riporta un errore o interrompe l'esecuzione non appena rileva una condizione anomala, impedendo il propagarsi di stati inconsistenti.
+  ],
+
+  "Driver di persistenza": [
+    Componente software o libreria (come PyMongo) che gestisce la comunicazione a basso livello e le operazioni dirette tra l'applicazione e il sistema di archiviazione dei dati.
+  ],
+
+  "Sezione alt": [
+    Nei diagrammi di sequenza UML, rappresenta un frammento combinato di tipo "alternative" utilizzato per modellare percorsi condizionali ed esclusive (costrutti if-then-else) tra gli scambi di messaggi.
+  ],
+
+  HTTP: [
+    HyperText Transfer Protocol. Protocollo applicativo standard utilizzato per la trasmissione di informazioni sul web, impiegato per la comunicazione tra il client (Vue.js) e il server (Flask).
+  ],
+
+  "Dependency injection": [
+    Pattern architetturale in cui le dipendenze di un oggetto (i servizi di cui ha bisogno) gli vengono fornite dall'esterno, favorendo il disaccoppiamento dei moduli e semplificando i test.
+  ],
+
+  "Composition root": [
+    Punto unico e centralizzato dell'applicazione (solitamente all'avvio) in cui vengono istanziati i moduli e assemblate/iniettate tutte le dipendenze dell'intero sistema.
+  ],
+
+  Repository: [
+    Design pattern che astrae la logica di accesso al database, offrendo alla logica di business un'interfaccia standardizzata simile a una collezione di oggetti in memoria.
+  ],
+
+  "Unit of work": [
+    Design pattern che tiene traccia di tutte le operazioni che modificano lo stato del dominio durante un caso d'uso, coordinando le scritture sul database in un'unica transazione coerente.
+  ],
+
+  Factory: [
+    Design pattern creazionale che fornisce un'interfaccia dedicata per la creazione di oggetti, nascondendo la logica complessa di istanziazione al codice chiamante.
+  ],
+
+  Adapter: [
+    Design pattern strutturale che permette a interfacce software incompatibili di collaborare, agendo come un traduttore intermedio tra i due componenti.
+  ],
+
+  Facade: [
+    Design pattern strutturale che espone un'interfaccia semplificata e di alto livello per interagire con un sottosistema più ampio e complesso, nascondendone i dettagli interni.
+  ],
+
+  Service: [
+    Nel contesto del Domain-Driven Design, un componente (Application Service) che orchestra l'esecuzione dei casi d'uso del sistema delegando il lavoro agli oggetti di dominio e alle infrastrutture.
+  ],
+
+  Strategy: [
+    Design pattern comportamentale che permette di definire una famiglia di algoritmi, incapsularli singolarmente e renderli intercambiabili a runtime senza alterare il client che li utilizza.
+  ],
+
+  "Template method": [
+    Design pattern comportamentale che definisce lo scheletro astratto di un algoritmo in una classe base, delegando l'implementazione di specifici passaggi alle sue sottoclassi.
+  ],
+
+  "Dominio asset": [
+    Il raggruppamento logico delle entità, dei valori e delle regole di business che governano la creazione, la gestione e le caratteristiche fisiche o di rete degli asset nel sistema.
+  ],
+
+  "Mappa pending": [
+    Struttura dati (tipicamente un dizionario) utilizzata nel processo di valutazione per tenere traccia dei nodi o dei requisiti il cui esito è ancora incerto o in attesa di compilazione.
+  ],
+
+  None: [
+    Tipo di dato speciale del linguaggio Python che rappresenta l'assenza di un valore, la nullità o un parametro non fornito.
+  ],
+
+  "Value object": [
+    Oggetto concettuale del dominio caratterizzato esclusivamente dai suoi attributi e privo di un identificatore univoco. Due value object contenenti gli stessi dati sono considerati identici.
+  ],
+
+  ComplianceStandard: [
+    Entità di dominio che rappresenta in memoria il modello di uno specifico standard normativo (es. EN 18031), incapsulando la gerarchia dei requisiti e dei relativi decision tree.
+  ],
+
+  Memoizzazione: [
+    Tecnica di ottimizzazione prestazionale che consiste nel salvare in cache i risultati restituiti da funzioni computazionalmente costose, riutilizzandoli quando si presentano i medesimi parametri di input.
+  ],
+
+  "Command object": [
+    Design pattern in cui una richiesta o un'azione da compiere viene incapsulata in un oggetto a sé stante, facilitando la parametrizzazione, la storicizzazione o l'annullamento delle operazioni.
+  ],
+
+  "Sistema di persistenza": [
+    L'infrastruttura software (es. il database MongoDB e il file system) deputata alla conservazione a lungo termine dei dati, garantendone l'integrità e la sopravvivenza allo spegnimento dell'applicazione.
+  ],
+
+  Sessione: [
+    Unità logica e temporale che traccia le attività di valutazione di un dispositivo da parte dell'utente. Mantiene una "bozza operativa" delle risposte fornite prima che queste vengano salvate definitivamente in persistenza.
+  ],
+  "Monolite Modulare": [
+    Stile architetturale di deployment in cui l'intero sistema è concepito e rilasciato come un'unica unità eseguibile, ma il codice al suo interno è rigorosamente diviso in moduli logici isolati e indipendenti.
+  ],
+
+  "Data Transfer Object (DTO)": [
+    Oggetto utilizzato per trasportare dati tra i vari sottosistemi di un'applicazione (es. tra i Service e i Controller). Nel progetto vengono usati per disaccoppiare i dati di input/output dalle entità pure del Dominio.
+  ],
+
+  "Principi SOLID": [
+    Acronimo che raggruppa cinque principi fondamentali della programmazione orientata agli oggetti volti a rendere il software più comprensibile, flessibile e manutenibile. La loro comprensione è alla base dell'architettura esagonale.
+  ],
+
+  "Dependency Inversion": [
+    Principio (la "D" di SOLID) secondo cui i moduli di alto livello (es. Dominio) non devono dipendere dai moduli di basso livello (es. Database), ma entrambi devono dipendere da astrazioni (Interfacce/Porte).
+  ],
+
+  "Constructor Injection": [
+    Tecnica specifica di Dependency Injection in cui le dipendenze richieste da una classe le vengono fornite direttamente tramite i parametri del suo costruttore al momento dell'istanziazione.
+  ],
+
+  "Mock e Stub": [
+    Oggetti simulati utilizzati durante lo sviluppo dei test automatici. Riproducono il comportamento dei servizi esterni reali (es. il database) permettendo di testare la logica di business in totale isolamento.
+  ],
+
+  Boilerplate: [
+    Sezioni di codice infrastrutturale, spesso ripetitivo o verboso, necessario per configurare pattern architetturali complessi (es. le definizioni delle Porte e degli Adapter nell'architettura esagonale).
+  ],
+
+  "Docker Compose": [
+    Strumento per la definizione e l'orchestrazione di applicazioni multi-container. Nel progetto viene usato per avviare e far comunicare simultaneamente i container del backend e del database.
+  ],
+
+  "Docker Volume": [
+    Meccanismo nativo di Docker per la persistenza dei dati generati dai container. Nel progetto viene utilizzato per garantire che i dati salvati su MongoDB sopravvivano al riavvio o alla distruzione del container.
+  ],
+
+  BSON: [
+    Formato di interscambio dati binario (Binary JSON) utilizzato internamente da MongoDB per archiviare i documenti e trasmettere le informazioni in modo più efficiente e tipizzato rispetto al JSON standard.
+  ],
+
+  Hackolade: [
+    Formalismo e strumento di modellazione visiva concepito specificamente per i database NoSQL orientati ai documenti, adottato nel progetto in sostituzione ai tradizionali diagrammi Entity-Relationship.
+  ],
+
+  "Hot Reloading": [
+    Funzionalità tipica degli ambienti di sviluppo moderni (supportata da strumenti come Watchdog o Vite) che permette di iniettare in tempo reale le modifiche del codice nell'applicazione in esecuzione, senza necessità di riavvio.
+  ],
+
+  "Composition API": [
+    Paradigma di sviluppo introdotto nelle versioni recenti di Vue.js che permette di organizzare, incapsulare e riutilizzare la logica reattiva dei componenti in modo più flessibile e modulare.
+  ],
 
 )
 
@@ -545,16 +831,30 @@
   CSV: "Comma-Separated Values",
   AU: "Assessment Unit",
   DN: "Decision Node",
-UML: "Unified Modeling Language",
-RObb: "Requisito Obbligatorio Funzionale",
-RDes: "Requisito Desiderabile Funzionale",
-ROpz: "Requisito Opzionale Funzionale",
-PDF: "Portable Document Format",
-RED: "Radio Equipment Directive",
-BT: "Bluetooth",
-IoT: "Internet of Things",
-LTE: "Long-Term Evolution",
-
+  UML: "Unified Modeling Language",
+  RObb: "Requisito Obbligatorio Funzionale",
+  RDes: "Requisito Desiderabile Funzionale",
+  ROpz: "Requisito Opzionale Funzionale",
+  PDF: "Portable Document Format",
+  RED: "Radio Equipment Directive",
+  BT: "Bluetooth",
+  IoT: "Internet of Things",
+  LTE: "Long-Term Evolution",
+  HTTP: "HyperText Transfer Protocol",
+  WSGI: "Web Server Gateway Interface",
+  SPA: "Single-Page Application",
+  API: "Application Programming Interface",
+  BSON: "Binary JSON",
+  CI: "Continuous Integration",
+  CD: "Continuous Deployment",
+  CRUD: "Create, Read, Update, Delete",
+  CSS: "Cascading Style Sheets",
+  DTO: "Data Transfer Object",
+  HTML: "HyperText Markup Language",
+  MVC: "Model-View-Controller",
+  SOLID: "Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion",
+  UI: "User Interface",
+  UX: "User Experience", 
 )
 
 #metadata(abbr) <abbreviazioni>

@@ -1,0 +1,7 @@
+@startuml FlaskQueryDashboardController
+skinparam classAttributeIconSize 0
+class FlaskQueryDashboardController <<Flask Blueprint>> {
+    + get_device_dashboard(req: Request): Response
+}
+
+@enduml

@@ -3,8 +3,8 @@
 #import template_dir + "/setUpPageLayout.typ": *
 #import template_dir + "/registroModifiche.typ": registroModifiche
 #import template_dir + "/statusTab.typ": statusTab
-#import glossario:dict
-#import glossario:abbr
+#import "/src/PB/DocumentazioneInterna/dizionario.typ":dict
+#import "/src/PB/DocumentazioneInterna/dizionario.typ":abbr
 #set heading(numbering: none)  
 #show heading.where(level: 1): it => [
   #v(1em)
@@ -44,14 +44,14 @@
 // 
 // 
 // 
-// #let currentVersion=(
-//   major:0,
-//   minor:13,
-//   patch:1,
-// )
-// //converte dizionario in stringa
-// #let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
-// #metadata(versionNumber)<versionNumber>
+#let currentVersion=(
+  major: 2,
+  minor: 0,
+  patch: 0,
+)
+//converte dizionario in stringa
+#let versionNumber=currentVersion.values().map(n=>{str(n)}).join(".")
+#metadata(versionNumber)<versionNumber>
 
 
 
@@ -72,9 +72,9 @@
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
     stato: "Approvato",
-    versione: "1.0.0",
-    autori: ("Davide Lorenzon, Ana Maria Draghici, Filippo Guerra",),
-    verificatori: ("Ana Maria Draghici, Filippo Guerra",),
+    versione: versionNumber,
+    autori: (persone.DL, persone.ANA, persone.FILIPPO, persone.DT),
+    verificatori: (persone.ANA, persone.FILIPPO, persone.FELIX),
     uso: "Interno",
     destinatari: ("Esterni ed interni",),
   )
@@ -93,6 +93,9 @@
   ([0.5.0],[2026-02-26],[Ana Maria Draghici],[Felician Mario Necsulescu],[Aggiornamento del glossario con nuovi termini e abbreviazioni]),
   ([0.5.1],[2026-02-26],[Davide Lorenzon],[Filippo Guerra],[Aggiunti termini di supporto]),
   ([1.0.0],[2026-03-21],[Ana Maria Draghici],[Filippo Guerra],[Approvazione documento]),
+  ([1.1.0],[2026-04-16],[#persone.DL],[Ana Maria Draghici],[Aggiunti termini relativi alla vista dati]),
+  ([1.2.0],[2026-04-16],[Ana Maria Draghici],[#persone.DT],[Aggiornato con i termini della specifica tecnica]),
+  ([2.0.0],[2026-05-20],[#persone.FILIPPO],[#persone.DT],[Approvazione documento]),
 )
 
 #registroModifiche(modifiche)
@@ -112,7 +115,7 @@ Lo scopo del glossario è fornire un riferimento unico per abbreviazioni, concet
 
 Per approfondimenti e riferimenti al capitolato e ad altri documenti di progetto, consultare:
 - Capitolo del capitolato: #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[C1]  
-- Documentazione tecnica aggiuntiva: #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione")[Repo Progetto]
+- Documentazione tecnica aggiuntiva: #inserisciLink(url:"https://github.com/GroupRubberDuck/Documentazione")[Repository del Progetto]
 
 
 

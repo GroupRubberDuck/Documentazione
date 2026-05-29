@@ -1,0 +1,9 @@
+@startuml AssetType
+skinparam ClassAttributeIconSize 0
+
+enum AssetType {
+    SECURITY = "security"
+    NETWORK = "network"
+}
+
+@enduml

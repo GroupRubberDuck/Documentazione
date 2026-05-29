@@ -27,8 +27,8 @@
 #let doc = "Piano di Progetto"
 
 #let currentVersion = (
-  major: 1,
-  minor: 1,
+  major: 2,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -45,8 +45,8 @@
   #statusTab(
     stato: "Approvato",
     versione: versionNumber,
-    autori: (persone.DT, persone.FELIX, persone.ANA, persone.ALDO),
-    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, persone.FELIX),
+    autori: (persone.DT, "Felician Mario Necsulescu", persone.ANA, persone.ALDO, persone.FILIPPO),
+    verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, "Felician Mario Necsulescu"),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
   )
@@ -60,7 +60,7 @@
       [2025-11-12],
       [Davide Lorenzon],
       [Aldo Bettega],
-      [Stesura iniziale e redazione Sprint 1],
+      [Stesura iniziale e redazione sprint 1],
     ),
     (
       [0.2.0],
@@ -74,7 +74,7 @@
       [2025-12-10],
       [Davide Lorenzon],
       [Ana Maria\ Draghici],
-      [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.],
+      [Modificata la struttura del documento, organizzazione del progetto inclusa nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.],
     ),
     (
       [0.3.0],
@@ -88,14 +88,14 @@
       [2025-12-14],
       [Ana Maria\ Draghici],
       [Davide Testolin],
-      [Aggiunta @Pianificazione e completata scrittura Sprint 2],
+      [Aggiunta @Pianificazione e completata scrittura sprint 2],
     ),
     (
       [0.4.1],
       [2025-12-20],
       [Ana Maria\ Draghici],
       [Davide Testolin],
-      [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2],
+      [Riviste alcune sezioni di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su sprint 1 e sprint 2],
     ),
     (
       [0.5.0],
@@ -116,21 +116,21 @@
       [2026-03-05],
       [#persone.ALDO],
       [#persone.FILIPPO],
-      [Aggiunta parte di classicazione e gestione rischi ROAM],
+      [Aggiunta parte di classificazione e gestione rischi ROAM],
     ),
     (
       [0.8.0],
       [2026-03-11],
       [Felician Mario\ Necsulescu],
       [#persone.DT],
-      [Scritto Sprint 6],
+      [Scritto sprint 6],
     ),
     (
       [0.9.0],
       [2026-03-25],
       [#persone.DT],
       [Felician Mario\ Necsulescu],
-      [Scritto Sprint 7],
+      [Scritto sprint 7],
     ),
     (
       [0.10.0],
@@ -153,6 +153,71 @@
       [#persone.ANA],
       [Stesura retrospettiva sprint 8],
     ),
+    (
+      [1.2.0],
+      [2026-04-14],
+      [#persone.FILIPPO],
+      [#persone.DL],
+      [Aggiunta sezione PB, stesura sprint 9],
+    ),
+    (
+      [1.3.0],
+      [2026-04-16],
+      [#persone.DT],
+      [#persone.FILIPPO],
+      [Stesura sprint 10],
+    ),
+    (
+      [1.4.0],
+      [2026-04-25],
+      [#persone.ANA],
+      [#persone.FELIX],
+      [Stesura sprint 11],
+    ),
+    (
+      [1.5.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [#persone.ANA],    
+      [Stesura miglioramenti pianificazione sprint 10 e 11],
+    ),
+    (
+      [1.6.0],
+      [2026-04-28],
+      [#persone.FELIX],
+      [#persone.FILIPPO],    
+      [Stesura sprint 12],
+    ),
+    (
+      [1.7.0],
+      [2026-05-11],
+      [#persone.DL],
+      [#persone.ANA],    
+      [Stesura sprint 13],
+    ),
+    (
+      [1.8.0],
+      [2026-05-18],
+      [#persone.ANA],
+      [#persone.ALDO],    
+      [Aggiornamento finale della pianificazione di lungo periodo TB],
+    ),
+    (
+      [1.9.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.ANA],
+      [Stesura sprint 14],
+    ),
+    (
+      [1.9.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.ANA],
+      [Stesura sprint 14],
+    ),
+     ([2.0.0],[2026-05-20],[#persone.ANA],[#persone.ANA],[Approvazione]),
+)
   )
   #registroModifiche(modifiche)
 ]
@@ -193,7 +258,7 @@
   #include "content/04-pianificazione_lungo_periodo/index.typ"
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli Sprint", documentType: doc)[
+#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli sprint", documentType: doc)[
   = Pianificazione di breve periodo<Pianificazione_di_breve_periodo>
   #include "content/05-pianificazione_breve_periodo/index.typ"
 ]

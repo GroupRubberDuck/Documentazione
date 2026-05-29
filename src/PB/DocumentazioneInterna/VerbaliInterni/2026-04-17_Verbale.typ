@@ -1,0 +1,149 @@
+#set text(lang: "IT")
+
+#import "/src/config.typ": *
+#import template_dir + "/frontPage.typ": frontPage
+#import template_dir + "/setUpPageLayout.typ": *
+#import template_dir + "/registroModifiche.typ": registroModifiche
+#import template_dir + "/statusTab.typ": statusTab
+#import template_dir + "/utilityTable.typ": getCode, utilityTable
+
+#show link: body => {
+  set text(fill: blue)
+  underline()[#body]
+}
+#show ref: body => { underline()[#strong(body)] }
+
+#set text(size: 12pt)
+#set heading(numbering: "1.1)")
+#show heading.where(level: 1): set text(size: 18pt)
+#show heading.where(level: 2): set text(size: 16pt)
+
+
+//
+//Info del documento
+//
+#let currentVersion = (
+  major: 1,
+  minor: 0,
+  patch: 0,
+)
+//converte dizionario in stringa
+#let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
+#metadata(versionNumber)<versionNumber>
+#let giornoRiunione = datetime(year: 2026, month: 04, day: 17)
+#let doctype = "Verbale interno"
+#frontPage([Verbale riunione], giornoRiunione)
+
+#insertRomanNumberedPages("Stato del documento", doctype, giornoRiunione)[
+  #statusTab(
+    stato: "Approvato",
+    versione: versionNumber,
+    autori: (persone.DT,),
+    verificatori: (persone.FILIPPO,),
+    uso: "Interno",
+    destinatari: ("Tutto il gruppo",),
+  )
+]
+
+#insertRomanNumberedPages("Indice", "Verbale interno", giornoRiunione)[
+  #outline(depth: 2, title: "Indice")
+]
+
+#pagebreak()
+#context counter(page).update(1)
+
+
+#insertArabicNumberedPages("Informazioni generali", "Verbale interno", giornoRiunione)[
+  = Informazioni generali
+  - *Tipo di riunione*: Interno
+  - *Motivazione*: Riunione di metà sprint
+  - *Data*: #giornoRiunione.display()
+  - *Luogo*: Riunione su Discord
+  - *Ora inizio*: 9.00
+  - *Ora fine*: 10.00
+  - *Scriba*: #persone.DT
+  - *Partecipanti*:#align(left)[
+      #set list(marker: [--])
+      - Aldo Bettega
+      - Davide Testolin
+      - Filippo Guerra
+      - Ana Maria Draghici
+      - Davide Lorenzon
+      \
+    ]
+]
+
+#insertArabicNumberedPages("Ordine del giorno", "Verbale interno", giornoRiunione)[
+  = Ordine del giorno
+  - Analisi dello stato di avanzamento dello Sprint 10.
+  
+]
+
+
+#insertArabicNumberedPages("Contenuto riunione", "Verbale interno", giornoRiunione)[
+  = Riassunto della Riunione
+  Nella riunione si è discusso principalmente sul progresso dello sprint corrente, in particolare sul progresso del documento Specifica Tecnica.
+
+  = Merge al termine degli sprint <merge>
+  È stato chiarito che al termine di ogni sprint è compito dell'amministratore effettuare il merge dal branch develop al main. Inoltre è stata chiarita la procedura di merge dai branch dedicati ai singoli file (o gruppi di file come i verbali): il merge con main va effettuato solo una volta che il file risulti completamente verificato. In questo modo tutti i documenti sul branch develop sono completamente verificati e pronti per essere incorporati sul branch main.
+
+  = Divisione del diagramma delle classi <divisione>
+  Al fine di garantire la massima leggibilità, il diagramma delle classi è stato suddiviso in aree logiche coerenti con l'architettura adottata. Per il modulo dispositivo, ad esempio, la rappresentazione è articolata in tre livelli: la componente inbound (input), l'interfaccia della Porta e la logica di business definita nel Core.
+]
+
+#insertArabicNumberedPages("Decisioni", "Verbale interno", giornoRiunione)[
+  = Decisioni
+  #let contatoreDecisioni = counter("decisioni")
+  #contatoreDecisioni.update(1)
+  #let prefisso = "VI.23."
+
+  #let decisioni = (
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Merge dal branch develop a main al termine di ogni sprint],
+      [Rendere disponibili tutti i documenti e le modifiche apportate durante lo sprint a tutti],
+      [@merge],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Divisione del diagramma delle classi in aree logiche],
+      [Velocizzare la progettazione],
+      [@divisione],
+    ),
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreDecisioni)],
+      [Lingua inglese per la nomenclatura delle classi],
+      [Uniformare la nomenclatura del codice],
+      [-],
+    ),
+  )
+
+  #utilityTable(decisioni, header: ("Codice", "Descrizione", "Motivazioni", "Ref."), columns: (auto, 2fr, 2fr, auto))
+]
+
+
+
+#insertArabicNumberedPages("TODO", "Verbale interno", giornoRiunione)[
+
+  = TODO
+
+  #let prefisso = "TD.27."
+  #let contatoreTodo = counter("todo")
+  #contatoreTodo.update(1)
+  I TODO sorti da questa riunione sono i seguenti:
+
+  #let TODO = (
+    (
+      [#getCode(prefisso: prefisso, contatore: contatoreTodo)],
+      [#persone.DT],
+      [Redigere il verbale interno di questa riunione],
+      [-],
+    ),
+  )
+  #utilityTable(
+    TODO,
+    header: ("Codice", "Assegnatari", "Task", "Decisione di riferimento"),
+    columns: (auto, auto, 1fr, auto),
+  )
+
+]

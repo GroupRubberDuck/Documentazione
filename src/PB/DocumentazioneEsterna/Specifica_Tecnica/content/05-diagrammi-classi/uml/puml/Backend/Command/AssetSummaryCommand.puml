@@ -1,0 +1,9 @@
+ @startuml
+skinparam classAttributeIconSize 0
+ class AssetSummaryCommand {
+        + asset_id: String
+        + name: String
+        + type: AssetType
+        + stato_aggregato: EvaluationState
+    }
+@enduml

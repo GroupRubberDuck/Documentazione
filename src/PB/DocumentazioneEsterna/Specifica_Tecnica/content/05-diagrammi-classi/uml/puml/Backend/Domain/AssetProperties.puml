@@ -1,0 +1,14 @@
+@startuml AssetProperties
+skinparam ClassAttributeIconSize 0
+class AssetProperties {
+    - evidences: Map<String, AssetEvidence>
+
+    + evidences(): Map<String, AssetEvidence> <<property>>
+    + get_evidence(requirement_id: String): AssetEvidence
+    + set_node_choice(requirement_id: String, node_id: String, value: Bool): void
+    + set_justification(requirement_id: String, justification: String): void
+}
+
+AssetProperties *-- "1..*" AssetEvidence
+
+@enduml

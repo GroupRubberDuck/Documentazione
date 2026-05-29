@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare il nome dell'asset durante la visuali
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

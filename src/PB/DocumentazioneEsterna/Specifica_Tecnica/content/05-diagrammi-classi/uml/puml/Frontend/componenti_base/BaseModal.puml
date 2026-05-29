@@ -1,0 +1,20 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class BaseModal <<component>> {
+  - content : Slot
+  - contentClass : String
+  --
+  + BaseModal(contentClass : String)
+  - onKeydown(event : KeyboardEvent) : void
+  - onOverlayClick(event : MouseEvent) : void
+  + close() <<emit>>
+}
+
+
+@enduml

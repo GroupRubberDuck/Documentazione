@@ -1,0 +1,19 @@
+@startuml RequirementEvaluationDetail
+skinparam ClassAttributeIconSize 0
+
+class RequirementEvaluationDetail {
+    + requirement_id: String
+    + name: String
+    + description: String
+    + target: String
+    + justification: String
+    + root_id: String
+    + node_choices: Map<String, Bool>
+    + nodes: Map<String, NodeDetail>
+    + state: EvaluationState
+    + dependencies: List<List<String, EvaluationState>>
+}
+
+RequirementEvaluationDetail *-- NodeDetail
+
+@enduml

@@ -1,0 +1,7 @@
+@startuml FlaskEvaluateDecisionNodeController
+skinparam classAttributeIconSize 0
+class FlaskEvaluateDecisionNodeController <<Flask Blueprint>> {
+    + insert_decision_node_evaluation(req: Request): Response
+}
+
+@enduml

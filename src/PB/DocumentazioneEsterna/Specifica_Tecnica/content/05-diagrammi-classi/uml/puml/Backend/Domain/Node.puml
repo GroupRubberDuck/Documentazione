@@ -1,0 +1,11 @@
+@startuml Node
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+abstract class Node <<abstract>> {
+    + {abstract} id(): String
+    + {abstract} next(condition: Bool): String
+    + {abstract} verdict(): StandardVerdict
+}
+
+@enduml

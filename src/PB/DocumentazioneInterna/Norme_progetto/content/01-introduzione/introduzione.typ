@@ -23,10 +23,10 @@ Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro 
 === Riferimenti normativi
 
 - Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl \ https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf  \
-  _Ultima consultazione: 14 gennaio 2025_
+  _Ultima consultazione: 8 aprile 2026_
 
 - Regolamento del progetto \ https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf \
-  _Ultima consultazione: 11 dicembre 2025_
+  _Ultima consultazione: 8 aprile 2026_
 
 
 
@@ -43,7 +43,7 @@ Questo sistema consente di mantenere il documento tecnicamente rigoroso, chiaro 
 - Standard ISO/IEC/IEEE 12207:1995 \ https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf \
   _Ultima consultazione: 10 gennaio 2026_
 
-- Glossario, versione 2.0.0  \ https://grouprubberduck.github.io/Documentazione/glossario.html \
+- Glossario, versione 2.0.0  \ https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf \
   _Ultima consultazione: 20 marzo 2026_
 
 

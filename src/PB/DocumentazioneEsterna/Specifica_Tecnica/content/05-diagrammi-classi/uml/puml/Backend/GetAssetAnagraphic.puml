@@ -1,0 +1,41 @@
+@startuml GetAssetAnagraphic
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskQueryAssetController.puml
+}
+
+package "Application Core" {
+
+    () "GetAssetAnagraphicUseCase"
+
+    !include Command/GetAssetAnagraphicCommand.puml
+
+    !include Domain/AssetAnagraphic.puml
+
+    !include ApplicationServices/GetAssetAnagraphicService.puml
+
+    () "GetEvaluationSessionPort"
+
+    GetAssetAnagraphicService -up- GetAssetAnagraphicUseCase
+    GetAssetAnagraphicService .> GetAssetAnagraphicCommand : legge
+    GetAssetAnagraphicService --> GetEvaluationSessionPort : usa
+}
+
+package "Outbound Adapter" {
+    class InMemoryEvaluationSessionCache <<Session Cache>> {
+        - sessions: dictionary[string:EvaluationSession]
+        + save_session(session: EvaluationSession): void
+        + get_session(session_id: string): EvaluationSession
+        + delete_session(session_id: string): void
+        + has_active_session(): bool
+    }
+}
+
+FlaskQueryAssetController --> GetAssetAnagraphicUseCase : usa
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+
+@enduml

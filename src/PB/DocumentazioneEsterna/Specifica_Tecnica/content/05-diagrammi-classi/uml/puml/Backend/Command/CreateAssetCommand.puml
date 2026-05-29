@@ -1,0 +1,10 @@
+@startuml CreateAssetCommand
+skinparam classAttributeIconSize 0
+    class CreateAssetCommand {
+        + session_id: String
+        + device_id: String
+        + name: String
+        + asset_type: AssetType
+        + description: String
+    }
+@enduml

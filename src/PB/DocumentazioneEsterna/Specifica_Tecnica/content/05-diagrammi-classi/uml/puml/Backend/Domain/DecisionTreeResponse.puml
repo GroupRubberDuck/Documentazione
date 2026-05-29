@@ -1,0 +1,7 @@
+ @startuml 
+skinparam classAttributeIconSize 0
+ 
+ class DecisionTreeResponse{
+        + root_node: NodeResponse
+    }
+@enduml

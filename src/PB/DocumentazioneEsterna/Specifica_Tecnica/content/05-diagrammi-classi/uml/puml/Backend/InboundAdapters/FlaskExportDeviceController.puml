@@ -1,0 +1,8 @@
+@startuml FlaskExportDeviceController
+skinparam classAttributeIconSize 0
+
+class FlaskExportDeviceController <<Flask Blueprint>> {
+    + export_device(req: Request): Response
+}
+
+@enduml

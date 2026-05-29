@@ -1,0 +1,30 @@
+@startuml Valutazione-RispostaNodo
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+' package "Componente Vue" {
+'     !include ../decision-tree/components/TreeSideBar.puml
+' }
+
+package "Pinia Store" {
+    !include ../decision-tree/store/DecisionTreeStore.puml
+}
+
+package "Engine" {
+    !include ../decision-tree/engine/EvaluationEngine.puml
+}
+
+package "API" {
+    !include ../decision-tree/api/EvaluationAPIClient.puml
+}
+
+' TreeSideBar    --> DecisionTreeStore 
+DecisionTreeStore --> EvaluationEngine   
+DecisionTreeStore --> EvaluationAPIClient 
+
+@enduml

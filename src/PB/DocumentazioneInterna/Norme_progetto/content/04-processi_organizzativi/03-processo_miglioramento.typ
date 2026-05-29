@@ -32,7 +32,7 @@ Le attività del processo di miglioramento si inseriscono all'interno del ciclo 
 )
 
 ===== Guida alla Retrospettiva
-Il nostro gruppo ha ritenuto fondamentale l'uso della *retrospettiva*, soprattutto nell'ambito della pianificazione e del monitoraggio delle attività descritte nel #link("https://grouprubberduck.github.io/Documentazione/")[Piano di Progetto].
+Il nostro gruppo ha ritenuto fondamentale l'uso della *retrospettiva*, soprattutto nell'ambito della pianificazione e del monitoraggio delle attività descritte nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto].
 
 + A turno, ogni membro del gruppo condivide le attività svolte e segnala eventuali problemi riscontrati.
 + Si discutono le criticità o i dubbi emersi durante le attività.

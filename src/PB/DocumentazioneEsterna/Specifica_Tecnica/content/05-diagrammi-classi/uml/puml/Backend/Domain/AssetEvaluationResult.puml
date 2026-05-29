@@ -1,0 +1,16 @@
+@startuml AssetEvaluationResult
+skinparam ClassAttributeIconSize 0
+
+class AssetEvaluationResult <<Value Object>> {
+    + asset_id: String
+    + requirement_results: List<RequirementEvaluationResult>
+    + verdict: EvaluationState
+
+    + get_requirement_result(requirement_id: String): RequirementEvaluationResult
+    + failed(): List<RequirementEvaluationResult>
+    + pending(): List<RequirementEvaluationResult>
+}
+
+AssetEvaluationResult *-- "1..*" RequirementEvaluationResult
+
+@enduml

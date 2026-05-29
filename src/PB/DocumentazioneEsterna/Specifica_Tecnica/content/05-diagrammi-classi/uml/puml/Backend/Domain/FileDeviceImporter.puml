@@ -1,0 +1,26 @@
+ @startuml Class
+skinparam classAttributeIconSize 0
+ 
+
+
+    class CSVFileDeviceImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class JSONFileDeviceImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+
+    class XMLFileDeviceImporter {
+        # check_metadata()
+        # open_stream()
+        # parse_data()
+        # close_stream()
+    }
+@enduml

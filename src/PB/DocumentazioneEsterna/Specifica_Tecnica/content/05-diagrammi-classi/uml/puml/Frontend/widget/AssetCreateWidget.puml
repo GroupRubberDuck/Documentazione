@@ -1,0 +1,27 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class AssetCreateWidget  {
+  - submitUrl : String
+  - cancelUrl : String
+  - redirectUrl : String
+  - formModel : useFormModel
+  - assetForm : AssetForm
+  - asyncButton : AsyncButton
+  --
+  + AssetCreateWidget(submitUrl : String, cancelUrl : String, redirectUrl : String)
+  - createAsset() : JSON
+  - onSuccess(data : JSON) : void
+}
+
+!include src/PB/DocumentazioneEsterna/Specifica_Tecnica/content/05-diagrammi-classi/uml/puml/Frontend/shared/AssetFormFields.puml
+
+AssetCreateWidget ..> AssetFormFields : <<use>>
+
+@enduml

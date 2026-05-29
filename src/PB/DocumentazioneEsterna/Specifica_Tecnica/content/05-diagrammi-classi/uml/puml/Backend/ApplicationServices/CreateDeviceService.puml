@@ -1,0 +1,7 @@
+@startuml CreateDeviceService
+skinparam classAttributeIconSize 0
+class CreateDeviceService <<Application Service>> {
+    + create(command: CreateDeviceCommand): void
+}
+
+@enduml

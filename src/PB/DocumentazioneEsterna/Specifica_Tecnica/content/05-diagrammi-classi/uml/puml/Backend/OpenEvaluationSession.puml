@@ -1,0 +1,53 @@
+@startuml OpenEvaluationSession
+
+skinparam linetype ortho
+skinparam nodesep 150
+skinparam ranksep 150
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/EvaluationSessionController.puml
+}
+
+package "Application Core" {
+
+    () "OpenEvaluationSessionUseCase"
+
+    !include ApplicationServices/OpenEvaluationSessionService.puml
+    !include ApplicationServices/SessionCoordinator.puml
+    !include Domain/SessionHandler.puml
+    !include Command/OpenEvaluationSessionCommand.puml
+
+    () "FindDevicePort"
+    () "FindStandardPort"
+    () "CreateEvaluationSessionPort" as CreatePort
+    () "EvaluationSessionExistPort" as ExistPort
+
+    OpenEvaluationSessionService -up- OpenEvaluationSessionUseCase
+    OpenEvaluationSessionService .down.> OpenEvaluationSessionCommand : legge
+
+    OpenEvaluationSessionService -right-> FindDevicePort : usa
+    OpenEvaluationSessionService -down-> FindStandardPort : usa
+    OpenEvaluationSessionService -down-> CreatePort : usa
+    OpenEvaluationSessionService -left-> SessionCoordinator : usa
+
+    SessionCoordinator --> ExistPort : usa
+    SessionCoordinator --> SessionHandler : usa
+
+    CreatePort -[hidden]right- OpenEvaluationSessionCommand
+    OpenEvaluationSessionCommand -[hidden]right- FindStandardPort
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/MongoStandardAdapter.puml
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+EvaluationSessionController -right-> OpenEvaluationSessionUseCase : usa
+MongoDeviceAdapter -up- FindDevicePort
+MongoComplianceStandardAdapter -up- FindStandardPort
+InMemoryEvaluationSessionCache -up- CreatePort
+InMemoryEvaluationSessionCache -up- ExistPort
+
+@enduml

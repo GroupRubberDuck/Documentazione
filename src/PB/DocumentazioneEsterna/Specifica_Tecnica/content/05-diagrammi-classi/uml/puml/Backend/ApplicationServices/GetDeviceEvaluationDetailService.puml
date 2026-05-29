@@ -1,0 +1,7 @@
+@startuml GetDeviceEvaluationDetailService
+skinparam classAttributeIconSize 0
+class GetDeviceEvaluationDetailService <<Application Service>> {
+    + get_device_evaluation_detail(command: GetDeviceEvaluationDetailCommand): DeviceEvaluationDetail
+}
+
+@enduml

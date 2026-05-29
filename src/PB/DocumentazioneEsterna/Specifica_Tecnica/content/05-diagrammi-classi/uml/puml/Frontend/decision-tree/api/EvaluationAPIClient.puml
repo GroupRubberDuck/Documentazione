@@ -1,0 +1,24 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class EvaluationAPIClient {
+  - answerUrl:String
+  - stateUrl:String
+  - justificationUrl:String
+  - detailUrl:String
+
+
+  + EvaluationAPIClient(answerUrl:String, stateUrl:String, justificationUrl:String, detailUrl:String)
+
+  + saveAnswer(nodeId:String, answer:Boolean):Promise<JSON>
+  + saveJustification(justification:String):Promise<JSON>
+  + fetchState():Promise<JSON>
+  + fetchDetail():Promise<JSON>
+}
+@enduml

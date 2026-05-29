@@ -3,7 +3,7 @@ import os
 
 cartella_input = "input"
 cartella_output = "output"
-pagine_per_file = 10
+pagine_per_file = 20
 
 os.makedirs(cartella_output, exist_ok=True)
 

@@ -1,0 +1,65 @@
+@startuml compliance-standard-write
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class FlaskStandardWriteController <<Flask Blueprint>> {
+        - write_service: StandardWriteUseCase
+        
+        + update(): Response
+        + create(): Response
+        + delete_standard(): Response
+    }
+}
+
+package "Application Core" {
+
+    class CreateStandardDTO {
+        + name: String
+    }
+    class UpdateStandardDTO {
+        + id: String
+        + name: String
+    }
+
+    interface StandardWriteUseCase <<Inbound Port>> {
+        + update(standard: UpdateStandardDTO): bool
+        + create(standard: CreateStandardDTO): bool
+        + delete_standard(standard_id: String): bool
+    }
+
+    !include ports/out/StandardWriteRepositoryPort.puml
+
+    class StandardWriteService <<Application Service>> {
+        - repository: StandardRepositoryPort
+        + create(standard: CreateStandardDTO): bool
+        + update(standard: UpdateStandardDTO): bool
+        + delete_standard(standard_id: String): bool
+    }
+
+    !include Dominio/ComplianceStandard.puml
+
+    StandardWriteUseCase <|.. StandardWriteService : "implementa"
+    StandardWriteService -down-( StandardWriteRepositoryPort : "richiede"
+
+    StandardWriteService ..> ComplianceStandard : "modifica"
+}
+
+package "Outbound Adapter" {
+    class MongoStandardAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+        
+        + save(standard: ComplianceStandard): void
+        + register(standard: ComplianceStandard): void
+        + find_by_id(standard_id: String): ComplianceStandard
+        + find_all(): List<ComplianceStandard>
+        + delete_by_id(standard_id: String): void
+    }
+}
+
+FlaskStandardWriteController -( StandardWriteUseCase : "usa"
+StandardWriteRepositoryPort -down- MongoStandardAdapter : "implementa"
+
+@enduml

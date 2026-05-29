@@ -1,0 +1,6 @@
+@startuml CloseEvaluationSessionService
+skinparam classAttributeIconSize 0
+class CloseEvaluationSessionService <<Application Service>> {
+    + close_evaluation_session(command: CloseEvaluationSessionCommand): void
+}
+@enduml

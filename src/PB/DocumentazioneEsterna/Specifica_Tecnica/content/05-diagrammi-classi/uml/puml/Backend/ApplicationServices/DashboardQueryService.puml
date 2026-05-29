@@ -1,0 +1,9 @@
+@startuml DashboardQueryService
+
+class DashboardQueryService <<Application Service>> {
+    - session_cache: EvaluationSessionCachePort
+    + get_device_dashboard(session_id: String): DashboardDTO
+    + get_asset_detail(session_id: String, asset_id: String): AssetDetailDTO
+}
+
+@enduml

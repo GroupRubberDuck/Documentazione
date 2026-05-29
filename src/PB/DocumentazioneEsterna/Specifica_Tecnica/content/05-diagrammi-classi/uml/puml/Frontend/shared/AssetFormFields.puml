@@ -1,0 +1,19 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+
+
+class AssetFormFields <<constant>> {
+  + name : FieldDefinition
+  + assetType : FieldDefinition
+  + description : FieldDefinition
+}
+
+
+@enduml

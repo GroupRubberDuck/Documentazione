@@ -123,6 +123,4 @@
   caption: [Budget consumato sul totale pianificato (BAC)],
 ) <budget-progress>
 
-Il budget consumato si riferisce al solo periodo RTB sul totale.
-Il progetto completo prevede momenti successivi (PB) non ancora avviati
-
+Il budget consumato al termine della fase PB ammonta a *10.445 €*, pari al *90%* del BAC di 11.610 €, con un residuo di *1.165 €*. Il valore si colloca nella fascia _Prossimi alla soglia_ (85–95%), indicando un utilizzo elevato ma ancora entro i limiti di accettabilità. 

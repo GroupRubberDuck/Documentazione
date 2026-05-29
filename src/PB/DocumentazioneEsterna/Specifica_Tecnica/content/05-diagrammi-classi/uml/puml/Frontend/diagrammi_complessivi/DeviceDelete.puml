@@ -1,0 +1,26 @@
+@startuml DeviceDelete
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Entry Point" {
+    note "main.js legge attributi data-*\ndal DOM e monta DeviceDeleteWidget" as EntryNote
+}
+
+package "Smart Widget" {
+    !include ../widget/DeviceDeleteWidget.puml
+}
+
+package "Componenti Dumb" {
+    !include ../componenti_base/BaseModal.puml
+    !include ../componenti_base/asyncButton.puml
+}
+
+DeviceDeleteWidget *-- BaseModal   : compone
+DeviceDeleteWidget *-- AsyncButton : compone
+
+@enduml

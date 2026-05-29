@@ -1,0 +1,12 @@
+@startuml EvaluationEngine
+skinparam classAttributeIconSize 0
+skinparam style strictuml
+
+class EvaluationEngine {
+  - tree: TreeStructure
+  + constructor(tree: TreeStructure)
+  + getNodeRenderData(nodeId: String): NodeDTO
+  + getEvaluationPath(answers: Map<String, Boolean>): List<String>
+}
+
+@enduml

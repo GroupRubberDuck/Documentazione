@@ -1,0 +1,72 @@
+@startuml CommitCloseEvaluationSession
+skinparam linetype ortho
+' Aumentato da 120 a 250 per garantire che i testi lunghi non si tocchino mai
+skinparam nodesep 250 
+skinparam ranksep 140
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/EvaluationSessionController.puml
+}
+
+package "Application Core" {
+
+    () "CommitEvaluationSessionUseCase"
+    () "CloseEvaluationSessionUseCase"
+
+    !include ApplicationServices/CommitCloseEvaluationSessionService.puml
+    
+    class CommitCloseEvaluationSessionCommand {
+        + session_id: String
+    }
+
+
+    !include Domain/Device.puml
+
+    () "SaveDevicePort"
+    () "GetEvaluationSessionPort"
+    () "DeleteSessionPort"
+
+
+    ' Moltiplichiamo i trattini per forzare una separazione orizzontale estrema tra le interfacce
+    CommitEvaluationSessionUseCase -[hidden]right---------------- CloseEvaluationSessionUseCase
+
+    ' Allineiamo le Porte in basso, ben distanziate
+    SaveDevicePort -[hidden]right------------ GetEvaluationSessionPort
+    GetEvaluationSessionPort -[hidden]right------------ DeleteSessionPort
+
+    ' Mettiamo le entità di dominio da una parte per non farle incrociare con il Service
+    Device -[hidden]right- CommitEvaluationSessionUseCase
+
+    ' ==========================================
+    ' COLLEGAMENTI INTERNI AL CORE
+    ' ==========================================
+    CommitEvaluationSessionUseCase -down- CommitCloseEvaluationSessionService
+    CloseEvaluationSessionUseCase -down- CommitCloseEvaluationSessionService
+
+    CommitCloseEvaluationSessionService .right.> CommitCloseEvaluationSessionCommand : legge
+
+    CommitCloseEvaluationSessionService -down-> SaveDevicePort :  usa
+    CommitCloseEvaluationSessionService -down-> GetEvaluationSessionPort :  usa
+    CommitCloseEvaluationSessionService -down-> DeleteSessionPort:  usa
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+    
+    ' Ordiniamo gli adapter affinché rispecchino la posizione delle porte sopra di loro
+    MongoDeviceAdapter -[hidden]right------------ InMemoryEvaluationSessionCache
+}
+
+' ==========================================
+' COLLEGAMENTI ESTERNI (Inbound -> Core -> Outbound)
+' ==========================================
+EvaluationSessionController -down-> CommitEvaluationSessionUseCase : usa
+EvaluationSessionController -down-> CloseEvaluationSessionUseCase : usa
+
+SaveDevicePort -down- MongoDeviceAdapter
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+DeleteSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

@@ -81,7 +81,7 @@
   ([1.3.1],[2026-05-19],[Davide Lorenzon],[Ana Maria Draghici],[Aggiunta definition of done per le issue relative alla codifica.]),
   ([1.3.2],[2026-05-21],[Davide Lorenzon],[Ana Maria Draghici],[Aggiornamento dell'infrastruttura.]),
   ([1.4.0],[2026-05-18],[Ana Maria Draghici],[Filippo Guerra],[Spostato da Pdq e integrato la sezione di automiglioramento @processo_miglioramento]),
-  ([2.0.0],[2026-05-20],[Filippo Guerra],[Davide Testolin],[Approvazione]),
+  ([2.0.0],[2026-05-20],[Filippo Guerra],[Filippo Guerra],[Approvazione]),
 )
 #registroModifiche(modifiche)
 

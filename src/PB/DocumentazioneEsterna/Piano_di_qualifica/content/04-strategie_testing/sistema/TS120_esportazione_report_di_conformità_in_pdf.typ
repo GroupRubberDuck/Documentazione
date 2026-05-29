@@ -18,7 +18,7 @@ Verificare che l'Utente possa correttamente esportare i risultati della valutazi
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

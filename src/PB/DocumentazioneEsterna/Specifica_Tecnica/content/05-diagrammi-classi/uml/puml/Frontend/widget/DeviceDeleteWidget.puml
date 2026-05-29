@@ -1,0 +1,27 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class DeviceDeleteWidget{
+        - deviceName:String
+        - deleteUrl:String
+        - redirectUrl:String
+        - ExportBaseUrl:String
+        -isModalOpen:Boolean
+        -ExportFormat:String
+
+
+        + DeviceDeleteWidget(deviceName:String, deleteUrl:String, redirectUrl:String, ExportBaseUrl:String)
+        -openModal()
+        -closeModal()
+        -deleteDevice():Promise<JSON>
+        - exportDevice():Promise<JSON>
+        - onDeleteSuccess()
+}
+
+@enduml

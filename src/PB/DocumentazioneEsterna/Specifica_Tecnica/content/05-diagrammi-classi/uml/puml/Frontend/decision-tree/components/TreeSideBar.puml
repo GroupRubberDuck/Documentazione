@@ -1,0 +1,25 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class TreeSidebar <<Component>> {
+  - isOpen: Boolean
+  - currentNode: NodeDTO
+  - currentAnswer: Boolean
+  - hasPrevious: Boolean
+  - hasNext: Boolean
+  - requirementsUrl: String
+
+  + TreeSidebar(isOpen: Boolean, currentNode: NodeDTO, currentAnswer: Boolean, hasPrevious: Boolean, hasNext: Boolean, requirementsUrl: String)
+  - formatResult(state: String): String
+  
+  + submit(answer: Boolean) <<emit>>
+  + goPrevious() <<emit>>
+  + goNext() <<emit>>
+  + close() <<emit>>
+}
+@enduml

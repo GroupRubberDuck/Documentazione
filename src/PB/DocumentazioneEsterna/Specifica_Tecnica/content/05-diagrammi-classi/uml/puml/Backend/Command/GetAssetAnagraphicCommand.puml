@@ -1,0 +1,9 @@
+@startuml GetAssetAnagraphicCommand
+skinparam ClassAttributeIconSize 0
+class GetAssetAnagraphicCommand {
+    + device_id: String
+    + asset_id: String
+    + session_id: String    
+}
+
+@enduml

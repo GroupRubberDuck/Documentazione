@@ -1,0 +1,49 @@
+@startuml CommitEvaluationSession
+
+skinparam linetype ortho
+skinparam nodesep 170
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/EvaluationSessionController.puml
+}
+
+package "Application Core" {
+
+    () "CommitEvaluationSessionUseCase"
+
+    !include ApplicationServices/CommitEvaluationSessionService.puml
+    !include Domain/Device.puml
+
+    class CommitEvaluationSessionCommand {
+        + session_id: String
+    }
+
+    () "SaveDevicePort"
+    () "GetEvaluationSessionPort"
+
+    CommitEvaluationSessionService -up- CommitEvaluationSessionUseCase
+    CommitEvaluationSessionService .right.> CommitEvaluationSessionCommand : legge
+
+    CommitEvaluationSessionService -down-> SaveDevicePort : usa
+    CommitEvaluationSessionService -down-> GetEvaluationSessionPort : usa
+    
+    SaveDevicePort -[hidden]right- GetEvaluationSessionPort
+
+    
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+    
+    MongoDeviceAdapter -[hidden]right- InMemoryEvaluationSessionCache
+}
+
+EvaluationSessionController -down-> CommitEvaluationSessionUseCase : usa
+
+MongoDeviceAdapter -up- SaveDevicePort
+InMemoryEvaluationSessionCache -up- GetEvaluationSessionPort
+
+@enduml

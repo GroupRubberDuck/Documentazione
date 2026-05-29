@@ -1,0 +1,6 @@
+@startuml CommitEvaluationSessionService
+skinparam classAttributeIconSize 0
+class CommitEvaluationSessionService {
+    + commit(command: CommitEvaluationSessionCommand): void
+}
+@enduml
