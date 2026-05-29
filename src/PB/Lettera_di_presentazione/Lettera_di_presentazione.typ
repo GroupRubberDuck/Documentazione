@@ -16,7 +16,7 @@
 )[
   #statusTab(
     stato: "Approvato",
-    versione: "1.0.0",
+    versione: "2.0.0",
     autori: ("Aldo Bettega",),
     verificatori: ("Davide Lorenzon",),
     uso: "Esterno",
@@ -34,6 +34,7 @@
     ("0.1.0", "2026-03-22", "Aldo Bettega", "Davide Lorenzon", "Stesura lettera di presentazione"),
     ("1.0.0", "2026-03-22", "Davide Testolin", "Davide Lorenzon", "Approvazione"),
     ("1.1.0", "2026-04-01", "Aldo Bettega", "Davide Lorenzon", "Modifica data di consegna e aggiornamento link"),
+    ("1.2.0", "2026-05-29", "Davide Lorenzon", "Aldo Bettega", "Aggiornamento per la consegna PB"),
     ("2.0.0", "2026-04-02", "Aldo Bettega", "Aldo Bettega", "Approvazione")
   ))
 ]
@@ -48,7 +49,7 @@
   #enfasi[Lettera di presentazione del gruppo RubberDuck]
   Egregi Professori Vardanega e Cardin,  \
 
-  Il gruppo *RubberDuck* desidera comunicare la propria intenzione di candidarsi alla revisione denominata Requirements and Technology Baseline per il capitolato
+  Il gruppo *RubberDuck* desidera comunicare la propria intenzione di candidarsi alla revisione denominata Product Baseline per il capitolato
 
 
   #align(center)[
@@ -65,29 +66,39 @@
   Tramite esso sono consultabili:
   - Il Piano di Qualifica \
     #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf",
-    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf]
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v2.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v2.0.0.pdf]
   - Il Piano di Progetto \
     #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf",
-    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf]
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf]
   - L'Analisi dei Requisiti \
     #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.1.0.pdf",
-    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.1.0.pdf]
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v2.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v2.0.0.pdf]
   - Il Glossario \
     #inserisciLink(
-      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf",
-    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf]
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf]
+  - La Specifica Tecnica \
+    #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Specifica_Tecnica/Specifica_Tecnica-v1.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Specifica_Tecnica/Specifica_Tecnica-v1.0.0.pdf]
+  - Il Manuale Utente \
+    #inserisciLink(
+      url: "https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Manuale_Utente/Manuale_Utente-v1.0.0.pdf",
+    )[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Manuale_Utente/Manuale_Utente-v1.0.0.pdf]
 
   In aggiunta, vi è la sottocartella Verbali Esterni che contiene i verbali degli incontri con la proponente.
 
-  Il Proof of Concept e il relativo codice sorgente sono resi disponibili tramite apposito repository: \
-    #inserisciLink(url: "https://github.com/GroupRubberDuck/PoC")[https://github.com/GroupRubberDuck/PoC]
+  Il codice dell'MVP è pubblicato nell'apposito repository: \
+    #inserisciLink(url: "https://github.com/GroupRubberDuck/MVP")[https://github.com/GroupRubberDuck/MVP]
 
 
   #enfasi[Piano di lavoro]
-  Con la presente lettera desideriamo inoltre aggiornarvi sugli impegni presi, confermando il costo finale per la realizzazione del progetto di *11.610 €*. A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *15 maggio*, comportando una proroga di due settimane rispetto alla scadenza inizialmente prevista del 30 aprile.
+  Con la presente lettera desideriamo inoltre aggiornarvi sul costo effettivo del progetto, esso ammonta *10.950 €* contro gli *11.610 €* stimati, con un risparmio di * #str(11610 - 10950)* €. 
+  
+  A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *30 Maggio*, comportando una ulteriore proroga rispetto alla scadenza inizialmente prevista.
 
   Cordiali saluti,\
 
