@@ -1,6 +1,14 @@
 #import "/src/config.typ": template_dir
 #import template_dir + "/PdP/sprint.typ": aggiornaResiduo, displayResiduo, ruoli, sprint
 
+#import "sprints/sprint-1.typ" as s1
+#import "sprints/sprint-2.typ" as s2
+#import "sprints/sprint-3.typ" as s3
+#import "sprints/sprint-4.typ" as s4
+#import "sprints/sprint-5.typ" as s5
+#import "sprints/sprint-6.typ" as s6
+#import "sprints/sprint-7.typ" as s7
+#import "sprints/sprint-8.typ" as s8
 #import "sprints/sprint-9.typ" as s9
 #import "sprints/sprint-10.typ" as s10
 #import "sprints/sprint-11.typ" as s11
@@ -10,8 +18,9 @@
 
 #let tutti_gli_sprint = (s9.sprint_data, s10.sprint_data, s11.sprint_data, s12.sprint_data, s13.sprint_data,s14.sprint_data)
 
-#let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
+// #let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
 
+#import "01-RTB.typ":statoAttuale
 #for dati in tutti_gli_sprint {
   let ore_formattate = dati.oreProduttive.map(riga => (
     persona: riga.persona,
