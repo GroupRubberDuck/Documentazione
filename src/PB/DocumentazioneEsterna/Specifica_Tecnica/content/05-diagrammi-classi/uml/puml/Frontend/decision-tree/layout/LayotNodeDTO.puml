@@ -1,0 +1,19 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+
+class LayoutNodeDTO  {
+    + id: string
+    + type: NodeType
+    + text: string
+    + resultState: LeafNodeValue | null
+    + x: Number
+    + y: Number
+}
+@enduml

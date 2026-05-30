@@ -1,0 +1,72 @@
+@startuml evaluation-requirements-query
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+package "Inbound Adapter"{
+class EvaluationRequirementsQueryController <<Flask Blueprint>>{
+        + __init__(requirement_query_use_case:EvaluationRequirementsQueryUseCase)
+        + get_requirement_view_by_id(request:Request):Response
+
+} 
+
+}
+
+
+package "Application Core" {
+
+        package "Inbound Port"{
+
+               class EvaluationRequirementsQueryUseCase{
+                        + get_requirement_view_by_id(device_id,asset_id,requirement_id):RequirementViewDTO
+
+
+               }
+                
+        }
+
+                
+        package Domain {
+
+                class RequirementViewDTO{
+                        requirement_code:String
+                        requirement_name:String
+                        dependency_list:list[String]
+                        decision_tree:DecisionTree
+                        justification:String
+                }
+
+                class DecisionTree{
+                        root_node:Node
+                }
+                class Node{}
+                class DecisionNode{}
+                class LeafNode{}
+        }
+
+        package "Outbound Ports"{
+        interface EvaluationSessionCachePort{
+                        + get_requirement_view_by_id(device_id,asset_id,requirement_id):RequirementViewDTO
+
+        }
+        }
+        class EvaluationRequirementsQueryService{
+                + __init__ (evaluation_session_cache_port:EvaluationSessionCachePort)
+                + get_requirement_view_by_id(device_id,asset_id,requirement_id):RequirementViewDTO
+
+        }
+ EvaluationRequirementsQueryService -up-|> EvaluationRequirementsQueryUseCase  
+EvaluationRequirementsQueryController -->  EvaluationRequirementsQueryUseCase
+
+EvaluationRequirementsQueryService --> EvaluationSessionCachePort
+
+
+}
+
+
+@enduml

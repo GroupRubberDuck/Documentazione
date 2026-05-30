@@ -19,7 +19,7 @@ Verificare che l'Utente selezioni un file valido durante l'importazione \
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

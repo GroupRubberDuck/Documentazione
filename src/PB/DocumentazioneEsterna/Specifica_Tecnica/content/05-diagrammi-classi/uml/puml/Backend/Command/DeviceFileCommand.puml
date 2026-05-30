@@ -1,0 +1,25 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class DeviceFileCommand {
+        + device_name: String
+        + device_os_name: String
+        + device_description: String
+        + model_id: String
+        + model_name: String
+        + model_version: String
+        + assets: List<AssetFileCommand>
+    }
+
+    class AssetFileCommand {
+        + asset_name: String
+        + asset_type: AssetType
+        + asset_description: String
+        + assessments: List<AssessmentFileCommand>
+    }
+
+    class AssessmentFileCommand {
+        + requirement_code: String
+        + answers: Dictionary<String, bool>
+    }
+@enduml

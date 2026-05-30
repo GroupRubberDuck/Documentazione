@@ -1,0 +1,99 @@
+@startuml compliance-standard-requirement-editor
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 130
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardEditorController <<Flask Blueprint>> {
+        - req_editor_use_case: RequirementEditorUseCase
+
+        + add_requirement(session_id: String): Response
+        + update_requirement(session_id: String, req_code: String): Response
+        + remove_requirement(session_id: String, req_code: String): Response
+    }
+}
+
+package "Application Core" {
+
+    class RequirementCreateDTO <<DTO>> {
+        + req_code: String
+        + name: String
+        + description: String
+    }
+
+    class RequirementUpdateDTO <<DTO>> {
+        + name: String
+        + description: String
+    }
+
+    interface RequirementEditorUseCase <<Inbound Port>> {
+        + add_requirement(session_id: String, DTO: RequirementCreateDTO): void
+        + update_requirement(session_id: String, req_code: String, DTO: RequirementUpdateDTO): void
+        + remove_requirement(session_id: String, req_code: String): void
+    }
+
+    interface EditingSessionCachePort <<Outbound Port>> {
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    class RequirementEditorService <<Application Service>> {
+        - cache: EditingSessionCachePort
+        - session_handler: SessionHandler
+
+        + add_requirement(session_id: String, DTO: RequirementCreateDTO): void
+        + update_requirement(session_id: String, req_code: String, DTO: RequirementUpdateDTO): void
+        + remove_requirement(session_id: String, req_code: String): void
+    }
+
+    !include Dominio/ComplianceStandard.puml
+    !include Dominio/SessionHandler.puml
+
+    RequirementEditorUseCase <|.. RequirementEditorService : "implementa"
+    RequirementEditorService -down-( EditingSessionCachePort : "richiede"
+
+    RequirementEditorService ..> ComplianceStandard : "manipola requisiti"
+}
+
+package "Outbound Adapter" {
+    class InMemoryStandardCache <<Cache Adapter>> {
+        - storage: dict[String: ComplianceStandard]
+
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+}
+
+StandardEditorController -( RequirementEditorUseCase : "usa"
+StandardEditorController ..> RequirementCreateDTO : "crea e popola"
+StandardEditorController ..> RequirementUpdateDTO : "crea e popola"
+
+EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
+
+@enduml
+
+' UC42: Aggiungi requisito
+' 1. client chiama StandardEditorController.add_requirement(session_id), la richiesta contiene i cambianeti effettuati
+' 2. controller delega a add_requirement(session_id, RequirementCreateDTO) di RequirementEditorUseCase
+' 3. service estrae ComplianceStandard dalla sessione con EditingSessionCachePort.get_standard(session_id)
+' 4. il service passa i dati al dominio ComplianceStandard per validazione
+' 5. se non ci sono errori, il nuovo requisito viene istanziato e aggiunto all'aggregato
+' 6. il service salva l'aggregato invocando EditingSessionCachePort.save_standard(session_id, standard)
+
+' UC43: Elimina requisito
+'     1. client chiama StandardEditorController.remove_requirement(session_id, req_code)
+'     2. controller delega a remove_requirement(session_id, req_code)
+'     3. RequirementEditorService invoca il metodo di rimozione su ComplianceStandard, esso si occupa anche del ricalcolo e gestione delle dipendenze
+'     4. il service salva l'aggregato invocando EditingSessionCachePort.save_standard(session_id, standard)
+
+' UC44: Modifica anagrafica requisito
+'     1. StandardEditorController riceve i dati dal client, li valida e crea RequirementUpdateDTO
+'     2. il controller chiama update_requirement(session_id, req_code, DTO) di RequirementEditorService
+'     3. il service recupera il modello dalla cache e legge i dati da RequirementUpdateDTO
+'     4. il dominio verifica la validità
+'     5. se tutto ok, l'anagrafica viene aggiornata nella sessione dal service con EditingSessionCachePort.save_standard
+
+

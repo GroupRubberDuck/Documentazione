@@ -19,7 +19,7 @@ Verificare che l'Utente possa modificare le informazioni del dispositivo
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

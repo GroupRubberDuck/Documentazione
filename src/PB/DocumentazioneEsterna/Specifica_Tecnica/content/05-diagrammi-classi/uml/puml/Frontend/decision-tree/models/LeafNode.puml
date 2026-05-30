@@ -1,0 +1,22 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+interface LeafNode{
+
+
+        -id:String
+        -result:LeafNodeValue
+        -parentId:String
+        +LeafNode(id:String, result:LeafNodeValue, parentId:String)
+
+        + getRenderData():NodeDTO
+        + getNext():String
+        + getPrevious():String
+}
+
+@enduml

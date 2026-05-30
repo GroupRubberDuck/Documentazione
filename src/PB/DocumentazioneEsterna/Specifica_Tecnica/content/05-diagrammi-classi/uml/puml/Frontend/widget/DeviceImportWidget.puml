@@ -1,0 +1,32 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class DeviceImportWidget{
+        - importUrl:String
+        - redirectUrl:String
+
+        - dropZoneModal:BaseModal
+        - confirmButton:AsyncButton
+        - dropZone:FileDropZone
+
+        - isModalOpen:Boolean
+        - selectedFile:File
+        - errorMessage :String
+
+        -openModal()
+        - closeModal()
+        - onFileSelect()
+        - onFileError()
+        - uploadFile()
+        - onSuccess()
+        +DeviceImportWidget(importUrl:String, redirectUrl:String)
+
+}
+
+@enduml

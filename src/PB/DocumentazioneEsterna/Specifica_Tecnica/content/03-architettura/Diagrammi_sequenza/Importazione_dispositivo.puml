@@ -1,0 +1,81 @@
+@startuml Importazione_dispositivo_uc05_06
+
+actor "Utente" as utente
+participant "<<Boundary>>\nVue.js" as vue
+participant "<<Inbound Adapter>>\nFlaskImportDeviceController" as controller
+participant "<<Utility>>\nUploadFileController" as helper
+participant "<<Service>>\nImportDeviceService" as service
+participant "<<Outbound Adapter>>\nFileDeviceImporterFactoryPort" as factory
+participant "<<Outbound Adapter>>\nFileDeviceImporterPort" as parser
+participant "<<Outbound Adapter>>\nMongoDeviceAdapter" as repo
+
+utente -> vue: Carica file (CSV/XML/JSON)
+activate vue
+
+vue -> controller: POST /api/devices/import (multipart/form-data)
+activate controller
+
+alt Nessun file nella request o filename vuoto
+    controller --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: nessun file selezionato
+end
+
+controller -> helper: get_http_file_extension(filename)
+activate helper
+alt Estensione non supportata
+    helper --> controller: ValueError
+    controller --> vue: HTTP 400 Bad Request
+    vue --> utente: Errore: formato non supportato
+end
+helper --> controller: extension
+deactivate helper
+
+controller -> helper: get_http_file_payload(file_storage)
+activate helper
+helper --> controller: file_payload (IO[bytes])
+deactivate helper
+
+controller -> service: import_device(ImportDeviceCommand)
+activate service
+
+service -> factory: get_file_device_importer(extension)
+activate factory
+factory --> service: importer (FileDeviceImporterPort)
+deactivate factory
+
+service -> parser: parse_device_file(file_payload)
+activate parser
+
+alt UC06 - Errore parsing o semantica (DeviceImportError)
+    parser --> service: DeviceImportError
+    service --> controller: ImportDeviceFailure
+    controller --> vue: HTTP 422 Unprocessable Entity
+    vue --> utente: Errore: file non valido
+else File valido
+    parser --> service: Device
+end
+deactivate parser
+
+service -> repo: register(device)
+activate repo
+
+alt Dispositivo già esistente (DuplicateDeviceError)
+    repo --> service: DuplicateDeviceError
+    service --> controller: DeviceRegistrationFailure
+    controller --> vue: HTTP 409 Conflict
+    vue --> utente: Errore: dispositivo già presente
+else Registrazione riuscita
+    repo --> service: None
+end
+deactivate repo
+
+service --> controller: None
+deactivate service
+
+controller --> vue: HTTP 201 Created
+deactivate controller
+
+vue --> utente: Dispositivo importato con successo
+deactivate vue
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml FlaskAssetEvaluationDetailController
+skinparam ClassAttributeIconSize 0
+
+class FlaskAssetEvaluationDetailController {
+    + get_asset_evaluation_detail(req: Request): Response
+}
+
+@enduml

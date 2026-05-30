@@ -27,7 +27,7 @@
 #let doc = "Piano di qualifica"
 
 #let currentVersion = (
-  major: 1,
+  major: 2,
   minor: 0,
   patch: 0,
 )
@@ -40,9 +40,9 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In progress",
+    stato: "Approvato",
     versione: versionNumber,
-    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT),
+    autori: ("Felician Mario Necsulescu", persone.ANA, persone.DL, persone.DT, persone.FILIPPO),
     verificatori: ("Davide Testolin", persone.FELIX, persone.ANA, ),
     uso: "Esterno",
     destinatari: ("Prof. Tullio Vardanega", "Prof. Riccardo Cardin", "BlueWind srl"),
@@ -87,7 +87,7 @@
       [2026-02-24],
       [Ana Maria Draghici],
       [Felician Mario \ Necsulescu],
-      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione e aggiunta @miglioramento (automiglioramento)]
+      [Aggiunti calcolo metriche, grafici restanti metriche, e descrizione grafici nella @valutazione]
     ),
     (
       [0.5.0],
@@ -114,6 +114,41 @@
       [2026-04-01],
       [#persone.DL],
       [#persone.ALDO],
+      [Approvazione]
+    ),
+    (
+      [1.1.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.DT],
+      [Aggiornata sezione Test di Integrazione]
+    ),
+    (
+      [1.2.0],
+      [2026-05-19],
+      [#persone.ANA],
+      [#persone.DT],
+      [Aggiornato cruscotto valutazione con i valori di fine PB @valutazione]
+    ),
+    (
+      [1.3.0],
+      [2026-05-19],
+      [#persone.ANA],
+      [#persone.DT],
+      [Aggiornato sezione Test Unità Frontend e Test di Integrazione Frontend ]
+    ),
+    (
+      [1.4.0],
+      [2026-05-21],
+      [#persone.FILIPPO],
+      [#persone.DT],
+      [Aggiornati test di sistema e test di approvazione]
+    ),
+    (
+      [2.0.0],
+      [2026-05-21],
+      [#persone.DT],
+      [#persone.DT],
       [Approvazione]
     ),
   )
@@ -181,11 +216,7 @@
 
 
 ]
-#insertArabicNumberedPagesSenzaData(PageTitle: "Automiglioramento", documentType: doc)[
-  = Automiglioramento <miglioramento>
-  #include "content/06-automiglioramento/index.typ"
 
-]
 //#insertArabicNumberedPagesSenzaData(PageTitle: "Appendice", documentType: doc)[
 
 

@@ -4,7 +4,7 @@
 cd "$(git rev-parse --show-toplevel)"
 
 REPO_DOC="$(pwd)"
-REPO_POC="$(dirname "$REPO_DOC")/PoC"
+REPO_POC="$(dirname "$REPO_DOC")/MVP"
 
 # Chiede in input i dati dello Sprint
 read -p "Inserisci il nome dello Sprint (es. Sprint1): " NOME_SPRINT
@@ -52,7 +52,7 @@ extract_commits() {
         esac
 
         # ESTRAZIONE RIGHE SOLO PER FILE SPECIFICI
-        stats=$(git -C "$REPO_PATH" show --shortstat --format="" $fullhash -- "*.typ" "*.py" "*.html" "*.sh" "*.md")
+        stats=$(git -C "$REPO_PATH" show --shortstat --format="" $fullhash -- "*.typ" "*.py" "*.html" "*.sh" "*.md" "*.puml")
 
         aggiunte=$(echo "$stats" | grep -Eo '[0-9]+ insertion' | grep -Eo '[0-9]+')
         tolte=$(echo "$stats" | grep -Eo '[0-9]+ deletion' | grep -Eo '[0-9]+')

@@ -27,8 +27,8 @@
 #let doc = "Piano di Progetto"
 
 #let currentVersion = (
-  major: 1,
-  minor: 9,
+  major: 2,
+  minor: 0,
   patch: 0,
 )
 #let versionNumber = currentVersion.values().map(n => { str(n) }).join(".")
@@ -43,7 +43,7 @@
 
 #insertRomanNumberedPagesSenzaData(PageTitle: "Stato del documento", documentType: doc)[
   #statusTab(
-    stato: "In lavorazione",
+    stato: "Approvato",
     versione: versionNumber,
     autori: (persone.DT, "Felician Mario Necsulescu", persone.ANA, persone.ALDO, persone.FILIPPO),
     verificatori: (persone.ALDO, persone.ANA, persone.DT, persone.FILIPPO, "Felician Mario Necsulescu"),
@@ -60,7 +60,7 @@
       [2025-11-12],
       [Davide Lorenzon],
       [Aldo Bettega],
-      [Stesura iniziale e redazione Sprint 1],
+      [Stesura iniziale e redazione sprint 1],
     ),
     (
       [0.2.0],
@@ -74,7 +74,7 @@
       [2025-12-10],
       [Davide Lorenzon],
       [Ana Maria\ Draghici],
-      [Modificata la struttura del documento, organizzazione del progetto incluso nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.],
+      [Modificata la struttura del documento, organizzazione del progetto inclusa nell'introduzione @orgProgetto, aggiunto preventivo iniziale @Preventivo. \ Pianificazione di breve e lungo periodo promosse a sezioni.],
     ),
     (
       [0.3.0],
@@ -88,14 +88,14 @@
       [2025-12-14],
       [Ana Maria\ Draghici],
       [Davide Testolin],
-      [Aggiunta @Pianificazione e completata scrittura Sprint 2],
+      [Aggiunta @Pianificazione e completata scrittura sprint 2],
     ),
     (
       [0.4.1],
       [2025-12-20],
       [Ana Maria\ Draghici],
       [Davide Testolin],
-      [Riviste alcune sezione di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su Sprint 1 e Sprint 2],
+      [Riviste alcune sezioni di @Pianificazione, aggiunto per completezza alcuni punti su retrospettiva e rischi su sprint 1 e sprint 2],
     ),
     (
       [0.5.0],
@@ -123,14 +123,14 @@
       [2026-03-11],
       [Felician Mario\ Necsulescu],
       [#persone.DT],
-      [Scritto Sprint 6],
+      [Scritto sprint 6],
     ),
     (
       [0.9.0],
       [2026-03-25],
       [#persone.DT],
       [Felician Mario\ Necsulescu],
-      [Scritto Sprint 7],
+      [Scritto sprint 7],
     ),
     (
       [0.10.0],
@@ -199,7 +199,7 @@
       [1.8.0],
       [2026-05-18],
       [#persone.ANA],
-      [-],    
+      [#persone.ALDO],    
       [Aggiornamento finale della pianificazione di lungo periodo TB],
     ),
     (
@@ -209,6 +209,15 @@
       [#persone.ANA],
       [Stesura sprint 14],
     ),
+    (
+      [1.9.0],
+      [2026-05-19],
+      [#persone.FILIPPO],
+      [#persone.ANA],
+      [Stesura sprint 14],
+    ),
+     ([2.0.0],[2026-05-20],[#persone.ANA],[#persone.ANA],[Approvazione]),
+)
   )
   #registroModifiche(modifiche)
 ]
@@ -249,7 +258,7 @@
   #include "content/04-pianificazione_lungo_periodo/index.typ"
 ]
 
-#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli Sprint", documentType: doc)[
+#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli sprint", documentType: doc)[
   = Pianificazione di breve periodo<Pianificazione_di_breve_periodo>
   #include "content/05-pianificazione_breve_periodo/index.typ"
 ]

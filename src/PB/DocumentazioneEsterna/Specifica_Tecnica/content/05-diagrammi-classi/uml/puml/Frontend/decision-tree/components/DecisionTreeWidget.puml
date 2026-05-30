@@ -1,0 +1,19 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class DecisionTreeWidget <<Component>> {
+        - treeCanvas:TreeCanvas
+        + DecisionTreeWidget(nodes : LayoutNodeDTO[], edges : EdgeDTO[], activePath : String[])
+        + selectNode(nodeId: String) <<emit>>
+}
+!include TreeCanvas.puml
+ 
+DecisionTreeWidget *-- TreeCanvas
+
+@enduml

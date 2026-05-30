@@ -83,8 +83,19 @@ Le categorie previste sono:
   inset: 6pt,
   stroke: luma(210),
   [*Codice*], [*Descrizione*],
-  [TU], [Test di Unità — verifica il corretto funzionamento di una singola unità software in isolamento],
-  [TI], [Test di Integrazione — verifica l'interazione corretta tra più unità o componenti],
+  [TU], [Test di Unità — verifica il corretto funzionamento di una singola unità software in isolamento
+  
+  Divisi a loro volta in:
+  - *TU-F*: per i test del frontend.
+  - *TU-B*: per i test del backend.
+  ],
+  [TI], [Test di Integrazione — verifica l'interazione corretta tra più unità o componenti
+  
+  
+  Divisi a loro volta in:
+  - *TI-F*: per i test del frontend.
+  - *TI-B*: per i test del backend.
+  ],
   [TS], [Test di Sistema — verifica il comportamento del sistema nella sua interezza rispetto ai requisiti],
   [TA], [Test di Accettazione — verifica che il prodotto soddisfi i criteri concordati con il committente],
 )
@@ -101,7 +112,7 @@ Per consentire un monitoraggio efficace dell'avanzamento, ogni test assume uno d
   inset: 6pt,
   stroke: luma(210),
   [*Stato*], [*Descrizione*],
-  [S],  [Superato — il test è stato eseguito e ha prodotto l'output atteso],
+  [P],  [Passed — il test è stato eseguito e ha prodotto l'output atteso],
   [I],  [Implementato — il test è stato scritto ma non ancora eseguito],
   [NI], [Non Implementato — il test è pianificato ma non ancora realizzato],  
   [F], [Fallito — il test ha prodotto un risultato diverso da quello atteso],
@@ -179,6 +190,8 @@ La Validazione si basa sull'analisi degli esiti dei test di accettazione e sul t
 La *Definition of Done (DoD)* è un elemento molto importante nello sviluppo software, perché definisce le azioni che devono essere completate affinché i requisiti — espressi tramite un *Product Backlog Item (PBI)* — siano considerati conclusi. \
 I criteri che la compongono devono essere concreti, verificabili e di dimensione ridotta, e hanno l’obiettivo di garantire un livello minimo di qualità per ogni rilascio o incremento del prodotto.
 
+La seguente *Definition of Done* non sono statiche, ma dinamiche: evolvono in base alle esigenze del team di sviluppo.
+===== Definition of Done - Ambito documentale
 Di seguito viene riportata la Definition of Done per ogni prodotto documentale:
 
 #show: checklist.with(marker-map: (" ": sym.ballot, "x": sym.ballot.cross, "-": sym.bar.h, "/": sym.slash.double))
@@ -202,8 +215,33 @@ Di seguito viene riportata la Definition of Done per ogni prodotto documentale:
 )[`git commit -m "commento. Close #numero_issue"`] Verificare poi effettivamente la chiusura nel Projects Board.
 
 Una volta verificati tutti i criteri precedenti, il Responsabile approva il lavoro svolto spostando le relative issue nello stato di 'Done'. Solo quando tutti i PBI previsti per lo Sprint risultano completati, il Responsabile autorizza il merge del branch develop nel branch main.
-  
-La seguente *Definition of Done* non è statica, ma dinamica: evolve in base alle esigenze del team di sviluppo.
+===== Definition of Done - Ambito codice
+Di seguito viene riportata la Definition of Done per le attività di sviluppo del codice sorgente:
+
+#show: checklist.with(marker-map: (" ": sym.ballot, "x": sym.ballot.cross, "-": sym.bar.h, "/": sym.slash.double))
+
+    - [ ] Controllare che l'implementazione rispetti i requisiti definiti e l'architettura stabilita nella fase di progettazione iniziale;
+
+    - [ ] Verificare che, in caso di modifiche architetturali o logiche avvenute durante la codifica, la relativa documentazione di progetto sia stata aggiornata di conseguenza;
+
+    - [ ] Controllare che il codice rispetti le norme di codifica e le convenzioni di stile adottate dal team;
+
+
+    - [ ] Controllare che i test (unitari e/o di integrazione) siano stati scritti, eseguiti e superati con successo per le funzionalità implementate, in caso contrario il verificatore dovrà integrarli;
+
+    - [ ] Verificare la correttezza del codice tramite gli appositi tool e verificare il superamento dei test relativi alla continuos integration;
+
+    - [ ] Controllare che il codice sia stato sottoposto a Code Review tramite l'apertura di una Pull Request (PR) e approvato da almeno un altro membro del team;
+
+    - [ ] L'avvenuto completamento della attività di sviluppo deve essere sancito tramite un commit di chiusura che referenzi la issue corrispondente con #block(
+    fill: rgb("#f9f9f9"), // Colore di sfondo (grigio chiaro)
+    stroke: 1pt + black, // Bordo nero da 1 punto
+    inset: 10pt          // Padding interno di 10 punti
+    )[`git commit -m "commento. Close #numero_issue"`] Verificare poi effettivamente la chiusura nel Projects Board.
+
+Al termine dello sprint il responsabile autorizza la pubblicazione delle funzionalità che soddisfano i criteri precedentemente definiti e procede alla pubblicazione sul branch main.
+
+
 
 
 === Strumenti a supporto
@@ -219,13 +257,13 @@ La seguente *Definition of Done* non è statica, ma dinamica: evolve in base all
 I processi di verifica e validazione si appoggiano ai seguenti documenti:
 
 - *Analisi dei Requisiti*: definisce i requisiti funzionali e non funzionali concordati con BlueWind Srl. Costituisce la base di riferimento per la progettazione dei test di sistema e di accettazione, e per il tracciamento della copertura dei requisiti.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v1.0.0.pdf")[Riferimento all'Analisi dei Requisiti.]
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti-v2.0.0.pdf")[Riferimento all'Analisi dei Requisiti.]
 
 - *Piano di Qualifica*: raccoglie le metriche di qualità adottate, i test pianificati ed eseguiti e i loro esiti. È il documento operativo di riferimento per il monitoraggio dell'avanzamento delle attività di verifica.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf")[Riferimento al Piano di Qualifica]
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v2.0.0.pdf")[Riferimento al Piano di Qualifica]
 
 - *Piano di Progetto*: definisce la pianificazione temporale delle attività, incluse quelle di verifica. Consente di contestualizzare i risultati dei test rispetto agli sprint in cui sono stati eseguiti.
-#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Riferimento al Piano di Progetto.]  
+#link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Riferimento al Piano di Progetto.]  
 
 - *Norme di Progetto*: definisce le modalità operative di verifica e validazione adottate dal gruppo, incluse le checklist di ispezione, la classificazione dei test e i criteri di accettazione.
 #link("https://grouprubberduck.github.io/Documentazione/")[Riferimento alle Norme di Progetto.]  

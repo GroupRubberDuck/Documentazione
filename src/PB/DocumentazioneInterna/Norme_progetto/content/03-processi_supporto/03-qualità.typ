@@ -76,4 +76,4 @@ git commit \-\-amend
 Le metriche relative all’Accertamento Qualità sono riportate nella sezione @qualità1 “Metriche di Qualità”  del documento, con valori accettabili e ottimali. 
 
 
-Oppure consultare il seguente documento per approfondimenti : #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v1.0.0.pdf")[Piano di Qualifica (PdQ)].
+Oppure consultare il seguente documento per approfondimenti : #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica-v2.0.0.pdf")[Piano di Qualifica (PdQ)].

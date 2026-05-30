@@ -1,0 +1,22 @@
+
+
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+!include ../store/DecisionTreeStore.puml
+!include ../api/EvaluationAPIClient.puml
+!include ../engine/EvaluationEngine.puml
+!include ../models/NodeDTO.puml
+
+DecisionTreeStore --> EvaluationAPIClient
+DecisionTreeStore --> EvaluationEngine
+DecisionTreeStore .l.> NodeDTO
+
+
+@enduml

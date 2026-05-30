@@ -1,0 +1,8 @@
+ @startuml
+skinparam classAttributeIconSize 0
+
+class ImportStandardCommand <<Command DTO>> {
+        + standard_file_content: BinaryIO
+        + extension: AllowedStandardFileExtension
+    }
+@enduml

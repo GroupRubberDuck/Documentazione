@@ -1,0 +1,15 @@
+@startuml DecisionNode
+skinparam ClassAttributeIconSize 0
+
+class DecisionNode {
+    - node_id: String
+    - question: String
+    - child_on_true_id: String
+    - child_on_false_id: String
+    
+    + next(condition: Bool): String
+}
+
+DecisionNode --|> Node
+
+@enduml

@@ -29,54 +29,26 @@
 #include "MPC/11-correttezza_ortografica.typ"
 
 
-//#he(body: "Test Success Rate", level: 2)
-#include "MPC/12-test_success_rate.typ"
+#he(body: "Test Success Rate", level: 2)
+#include "MPD/0-test_success.typ"
 
-//#he(body: "Code Coverage", level: 2)
-#include "MPC/13-code_coverage.typ"
+#he(body: "Requisiti soddisfatti", level: 2)
+#include "MPD/01-requisiti_sodifatti.typ"
 
-
-//#he(body: "Requisiti Obbligatori Soddisfatti", level: 2)
-#include "MPD/01-requisiti_obbligatori_soddifatti.typ"
-
-//#he(body: "Requisiti Desiderabili Soddisfatti", level: 2)
-#include "MPD/02-requisiti_desiderabili_soddisfatti.typ"
-
-//#he(body: "Requisiti Opzionali Soddisfatti", level: 2)
-#include "MPD/03-requisiti_opzionali_soddifatti.typ"
-
-//#he(body: "Failure Density", level: 2)
+#he(body: "Failure Density", level: 2)
 #include "MPD/04-failure_density.typ"
 
-//#he(body: "Statement Coverage", level: 2)
+#he(body: "Statement Coverage", level: 2)
 #include "MPD/05-statement_coverage.typ"
 
-//#he(body: "Branch Coverage", level: 2)
+#he(body: "Branch Coverage", level: 2)
 #include "MPD/06-branch_coverage.typ"
 
-//#he(body: "User Error Rate", level: 2)
-#include "MPD/07-user_error_rate.typ"
+#he(body: "Efficienza", level: 2)
+#include "MPD/07-efficienza.typ"
 
-//#he(body: "Time to Complete Task", level: 2)
-#include "MPD/08-time_to_complete_task.typ"
-
-//#he(body: "Response Time", level: 2)
-#include "MPD/09-response_time.typ"
-
-//#he(body: "CPU Utilization", level: 2)
-#include "MPD/10-CPU_utilization.typ"
-
-//#he(body: "Memory Utilization", level: 2)
-#include "MPD/11-memory_utilization.typ"
-
-//#he(body: "Cyclomatic Complexity", level: 2)
+#he(body: "Cyclomatic Complexity", level: 2)
 #include "MPD/12-cyclomatic_complexity.typ"
 
-//#he(body: "Instability Index", level: 2)
-#include "MPD/13-instability_index.typ"
-
-//#he(body: "Coefficient of Couplings", level: 2)
-#include "MPD/14-coefficient_of_couplings.typ"
-
-//#he(body: "Code Smell", level: 2)
+#he(body: "Code Smell", level: 2)
 #include "MPD/15-code_smell.typ"

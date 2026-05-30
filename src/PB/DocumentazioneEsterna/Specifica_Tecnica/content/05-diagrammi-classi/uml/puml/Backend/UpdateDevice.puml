@@ -1,0 +1,42 @@
+@startuml UpdateDevice
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/FlaskWriteDeviceController.puml
+}
+
+package "Application Core" {
+    
+    !include Domain/Device.puml
+    
+    !include Command/UpdateDeviceCommand.puml
+    
+    !include ApplicationServices/UpdateDeviceService.puml
+    
+    () "UpdateDeviceUseCase"
+    () "SaveDevicePort"
+    () "FindDevicePort"
+
+    Device -[hidden]right- UpdateDeviceCommand
+    
+    UpdateDeviceService .left.> UpdateDeviceCommand: legge
+
+    UpdateDeviceService -right- UpdateDeviceUseCase
+
+    UpdateDeviceService -down-> SaveDevicePort: usa
+    UpdateDeviceService -down-> FindDevicePort: usa
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+}
+
+FlaskWriteDeviceController -down-> UpdateDeviceUseCase: usa
+
+SaveDevicePort -down- MongoDeviceAdapter
+FindDevicePort -down- MongoDeviceAdapter
+
+@enduml

@@ -18,7 +18,7 @@ Verificare che l'Utente possa visualizzare la descrizione dell'asset
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

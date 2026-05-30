@@ -1,0 +1,32 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class RequirementEvaluationWidget  {
+    - store: DecisionTreeStore
+    - layoutEngine: D3LayoutEngine
+    - decisionTreeWidget : DecisionTreeWidget
+    - treeSidebar : TreeSidebar
+    - evaluationBadge : EvaluationBadge
+    - justificationForm : JustificationForm
+
+    - isSidebarOpen: Boolean
+    - layoutResult: LayoutResult
+    - currentAnswer: Boolean|null
+    - hasNextNode: Boolean
+    - hasPrevious: Boolean
+
+    + RequirementEvaluationWidget(treeData:TreeStructure,savedAnswers:Map<String,Boolean>,
+    evaluationState:EvaluationResult,justification:String,answerUrl:String,stateUrl:String,justificationUrl:String,detailUrl:String,requirementsUrl:String)
+    + handleNodeSelect(nodeId: String)
+    + handleSidebarClose()
+    + handleSidebarSubmit(answer: Boolean)
+    + handleSidebarPrevious()
+    + handleSidebarNext()
+    + handleJustificationSave(justification:String)
+}
+@enduml

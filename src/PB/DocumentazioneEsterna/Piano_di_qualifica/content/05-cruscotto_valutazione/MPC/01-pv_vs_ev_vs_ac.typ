@@ -6,8 +6,8 @@
 #let data-ev = csv("../../../data/MPC/02-earned_value.csv").slice(1)
 #let data-ac = csv("../../../data/MPC/03-actual_cost.csv").slice(1)
 
-// Estrazione etichette
-#let x-labels = data-pv.map(row => row.at(0))
+// Estrazione etichette (Abbreviate per il grafico, es. "S1", "S2")
+#let x-labels = data-pv.map(row => row.at(0).replace("Sprint ", "S"))
 
 // Estrazione valori numerici (già accumulati)
 #let values-pv = data-pv.map(row => float(row.at(1)))
@@ -42,8 +42,8 @@
       text(fill: white, weight: "bold")[AC acc. (€)],
     ),
 
-    // Righe dati
-    ..x-labels.enumerate().map(((i, sprint)) => (
+    // Righe dati (qui usiamo l'etichetta originale non abbreviata)
+    ..data-pv.map(row => row.at(0)).enumerate().map(((i, sprint)) => (
       sprint,
       fmt(values-pv.at(i)),
       fmt(values-ev.at(i)),
@@ -54,22 +54,28 @@
 )
 
 // ── Grafico ───────────────────────────────────────────────────────────────────
-#grafico-multi-linea(
-  (
-    x-labels: x-labels,
-    PV: values-pv,
-    EV: values-ev,
-    AC: values-ac,
-    series-names: ("PV", "EV", "AC"),
-    show-labels: true,
-    label-size: 7pt,
-    grid-opacity: 10%,
-  ),
-  "Andamento Metriche PV, EV e AC",
-  y-label: "Valore (€)",
-  x-label: "Sprint",
-  y-min: 400,
-  y-max: 8000
-)
+// Opzione A: allarghiamo lo spazio a disposizione del grafico usando pad
+#pad(x: -2cm)[
+  #grafico-multi-linea(
+    (
+      x-labels: x-labels,
+      PV: values-pv,
+      EV: values-ev,
+      AC: values-ac,
+      series-names: ("PV", "EV", "AC"),
+      show-labels: true,
+      label-size: 6pt, // Testo ridotto per limitare gli ingombri
+      grid-opacity: 10%,
+      x-tick-angle: -45deg, // Opzione B: rotazione delle etichette (se supportato)
+    ),
+    "Andamento Metriche PV, EV e AC",
+    y-label: "Valore (€)",
+    x-label: "Sprint",
+    y-min: 400,
+    y-max: 12000
+  )
+]
 
-Il team ha mantenuto un ritmo di avanzamento generalmente coerente con la pianificazione, con EV e PV che si sono mantenuti molto vicini nel corso del progetto. Tuttavia l'AC ha superato costantemente entrambi fin dai primi sprint, evidenziando una tendenza strutturale a spendere più di quanto pianificato.\ Lo scostamento complessivo è attribuibile alla natura del progetto: trattandosi della prima esperienza del team con un progetto di questa tipologia, le stime iniziali delle ore necessarie per ciascun ruolo hanno risentito della mancanza di riferimenti storici. Le cause e le contromisure adottate sono documentate nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v1.0.0.pdf")[Piano di Progetto].
+Il team ha mantenuto EV e PV ravvicinati, pur con un AC costantemente superiore che indica una tendenza alla sovraspesa (cause e contromisure nel #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto-v2.0.0.pdf")[Piano di Progetto]).
+#line(length: 100%, stroke: 0.5pt + luma(180))
+Dallo S9 l'EV accelera, riducendo il distacco dal PV. Negli sprint finali (S12--S14) la curva dell'AC si stabilizza allineandosi a quella dell'EV, confermando un netto recupero nell'efficienza e un miglior controllo dei costi.

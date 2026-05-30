@@ -29,7 +29,6 @@
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 4),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista, orePreviste: 3, oreEffettive: 3),
     (persona: persone.ANA, ruolo: ruoli.Progettista, orePreviste: 3, oreEffettive: 3),
-    // FIX cambiare da verificatore a progettista
     (persona: persone.ALDO, ruolo: ruoli.Progettista, orePreviste: 5, oreEffettive: 5),
   ),
   retrospettiva: [

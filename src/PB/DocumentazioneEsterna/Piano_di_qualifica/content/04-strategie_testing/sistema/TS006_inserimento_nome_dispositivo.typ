@@ -20,7 +20,7 @@ Il nome del dispositivo deve rispettare il vincolo di lunghezza compresa tra 1 e
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

@@ -1,0 +1,9 @@
+@startuml FlaskRequirementEvaluationDetailController
+skinparam classAttributeIconSize 0
+class FlaskRequirementEvaluationDetailController <<Flask Blueprint>> {
+    + get_requirement_evaluation_detail(req: Request): Response
+    + get_requirement_evaluation_json(req: Request): Response
+    + get_requirement_evaluation_state(req: Request): Response
+}
+
+@enduml

@@ -1,0 +1,67 @@
+@startuml ImportDevice
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam packageStyle rectangle
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskImportDeviceController.puml
+}
+
+package "Application Core" {
+    () "ImportDeviceUseCase"
+
+    !include ApplicationServices/ImportDeviceService.puml
+    !include Command/ImportDeviceCommand.puml
+    !include Domain/AllowedDeviceFileExtension.puml
+
+    () "FileDeviceImporterFactoryPort"
+    () "RegisterDevicePort"
+    () "FileDeviceImporterPort"
+
+    ImportDeviceService -up- ImportDeviceUseCase
+    ImportDeviceService .right.> ImportDeviceCommand : legge
+    ImportDeviceService -down-> FileDeviceImporterFactoryPort : usa
+    ImportDeviceService -down-> RegisterDevicePort : usa
+    ImportDeviceService -down-> FileDeviceImporterPort : usa
+
+    ImportDeviceCommand -right-> AllowedDeviceFileExtension : usa
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/FileDeviceImporter.puml
+    !include OutboundAdapters/ConcreteFileDeviceImporterFactory.puml
+    !include OutboundAdapters/MongoDeviceAdapter.puml
+
+    class CSVFileDeviceImporter {
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
+    }
+
+    class JSONFileDeviceImporter {
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
+    }
+
+    class XMLFileDeviceImporter {
+        # deserialize(device_file_content: IO[bytes]): Any
+        # parse_data(raw: Any): dict
+    }
+}
+
+FlaskImportDeviceController --> ImportDeviceUseCase : usa
+
+FileDeviceImporterFactoryPort - ConcreteFileDeviceImporterFactory
+RegisterDevicePort - MongoDeviceAdapter
+FileDeviceImporterPort - FileDeviceImporter
+
+FileDeviceImporter <|-- CSVFileDeviceImporter
+FileDeviceImporter <|-- XMLFileDeviceImporter
+FileDeviceImporter <|-- JSONFileDeviceImporter
+
+ConcreteFileDeviceImporterFactory ..> CSVFileDeviceImporter : crea
+ConcreteFileDeviceImporterFactory ..> JSONFileDeviceImporter : crea
+ConcreteFileDeviceImporterFactory ..> XMLFileDeviceImporter : crea
+
+@enduml

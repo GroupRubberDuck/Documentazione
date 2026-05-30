@@ -18,7 +18,7 @@ Verificare che l'Utente possa inserire e registrare nuovi dispositivi nel sistem
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

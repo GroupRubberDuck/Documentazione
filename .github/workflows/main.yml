@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Set up Typst
-        uses: typst-community/setup-typst@v4
+        uses: typst-community/setup-typst@v5
 
       - name: Verify Typst installation
         run: typst --version
@@ -45,7 +45,7 @@ jobs:
 
       - name: Upload Artifacts
         if: always() # <--- Questo assicura che scarichi il log anche se c'è stato un errore!
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: PDF-and-Logs
           path: output/

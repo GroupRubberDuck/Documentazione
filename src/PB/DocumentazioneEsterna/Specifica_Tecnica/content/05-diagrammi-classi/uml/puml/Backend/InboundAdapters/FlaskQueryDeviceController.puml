@@ -1,0 +1,8 @@
+@startuml FlaskQueryDeviceController
+skinparam classAttributeIconSize 0
+class FlaskQueryDeviceController <<Flask Blueprint>> {
+    + get_device_list(req: Request): Response
+    + get_device_detail(req: Request): Response
+}
+
+@enduml

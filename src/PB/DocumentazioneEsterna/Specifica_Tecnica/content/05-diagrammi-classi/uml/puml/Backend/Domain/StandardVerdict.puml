@@ -1,0 +1,9 @@
+@startuml StandardVerdict
+
+enum StandardVerdict {
+    PASS
+    FAIL
+    NA
+}
+
+@enduml

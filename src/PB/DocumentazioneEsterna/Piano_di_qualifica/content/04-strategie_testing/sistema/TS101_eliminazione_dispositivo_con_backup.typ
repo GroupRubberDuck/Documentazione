@@ -18,7 +18,7 @@ Verificare che l'Utente possa eliminare un dispositivo e scaricare un back up pr
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

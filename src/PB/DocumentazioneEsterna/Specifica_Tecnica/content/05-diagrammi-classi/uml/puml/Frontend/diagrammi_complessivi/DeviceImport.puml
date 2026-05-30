@@ -1,0 +1,28 @@
+@startuml DeviceImport
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 120
+skinparam classAttributeIconSize 0
+skinparam PackagePadding 30
+skinparam style strictuml
+
+package "Entry Point" {
+    note "main.js legge attributi data-*\ndal DOM e monta DeviceImportWidget" as EntryNote
+}
+
+package "Smart Widget" {
+    !include ../widget/DeviceImportWidget.puml
+}
+
+package "Componenti Dumb" {
+    !include ../componenti_base/BaseModal.puml
+    !include ../componenti_base/FileDropZone.puml
+    !include ../componenti_base/asyncButton.puml
+}
+
+DeviceImportWidget *-- BaseModal    : compone
+DeviceImportWidget *-- FileDropZone : compone
+DeviceImportWidget *-- AsyncButton  : compone
+
+@enduml

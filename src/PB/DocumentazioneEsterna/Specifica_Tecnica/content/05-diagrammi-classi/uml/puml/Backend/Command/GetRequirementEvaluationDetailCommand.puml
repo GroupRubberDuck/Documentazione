@@ -1,0 +1,11 @@
+@startuml GetRequirementEvaluationDetailCommand
+skinparam classAttributeIconSize 0
+
+    class GetRequirementEvaluationDetailCommand {
+        + requirement_id: String
+        + asset_id: String
+        + device_id: String
+        + session_id: String
+    }
+
+@enduml

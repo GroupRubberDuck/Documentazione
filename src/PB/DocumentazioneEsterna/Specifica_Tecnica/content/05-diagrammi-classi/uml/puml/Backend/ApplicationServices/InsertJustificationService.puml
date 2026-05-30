@@ -1,0 +1,7 @@
+@startuml InsertJustificationService
+skinparam classAttributeIconSize 0
+class InsertJustificationService <<Application Service>> {
+    + insert_justification(command: InsertJustificationCommand): void
+}
+
+@enduml

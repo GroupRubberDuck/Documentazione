@@ -1,0 +1,37 @@
+@startuml DeleteAsset
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter"{
+    !include InboundAdapters/FlaskWriteAssetController.puml
+}
+
+package "Application Core" {
+    () "DeleteAssetUseCase"
+
+    !include Command/DeleteAssetCommand.puml
+
+    !include ApplicationServices/DeleteAssetService.puml
+    !include Domain/Asset.puml
+    () "SaveEvaluationSessionPort"
+    () "GetEvaluationSessionPort"
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskWriteAssetController -down-> DeleteAssetUseCase : usa
+DeleteAssetUseCase -down- DeleteAssetService
+
+DeleteAssetService .> DeleteAssetCommand : legge
+
+DeleteAssetService -down-> SaveEvaluationSessionPort : usa
+DeleteAssetService -down-> GetEvaluationSessionPort : usa
+
+SaveEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

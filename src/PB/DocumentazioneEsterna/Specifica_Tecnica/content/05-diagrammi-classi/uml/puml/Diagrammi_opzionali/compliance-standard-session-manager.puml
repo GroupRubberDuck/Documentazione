@@ -1,0 +1,110 @@
+@startuml compliance-standard-session-manager
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 130
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    class StandardEditorController <<Flask Blueprint>> {
+        - session_use_case: SessionManagerUseCase
+
+        ' Lifecycle della Sessione (UC36, 37, 38)
+        + open_session(standard_id: String): Response
+        + commit(session_id: String): Response
+        + rollback(session_id: String): Response
+    }
+}
+
+package "Application Core" {
+
+    interface SessionManagerUseCase <<Inbound Port>> {
+        + open_edit_session(standard_id: String): String
+        + commit_changes(session_id: String): void
+        + discard_changes(session_id: String): void
+    }
+
+    interface EditingSessionCachePort <<Outbound Port>> {
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    interface StandardRepositoryPort <<Outbound Port>> {
+        + find_all(): List<ComplianceStandard>
+        + find_by_id(id: String): ComplianceStandard
+        + save(standard: ComplianceStandard): void
+        + delete_by_id(id: String): void
+        + exists_by_name(name: String): bool
+    }
+
+    class SessionManagerService <<Application Service>> {
+        - cache: EditingSessionCachePort
+        - repository: StandardRepositoryPort
+        - session_handler: SessionHandler
+
+        + open_edit_session(standard_id: String): String
+        + commit_changes(session_id: String): void
+        + discard_changes(session_id: String): void
+    }
+
+    !include Dominio/ComplianceStandard.puml
+    !include Dominio/SessionHandler.puml
+
+    SessionManagerUseCase <|.. SessionManagerService : "implementa"
+
+    SessionManagerService -down-( EditingSessionCachePort : "richiede"
+    SessionManagerService -down-( StandardRepositoryPort : "richiede"
+
+    SessionManagerService ..> SessionHandler : "valida concorrenza"
+    SessionManagerService ..> ComplianceStandard : "trasferisce"
+}
+
+package "Outbound Adapter" {
+    class InMemoryStandardCache <<Cache Adapter>> {
+        - storage: dict[String: ComplianceStandard]
+
+        + save_standard(session_id: String, standard: ComplianceStandard): void
+        + get_standard(session_id: String): ComplianceStandard
+        + delete_standard(session_id: String): void
+    }
+
+    class MongoStandardAdapter <<Mongo Repository>> {
+        - collection: pymongo.Collection
+
+        + find_all(): List<ComplianceStandard>
+        + find_by_id(id: String): ComplianceStandard
+        + save(standard: ComplianceStandard): void
+        + delete_by_id(id: String): void
+        + exists_by_name(name: String): bool
+    }
+}
+
+StandardEditorController -( SessionManagerUseCase : "usa"
+
+EditingSessionCachePort -down- InMemoryStandardCache : "implementa"
+StandardRepositoryPort -down- MongoStandardAdapter : "implementa"
+
+@enduml
+
+
+' UC36: Modifica modello
+'    1. StandardEditorController.open_session(standard_id)
+'    2. SessionManagerService chiama open_edit_session(standard_id) esposto da SessionManagerUseCase
+'    3. il service interroga il db con StandardRepositoryPort.find_by_id(id) per estrarre ComplianceStandard attuale
+'    4. validazione sessione con SessionHandler -> genera in session_id unico se va bene
+'    5. salva una copia del modello nella memoria della sessione con EditingSessionCachePort.save_standard(session_id, standard)
+'    6. ritorna il session_id al controller che lo passa al client per le operazioni di edit
+
+' UC37: Salva modifiche modello
+'     1. client chiama StandardEditorController.commit(session_id)
+'     2. SessionManagerService delega l'azione a commit_changes(session_id)
+'     3. il service recupera dalla session la bozza da salvare con EditingSessionCachePort.get_standard(session_id)
+'     4. prima di salvare viene validata la struttura con il dominio ComplianceStandard (UC37.3)
+'     5. se la struttura è valida si salva con StandardRepositoryPort.save(standard)
+'     6. il service chiude la sessione con EditingSessionCachePort.delete_standard(session_id)
+
+' UC38: Scarta modifiche modello
+'     1. client chiama StandardEditorController.rollback(session_id)
+'     2. SessionManagerService delega a discard_changes(session_id)
+'     3. service chiama EditingSessionCachePort.delete_standard(session_id)
+'     4. la bozza operativa viene distrutta da InMemoryStandardCache

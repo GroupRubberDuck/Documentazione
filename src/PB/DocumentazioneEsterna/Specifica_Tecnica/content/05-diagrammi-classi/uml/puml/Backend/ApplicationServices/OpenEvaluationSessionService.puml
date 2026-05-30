@@ -1,0 +1,7 @@
+@startuml OpenEvaluationSessionService
+skinparam classAttributeIconSize 0
+class OpenEvaluationSessionService <<Application Service>> {
+    + open_evaluation_session(command: OpenEvaluationSessionCommand): String
+}
+
+@enduml

@@ -184,8 +184,6 @@
 
 #include "UC24.4.4_visualizza_stato_in_corso_requisito.typ"
 
-#include "UC24.4.5_visualizza_stato_sospeso_requisito.typ"
-
 #include "UC24.5_visualizza_lista_dipendenze_requisito.typ"
 
 #include "UC24.5.1_visualizza_sintesi_dipendenza.typ"

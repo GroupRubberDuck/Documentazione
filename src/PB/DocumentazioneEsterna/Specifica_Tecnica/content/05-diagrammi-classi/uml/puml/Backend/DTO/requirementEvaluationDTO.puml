@@ -1,0 +1,50 @@
+@startuml RequirementEvaluationDTO
+skinparam linetype ortho
+skinparam ClassAttributeIconSize 0
+
+class NodeBaseDTO {
+    + parent_id: String
+}
+
+class DecisionNodeDTO {
+    + node_type: Literal["decision"]
+    + question: String
+    + yes_child_id: String
+    + no_child_id: String
+}
+
+class LeafNodeDTO {
+    + node_type: Literal["leaf"]
+    + verdict: StandardVerdict
+}
+
+class DecisionTreeDTO {
+    + root_node_id: String
+    + nodes: Mapping[String, AnyNodeDTO]
+}
+
+class DependencySummaryDTO {
+    + id: String
+    + evaluation: EvaluationState
+}
+
+class RequirementEvaluationDTO {
+    + name: String
+    + norm_description: String
+    + target_description: String
+    + evaluation: EvaluationState
+    + dependencies: List<DependencySummaryDTO>
+    + decision_tree: DecisionTreeDTO
+    + answer: Mapping[String, bool]
+    + justification: String
+}
+
+NodeBaseDTO <|-- DecisionNodeDTO
+NodeBaseDTO <|-- LeafNodeDTO
+
+DecisionTreeDTO "1" *-- "1..*" NodeBaseDTO : "nodes"
+
+RequirementEvaluationDTO "1" *-- "1" DecisionTreeDTO : uses
+RequirementEvaluationDTO "1" *-- "0..*" DependencySummaryDTO : uses
+
+@enduml

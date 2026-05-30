@@ -1,0 +1,39 @@
+@startuml GetRequirementEvaluationDetail
+skinparam linetype ortho
+skinparam nodesep 120
+skinparam ranksep 140
+skinparam classAttributeIconSize 0
+
+package "Inbound Adapter" {
+    !include InboundAdapters/FlaskRequirementEvaluationDetailController.puml
+    
+
+    FlaskRequirementEvaluationDetailController ..> RequirementEvaluationDTO : creates
+}
+
+package "Application Core" {
+    () "GetRequirementUseCase"
+
+    !include ApplicationServices/GetRequirementEvaluationDetailService.puml
+    !include Command/GetRequirementEvaluationDetailCommand.puml
+    !include Domain/RequirementEvaluationDetail.puml
+    !include Domain/EvaluationEngine.puml
+    () "GetEvaluationSessionPort"
+
+    GetRequirementEvaluationDetailCommand -[hidden]right-------- GetEvaluationSessionPort
+
+    GetRequirementUseCase -down- GetRequirementEvaluationDetailService
+
+    GetRequirementEvaluationDetailService -down-> GetEvaluationSessionPort : usa
+
+    GetRequirementEvaluationDetailService .left.> GetRequirementEvaluationDetailCommand : legge
+}
+
+package "Outbound Adapter" {
+    !include OutboundAdapters/InMemoryEvaluationSessionCache.puml
+}
+
+FlaskRequirementEvaluationDetailController -down-> GetRequirementUseCase : usa
+GetEvaluationSessionPort -down- InMemoryEvaluationSessionCache
+
+@enduml

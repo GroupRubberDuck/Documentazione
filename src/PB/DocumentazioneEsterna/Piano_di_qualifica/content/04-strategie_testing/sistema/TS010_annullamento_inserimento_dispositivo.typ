@@ -18,7 +18,7 @@ Verificare che l'Utente, in qualsiasi momento durante la compilazione, possa ann
     test-name
   ),
 
-  stato:"NI"
+  stato:"passed"
 
 )
 

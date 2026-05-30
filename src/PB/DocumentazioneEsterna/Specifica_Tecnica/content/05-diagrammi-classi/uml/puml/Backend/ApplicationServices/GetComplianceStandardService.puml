@@ -1,0 +1,7 @@
+@startuml GetComplianceStandardService
+
+class GetComplianceStandardService {
+    get_compliance_standard(command: GetComplianceStandardCommand): ComplianceStandard
+}
+
+@enduml

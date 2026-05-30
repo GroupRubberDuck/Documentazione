@@ -26,15 +26,15 @@
 
 === Riferimenti normativi
 #pad(left: 1em)[
-  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \ _Ultima consultazione: 11 novembre 2025_; \
-  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \ _Ultima consultazione: 11 novembre 2025_; \
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C1.pdf")[Capitolato d'appalto C1 - Automated EN18031 Compliance Verification di BlueWind Srl] \ _Ultima consultazione: 8 aprile 2026_; \
+  - #inserisciLink(url:"https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento del progetto] \ _Ultima consultazione: 8 aprile 2026_; \
   - #inserisciLink(url:"https://www.iso.org/standard/63712.html")[Standard ISO/IEC/IEEE 12207:2017] \ _Ultima consultazione: 10 gennaio 2026_; \
   - #inserisciLink(url:"https://en.wikipedia.org/wiki/ISO/IEC_9126")[Standard ISO/IEC 9126] \ _Ultima consultazione: 10 gennaio 2026_; \
 ]
 
 === Riferimenti informativi
 #pad(left: 1em)[
-  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario.pdf")[Glossario del gruppo] \ _Ultima consultazione: 20 marzo 2026_; \
+  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneInterna/Glossario-v2.0.0.pdf")[Glossario del gruppo] \ _Ultima consultazione: 20 maggio 2026_; \
   - #inserisciLink(url:"https://galileodiscovery.unipd.it/discovery/fulldisplay?docid=alma9938989417806046&context=L&vid=39UPD_INST:VU1&lang=it&search_scope=catalogo_no_external&adaptor=Local%20Search%20Engine&tab=Everything&query=title,contains,Software%20Engineering,AND&query=creator,contains,Ian%20Sommerville,AND&mode=advanced")[Software Engineering, Ian Sommerville] \ _Ultima consultazione: 10 gennaio 2026_; \
-  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo GroupRubberDuck] \ _Ultima consultazione: 11 marzo 2026_; \
+  - #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/")[Documentazione del gruppo GroupRubberDuck] \ _Ultima consultazione: 20 maggio 2026_; \
 ]

@@ -1,0 +1,7 @@
+@startuml DeleteDeviceCommand
+skinparam classAttributeIconSize 0
+ class DeleteDeviceCommand {
+        +device_id: String
+    }
+
+@enduml

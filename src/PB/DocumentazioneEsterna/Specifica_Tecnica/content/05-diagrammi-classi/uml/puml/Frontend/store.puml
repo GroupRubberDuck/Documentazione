@@ -1,0 +1,26 @@
+@startuml
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 80
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+
+class DecisionTreeStore <<Pinia Store>>{
+        - evaluationEngine:EvaluationEngine
+        - Answers : ref<map<String,bool>>
+        - selectedNodeId:String
+        - isSideBarOpen:bool
+        - activePath:ref<list[String]>
+        - apiClient:ApiClient
+
+        - refreshPath()
+        + init(data, savedAnswers)
+        + loadTree(initialData:JSON)
+        + setAnswer(nodeId:String, answer:bool)
+        + selectNode(NodeId:String)
+}
+
+@enduml

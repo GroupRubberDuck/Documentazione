@@ -1,0 +1,33 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class DecisionTreeStore <<Store / Model>> {
+    - evaluationEngine: EvaluationEngine 
+    - apiClient: EvaluationAPIClient 
+
+    + answers: Map<String, Boolean>
+    + selectedNodeId: String | null
+    + activePath: String[]
+    + evaluationState: String | null
+    + justification: String
+    + justificationStatus: String
+    + requirementsUrl: String
+    
+
+    + selectedNodeData: NodeDTO | null
+    + treeMap: Map<String, Node>
+    + rootId: String
+
+    - refreshPath()
+    + init(treeData: TreeStructure, savedAnswers: Map, evaluationState: String, justification: String, apiClient: EvaluationAPIClient, requirementsUrl: String)
+    + setAnswer(nodeId: String, answer: Boolean)
+    + selectNode(nodeId: String)
+    + clearSelection()
+    + saveJustification(text: String)
+}
+@enduml

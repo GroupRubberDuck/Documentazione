@@ -1,0 +1,21 @@
+@startuml
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 100
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam style strictuml
+
+class JustificationForm <<Component>> {
+  - justificationInitialValue: String
+  - justificationField:FieldDefinition
+  - status: String
+  - localText: String
+  - isDirty: Boolean
+
+  + JustificationForm(justificationInitialValue: String, status: String)
+  - handleSubmit()
+  - handleReset()
+  + save(justificationString: String) <<emit>>
+}
+@enduml

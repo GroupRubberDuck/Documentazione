@@ -1,0 +1,13 @@
+@startuml ConcreteExporters
+skinparam classAttributeIconSize 0
+class JSONFileStandardExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+}
+class XMLFileStandardExporter {
+    # prepare_structure()
+    # write_data()
+    # finalize_output()
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml ConcreteFileDeviceExporterFactory
+skinparam classAttributeIconSize 0
+class ConcreteFileDeviceExporterFactory <<Factory Adapter>> {
+    + get_file_device_exporter(extension: AllowedDeviceFileExtension): FileDeviceExporterPort
+}
+
+@enduml

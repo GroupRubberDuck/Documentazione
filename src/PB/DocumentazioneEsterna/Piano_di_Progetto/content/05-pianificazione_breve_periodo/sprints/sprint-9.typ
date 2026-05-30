@@ -16,7 +16,7 @@
   ],
   rischiAttesi: [
     - *R.O.1 - Pianificazione iniziale errata o ottimistica*: la redazione dei diagrammi di sequenza è un'attività di difficile stima, con rischio di sottovalutazione del carico di lavoro effettivo.
-    - *R.P.2 - Disponibilità variabile per impegni pianificati*: a breve durata dello sprint (una settimana) riduce i margini di recupero in caso di imprevisti.
+    - *R.P.2 - Disponibilità variabile per impegni pianificati*: la breve durata dello sprint (una settimana) riduce i margini di recupero in caso di imprevisti.
   ],
   rischiEffettivi: [
     Nessun particolare rischio si è presentato durante questo sprint.
@@ -60,7 +60,7 @@
   - *Parzialmente Raggiunti*:
     - la sezione dei design pattern è in bozza e richiederà revisione;
   - *Non Raggiunti*: 
-    - l'inizio della progettazione del diagramma delle classi, pianificato come obbiettivo secondario, è slittato allo sprint 10. \ La ragione presunta dello scostamento orario è la sottostima delle attività di verifica in questo sprint.
+    - l'inizio della progettazione del diagramma delle classi, pianificato come obiettivo secondario, è slittato allo sprint 10. \ La ragione presunta dello scostamento orario è la sottostima delle attività di verifica in questo sprint.
 
   *Misure correttive e aggiornamento dell'analisi dei rischi.*
 
