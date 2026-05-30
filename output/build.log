@@ -1,137 +1,137 @@
-=== Build Log - Fri May 29 22:05:22 UTC 2026 ===
+=== Build Log - Sat May 30 12:30:32 UTC 2026 ===
 Source: /home/runner/work/Documentazione/Documentazione/src
 ========================================
-[OK] 22:05:23 - src/DiariDiBordo/2026-01-08_Diario_di_bordo.typ
-[OK] 22:05:23 - src/DiariDiBordo/2025-11-10_Diario_di_bordo-v1.0.typ
-[OK] 22:05:23 - src/DiariDiBordo/2025-11-17_Diario_di_bordo-v1.0.typ
-[OK] 22:05:23 - src/DiariDiBordo/2026-03-04_Diario_di_bordo.typ
-[OK] 22:05:24 - src/DiariDiBordo/2025-10-27_Diario_di_bordo-v1.0.typ
-[OK] 22:05:24 - src/DiariDiBordo/2026-03-18_Diario_di_bordo.typ
-[OK] 22:05:24 - src/DiariDiBordo/2025-12-15_Diario_di_bordo-v1.0.typ
-[OK] 22:05:24 - src/DiariDiBordo/2025-12-01_Diario_di_bordo-v1.0.typ
-[OK] 22:05:24 - src/DiariDiBordo/2026-05-06_Diario_di_bordo.typ
-[OK] 22:05:24 - src/DiariDiBordo/2026-03-25_Diario_di_bordo.typ
-[OK] 22:05:24 - src/DiariDiBordo/2025-11-24_Diario_di_bordo-v1.0.typ
-[OK] 22:05:24 - src/DiariDiBordo/2026-04-01_Diario_di_bordo.typ
-[OK] 22:05:24 - src/DiariDiBordo/2026-04-09_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-01-26_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-04-15_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-05-13_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-04-23_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-04-29_Diario_di_bordo.typ
-[OK] 22:05:25 - src/DiariDiBordo/2026-03-11_Diario_di_bordo.typ
-[OK] 22:05:25 - src/Candidatura/Lettera_Presentazione-v2.0.0.typ
-[OK] 22:05:26 - src/Candidatura/Valutazione_Capitolati-v2.0.0.typ
-[OK] 22:05:26 - src/Candidatura/DocumentazioneInterna/2025-10-28_Verbale-v1.0.0.typ
-[OK] 22:05:26 - src/Candidatura/DocumentazioneInterna/2025-11-04_Verbale-v1.0.0.typ
-[OK] 22:05:26 - src/Candidatura/DocumentazioneInterna/2025-10-18_Verbale-v1.0.0.typ
-[OK] 22:05:26 - src/Candidatura/DocumentazioneInterna/2025-10-23_Verbale-v1.0.0.typ
-[OK] 22:05:27 - src/Candidatura/Dichiarazione_Impegni-v2.0.0.typ
-[OK] 22:05:28 - src/Candidatura/DocumentazioneEsterna/2025-10-20_Verbale_incontro_Ergon-v1.0.0.typ
-[OK] 22:05:28 - src/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31-v1.0.0.typ
-[OK] 22:05:28 - src/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind-v1.0.0.typ
-[OK] 22:05:28 - src/Candidatura/DocumentazioneEsterna/2025-10-30_Verbale_incontro_Eggon-v0.1.0.typ
-[OK] 22:05:28 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-24_Verbale.typ
+[OK] 12:30:33 - src/DiariDiBordo/2026-01-08_Diario_di_bordo.typ
+[OK] 12:30:33 - src/DiariDiBordo/2025-11-10_Diario_di_bordo-v1.0.typ
+[OK] 12:30:33 - src/DiariDiBordo/2025-11-17_Diario_di_bordo-v1.0.typ
+[OK] 12:30:33 - src/DiariDiBordo/2026-03-04_Diario_di_bordo.typ
+[OK] 12:30:33 - src/DiariDiBordo/2025-10-27_Diario_di_bordo-v1.0.typ
+[OK] 12:30:34 - src/DiariDiBordo/2026-03-18_Diario_di_bordo.typ
+[OK] 12:30:34 - src/DiariDiBordo/2025-12-15_Diario_di_bordo-v1.0.typ
+[OK] 12:30:34 - src/DiariDiBordo/2025-12-01_Diario_di_bordo-v1.0.typ
+[OK] 12:30:34 - src/DiariDiBordo/2026-05-06_Diario_di_bordo.typ
+[OK] 12:30:34 - src/DiariDiBordo/2026-03-25_Diario_di_bordo.typ
+[OK] 12:30:34 - src/DiariDiBordo/2025-11-24_Diario_di_bordo-v1.0.typ
+[OK] 12:30:34 - src/DiariDiBordo/2026-04-01_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-04-09_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-01-26_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-04-15_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-05-13_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-04-23_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-04-29_Diario_di_bordo.typ
+[OK] 12:30:35 - src/DiariDiBordo/2026-03-11_Diario_di_bordo.typ
+[OK] 12:30:35 - src/Candidatura/Lettera_Presentazione-v2.0.0.typ
+[OK] 12:30:36 - src/Candidatura/Valutazione_Capitolati-v2.0.0.typ
+[OK] 12:30:36 - src/Candidatura/DocumentazioneInterna/2025-10-28_Verbale-v1.0.0.typ
+[OK] 12:30:36 - src/Candidatura/DocumentazioneInterna/2025-11-04_Verbale-v1.0.0.typ
+[OK] 12:30:37 - src/Candidatura/DocumentazioneInterna/2025-10-18_Verbale-v1.0.0.typ
+[OK] 12:30:37 - src/Candidatura/DocumentazioneInterna/2025-10-23_Verbale-v1.0.0.typ
+[OK] 12:30:38 - src/Candidatura/Dichiarazione_Impegni-v2.0.0.typ
+[OK] 12:30:38 - src/Candidatura/DocumentazioneEsterna/2025-10-20_Verbale_incontro_Ergon-v1.0.0.typ
+[OK] 12:30:38 - src/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_M31-v1.0.0.typ
+[OK] 12:30:38 - src/Candidatura/DocumentazioneEsterna/2025-10-23_Verbale_incontro_Bluewind-v1.0.0.typ
+[OK] 12:30:39 - src/Candidatura/DocumentazioneEsterna/2025-10-30_Verbale_incontro_Eggon-v0.1.0.typ
+[OK] 12:30:39 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-24_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:29 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-25_Verbale.typ
+[OK] 12:30:39 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-25_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:29 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-02-24_Verbale.typ
+[OK] 12:30:39 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-02-24_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:29 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-10_Verbale.typ
+[OK] 12:30:40 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-10_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:29 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-23_Verbale.typ
+[OK] 12:30:40 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-23_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:29 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-01-13_Verbale.typ
+[OK] 12:30:40 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-01-13_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:30 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-18_Verbale.typ
+[OK] 12:30:40 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-18_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:30 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-01-05_Verbale.typ
+[OK] 12:30:41 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-01-05_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:30 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-30_Verbale.typ
+[OK] 12:30:41 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-30_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:30 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-10_Verbale.typ
+[OK] 12:30:41 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-11-10_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-09_Verbale.typ
+[OK] 12:30:41 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-09_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-02_Verbale.typ
+[OK] 12:30:42 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-03-02_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-15_Verbale.typ
+[OK] 12:30:42 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-15_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-02-09_Verbale.typ
+[OK] 12:30:42 - src/RTB/DocumentazioneInterna/VerbaliInterni/2026-02-09_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-02_Verbale.typ
+[OK] 12:30:43 - src/RTB/DocumentazioneInterna/VerbaliInterni/2025-12-02_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:05:31 - src/RTB/DocumentazioneInterna/dizionario.typ
-[OK] 22:05:32 - src/RTB/DocumentazioneInterna/Glossario.typ
-[OK] 22:05:34 - src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ
+[OK] 12:30:43 - src/RTB/DocumentazioneInterna/dizionario.typ
+[OK] 12:30:43 - src/RTB/DocumentazioneInterna/Glossario.typ
+[OK] 12:30:45 - src/RTB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ
      -> Version: 1.0.0
-[OK] 22:05:34 - src/RTB/Lettera_di_presentazione/Lettera_di_presentazione.typ
-[OK] 22:06:30 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ
+[OK] 12:30:46 - src/RTB/Lettera_di_presentazione/Lettera_di_presentazione.typ
+[OK] 12:31:46 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ
      -> Version: 1.1.0
-[OK] 22:06:31 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/domande_bluewind.typ
-[OK] 22:06:31 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/2026-03-18_domande_cardin.typ
-[OK] 22:06:31 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-12-16_Verbale.typ
+[OK] 12:31:47 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/domande_bluewind.typ
+[OK] 12:31:47 - src/RTB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/2026-03-18_domande_cardin.typ
+[OK] 12:31:47 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-12-16_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:31 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-04-07_Verbale.typ
+[OK] 12:31:47 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-04-07_Verbale.typ
      -> Version: 0.1.0
-[OK] 22:06:31 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-01-13_Verbale.typ
+[OK] 12:31:47 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-01-13_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:32 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-11-18_Verbale.typ
+[OK] 12:31:48 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-11-18_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:32 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-12-02_Verbale.typ
+[OK] 12:31:48 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2025-12-02_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:32 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-03-17_Verbale.typ
+[OK] 12:31:48 - src/RTB/DocumentazioneEsterna/VerbaliEsterni/2026-03-17_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:33 - src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ
+[OK] 12:31:50 - src/RTB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ
      -> Version: 1.0.0
-[OK] 22:06:41 - src/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ
+[OK] 12:31:58 - src/RTB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ
      -> Version: 1.0.0
-[OK] 22:06:41 - src/RTB/DocumentazioneEsterna/Piano_di_qualifica/report_metriche/Indice_gulpease/valutazioni_documenti.typ
-[OK] 22:06:41 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-18_Verbale.typ
+[OK] 12:31:58 - src/RTB/DocumentazioneEsterna/Piano_di_qualifica/report_metriche/Indice_gulpease/valutazioni_documenti.typ
+[OK] 12:31:58 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-18_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:41 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-20_Verbale.typ
+[OK] 12:31:58 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-20_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:42 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-13_Verbale.typ
+[OK] 12:31:59 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-13_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:42 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-07_Verbale.typ
+[OK] 12:31:59 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-07_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:42 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-04_Verbale.typ
+[OK] 12:31:59 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-04_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:42 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-09_Verbale.typ
+[OK] 12:31:59 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-09_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:42 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-11_Verbale.typ
+[OK] 12:32:00 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-05-11_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:43 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-27_Verbale.typ
+[OK] 12:32:00 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-27_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:43 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-17_Verbale.typ
+[OK] 12:32:00 - src/PB/DocumentazioneInterna/VerbaliInterni/2026-04-17_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:06:43 - src/PB/DocumentazioneInterna/dizionario.typ
-[OK] 22:06:43 - src/PB/DocumentazioneInterna/Glossario.typ
+[OK] 12:32:00 - src/PB/DocumentazioneInterna/dizionario.typ
+[OK] 12:32:01 - src/PB/DocumentazioneInterna/Glossario.typ
      -> Version: 2.0.0
-[OK] 22:06:46 - src/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ
+[OK] 12:32:03 - src/PB/DocumentazioneInterna/Norme_progetto/Norme_progetto.typ
      -> Version: 2.0.0
-[OK] 22:06:46 - src/PB/Lettera_di_presentazione/Lettera_di_presentazione.typ
-[OK] 22:06:51 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Specifica_Tecnica.typ
+[OK] 12:32:04 - src/PB/Lettera_di_presentazione/Lettera_di_presentazione.typ
+[OK] 12:32:10 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Specifica_Tecnica.typ
      -> Version: 1.0.0
-[OK] 22:06:51 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Domande_cardin/1_domande.typ
-[OK] 22:06:52 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Domande_cardin/2_domande.typ
-[OK] 22:06:53 - src/PB/DocumentazioneEsterna/Manuale_Utente/Manuale_Utente.typ
+[OK] 12:32:10 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Domande_cardin/1_domande.typ
+[OK] 12:32:11 - src/PB/DocumentazioneEsterna/Specifica_Tecnica/Domande_cardin/2_domande.typ
+[OK] 12:32:12 - src/PB/DocumentazioneEsterna/Manuale_Utente/Manuale_Utente.typ
      -> Version: 1.0.0
-[OK] 22:07:49 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ
+[OK] 12:33:13 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/Analisi_dei_requisiti.typ
      -> Version: 2.0.0
-[OK] 22:07:49 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/domande_bluewind.typ
-[OK] 22:07:49 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/2026-03-18_domande_cardin.typ
-[OK] 22:07:49 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-05_Verbale.typ
+[OK] 12:33:13 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/domande_bluewind.typ
+[OK] 12:33:13 - src/PB/DocumentazioneEsterna/Analisi_dei_Requisiti/domande/2026-03-18_domande_cardin.typ
+[OK] 12:33:13 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-05_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:07:49 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-12_Verbale.typ
+[OK] 12:33:13 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-12_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:07:50 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-18_Verbale.typ
+[OK] 12:33:14 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-18_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:07:50 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-04-29_Verbale.typ
+[OK] 12:33:14 - src/PB/DocumentazioneEsterna/VerbaliEsterni/2026-04-29_Verbale.typ
      -> Version: 1.0.0
-[OK] 22:07:52 - src/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ
+[OK] 12:33:16 - src/PB/DocumentazioneEsterna/Piano_di_Progetto/Piano_di_progetto.typ
      -> Version: 2.0.0
-[OK] 22:08:07 - src/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ
+[OK] 12:33:32 - src/PB/DocumentazioneEsterna/Piano_di_qualifica/Piano_di_qualifica.typ
      -> Version: 2.0.0
-[OK] 22:08:07 - src/PB/DocumentazioneEsterna/Piano_di_qualifica/report_metriche/Indice_gulpease/valutazioni_documenti.typ
-Build SUCCESS at Fri May 29 22:08:07 UTC 2026
+[OK] 12:33:32 - src/PB/DocumentazioneEsterna/Piano_di_qualifica/report_metriche/Indice_gulpease/valutazioni_documenti.typ
+Build SUCCESS at Sat May 30 12:33:32 UTC 2026
