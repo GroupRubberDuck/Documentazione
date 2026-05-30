@@ -26,7 +26,8 @@
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
-    (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 7, oreEffettive: 7),
+    // FIX sull'excel è segnato 8
+    (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 7, oreEffettive: 8),
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
     (persona: persone.ALDO, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
     (persona: persone.ALDO, ruolo: ruoli.Verificatore, orePreviste: 7, oreEffettive: 7),

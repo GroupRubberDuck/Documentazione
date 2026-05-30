@@ -16,10 +16,11 @@
 #import "sprints/sprint-13.typ" as s13
 #import "sprints/sprint-14.typ" as s14
 
-#let tutti_gli_sprint = (s1.sprint_data, s2.sprint_data, s3.sprint_data, s4.sprint_data, s5.sprint_data, s6.sprint_data, s7.sprint_data, s8.sprint_data,s9.sprint_data, s10.sprint_data, s11.sprint_data, s12.sprint_data, s13.sprint_data,s14.sprint_data)
+#let tutti_gli_sprint = (s9.sprint_data, s10.sprint_data, s11.sprint_data, s12.sprint_data, s13.sprint_data,s14.sprint_data)
 
-#let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
+// #let statoAttuale = ruoli.keys().map(chiave => (str(chiave), ruoli.at(chiave).oreTotali)).to-dict()
 
+#import "01-RTB.typ":statoAttuale
 #for dati in tutti_gli_sprint {
   let ore_formattate = dati.oreProduttive.map(riga => (
     persona: riga.persona,

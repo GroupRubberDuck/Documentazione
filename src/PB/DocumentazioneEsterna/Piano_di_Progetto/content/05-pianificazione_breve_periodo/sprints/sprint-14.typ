@@ -27,10 +27,14 @@
     (persona: persone.ANA,     ruolo: ruoli.Verificatore,  orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FELIX,   ruolo: ruoli.Progettista,    orePreviste: 10, oreEffettive: 10),
     (persona: persone.FELIX,   ruolo: ruoli.Programmatore,    orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 3,  oreEffettive: 3),
+    // FIX cambiare a 4
+    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 3,  oreEffettive: 4),
+    (persona: persone.FILIPPO, ruolo: ruoli.Programmatore,   orePreviste: 4,  oreEffettive: 4),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista,    orePreviste: 8,  oreEffettive: 8),
-    (persona: persone.DT,      ruolo: ruoli.Progettista,    orePreviste: 2,  oreEffettive: 2),
-    (persona: persone.DT,      ruolo: ruoli.Verificatore,   orePreviste: 5,  oreEffettive: 5),
+    (persona: persone.DT,      ruolo: ruoli.Progettista,    orePreviste: 6,  oreEffettive: 6),
+    (persona: persone.DT,      ruolo: ruoli.Programmatore,    orePreviste: 5,  oreEffettive: 5),
+    (persona: persone.DT,      ruolo: ruoli.Amministratore,    orePreviste: 2,  oreEffettive: 2),
+    // FIX cambiare a 6
   ),
   retrospettiva: [
     *Consuntivo di periodo*:
