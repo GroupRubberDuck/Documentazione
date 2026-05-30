@@ -26,6 +26,7 @@
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
     (persona: persone.FILIPPO, ruolo: ruoli.Verificatore, orePreviste: 3, oreEffettive: 3),
+  
     (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 7, oreEffettive: 8),
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
     (persona: persone.ALDO, ruolo: ruoli.Programmatore, orePreviste: 11, oreEffettive: 10),
@@ -33,6 +34,7 @@
     (persona: persone.ALDO, ruolo: ruoli.Analista, orePreviste: 1, oreEffettive: 1),
     (persona: persone.DL, ruolo: ruoli.Responsabile, orePreviste: 4, oreEffettive: 4),
     (persona: persone.DL, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 2),
+
     (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 6),
     (persona: persone.DL, ruolo: ruoli.Programmatore, orePreviste: 9, oreEffettive: 9),
     (persona: persone.ANA, ruolo: ruoli.Progettista, orePreviste: 7, oreEffettive: 8),
@@ -46,7 +48,7 @@
     - *Codifica*:
       - Implementazione del sistema backend completo.
       - Implementazione del database rispettando le naming convention.
-      - Definita pipeline per il testing Continuous Integration.
+      - Definita pipeline per il testing continuos integration.
       - Aggiunto script per il tracking delle metriche
     - *Documentazione*:
       - Aggiornamento della specifica tecnica.

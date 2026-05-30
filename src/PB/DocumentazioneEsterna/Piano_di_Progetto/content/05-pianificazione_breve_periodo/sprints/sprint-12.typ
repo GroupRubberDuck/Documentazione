@@ -24,10 +24,8 @@
     (persona: persone.FELIX, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.FILIPPO, ruolo: ruoli.Amministratore, orePreviste: 2, oreEffettive: 1),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),
-    // FIX sull'excel è segnato 4    
-    (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 4),
+    (persona: persone.DT, ruolo: ruoli.Progettista, orePreviste: 4, oreEffettive: 4),
     (persona: persone.DT, ruolo: ruoli.Amministratore, orePreviste: 1, oreEffettive: 1),
-
     (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 2, oreEffettive: 2),
     (persona: persone.ALDO, ruolo: ruoli.Programmatore, orePreviste: 5, oreEffettive: 6),
     (persona: persone.ALDO, ruolo: ruoli.Progettista, orePreviste: 2, oreEffettive: 2),

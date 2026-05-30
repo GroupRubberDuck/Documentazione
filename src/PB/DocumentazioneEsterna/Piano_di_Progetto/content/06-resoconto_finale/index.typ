@@ -8,8 +8,8 @@
 
 Come evidenziato dalla tabella precedente, relativa alle risorse rimanenti alla
 fine dell’ultimo sprint, il gruppo termina la realizzazione di quanto necessario
-per affrontare la Product Baseline con un saldo rimanente di *645 €*, spendendo
-dunque un totale di *10.965 €*, sotto il budget inizialmente a disposizione pari
+per affrontare la Product Baseline con un saldo rimanente di *665 €*, spendendo
+dunque un totale di *#str(11610-665) €*, sotto il budget inizialmente a disposizione pari
 a *11.610 €*.
 
 
@@ -75,6 +75,24 @@ a *11.610 €*.
 }
 
 
+#let totale-ruoli=ruoli.keys().map(
+  it=>{
+
+    let temp=0
+    risultati.values().map(
+  ore=>{
+    (ore.at(it))
+  }
+).sum()
+  }
+)
+
+
+#celle-tabella.push(
+  ("Totale",..(totale-ruoli.map(it=>{str(it)})),str(totale-ruoli.sum()))
+)
+
+
 // Creiamo la tabella usando lo spreading per stile e contenuto
 #table(
   ..stile-tabella,
@@ -82,7 +100,9 @@ a *11.610 €*.
   ..header
   ),
   columns: (2fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,),
-  ..(celle-tabella.flatten())
+  ..(
+    celle-tabella.flatten()
+    )
 )
 
 // #ruoli
@@ -90,4 +110,4 @@ a *11.610 €*.
 
 
 Nella tabella si evidenzia il contributo in termini di ore produttive portato da
-ogni componente del gruppo.
+ogni componente del gruppo e l'utilizzo complessivo di ore per ogni ruolo.
