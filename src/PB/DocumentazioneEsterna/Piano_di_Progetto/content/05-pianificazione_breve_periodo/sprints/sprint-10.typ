@@ -20,7 +20,6 @@
     Nessuno in particolare.
   ],
   oreProduttive: (
-    //FIX cambiare da 6 a 7
     (persona: persone.DT, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 7),
     (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 4),
     (persona: persone.DL, ruolo: ruoli.Progettista, orePreviste: 3, oreEffettive: 3),
