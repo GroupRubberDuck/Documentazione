@@ -96,7 +96,7 @@
 
 
   #enfasi[Piano di lavoro]
-  Con la presente lettera desideriamo inoltre aggiornarvi sul costo effettivo del progetto, esso ammonta *10.950 €* contro gli *11.610 €* stimati, con un risparmio di * #str(11610 - 10950)* €. 
+  Con la presente lettera desideriamo inoltre aggiornarvi sul costo effettivo del progetto, esso ammonta *10.945 €* contro gli *11.610 €* stimati, con un risparmio di * #str(11610 - 10945)* €. 
   
   A seguito di una revisione della pianificazione, la data di consegna finale è stata ricalcolata al *30 Maggio*, comportando una ulteriore proroga rispetto alla scadenza inizialmente prevista.
 
