@@ -90,7 +90,7 @@
       [1.0.0],
       [2026-05-18],
       [#persone.FILIPPO],
-      [#persone.ANA],
+      [#persone.FILIPPO],
       [Approvazione],
     ),
   )

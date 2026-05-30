@@ -111,7 +111,7 @@
 Baseline]),
   ([1.2.0], [2026-05-04], persone.ALDO, persone.FELIX, [Eliminato caso d'uso "Visualizza stato sospeso requisito" e aggiornato di conseguenza i requisiti]),
   ([1.3.0], [2026-05-18], persone.FELIX, persone.ALDO, [Modificate precondizioni dei casi d'uso #use-case-label(nome-etichetta: "Visualizza lista dispositivi") e #use-case-label(nome-etichetta: "Visualizza elemento lista dispositivi")]),
-  ([2.0.0], [2026-05-19], persone.FELIX, persone.FELIX, [Approvazione]),
+  ([2.0.0], [2026-05-19], persone.FILIPPO, persone.FILIPPO, [Approvazione]),
 
   )
 

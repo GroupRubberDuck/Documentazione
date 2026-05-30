@@ -216,7 +216,7 @@
       [#persone.ANA],
       [Stesura sprint 14],
     ),
-     ([2.0.0],[2026-05-20],[#persone.ANA],[#persone.ANA],[Approvazione]),
+     ([2.0.0],[2026-05-20],[#persone.FILIPPO],[#persone.FILIPPO],[Approvazione]),
 )
   )
   #registroModifiche(modifiche)

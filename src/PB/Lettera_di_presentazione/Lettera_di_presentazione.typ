@@ -34,8 +34,8 @@
     ("0.1.0", "2026-03-22", "Aldo Bettega", "Davide Lorenzon", "Stesura lettera di presentazione"),
     ("1.0.0", "2026-03-22", "Davide Testolin", "Davide Lorenzon", "Approvazione"),
     ("1.1.0", "2026-04-01", "Aldo Bettega", "Davide Lorenzon", "Modifica data di consegna e aggiornamento link"),
-    ("1.2.0", "2026-05-29", "Davide Lorenzon", "Aldo Bettega", "Aggiornamento per la consegna PB"),
-    ("2.0.0", "2026-04-02", "Aldo Bettega", "Aldo Bettega", "Approvazione")
+    ("1.2.0", "2026-05-22", "Davide Lorenzon", "Aldo Bettega", "Aggiornamento per la consegna PB"),
+    ("2.0.0", "2026-05-25", "Filippo Guerra", "Filippo Guerra", "Approvazione")
   ))
 ]
 
