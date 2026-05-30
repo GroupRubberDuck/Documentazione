@@ -262,3 +262,9 @@
   = Pianificazione di breve periodo<Pianificazione_di_breve_periodo>
   #include "content/05-pianificazione_breve_periodo/index.typ"
 ]
+#insertArabicNumberedPagesSenzaData(PageTitle: "Dettaglio degli Sprint", documentType: doc)[
+  = Riepilogo delle risorse utilizzate
+
+
+  #include "content/06-resoconto_finale/index.typ"
+]

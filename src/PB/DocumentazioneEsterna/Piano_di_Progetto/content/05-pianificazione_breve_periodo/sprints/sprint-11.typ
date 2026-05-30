@@ -26,7 +26,8 @@
     (persona: persone.DL, ruolo: ruoli.Progettista, orePreviste: 8, oreEffettive: 10),
     (persona: persone.FELIX, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 3),
     (persona: persone.FILIPPO, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
-    (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 3),
+
+    (persona: persone.DT, ruolo: ruoli.Programmatore, orePreviste: 3, oreEffettive: 4),
   ),
   retrospettiva: [
     *Consuntivo di periodo*:

@@ -5,8 +5,8 @@
   usaMatrice: true,
   timeline: (
     inizio: datetime(year: 2026, month: 05, day: 12),
-    finePrevista: datetime(year: 2026, month: 05, day: 18),
-    fineEffettiva: datetime(year: 2026, month: 05, day: 18),
+    finePrevista: datetime(year: 2026, month: 05, day: 25),
+    fineEffettiva: datetime(year: 2026, month: 05, day: 25),
   ),
   TODO: [
     Il focus dello sprint è il completamento della documentazione in vista della consegna finale (Product Baseline) e il completamento del frontend del MVP.
@@ -27,10 +27,12 @@
     (persona: persone.ANA,     ruolo: ruoli.Verificatore,  orePreviste: 3,  oreEffettive: 3),
     (persona: persone.FELIX,   ruolo: ruoli.Progettista,    orePreviste: 10, oreEffettive: 10),
     (persona: persone.FELIX,   ruolo: ruoli.Programmatore,    orePreviste: 4, oreEffettive: 4),
-    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 3,  oreEffettive: 4),
+    (persona: persone.FILIPPO, ruolo: ruoli.Responsabile,   orePreviste: 4,  oreEffettive: 5),
     (persona: persone.FILIPPO, ruolo: ruoli.Progettista,    orePreviste: 8,  oreEffettive: 8),
+    (persona: persone.FILIPPO, ruolo: ruoli.Programmatore,    orePreviste: 4,  oreEffettive: 4),
     (persona: persone.DT,      ruolo: ruoli.Progettista,    orePreviste: 2,  oreEffettive: 2),
     (persona: persone.DT,      ruolo: ruoli.Verificatore,   orePreviste: 5,  oreEffettive: 6),
+    (persona: persone.DT,      ruolo: ruoli.Programmatore,   orePreviste: 5,  oreEffettive: 5),
   ),
   retrospettiva: [
     *Consuntivo di periodo*:

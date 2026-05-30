@@ -20,7 +20,7 @@
     Nessuno in particolare.
   ],
   oreProduttive: (
-    (persona: persone.DT, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 6),
+    (persona: persone.DT, ruolo: ruoli.Responsabile, orePreviste: 6, oreEffettive: 7),
     (persona: persone.DL, ruolo: ruoli.Verificatore, orePreviste: 4, oreEffettive: 4),
     (persona: persone.DL, ruolo: ruoli.Progettista, orePreviste: 3, oreEffettive: 3),
     (persona: persone.FELIX, ruolo: ruoli.Progettista, orePreviste: 3, oreEffettive: 4),
