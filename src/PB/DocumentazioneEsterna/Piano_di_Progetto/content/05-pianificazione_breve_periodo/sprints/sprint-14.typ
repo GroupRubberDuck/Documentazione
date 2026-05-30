@@ -5,8 +5,8 @@
   usaMatrice: true,
   timeline: (
     inizio: datetime(year: 2026, month: 05, day: 12),
-    finePrevista: datetime(year: 2026, month: 05, day: 18),
-    fineEffettiva: datetime(year: 2026, month: 05, day: 18),
+    finePrevista: datetime(year: 2026, month: 05, day: 25),
+    fineEffettiva: datetime(year: 2026, month: 05, day: 25),
   ),
   TODO: [
     Il focus dello sprint è il completamento della documentazione in vista della consegna finale (Product Baseline) e il completamento del frontend del MVP.
