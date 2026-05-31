@@ -99,7 +99,7 @@
   Il codice dell'MVP è pubblicato nell'apposito repository: \
     #inserisciLink(url: "https://github.com/GroupRubberDuck/MVP")[https://github.com/GroupRubberDuck/MVP]
 
-  L'approvazione da parte dell'impresa proponente è documentata nel Verbale Esterno del 2026-05-18 consultabile al seguente link: #link("https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-18_Verbale-v1.0.0.pdf")
+  L'approvazione da parte dell'impresa proponente è documentata nel Verbale Esterno del 2026-05-18 consultabile al seguente link: #inserisciLink(url:"https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-18_Verbale-v1.0.0.pdf")[https://grouprubberduck.github.io/Documentazione/output/PB/DocumentazioneEsterna/VerbaliEsterni/2026-05-18_Verbale-v1.0.0.pdf]
 
   #enfasi[Piano di lavoro]
   Con la presente lettera desideriamo inoltre aggiornarvi sul costo effettivo del progetto, esso ammonta *10.945 €* contro gli *11.610 €* stimati, con un risparmio di * #str(11610 - 10945)* €. 
